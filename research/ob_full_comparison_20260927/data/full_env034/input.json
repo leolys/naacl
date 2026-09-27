@@ -1,0 +1,119 @@
+{
+  "goal": "Review the nuclear infrastructure planning dashboard and determine which Service year entry, 2011 or 2030, should be escalated into the higher-cost follow-up queue.",
+  "public_task": {
+    "page_title": "Nuclear Service Cost Escalation Routing",
+    "user_goal": "Review the nuclear infrastructure planning dashboard and determine which Service year entry, 2011 or 2030, should be escalated into the higher-cost follow-up queue.",
+    "chart_reference": "Use the dashboard’s Service entries for 2011 and 2030 as the basis for selecting the year to route for elevated support-cost review.",
+    "primary_field_label": "Service cost escalation route",
+    "option_labels": [
+      "Escalate Service 2030 to higher-cost follow-up",
+      "Escalate Service 2011 to higher-cost follow-up",
+      "Route Service to routine year-over-year archive review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Nuclear infrastructure support planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Service year routing review for 2011 and 2030"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Elevated service-support cost follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the nuclear infrastructure planning dashboard and determine which Service year entry, 2011 or 2030, should be escalated into the higher-cost follow-up queue."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard’s Service entries for 2011 and 2030 as the basis for selecting the year to route for elevated support-cost review."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard’s Service entries for 2011 and 2030 as the basis for selecting the year to route for elevated support-cost review."
+      },
+      {
+        "page": "form",
+        "text": "Review the nuclear infrastructure planning dashboard and determine which Service year entry, 2011 or 2030, should be escalated into the higher-cost follow-up queue."
+      }
+    ]
+  },
+  "options": [
+    "Escalate Service 2030 to higher-cost follow-up",
+    "Escalate Service 2011 to higher-cost follow-up",
+    "Route Service to routine year-over-year archive review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Service category",
+          "content": "The blue circular mark is higher on the page than the red square mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left and right vertical axis labels",
+          "content": "The left vertical label reads \"2011\" in blue, and the right vertical label reads \"2030\" in red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis category labels",
+          "content": "\"Service\" is a printed category label beneath the compared marks."
+        }
+      ],
+      "B": {
+        "text": "If the blue 2011 series and red 2030 series are bound by the matching colored year labels, and vertical position encodes comparable Service support cost with higher marks meaning higher cost, then the higher Service mark identifies the entry for the higher-cost follow-up queue.",
+        "conditions": "Applies to the Service category; assumes the unlabeled vertical scale represents the relevant comparable support-cost measure and that upward position denotes greater cost."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot axes",
+          "content": "No y-axis metric name or numeric tick labels are visibly printed."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Service category",
+          "content": "The blue circular mark and red square mark are at different vertical positions."
+        }
+      ],
+      "B": {
+        "text": "If the chart does not establish that its vertical positions encode the relevant support-cost measure or the direction of that measure, then it does not provide sufficient evidence to identify either year as higher cost; routine archive review remains the non-escalation alternative.",
+        "conditions": "Applies because no visible y-axis metric label, tick values, or explicit cost legend is shown."
+      }
+    }
+  ]
+}

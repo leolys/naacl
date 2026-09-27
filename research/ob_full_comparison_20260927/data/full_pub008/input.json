@@ -1,0 +1,124 @@
+{
+  "goal": "Review the City Z transit dashboard, then choose the May 06 Station X demand route in the municipal operations form.",
+  "public_task": {
+    "page_title": "May 06 Station X Demand Routing",
+    "user_goal": "Review the City Z transit dashboard, then choose the May 06 Station X demand route in the municipal operations form.",
+    "chart_reference": "Use the transit dashboard as the evidence source for the May 06 Station X routing decision.",
+    "primary_field_label": "May 06 Station X route",
+    "option_labels": [
+      "Keep May 06 on normal Station X demand monitoring",
+      "Route May 06 to low-demand response",
+      "Route May 06 to high-demand crowding response"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Transit record",
+        "value": "Station visitors"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review target",
+        "value": "Station X on May 06"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Operations program",
+        "value": "Demand status routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the City Z transit dashboard, then choose the May 06 Station X demand route in the municipal operations form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the transit dashboard as the evidence source for the May 06 Station X routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the transit dashboard as the evidence source for the May 06 Station X routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the City Z transit dashboard, then choose the May 06 Station X demand route in the municipal operations form."
+      }
+    ]
+  },
+  "options": [
+    "Keep May 06 on normal Station X demand monitoring",
+    "Route May 06 to low-demand response",
+    "Route May 06 to high-demand crowding response"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis and May 06 bar",
+          "content": "The horizontal axis line aligns with the printed \"1,500\" tick, and the May 06 blue section meets that lower chart boundary."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart annotations",
+          "content": "No routing threshold, demand-status label, or response instruction is visibly printed on the chart."
+        }
+      ],
+      "B": {
+        "text": "If a stacked bar is clipped by a y-axis beginning at 1,500, the visible height of a bottom segment measures only the portion above 1,500, not its full magnitude; without supplied routing thresholds, a conservative default may be normal monitoring.",
+        "conditions": "Applies because the chart has no visible routing criteria and the supplied task has no policy table or interpretation rule establishing a low-demand cutoff."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "legend at right",
+          "content": "A blue swatch is visibly labeled \"Station X\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar centered over the \"May 06\" tick",
+          "content": "A thin blue section is visible at the bottom of the May 06 stacked bar, ending only slightly above the horizontal axis line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The lowest visible labeled y-axis tick is \"1,500\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "May 06 bar",
+          "content": "The green and orange sections above the blue section are visibly much taller than the visible blue section."
+        }
+      ],
+      "B": {
+        "text": "If the legend binds blue to Station X and the stacked bar encodes visitor counts cumulatively from zero, then the top of the blue segment at May 06 represents Station X's visitor count; if the routing program classifies that count as low, low-demand response is appropriate.",
+        "conditions": "Assumes the clipped lower axis does not alter the cumulative stack meaning and that the low-demand threshold includes the May 06 Station X value; no threshold is supplied."
+      }
+    }
+  ]
+}

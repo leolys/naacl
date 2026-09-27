@@ -1,0 +1,97 @@
+{
+  "goal": "Review the referral dashboard and assign the record to the follow-up pathway that best fits the full 2013-2020 utilization pattern.",
+  "public_task": {
+    "page_title": "Hospital Screening Referral Monitoring Escalation",
+    "user_goal": "Review the referral dashboard and assign the record to the follow-up pathway that best fits the full 2013-2020 utilization pattern.",
+    "chart_reference": "Use the displayed referral history for the entire reporting window to determine whether this record reflects sustained period-wide growth, a more recent increase that should remain under monitoring, or a broader downward pattern requiring review.",
+    "primary_field_label": "Referral monitoring disposition",
+    "option_labels": [
+      "Assign to continued monitoring for a recent upward shift that warrants observation",
+      "Assign to sustained-growth follow-up for a period-wide increase in referrals",
+      "Assign to decline review for a downward referral pattern"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Hospital screening referral surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review window",
+        "value": "2013-2020 referral pattern assessment"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Operational workflow",
+        "value": "Volume-trend routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the referral dashboard and assign the record to the follow-up pathway that best fits the full 2013-2020 utilization pattern."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed referral history for the entire reporting window to determine whether this record reflects sustained period-wide growth, a more recent increase that should remain under monitoring, or a broader downward pattern requiring review."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed referral history for the entire reporting window to determine whether this record reflects sustained period-wide growth, a more recent increase that should remain under monitoring, or a broader downward pattern requiring review."
+      },
+      {
+        "page": "form",
+        "text": "Review the referral dashboard and assign the record to the follow-up pathway that best fits the full 2013-2020 utilization pattern."
+      }
+    ]
+  },
+  "options": [
+    "Assign to continued monitoring for a recent upward shift that warrants observation",
+    "Assign to sustained-growth follow-up for a period-wide increase in referrals",
+    "Assign to decline review for a downward referral pattern"
+  ],
+  "records": [
+    {
+      "id": "rec_1",
+      "O": [
+        "The chart displays a single orange line connecting four data points.",
+        "The x-axis is labeled 'Year' with tick marks for 2017, 2018, 2019, and 2020.",
+        "The y-axis is labeled 'Referral volume (thousands)' with a scale from 100 to 150.",
+        "The data points are located at approximately (2017, 102), (2018, 118), (2019, 134), and (2020, 150).",
+        "The line exhibits a consistent upward slope from left to right across the entire visible x-axis range."
+      ],
+      "B": "Assuming the visible 2017-2020 data points represent the relevant trend for the 'full 2013-2020 utilization pattern' requested in the goal, the visual evidence of a steady increase across all displayed years supports the reading of 'sustained period-wide growth'."
+    },
+    {
+      "id": "rec_2",
+      "O": [
+        "The chart's x-axis begins at the year 2017.",
+        "The y-axis values increase from just above 100 at the start to 150 at the end.",
+        "There are no data points or line segments visible for the years 2013, 2014, 2015, or 2016.",
+        "The slope of the line segment connecting 2019 to 2020 appears visually similar to the slope of the segment connecting 2017 to 2018."
+      ],
+      "B": "Assuming the 'full 2013-2020 utilization pattern' strictly requires data from 2013, the visible chart only provides evidence for the 2017-2020 window. A reading of 'recent upward shift' might be inferred if the user assumes the growth is a new phenomenon limited to this visible window, though the visible data itself shows growth across all four plotted years."
+    }
+  ]
+}

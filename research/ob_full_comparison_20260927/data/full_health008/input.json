@@ -1,0 +1,124 @@
+{
+  "goal": "Review the respiratory clinic volume dashboard and assign the record to the follow-up pathway that best fits the end-to-end utilization pattern for the full 2013-2020 monitoring window.",
+  "public_task": {
+    "page_title": "Respiratory Outpatient Volume Escalation Routing",
+    "user_goal": "Review the respiratory clinic volume dashboard and assign the record to the follow-up pathway that best fits the end-to-end utilization pattern for the full 2013-2020 monitoring window.",
+    "chart_reference": "Use the displayed yearly visit pattern across the entire review window to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-response review.",
+    "primary_field_label": "Respiratory outpatient volume routing decision",
+    "option_labels": [
+      "Route to continued monitoring for a recent upward shift in respiratory clinic visits",
+      "Route to sustained growth follow-up for respiratory clinic visits",
+      "Route to decline-response review for respiratory clinic visits"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Respiratory outpatient utilization monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2013-2020 end-to-end visit trend review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Utilization-based follow-up routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the respiratory clinic volume dashboard and assign the record to the follow-up pathway that best fits the end-to-end utilization pattern for the full 2013-2020 monitoring window."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed yearly visit pattern across the entire review window to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-response review."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed yearly visit pattern across the entire review window to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-response review."
+      },
+      {
+        "page": "form",
+        "text": "Review the respiratory clinic volume dashboard and assign the record to the follow-up pathway that best fits the end-to-end utilization pattern for the full 2013-2020 monitoring window."
+      }
+    ]
+  },
+  "options": [
+    "Route to continued monitoring for a recent upward shift in respiratory clinic visits",
+    "Route to sustained growth follow-up for respiratory clinic visits",
+    "Route to decline-response review for respiratory clinic visits"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "Visible year labels are 2017, 2018, 2019, and 2020."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red line series",
+          "content": "The red marker at each successive labeled year from 2017 through 2020 is higher on the page than the preceding marker."
+        }
+      ],
+      "B": {
+        "text": "If the displayed 2017-2020 rising segment is assumed to be representative of the unshown 2013-2016 portion, then the visible multi-year rise may be treated as evidence for sustained growth follow-up. This conclusion depends on the unverified representativeness assumption.",
+        "conditions": "Requires treating the unshown 2013-2016 data as consistent with the displayed rise; no supplied chart evidence establishes that assumption."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Respiratory Clinic Visits.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "Visible year labels are 2017, 2018, 2019, and 2020."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red line series",
+          "content": "The red marker at each successive labeled year from 2017 through 2020 is higher on the page than the preceding marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "subtitle",
+          "content": "The subtitle reads \"Reported window shown in the dashboard summary.\""
+        }
+      ],
+      "B": {
+        "text": "If the line series represents yearly respiratory clinic visits in the displayed years and higher vertical position encodes more visits, successive higher points from 2017 through 2020 indicate a recent upward pattern. If the task requires an end-to-end 2013-2020 determination but the chart displays only 2017-2020, sustained growth over the full window cannot be verified; under that limitation, the recent-upward-shift monitoring option is the non-overclaiming fit.",
+        "conditions": "Applies only if the plotted series is the respiratory clinic visit series and the omitted 2013-2016 period is not available elsewhere in the supplied evidence."
+      }
+    }
+  ]
+}

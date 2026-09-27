@@ -1,0 +1,113 @@
+{
+  "goal": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Risk Priority Detail Routing",
+    "user_goal": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow.",
+    "chart_reference": "Use the state risk dashboard as the evidence source for selecting the highest-risk state record.",
+    "primary_field_label": "Highest-risk state route",
+    "option_labels": [
+      "Open Utah (UT) risk detail for priority follow-up",
+      "Open Vermont (VT) risk detail for priority follow-up",
+      "Open Delaware (DE) risk detail for routine monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Hazard risk surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "State risk priority follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Highest risk state in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state risk dashboard as the evidence source for selecting the highest-risk state record."
+      },
+      {
+        "page": "form",
+        "text": "Use the state risk dashboard as the evidence source for selecting the highest-risk state record."
+      },
+      {
+        "page": "form",
+        "text": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open Utah (UT) risk detail for priority follow-up",
+    "Open Vermont (VT) risk detail for priority follow-up",
+    "Open Delaware (DE) risk detail for routine monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Utah polygon in the western U.S. map",
+          "content": "The polygon labeled \"UT\" is filled with a very pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delaware polygon in the mid-Atlantic map",
+          "content": "The polygon labeled \"DE\" is filled with a more saturated yellow than the UT polygon."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Vermont polygon in the northeastern map",
+          "content": "The polygon labeled \"VT\" is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical legend at lower right",
+          "content": "The legend's top is inscribed \"High\" beside \"100\" and is pale yellow; its bottom is inscribed \"Low\" beside \"0\" and is dark burgundy."
+        }
+      ],
+      "B": {
+        "text": "For this choropleth, the vertical legend maps lighter yellow shades toward the top, labeled \"High\" and \"100,\" and darker red/burgundy shades toward the bottom, labeled \"Low\" and \"0.\" Assuming each labeled state is encoded by its fill color on this common scale, a lighter state fill indicates higher hazard-H risk. Under the task's routing criterion, the offered state with the highest encoded risk is the state record to open for priority follow-up.",
+        "conditions": "Applies to the labeled state polygons and the displayed legend; compares the offered Utah, Vermont, and Delaware records."
+      }
+    }
+  ]
+}

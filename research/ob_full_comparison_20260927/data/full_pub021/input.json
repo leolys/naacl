@@ -1,0 +1,147 @@
+{
+  "goal": "Review the public service feedback dashboard, then choose the service category that should enter the low-feedback coverage follow-up workflow.",
+  "public_task": {
+    "page_title": "Public Service Low-Feedback Coverage Routing",
+    "user_goal": "Review the public service feedback dashboard, then choose the service category that should enter the low-feedback coverage follow-up workflow.",
+    "chart_reference": "Use the public service feedback dashboard as the evidence source for selecting the lowest-share feedback category.",
+    "primary_field_label": "Lowest-share feedback category route",
+    "option_labels": [
+      "Route Service Design to low-feedback coverage follow-up",
+      "Route Other to low-feedback coverage follow-up",
+      "Route Support Access to routine feedback monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Public service feedback"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Civic service feedback categories"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Low-feedback coverage follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Lowest feedback share in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public service feedback dashboard, then choose the service category that should enter the low-feedback coverage follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the public service feedback dashboard as the evidence source for selecting the lowest-share feedback category."
+      },
+      {
+        "page": "form",
+        "text": "Use the public service feedback dashboard as the evidence source for selecting the lowest-share feedback category."
+      },
+      {
+        "page": "form",
+        "text": "Review the public service feedback dashboard, then choose the service category that should enter the low-feedback coverage follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Route Service Design to low-feedback coverage follow-up",
+    "Route Other to low-feedback coverage follow-up",
+    "Route Support Access to routine feedback monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The marker aligned with \"Other\" is lower on the page than every other category marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left axis",
+          "content": "The vertical axis is visibly labeled \"Value\", with tick labels increasing upward from 0 to 65."
+        },
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The chart title reads \"Public Service Feedback Share by Category\"."
+        }
+      ],
+      "B": {
+        "text": "If marker height on the vertical axis labeled \"Value\" encodes feedback share with larger values higher on the axis, then the lowest marker represents the lowest-share category; the task routes that category to low-feedback coverage follow-up.",
+        "conditions": "Treat the plotted vertical positions as the authoritative feedback-share encoding despite their inconsistency with the nearby percentage inscriptions."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "above the Service Quality marker",
+          "content": "The inscription \"52%\" appears above the marker aligned with \"Service Quality\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Service Cost marker",
+          "content": "The inscription \"51%\" appears above the marker aligned with \"Service Cost\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Service Design marker",
+          "content": "The inscription \"12%\" appears above the marker aligned with \"Service Design\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Support Access marker",
+          "content": "The inscription \"17%\" appears above the marker aligned with \"Support Access\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Service Delivery marker",
+          "content": "The inscription \"42%\" appears above the marker aligned with \"Service Delivery\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Other marker",
+          "content": "The inscription \"41%\" appears above the marker aligned with \"Other\"."
+        }
+      ],
+      "B": {
+        "text": "If each percent inscription above a category's marker states that category's feedback share, then the category with the smallest printed percentage is the lowest-share category; the task routes that category to low-feedback coverage follow-up.",
+        "conditions": "Treat the percentage inscriptions, rather than the markers' vertical positions, as the authoritative feedback-share values."
+      }
+    }
+  ]
+}

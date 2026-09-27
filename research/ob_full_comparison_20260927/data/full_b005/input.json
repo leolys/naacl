@@ -1,0 +1,165 @@
+{
+  "goal": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.",
+  "public_task": {
+    "page_title": "Browser Compatibility Target Setup",
+    "user_goal": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.",
+    "chart_reference": "Use the browser market share dashboard to identify the product for primary compatibility targeting.",
+    "primary_field_label": "Primary Compatibility Target",
+    "option_labels": [
+      "Set Chrome as the primary compatibility target",
+      "Set Safari as the primary compatibility target",
+      "Set Firefox as the primary compatibility target"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_testing_program",
+        "label": "Testing program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Browser compatibility testing",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_target_scope",
+        "label": "Target scope",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Cross-browser coverage",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_compatibility_track",
+        "label": "Compatibility track",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Primary compatibility target setup",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+      },
+      {
+        "page": "form",
+        "text": "Use the browser market share dashboard to identify the product for primary compatibility targeting."
+      }
+    ]
+  },
+  "options": [
+    "Set Chrome as the primary compatibility target",
+    "Set Safari as the primary compatibility target",
+    "Set Firefox as the primary compatibility target"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Chrome and Safari bars",
+          "content": "The top of the Safari bar is higher on the page than the top of the Chrome bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The printed vertical-axis ticks run from \"0\" at the baseline upward through \"10\" to \"100\"."
+        }
+      ],
+      "B": {
+        "text": "If bar height against the vertical axis is the authoritative usage-share encoding, with higher bar tops indicating greater share, and the primary target is the selectable browser with the greatest share, select the browser with the highest bar among the selectable products.",
+        "conditions": "Applies only if the plotted bar geometry is authoritative despite the percentage inscriptions that conflict with it."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Browser Usage Share by Product\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Chrome bar",
+          "content": "The inscription \"73%\" is printed above the bar labeled \"Chrome\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Safari bar",
+          "content": "The inscription \"12%\" is printed above the bar labeled \"Safari\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Firefox bar",
+          "content": "The inscription \"6%\" is printed above the bar labeled \"Firefox\"."
+        }
+      ],
+      "B": {
+        "text": "If the percentage inscriptions above product bars are the authoritative browser usage-share values, and primary compatibility targeting is assigned to the selectable browser with the greatest shown usage share, select that browser.",
+        "conditions": "Applies only if each printed percentage belongs to the bar directly below it and printed labels, rather than conflicting bar heights, encode the intended shares."
+      }
+    }
+  ]
+}

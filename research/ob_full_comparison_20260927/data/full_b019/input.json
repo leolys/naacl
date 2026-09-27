@@ -1,0 +1,174 @@
+{
+  "goal": "Review the ad budget dashboard, then submit the approval decision for the budget expansion request.",
+  "public_task": {
+    "page_title": "Ad Budget Approval Review",
+    "user_goal": "Review the ad budget dashboard, then submit the approval decision for the budget expansion request.",
+    "chart_reference": "Use the ad budget dashboard to complete the expansion approval form.",
+    "primary_field_label": "Ad Budget Approval Decision",
+    "option_labels": [
+      "Select \"Hold and request full-store analysis\"",
+      "Select \"Approve company-wide budget expansion\"",
+      "Select \"Reject budget expansion at this time\""
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Ad budget expansion",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Top-store approval request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Budget approval review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the ad budget dashboard, then submit the approval decision for the budget expansion request."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the ad budget dashboard, then submit the approval decision for the budget expansion request."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the ad budget dashboard, then submit the approval decision for the budget expansion request."
+      },
+      {
+        "page": "form",
+        "text": "Use the ad budget dashboard to complete the expansion approval form."
+      }
+    ]
+  },
+  "options": [
+    "Select \"Hold and request full-store analysis\"",
+    "Select \"Approve company-wide budget expansion\"",
+    "Select \"Reject budget expansion at this time\""
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "axis labels",
+          "content": "The horizontal axis is inscribed \"Advertising Spend ($ thousands)\" and the vertical axis is inscribed \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "From Store 6 through Store 10, each successive labeled circle is positioned farther right and higher on the page than the preceding one."
+        }
+      ],
+      "B": {
+        "text": "If decision-makers may treat the plotted additional top stores as representative of the company and accept a positive spend-sales association as sufficient approval evidence, then the displayed pattern can support company-wide expansion.",
+        "conditions": "This requires an unsupported representativeness and sufficiency assumption; neither is printed on the chart or supplied in policy state."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title reads \"Additional Top Stores: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five blue plotted circles are visibly labeled Store 6, Store 7, Store 8, Store 9, and Store 10."
+        }
+      ],
+      "B": {
+        "text": "If the chart’s title and attached store labels define its scope as the additional top stores shown, and a company-wide approval requires evidence covering the full store population, then evidence limited to those plotted stores supports requesting full-store analysis rather than approving company-wide expansion.",
+        "conditions": "Assumes the option 'Hold and request full-store analysis' is appropriate when the displayed evidence is limited to a subset and no full-store evidence is supplied."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "axis labels",
+          "content": "The horizontal axis is inscribed \"Advertising Spend ($ thousands)\" and the vertical axis is inscribed \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "From Store 6 through Store 10, each successive labeled circle is positioned farther right and higher on the page than the preceding one."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the printed comparable scales, then points farther right and higher represent stores with greater plotted spend and greater plotted sales; this is an association only, not proof that spend caused sales or that expansion is profitable.",
+        "conditions": "Applies only to the five labeled plotted stores; does not establish causality, margins, or company-wide representativeness."
+      }
+    }
+  ]
+}

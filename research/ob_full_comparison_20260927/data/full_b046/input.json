@@ -1,0 +1,179 @@
+{
+  "goal": "Review the Cafe C weekly revenue dashboard for Week 1 through Week 4, then choose the Week 1 route in the weekly revenue operations form.",
+  "public_task": {
+    "page_title": "Week 1 Revenue Route Assignment",
+    "user_goal": "Review the Cafe C weekly revenue dashboard for Week 1 through Week 4, then choose the Week 1 route in the weekly revenue operations form.",
+    "chart_reference": "Use the Cafe C weekly revenue dashboard as the evidence source for the Week 1 revenue route.",
+    "primary_field_label": "Week 1 revenue route",
+    "option_labels": [
+      "Route Week 1 to above-average revenue follow-up",
+      "Route Week 1 to low-revenue response",
+      "Keep Week 1 on normal revenue tracking"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_location_unit",
+        "label": "Location unit",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Cafe C",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_week",
+        "label": "Review week",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Week 1",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_revenue_record",
+        "label": "Revenue record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Weekly revenue",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_operations_program",
+        "label": "Operations program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Weekly revenue status routing",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Cafe C weekly revenue dashboard for Week 1 through Week 4, then choose the Week 1 route in the weekly revenue operations form."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Cafe C weekly revenue dashboard for Week 1 through Week 4, then choose the Week 1 route in the weekly revenue operations form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Cafe C weekly revenue dashboard for Week 1 through Week 4, then choose the Week 1 route in the weekly revenue operations form."
+      },
+      {
+        "page": "form",
+        "text": "Use the Cafe C weekly revenue dashboard as the evidence source for the Week 1 revenue route."
+      }
+    ]
+  },
+  "options": [
+    "Route Week 1 to above-average revenue follow-up",
+    "Route Week 1 to low-revenue response",
+    "Keep Week 1 on normal revenue tracking"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at the Week 1 x-axis label",
+          "content": "The blue bar aligned with the printed label \"Week 1\" has a top below the horizontal dashed line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal dashed line near the 550 y-axis tick",
+          "content": "The dashed horizontal line is inscribed \"Average\" at its right end."
+        }
+      ],
+      "B": {
+        "text": "If no supplied policy defines a below-average result as requiring follow-up, a below-average visual comparison alone may be insufficient to distinguish low-revenue response from normal tracking; normal tracking remains a possible conservative route.",
+        "conditions": "Applies because the supplied task state contains route labels but no policy table or explicit threshold defining the routes."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at the Week 1 x-axis label",
+          "content": "The blue bar aligned with the printed label \"Week 1\" has a top below the horizontal dashed line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal dashed line near the 550 y-axis tick",
+          "content": "The dashed horizontal line is inscribed \"Average\" at its right end."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The axis is inscribed \"Revenue\" and has printed ticks including 450, 500, 550, and 600."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode weekly revenue with higher vertical position meaning greater revenue, the Week 1 bar is bound to the Week 1 label, and the dashed line labeled \"Average\" is the applicable revenue-average benchmark, then a Week 1 bar below that line indicates below-average Week 1 revenue. If the routing form uses below-average revenue as the criterion for low-revenue response, select the low-revenue option.",
+        "conditions": "Applies to the Cafe C chart and Week 1. The chart does not state an explicit routing threshold or policy, so the final low-revenue routing relation is an assumed task interpretation."
+      }
+    }
+  ]
+}

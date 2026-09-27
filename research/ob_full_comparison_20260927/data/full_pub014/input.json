@@ -1,0 +1,156 @@
+{
+  "goal": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Risk Priority Detail Routing",
+    "user_goal": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow.",
+    "chart_reference": "Use the state risk dashboard as the evidence source for selecting the highest-risk state record.",
+    "primary_field_label": "Highest-risk state route",
+    "option_labels": [
+      "Open Rhode Island (RI) risk detail for priority follow-up",
+      "Open New Mexico (NM) risk detail for priority follow-up",
+      "Open Delaware (DE) risk detail for routine monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Hazard risk surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "State risk priority follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Highest risk state in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state risk dashboard as the evidence source for selecting the highest-risk state record."
+      },
+      {
+        "page": "form",
+        "text": "Use the state risk dashboard as the evidence source for selecting the highest-risk state record."
+      },
+      {
+        "page": "form",
+        "text": "Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open Rhode Island (RI) risk detail for priority follow-up",
+    "Open New Mexico (NM) risk detail for priority follow-up",
+    "Open Delaware (DE) risk detail for routine monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Texas polygon, south-central map",
+          "content": "The polygon labeled \"TX\" is filled pale yellow, visually similar to the high end of the legend."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "The pale-yellow top of the gradient is printed beside \"High\" and \"100\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delaware polygon, mid-Atlantic inset area",
+          "content": "The polygon labeled \"DE\" is filled orange-red."
+        }
+      ],
+      "B": {
+        "text": "If the routing criterion literally requires the highest-risk state across the entire dashboard rather than only among offered eligible records, an offered record can be selected only if the chart establishes that it exceeds every other mapped state.",
+        "conditions": "Applies when \"highest risk state in the dashboard\" is not restricted to the available options."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Rhode Island polygon, New England inset area",
+          "content": "The polygon labeled \"RI\" is gray."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "The visible legend is a pale-yellow-to-dark-red gradient labeled from \"High\"/\"100\" to \"Low\"/\"0\"; no gray swatch or gray label is shown."
+        }
+      ],
+      "B": {
+        "text": "If a state's fill color is encoded by the displayed vertical Risk Index legend, the pale-yellow end at the printed \"High\"/\"100\" end represents higher risk than the dark-red end at the printed \"Low\"/\"0\" end; fills not represented by the gradient, such as gray, have no stated risk-index value.",
+        "conditions": "Applies only where the state fill is intended to use the displayed gradient; gray is not assigned a meaning by the visible legend."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "The vertical color gradient has printed \"High\" at its pale-yellow top beside \"100\" and printed \"Low\" at its dark-red bottom beside \"0\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delaware polygon, mid-Atlantic inset area",
+          "content": "The polygon labeled \"DE\" is filled orange-red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "New Mexico polygon, southwest",
+          "content": "The polygon labeled \"NM\" is filled dark burgundy-red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Rhode Island polygon, New England inset area",
+          "content": "The polygon labeled \"RI\" is filled gray."
+        }
+      ],
+      "B": {
+        "text": "If routing is restricted to the offered state-record options and gray/unmapped states are not eligible for a risk comparison, the offered state with the highest legend-decoded risk is the available choice most consistent with the stated highest-risk routing criterion.",
+        "conditions": "Requires that selection is limited to the listed options and that unscored or unmapped states are excluded; it does not establish that the selected offered state is highest among all states shown."
+      }
+    }
+  ]
+}

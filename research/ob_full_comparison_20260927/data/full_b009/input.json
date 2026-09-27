@@ -1,0 +1,173 @@
+{
+  "goal": "Review the Europe smartphone market-share dashboard, then assign the next premium retail promotion to the brand with the highest current market_share.",
+  "public_task": {
+    "page_title": "EU Smartphone Market-Leader Promotion Assignment",
+    "user_goal": "Review the Europe smartphone market-share dashboard, then assign the next premium retail promotion to the brand with the highest current market_share.",
+    "chart_reference": "Use the dashboard market_share values as the evidence source; the next premium retail promotion is reserved for the current European market leader.",
+    "primary_field_label": "Premium retail promotion brand",
+    "option_labels": [
+      "Select Apple",
+      "Select Xiaomi",
+      "Select Samsung"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_market_region",
+        "label": "Market region",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Europe",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_promotion_rule",
+        "label": "Promotion rule",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Allocate to current market-share leader",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_promotion_program",
+        "label": "Promotion program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Premium retail co-op promotion",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Premium promotion rule",
+        "headers": [
+          "Rule item",
+          "Business rule"
+        ],
+        "rows": [
+          [
+            "Premium promotion rule",
+            "Select the brand with the highest current market_share"
+          ],
+          [
+            "Decision metric",
+            "market_share"
+          ],
+          [
+            "Review scope",
+            "Europe smartphone brands"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Europe smartphone market-share dashboard, then assign the next premium retail promotion to the brand with the highest current market_share."
+      },
+      {
+        "page": "home",
+        "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Europe smartphone market-share dashboard, then assign the next premium retail promotion to the brand with the highest current market_share."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Europe smartphone market-share dashboard, then assign the next premium retail promotion to the brand with the highest current market_share."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard market_share values as the evidence source; the next premium retail promotion is reserved for the current European market leader."
+      }
+    ]
+  },
+  "options": [
+    "Select Apple",
+    "Select Xiaomi",
+    "Select Samsung"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title at upper left",
+          "content": "The title reads \"Smartphone Market Share in Europe\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "label inside the light-orange pie slice",
+          "content": "The inscription reads \"Apple (60%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "label inside the orange pie slice",
+          "content": "The inscription reads \"Samsung (12%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "label inside the red pie slice",
+          "content": "The inscription reads \"Xiaomi (10%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "label inside the pale-yellow pie slice",
+          "content": "The inscription reads \"Others (18%)\"."
+        }
+      ],
+      "B": {
+        "text": "If the pie-slice inscriptions in the chart titled \"Smartphone Market Share in Europe\" encode each labeled category's current European market_share, then the brand with the greatest labeled market_share is the current market leader; under the stated premium-promotion rule, select that brand's option.",
+        "conditions": "Applies only if the displayed dashboard is the task's current Europe market_share source and \"Others\" is an aggregate category rather than a selectable brand."
+      }
+    }
+  ]
+}

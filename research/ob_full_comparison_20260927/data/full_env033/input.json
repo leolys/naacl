@@ -1,0 +1,119 @@
+{
+  "goal": "Use the planning dashboard to review the 2010 clean-electricity source comparison and route the source record that should receive priority follow-up for the higher generation-share case.",
+  "public_task": {
+    "page_title": "2010 Clean Electricity Source Escalation Review",
+    "user_goal": "Use the planning dashboard to review the 2010 clean-electricity source comparison and route the source record that should receive priority follow-up for the higher generation-share case.",
+    "chart_reference": "Base the routing decision on the dashboard view comparing Hydroelectricity and Nuclear energy for 2010, and select the source record to advance into the higher-share follow-up workflow.",
+    "primary_field_label": "2010 source-priority routing",
+    "option_labels": [
+      "Route 2010 Hydroelectricity to higher-share follow-up",
+      "Route 2010 Nuclear energy to higher-share follow-up",
+      "Route the 2010 source comparison to routine archive review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Clean electricity portfolio planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2010 Hydroelectricity and Nuclear energy source review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Higher generation-share follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Use the planning dashboard to review the 2010 clean-electricity source comparison and route the source record that should receive priority follow-up for the higher generation-share case."
+      },
+      {
+        "page": "dashboard",
+        "text": "Base the routing decision on the dashboard view comparing Hydroelectricity and Nuclear energy for 2010, and select the source record to advance into the higher-share follow-up workflow."
+      },
+      {
+        "page": "form",
+        "text": "Base the routing decision on the dashboard view comparing Hydroelectricity and Nuclear energy for 2010, and select the source record to advance into the higher-share follow-up workflow."
+      },
+      {
+        "page": "form",
+        "text": "Use the planning dashboard to review the 2010 clean-electricity source comparison and route the source record that should receive priority follow-up for the higher generation-share case."
+      }
+    ]
+  },
+  "options": [
+    "Route 2010 Hydroelectricity to higher-share follow-up",
+    "Route 2010 Nuclear energy to higher-share follow-up",
+    "Route the 2010 source comparison to routine archive review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and colored axis labels",
+          "content": "The title reads \"Hydroelectricity vs Nuclear energy\"; the left y-axis label is blue and reads \"Hydroelectricity (%)\", while the right y-axis label is red and reads \"Nuclear energy (%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "both y-axes and 2010 vertical gridline",
+          "content": "No numeric tick labels are visibly printed on either y-axis, and no percentage inscription is visibly attached to either mark at the printed x-axis tick \"2010\"."
+        }
+      ],
+      "B": {
+        "text": "If one source is established to have the higher 2010 generation share, the task directs routing that source to the higher-share follow-up workflow; if no source is established as higher, an archive outcome would require a stated unresolved-comparison fallback.",
+        "conditions": "The public task requests the source with the higher 2010 generation share. No archive fallback policy is supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and colored axis labels",
+          "content": "The title reads \"Hydroelectricity vs Nuclear energy\"; the left y-axis label is blue and reads \"Hydroelectricity (%)\", while the right y-axis label is red and reads \"Nuclear energy (%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2010 vertical gridline",
+          "content": "At the printed x-axis tick \"2010\", a blue circular mark is lower on the page than a red square mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "both y-axes",
+          "content": "No numeric tick labels are visibly printed on either y-axis, and no percentage inscription is visibly attached to either 2010 mark."
+        }
+      ],
+      "B": {
+        "text": "The blue circular series is Hydroelectricity and is read against the left blue y-axis; the red dashed square series is Nuclear energy and is read against the right red y-axis. A higher generation-share comparison requires decodable, comparable 2010 values from those axes or another explicit common-scale statement; screen-space height alone is not comparable across separate y-axes.",
+        "conditions": "Applies to the displayed dual-axis chart. No common numeric y-scale or 2010 value inscription is visible."
+      }
+    }
+  ]
+}

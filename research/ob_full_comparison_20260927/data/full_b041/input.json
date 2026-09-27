@@ -1,0 +1,179 @@
+{
+  "goal": "Review the Mall A customer traffic dashboard for January through March, then choose the January route in the monthly traffic operations form.",
+  "public_task": {
+    "page_title": "January Traffic Route Assignment",
+    "user_goal": "Review the Mall A customer traffic dashboard for January through March, then choose the January route in the monthly traffic operations form.",
+    "chart_reference": "Use the Mall A customer traffic dashboard as the evidence source for the January traffic route.",
+    "primary_field_label": "January status",
+    "option_labels": [
+      "Select \"Low-traffic review\" for January",
+      "Select \"Normal plan\" for January",
+      "Select \"Monitor next month\" for January"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_location_unit",
+        "label": "Location unit",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Mall A",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_period",
+        "label": "Review period",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "January monthly review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_traffic_record",
+        "label": "Traffic record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Customer count",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_operations_program",
+        "label": "Operations program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Monthly traffic status routing",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Mall A customer traffic dashboard for January through March, then choose the January route in the monthly traffic operations form."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Mall A customer traffic dashboard for January through March, then choose the January route in the monthly traffic operations form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Mall A customer traffic dashboard for January through March, then choose the January route in the monthly traffic operations form."
+      },
+      {
+        "page": "form",
+        "text": "Use the Mall A customer traffic dashboard as the evidence source for the January traffic route."
+      }
+    ]
+  },
+  "options": [
+    "Select \"Low-traffic review\" for January",
+    "Select \"Normal plan\" for January",
+    "Select \"Monitor next month\" for January"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at January",
+          "content": "The blue bar aligned with the printed x-axis label \"January\" has its top edge aligned with the horizontal dashed line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right end of dashed horizontal line",
+          "content": "The dashed horizontal line is labeled \"Average\"."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode monthly customer counts and the routing convention treats a month at the displayed average as requiring follow-up rather than normal handling, select Monitor next month.",
+        "conditions": "The displayed dashed line is the relevant benchmark and an at-average-to-monitor mapping applies; this mapping is not printed or otherwise supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at January",
+          "content": "The blue bar aligned with the printed x-axis label \"January\" has its top edge aligned with the horizontal dashed line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right end of dashed horizontal line",
+          "content": "The dashed horizontal line is labeled \"Average\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left side of plot",
+          "content": "The vertical axis is inscribed \"Number of Customers\"."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode monthly customer counts on the vertical axis, the dashed line labeled \"Average\" is the routing benchmark, and the routing convention assigns a month at that benchmark to the normal route, select Normal plan.",
+        "conditions": "The chart title and vertical-axis label apply to the bars; higher vertical position represents more customers; the dashed line is a valid benchmark; the at-average-to-Normal-plan mapping is inferred because no route legend or policy table is supplied."
+      }
+    }
+  ]
+}

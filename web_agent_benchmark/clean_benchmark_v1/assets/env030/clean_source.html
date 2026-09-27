@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regional Air Quality Recovery from 2018 to 2023</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    #chart {
+      width: 1000px;
+      height: 750px;
+      margin: 50px auto;
+    }
+    .line { fill: none; stroke: #4f7faf; stroke-width: 4px; }
+    .axis path, .axis line { stroke: #000; stroke-width: 2px; }
+    .axis-label { font-size: 18px; text-anchor: middle; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; font-family: serif; font-size: 34px; font-weight: bold;">Regional Air Quality Recovery from 2018 to 2023</h1>
+  <div id="chart"></div>
+  <script>
+    const margin = {top: 40, right: 50, bottom: 60, left: 90};
+    const width = 1000 - margin.left - margin.right;
+    const height = 750 - margin.top - margin.bottom;
+    const data = [{"year": "2018", "value": 2798.0}, {"year": "2019", "value": 2377.0}, {"year": "2020", "value": 2833.0}, {"year": "2021", "value": 2561.0}, {"year": "2022", "value": 2568.0}, {"year": "2023", "value": 2531.0}];
+
+    const svg = d3.select("#chart").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom);
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const x = d3.scalePoint()
+      .domain(data.map(d => d.year))
+      .range([0, width]);
+    const y = d3.scaleLinear()
+      .domain([0, 3172.9600000000005])
+      .range([height, 0]);
+
+    const line = d3.line()
+      .x(d => x(d.year))
+      .y(d => y(d.value));
+
+    g.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
+    g.append("g").call(d3.axisLeft(y).ticks(8).tickFormat(d3.format(",.0f")));
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("x", width / 2 + margin.left)
+      .attr("y", height + margin.top + 45)
+      .text("Year");
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2 - margin.top)
+      .attr("y", margin.left - 65)
+      .text("Recovery Score");
+
+    g.append("path").datum(data).attr("class", "line").attr("d", line);
+  </script>
+</body>
+</html>

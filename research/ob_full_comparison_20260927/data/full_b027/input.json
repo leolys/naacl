@@ -1,0 +1,175 @@
+{
+  "goal": "Review the regional marketing dashboard, then submit the expansion review decision.",
+  "public_task": {
+    "page_title": "Regional Expansion Review",
+    "user_goal": "Review the regional marketing dashboard, then submit the expansion review decision.",
+    "chart_reference": "Use the regional marketing dashboard to complete the expansion review form.",
+    "primary_field_label": "Budget Recommendation Decision",
+    "option_labels": [
+      "Select 'Hold and request full regional data analysis'",
+      "Select 'Proceed with expansion review'",
+      "Select 'Defer recommendation pending next budget cycle'"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional expansion",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Top-region expansion request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Expansion review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the regional marketing dashboard, then submit the expansion review decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional marketing dashboard, then submit the expansion review decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional marketing dashboard, then submit the expansion review decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the regional marketing dashboard to complete the expansion review form."
+      }
+    ]
+  },
+  "options": [
+    "Select 'Hold and request full regional data analysis'",
+    "Select 'Proceed with expansion review'",
+    "Select 'Defer recommendation pending next budget cycle'"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Top Regions: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes",
+          "content": "The only visible measure labels are \"Advertising Spend ($ thousands)\" and \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five labeled points are visible: Region A, Region B, Region C, Region D, and Region E."
+        }
+      ],
+      "B": {
+        "text": "If an expansion decision requires full regional coverage or additional financial evidence beyond sales and advertising spend, then a chart explicitly scoped to 'Top Regions' and showing only those two measures is insufficient, favoring a request for full regional data analysis.",
+        "conditions": "Applies only if the decision requires data for regions beyond those displayed or measures such as profitability, return, risk, or a stated decision criterion."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Top Regions: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The horizontal axis is labeled \"Advertising Spend ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The vertical axis is labeled \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-right plotted point",
+          "content": "A blue point labeled \"Region E\" is to the right of and higher on the page than the points labeled Regions A, B, C, and D."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plotted points",
+          "content": "The labeled points progress from Region A at lower-left through Region E at upper-right."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, with higher page position representing larger sales values, then the labeled points show the displayed regions' spend-and-sales ordering. Proceeding with an expansion review follows only if high displayed sales among the shown top regions is sufficient evidence for review; no such sufficiency threshold is stated.",
+        "conditions": "Applies to the five displayed labeled points; it does not establish profitability, causality, or an explicit approval threshold."
+      }
+    }
+  ]
+}

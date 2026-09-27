@@ -1,0 +1,1623 @@
+{
+  "version": "2026-04-06",
+  "description": "Error-type profiles for profile-driven scheduling, task-mode selection, mode-aware validation, and draft mark-fidelity policy fields (allowed_mark_changes / protected_channels / allowed_scope_changes / invalid_if).",
+  "profiles": [
+    {
+      "error_type": "3d",
+      "paper_display_name": "3D Effect",
+      "layer_code": "L1",
+      "layer_name": "VisualPerceptionLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "pie_or_donut_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "encoding_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "illegibletext",
+      "paper_display_name": "Illegible Text",
+      "layer_code": "L1",
+      "layer_name": "VisualPerceptionLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "stacked_bar_chart",
+        "pie_or_donut_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "text_readability_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "indistinguishablecolors",
+      "paper_display_name": "Indistinguishable Colors",
+      "layer_code": "L1",
+      "layer_name": "VisualPerceptionLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "stacked_bar_chart",
+        "pie_or_donut_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "color_discriminability_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "overplotting",
+      "paper_display_name": "Overplotting",
+      "layer_code": "L1",
+      "layer_name": "VisualPerceptionLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "overlap_or_occlusion_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_scope_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_primary_geometry_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "overusingcolors",
+      "paper_display_name": "Overusing Colors",
+      "layer_code": "L1",
+      "layer_name": "VisualPerceptionLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "stacked_bar_chart",
+        "pie_or_donut_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": true,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "color_mapping_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "violatingcolorconvention",
+      "paper_display_name": "Violating Color Convention",
+      "layer_code": "L1",
+      "layer_name": "VisualPerceptionLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "line_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "color_mapping_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "confusingcharttype",
+      "paper_display_name": "Confusing Chart Type",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "pie_or_donut_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "chart_type_remap_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "display_relayout_without_subset_change"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "changes_chart_type_and_rewrites_values"
+      ]
+    },
+    {
+      "error_type": "confusinglegend",
+      "paper_display_name": "Confusing Legend",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "stacked_bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": true,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "legend_binding_presentation_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "dataindifferentmagnitudes",
+      "paper_display_name": "Data in Different Magnitudes",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "line_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "encoding_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "discretizedcontinuousvariable",
+      "paper_display_name": "Discretized Continuous Variable",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "requires_refactor",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "encoding_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission",
+        "relabels_discrete_bands_inconsistently_with_original_order"
+      ]
+    },
+    {
+      "error_type": "inappropriateitemorder",
+      "paper_display_name": "Inappropriate Item Order",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "layout_order_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "display_relayout_without_subset_change"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "inconsistentgrouping",
+      "paper_display_name": "Inconsistent Grouping",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "stacked_bar_chart",
+        "multi_series_chart",
+        "bar_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "requires_refactor",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "grouping_structure_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "raw_values",
+        "rank_order"
+      ],
+      "allowed_scope_changes": [
+        "display_relayout_without_subset_change"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "regroups_values_without_traceable_aggregation"
+      ]
+    },
+    {
+      "error_type": "inconsistentvaluelabels",
+      "paper_display_name": "Inconsistent Value Labels",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "line_chart",
+        "stacked_bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "in_chart_numeric_conflict_allowed",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "in_chart_label_text_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingabbreviation",
+      "paper_display_name": "Missing Abbreviation",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "line_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "reference_text_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingaxis",
+      "paper_display_name": "Missing Axis",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "abstention_aware",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "abstention_aware"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "abstention_preferred",
+      "qa_refactor_policy": "required",
+      "structure_policy": "preserve",
+      "data_fidelity_policy": "exact_marks_required",
+      "preferred_backend": "image_edit",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": true,
+      "allowed_mark_changes": [
+        "reference_system_removal_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingaxisticks",
+      "paper_display_name": "Missing Axis Ticks",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "abstention_aware"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "requires_refactor",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "data_fidelity_policy": "exact_marks_required",
+      "preferred_backend": "image_edit",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": true,
+      "allowed_mark_changes": [
+        "reference_system_removal_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingaxistitle",
+      "paper_display_name": "Missing Axis Title",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "requires_refactor",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "data_fidelity_policy": "exact_marks_required",
+      "preferred_backend": "image_edit",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "reference_system_removal_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missinglegend",
+      "paper_display_name": "Missing Legend",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "stacked_bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": true,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "data_fidelity_policy": "exact_marks_required",
+      "preferred_backend": "image_edit",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "reference_system_removal_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingtitle",
+      "paper_display_name": "Missing Title",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart",
+        "pie_or_donut_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "data_fidelity_policy": "exact_marks_required",
+      "preferred_backend": "image_edit",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "title_caption_text_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingunits",
+      "paper_display_name": "Missing Units",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "abstention_aware"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "requires_refactor",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "data_fidelity_policy": "exact_marks_required",
+      "preferred_backend": "image_edit",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": true,
+      "allowed_mark_changes": [
+        "reference_system_removal_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "missingvaluelabels",
+      "paper_display_name": "Missing Value Labels",
+      "layer_code": "L2",
+      "layer_name": "SemanticMappingLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "pie_or_donut_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "requires_refactor",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "reference_system_removal_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "areaencoding",
+      "paper_display_name": "Area Encoding",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "pie_or_donut_chart",
+        "multi_series_chart",
+        "bar_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "encoding_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ],
+      "merged_subtypes": [
+        "pictorialareaencoding"
+      ]
+    },
+    {
+      "error_type": "changingscale",
+      "paper_display_name": "Changing Scale",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "axis_mapping_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission",
+        "changes_chart_type_and_rewrites_values"
+      ]
+    },
+    {
+      "error_type": "dualaxis",
+      "paper_display_name": "Dual Axis",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": true,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "axis_mapping_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission",
+        "changes_chart_type_and_rewrites_values"
+      ]
+    },
+    {
+      "error_type": "extendedaxis",
+      "paper_display_name": "Extended Axis",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "axis_mapping_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "inappropriateaspectratio",
+      "paper_display_name": "Inappropriate Aspect Ratio",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "aspect_ratio_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "inconsistentticklabels",
+      "paper_display_name": "Inconsistent Tick Spacing",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "attack_style_notes": "Implement non-uniform tick spacing while keeping labels monotonic and plausible. Do not drift into missing ticks, missing axis metadata, or label-format inconsistency.",
+      "allowed_mark_changes": [
+        "axis_mapping_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "invertedaxis",
+      "paper_display_name": "Inverted Axis",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "axis_mapping_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "misusingcircularlayout",
+      "paper_display_name": "Misusing Circular Layout",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "pie_or_donut_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "encoding_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "sineillusion",
+      "paper_display_name": "Sine Illusion",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "line_style_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "truncatedaxis",
+      "paper_display_name": "Truncated Axis",
+      "layer_code": "L3",
+      "layer_name": "VisualReasoningLayer",
+      "default_task_mode": "strict_answerable",
+      "allowed_task_modes": [
+        "strict_answerable"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "line_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "none",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "allowed_mark_changes": [
+        "axis_mapping_transform_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "rank_order",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "none"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "breaks_rank_order_without_profile_permission",
+        "changes_chart_type_and_rewrites_values"
+      ]
+    },
+    {
+      "error_type": "Cherry_Picking",
+      "paper_display_name": "Data Selecting (Cherry-Picking)",
+      "layer_code": "L4",
+      "layer_name": "CognitiveLogicLayer",
+      "default_task_mode": "scope_reasoning",
+      "allowed_task_modes": [
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "disallow",
+      "qa_refactor_policy": "required",
+      "structure_policy": "subset_allowed",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "max_rounds_hint": 5,
+      "reverse_beam_width_hint": 3,
+      "forward_effect_policy": "flip_or_confidence_drop",
+      "scheduler_bonuses": [
+        "trend_or_scope_question",
+        "line_or_multi_series_context",
+        "context_rich_chart"
+      ],
+      "scheduler_penalties": [
+        "single_series_exact_lookup",
+        "single_target_lookup"
+      ],
+      "attack_style_notes": "Prefer neutral-looking selective windows, subsets, or focal comparisons that support an overgeneralized reading. Avoid explicit editorial text or obvious disclosure that data were removed.",
+      "refactor_notes": "Rewrite exact-lookups into scope questions where the correct answer is usually the cautious, evidence-limited interpretation. Include tempting broader generalizations as distractors, and avoid making the gold answer simply the most visually obvious trend statement.",
+      "allowed_mark_changes": [
+        "subset_selection_only"
+      ],
+      "protected_channels": [
+        "retained_scope_values",
+        "retained_scope_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "subset_selection"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "breaks_retained_scope_truthfulness",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "Concealed_Uncertainty",
+      "paper_display_name": "Concealed Uncertainty",
+      "layer_code": "L4",
+      "layer_name": "CognitiveLogicLayer",
+      "default_task_mode": "scope_reasoning",
+      "allowed_task_modes": [
+        "strict_answerable",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "allow",
+      "qa_refactor_policy": "recommended",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": false,
+      "max_rounds_hint": 5,
+      "forward_effect_policy": "flip_or_confidence_drop",
+      "scheduler_bonuses": [
+        "trend_or_scope_question",
+        "context_rich_chart"
+      ],
+      "refactor_notes": "When scope_reasoning is used, the correct option should preserve appropriate uncertainty or hedging rather than an overconfident summary.",
+      "allowed_mark_changes": [
+        "uncertainty_visibility_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry"
+      ],
+      "allowed_scope_changes": [
+        "uncertainty_context_suppression"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission",
+        "suppresses_required_uncertainty_with_value_changes"
+      ]
+    },
+    {
+      "error_type": "Missing_Data",
+      "paper_display_name": "Missing Data",
+      "layer_code": "L4",
+      "layer_name": "CognitiveLogicLayer",
+      "default_task_mode": "abstention_aware",
+      "allowed_task_modes": [
+        "abstention_aware",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart",
+        "pie_or_donut_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "abstention_preferred",
+      "qa_refactor_policy": "required",
+      "structure_policy": "omission_allowed",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": true,
+      "max_rounds_hint": 4,
+      "reverse_beam_width_hint": 2,
+      "forward_effect_policy": "flip_or_confidence_drop",
+      "scheduler_hard_avoid_heuristics": [
+        "bar_exact_lookup_single_target"
+      ],
+      "scheduler_bonuses": [
+        "multi_series_context",
+        "non_exact_or_scope_question",
+        "line_or_multi_series_context"
+      ],
+      "scheduler_penalties": [
+        "single_series_exact_lookup",
+        "single_target_lookup"
+      ],
+      "attack_style_notes": "Prefer omitting supporting context, necessary comparators, or crucial reference evidence without explicit disclosure text. Avoid labels such as 'data unavailable', giant blank placeholders, or annotations that make the abstention cue trivial unless no subtler omission is possible.",
+      "refactor_notes": "For abstention-aware questions, include exactly one abstention option and make the other three options plausible nearby readings, interpolations, or naive conclusions. Do not mention missing data explicitly in the question wording.",
+      "allowed_mark_changes": [
+        "context_omission_only"
+      ],
+      "protected_channels": [
+        "retained_scope_values",
+        "retained_scope_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "context_omission"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "breaks_retained_scope_truthfulness",
+        "uses_explicit_disclosure_text_when_subtlety_required"
+      ]
+    },
+    {
+      "error_type": "Missing_Normalization",
+      "paper_display_name": "Missing Normalization",
+      "layer_code": "L4",
+      "layer_name": "CognitiveLogicLayer",
+      "default_task_mode": "abstention_aware",
+      "allowed_task_modes": [
+        "abstention_aware",
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "bar_chart",
+        "multi_series_chart",
+        "pie_or_donut_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "abstention_preferred",
+      "qa_refactor_policy": "required",
+      "structure_policy": "preserve",
+      "text_policy": "neutral_only",
+      "supports_abstention_option": true,
+      "max_rounds_hint": 4,
+      "forward_effect_policy": "flip_or_confidence_drop",
+      "scheduler_bonuses": [
+        "multi_series_context",
+        "non_exact_or_scope_question"
+      ],
+      "allowed_mark_changes": [
+        "normalization_context_omission_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "normalization_context_omission"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_non_target_channels",
+        "changes_scope_without_profile_permission"
+      ]
+    },
+    {
+      "error_type": "narrative_framing",
+      "paper_display_name": "Narrative Framing",
+      "layer_code": "L4",
+      "layer_name": "CognitiveLogicLayer",
+      "default_task_mode": "scope_reasoning",
+      "allowed_task_modes": [
+        "scope_reasoning"
+      ],
+      "compatible_chart_types": [
+        "line_chart",
+        "bar_chart",
+        "multi_series_chart",
+        "pie_or_donut_chart"
+      ],
+      "requires_multi_series": false,
+      "exact_lookup_policy": "disallow",
+      "qa_refactor_policy": "required",
+      "structure_policy": "preserve",
+      "text_policy": "chart_level_bias_allowed",
+      "supports_abstention_option": false,
+      "max_rounds_hint": 5,
+      "forward_effect_policy": "flip_or_confidence_drop",
+      "scheduler_bonuses": [
+        "trend_or_scope_question",
+        "context_rich_chart"
+      ],
+      "scheduler_penalties": [
+        "single_target_lookup"
+      ],
+      "refactor_notes": "Use a question where the gold answer remains grounded in the plotted evidence, while one distractor mirrors the biased title or framing and is visually tempting but overclaims what the chart justifies.",
+      "allowed_mark_changes": [
+        "chart_level_framing_only"
+      ],
+      "protected_channels": [
+        "entity_identity",
+        "entity_count",
+        "raw_values",
+        "primary_mark_geometry",
+        "non_target_channels"
+      ],
+      "allowed_scope_changes": [
+        "chart_level_framing_only"
+      ],
+      "invalid_if": [
+        "recreates_new_dataset",
+        "fabricates_values",
+        "changes_entity_identity_or_count",
+        "adds_secondary_dominant_mechanism",
+        "changes_primary_geometry_without_profile_permission",
+        "changes_non_target_channels"
+      ]
+    }
+  ],
+  "mark_policy_schema_version": "2026-04-10-v1",
+  "merged_error_type_aliases": {
+    "pictorialareaencoding": "areaencoding"
+  }
+}

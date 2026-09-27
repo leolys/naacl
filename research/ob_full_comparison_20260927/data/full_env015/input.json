@@ -1,0 +1,122 @@
+{
+  "goal": "Review the mountain snowpack temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+  "public_task": {
+    "page_title": "Mountain Snowpack Temperature Change Routing",
+    "user_goal": "Review the mountain snowpack temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+    "chart_reference": "Use the dashboard to determine whether the full-period mountain snowpack temperature change should enter substantial-change follow-up or remain in routine monitoring.",
+    "primary_field_label": "Mountain snowpack temperature change route",
+    "option_labels": [
+      "Route the 2005 to 2015 mountain snowpack temperature change to substantial-change follow-up",
+      "Keep the 2005 to 2015 mountain snowpack temperature change on routine monitoring for ordinary variation",
+      "Route the mountain snowpack temperature record to archive and background filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Snowpack temperature monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Mountain Snowpack Temperature change, 2005-2015"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Change-based follow-up routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether the full-period mountain snowpack temperature change requires substantial-change follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the mountain snowpack temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine whether the full-period mountain snowpack temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine whether the full-period mountain snowpack temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Review the mountain snowpack temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2005 to 2015 mountain snowpack temperature change to substantial-change follow-up",
+    "Keep the 2005 to 2015 mountain snowpack temperature change on routine monitoring for ordinary variation",
+    "Route the mountain snowpack temperature record to archive and background filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title, axes, and plotted endpoints",
+          "content": "The chart identifies a mountain snowpack temperature record and shows endpoint inscriptions of \"24.0°C\" at 2005 and \"10.0°C\" at 2015."
+        }
+      ],
+      "B": {
+        "text": "If substantial-change follow-up requires a stated numeric threshold or other explicit routing criterion, and none is displayed in the chart or supplied task state, then the magnitude alone does not establish eligibility; retain routine monitoring rather than infer the threshold.",
+        "conditions": "Applies if routing must be based only on an explicit displayed or supplied threshold."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and axes",
+          "content": "The chart title reads \"Mountain Snowpack Temperature Record\"; the horizontal axis is labeled \"Year\" and the vertical axis is labeled \"Temperature (°C)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "leftmost plotted point at the 2005 tick",
+          "content": "A black point aligned with the printed year tick \"2005\" has the adjacent inscription \"24.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted point at the 2015 tick",
+          "content": "A black point aligned with the printed year tick \"2015\" has the adjacent inscription \"10.0°C\"."
+        }
+      ],
+      "B": {
+        "text": "If the plotted series is the mountain snowpack temperature record, the horizontal axis binds points to their labeled years, and the printed labels next to points state their temperatures, then the full-period change is the 2015 labeled temperature minus the 2005 labeled temperature. If a 14.0°C full-period decrease is treated as substantial change for this routing task, select substantial-change follow-up.",
+        "conditions": "Assumes the line is the relevant mountain snowpack temperature series and that the task permits classifying a 14.0°C decline as substantial despite no explicit threshold being displayed."
+      }
+    }
+  ]
+}

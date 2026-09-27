@@ -1,0 +1,118 @@
+{
+  "goal": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Prevalence Priority Detail Routing",
+    "user_goal": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow.",
+    "chart_reference": "Use the state prevalence dashboard as the evidence source for selecting the highest-prevalence state record.",
+    "primary_field_label": "Highest-prevalence state route",
+    "option_labels": [
+      "Open New Jersey (NJ) prevalence detail for priority follow-up",
+      "Open Pennsylvania (PA) prevalence detail for priority follow-up",
+      "Open Delaware (DE) prevalence detail for routine monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Species Z prevalence surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "State prevalence priority follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Highest prevalence state in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state prevalence dashboard as the evidence source for selecting the highest-prevalence state record."
+      },
+      {
+        "page": "form",
+        "text": "Use the state prevalence dashboard as the evidence source for selecting the highest-prevalence state record."
+      },
+      {
+        "page": "form",
+        "text": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open New Jersey (NJ) prevalence detail for priority follow-up",
+    "Open Pennsylvania (PA) prevalence detail for priority follow-up",
+    "Open Delaware (DE) prevalence detail for routine monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map title",
+          "content": "The title visibly reads \"Prevalence of Species Z in US States\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "A vertical color ramp is visibly labeled \"High\" at its pale yellow top beside \"100\" and \"Low\" at its dark red bottom beside \"0\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern map, state labeled NJ",
+          "content": "The small state area labeled \"NJ\" is filled a very pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern map, state labeled PA",
+          "content": "The state area labeled \"PA\" is filled dark red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "mid-Atlantic map, state labeled DE",
+          "content": "The small state area labeled \"DE\" is filled orange-red, visibly darker than NJ and lighter than PA."
+        }
+      ],
+      "B": {
+        "text": "If the map's color legend encodes prevalence with the pale yellow end marked \"High\" and \"100\" and the dark red end marked \"Low\" and \"0\", then states with paler fills have higher prevalence than states with darker fills. If the task requires routing the highest-prevalence state among the listed options, select that state's priority-follow-up detail option.",
+        "conditions": "Applies to the labeled state fills on this dashboard and compares the offered NJ, PA, and DE records."
+      }
+    }
+  ]
+}

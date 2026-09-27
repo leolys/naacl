@@ -1,0 +1,129 @@
+{
+  "goal": "Review the state incidence dashboard, then open the state incidence profile that should be routed into the highest-incidence follow-up workflow.",
+  "public_task": {
+    "page_title": "Jurisdiction Incidence Follow-up Routing",
+    "user_goal": "Review the state incidence dashboard, then open the state incidence profile that should be routed into the highest-incidence follow-up workflow.",
+    "chart_reference": "Use the state incidence dashboard as the evidence source for the jurisdiction follow-up route.",
+    "primary_field_label": "Highest-incidence jurisdiction route",
+    "option_labels": [
+      "Open Texas (TX) incidence profile for follow-up routing",
+      "Open Washington (WA) incidence profile for follow-up routing",
+      "Open Colorado (CO) incidence profile for follow-up routing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Condition A surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing queue",
+        "value": "Incidence follow-up queue"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state incidence dashboard, then open the state incidence profile that should be routed into the highest-incidence follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state incidence dashboard as the evidence source for the jurisdiction follow-up route."
+      },
+      {
+        "page": "form",
+        "text": "Use the state incidence dashboard as the evidence source for the jurisdiction follow-up route."
+      },
+      {
+        "page": "form",
+        "text": "Review the state incidence dashboard, then open the state incidence profile that should be routed into the highest-incidence follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open Texas (TX) incidence profile for follow-up routing",
+    "Open Washington (WA) incidence profile for follow-up routing",
+    "Open Colorado (CO) incidence profile for follow-up routing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Texas map region",
+          "content": "The region labeled \"TX\" is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Washington map region",
+          "content": "The region labeled \"WA\" is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "A vertical color bar runs from pale yellow beside the printed \"High\" and \"100\" at its top to dark burgundy beside the printed \"Low\" and \"0\" at its bottom."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Colorado map region",
+          "content": "The region in Colorado's map position is gray and has no visible state abbreviation label."
+        }
+      ],
+      "B": {
+        "text": "If the map's vertical legend encodes incidence from burgundy at the printed low end (0) to pale yellow at the printed high end (100), then a state filled pale yellow has higher displayed incidence than a state filled burgundy. For the stated workflow, select the option for the highest-incidence jurisdiction only where all candidate jurisdictions are comparably encoded; an unlegendized gray fill cannot be ranked without an additional missing-data rule.",
+        "conditions": "Applies to the labeled contiguous-state map and assumes the legend governs the colored fills. It does not assign an incidence meaning to gray."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Texas map region",
+          "content": "The region labeled \"TX\" is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Washington map region",
+          "content": "The region labeled \"WA\" is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Colorado map position",
+          "content": "Colorado's region is gray, while the visible incidence color bar contains pale yellow through burgundy colors and no gray swatch or gray label."
+        }
+      ],
+      "B": {
+        "text": "If gray-filled jurisdictions are excluded from the displayed-incidence comparison because gray denotes unavailable or non-displayed data, then the highest displayed incidence among the remaining candidate states should be routed.",
+        "conditions": "This is an additional assumption: the chart provides no printed gray legend entry or explanation."
+      }
+    }
+  ]
+}

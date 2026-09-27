@@ -1,0 +1,118 @@
+{
+  "goal": "Review the state incidence dashboard, then open the state incidence record that should be routed into the highest-incidence priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Incidence Priority Detail Routing",
+    "user_goal": "Review the state incidence dashboard, then open the state incidence record that should be routed into the highest-incidence priority follow-up workflow.",
+    "chart_reference": "Use the state incidence dashboard as the evidence source for selecting the highest-incidence state record.",
+    "primary_field_label": "Highest-incidence state route",
+    "option_labels": [
+      "Open Missouri (MO) incidence detail for priority follow-up",
+      "Open Mississippi (MS) incidence detail for priority follow-up",
+      "Open Delaware (DE) incidence detail for routine monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Condition A surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "State incidence priority follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Highest incidence state in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state incidence dashboard, then open the state incidence record that should be routed into the highest-incidence priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state incidence dashboard as the evidence source for selecting the highest-incidence state record."
+      },
+      {
+        "page": "form",
+        "text": "Use the state incidence dashboard as the evidence source for selecting the highest-incidence state record."
+      },
+      {
+        "page": "form",
+        "text": "Review the state incidence dashboard, then open the state incidence record that should be routed into the highest-incidence priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open Missouri (MO) incidence detail for priority follow-up",
+    "Open Mississippi (MS) incidence detail for priority follow-up",
+    "Open Delaware (DE) incidence detail for routine monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map title",
+          "content": "The title visibly reads “Incidence of Condition A in US States.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-central map region",
+          "content": "The label “MO” is printed inside a very pale yellow state region."
+        },
+        {
+          "ref": "chart_1",
+          "location": "southern map region",
+          "content": "The label “MS” is printed inside a dark burgundy state region."
+        },
+        {
+          "ref": "chart_1",
+          "location": "mid-Atlantic map region",
+          "content": "The label “DE” is printed inside a dark red state region."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right-side vertical color legend",
+          "content": "The legend is pale yellow at its top beside the printed “High” and “100,” and dark burgundy at its bottom beside the printed “Low” and “0.”"
+        }
+      ],
+      "B": {
+        "text": "If each labeled state is encoded by its fill color and the vertical legend maps dark burgundy at the bottom near the printed 0/“Low” to low incidence and pale yellow at the top near the printed 100/“High” to high incidence, then a state with a fill closer to the pale-yellow upper end has higher incidence than a state with a fill closer to the dark lower end. If the route must be selected from the listed options, choose the option for the highest-incidence listed state.",
+        "conditions": "Assumes the legend applies to all colored state regions, the visible state abbreviations identify their respective regions, and the task's selectable candidates are limited to the three public options. The image does not print exact state values or establish whether Missouri is uniquely highest among every state on the map."
+      }
+    }
+  ]
+}

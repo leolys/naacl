@@ -1,0 +1,132 @@
+{
+  "goal": "Review the district heat demand dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+  "public_task": {
+    "page_title": "District Heat Demand Change Routing",
+    "user_goal": "Review the district heat demand dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+    "chart_reference": "Use the dashboard to determine whether the full-period district heat demand change should enter substantial-change follow-up or remain in routine monitoring.",
+    "primary_field_label": "District heat demand change route",
+    "option_labels": [
+      "Route the 2005 to 2015 district heat demand change to substantial-change follow-up",
+      "Keep the 2005 to 2015 district heat demand change on routine monitoring for ordinary variation",
+      "Route the district heat demand record to archive and background filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "District heating monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "District Heat Demand change, 2005-2015"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Change-based follow-up routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether the full-period district heat demand change requires substantial-change follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the district heat demand dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine whether the full-period district heat demand change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine whether the full-period district heat demand change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Review the district heat demand dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2005 to 2015 district heat demand change to substantial-change follow-up",
+    "Keep the 2005 to 2015 district heat demand change on routine monitoring for ordinary variation",
+    "Route the district heat demand record to archive and background filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "leftmost plotted point at the 2005 x-axis tick",
+          "content": "The point is annotated \"24.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted point at the 2015 x-axis tick",
+          "content": "The point is annotated \"10.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart area",
+          "content": "No printed substantial-change threshold or routing instruction is visible."
+        }
+      ],
+      "B": {
+        "text": "If substantial-change follow-up requires meeting an explicit numeric threshold or other stated criterion, and none is supplied in the chart or task materials, the chart alone does not establish eligibility; if the workflow defaults unverified changes to routine monitoring, select routine monitoring.",
+        "conditions": "Applies only under a strict threshold-required interpretation with a routine-monitoring default; neither is explicitly supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "leftmost plotted point at the 2005 x-axis tick",
+          "content": "The point is annotated \"24.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted point at the 2015 x-axis tick",
+          "content": "The point is annotated \"10.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and axes",
+          "content": "The title reads \"District Heating Demand Index\"; the horizontal axis is labeled \"Year\" and the vertical axis is labeled \"Demand index\"."
+        }
+      ],
+      "B": {
+        "text": "If the plotted series titled \"District Heating Demand Index\" binds each year tick to its adjacent printed point label, the 2005-to-2015 full-period change is the 2015 labeled value minus the 2005 labeled value. If an approximately 14.0°C absolute change is treated as substantial for the routing criterion, select substantial-change follow-up.",
+        "conditions": "Assumes the printed endpoint labels are the relevant demand-index values and that a 14.0°C full-period change qualifies as substantial; no numeric substantial-change threshold is displayed."
+      }
+    }
+  ]
+}

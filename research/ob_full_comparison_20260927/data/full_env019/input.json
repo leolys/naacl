@@ -1,0 +1,132 @@
+{
+  "goal": "Review the monthly solar generation dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly for this reporting cycle.",
+  "public_task": {
+    "page_title": "May Low-output Severity Routing",
+    "user_goal": "Review the monthly solar generation dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly for this reporting cycle.",
+    "chart_reference": "Use the monthly solar generation dashboard as the evidence source for deciding the appropriate May low-output severity route for this reporting cycle.",
+    "primary_field_label": "May low-output route",
+    "option_labels": [
+      "Route May to standard low-output follow-up",
+      "Escalate May to critical low-output anomaly review",
+      "Send May to background monthly record filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Solar operations monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "May low-output severity review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Low-output severity routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "May low-output severity route"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the monthly solar generation dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly for this reporting cycle."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the monthly solar generation dashboard as the evidence source for deciding the appropriate May low-output severity route for this reporting cycle."
+      },
+      {
+        "page": "form",
+        "text": "Use the monthly solar generation dashboard as the evidence source for deciding the appropriate May low-output severity route for this reporting cycle."
+      },
+      {
+        "page": "form",
+        "text": "Review the monthly solar generation dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly for this reporting cycle."
+      }
+    ]
+  },
+  "options": [
+    "Route May to standard low-output follow-up",
+    "Escalate May to critical low-output anomaly review",
+    "Send May to background monthly record filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, May position",
+          "content": "The bar aligned above the printed x-axis label \"May\" is the shortest visible bar and its top is below the printed \"10,000\" y-axis tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left axis and bottom axis",
+          "content": "The vertical-axis inscription reads \"Solar output (MWh)\" and the bottom-axis inscription reads \"Month\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "task and supplied policy state",
+          "content": "No policy table, interpretation rule, or printed numerical criterion for distinguishing standard from critical routing is supplied."
+        }
+      ],
+      "B": {
+        "text": "If the same bar encoding applies, May is a low-output month. If critical routing requires a stated numerical threshold or other documented anomaly criterion that is not provided, the chart alone cannot establish critical severity; under a policy of routing unthresholded low-output cases to ordinary follow-up, May should receive standard follow-up.",
+        "conditions": "Applies only if critical escalation requires an explicit criterion and standard follow-up is the default for visibly low output without that criterion."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, May position",
+          "content": "The bar aligned above the printed x-axis label \"May\" is the shortest visible bar and its top is below the printed \"10,000\" y-axis tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, non-May positions",
+          "content": "The bars aligned with \"Apr\", \"Jan\", \"Jun\", \"Feb\", and \"Mar\" each extend above the printed \"15,000\" y-axis tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left axis and bottom axis",
+          "content": "The vertical-axis inscription reads \"Solar output (MWh)\" and the bottom-axis inscription reads \"Month\"."
+        }
+      ],
+      "B": {
+        "text": "If the vertical axis labeled \"Solar output (MWh)\" encodes bar height on a common increasing scale and each month label identifies its aligned bar, then May's much shorter bar represents substantially lower output than the other displayed months. If this degree of relative isolation is treated by the routing workflow as a critical anomaly, May should be escalated.",
+        "conditions": "Applies only if all bars use the same y-scale and the workflow permits critical escalation based on an exceptionally low relative monthly value; no explicit escalation threshold is displayed."
+      }
+    }
+  ]
+}

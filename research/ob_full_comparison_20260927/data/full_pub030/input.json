@@ -1,0 +1,123 @@
+{
+  "goal": "Review the Region R transport preference dashboard, then choose the transport mode that should enter majority-preference policy follow-up.",
+  "public_task": {
+    "page_title": "Regional Transport Preference Follow-up Routing",
+    "user_goal": "Review the Region R transport preference dashboard, then choose the transport mode that should enter majority-preference policy follow-up.",
+    "chart_reference": "Use the Region R transport preference dashboard as the evidence source for selecting the majority-share transport mode.",
+    "primary_field_label": "Majority-share transport mode route",
+    "option_labels": [
+      "Route Public Transit to majority-preference policy follow-up",
+      "Route Car to majority-preference policy follow-up",
+      "Send regional transport preference record to routine monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Region unit",
+        "value": "Region R"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Planning area",
+        "value": "Regional transport policy"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Preference record",
+        "value": "Transport mode share"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Majority-share transport mode"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Region R transport preference dashboard, then choose the transport mode that should enter majority-preference policy follow-up."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the Region R transport preference dashboard as the evidence source for selecting the majority-share transport mode."
+      },
+      {
+        "page": "form",
+        "text": "Use the Region R transport preference dashboard as the evidence source for selecting the majority-share transport mode."
+      },
+      {
+        "page": "form",
+        "text": "Review the Region R transport preference dashboard, then choose the transport mode that should enter majority-preference policy follow-up."
+      }
+    ]
+  },
+  "options": [
+    "Route Public Transit to majority-preference policy follow-up",
+    "Route Car to majority-preference policy follow-up",
+    "Send regional transport preference record to routine monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Preferred Mode of Transport in Region R\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at upper right",
+          "content": "A light-gray swatch is labeled \"Public Transit\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light-gray pie slice",
+          "content": "The light-gray slice contains the printed inscription \"58%\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at upper right",
+          "content": "A red swatch is labeled \"Car\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red pie slice",
+          "content": "The red slice contains the printed inscription \"42%\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible task context",
+          "content": "The routing criterion is visibly stated as \"Majority-share transport mode\" and the available option includes \"Route Public Transit to majority-preference policy follow-up\"."
+        }
+      ],
+      "B": {
+        "text": "If the legend binds the light-gray slice to Public Transit and the slice inscriptions are percentage shares, then the light-gray slice's printed 58% is Public Transit's share. A share above 50% is a majority share; for this task, the majority-share mode is routed to its matching majority-preference policy-follow-up option.",
+        "conditions": "Applies to the two-slice Region R pie chart and assumes the printed slice percentages represent the transport-mode shares requested by the task."
+      }
+    }
+  ]
+}

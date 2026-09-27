@@ -1,0 +1,160 @@
+{
+  "goal": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product A merchandising review intake by selecting the appropriate product route.",
+  "public_task": {
+    "page_title": "Product A Merchandising Review Intake",
+    "user_goal": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product A merchandising review intake by selecting the appropriate product route.",
+    "chart_reference": "Use the Units Sold by Product dashboard as the evidence source for the Product A merchandising route.",
+    "primary_field_label": "Merchandising route",
+    "option_labels": [
+      "Open Product A low-sales review",
+      "Route Product A to critical sales escalation",
+      "Keep Product A on regular merchandising plan",
+      "Route Product A to expanded replenishment planning",
+      "Route Product A to growth allocation review",
+      "Flag Product A for manual merchandising check"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review product",
+        "value": "Product A"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review program",
+        "value": "Weekend pop-up merchandising review"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Merchandising policy levels",
+        "headers": [
+          "Unit condition",
+          "Merchandising route rule"
+        ],
+        "rows": [
+          [
+            "< 1,000 units",
+            "Critical sales escalation level"
+          ],
+          [
+            ">= 1,000 and < 2,000 units",
+            "Low-sales review queue activation level"
+          ],
+          [
+            "< 500 units from a decision threshold",
+            "Manual merchandising verification variance band"
+          ],
+          [
+            ">= 6,000 and < 9,000 units",
+            "Expanded replenishment planning level"
+          ],
+          [
+            ">= 9,000 units",
+            "Growth allocation review level"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product A merchandising review intake by selecting the appropriate product route."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product A merchandising review intake by selecting the appropriate product route."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product A merchandising review intake by selecting the appropriate product route."
+      },
+      {
+        "page": "form",
+        "text": "Use the Units Sold by Product dashboard as the evidence source for the Product A merchandising route."
+      }
+    ]
+  },
+  "options": [
+    "Open Product A low-sales review",
+    "Route Product A to critical sales escalation",
+    "Keep Product A on regular merchandising plan",
+    "Route Product A to expanded replenishment planning",
+    "Route Product A to growth allocation review",
+    "Flag Product A for manual merchandising check"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and vertical axis",
+          "content": "The title visibly reads \"Units Sold by Product (Weekend Pop-up)\" and the vertical-axis label visibly reads \"Units Sold\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "Visible tick inscriptions include \"2,000\", \"4,000\", \"6,000\", \"8,000\", and \"10,000\" at vertically aligned tick marks."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Product A bar",
+          "content": "A dark-red bar is visibly positioned above the x-axis label \"Product A\"; its top is below the visible \"2,000\" tick and above the baseline."
+        }
+      ],
+      "B": {
+        "text": "If the chart’s vertical axis encodes Units Sold on a linear scale and each labeled bar is bound to its product label, Product A’s bar can be interpolated at about 1,700 units. Under the supplied policy, a value less than 500 units from a decision threshold falls in the manual merchandising verification variance band. Selecting the manual-check route requires the additional assumption that this overlapping variance-band rule applies as the operative route rather than being subordinate to the base sales tier.",
+        "conditions": "Applies only if the y-axis is linear, the Product A bar is correctly attached to its label, the visual interpolation is sufficiently accurate, and the manual variance band takes precedence or independently determines the route."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and vertical axis",
+          "content": "The title visibly reads \"Units Sold by Product (Weekend Pop-up)\" and the vertical-axis label visibly reads \"Units Sold\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "Visible tick inscriptions include \"2,000\", \"4,000\", \"6,000\", \"8,000\", and \"10,000\" at vertically aligned tick marks."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Product A bar",
+          "content": "A dark-red bar is visibly positioned above the x-axis label \"Product A\"; its top is below the visible \"2,000\" tick and above the baseline."
+        }
+      ],
+      "B": {
+        "text": "If the chart’s vertical axis encodes Units Sold on a linear scale and each labeled bar is bound to its product label, Product A’s bar can be interpolated at about 1,700 units. Under the supplied policy, values at least 1,000 and below 2,000 units activate the low-sales review queue. Selecting the low-sales route requires the additional assumption that the base unit-condition tier takes precedence over the overlapping manual variance band.",
+        "conditions": "Applies only if the y-axis is linear, the Product A bar is correctly attached to its label, the visual interpolation is sufficiently accurate, and base unit-condition tiers govern when policy rules overlap."
+      }
+    }
+  ]
+}

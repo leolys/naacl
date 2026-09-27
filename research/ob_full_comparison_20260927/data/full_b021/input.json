@@ -1,0 +1,160 @@
+{
+  "goal": "Review the promotion-week dashboard, then submit the campaign approval decision.",
+  "public_task": {
+    "page_title": "Promotion Week Approval Review",
+    "user_goal": "Review the promotion-week dashboard, then submit the campaign approval decision.",
+    "chart_reference": "Use the promotion-week dashboard to complete the campaign approval form.",
+    "primary_field_label": "Campaign approval decision",
+    "option_labels": [
+      "Select 'Hold and request full-data analysis'",
+      "Select 'Approve broader budget recommendation'",
+      "Select 'Defer decision pending manager sign-off'"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Promotion week budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Additional promotion-week request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Campaign approval review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the promotion-week dashboard, then submit the campaign approval decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the promotion-week dashboard, then submit the campaign approval decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the promotion-week dashboard, then submit the campaign approval decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the promotion-week dashboard to complete the campaign approval form."
+      }
+    ]
+  },
+  "options": [
+    "Select 'Hold and request full-data analysis'",
+    "Select 'Approve broader budget recommendation'",
+    "Select 'Defer decision pending manager sign-off'"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot",
+          "content": "The visible plot contains five labeled weekly points, Week 7 through Week 11."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes/title",
+          "content": "The chart title and axes identify advertising spend and sales, but no visible inscription gives a causal method, profitability measure, approval threshold, or decision policy."
+        }
+      ],
+      "B": {
+        "text": "If an observed association without full-data, causal, profitability, or policy-threshold evidence is insufficient for a budget recommendation, then the evidence-review option is the corresponding decision.",
+        "conditions": "Applies if approval requires evidence beyond this five-point dashboard view; no such requirement is visibly stated in the supplied task or chart."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title reads \"Additional Promotion Weeks: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot and point labels",
+          "content": "Five blue points are visibly labeled Week 7, Week 8, Week 9, Week 10, and Week 11."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes and plotted points",
+          "content": "The horizontal axis is inscribed \"Advertising Spend ($ thousands)\" and the vertical axis is inscribed \"Sales ($ thousands)\"; from Week 7 through Week 11, each successive labeled point is positioned farther right and higher than the preceding one."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis labeled \"Advertising Spend ($ thousands)\" and vertical axis labeled \"Sales ($ thousands)\" encode each point's respective values, then points farther right and higher represent greater advertising spend and greater sales; week labels identify the associated points.",
+        "conditions": "Assumes the labeled axes apply uniformly to all plotted points and the nearby week text labels identify those points."
+      }
+    }
+  ]
+}

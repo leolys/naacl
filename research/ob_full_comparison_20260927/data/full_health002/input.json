@@ -1,0 +1,133 @@
+{
+  "goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+  "public_task": {
+    "page_title": "Surveillance Trend Escalation Routing",
+    "user_goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+    "chart_reference": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.",
+    "primary_field_label": "Surveillance trend routing decision",
+    "option_labels": [
+      "Route the surveillance record to rising-case escalation follow-up",
+      "Route the surveillance record to declining-case stabilization review",
+      "Route the surveillance record to background monitoring intake"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Infectious disease surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Reported case trajectory assessment"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Surveillance follow-up routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+      },
+      {
+        "page": "form",
+        "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+      },
+      {
+        "page": "form",
+        "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+      }
+    ]
+  },
+  "options": [
+    "Route the surveillance record to rising-case escalation follow-up",
+    "Route the surveillance record to declining-case stabilization review",
+    "Route the surveillance record to background monitoring intake"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart and task materials",
+          "content": "The chart shows a case-count line and axis labels, but no printed routing threshold, alert cutoff, or escalation policy criterion is visible."
+        }
+      ],
+      "B": {
+        "text": "If routing requires an explicit policy threshold or sustained-trend criterion beyond the general instruction to select the pathway that best matches the observed trajectory, the chart alone does not provide that threshold; background monitoring could be retained pending such a criterion.",
+        "conditions": "Applies only if an unstated escalation policy threshold is required; no such threshold is supplied in the task materials."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "blue plotted series",
+          "content": "The blue line and markers generally move lower on the page from left to right."
+        }
+      ],
+      "B": {
+        "text": "If chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering, the line's downward screen movement would appear to represent a declining trajectory; under the task labels, a declining trajectory maps to declining-case stabilization review.",
+        "conditions": "Only applies if the printed vertical tick labels are disregarded or treated as nonauthoritative."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and vertical axis",
+          "content": "The title reads \"Month vs. Number of cases,\" and the vertical axis is labeled \"Count.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "Printed y-axis ticks show 0 near the top, then 200, 400, 600, 800, 1000, 1200, and 1400 at progressively lower positions."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue plotted series",
+          "content": "The leftmost blue marker is positioned close to the 0 tick, while the rightmost blue marker is below the 1400 tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis and blue plotted series",
+          "content": "The blue line runs from left to right across the dated horizontal labels and its markers generally move lower on the page."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal labels encode the displayed reporting sequence from left to right, the vertical axis labeled \"Count\" uses its printed tick values, and larger printed values are lower on the page, then the line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. For this task, an increasing reported-case trajectory maps to rising-case escalation follow-up.",
+        "conditions": "Applies to the plotted blue case-count series and assumes the printed Count ticks, rather than conventional upward chart geometry, define the metric direction."
+      }
+    }
+  ]
+}

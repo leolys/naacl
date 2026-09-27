@@ -1,0 +1,168 @@
+{
+  "goal": "Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share.",
+  "public_task": {
+    "page_title": "Top Rating-Share Product Attribute Follow-up Intake",
+    "user_goal": "Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share.",
+    "chart_reference": "Use the dashboard labeled rating-share values as the evidence source; the product attribute follow-up queue is reserved for the attribute category with the strongest current customer demand signal.",
+    "primary_field_label": "Product attribute follow-up category",
+    "option_labels": [
+      "Select Price",
+      "Select Support",
+      "Select Design"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_follow_up_operation",
+        "label": "Follow-up operation",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Open product attribute follow-up item",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_queue_rule",
+        "label": "Queue rule",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Prioritize highest current rating share",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_work_queue",
+        "label": "Work queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Product attribute follow-up queue",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Product attribute follow-up rule",
+        "headers": [
+          "Rule item",
+          "Business rule"
+        ],
+        "rows": [
+          [
+            "Attribute follow-up rule",
+            "Select the category with the highest current labeled rating share"
+          ],
+          [
+            "Decision metric",
+            "mislabeled_value / labeled rating share"
+          ],
+          [
+            "Business reason",
+            "Highest-share attribute has the strongest current customer demand signal"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share."
+      },
+      {
+        "page": "home",
+        "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard labeled rating-share values as the evidence source; the product attribute follow-up queue is reserved for the attribute category with the strongest current customer demand signal."
+      }
+    ]
+  },
+  "options": [
+    "Select Price",
+    "Select Support",
+    "Select Design"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Price x-axis position",
+          "content": "The x-axis label \"Price\" is below a blue circular point, and the inscription \"49%\" appears directly above that point."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support x-axis position",
+          "content": "The x-axis label \"Support\" is below a blue circular point, and the inscription \"33%\" appears directly above that point."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Design x-axis position",
+          "content": "The x-axis label \"Design\" is below a blue circular point, and the inscription \"30%\" appears directly above that point."
+        },
+        {
+          "ref": "chart_1",
+          "location": "other displayed category positions",
+          "content": "The inscriptions above the points aligned with Quality, Delivery, and Other are \"14%\", \"29%\", and \"34%\", respectively."
+        }
+      ],
+      "B": {
+        "text": "If each category label on the x-axis identifies its aligned plotted point and the percentage printed above that point is the category's current labeled rating share, then the category with the greatest such printed percentage is the required follow-up category; select the matching form option.",
+        "conditions": "Applies to the displayed dashboard categories and the available Price, Support, and Design options; printed point labels are the designated evidence source."
+      }
+    }
+  ]
+}

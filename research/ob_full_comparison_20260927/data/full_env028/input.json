@@ -1,0 +1,100 @@
+{
+  "goal": "Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown.",
+  "public_task": {
+    "page_title": "January Reservoir Inflow Routing Review",
+    "user_goal": "Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown.",
+    "chart_reference": "Use the monthly inflow amounts shown in the dashboard as the basis for the routing decision for January within the period summary.",
+    "primary_field_label": "January inflow handling path",
+    "option_labels": [
+      "Route January to below-baseline inflow buffer review",
+      "Route January to baseline-band inflow monitoring",
+      "Route January to above-baseline inflow release planning"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Reservoir inflow balancing"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "January inflow against the period baseline"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Monthly inflow routing assessment"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the monthly inflow amounts shown in the dashboard as the basis for the routing decision for January within the period summary."
+      },
+      {
+        "page": "form",
+        "text": "Use the monthly inflow amounts shown in the dashboard as the basis for the routing decision for January within the period summary."
+      },
+      {
+        "page": "form",
+        "text": "Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown."
+      }
+    ]
+  },
+  "options": [
+    "Route January to below-baseline inflow buffer review",
+    "Route January to baseline-band inflow monitoring",
+    "Route January to above-baseline inflow release planning"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, January bar and dashed horizontal line",
+          "content": "The blue bar above the printed x-axis label \"January\" has its top aligned with the dashed horizontal line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, dashed line near right side",
+          "content": "The dashed horizontal line is inscribed \"Average\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis at dashed-line height",
+          "content": "The dashed line aligns with the printed y-axis tick \"150\"."
+        }
+      ],
+      "B": {
+        "text": "If bar height encodes monthly inflow volume on the labeled vertical scale, the dashed horizontal line labeled \"Average\" is the period baseline, and a month whose bar top aligns with that line is in the baseline band, then route it to baseline-band inflow monitoring.",
+        "conditions": "Applies to the three displayed months and assumes exact visual alignment denotes equality with the baseline."
+      }
+    }
+  ]
+}

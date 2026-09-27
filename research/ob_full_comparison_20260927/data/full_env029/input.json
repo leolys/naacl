@@ -1,0 +1,128 @@
+{
+  "goal": "Assess the clean-electricity output dashboard for the 2018-2023 review window and send this record to the operational route that best matches the overall dashboard trend.",
+  "public_task": {
+    "page_title": "Clean Grid Output Review Routing",
+    "user_goal": "Assess the clean-electricity output dashboard for the 2018-2023 review window and send this record to the operational route that best matches the overall dashboard trend.",
+    "chart_reference": "Use the dashboard trend as the basis for selecting the appropriate handling path for this output record.",
+    "primary_field_label": "Clean-grid output handling route",
+    "option_labels": [
+      "Route the record to routine clean-grid output monitoring",
+      "Route the record to clean-grid output expansion follow-up",
+      "Route the record to clean-grid output decline response review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Clean electricity output planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review window",
+        "value": "2018-2023 clean-grid output review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Workflow stage",
+        "value": "Dashboard trend output routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Assess the clean-electricity output dashboard for the 2018-2023 review window and send this record to the operational route that best matches the overall dashboard trend."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard trend as the basis for selecting the appropriate handling path for this output record."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard trend as the basis for selecting the appropriate handling path for this output record."
+      },
+      {
+        "page": "form",
+        "text": "Assess the clean-electricity output dashboard for the 2018-2023 review window and send this record to the operational route that best matches the overall dashboard trend."
+      }
+    ]
+  },
+  "options": [
+    "Route the record to routine clean-grid output monitoring",
+    "Route the record to clean-grid output expansion follow-up",
+    "Route the record to clean-grid output decline response review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "blue line from 2021 through 2023",
+          "content": "The line is almost horizontal from the 2021 position to the 2022 position and then ends slightly lower at 2023."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and y-axis",
+          "content": "The x-axis is inscribed \"Year\" with ticks 2018 through 2023, and the y-axis is inscribed \"Grid Output (GWh)\"."
+        }
+      ],
+      "B": {
+        "text": "For this routing task, if the overall dashboard pattern is treated as mixed or approximately stable, routine clean-grid output monitoring is the matching route. No explicit threshold defining \"routine\" versus decline or expansion is supplied.",
+        "conditions": "Applies only if the workflow treats a recent near-flat pattern as routine despite an earlier or endpoint decline."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title visibly reads \"Increasing Clean Grid Output from 2018 to 2023\"."
+        }
+      ],
+      "B": {
+        "text": "If the dashboard title is treated as an authoritative statement of the overall output trend, the word \"Increasing\" supports the clean-grid output expansion follow-up route.",
+        "conditions": "Applies only if the title is authoritative over the plotted line; this conflicts with the visible lower final plotted position."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "blue-line endpoints",
+          "content": "The blue line begins at the 2018 tick aligned with the printed 2,800 y-axis tick and ends at the 2023 tick lower on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and y-axis",
+          "content": "The x-axis is inscribed \"Year\" with ticks 2018 through 2023, and the y-axis is inscribed \"Grid Output (GWh)\"."
+        }
+      ],
+      "B": {
+        "text": "For this routing task, if the full review-window trend is classified by its lower final output relative to its initial output, the matching route is clean-grid output decline response review.",
+        "conditions": "Applies if endpoint-to-endpoint direction is the governing definition of the overall trend; no alternative policy threshold is supplied."
+      }
+    }
+  ]
+}

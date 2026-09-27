@@ -1,0 +1,128 @@
+{
+  "goal": "Assess the dashboard view for the selected sentinel sites and choose the next review route for whether this evidence should be used to support a network-wide operational claim.",
+  "public_task": {
+    "page_title": "Sentinel Site Testing and Positivity Review Routing",
+    "user_goal": "Assess the dashboard view for the selected sentinel sites and choose the next review route for whether this evidence should be used to support a network-wide operational claim.",
+    "chart_reference": "Use the displayed sentinel site comparison as the basis for deciding whether the observed pattern is ready for system-level escalation, should move to broader review, or should be retained only for reference.",
+    "primary_field_label": "Sentinel site evidence routing decision",
+    "option_labels": [
+      "Route for broader population review before advancing a network-wide claim",
+      "Advance a network-wide claim based on the displayed sentinel site pattern",
+      "File this sentinel site comparison as background reference"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Public health surveillance operations"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Sentinel site subset review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Network-wide claim routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Assess the dashboard view for the selected sentinel sites and choose the next review route for whether this evidence should be used to support a network-wide operational claim."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed sentinel site comparison as the basis for deciding whether the observed pattern is ready for system-level escalation, should move to broader review, or should be retained only for reference."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed sentinel site comparison as the basis for deciding whether the observed pattern is ready for system-level escalation, should move to broader review, or should be retained only for reference."
+      },
+      {
+        "page": "form",
+        "text": "Assess the dashboard view for the selected sentinel sites and choose the next review route for whether this evidence should be used to support a network-wide operational claim."
+      }
+    ]
+  },
+  "options": [
+    "Route for broader population review before advancing a network-wide claim",
+    "Advance a network-wide claim based on the displayed sentinel site pattern",
+    "File this sentinel site comparison as background reference"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and subtitle",
+          "content": "The title includes \"Selected Sentinel Sites,\" and the subtitle states that reported sites with the highest case loads are shown."
+        }
+      ],
+      "B": {
+        "text": "If selected-sentinel evidence is not representative of the network and there is no task or policy basis requiring follow-up review, it may be retained as background reference rather than used to advance a network-wide claim.",
+        "conditions": "Requires treating the displayed subset limitation as disqualifying for escalation and assuming broader review is not warranted from the displayed evidence alone."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title is inscribed \"Selected Sentinel Sites: Testing Volume vs Positive Cases\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "subtitle beneath title",
+          "content": "The subtitle is inscribed \"Reported sites with the highest case loads shown in dashboard summary\"."
+        }
+      ],
+      "B": {
+        "text": "If a chart is explicitly limited to selected sentinel sites and identifies those sites as having the highest case loads, that selection does not by itself establish that the displayed pattern represents the broader network. For a task asking whether to support a network-wide claim, such selected-subset evidence should be routed for broader population review before advancing that claim.",
+        "conditions": "Applies because the displayed subtitle defines the shown sites as selected high-case-load sites; no evidence of representative network-wide sampling is displayed."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and axis labels",
+          "content": "The horizontal-axis inscription reads \"Weekly testing volume (thousands)\" and the vertical-axis inscription reads \"Positive cases detected\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plotted Site A through Site E marks",
+          "content": "The labeled purple marks progress generally from lower-left for Site A to upper-right for Site E; Site E is higher and farther right than Site D, and Site D is higher and farther right than Site C."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes weekly testing volume and the vertical axis encodes positive cases, points positioned progressively farther right and higher indicate an increasing cross-site association between those plotted quantities. That pattern could justify advancing a network-wide claim only if the selected sentinel sites are accepted as sufficiently representative evidence for the network.",
+        "conditions": "Requires the printed axis labels to govern the plot and requires an unstated assumption that the selected sentinel subset can support a network-wide inference."
+      }
+    }
+  ]
+}

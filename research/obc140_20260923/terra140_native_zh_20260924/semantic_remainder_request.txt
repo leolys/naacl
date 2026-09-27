@@ -1,0 +1,52 @@
+原始审查任务消息（verbatim）
+发送者：/root
+接收者：/root/terra140_code_gate
+
+继续同一有限离线对抗审阅，负责 SEMANTIC_REVIEW_PLAN.md 中剩余固定6条：env001、env015、health001、health010、pub001、pub020。当前API还在business，后续6条陆续出现；仅按这6条，不替换失败、不额外挑成功。可以每≤30秒用clock等对应run/tasks/<slug>/record.json达到terminal（验证completed/failed/invalid，或更早上游failed/invalid）；不读取gold/offline/另一arm，不调用任何API或改变队列。每条实际view_image原图，读公开任务和模型原始生成/核验（含截断或invalidraw），区分O/B/C边界、竞争映射、支持充分性、接口/截断失败、未执行核验，不补写或纠错英文。用native_zh.records/items/load_translations读取已存在中文，若中文暂未齐可等1–2轮；仍缺则明确范围，不能冒充审过。保存每条 semantic_review_<slug>.md 与 <slug>_flags.json {"slug":[简洁中文重要提醒]}，无实质问题可[]但不得宣称全部140正确。每完成一条通知root。若全局run_state blocked且某固定条未执行，就记录未运行，不换样本。保持同家族/同批次上下文非盲审限制；不改原数据/代码/提示/结果。完成6条后生成SEMANTIC_REVIEW_REMAINDER.md收录6条完整意见，并返回摘要。不为质量调用任何新模型服务。
+
+后续补充消息（verbatim，按接收顺序）
+
+---
+发送者：/root
+
+当前全量已到 b047，env001 即将进入；请继续既定六例只读审阅。新增展示/原生译文回归现 52 项通过，冻结 API runner/config/prompts 未改。原始接口失败与视觉语义错误继续分开归因，不替换失败抽查例。
+
+---
+发送者：/root
+
+env001 已有终态，可开展既定审阅；翻译056批也已落盘。请保留模型文本中的异常 $23.9°C/$10.1°C 与阈值问题的事实区别，勿以 Codex 判断替代原图/任务审核。
+
+---
+发送者：/root
+
+env015 已进入终态（当前队列到 env017 左右），可继续固定审阅。当前整体64/140终态；全部原提示/接口保持冻结，无语义重采样。
+
+---
+发送者：/root
+
+收到 env015，保留正式 null/pending 与来源分离。我在汇总另外明确：缺少显式数值阈值不自动证明任务无效，也不排除领域常识判断；本轮不重裁原标签。后续审阅也维持这个边界，区分模型保守不确定与数据任务本身有问题。
+
+---
+发送者：/root
+
+health001 已形成终态（全量84/140），health002正在处理；请按既定范围继续只读审查 health001。
+
+---
+发送者：/root
+
+health010 现已终态，队列到 health012 左右（全局94/140）。继续既定 health010 / pub001 / pub020 三例；其他固定审查已汇总在新展示侧，不改原模型记录。
+
+---
+发送者：/root
+
+最终汇总时请一并将本轮“剩余六例”原始审查任务消息保存为 semantic_remainder_request.txt，若上下文还保有原消息请逐字保存，并保留后续补充意见另节；若只剩摘要，要明确标记 reconstructed，不能冒充逐字追踪。供我落盘第004份审查trace。无需新增API请求。
+
+---
+发送者：/root
+
+pub001 已形成终态，公共事务领域开始（当前103/140）。请继续固定 pub001 审阅，稍后 pub020；无需新样本替代或任何线上请求。
+
+---
+发送者：/root
+
+pub020 已形成终态（当前121/140），这是最后一个固定审阅例。完成后请形成 SEMANTIC_REVIEW_REMAINDER.md，将剩余六例的完整审阅原文/状态汇总，保留未通过核验与同选项等限制，并确保 semantic_remainder_request.txt 纳入后续补充原文（若可获得）。之后结束你的审阅即可，不新增样本。

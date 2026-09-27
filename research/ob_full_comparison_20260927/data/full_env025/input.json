@@ -1,0 +1,100 @@
+{
+  "goal": "Review the monthly air-quality alert dashboard and assign January to the operational route that fits its position relative to the monthly average alert load.",
+  "public_task": {
+    "page_title": "January Air-Quality Alert Escalation Routing",
+    "user_goal": "Review the monthly air-quality alert dashboard and assign January to the operational route that fits its position relative to the monthly average alert load.",
+    "chart_reference": "Use the monthly reported alert totals shown in the dashboard as the basis for this routing decision when determining January's standing against the average alert load.",
+    "primary_field_label": "January alert-load routing decision",
+    "option_labels": [
+      "Route January to above-average air-quality alert response review",
+      "Route January to average-range air-quality alert monitoring",
+      "Route January to below-average air-quality alert background monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Air-quality alert operations"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "January alert load versus monthly average"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Monthly alert-load routing classification"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the monthly air-quality alert dashboard and assign January to the operational route that fits its position relative to the monthly average alert load."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the monthly reported alert totals shown in the dashboard as the basis for this routing decision when determining January's standing against the average alert load."
+      },
+      {
+        "page": "form",
+        "text": "Use the monthly reported alert totals shown in the dashboard as the basis for this routing decision when determining January's standing against the average alert load."
+      },
+      {
+        "page": "form",
+        "text": "Review the monthly air-quality alert dashboard and assign January to the operational route that fits its position relative to the monthly average alert load."
+      }
+    ]
+  },
+  "options": [
+    "Route January to above-average air-quality alert response review",
+    "Route January to average-range air-quality alert monitoring",
+    "Route January to below-average air-quality alert background monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area above the January label",
+          "content": "The blue January bar's top is horizontally aligned with the dashed horizontal line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper plot area near the right end of the dashed line",
+          "content": "The dashed horizontal line is inscribed \"Average\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis beneath the left bar",
+          "content": "The left blue bar is labeled \"January\"."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode monthly reported alert totals by their vertical extent and the dashed line labeled \"Average\" encodes the monthly average alert load, then a month whose bar top coincides with that line is at the average and maps to average-range monitoring.",
+        "conditions": "Applies to the displayed monthly alert dashboard and the task's January-versus-monthly-average routing classification."
+      }
+    }
+  ]
+}

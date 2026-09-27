@@ -1,0 +1,138 @@
+{
+  "goal": "Review the telehealth follow-up demand dashboard and select the operational route that best fits the overall request pattern for this record.",
+  "public_task": {
+    "page_title": "Telehealth Follow-up Demand Escalation Routing",
+    "user_goal": "Review the telehealth follow-up demand dashboard and select the operational route that best fits the overall request pattern for this record.",
+    "chart_reference": "Use the dashboard as the evidence source for selecting the appropriate telehealth follow-up demand route.",
+    "primary_field_label": "Telehealth follow-up demand routing decision",
+    "option_labels": [
+      "Route the record to growth-response follow-up",
+      "Route the record to decline-response follow-up",
+      "Route the record to standard monitoring follow-up"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Telehealth demand monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Telehealth follow-up request trend review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard-based telehealth handling"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the telehealth follow-up demand dashboard and select the operational route that best fits the overall request pattern for this record."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate telehealth follow-up demand route."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate telehealth follow-up demand route."
+      },
+      {
+        "page": "form",
+        "text": "Review the telehealth follow-up demand dashboard and select the operational route that best fits the overall request pattern for this record."
+      }
+    ]
+  },
+  "options": [
+    "Route the record to growth-response follow-up",
+    "Route the record to decline-response follow-up",
+    "Route the record to standard monitoring follow-up"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title literally reads \"Declining Telehealth Follow-up Requests from 2012 to 2023\"."
+        }
+      ],
+      "B": {
+        "text": "If the chart title is an authoritative dashboard summary of the record's demand pattern, then its explicit characterization of the requests as declining supports decline-response follow-up.",
+        "conditions": "Applies only if the literal title is intended to govern interpretation despite the plotted line's multi-year geometry."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot, 2022-2023 segment",
+          "content": "The line segment from the point above 2022 to the endpoint above 2023 slopes downward on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The printed x-axis year labels place 2022 immediately before 2023."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled \"Telehealth follow-up requests\"."
+        }
+      ],
+      "B": {
+        "text": "If the x-axis years order the plotted line chronologically and higher vertical position encodes more telehealth follow-up requests, then a downward final segment indicates a recent decline; if routing is based on the latest year-to-year movement, select decline-response follow-up.",
+        "conditions": "Applies only if the task treats the latest interval as decisive rather than the full-period pattern."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot, 2012 and 2023 endpoints",
+          "content": "The line's 2023 endpoint is higher on the page than its 2012 endpoint."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The printed x-axis year labels run from 2012 at the left to 2023 at the right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled \"Telehealth follow-up requests\"."
+        }
+      ],
+      "B": {
+        "text": "If the x-axis years order the plotted line chronologically and the y-axis labels encode telehealth follow-up request magnitude increasing upward, then a substantially higher final plotted point than initial plotted point indicates overall growth across the displayed period; if the routing labels correspond to that overall pattern, select growth-response follow-up.",
+        "conditions": "Applies when the task's 'overall request pattern' is assessed from the displayed period endpoints rather than only the latest interval."
+      }
+    }
+  ]
+}

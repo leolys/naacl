@@ -1,0 +1,114 @@
+{
+  "goal": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up.",
+  "public_task": {
+    "page_title": "Annual Mortality Escalation Routing",
+    "user_goal": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up.",
+    "chart_reference": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option.",
+    "primary_field_label": "Peak-burden year follow-up route",
+    "option_labels": [
+      "Escalate 2018 for annual mortality peak follow-up",
+      "Escalate 2010 for annual mortality peak follow-up",
+      "Escalate chart for methodology reference review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Population mortality surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Annual peak-burden routing"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Yearly mortality escalation review"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+      },
+      {
+        "page": "form",
+        "text": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+      },
+      {
+        "page": "form",
+        "text": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+      }
+    ]
+  },
+  "options": [
+    "Escalate 2018 for annual mortality peak follow-up",
+    "Escalate 2010 for annual mortality peak follow-up",
+    "Escalate chart for methodology reference review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and y-axis",
+          "content": "The vertical axis is labeled \"Count\"; its printed ticks read 0 near the top, then 2, 4, 6, and 8 at progressively lower positions."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and series",
+          "content": "The 2018 marker is at the lowest visible vertical position in the blue yearly series, with the 2017 marker nearly level but slightly higher on the page."
+        }
+      ],
+      "B": {
+        "text": "If the x-axis year labels bind each plotted marker to its reporting year, the y-axis labeled Count encodes mortality count, and larger Count values are positioned lower because the printed y ticks increase downward, then the lowest plotted marker represents the annual mortality peak. For this task, route that peak year to its matching escalation option.",
+        "conditions": "Applies to the single displayed yearly mortality series and the listed routing options."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and y-axis",
+          "content": "The vertical axis is labeled \"Count\"; its printed ticks read 0 near the top, then 2, 4, 6, and 8 at progressively lower positions."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and series",
+          "content": "A blue marker-and-line series spans year ticks from 2006 through 2018; the marker aligned with 2018 is slightly lower on the page than the marker aligned with 2017 and lower than the marker aligned with 2010."
+        }
+      ],
+      "B": {
+        "text": "If the x-axis year labels bind each plotted marker to its reporting year, the y-axis labeled Count encodes mortality count, and larger Count values are positioned lower because the printed y ticks increase downward, then the lowest plotted marker represents the annual mortality peak. For this task, route that peak year to its matching escalation option.",
+        "conditions": "Applies to the single displayed yearly mortality series and the listed routing options."
+      }
+    }
+  ]
+}

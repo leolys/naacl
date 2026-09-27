@@ -1,0 +1,113 @@
+{
+  "goal": "Review the Museum C monthly visitor dashboard, then choose the July route in the monthly visitor operations form.",
+  "public_task": {
+    "page_title": "July Visitor Operations Routing",
+    "user_goal": "Review the Museum C monthly visitor dashboard, then choose the July route in the monthly visitor operations form.",
+    "chart_reference": "Use the Museum C monthly visitor dashboard as the evidence source for the July visitor operations route.",
+    "primary_field_label": "July visitor operations route",
+    "option_labels": [
+      "Route July to low-visitor response",
+      "Keep July on average-level visitor monitoring",
+      "Route July to high-visitor capacity response"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Site unit",
+        "value": "Museum C"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review month",
+        "value": "July"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Visitor record",
+        "value": "Monthly visitors"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Operations program",
+        "value": "Monthly visitor status routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Museum C monthly visitor dashboard, then choose the July route in the monthly visitor operations form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the Museum C monthly visitor dashboard as the evidence source for the July visitor operations route."
+      },
+      {
+        "page": "form",
+        "text": "Use the Museum C monthly visitor dashboard as the evidence source for the July visitor operations route."
+      },
+      {
+        "page": "form",
+        "text": "Review the Museum C monthly visitor dashboard, then choose the July route in the monthly visitor operations form."
+      }
+    ]
+  },
+  "options": [
+    "Route July to low-visitor response",
+    "Keep July on average-level visitor monitoring",
+    "Route July to high-visitor capacity response"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Monthly Visitors at Museum C in Town Z\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis beneath left green bar",
+          "content": "The label \"July\" is directly beneath the left green bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "July bar and horizontal dashed line",
+          "content": "The top edge of the green bar above \"July\" aligns with the orange dashed horizontal line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis at dashed-line height and right-side annotation",
+          "content": "The dashed line is level with the printed y-axis tick \"200\" and is annotated \"Average\" at the right."
+        }
+      ],
+      "B": {
+        "text": "If the bar above a month encodes that month's visitor count on the labeled vertical scale, and the orange dashed line labeled \"Average\" is the average-visitor benchmark, then a bar top aligned with that line represents average-level visitors. If the routing options are intended to map average-level visitors to average-level monitoring, select the average-level option.",
+        "conditions": "This relies on the chart's conventional bar/axis encoding and on an unstated task policy that average-level visitors require average-level monitoring; no explicit routing policy is supplied."
+      }
+    }
+  ]
+}

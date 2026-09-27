@@ -1,0 +1,133 @@
+{
+  "goal": "Assess the dashboard view for this hospital subset and choose the next operational route for handling a proposed enterprise-level statement about nursing hours and discharge volume.",
+  "public_task": {
+    "page_title": "Nursing Staffing and Discharge Throughput Escalation Review",
+    "user_goal": "Assess the dashboard view for this hospital subset and choose the next operational route for handling a proposed enterprise-level statement about nursing hours and discharge volume.",
+    "chart_reference": "Use the displayed dashboard relationship as the basis for deciding whether this item is ready for enterprise routing, needs broader review across the full hospital population, or should be retained only as contextual material.",
+    "primary_field_label": "Nursing hours and discharge volume routing decision",
+    "option_labels": [
+      "Route this subset finding for full-hospital population review before enterprise approval",
+      "Advance this dashboard finding for enterprise-level approval now",
+      "File this dashboard comparison as background reference only"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Clinical operations benchmarking"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Subset hospital dashboard review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Enterprise escalation assessment"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Assess the dashboard view for this hospital subset and choose the next operational route for handling a proposed enterprise-level statement about nursing hours and discharge volume."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed dashboard relationship as the basis for deciding whether this item is ready for enterprise routing, needs broader review across the full hospital population, or should be retained only as contextual material."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed dashboard relationship as the basis for deciding whether this item is ready for enterprise routing, needs broader review across the full hospital population, or should be retained only as contextual material."
+      },
+      {
+        "page": "form",
+        "text": "Assess the dashboard view for this hospital subset and choose the next operational route for handling a proposed enterprise-level statement about nursing hours and discharge volume."
+      }
+    ]
+  },
+  "options": [
+    "Route this subset finding for full-hospital population review before enterprise approval",
+    "Advance this dashboard finding for enterprise-level approval now",
+    "File this dashboard comparison as background reference only"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "subtitle beneath title",
+          "content": "The inscription reads \"Selected large-volume hospitals shown in dashboard summary\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "scatter plot",
+          "content": "The visible display contains five labeled hospital points: Hospital A, Hospital B, Hospital C, Hospital D, and Hospital E."
+        }
+      ],
+      "B": {
+        "text": "If a chart is only a descriptive comparison and lacks evidence establishing a causal, policy, or population-wide conclusion, it may be retained as contextual material rather than used as support for enterprise approval.",
+        "conditions": "Applies if the organization requires stronger evidence than a subset descriptive association for operational escalation."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "subtitle beneath title",
+          "content": "The inscription reads \"Selected large-volume hospitals shown in dashboard summary\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The inscription reads \"Top Hospitals: Nurse Hours vs Discharge Count\"."
+        }
+      ],
+      "B": {
+        "text": "If a dashboard explicitly displays only a selected hospital subset, its plotted relationship is not evidence for the full hospital population; for an enterprise-level statement, the task's routing choices require full-population review before enterprise approval.",
+        "conditions": "Applies because the proposed statement is enterprise-level and the chart does not show the full hospital population."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "scatter plot points and axes",
+          "content": "Hospital A, B, C, D, and E points appear successively farther right and higher on the page from A through E."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axis labels",
+          "content": "The horizontal-axis inscription is \"Weekly nurse hours (thousands)\" and the vertical-axis inscription is \"Monthly discharge count (thousands)\"."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes weekly nurse hours and the vertical axis encodes monthly discharge count, with both scales increasing rightward/upward, points positioned successively farther right and higher indicate a positive displayed association for the plotted hospitals; this is descriptive only and does not establish causation or enterprise generalizability.",
+        "conditions": "Applies to the labeled hospital points in this scatter plot; no causal or population-wide inference is assumed."
+      }
+    }
+  ]
+}

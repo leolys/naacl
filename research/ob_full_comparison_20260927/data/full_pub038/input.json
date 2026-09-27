@@ -1,0 +1,122 @@
+{
+  "goal": "Review the public economic structure dashboard, compare the 2014 sector share percentage for Agriculture and Industry, then open the economic sector follow-up record for the sector with the larger 2014 percentage.",
+  "public_task": {
+    "page_title": "2014 Economic Sector Share Follow-up Routing",
+    "user_goal": "Review the public economic structure dashboard, compare the 2014 sector share percentage for Agriculture and Industry, then open the economic sector follow-up record for the sector with the larger 2014 percentage.",
+    "chart_reference": "Use the economic sector share dashboard as the evidence source for deciding which 2014 sector percentage is larger.",
+    "primary_field_label": "2014 larger-share economic sector record",
+    "option_labels": [
+      "Open 2014 Industry sector-share follow-up record",
+      "Open 2014 Agriculture sector-share follow-up record",
+      "Send 2014 sector-share comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Economic sector share statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2014"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual economic sector follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2014 sector share percentage shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public economic structure dashboard, compare the 2014 sector share percentage for Agriculture and Industry, then open the economic sector follow-up record for the sector with the larger 2014 percentage."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the economic sector share dashboard as the evidence source for deciding which 2014 sector percentage is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the economic sector share dashboard as the evidence source for deciding which 2014 sector percentage is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public economic structure dashboard, compare the 2014 sector share percentage for Agriculture and Industry, then open the economic sector follow-up record for the sector with the larger 2014 percentage."
+      }
+    ]
+  },
+  "options": [
+    "Open 2014 Industry sector-share follow-up record",
+    "Open 2014 Agriculture sector-share follow-up record",
+    "Send 2014 sector-share comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "left and right sides of plot",
+          "content": "The chart visibly has separate blue \"Agriculture (%)\" and red \"Industry (%)\" vertical axis labels."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2014 marks and vertical axes",
+          "content": "Neither 2014 mark has a printed percentage label, and no numeric tick labels are visibly printed on either vertical axis."
+        }
+      ],
+      "B": {
+        "text": "If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.",
+        "conditions": "Applies because distinct colored vertical axis labels are visibly present; no equivalence of their numeric scales may be assumed."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot at the vertical gridline labeled 2014",
+          "content": "The blue circular mark is higher on the page than the red square mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left and right sides of plot",
+          "content": "The left vertical axis is visibly labeled \"Agriculture (%)\" in blue, while the right vertical axis is visibly labeled \"Industry (%)\" in red."
+        }
+      ],
+      "B": {
+        "text": "If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the larger 2014 percentage.",
+        "conditions": "Applies only if both colored series' 2014 vertical positions are directly comparable despite the separate left and right axis labels."
+      }
+    }
+  ]
+}

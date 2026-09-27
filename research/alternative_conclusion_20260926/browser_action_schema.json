@@ -1,0 +1,55 @@
+{
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": [
+            "click_link",
+            "click_button"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "select_option"
+        },
+        "select_name": {
+          "type": "string"
+        },
+        "option_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action",
+        "select_name",
+        "option_text"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "finish"
+        }
+      },
+      "required": [
+        "action"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

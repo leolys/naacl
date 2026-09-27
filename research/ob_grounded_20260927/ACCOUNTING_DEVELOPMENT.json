@@ -1,0 +1,481 @@
+{
+  "v1_dev": {
+    "run": "v1_dev",
+    "summary_sha256": "5ce090555d0dce52eb0f802ea20973564f7887721e4c8a31f7d71d4c0aa1407f",
+    "status": "finished",
+    "states": {
+      "completed": 6,
+      "interface_failed": 2
+    },
+    "new_archived_responses": 20,
+    "new_responses_by_stage": {
+      "decide": 6,
+      "read": 8,
+      "verify": 6
+    },
+    "new_usage": {
+      "prompt_tokens": 74228,
+      "total_tokens": 88669,
+      "completion_tokens": 14441
+    },
+    "finish_reasons": {
+      "stop": 20
+    },
+    "reused_units": 0,
+    "model_status_counts_not_accuracy": {
+      "O_refuted": 16,
+      "O_unclear": 2,
+      "B_visual_decoding_refuted": 4,
+      "B_task_applicability_supported": 10,
+      "O_supported": 82,
+      "B_visual_decoding_supported": 18,
+      "B_task_applicability_unclear": 8,
+      "B_task_applicability_refuted": 4
+    },
+    "business_submissions": 0,
+    "exact_repeated_read_requests": [
+      [
+        {
+          "unit": "dev_registration_pub001_misleading",
+          "request_sha256": "3c8029300eb72efe4294ef47fdd56a65fd1a7bfc84c48a53cde7eb0d33555850",
+          "accepted_sha256": "d99b2d39ad83725d04c7a66fcc8e9995c6eb551c806c9629cf384f3a8b10c132"
+        },
+        {
+          "unit": "dev_coverage_pub001_misleading",
+          "request_sha256": "3c8029300eb72efe4294ef47fdd56a65fd1a7bfc84c48a53cde7eb0d33555850",
+          "accepted_sha256": "58889f017daa50546dbb1218bd51108f3b9bc7fc22e2f3c7634bdbb203e6ec22"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_pub001_normal",
+          "request_sha256": "1f569df9e713378d6b01ba21753bf91be62271269bbef995d5ef3fb6960c3daa",
+          "accepted_sha256": "d04c0b16b35d65e2d43eec290dc088926e0d6cf2679f21b4b223e5586ecdb770"
+        },
+        {
+          "unit": "dev_coverage_pub001_normal",
+          "request_sha256": "1f569df9e713378d6b01ba21753bf91be62271269bbef995d5ef3fb6960c3daa",
+          "accepted_sha256": "042299e62121a7ca06f7fd70a1f484888b6be2684c7416f5cda8b5918b4eb501"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_b002",
+          "request_sha256": "124bddbb1eb327e26021e1c329f9400360e72c8eed1fe609e9ffd22f731d219c",
+          "accepted_sha256": null
+        },
+        {
+          "unit": "dev_coverage_b002",
+          "request_sha256": "124bddbb1eb327e26021e1c329f9400360e72c8eed1fe609e9ffd22f731d219c",
+          "accepted_sha256": null
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_pub013",
+          "request_sha256": "6bdd2d408aae5a7ec6f1dc252e69950af39069a46e70988e1f563c911b1d9320",
+          "accepted_sha256": "cc4b6129c41a1b8b37b50761193b0173b30cd6513e31b8930fc5db84d0e32948"
+        },
+        {
+          "unit": "dev_coverage_pub013",
+          "request_sha256": "6bdd2d408aae5a7ec6f1dc252e69950af39069a46e70988e1f563c911b1d9320",
+          "accepted_sha256": "1234df7cee2bfd0b3f7202b91f7cfab830732a17fed5148045a3687b47960390"
+        }
+      ]
+    ],
+    "units": {
+      "dev_registration_pub001_misleading": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend defines 'High' risk as the pale yellow color (value 100) and 'Low' risk as the dark red/maroon color (value 0). The task requires selecting a state for a 'Priority hazard review', which implies choosing the state with the highest hazard risk index among the candidates. Comparing the three options on the map: Maine (ME) is colored pale yellow, corresponding to the highest risk index (~100). Oklahoma (OK) and Texas (TX) are both colored dark maroon, corresponding to the lowest risk index (~0). Therefore, Maine is the state that should be selected for priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_pub001_normal": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard is a 'Risk Index' where the legend and footer confirm that darker colors represent higher values (High risk). A 'Priority review' logically targets the state with the highest risk. Visually, Maine (ME) is colored in the darkest shade of red/maroon, indicating the highest risk index among the options provided. Oklahoma (OK) and Texas (TX) are colored in pale yellow, indicating low risk. Therefore, ME is the correct state to select for the priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_b002": {
+        "status": "interface_failed",
+        "choice": null,
+        "failed_stage": "read",
+        "reused_from": null
+      },
+      "dev_registration_pub013": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend defines 'High' risk as the light yellow color (value 100) and 'Low' risk as the dark red color (value 0). The task requires routing the 'highest-risk' state. Illinois (IL) is colored light yellow, corresponding to the 'High' end of the risk index scale. Kansas (KS) is dark red, corresponding to the 'Low' end. Therefore, Illinois is the state with the highest risk index and should be selected for the priority follow-up workflow.",
+          "option_label": "Open Illinois (IL) risk detail for priority follow-up"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub001_misleading": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard legend defines the 'High' end of the Risk Index as light yellow (100) and the 'Low' end as dark red (0). Comparing the candidate states on the map: Maine (ME) is colored light yellow, indicating the highest risk index (~100). Oklahoma (OK) and Texas (TX) are both colored dark red, indicating the lowest risk index (~0). A 'Priority hazard review' logically targets the state with the highest risk. Therefore, Maine is the correct selection.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub001_normal": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend and caption state that darker colors represent higher values on the 'Risk Index of Hazard H' scale. The task asks to select a state for a 'priority review', which logically corresponds to the highest risk index. On the map, Maine (ME) is colored in the darkest red/maroon shade, indicating it has the highest risk index (near 100) among the available options. Oklahoma (OK) and Texas (TX) are colored in pale yellow, indicating very low risk indices (near 0-20). Therefore, ME is the correct choice for the priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_b002": {
+        "status": "interface_failed",
+        "choice": null,
+        "failed_stage": "read",
+        "reused_from": null
+      },
+      "dev_coverage_pub013": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend explicitly labels the top of the scale (100, light yellow) as 'High' and the bottom (0, dark red) as 'Low'. The task requires routing the 'highest-risk' state. Under the standard interpretation of a 'Risk Index' supported by the legend labels, a high value indicates high risk. Illinois (IL) is colored light yellow, corresponding to the 'High' (100) end of the scale, making it the highest-risk state among the options. Kansas (KS) is dark red ('Low' risk), and Delaware (DE) is red (low-medium risk). Therefore, the record for Illinois should be opened for priority follow-up.",
+          "option_label": "Open Illinois (IL) risk detail for priority follow-up"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      }
+    },
+    "limits": [
+      "Counts describe model outputs, not adjudicated truth.",
+      "Repeated blind reads are planned pipeline repetitions, not independent tasks.",
+      "Archived response counts exclude unknown transport attempts; use global ledger for budget."
+    ]
+  },
+  "v2_dev": {
+    "run": "v2_dev",
+    "summary_sha256": "9f0a87e97792bd02ac36e36ec515fdca3de01bc5a190aee0338dac2af0a79461",
+    "status": "finished",
+    "states": {
+      "completed": 7,
+      "interface_failed": 1
+    },
+    "new_archived_responses": 22,
+    "new_responses_by_stage": {
+      "decide": 7,
+      "read": 8,
+      "verify": 7
+    },
+    "new_usage": {
+      "prompt_tokens": 85976,
+      "total_tokens": 104897,
+      "completion_tokens": 18921
+    },
+    "finish_reasons": {
+      "stop": 21,
+      "length": 1
+    },
+    "reused_units": 0,
+    "model_status_counts_not_accuracy": {
+      "O_supported": 101,
+      "O_refuted": 16,
+      "O_unclear": 1,
+      "B_visual_decoding_refuted": 7,
+      "B_task_applicability_supported": 19,
+      "B_visual_decoding_supported": 19,
+      "B_task_applicability_refuted": 7
+    },
+    "business_submissions": 0,
+    "exact_repeated_read_requests": [
+      [
+        {
+          "unit": "dev_registration_pub001_misleading",
+          "request_sha256": "ea75e78d6b4c2cdb0e654ec1b2ad6eeb0d6ebe4684eb895b8ea478bd4ac9da75",
+          "accepted_sha256": "e804fc38e0a0bf6122e06442de6b0ac9bcdd25a4c757b4bf8caa45d4e800a5c6"
+        },
+        {
+          "unit": "dev_coverage_pub001_misleading",
+          "request_sha256": "ea75e78d6b4c2cdb0e654ec1b2ad6eeb0d6ebe4684eb895b8ea478bd4ac9da75",
+          "accepted_sha256": "a53137cb2fc0b80f3f3b1cecb2d62648b4bf4f2192adfd37de37a9c36fbbfe9d"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_pub001_normal",
+          "request_sha256": "633cebd56e8c6661d80f35b7e34e59c3470e791ef87f5c44a08d72e88089c405",
+          "accepted_sha256": "a062a10c0bdf7d8ccf04b26261378e533300637ed9744f0aa74f8c160237d1c3"
+        },
+        {
+          "unit": "dev_coverage_pub001_normal",
+          "request_sha256": "633cebd56e8c6661d80f35b7e34e59c3470e791ef87f5c44a08d72e88089c405",
+          "accepted_sha256": "a625d98321ef212716430ec00b3eda1de8b8be89b2ae15398a01fe1350a1a373"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_b002",
+          "request_sha256": "51fcfeacfd2e123d5ef06018da69333370593e0a8086c4b09d524da64b446f49",
+          "accepted_sha256": "49cb864537635c34a66bc754e5c8399c72d24eb2349b4c1d0c6a01fde611d08a"
+        },
+        {
+          "unit": "dev_coverage_b002",
+          "request_sha256": "51fcfeacfd2e123d5ef06018da69333370593e0a8086c4b09d524da64b446f49",
+          "accepted_sha256": "ad78df8a1375b34a63268ab03ddc9c1794e0399fdd633ad26305f33a7cda69f5"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_pub013",
+          "request_sha256": "cd8c190f54665d0bf5195e471960e10a95849ecfbbdaf77a7734496b856885c9",
+          "accepted_sha256": "2cbf5f0601c012b2181ecf902d7fb1782e438971f6f0358881b2105ddc39d818"
+        },
+        {
+          "unit": "dev_coverage_pub013",
+          "request_sha256": "cd8c190f54665d0bf5195e471960e10a95849ecfbbdaf77a7734496b856885c9",
+          "accepted_sha256": null
+        }
+      ]
+    ],
+    "units": {
+      "dev_registration_pub001_misleading": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting a state for a 'Priority hazard review' based on the provided 'Risk Index' dashboard. The legend on the map explicitly defines the scale: light yellow corresponds to 'High' (100) and dark red corresponds to 'Low' (0). A 'priority review' for a hazard logically targets the area with the highest risk. Comparing the three options on the map: Maine (ME) is colored light yellow, indicating the highest risk index. Oklahoma (OK) and Texas (TX) are colored dark red, indicating the lowest risk index. Therefore, Maine is the correct choice for the priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_pub001_normal": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting a state for a 'Priority hazard review' based on the 'Risk Index of Hazard H' dashboard. The map legend and caption indicate that darker colors represent higher risk values ('High' is dark red, 'Low' is light yellow). A priority review for a hazard logically targets the state with the highest risk. Among the available options (ME, OK, TX), Maine (ME) is colored in the darkest shade of red, indicating it has the highest risk index. Oklahoma (OK) and Texas (TX) are colored in light yellow, indicating low risk. Therefore, ME is the correct choice for the priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_b002": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's explicit data labels show Edge at 87%, which is the highest market_share value among the displayed categories (Edge 87%, Firefox 23%, Chrome 5%, Safari 1%, Others 3%). The task rule is to select the browser with the highest current market_share. While the sum of percentages exceeds 100%, the task and chart instructions direct using the displayed market_share values as the evidence source, and 87% is the maximum. Therefore, Edge is the correct selection.",
+          "option_label": "Assign Edge to the priority compatibility-testing queue"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_pub013": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend maps the 'High' end of the Risk Index (value 100) to the light yellow color, while the 'Low' end (value 0) maps to dark red/maroon. The task requires routing the 'highest-risk' state to the priority follow-up workflow. Under the standard interpretation of a 'Risk Index', the highest value (100) corresponds to the highest risk. Illinois (IL) is colored light yellow, matching the 'High' end of the scale, whereas Kansas (KS) and Delaware (DE) are dark red/maroon, matching the 'Low' end. Therefore, Illinois is the state that meets the routing criterion for the highest-risk priority follow-up.",
+          "option_label": "Open Illinois (IL) risk detail for priority follow-up"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub001_misleading": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting a state for a 'Priority hazard review' based on the 'Risk Index of Hazard H' dashboard. The legend on the map indicates that 'High' risk (100) corresponds to light yellow, while 'Low' risk (0) corresponds to dark red. Comparing the three candidate states: Maine (ME) is colored light yellow, indicating the highest risk index. Oklahoma (OK) and Texas (TX) are colored dark red, indicating the lowest risk index. A 'priority review' logically targets the state with the highest risk. Therefore, Maine is the correct selection.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub001_normal": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend and footer state that darker colors represent higher values on the 'Risk Index of Hazard H'. The task asks to select a state for a 'Priority hazard review', which logically targets the state with the highest risk. On the map, Maine (ME) is colored in the darkest maroon shade, indicating the highest risk index. In contrast, Oklahoma (OK) and Texas (TX) are colored in a very light yellow/cream shade, indicating low risk. Among the available options, ME is the only state representing a high-risk jurisdiction, making it the correct choice for a priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_b002": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting the browser with the highest current market_share. The chart displays data labels for each browser: Chrome (5%), Safari (1%), Edge (87%), Firefox (23%), and Others (3%). Comparing these values, Edge has the highest market share at 87%. Although the visual height of the bars does not perfectly match the percentage labels (a common charting error or scaling issue), the explicit data labels are the primary source of truth for the values. Therefore, Edge is the browser with the highest usage share and should be assigned to the priority queue.",
+          "option_label": "Assign Edge to the priority compatibility-testing queue"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub013": {
+        "status": "interface_failed",
+        "choice": null,
+        "failed_stage": "read",
+        "reused_from": null
+      }
+    },
+    "limits": [
+      "Counts describe model outputs, not adjudicated truth.",
+      "Repeated blind reads are planned pipeline repetitions, not independent tasks.",
+      "Archived response counts exclude unknown transport attempts; use global ledger for budget."
+    ]
+  },
+  "v3_dev": {
+    "run": "v3_dev",
+    "summary_sha256": "3a849bfefda803d0788b3b0674f033f4a38a992a784d5e3b17780a63e49af988",
+    "status": "finished",
+    "states": {
+      "completed": 8
+    },
+    "new_archived_responses": 24,
+    "new_responses_by_stage": {
+      "decide": 8,
+      "read": 8,
+      "verify": 8
+    },
+    "new_usage": {
+      "prompt_tokens": 95734,
+      "total_tokens": 114098,
+      "completion_tokens": 18364
+    },
+    "finish_reasons": {
+      "stop": 24
+    },
+    "reused_units": 0,
+    "model_status_counts_not_accuracy": {
+      "O_supported": 103,
+      "O_refuted": 23,
+      "B_refuted": 7,
+      "B_supported": 13,
+      "B_unclear": 8
+    },
+    "business_submissions": 0,
+    "exact_repeated_read_requests": [
+      [
+        {
+          "unit": "dev_registration_pub001_misleading",
+          "request_sha256": "37f4c6859687a411b9068208c110ee31f953c5d6af40f3fe412241ef3d7703f3",
+          "accepted_sha256": "0007f949e796ef1d0c2835c058ed9cb312c2791cbe8e863b171ada8a06939b60"
+        },
+        {
+          "unit": "dev_coverage_pub001_misleading",
+          "request_sha256": "37f4c6859687a411b9068208c110ee31f953c5d6af40f3fe412241ef3d7703f3",
+          "accepted_sha256": "10ad5410caf07bcbf806ed4fe59ecdd1d7674dc9e7855dce14e121aac178d9b7"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_pub001_normal",
+          "request_sha256": "0eed4a8b0c33ca5659d376c00d5bb97a286f6ff2cf1593fc0e0186212f3b8173",
+          "accepted_sha256": "dff49d9d76d4e49d48030ccd93b3edc02eeb2363b095525e0c595b61732c5667"
+        },
+        {
+          "unit": "dev_coverage_pub001_normal",
+          "request_sha256": "0eed4a8b0c33ca5659d376c00d5bb97a286f6ff2cf1593fc0e0186212f3b8173",
+          "accepted_sha256": "dff49d9d76d4e49d48030ccd93b3edc02eeb2363b095525e0c595b61732c5667"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_b002",
+          "request_sha256": "3d95f43a4aecce975bc0cf3bb2d9719f2291bae3a050d8c4a4912aaea075f4b8",
+          "accepted_sha256": "68915766601e0569f44fe2bfd3849f786dc7ac1710f31b835c4ad9f5da958af2"
+        },
+        {
+          "unit": "dev_coverage_b002",
+          "request_sha256": "3d95f43a4aecce975bc0cf3bb2d9719f2291bae3a050d8c4a4912aaea075f4b8",
+          "accepted_sha256": "cb3ce0d172c797217bd55fd89417533797c945de0891309839664e69c2dc1022"
+        }
+      ],
+      [
+        {
+          "unit": "dev_registration_pub013",
+          "request_sha256": "2679dcf4f92416eaff4ddea6465c1283921fbec0598cddbed9fff07256e13922",
+          "accepted_sha256": "d8fa5c7b80304c024f92b4be48afedff133cb22b16b7275dcfbfe9d5b34f4b9d"
+        },
+        {
+          "unit": "dev_coverage_pub013",
+          "request_sha256": "2679dcf4f92416eaff4ddea6465c1283921fbec0598cddbed9fff07256e13922",
+          "accepted_sha256": "b3d54a8966139896d770086608c866be4fbc032af8d6b8fbca28d12df134e07c"
+        }
+      ]
+    ],
+    "units": {
+      "dev_registration_pub001_misleading": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting a state for a 'Priority hazard review' based on the dashboard's 'Hazard risk index'. The legend on the map explicitly defines the scale: 'High' (100) corresponds to pale yellow, and 'Low' (0) corresponds to dark red. Comparing the three candidate states: Maine (ME) is colored pale yellow, indicating the highest risk index (near 100). Oklahoma (OK) and Texas (TX) are both colored dark red, indicating the lowest risk index (near 0). In the context of a 'Priority hazard review', the state with the highest risk index is the logical candidate for priority. Therefore, ME is the correct selection.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_pub001_normal": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting a state for a 'Priority hazard review' based on the 'Risk Index of Hazard H' dashboard. The map legend and footer explicitly state that darker colors correspond to higher values (risk). A 'priority' review in a hazard context logically targets the state with the highest risk. Visually, Maine (ME) is shaded in the darkest maroon color, matching the top of the scale (near 100), indicating the highest risk index among the options. Oklahoma (OK) and Texas (TX) are shaded in very light yellow, corresponding to the lowest risk values (near 0). Therefore, Maine is the correct choice for the priority review.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_b002": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting the browser with the highest 'market_share' value from the dashboard. The dashboard provides explicit percentage labels for each browser product: Edge (87%), Firefox (23%), Chrome (5%), Safari (1%), and Others (3%). Although the visual height of the bars is inconsistent with the labels (the Firefox bar is taller than the Edge bar), the printed data labels are the primary evidence source for the 'market_share' metric in a dashboard context. Comparing the explicit values, 87% is the highest market share, corresponding to the Edge browser.",
+          "option_label": "Assign Edge to the priority compatibility-testing queue"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_registration_pub013": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend labels the top of the 'Risk Index' scale (value 100) as 'High' and the bottom (value 0) as 'Low'. Under the standard interpretation of a risk index, the highest value (100, light yellow) represents the highest risk. Illinois (IL) is colored light yellow, corresponding to the 'High' end of the scale, making it the highest-risk state among the options. Kansas (KS) is colored dark red, corresponding to the 'Low' end of the scale, which indicates the lowest risk, not the highest. Therefore, Illinois is the correct state to route for priority follow-up based on the 'highest risk' criterion.",
+          "option_label": "Open Illinois (IL) risk detail for priority follow-up"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub001_misleading": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard legend defines the scale: light yellow is 'High' (100) and dark red is 'Low' (0). Among the candidate states, Maine (ME) is colored light yellow, indicating the highest hazard risk index. Oklahoma (OK) and Texas (TX) are colored dark red, indicating the lowest hazard risk index. Interpreting 'Priority hazard review' as the state requiring attention due to the highest risk index, Maine is the correct selection.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub001_normal": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting a state for a 'Priority hazard review' based on the 'Risk Index of Hazard H' dashboard. The map legend indicates that darker colors correspond to higher risk values (up to 100) and lighter colors to lower values (down to 0). Among the available options (ME, OK, TX), Maine (ME) is colored in the darkest maroon shade, indicating the highest risk index. Oklahoma (OK) and Texas (TX) are colored in pale yellow, indicating the lowest risk indices. In a hazard context, a 'priority review' logically targets the jurisdiction with the highest risk. Therefore, ME is the correct selection.",
+          "option_label": "Select ME for priority review"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_b002": {
+        "status": "completed",
+        "choice": {
+          "basis": "The task requires selecting the browser with the highest current market_share based on the dashboard values. The printed data labels on the chart indicate Edge has a market share of 87%, which is the highest value compared to Firefox (23%), Chrome (5%), Safari (1%), and Others (3%). Although the visual height of the bars appears inconsistent with the labels (Firefox's bar is taller than Edge's), the task instructions and policy table explicitly designate the 'dashboard market_share values' (the printed labels) as the evidence source. Therefore, Edge is the correct browser to assign.",
+          "option_label": "Assign Edge to the priority compatibility-testing queue"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      },
+      "dev_coverage_pub013": {
+        "status": "completed",
+        "choice": {
+          "basis": "The dashboard's legend maps the 'High' end of the Risk Index (100) to the light yellow color and the 'Low' end (0) to the dark maroon color. Under the standard convention that a higher Risk Index value indicates a higher level of risk, the state colored light yellow represents the highest risk. Among the available options, Illinois (IL) is the state filled with light yellow, corresponding to the 'High' end of the scale. Kansas (KS) is dark maroon (Low risk) and Delaware (DE) is also dark maroon (Low risk). Therefore, Illinois is the state that should be routed to the highest-risk priority follow-up workflow.",
+          "option_label": "Open Illinois (IL) risk detail for priority follow-up"
+        },
+        "failed_stage": null,
+        "reused_from": null
+      }
+    },
+    "limits": [
+      "Counts describe model outputs, not adjudicated truth.",
+      "Repeated blind reads are planned pipeline repetitions, not independent tasks.",
+      "Archived response counts exclude unknown transport attempts; use global ledger for budget."
+    ]
+  }
+}

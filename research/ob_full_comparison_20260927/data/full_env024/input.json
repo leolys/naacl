@@ -1,0 +1,142 @@
+{
+  "goal": "Review the urban water-supply dashboard, identify the largest urban water-supply contribution source, then route that source record to escalated contribution review.",
+  "public_task": {
+    "page_title": "Urban Supply Source Escalation Routing",
+    "user_goal": "Review the urban water-supply dashboard, identify the largest urban water-supply contribution source, then route that source record to escalated contribution review.",
+    "chart_reference": "Use the dashboard to determine which urban water-supply source is the largest contribution source for this routing decision.",
+    "primary_field_label": "Source routing selection",
+    "option_labels": [
+      "Route Surface water to escalated contribution review",
+      "Route Groundwater to escalated contribution review",
+      "Keep Desalination in routine source monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Urban water supply allocation"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Source contribution review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Escalated source assessment"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Largest urban water-supply contribution source"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the urban water-supply dashboard, identify the largest urban water-supply contribution source, then route that source record to escalated contribution review."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine which urban water-supply source is the largest contribution source for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine which urban water-supply source is the largest contribution source for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the urban water-supply dashboard, identify the largest urban water-supply contribution source, then route that source record to escalated contribution review."
+      }
+    ]
+  },
+  "options": [
+    "Route Surface water to escalated contribution review",
+    "Route Groundwater to escalated contribution review",
+    "Keep Desalination in routine source monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and x-axis",
+          "content": "The bar labeled \"Groundwater\" is higher on the page than the bars labeled \"Surface water\", \"Desalination\", \"Recycled water\", and \"Rain capture\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and y-axis label",
+          "content": "The chart title reads \"Urban Water Supply by Source\" and the y-axis label reads \"Reported supply share (%)\"."
+        }
+      ],
+      "B": {
+        "text": "If each source’s bar height on the vertical scale encodes its urban reported supply contribution, and the routing criterion requires escalation of the largest contribution source, select the option for the source with the tallest bar.",
+        "conditions": "Applies only if bar geometry, rather than the conflicting percentage annotations above the bars, is the authoritative contribution encoding."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "above the Surface water bar",
+          "content": "A bold inscription \"41.2%\" appears above the bar labeled \"Surface water\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Groundwater bar",
+          "content": "A bold inscription \"29.8%\" appears above the bar labeled \"Groundwater\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Desalination bar",
+          "content": "A bold inscription \"18.5%\" appears above the bar labeled \"Desalination\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Recycled water bar",
+          "content": "A bold inscription \"7.2%\" appears above the bar labeled \"Recycled water\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the Rain capture bar",
+          "content": "A bold inscription \"3.3%\" appears above the bar labeled \"Rain capture\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis label",
+          "content": "The y-axis label reads \"Reported supply share (%)\"."
+        }
+      ],
+      "B": {
+        "text": "If the percentage inscription directly above each source bar is the authoritative reported supply-share value, compare those inscriptions; under the stated largest-contribution routing criterion, select the option for the source with the greatest printed share.",
+        "conditions": "Applies if the bold percentages are valid source-specific reported supply shares; this conflicts with the bar heights."
+      }
+    }
+  ]
+}

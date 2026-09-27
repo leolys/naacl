@@ -1,0 +1,99 @@
+{
+  "version": "2026-04-06",
+  "description": "Tactic families for option-aware reverse attack generation. The first version focuses on Cherry_Picking and Missing_Data.",
+  "tactics": [
+    {
+      "error_type": "Cherry_Picking",
+      "task_modes": ["scope_reasoning"],
+      "chart_types": ["line_chart", "multi_series_chart"],
+      "tactic_family": "selective_time_window",
+      "summary": "Show only a favorable local time window that visually supports an overgeneralized trend or turning point.",
+      "best_for": [
+        "peak_then_decline distractors",
+        "steady-rise distractors",
+        "local rebound distractors"
+      ],
+      "avoid": [
+        "windows where the cautious gold answer is still more visually direct than the distractor",
+        "obvious cropping that leaves too few months to tempt a wrong trend summary"
+      ]
+    },
+    {
+      "error_type": "Cherry_Picking",
+      "task_modes": ["scope_reasoning"],
+      "chart_types": ["bar_chart", "multi_series_chart"],
+      "tactic_family": "selective_category_subset",
+      "summary": "Display only a subset of categories or groups that favors one tempting comparison while hiding contradictory categories.",
+      "best_for": [
+        "best-performer distractors",
+        "dominant-group distractors",
+        "simplified ranking distractors"
+      ],
+      "avoid": [
+        "subsets where the omitted categories are too obvious from the layout",
+        "subsets that remove so much context that abstention becomes trivial"
+      ]
+    },
+    {
+      "error_type": "Cherry_Picking",
+      "task_modes": ["scope_reasoning"],
+      "chart_types": ["line_chart", "bar_chart", "multi_series_chart"],
+      "tactic_family": "partial_year_frame",
+      "summary": "Keep a broad yearly or dataset frame while only plotting the subset that helps the wrong option look plausible.",
+      "best_for": [
+        "all-year distractors",
+        "year-end or annual summary distractors"
+      ],
+      "avoid": [
+        "empty frames that make omission too conspicuous",
+        "layouts where the missing scope is immediately obvious from labels alone"
+      ]
+    },
+    {
+      "error_type": "Missing_Data",
+      "task_modes": ["abstention_aware", "scope_reasoning"],
+      "chart_types": ["bar_chart", "multi_series_chart"],
+      "tactic_family": "omit_disambiguating_category",
+      "summary": "Leave plausible nearby numeric evidence in place, but omit the one category or comparator needed to resolve the lookup.",
+      "best_for": [
+        "exact lookup with tempting nearby values",
+        "category substitution distractors"
+      ],
+      "avoid": [
+        "simply deleting the target category if that makes abstention too obvious",
+        "full category lists that make the absence of the target trivial"
+      ]
+    },
+    {
+      "error_type": "Missing_Data",
+      "task_modes": ["abstention_aware"],
+      "chart_types": ["line_chart", "multi_series_chart"],
+      "tactic_family": "omit_supporting_segment",
+      "summary": "Keep the target series visible but remove the segment, comparison period, or support needed to disambiguate the correct answer.",
+      "best_for": [
+        "interpolation temptations",
+        "peak or turning-point lookups",
+        "trend continuation temptations"
+      ],
+      "avoid": [
+        "explicit gaps or giant blanks that make missingness too obvious",
+        "removing the only visible evidence so completely that the chart stops feeling usable"
+      ]
+    },
+    {
+      "error_type": "Missing_Data",
+      "task_modes": ["abstention_aware"],
+      "chart_types": ["bar_chart", "line_chart", "multi_series_chart", "pie_or_donut_chart"],
+      "tactic_family": "omit_reference_mapping",
+      "summary": "Keep numeric marks visible but remove the reference mapping or support needed to link the target query to the correct mark.",
+      "best_for": [
+        "label-to-mark mapping failures",
+        "country/category lookup failures"
+      ],
+      "avoid": [
+        "blank or obviously broken axes",
+        "overt text that directly tells the reader the answer is indeterminate"
+      ]
+    }
+  ]
+}

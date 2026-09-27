@@ -1,0 +1,142 @@
+{
+  "goal": "Review the renewable generation dashboard, identify the largest renewable generation contribution source, then route that source record to priority contribution follow-up.",
+  "public_task": {
+    "page_title": "Renewable Output Escalation Routing",
+    "user_goal": "Review the renewable generation dashboard, identify the largest renewable generation contribution source, then route that source record to priority contribution follow-up.",
+    "chart_reference": "Use the dashboard to determine which renewable generation source is the largest contribution source for this routing decision.",
+    "primary_field_label": "Priority contribution route",
+    "option_labels": [
+      "Route Solar for priority contribution follow-up",
+      "Route Wind for priority contribution follow-up",
+      "Keep Hydroelectric on routine contribution monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Renewable generation oversight"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Source contribution reporting"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Priority contribution escalation"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Largest renewable generation contribution source"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the renewable generation dashboard, identify the largest renewable generation contribution source, then route that source record to priority contribution follow-up."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine which renewable generation source is the largest contribution source for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine which renewable generation source is the largest contribution source for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the renewable generation dashboard, identify the largest renewable generation contribution source, then route that source record to priority contribution follow-up."
+      }
+    ]
+  },
+  "options": [
+    "Route Solar for priority contribution follow-up",
+    "Route Wind for priority contribution follow-up",
+    "Keep Hydroelectric on routine contribution monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "bar plot area",
+          "content": "The Wind bar extends higher on the page than the Solar, Hydroelectric, Biomass, and Geothermal bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "A shared vertical axis is visibly drawn beside the bars with ticks labeled from 0 through 70."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The tallest bar is positioned above the label \"Wind\"."
+        }
+      ],
+      "B": {
+        "text": "If bar height against the shared vertical axis encodes renewable-generation contribution, the tallest source bar is the largest contribution source; the task requires routing that source to its matching priority follow-up option.",
+        "conditions": "Applies if the bar geometry is authoritative despite the conflicting percentage inscriptions."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Solar bar and label",
+          "content": "The yellow bar above the x-axis label \"Solar\" has the printed inscription \"41.2%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Wind bar and label",
+          "content": "The light-blue bar above \"Wind\" has the printed inscription \"29.8%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Hydroelectric bar and label",
+          "content": "The blue bar above \"Hydroelectric\" has the printed inscription \"18.5%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Biomass bar and label",
+          "content": "The green bar above \"Biomass\" has the printed inscription \"7.2%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Geothermal bar and label",
+          "content": "The brown bar above \"Geothermal\" has the printed inscription \"3.3%\" above it."
+        }
+      ],
+      "B": {
+        "text": "If each percentage inscription is attached to its source bar and denotes that source's renewable-generation contribution on a common comparable basis, the source with the greatest printed percentage is the largest contribution source; the task requires routing that source to its matching priority follow-up option.",
+        "conditions": "Applies if the printed percentages, rather than bar heights, are the authoritative contribution encoding."
+      }
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "goal": "Review the quarterly marketing dashboard, then submit the budget approval decision.",
+  "public_task": {
+    "page_title": "Quarterly Marketing Budget Review",
+    "user_goal": "Review the quarterly marketing dashboard, then submit the budget approval decision.",
+    "chart_reference": "Use the quarterly marketing dashboard to complete the budget approval form.",
+    "primary_field_label": "Budget Approval Decision",
+    "option_labels": [
+      "Select \"Hold and request full-data analysis\"",
+      "Select \"Approve broader ad-budget increase\"",
+      "Select \"Defer decision pending next budget cycle\""
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Quarterly marketing budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "High-growth quarter request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Marketing approval review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the quarterly marketing dashboard, then submit the budget approval decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the quarterly marketing dashboard, then submit the budget approval decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the quarterly marketing dashboard, then submit the budget approval decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the quarterly marketing dashboard to complete the budget approval form."
+      }
+    ]
+  },
+  "options": [
+    "Select \"Hold and request full-data analysis\"",
+    "Select \"Approve broader ad-budget increase\"",
+    "Select \"Defer decision pending next budget cycle\""
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The printed title reads \"Selected High-Growth Quarters: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The visible chart contains five labeled blue points: Q2, Q3, Q4, Q5, and Q6."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart annotations",
+          "content": "No visible legend, control-group marks, causal annotation, or full-quarter data table is shown."
+        }
+      ],
+      "B": {
+        "text": "If a budget approval requires full-quarter coverage or evidence that advertising caused sales changes, a scatterplot limited by its title to selected high-growth quarters and lacking causal controls is insufficient; the evidence-review option is then appropriate.",
+        "conditions": "Applies when decision standards require representative or causal evidence beyond a selected observational sample."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The printed title reads \"Selected High-Growth Quarters: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\"; labeled ticks include 30, 40, 50, 60, and 70."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\"; labeled ticks include 60 through 170."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Blue points labeled Q2, Q3, Q4, Q5, and Q6 progress from lower-left to upper-right; Q6 is right of and above Q5, and Q5 is right of and above Q4."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels state, then points farther right and higher represent quarters with greater plotted spend and sales. If this selected-quarter association is considered sufficient and generalizable evidence for a broader budget change, it supports approving an ad-budget increase; the chart alone does not establish causation or represent all quarters.",
+        "conditions": "Applies only to the plotted quarters labeled Q2–Q6 and assumes the selected high-growth sample is relevant to a broader advertising-budget decision."
+      }
+    }
+  ]
+}

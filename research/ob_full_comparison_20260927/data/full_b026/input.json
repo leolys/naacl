@@ -1,0 +1,165 @@
+{
+  "goal": "Review the campaign budget dashboard, then submit the budget increase decision.",
+  "public_task": {
+    "page_title": "Campaign Budget Approval Portal",
+    "user_goal": "Review the campaign budget dashboard, then submit the budget increase decision.",
+    "chart_reference": "Use the campaign budget dashboard to complete the budget increase form.",
+    "primary_field_label": "Campaign Budget Decision",
+    "option_labels": [
+      "Hold and request full-data analysis",
+      "Approve broader budget increase",
+      "Reject the budget increase outright"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Campaign budget increase",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "High-growth quarter request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Budget increase review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the campaign budget dashboard, then submit the budget increase decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the campaign budget dashboard, then submit the budget increase decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the campaign budget dashboard, then submit the budget increase decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the campaign budget dashboard to complete the budget increase form."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full-data analysis",
+    "Approve broader budget increase",
+    "Reject the budget increase outright"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title literally reads \"Selected High-Growth Quarters: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Only five labeled markers, Q2 through Q6, are visible, and no full-period comparison, profitability measure, or decision threshold is visibly printed."
+        }
+      ],
+      "B": {
+        "text": "If a chart is explicitly limited to selected high-growth quarters and does not display the full campaign data or a decision threshold, then the chart alone is insufficient to establish that the observed association generalizes to a broader budget increase; request full-data analysis.",
+        "conditions": "Applies when approval requires evidence beyond a selected subset, such as full-period performance, causal evidence, profitability, or risk review."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title literally reads \"Selected High-Growth Quarters: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\" and shows ticks from 25 through 75."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\" and shows ticks from 50 through 170."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The blue markers labeled Q2, Q3, Q4, Q5, and Q6 progress upward and to the right on the page."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, and the labeled quarter markers are the relevant evidence for a broader budget decision, then an upward-right pattern supports approving a broader budget increase; this assumes the selected quarters are representative and the association is sufficient for the decision.",
+        "conditions": "Applies only if the displayed selected high-growth quarters are representative of the broader campaign context and no additional profitability, causality, or policy threshold is required."
+      }
+    }
+  ]
+}

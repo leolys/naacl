@@ -1,0 +1,185 @@
+{
+  "goal": "Review the product-line ad spend and sales dashboard, then submit the budget conclusion.",
+  "public_task": {
+    "page_title": "Product Line Budget Review",
+    "user_goal": "Review the product-line ad spend and sales dashboard, then submit the budget conclusion.",
+    "chart_reference": "Use the product-line dashboard to complete the budget conclusion form.",
+    "primary_field_label": "Budget recommendation",
+    "option_labels": [
+      "Select 'Hold and request full-data analysis'",
+      "Select 'Approve broader budget conclusion'",
+      "Select 'Reject broader budget conclusion'"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Product line budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Featured product-line request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Product line budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the product-line ad spend and sales dashboard, then submit the budget conclusion."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the product-line ad spend and sales dashboard, then submit the budget conclusion."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the product-line ad spend and sales dashboard, then submit the budget conclusion."
+      },
+      {
+        "page": "form",
+        "text": "Use the product-line dashboard to complete the budget conclusion form."
+      }
+    ]
+  },
+  "options": [
+    "Select 'Hold and request full-data analysis'",
+    "Select 'Approve broader budget conclusion'",
+    "Select 'Reject broader budget conclusion'"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The chart title reads \"Top Product Lines: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five blue circular marks are visibly labeled Line A, Line B, Line C, Line D, and Line E."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "From Line A through Line E, the labeled marks are successively farther right and higher on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart text and plot area",
+          "content": "No visible inscription or mark states a timeframe, profitability, ROI, margin, budget threshold, or that these five lines are the full product-line population."
+        }
+      ],
+      "B": {
+        "text": "If a broader budget approval or rejection requires evidence beyond the displayed ad-spend and sales positions, and the chart does not state that sales alone is the decision criterion or provide profitability, ROI, timeframe, or full-scope information, then the evidence-review option is the justified workflow choice.",
+        "conditions": "Applies unless the task or a supplied policy explicitly authorizes a broader budget conclusion from this scatterplot alone."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The chart title reads \"Top Product Lines: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "From Line A through Line E, the labeled marks are successively farther right and higher on the page."
+        }
+      ],
+      "B": {
+        "text": "If the task treats the displayed product-line scatterplot as complete and treats a higher ad-spend/higher sales pattern as sufficient support for a broader budget conclusion, then the approval option could be selected.",
+        "conditions": "Requires an unstated assumption that the plotted lines represent the complete relevant scope and that sales positioning alone is an approval criterion."
+      }
+    }
+  ]
+}

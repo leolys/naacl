@@ -1,0 +1,131 @@
+{
+  "goal": "Review the Town Z new-tourist trend dashboard for 1880-1891, then choose the follow-up route for the tourism operations trend.",
+  "public_task": {
+    "page_title": "Town Z Tourism Trend Response Routing",
+    "user_goal": "Review the Town Z new-tourist trend dashboard for 1880-1891, then choose the follow-up route for the tourism operations trend.",
+    "chart_reference": "Use the Town Z new-tourist dashboard as the evidence source for the tourism trend routing decision.",
+    "primary_field_label": "Tourism trend route",
+    "option_labels": [
+      "Route to tourism growth planning",
+      "Route to tourism decline response",
+      "Keep on routine tourism monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Location unit",
+        "value": "Town Z"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review period",
+        "value": "1880-1891 tourism record"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Visitor record",
+        "value": "New tourists"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Operations program",
+        "value": "Tourism trend response routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Town Z new-tourist trend dashboard for 1880-1891, then choose the follow-up route for the tourism operations trend."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the Town Z new-tourist dashboard as the evidence source for the tourism trend routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the Town Z new-tourist dashboard as the evidence source for the tourism trend routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the Town Z new-tourist trend dashboard for 1880-1891, then choose the follow-up route for the tourism operations trend."
+      }
+    ]
+  },
+  "options": [
+    "Route to tourism growth planning",
+    "Route to tourism decline response",
+    "Keep on routine tourism monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and plot",
+          "content": "The title contains the word “Decreasing,” while the blue line’s rightmost endpoint is higher on the page than its leftmost endpoint."
+        }
+      ],
+      "B": {
+        "text": "If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.",
+        "conditions": "Assumes routine monitoring is the fallback for unresolved evidence conflict; this policy is not explicitly supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title at top",
+          "content": "The title literally reads “Decreasing Number of New Tourists in Town Z from 1880 to 1891.”"
+        }
+      ],
+      "B": {
+        "text": "If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word “Decreasing” supports classifying the trend as decline; routing a decline trend requires the decline-response option.",
+        "conditions": "Assumes the title is authoritative despite conflict with the plotted line; no explicit routing policy is supplied."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and axes",
+          "content": "The x-axis has year ticks from 1880 at the left to 1891 at the right, and the y-axis is labeled “Number of Tourists” with larger printed ticks higher on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue line endpoints",
+          "content": "The blue line at the 1891 tick is higher on the page than the blue line at the 1880 tick."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.",
+        "conditions": "Assumes standard axis direction and that the unlegendized blue line represents the requested new-tourist record; no explicit routing policy is supplied."
+      }
+    }
+  ]
+}

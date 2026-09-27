@@ -1,0 +1,129 @@
+{
+  "goal": "Review the sentinel-site trend dashboard and select the operational route that best reflects the full 2013-2020 pattern for positive test rate.",
+  "public_task": {
+    "page_title": "Sentinel Site Positive Test Routing Review",
+    "user_goal": "Review the sentinel-site trend dashboard and select the operational route that best reflects the full 2013-2020 pattern for positive test rate.",
+    "chart_reference": "Use the displayed year-by-year positive-test-rate pattern across the entire available period to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-focused review.",
+    "primary_field_label": "Sentinel site trend routing decision",
+    "option_labels": [
+      "Route to continued monitoring for a more recent upward shift in positive test rate",
+      "Route to sustained growth follow-up for an across-period increase in positive test rate",
+      "Route to decline-focused review for a downward positive test rate pattern"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Infection surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review timeframe",
+        "value": "2013-2020 positive test rate trend assessment"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Workflow stage",
+        "value": "Dashboard-based surveillance routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the sentinel-site trend dashboard and select the operational route that best reflects the full 2013-2020 pattern for positive test rate."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed year-by-year positive-test-rate pattern across the entire available period to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-focused review."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed year-by-year positive-test-rate pattern across the entire available period to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-focused review."
+      },
+      {
+        "page": "form",
+        "text": "Review the sentinel-site trend dashboard and select the operational route that best reflects the full 2013-2020 pattern for positive test rate."
+      }
+    ]
+  },
+  "options": [
+    "Route to continued monitoring for a more recent upward shift in positive test rate",
+    "Route to sustained growth follow-up for an across-period increase in positive test rate",
+    "Route to decline-focused review for a downward positive test rate pattern"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot x-axis",
+          "content": "The visible x-axis tick labels are 2017, 2018, 2019, and 2020, ordered left to right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The purple marker aligned with each successive visible year is higher on the page than the preceding marker, and the markers are joined by an upward-slanting purple line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart subtitle",
+          "content": "The subtitle reads \"Reported window shown in the dashboard summary\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "task context",
+          "content": "The visible review-timeframe text says \"2013-2020 positive test rate trend assessment\"."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis orders years chronologically left to right and the vertical positive-test-rate axis increases upward, then successively higher plotted markers across the displayed years encode an increase in the plotted rate. If the displayed years are the full period relevant to an across-period decision, a consistent increase supports sustained-growth follow-up; if they are only a later subset of the stated review period, they support a recent-upswing interpretation but do not establish the full-period pattern.",
+        "conditions": "Applies only if the plotted purple line represents positive test rate for the sentinel sites and if the displayed window's relation to the stated 2013-2020 review period is known."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot x-axis",
+          "content": "The visible x-axis tick labels are 2017, 2018, 2019, and 2020; no 2013, 2014, 2015, or 2016 tick labels or plotted markers are visible."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The purple markers from 2017 through 2020 rise successively on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "task context",
+          "content": "The visible review-timeframe text says \"2013-2020 positive test rate trend assessment\"."
+        }
+      ],
+      "B": {
+        "text": "If the dashboard chart displays only 2017-2020 while the task requires a full 2013-2020 assessment, the unshown 2013-2016 pattern is unavailable from this chart. A rising displayed late-period segment can therefore justify continued monitoring for a more recent upward shift, while sustained growth across the full stated period remains unverified.",
+        "conditions": "Applies because the task explicitly requests use of the entire 2013-2020 pattern and no marks for 2013-2016 are visible."
+      }
+    }
+  ]
+}

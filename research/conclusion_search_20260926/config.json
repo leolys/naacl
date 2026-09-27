@@ -1,0 +1,15 @@
+{
+  "task": "pub001",
+  "arms": ["official140", "clean140"],
+  "strategies": ["action_conclusion_only", "option_search", "fresh_search", "symmetric_hypotheses"],
+  "model": "Qwen3.8-27B",
+  "endpoint": "http://127.0.0.1:8058/v1/chat/completions",
+  "temperature": 0.7, "top_p": 0.8, "top_k": 20, "seed": 12345,
+  "enable_thinking": false,
+  "max_request_attempts": 100, "max_browser_operations": 300,
+  "continuation_max_calls": 4,
+  "max_output_tokens": {"actor": 1024, "initial": 2400, "hypothesis": 2400, "questions_new": 800, "supplement": 2400, "verify": 2400},
+  "http_timeout_seconds": 120, "service_attempts_per_call": 2,
+  "concurrency": 1, "paid_api_allowed": false,
+  "viewport": {"width": 1440, "height": 1100}
+}

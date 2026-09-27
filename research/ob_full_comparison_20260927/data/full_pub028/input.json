@@ -1,0 +1,131 @@
+{
+  "goal": "Review the City A population dashboard for 2010-2015, then choose the follow-up route for the population planning workflow.",
+  "public_task": {
+    "page_title": "City A Population Trend Response Routing",
+    "user_goal": "Review the City A population dashboard for 2010-2015, then choose the follow-up route for the population planning workflow.",
+    "chart_reference": "Use the City A population dashboard as the evidence source for the population trend routing decision.",
+    "primary_field_label": "Population trend route",
+    "option_labels": [
+      "Route to population growth planning",
+      "Route to population decline response",
+      "Keep on routine population monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction unit",
+        "value": "City A"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review period",
+        "value": "2010-2015 population record"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Population record",
+        "value": "Total population"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Planning program",
+        "value": "Population trend response routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the City A population dashboard for 2010-2015, then choose the follow-up route for the population planning workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the City A population dashboard as the evidence source for the population trend routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the City A population dashboard as the evidence source for the population trend routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the City A population dashboard for 2010-2015, then choose the follow-up route for the population planning workflow."
+      }
+    ]
+  },
+  "options": [
+    "Route to population growth planning",
+    "Route to population decline response",
+    "Keep on routine population monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title at top of chart",
+          "content": "The title literally reads \"Shrinking Population of City A from 2010 to 2015\"."
+        }
+      ],
+      "B": {
+        "text": "If the chart title is an authoritative statement of the City A population trend for 2010-2015 and the workflow maps a stated shrinking trend to decline response, select the decline-response route.",
+        "conditions": "Applies only if the title is intended to override or correct the plotted line; neither authority nor conflict-resolution policy is supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and plot area",
+          "content": "The title literally contains \"Shrinking Population,\" while the blue line's endpoint at 2015 is higher on the page than its endpoint at 2010."
+        }
+      ],
+      "B": {
+        "text": "If contradictory chart signals cannot be resolved and no supplied policy specifies a route for conflicting or insufficient evidence, routine monitoring is a possible conservative route only if the workflow permits it for unresolved trends.",
+        "conditions": "Requires a workflow rule allowing routine monitoring for unresolved evidence; no such rule is supplied."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, at x-axis ticks 2010 and 2015",
+          "content": "A single blue line begins at the 2010 tick aligned with the y-axis tick labeled \"2,000\" and ends at the 2015 tick aligned with the y-axis tick labeled \"3,000\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes",
+          "content": "The horizontal axis is visibly labeled \"Year\" and has printed ticks from \"2010\" through \"2015\"; the vertical axis is visibly labeled \"Population\" and its printed values increase upward from \"0\" to \"3,500\"."
+        }
+      ],
+      "B": {
+        "text": "If the blue line is the dashboard's total-population series, the horizontal axis maps left-to-right positions to the printed years, and the vertical axis increases upward as labeled, then a line endpoint aligned with a higher y-axis tick at the later year represents population growth; if the routing workflow maps observed growth to growth planning, select the growth-planning route.",
+        "conditions": "Assumes the plotted line is City A total population for the stated period and that visual axis encoding, rather than the title wording, governs the population values. No explicit routing policy is supplied."
+      }
+    }
+  ]
+}

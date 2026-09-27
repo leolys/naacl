@@ -1,0 +1,147 @@
+{
+  "goal": "Review the public service feedback dashboard, then choose the service category that should enter the highest-share service-planning follow-up workflow.",
+  "public_task": {
+    "page_title": "Public Service Feedback Priority Routing",
+    "user_goal": "Review the public service feedback dashboard, then choose the service category that should enter the highest-share service-planning follow-up workflow.",
+    "chart_reference": "Use the public service feedback dashboard as the evidence source for selecting the highest-share feedback category.",
+    "primary_field_label": "Highest-share feedback category route",
+    "option_labels": [
+      "Route Service Design to public feedback priority follow-up",
+      "Route Service Quality to public feedback priority follow-up",
+      "Route Service Delivery to routine public feedback monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Public service feedback"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Civic service feedback categories"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Service planning priority follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Highest feedback share in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public service feedback dashboard, then choose the service category that should enter the highest-share service-planning follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the public service feedback dashboard as the evidence source for selecting the highest-share feedback category."
+      },
+      {
+        "page": "form",
+        "text": "Use the public service feedback dashboard as the evidence source for selecting the highest-share feedback category."
+      },
+      {
+        "page": "form",
+        "text": "Review the public service feedback dashboard, then choose the service category that should enter the highest-share service-planning follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Route Service Design to public feedback priority follow-up",
+    "Route Service Quality to public feedback priority follow-up",
+    "Route Service Delivery to routine public feedback monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The blue marker aligned with 'Service Quality' is higher on the page than every other blue marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The vertical axis is literally labeled 'Value' and has ticks increasing upward from 0 to 65."
+        }
+      ],
+      "B": {
+        "text": "If the vertical marker position on the 'Value' axis is the intended encoding of feedback share, a marker higher on that common axis represents a larger share; the task routes the highest such category to priority follow-up.",
+        "conditions": "This conflicts with treating the printed percentages as the share values; the axis is labeled only 'Value,' so this interpretation is uncertain."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title literally reads 'Public Service Feedback Share by Category'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Service Quality marker",
+          "content": "A '41%' inscription appears directly above the blue marker aligned with the 'Service Quality' x-axis label."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Service Cost marker",
+          "content": "A '46%' inscription appears directly above the blue marker aligned with the 'Service Cost' x-axis label."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Service Design marker",
+          "content": "A '51%' inscription appears directly above the blue marker aligned with the 'Service Design' x-axis label."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support Access marker",
+          "content": "A '42%' inscription appears directly above the blue marker aligned with the 'Support Access' x-axis label."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Service Delivery marker",
+          "content": "A '36%' inscription appears directly above the blue marker aligned with the 'Service Delivery' x-axis label."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Other marker",
+          "content": "A '10%' inscription appears directly above the blue marker aligned with the 'Other' x-axis label."
+        }
+      ],
+      "B": {
+        "text": "If the chart title identifies the displayed measure as public-service feedback share and each percent inscription is attached to its category's marker, the category with the largest printed percentage is the highest-share feedback category; the task routes that category to priority follow-up.",
+        "conditions": "Assumes the percent inscriptions, rather than the vertically plotted marker positions on the generic 'Value' axis, encode feedback share."
+      }
+    }
+  ]
+}

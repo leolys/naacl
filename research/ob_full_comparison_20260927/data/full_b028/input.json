@@ -1,0 +1,165 @@
+{
+  "goal": "Review the regional advertising dashboard, then submit the budget increase decision.",
+  "public_task": {
+    "page_title": "Regional Advertising Budget Review",
+    "user_goal": "Review the regional advertising dashboard, then submit the budget increase decision.",
+    "chart_reference": "Use the regional advertising dashboard to complete the budget review form.",
+    "primary_field_label": "Budget Approval Decision",
+    "option_labels": [
+      "Hold and request full-data analysis",
+      "Approve broader budget increase",
+      "Reject budget increase request"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional advertising budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "High-performing region request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Advertising budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the regional advertising dashboard, then submit the budget increase decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional advertising dashboard, then submit the budget increase decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional advertising dashboard, then submit the budget increase decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the regional advertising dashboard to complete the budget review form."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full-data analysis",
+    "Approve broader budget increase",
+    "Reject budget increase request"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Advertising Budget vs Revenue (High-Performing Regions)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Only five labeled points, January through May, are visible, and no marks or labels for other regional groups are visible."
+        }
+      ],
+      "B": {
+        "text": "If a broader budget increase requires evidence from regions beyond the displayed high-performing subset or evidence that budget increases caused revenue increases, then a chart limited to that subset and showing only plotted monthly association is insufficient, supporting a request for full-data analysis.",
+        "conditions": "Applies if approval requires representative regional coverage or causal/full-data validation."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads \"Advertising Budget vs Revenue (High-Performing Regions)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Budget ($)\" and its printed ticks increase from 0 at the left toward 70 at the right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Revenue ($)\" and its printed ticks increase from 0 at the bottom toward 220 near the top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five blue points are labeled January, February, March, April, and May; from January through May, each successive labeled point is farther right and higher on the page than the preceding point."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal and vertical axes encode advertising budget and revenue respectively, with values increasing rightward and upward, then the labeled monthly points form a positive budget-revenue association; if the review permits broader approval from this high-performing-region association alone, it supports approval.",
+        "conditions": "Applies only if the plotted points are comparable monthly observations for the stated high-performing regions and association is sufficient evidence for a broader increase."
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "goal": "Review the coastal water temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+  "public_task": {
+    "page_title": "Coastal Water Temperature Change Routing",
+    "user_goal": "Review the coastal water temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+    "chart_reference": "Use the dashboard to determine whether the full-period coastal water temperature change should enter substantial-change follow-up or remain in routine monitoring.",
+    "primary_field_label": "Coastal water temperature change route",
+    "option_labels": [
+      "Route the 2005 to 2015 coastal water temperature change to substantial-change follow-up",
+      "Keep the 2005 to 2015 coastal water temperature change on routine monitoring for ordinary variation",
+      "Route the coastal water temperature record to archive and background filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Coastal temperature monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Coastal Water Temperature change, 2005-2015"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Change-based follow-up routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether the full-period coastal water temperature change requires substantial-change follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the coastal water temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine whether the full-period coastal water temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine whether the full-period coastal water temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Review the coastal water temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2005 to 2015 coastal water temperature change to substantial-change follow-up",
+    "Keep the 2005 to 2015 coastal water temperature change on routine monitoring for ordinary variation",
+    "Route the coastal water temperature record to archive and background filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "entire visible chart area",
+          "content": "No visible inscription states a substantial-change threshold, escalation rule, or routing instruction."
+        },
+        {
+          "ref": "chart_1",
+          "location": "leftmost and rightmost plotted markers",
+          "content": "The endpoint markers are aligned with 2005 and 2015 and carry printed inscriptions \"24.0°C\" and \"10.0°C\", respectively."
+        }
+      ],
+      "B": {
+        "text": "If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.",
+        "conditions": "This depends on a routine-by-default policy, which is not supplied in the task or chart."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "leftmost plotted marker aligned with x-axis tick 2005",
+          "content": "A black marker has the adjacent printed inscription \"24.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted marker aligned with x-axis tick 2015",
+          "content": "A black marker has the adjacent printed inscription \"10.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and vertical axis",
+          "content": "The title reads \"Coastal Water Temperature Trend\" and the vertical axis reads \"Water temperature (°C)\"."
+        }
+      ],
+      "B": {
+        "text": "If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.",
+        "conditions": "Applies to the displayed 2005 and 2015 endpoints. The chart does not display a numerical or qualitative threshold defining substantial change."
+      }
+    }
+  ]
+}

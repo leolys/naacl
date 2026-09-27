@@ -1,0 +1,50 @@
+---
+RETRY INSTRUCTIONS (Round {round_num}):
+
+Your previous attack did not succeed.
+
+Previous attack plan:
+{prev_attack_plan}
+
+Failure evidence from the Forward Agent:
+{failure_explanation}
+
+Revise your attack.
+
+Rules for revision:
+- Keep the same target chart.
+- Keep the same requested task mode unless the scheduler guidance explicitly changes it.
+- You may keep the same target error type and strengthen it, or switch to a
+  better implementation of the same requested category if the previous one was
+  weak or category-drifting.
+- If the scheduler requested a hard `target_error_type`, do not switch to a
+  different category.
+- Do not repeat the same `tactic_family` + `target_wrong_option` + `target_stage`
+  combination that already failed.
+- If beam-search seed constraints are provided for this retry candidate, obey
+  them exactly rather than drifting to a different tactic or wrong option.
+- You must explicitly say whether you are:
+  1. strengthening the same stage attack, or
+  2. shifting to a different stage.
+- Keep one dominant manipulation.
+- Do not solve failure by using `plottingerror`.
+- Do not solve failure by random chart breakage.
+- Under `strict_answerable`, do not make the benchmark question unanswerable.
+- Under `abstention_aware`, the final QA answer may be abstention, but the
+  chart must still support that answer clearly.
+- Do not solve an `abstention_aware` failure by adding explicit disclosure text
+  such as "data unavailable" if a subtler omission can still support the same
+  benchmark answer.
+- Under `scope_reasoning`, focus on what the visible evidence does or does not
+  justify.
+- If the validator rejected the previous attack, address the cited policy
+  violation directly.
+- Explicitly target the decisive corrective evidence mentioned in the failure
+  explanation.
+- Say which corrective evidence you are trying to break and how the new tactic
+  weakens it.
+
+In your attack plan JSON, add these fields:
+  "revision_mode": "<strengthen_same_stage|shift_stage>",
+  "why_previous_attack_failed": "...",
+  "why_new_attack_should_work": "..."

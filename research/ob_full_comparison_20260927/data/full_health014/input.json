@@ -1,0 +1,100 @@
+{
+  "goal": "Review the 2017 transplant comparison dashboard and choose the follow-up route that best fits the service-line comparison for this reporting year.",
+  "public_task": {
+    "page_title": "2017 Transplant Volume Comparison Routing",
+    "user_goal": "Review the 2017 transplant comparison dashboard and choose the follow-up route that best fits the service-line comparison for this reporting year.",
+    "chart_reference": "Use the dashboard as the evidence source for the 2017 transplant service-line routing decision.",
+    "primary_field_label": "2017 transplant comparison route",
+    "option_labels": [
+      "Route the 2017 kidney transplant program to higher-volume follow-up",
+      "Route the 2017 transplant comparison to matched-volume review",
+      "Send the 2017 transplant comparison to background service-line review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Transplant service planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2017 kidney-versus-liver volume comparison"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard-based service-line routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the 2017 transplant comparison dashboard and choose the follow-up route that best fits the service-line comparison for this reporting year."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard as the evidence source for the 2017 transplant service-line routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard as the evidence source for the 2017 transplant service-line routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the 2017 transplant comparison dashboard and choose the follow-up route that best fits the service-line comparison for this reporting year."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2017 kidney transplant program to higher-volume follow-up",
+    "Route the 2017 transplant comparison to matched-volume review",
+    "Send the 2017 transplant comparison to background service-line review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and plot",
+          "content": "The title reads \"Kidney vs Liver Transplants,\" and the horizontal axis is labeled \"Year\" with a visible tick labeled \"2017.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted position at the 2017 tick",
+          "content": "A blue solid-line endpoint and a red square marker are drawn at the same visible position."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left and right plot-side labels",
+          "content": "\"Kidney\" is printed in blue on the left side of the plot, and \"Liver\" is printed in red on the right side."
+        }
+      ],
+      "B": {
+        "text": "If the blue solid series is the Kidney series and the red dashed square-marked series is the Liver series, and coincident marks at the same year encode equal transplant volume, then their 2017 volumes are matched. If the routing labels are intended to map matched volumes to matched-volume review, that route applies; the chart does not itself print this routing policy.",
+        "conditions": "Applies to the 2017 marks; assumes the color-coded side labels bind the series and that the route wording reflects the comparison result."
+      }
+    }
+  ]
+}

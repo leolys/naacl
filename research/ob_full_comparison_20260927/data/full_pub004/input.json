@@ -1,0 +1,110 @@
+{
+  "goal": "Review the state risk dashboard, then open the state profile that should be routed into the highest-risk priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Risk Priority Profile Routing",
+    "user_goal": "Review the state risk dashboard, then open the state profile that should be routed into the highest-risk priority follow-up workflow.",
+    "chart_reference": "Use the state risk dashboard as the evidence source for the state priority profile routing decision.",
+    "primary_field_label": "Highest-risk state profile route",
+    "option_labels": [
+      "Open Idaho (ID) risk profile for priority follow-up",
+      "Open South Carolina (SC) risk profile for priority follow-up",
+      "Open Arizona (AZ) risk profile for priority follow-up"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Public risk surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing queue",
+        "value": "Risk priority follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state risk dashboard, then open the state profile that should be routed into the highest-risk priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state risk dashboard as the evidence source for the state priority profile routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the state risk dashboard as the evidence source for the state priority profile routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the state risk dashboard, then open the state profile that should be routed into the highest-risk priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open Idaho (ID) risk profile for priority follow-up",
+    "Open South Carolina (SC) risk profile for priority follow-up",
+    "Open Arizona (AZ) risk profile for priority follow-up"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map title",
+          "content": "The title inscription reads \"Risk Index of Hazard H in US States\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Idaho map region",
+          "content": "The region labeled \"ID\" is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "South Carolina map region",
+          "content": "The region labeled \"SC\" is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Arizona map region",
+          "content": "The Arizona-shaped map region is filled gray and has no visible \"AZ\" inscription."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-right color scale",
+          "content": "The vertical scale has pale yellow at its top beside the inscriptions \"High\" and \"100\", and dark burgundy at its bottom beside \"Low\" and \"0\"."
+        }
+      ],
+      "B": {
+        "text": "If the map’s state fills are encoded by the adjacent color scale, the pale-yellow end labeled \"High\" and \"100\" represents higher Risk Index values than the dark burgundy end labeled \"Low\" and \"0\". For this routing task, select the offered state with the highest displayed risk; gray is not assigned a position on the shown color scale.",
+        "conditions": "Applies if each labeled state region uses the displayed Risk Index scale and gray denotes no displayed scale value."
+      }
+    }
+  ]
+}

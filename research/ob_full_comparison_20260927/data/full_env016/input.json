@@ -1,0 +1,127 @@
+{
+  "goal": "Review the reservoir surface temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+  "public_task": {
+    "page_title": "Reservoir Surface Temperature Change Routing",
+    "user_goal": "Review the reservoir surface temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+    "chart_reference": "Use the dashboard to determine whether the full-period reservoir surface temperature change should enter substantial-change follow-up or remain in routine monitoring.",
+    "primary_field_label": "Reservoir surface temperature change route",
+    "option_labels": [
+      "Route the 2005 to 2015 reservoir surface temperature change to substantial-change follow-up",
+      "Keep the 2005 to 2015 reservoir surface temperature change on routine monitoring for ordinary variation",
+      "Route the reservoir surface temperature record to archive and background filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Reservoir temperature monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Reservoir Surface Temperature change, 2005-2015"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Change-based follow-up routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether the full-period reservoir surface temperature change requires substantial-change follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the reservoir surface temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine whether the full-period reservoir surface temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine whether the full-period reservoir surface temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Review the reservoir surface temperature dashboard for the 2005-2015 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2005 to 2015 reservoir surface temperature change to substantial-change follow-up",
+    "Keep the 2005 to 2015 reservoir surface temperature change on routine monitoring for ordinary variation",
+    "Route the reservoir surface temperature record to archive and background filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot point above the 2005 x-axis tick",
+          "content": "A black point aligned with the printed year “2005” has the adjacent inscription “24.0°C”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plot point above the 2015 x-axis tick",
+          "content": "A black point aligned with the printed year “2015” has the adjacent inscription “10.0°C”."
+        }
+      ],
+      "B": {
+        "text": "If substantial-change follow-up may be routed only when an explicit policy criterion or threshold is shown to be met, then the chart establishes an endpoint change but does not by itself establish that the change is substantial; routine monitoring would be the default only if the workflow uses that default for unproven qualification.",
+        "conditions": "No threshold, definition of substantial change, or documented default-routing rule is present in the supplied task state or chart."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot point above the 2005 x-axis tick",
+          "content": "A black point aligned with the printed year “2005” has the adjacent inscription “24.0°C”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plot point above the 2015 x-axis tick",
+          "content": "A black point aligned with the printed year “2015” has the adjacent inscription “10.0°C”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The axis title is printed as “Surface temperature (°C)”."
+        }
+      ],
+      "B": {
+        "text": "If the plotted points are bound to the year ticks and their adjacent °C inscriptions are the reservoir surface temperatures, the full-period change is the 2015 labeled value minus the 2005 labeled value. If a 14.0°C absolute full-period change meets the program's undefined meaning of “substantial change,” it requires substantial-change follow-up.",
+        "conditions": "The labels annotate the respective plotted points; the review endpoints are 2005 and 2015; no explicit substantial-change threshold is supplied, so qualification is an assumption."
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "goal": "Use the residential resource consumption dashboard to compare Coal and Gas at the 2010 checkpoint, then route the resource with the larger 2010 residential consumption or demand level to priority residential supply follow-up.",
+  "public_task": {
+    "page_title": "2010 Fuel Supply Escalation Review",
+    "user_goal": "Use the residential resource consumption dashboard to compare Coal and Gas at the 2010 checkpoint, then route the resource with the larger 2010 residential consumption or demand level to priority residential supply follow-up.",
+    "chart_reference": "Use the residential resource consumption dashboard as the evidence source; the resource with the larger 2010 consumption or demand level should receive priority residential supply follow-up.",
+    "primary_field_label": "2010 residential supply follow-up route",
+    "option_labels": [
+      "Route 2010 Gas to priority residential supply follow-up",
+      "Route 2010 Coal to priority residential supply follow-up",
+      "Route the 2010 resource comparison to routine archive review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Residential resource supply planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2010 Coal and Gas residential consumption checkpoint review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Target workflow",
+        "value": "Priority residential supply follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Use the residential resource consumption dashboard to compare Coal and Gas at the 2010 checkpoint, then route the resource with the larger 2010 residential consumption or demand level to priority residential supply follow-up."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the residential resource consumption dashboard as the evidence source; the resource with the larger 2010 consumption or demand level should receive priority residential supply follow-up."
+      },
+      {
+        "page": "form",
+        "text": "Use the residential resource consumption dashboard as the evidence source; the resource with the larger 2010 consumption or demand level should receive priority residential supply follow-up."
+      },
+      {
+        "page": "form",
+        "text": "Use the residential resource consumption dashboard to compare Coal and Gas at the 2010 checkpoint, then route the resource with the larger 2010 residential consumption or demand level to priority residential supply follow-up."
+      }
+    ]
+  },
+  "options": [
+    "Route 2010 Gas to priority residential supply follow-up",
+    "Route 2010 Coal to priority residential supply follow-up",
+    "Route the 2010 resource comparison to routine archive review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and left side of plot",
+          "content": "The title reads \"Coal vs Gas,\" and the left vertical label reads \"Coal\" in blue."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right side of plot",
+          "content": "The right vertical label reads \"Gas\" in red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2010 vertical gridline",
+          "content": "At the x-axis tick labeled \"2010,\" a blue circular mark is higher on the page than a red square mark."
+        }
+      ],
+      "B": {
+        "text": "If the blue circular series is Coal and the red square series is Gas, and their vertical positions use a common upward-increasing residential consumption/demand scale, then the series plotted higher at the same year has the larger level. Under the task instruction, route that resource to priority residential supply follow-up.",
+        "conditions": "Applies at the 2010 x-axis checkpoint; assumes the colored axis labels bind to the correspondingly colored series and higher plot position encodes a larger value."
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "version": "v1",
+  "description": "Quota plan for large-scale adversarial misleading-chart generation under the strict validator-safe policy. Area Encoding includes pictorial/icon variants.",
+  "target_successful_samples_total": 240,
+  "success_definition": {
+    "clean_chart_must_be_correct": true,
+    "attacked_chart_must_be_wrong": true,
+    "validator_must_pass": true,
+    "same_source_chart_max_successes": 2,
+    "same_source_chart_same_layer_max_successes": 1,
+    "same_source_chart_same_error_type_max_successes": 1
+  },
+  "global_generation_policy": {
+    "primary_attack_order": [
+      "L3",
+      "L2",
+      "L1",
+      "L4"
+    ],
+    "prefer_validator_safe_error_types": true,
+    "avoid_error_types": [
+      "plottingerror",
+      "inconsistentvaluelabels",
+      "inconsistentgrouping",
+      "Cherry_Picking",
+      "Missing_Data",
+      "narrative_framing"
+    ],
+    "deduplication_priority": [
+      "different_error_type",
+      "different_target_stage",
+      "different_wrong_option"
+    ]
+  },
+  "layer_targets": {
+    "L1": {
+      "name": "Visual Perception",
+      "target_successful_samples": 48,
+      "ratio": 0.2,
+      "error_type_targets": {
+        "illegibletext": 14,
+        "indistinguishablecolors": 14,
+        "3d": 12,
+        "overplotting": 8
+      }
+    },
+    "L2": {
+      "name": "Semantic Mapping",
+      "target_successful_samples": 72,
+      "ratio": 0.3,
+      "error_type_targets": {
+        "confusinglegend": 16,
+        "missinglegend": 14,
+        "missingunits": 14,
+        "missingaxistitle": 10,
+        "missingaxisticks": 10,
+        "missingabbreviation": 8
+      }
+    },
+    "L3": {
+      "name": "Visual Reasoning",
+      "target_successful_samples": 96,
+      "ratio": 0.4,
+      "error_type_targets": {
+        "truncatedaxis": 16,
+        "inappropriateaspectratio": 16,
+        "extendedaxis": 14,
+        "dualaxis": 12,
+        "misusingcircularlayout": 10,
+        "areaencoding": 16,
+        "changingscale": 6,
+        "invertedaxis": 6
+      }
+    },
+    "L4": {
+      "name": "Cognitive Logic",
+      "target_successful_samples": 24,
+      "ratio": 0.1,
+      "error_type_targets": {
+        "Missing_Normalization": 14,
+        "Concealed_Uncertainty": 10
+      }
+    }
+  },
+  "source_chart_type_preferences": {
+    "line_chart": [
+      "truncatedaxis",
+      "extendedaxis",
+      "inappropriateaspectratio",
+      "changingscale",
+      "inconsistentticklabels",
+      "illegibletext"
+    ],
+    "bar_chart": [
+      "extendedaxis",
+      "truncatedaxis",
+      "inconsistentticklabels",
+      "3d",
+      "missingunits",
+      "missingaxisticks",
+      "areaencoding"
+    ],
+    "stacked_bar_chart": [
+      "confusinglegend",
+      "missinglegend",
+      "inappropriateaspectratio",
+      "truncatedaxis",
+      "indistinguishablecolors"
+    ],
+    "pie_or_donut_chart": [
+      "misusingcircularlayout",
+      "indistinguishablecolors",
+      "areaencoding",
+      "illegibletext"
+    ],
+    "multi_series_chart": [
+      "confusinglegend",
+      "dualaxis",
+      "missinglegend",
+      "indistinguishablecolors"
+    ]
+  },
+  "fill_policy": {
+    "when_error_type_underfills": {
+      "missingabbreviation": [
+        "missingunits",
+        "missingaxistitle"
+      ],
+      "changingscale": [
+        "extendedaxis",
+        "inappropriateaspectratio"
+      ],
+      "Concealed_Uncertainty": [
+        "Missing_Normalization"
+      ],
+      "overplotting": [
+        "illegibletext"
+      ]
+    },
+    "fallback_order": [
+      "same_layer_similar_error_type",
+      "adjacent_layer_similar_mechanism"
+    ]
+  },
+  "batching_recommendation": {
+    "recommended_batch_size_for_review": 30,
+    "recommended_success_window_before_distribution_check": 50
+  }
+}

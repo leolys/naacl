@@ -1,0 +1,170 @@
+{
+  "goal": "Review the store ad spend and sales dashboard, then choose how the budget recommendation should be routed.",
+  "public_task": {
+    "page_title": "Store Budget Evidence Review",
+    "user_goal": "Review the store ad spend and sales dashboard, then choose how the budget recommendation should be routed.",
+    "chart_reference": "Use the store ad spend and sales dashboard to complete the budget recommendation review.",
+    "primary_field_label": "Budget Recommendation",
+    "option_labels": [
+      "Hold and request full-data analysis",
+      "Approve broader ad budget increase",
+      "Reject ad budget increase at this time"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Store advertising budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Featured-store budget request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Budget recommendation review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the store ad spend and sales dashboard, then choose how the budget recommendation should be routed."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the store ad spend and sales dashboard, then choose how the budget recommendation should be routed."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the store ad spend and sales dashboard, then choose how the budget recommendation should be routed."
+      },
+      {
+        "page": "form",
+        "text": "Use the store ad spend and sales dashboard to complete the budget recommendation review."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full-data analysis",
+    "Approve broader ad budget increase",
+    "Reject ad budget increase at this time"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title inscription reads \"Top Performing Stores: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five blue points are visibly labeled Store 1, Store 2, Store 3, Store 4, and Store 5; no profitability or ROI axis, legend, or inscription is visible."
+        }
+      ],
+      "B": {
+        "text": "If the chart title limits the display to top-performing stores and the only displayed measures are advertising spend and sales, then the view is not full-store, profitability/ROI, or causal evidence; if a broader budget increase requires those evidence types, route the request for full-data analysis.",
+        "conditions": "Assumes broader ad-budget approval requires evidence beyond a selected-store spend-sales association; no such approval threshold is supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The points labeled Store 1 through Store 5 are positioned successively farther right and higher on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\"."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, then a set of labeled store points progressing generally up and to the right indicates a positive observed association between those two displayed measures; this can support approval only if association among the displayed stores is sufficient evidence for a broader increase.",
+        "conditions": "Assumes the axis labels correctly bind the coordinates and that selected-store association is adequate for a broader budget decision."
+      }
+    }
+  ]
+}

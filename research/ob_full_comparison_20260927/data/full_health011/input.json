@@ -1,0 +1,119 @@
+{
+  "goal": "Review the dashboard showing outreach hours and referral activity for the highlighted screening centers, then choose the next operational route for how this evidence should be handled at the network level.",
+  "public_task": {
+    "page_title": "Screening Center Outreach Pattern Escalation",
+    "user_goal": "Review the dashboard showing outreach hours and referral activity for the highlighted screening centers, then choose the next operational route for how this evidence should be handled at the network level.",
+    "chart_reference": "Use the displayed pattern among the highlighted screening centers to determine whether this item should move into broader network review, be used to support immediate network-level advancement, or be retained as background context.",
+    "primary_field_label": "Screening evidence routing decision",
+    "option_labels": [
+      "Route the highlighted screening-center pattern to broader network review before any network-level advancement",
+      "Use the highlighted screening-center pattern to support immediate network-level advancement",
+      "Retain the highlighted screening-center comparison as background context only"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Screening services operations"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Highlighted screening centers"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Network evidence escalation"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the dashboard showing outreach hours and referral activity for the highlighted screening centers, then choose the next operational route for how this evidence should be handled at the network level."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed pattern among the highlighted screening centers to determine whether this item should move into broader network review, be used to support immediate network-level advancement, or be retained as background context."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed pattern among the highlighted screening centers to determine whether this item should move into broader network review, be used to support immediate network-level advancement, or be retained as background context."
+      },
+      {
+        "page": "form",
+        "text": "Review the dashboard showing outreach hours and referral activity for the highlighted screening centers, then choose the next operational route for how this evidence should be handled at the network level."
+      }
+    ]
+  },
+  "options": [
+    "Route the highlighted screening-center pattern to broader network review before any network-level advancement",
+    "Use the highlighted screening-center pattern to support immediate network-level advancement",
+    "Retain the highlighted screening-center comparison as background context only"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "subtitle above plot",
+          "content": "The subtitle reads \"Selected high-referral centers shown in dashboard summary.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot",
+          "content": "Five labeled points are visible: Center A, Center B, Center C, Center D, and Center E."
+        }
+      ],
+      "B": {
+        "text": "If the chart is explicitly limited to selected high-referral centers, then its pattern may be affected by selection and does not by itself characterize all centers in the network; such evidence can be retained as contextual information pending broader comparison.",
+        "conditions": "Applies if no additional network-wide sampling, comparison group, or outcome evidence is supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and subtitle above plot",
+          "content": "The title reads \"Top Screening Centers: Outreach Hours vs Referral Count,\" and the subtitle reads \"Selected high-referral centers shown in dashboard summary.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot axes",
+          "content": "The horizontal axis is labeled \"Monthly outreach hours\" and its printed ticks increase from 30 at the left to 70 at the right; the vertical axis is labeled \"Referral count\" and its printed ticks increase from 60 near the bottom to 160 near the top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange labeled points",
+          "content": "Center A is the leftmost and lowest labeled point; Center B is to its right and higher; Center C is further right and higher; Center D is further right and higher; Center E is the rightmost and highest labeled point."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes monthly outreach hours increasing left-to-right and the vertical axis encodes referral count increasing upward, then the labeled center points can be compared as an observed association. A consistent higher-hours/higher-referrals pattern among the displayed selected centers is suitable for broader network review, but this cross-sectional selected-center chart alone does not establish causality, network-wide representativeness, or grounds for immediate network-level advancement.",
+        "conditions": "Applies only to the displayed highlighted/selected high-referral screening centers and assumes the axis titles describe the plotted coordinates."
+      }
+    }
+  ]
+}

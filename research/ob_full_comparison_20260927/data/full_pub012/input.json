@@ -1,0 +1,152 @@
+{
+  "goal": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Priority Detail Routing",
+    "user_goal": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow.",
+    "chart_reference": "Use the state prevalence dashboard as the evidence source for selecting the highest-prevalence state record.",
+    "primary_field_label": "Highest-prevalence state route",
+    "option_labels": [
+      "Open North Carolina (NC) prevalence detail for priority follow-up",
+      "Open New York (NY) prevalence detail for priority follow-up",
+      "Open Delaware (DE) prevalence detail for routine monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Prevalence surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "State prevalence priority follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Highest prevalence state in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state prevalence dashboard as the evidence source for selecting the highest-prevalence state record."
+      },
+      {
+        "page": "form",
+        "text": "Use the state prevalence dashboard as the evidence source for selecting the highest-prevalence state record."
+      },
+      {
+        "page": "form",
+        "text": "Review the state prevalence dashboard, then open the state prevalence record that should be routed into the highest-prevalence priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open North Carolina (NC) prevalence detail for priority follow-up",
+    "Open New York (NY) prevalence detail for priority follow-up",
+    "Open Delaware (DE) prevalence detail for routine monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map title",
+          "content": "The title visibly reads “Prevalence of Species Z in Each State.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "southeastern map, North Carolina",
+          "content": "The map region labeled “NC” is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern map, New York",
+          "content": "The map region labeled “NY” is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "mid-Atlantic map, Delaware",
+          "content": "The small map region labeled “DE” is filled light orange."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-right legend",
+          "content": "The vertical color legend shows pale yellow near the printed “100” and “Low” at its top, and dark burgundy near the printed “0” and “High” at its bottom."
+        }
+      ],
+      "B": {
+        "text": "If, contrary to the legend’s printed High/Low labels, lighter yellow map fill were treated as encoding higher prevalence, then the lightest available option state would be selected for priority follow-up.",
+        "conditions": "This interpretation requires disregarding or reversing the visible legend direction; it is included only to represent the proposed choice’s needed bridge."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map title",
+          "content": "The title visibly reads “Prevalence of Species Z in Each State.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "southeastern map, North Carolina",
+          "content": "The map region labeled “NC” is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern map, New York",
+          "content": "The map region labeled “NY” is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "mid-Atlantic map, Delaware",
+          "content": "The small map region labeled “DE” is filled light orange."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-right legend",
+          "content": "The vertical color legend shows pale yellow near the printed “100” and “Low” at its top, and dark burgundy near the printed “0” and “High” at its bottom."
+        }
+      ],
+      "B": {
+        "text": "If each labeled state's map fill encodes the prevalence named in the title, and the legend applies to those fills, then darker burgundy toward the printed 0/“High” end represents higher prevalence than lighter yellow toward the printed 100/“Low” end; the state with the highest encoded prevalence among the available state options should be routed to priority follow-up.",
+        "conditions": "Applies if the legend’s printed High/Low direction governs the map fills and the task compares the available option states."
+      }
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "goal": "Assess the river restoration capacity dashboard for the 2018-2023 review window and send the record to the downstream route that best matches the overall dashboard trend.",
+  "public_task": {
+    "page_title": "River Restoration Capacity Review Routing",
+    "user_goal": "Assess the river restoration capacity dashboard for the 2018-2023 review window and send the record to the downstream route that best matches the overall dashboard trend.",
+    "chart_reference": "Use the dashboard trend as the basis for selecting the most appropriate operational route for this record.",
+    "primary_field_label": "River restoration capacity handling route",
+    "option_labels": [
+      "Route the record to routine restoration capacity monitoring",
+      "Route the record to restoration capacity expansion follow-up",
+      "Route the record to restoration capacity decline response review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "River habitat restoration planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2018-2023 restoration-capacity trend review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard trend capacity routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Assess the river restoration capacity dashboard for the 2018-2023 review window and send the record to the downstream route that best matches the overall dashboard trend."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard trend as the basis for selecting the most appropriate operational route for this record."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard trend as the basis for selecting the most appropriate operational route for this record."
+      },
+      {
+        "page": "form",
+        "text": "Assess the river restoration capacity dashboard for the 2018-2023 review window and send the record to the downstream route that best matches the overall dashboard trend."
+      }
+    ]
+  },
+  "options": [
+    "Route the record to routine restoration capacity monitoring",
+    "Route the record to restoration capacity expansion follow-up",
+    "Route the record to restoration capacity decline response review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and axes",
+          "content": "The vertical axis is labeled “Capacity Index,” with printed tick labels increasing upward from 0 near the bottom to 2,800 near the top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue line at 2018 and 2023 ticks",
+          "content": "The blue line’s mark at 2023 is lower on the page than its mark at 2018."
+        }
+      ],
+      "B": {
+        "text": "If the vertical axis encodes Capacity Index with larger values higher on the page, and overall trend is assessed by comparing the first and last plotted years, a final mark lower than the initial mark indicates a decline; if decline maps to the decline-response route, select that route.",
+        "conditions": "Applies if the plotted endpoints, rather than the chart title or intermediate peak, define the overall trend; the decline-to-route mapping is inferred from the option wording."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "blue line from 2021 through 2023",
+          "content": "The blue line is nearly horizontal from 2021 to 2022 and slopes only slightly downward from 2022 to 2023."
+        }
+      ],
+      "B": {
+        "text": "If the vertical axis encodes Capacity Index with larger values higher on the page, and the latest multi-year segment is treated as approximately stable despite small movement, the routine-monitoring route may fit a stable recent trend.",
+        "conditions": "Applies only if routing is based on recent stability rather than the full 2018-2023 period; no explicit stability threshold is supplied."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title above plot",
+          "content": "The printed title reads “Increasing River Restoration Capacity from 2018 to 2023”."
+        }
+      ],
+      "B": {
+        "text": "If the dashboard title is an intended descriptor of the overall 2018-2023 capacity trend, and the routing task maps an increasing overall capacity trend to expansion follow-up, select the expansion-follow-up route.",
+        "conditions": "Applies only if the title is authoritative for the requested overall trend rather than merely descriptive; the task provides no explicit routing policy table."
+      }
+    }
+  ]
+}

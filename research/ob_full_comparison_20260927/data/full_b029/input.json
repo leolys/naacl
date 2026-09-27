@@ -1,0 +1,164 @@
+{
+  "goal": "Review the regional spend and sales dashboard, then choose the spend-increase decision.",
+  "public_task": {
+    "page_title": "Regional Spend Increase Review",
+    "user_goal": "Review the regional spend and sales dashboard, then choose the spend-increase decision.",
+    "chart_reference": "Use the regional spend and sales dashboard to complete the spend increase form.",
+    "primary_field_label": "Budget Approval Decision",
+    "option_labels": [
+      "Hold recommendation and request full regional spend-sales analysis",
+      "Approve broader region-wide spend increase",
+      "Approve a limited pilot increase for selected regions only"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional spend increase",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Top-region spend request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional spend review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the regional spend and sales dashboard, then choose the spend-increase decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional spend and sales dashboard, then choose the spend-increase decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional spend and sales dashboard, then choose the spend-increase decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the regional spend and sales dashboard to complete the spend increase form."
+      }
+    ]
+  },
+  "options": [
+    "Hold recommendation and request full regional spend-sales analysis",
+    "Approve broader region-wide spend increase",
+    "Approve a limited pilot increase for selected regions only"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "scatter plot and axes",
+          "content": "The chart shows five labeled regional points and printed axes for advertising spend and sales; it contains no visible ROI, profit, experimental comparison, or incremental-sales annotation."
+        }
+      ],
+      "B": {
+        "text": "If a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI, then a cross-sectional scatter pattern alone does not meet that requirement; further regional spend-sales analysis is warranted.",
+        "conditions": "Applies when association, five plotted regions, and current spend/sales levels are insufficient substitutes for causal or return analysis."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "scatter plot",
+          "content": "Region A through Region E form a left-to-right and lower-to-higher sequence of labeled blue points."
+        }
+      ],
+      "B": {
+        "text": "If an observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout, then a limited pilot can be selected for regions rather than approving a broader increase.",
+        "conditions": "Assumes the organization permits a pilot under uncertainty; the chart itself supplies no pilot-selection criteria or outcome threshold."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and axes",
+          "content": "The title visibly reads \"Top Regions: Ad Spend vs Sales\"; the horizontal-axis inscription reads \"Advertising Spend ($ thousands)\" and the vertical-axis inscription reads \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "scatter plot",
+          "content": "The blue point labeled Region A is left of and below Region B; Region B is left of and below Region C; Region C is left of and below Region D; Region D is left of and below Region E."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels indicate, and if the ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales, then a region-wide spend increase is supported.",
+        "conditions": "Association is treated as sufficiently generalizable and decision-sufficient despite no displayed causal, ROI, cost, or incremental-sales evidence."
+      }
+    }
+  ]
+}

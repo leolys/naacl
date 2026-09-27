@@ -1,0 +1,165 @@
+{
+  "goal": "Review the regional ad spend and sales dashboard, then submit the regional budget decision.",
+  "public_task": {
+    "page_title": "Regional Budget Planning Review",
+    "user_goal": "Review the regional ad spend and sales dashboard, then submit the regional budget decision.",
+    "chart_reference": "Use the regional ad spend and sales dashboard to complete the budget planning form.",
+    "primary_field_label": "Budget Recommendation",
+    "option_labels": [
+      "Select \"Hold and request full regional data analysis\"",
+      "Select \"Approve broader ad budget expansion\"",
+      "Select \"Defer recommendation until next budget cycle\""
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional ad budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Top-region budget request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the regional ad spend and sales dashboard, then submit the regional budget decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional ad spend and sales dashboard, then submit the regional budget decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional ad spend and sales dashboard, then submit the regional budget decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the regional ad spend and sales dashboard to complete the budget planning form."
+      }
+    ]
+  },
+  "options": [
+    "Select \"Hold and request full regional data analysis\"",
+    "Select \"Approve broader ad budget expansion\"",
+    "Select \"Defer recommendation until next budget cycle\""
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and plot area",
+          "content": "The title identifies the display as \"Top Regions,\" and the plot shows five labeled regional points."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible axis labels",
+          "content": "The only visible quantitative axis inscriptions are \"Advertising Spend ($ thousands)\" and \"Sales ($ thousands)\"."
+        }
+      ],
+      "B": {
+        "text": "If a broader budget approval requires evidence of advertising causal impact, ROI/profitability, or complete regional coverage, then a scatterplot showing only spend and sales for the displayed top regions is insufficient and supports requesting full analysis instead.",
+        "conditions": "Applies when the organization requires causal, return, or full-population evidence before approving expansion."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The printed title reads \"Top Regions: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\" and its printed ticks increase from 25 at left to 75 at right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\" and its printed ticks increase from 50 near the bottom to 180 near the top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The labeled blue points Region A, Region B, Region C, Region D, and Region E progress from lower-left to upper-right; Region E is the rightmost and highest point."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes Advertising Spend and increases left-to-right, the vertical axis encodes Sales and increases upward, and the labeled regional points are comparable observations, then the plotted ordering indicates that higher-spend regions in this displayed set also have higher sales. Approving broader expansion additionally requires the unstated decision assumption that this descriptive association is sufficient support for expansion.",
+        "conditions": "Applies only to the five displayed labeled regions; it does not establish causality, incremental return, or profitability."
+      }
+    }
+  ]
+}

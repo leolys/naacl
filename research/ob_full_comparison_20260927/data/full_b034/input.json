@@ -1,0 +1,165 @@
+{
+  "goal": "Review the regional marketing dashboard, then submit the ad spend decision.",
+  "public_task": {
+    "page_title": "Regional Marketing Budget Review",
+    "user_goal": "Review the regional marketing dashboard, then submit the ad spend decision.",
+    "chart_reference": "Use the regional marketing dashboard to complete the ad spend review form.",
+    "primary_field_label": "Marketing Budget Approval Decision",
+    "option_labels": [
+      "Hold and request full regional data analysis",
+      "Approve broader ad spend increase",
+      "Defer decision pending next budget cycle"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional marketing budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Top-region marketing request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Regional marketing review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the regional marketing dashboard, then submit the ad spend decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional marketing dashboard, then submit the ad spend decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the regional marketing dashboard, then submit the ad spend decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the regional marketing dashboard to complete the ad spend review form."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full regional data analysis",
+    "Approve broader ad spend increase",
+    "Defer decision pending next budget cycle"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title is inscribed \"Top Regions: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The visible plot contains five labeled markers: Region A, Region B, Region C, Region D, and Region E."
+        }
+      ],
+      "B": {
+        "text": "If approval requires evidence of a causal effect or complete regional coverage, a five-marker chart titled as covering 'Top Regions' is insufficient unless it supplies such evidence or states that it is complete. In that case, select the evidence-review option rather than approve.",
+        "conditions": "Applies if the organization requires causal validation, controls for confounding, or full regional data before authorizing a broader spend increase."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "bottom axis",
+          "content": "The axis is inscribed \"Advertising Spend ($ thousands)\"; printed ticks run from 25 at the left through 75 at the right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left axis",
+          "content": "The axis is inscribed \"Sales ($ thousands)\"; printed ticks increase upward from 70 near the bottom to 180 near the top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five blue circular markers are visibly labeled Region A, Region B, Region C, Region D, and Region E next to their respective marks."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "From Region A through Region E, each successive labeled marker is farther right and higher on the page than the preceding one."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis inscription identifies left-to-right position as Advertising Spend ($ thousands) and the vertical axis inscription identifies bottom-to-top position as Sales ($ thousands), with both printed tick sequences increasing in those directions, then labeled marker positions can be decoded as a cross-sectional association between regional ad spend and sales. If this five-region association is representative enough for a broader decision and causal proof is not required, a consistent positive association supports approving a broader ad spend increase.",
+        "conditions": "Applies only if the axes accurately encode comparable regional values, labels attach to their adjacent markers, the displayed top regions are sufficiently representative of regions beyond A–E, and association is accepted as sufficient decision evidence rather than proof of advertising causality."
+      }
+    }
+  ]
+}

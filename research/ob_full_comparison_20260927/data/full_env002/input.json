@@ -1,0 +1,127 @@
+{
+  "goal": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow.",
+  "public_task": {
+    "page_title": "Temperature Trend Follow-Up Routing",
+    "user_goal": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow.",
+    "chart_reference": "Use the charted yearly temperature readings as the basis for this routing decision.",
+    "primary_field_label": "Temperature trend routing decision",
+    "option_labels": [
+      "Escalate the 2005-2015 temperature decline for follow-up",
+      "Keep the 2005-2015 temperature decline on routine monitoring",
+      "Archive the temperature trend record without targeted follow-up"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Temperature monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Multi-year environmental trend"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Substantial trend follow-up"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Magnitude of change across the review period"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the charted yearly temperature readings as the basis for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the charted yearly temperature readings as the basis for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+      }
+    ]
+  },
+  "options": [
+    "Escalate the 2005-2015 temperature decline for follow-up",
+    "Keep the 2005-2015 temperature decline on routine monitoring",
+    "Archive the temperature trend record without targeted follow-up"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2005 x-axis tick and leftmost plotted point",
+          "content": "A black point aligned with the tick labeled '2005' has the adjacent inscription '$24.0°C'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2015 x-axis tick and rightmost plotted point",
+          "content": "A black point aligned with the tick labeled '2015' has the adjacent inscription '$10.0°C'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "line across plotted points",
+          "content": "The blue connected line descends on the page from the 2005 point to the 2015 point."
+        }
+      ],
+      "B": {
+        "text": "If the plotted points are yearly temperature readings because their horizontal positions align with the year ticks and the adjacent °C inscriptions label those readings, then the 2005-to-2015 change is the 2015 reading minus the 2005 reading. If the substantial-trend workflow permits qualitative judgment of a large multi-year magnitude without a stated numeric cutoff, a 14.0°C decrease warrants follow-up.",
+        "conditions": "Assumes the adjacent °C inscriptions apply to their points despite the visible leading '$' character, and assumes no unstated numeric threshold is required."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2005 x-axis tick and leftmost plotted point",
+          "content": "A black point aligned with the tick labeled '2005' has the adjacent inscription '$24.0°C'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2015 x-axis tick and rightmost plotted point",
+          "content": "A black point aligned with the tick labeled '2015' has the adjacent inscription '$10.0°C'."
+        }
+      ],
+      "B": {
+        "text": "If the substantial-trend workflow requires a specified numeric threshold or other unstated qualification before escalation, then the plotted endpoint change alone cannot establish that the follow-up criterion is met; absent demonstrated qualification, the record may remain on routine monitoring rather than be escalated.",
+        "conditions": "Applies only if such a threshold or qualification requirement exists; none is supplied in the task state or chart."
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "goal": "Review the City Z transit dashboard, then submit the dates whose combined station traffic should enter the crowding alert request.",
+  "public_task": {
+    "page_title": "Transit Crowding Alert Request",
+    "user_goal": "Review the City Z transit dashboard, then submit the dates whose combined station traffic should enter the crowding alert request.",
+    "chart_reference": "Use the City Z transit dashboard as the evidence source for the crowding alert date submission.",
+    "primary_field_label": "Crowding alert date submission",
+    "option_labels": [
+      "Submit Tue and Wed for transit crowding alert",
+      "Submit Tue only for transit crowding alert",
+      "Submit Thu only for transit crowding alert"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Transit record",
+        "value": "Daily station visitors"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Combined station traffic"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Operations program",
+        "value": "Crowding alert request"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Crowding alert policy",
+        "headers": [
+          "Route",
+          "Rule"
+        ],
+        "rows": [
+          [
+            "Crowding alert request",
+            "Combined visitors across Station X, Station Y, and Station Z exceed 4,500 for a day"
+          ],
+          [
+            "Routine monitoring",
+            "Combined visitors do not exceed the alert level"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the City Z transit dashboard, then submit the dates whose combined station traffic should enter the crowding alert request."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the City Z transit dashboard as the evidence source for the crowding alert date submission."
+      },
+      {
+        "page": "form",
+        "text": "Use the City Z transit dashboard as the evidence source for the crowding alert date submission."
+      },
+      {
+        "page": "form",
+        "text": "Review the City Z transit dashboard, then submit the dates whose combined station traffic should enter the crowding alert request."
+      }
+    ]
+  },
+  "options": [
+    "Submit Tue and Wed for transit crowding alert",
+    "Submit Tue only for transit crowding alert",
+    "Submit Thu only for transit crowding alert"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "legend at right",
+          "content": "The blue swatch is visibly labeled \"Station X,\" the green swatch \"Station Y,\" and the orange swatch \"Station Z.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "bars above Tue, Wed, and Thu labels",
+          "content": "Each of these date positions has vertically contiguous blue, green, and orange rectangular segments."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The axis is visibly labeled \"Number of Visitors\" and has a printed tick labeled \"4,500.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "Tue and Wed stack tops",
+          "content": "The tops of the orange segments above Tue and Wed are visibly higher on the page than the horizontal level of the 4,500 tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Thu stack top",
+          "content": "The top of the orange segment above Thu is visibly lower on the page than the horizontal level of the 4,500 tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis lower extent",
+          "content": "The lowest printed vertical-axis tick visible is \"1,000,\" while the bars extend to the bottom axis line below that tick."
+        }
+      ],
+      "B": {
+        "text": "If each date's contiguous blue, green, and orange segments are a stacked encoding of Station X, Station Y, and Station Z visitor counts on the shared vertical visitor scale, and the stack top represents their combined daily total despite the displayed axis being truncated below 1,000, then a stack top above the 4,500 tick indicates combined traffic exceeding 4,500. Under the supplied crowding-alert policy, submit exactly the dates whose combined total exceeds 4,500.",
+        "conditions": "Applies only if the bars are additive stacks with a common zero-based quantity scale; the chart does not visibly show a zero baseline, so this is an encoding assumption."
+      }
+    }
+  ]
+}

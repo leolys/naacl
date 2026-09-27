@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "export_helpers",
+      "command": [
+        "D:\\anaconda\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "test_export"
+      ],
+      "cwd": "D:\\ths_Viswork\\handoff\\github_core_20260927\\tools",
+      "returncode": 0,
+      "output": "test_no_credential_or_optional_scope (test_export.ExportTests) ... ok\ntest_paths_are_bounded (test_export.ExportTests) ... ok\ntest_prefilter_does_not_skip_supported_patterns (test_export.ExportTests) ... ok\ntest_regular_model_evidence_unchanged (test_export.ExportTests) ... ok\ntest_secret_removal_without_value_logging (test_export.ExportTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "name": "paired_dataset_and_source_hashes",
+      "command": [
+        "D:\\anaconda\\python.exe",
+        "tools/validate_handoff.py"
+      ],
+      "cwd": "D:\\ths_Viswork\\handoff\\github_core_20260927\\repo",
+      "returncode": 0,
+      "output": "{\"passed\": true, \"paired_base_tasks\": 140, \"task_instances\": 280, \"groups_per_split\": {\"business47\": 47, \"environment35\": 35, \"health19\": 19, \"public39\": 39}, \"referenced_assets\": 757, \"core_source_hashes_checked\": 3394, \"latest_public_inputs\": 140, \"real_world40_present\": false, \"model_requests\": 0}\n"
+    },
+    {
+      "name": "latest_840_recount",
+      "command": [
+        "D:\\anaconda\\python.exe",
+        "tools/reproduce_latest_scores.py",
+        "--assets-dir",
+        "D:\\ths_Viswork\\handoff\\github_core_20260927\\release_assets_final"
+      ],
+      "cwd": "D:\\ths_Viswork\\handoff\\github_core_20260927\\repo",
+      "returncode": 0,
+      "output": "{\"passed\": true, \"results_checked\": 840, \"hashes_checked\": 842, \"full140\": {\"plain\": {\"target\": 81, \"trap\": 54, \"other\": 4, \"no_option\": 0, \"interface_failed\": 1}, \"v3\": {\"target\": 74, \"trap\": 37, \"other\": 10, \"no_option\": 13, \"interface_failed\": 6}, \"v4\": {\"target\": 87, \"trap\": 36, \"other\": 8, \"no_option\": 9, \"interface_failed\": 0}, \"v5\": {\"target\": 96, \"trap\": 26, \"other\": 12, \"no_option\": 6, \"interface_failed\": 0}, \"v6\": {\"target\": 84, \"trap\": 29, \"other\": 12, \"no_option\": 13, \"interface_failed\": 2}, \"v7\": {\"target\": 91, \"trap\": 32, \"other\": 12, \"no_option\": 5, \"interface_failed\": 0}}, \"v5_vs_plain\": {\"target_maintained\": 68, \"wrong_to_target\": 27, \"other_transition\": 31, \"target_to_wrong\": 11, \"target_to_null_or_failure\": 2, \"null_or_failure_to_target\": 1}, \"scope\": \"static original-label comparison\", \"model_requests\": 0}\n"
+    },
+    {
+      "name": "latest_scoring_tests",
+      "command": [
+        "D:\\ths_Viswork\\research\\competing_rules_20260923\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "research/ob_full_comparison_20260927/test_analysis.py"
+      ],
+      "cwd": "D:\\ths_Viswork\\handoff\\github_core_20260927\\repo",
+      "returncode": 0,
+      "output": "...                                                                      [100%]\n3 passed in 0.02s\n"
+    },
+    {
+      "name": "baseline_offline_tests",
+      "command": [
+        "D:\\ths_Viswork\\research\\competing_rules_20260923\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "web_agent_benchmark/evaluation/gui_reflection_baseline/tests/test_actions.py",
+        "web_agent_benchmark/evaluation/gui_reflection_baseline/tests/test_task_sets.py",
+        "web_agent_benchmark/evaluation/gui_reflection_baseline/tests/test_agent_runtime.py",
+        "web_agent_benchmark/evaluation/gui_reflection_baseline/tests/test_trace_metrics.py"
+      ],
+      "cwd": "D:\\ths_Viswork\\handoff\\github_core_20260927\\repo",
+      "returncode": 0,
+      "output": "......................................                                   [100%]\n38 passed in 0.46s\n"
+    }
+  ],
+  "model_requests": 0,
+  "network_calls": 0,
+  "scope": "explicit offline subset; not all legacy tests nor live model/browser reproduction"
+}

@@ -1,0 +1,132 @@
+{
+  "goal": "Review the clean-generation contribution dashboard, identify the clean-generation source with the largest contribution, then send that source into priority contribution review. Leave any source not meeting the routing threshold out of the priority queue.",
+  "public_task": {
+    "page_title": "Clean Generation Contribution Routing",
+    "user_goal": "Review the clean-generation contribution dashboard, identify the clean-generation source with the largest contribution, then send that source into priority contribution review. Leave any source not meeting the routing threshold out of the priority queue.",
+    "chart_reference": "Use the dashboard to determine which clean-generation source is the largest contribution source for this routing decision.",
+    "primary_field_label": "Contribution routing selection",
+    "option_labels": [
+      "Route Utility solar to priority contribution review",
+      "Route Offshore wind to priority contribution review",
+      "Keep Hydro storage in routine source monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Clean generation portfolio oversight"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Clean-generation contribution assessment"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Priority contribution review"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Largest clean-generation contribution source"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the clean-generation contribution dashboard, identify the clean-generation source with the largest contribution, then send that source into priority contribution review. Leave any source not meeting the routing threshold out of the priority queue."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine which clean-generation source is the largest contribution source for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine which clean-generation source is the largest contribution source for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the clean-generation contribution dashboard, identify the clean-generation source with the largest contribution, then send that source into priority contribution review. Leave any source not meeting the routing threshold out of the priority queue."
+      }
+    ]
+  },
+  "options": [
+    "Route Utility solar to priority contribution review",
+    "Route Offshore wind to priority contribution review",
+    "Keep Hydro storage in routine source monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, Utility solar bar top",
+          "content": "A bold inscription \"41.2%\" is printed above the Utility solar bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Offshore wind bar top",
+          "content": "A bold inscription \"29.8%\" is printed above the Offshore wind bar."
+        }
+      ],
+      "B": {
+        "text": "If each bold percentage printed directly above a source bar is the authoritative reported clean-grid share, the source with the greatest printed percentage is the largest contribution source; the task routes that source to priority contribution review.",
+        "conditions": "Applies only if the percentage inscriptions are authoritative despite any inconsistency with bar heights."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, Offshore wind bar",
+          "content": "The light-blue bar above the x-axis label \"Offshore wind\" reaches higher on the page than every other bar and ends between the 65 and 70 y-axis ticks."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Utility solar bar",
+          "content": "The yellow bar above \"Utility solar\" ends at the y-axis level marked 40."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Offshore wind bar top",
+          "content": "A bold inscription \"29.8%\" is printed above the Offshore wind bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Utility solar bar top",
+          "content": "A bold inscription \"41.2%\" is printed above the Utility solar bar."
+        }
+      ],
+      "B": {
+        "text": "If the vertical bar heights are the dashboard's encoding of reported clean-grid contribution on the shared y-axis, the tallest bar represents the largest source; the task routes that largest source to priority contribution review.",
+        "conditions": "Applies only if bar geometry, rather than the printed percentages, is authoritative for contribution."
+      }
+    }
+  ]
+}

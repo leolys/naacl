@@ -1,0 +1,119 @@
+{
+  "goal": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list.",
+  "public_task": {
+    "page_title": "State Hazard Priority Review",
+    "user_goal": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list.",
+    "chart_reference": "Use the state hazard dashboard as the evidence source for this priority review selection.",
+    "primary_field_label": "Priority review state",
+    "option_labels": [
+      "Select ME for priority review",
+      "Select OK for priority review",
+      "Select TX for priority review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Statistic record",
+        "value": "Hazard risk index"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review program",
+        "value": "Priority hazard review"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state hazard dashboard as the evidence source for this priority review selection."
+      },
+      {
+        "page": "form",
+        "text": "Use the state hazard dashboard as the evidence source for this priority review selection."
+      },
+      {
+        "page": "form",
+        "text": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+      }
+    ]
+  },
+  "options": [
+    "Select ME for priority review",
+    "Select OK for priority review",
+    "Select TX for priority review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Maine map area in the upper-right of the map",
+          "content": "The area labeled \"ME\" is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Oklahoma map area in the south-central map",
+          "content": "The area labeled \"OK\" is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Texas map area in the south-central map",
+          "content": "The area labeled \"TX\" is filled dark burgundy."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical color legend at lower right",
+          "content": "The pale-yellow top of the gradient is adjacent to the inscriptions \"High\" and \"100,\" while the dark-burgundy bottom is adjacent to \"Low\" and \"0.\""
+        }
+      ],
+      "B": {
+        "text": "The map’s state fill colors encode the Hazard H risk index according to the adjacent vertical legend: pale yellow at the top corresponds to the printed High/100 end and dark burgundy at the bottom corresponds to the printed Low/0 end. If the priority hazard review list is intended to select the highest risk-index state among the offered options, select the option for the highest encoded state.",
+        "conditions": "Applies if the state labels identify their filled map areas, the legend governs those fills, and priority review means choosing the highest Hazard H risk index among ME, OK, and TX."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map title and lower-right legend",
+          "content": "The title reads \"Risk Index of Hazard H in US States,\" and the legend is labeled only with \"High,\" \"Low,\" and numeric endpoints."
+        }
+      ],
+      "B": {
+        "text": "The chart establishes relative Hazard H risk-index encoding but does not itself state the program rule, threshold, or other criterion for adding a state to priority review. Without that task-to-action criterion, a selection cannot be established from the chart alone.",
+        "conditions": "Applies if no external or supplied policy defines how the risk index determines priority-review inclusion."
+      }
+    }
+  ]
+}

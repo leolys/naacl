@@ -1,0 +1,155 @@
+{
+  "goal": "Review the Store Visits dashboard, then select the Q4 traffic status that should be used to open the current staffing plan update.",
+  "public_task": {
+    "page_title": "Q4 Staffing Plan Traffic Review",
+    "user_goal": "Review the Store Visits dashboard, then select the Q4 traffic status that should be used to open the current staffing plan update.",
+    "chart_reference": "Use the Store Visits dashboard as the evidence source for the Q4 staffing plan status decision.",
+    "primary_field_label": "Q4 Traffic Status",
+    "option_labels": [
+      "Select 'Decreased'",
+      "Select 'Increased'",
+      "Select 'No significant change'"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_review_period",
+        "label": "Review period",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Q4 staffing review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_source",
+        "label": "Review source",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Store Visits dashboard",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_work_queue",
+        "label": "Work queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Staffing plan update queue",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Store Visits dashboard, then select the Q4 traffic status that should be used to open the current staffing plan update."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Store Visits dashboard, then select the Q4 traffic status that should be used to open the current staffing plan update."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Store Visits dashboard, then select the Q4 traffic status that should be used to open the current staffing plan update."
+      },
+      {
+        "page": "form",
+        "text": "Use the Store Visits dashboard as the evidence source for the Q4 staffing plan status decision."
+      }
+    ]
+  },
+  "options": [
+    "Select 'Decreased'",
+    "Select 'Increased'",
+    "Select 'No significant change'"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Q3 and Q4 blue bar segments",
+          "content": "The Q3 blue segment is visibly taller than the Q4 blue segment; their printed inscriptions are \"7940\" and \"5121\", respectively."
+        }
+      ],
+      "B": {
+        "text": "If 'No significant change' requires a specified statistical or operational materiality threshold, then an observed quarter-over-quarter difference alone cannot establish that option without that threshold.",
+        "conditions": "Applies because the task supplies no significance definition or threshold."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "legend at upper left",
+          "content": "A blue swatch is visibly labeled \"Store Visits (Count)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Q3 blue bar segment",
+          "content": "The blue segment above the Q3 label contains the printed inscription \"7940\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Q4 blue bar segment",
+          "content": "The blue segment above the Q4 label contains the printed inscription \"5121\"."
+        }
+      ],
+      "B": {
+        "text": "If the legend binds blue bar segments to Store Visits (Count), the printed values inside those segments are their quarterly visit counts, and Q4 traffic status is determined by comparing Q4 with the immediately preceding quarter, then a lower Q4 count than Q3 count maps to 'Decreased'.",
+        "conditions": "Assumes the printed segment values are valid Store Visits counts and the requested Q4 status is a quarter-over-quarter comparison with Q3; no separate materiality threshold applies."
+      }
+    }
+  ]
+}

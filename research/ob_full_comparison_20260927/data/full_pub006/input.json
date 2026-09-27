@@ -1,0 +1,100 @@
+{
+  "goal": "Review the state GDP dashboard, then open the state record that should be routed into the highest-GDP public statistics follow-up workflow.",
+  "public_task": {
+    "page_title": "GDP Priority Detail Routing",
+    "user_goal": "Review the state GDP dashboard, then open the state record that should be routed into the highest-GDP public statistics follow-up workflow.",
+    "chart_reference": "Use the state GDP dashboard as the evidence source for the state GDP follow-up routing decision.",
+    "primary_field_label": "Highest-GDP state detail route",
+    "option_labels": [
+      "Open Kentucky GDP detail for priority follow-up",
+      "Open New Mexico GDP detail for priority follow-up",
+      "Open Nebraska GDP detail for priority follow-up"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "State economic statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing queue",
+        "value": "GDP priority follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state GDP dashboard, then open the state record that should be routed into the highest-GDP public statistics follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state GDP dashboard as the evidence source for the state GDP follow-up routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the state GDP dashboard as the evidence source for the state GDP follow-up routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the state GDP dashboard, then open the state record that should be routed into the highest-GDP public statistics follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open Kentucky GDP detail for priority follow-up",
+    "Open New Mexico GDP detail for priority follow-up",
+    "Open Nebraska GDP detail for priority follow-up"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Kentucky-shaped highlighted area in the south-central/eastern map",
+          "content": "The inscriptions \"1,270\" and \"Kentucky\" appear within the same dark-red state-shaped mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Nebraska-shaped highlighted area in the central map",
+          "content": "The inscriptions \"971\" and \"Nebraska\" appear within the same red state-shaped mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "New Mexico-shaped highlighted area in the southwest map",
+          "content": "The inscriptions \"189\" and \"New Mexico\" appear within the same pale-yellow state-shaped mark."
+        }
+      ],
+      "B": {
+        "text": "If each state-shaped mark’s printed state name and adjacent printed number identify that state’s GDP on this chart, then the larger printed number represents higher GDP; for the routing task, select the available state-detail option with the highest GDP among the listed options.",
+        "conditions": "Applies to Kentucky, Nebraska, and New Mexico as the available options, and assumes the chart’s state labels and printed values are intended GDP values."
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "goal": "Review the quarterly ad spend and sales dashboard, then choose the budget increase decision.",
+  "public_task": {
+    "page_title": "Quarterly Budget Increase Review",
+    "user_goal": "Review the quarterly ad spend and sales dashboard, then choose the budget increase decision.",
+    "chart_reference": "Use the quarterly marketing dashboard to complete the budget increase form.",
+    "primary_field_label": "Budget approval decision",
+    "option_labels": [
+      "Hold and request full-data analysis",
+      "Approve broader budget increase",
+      "Decline budget increase"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Quarterly budget increase",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "High-growth quarter request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Quarterly budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the quarterly ad spend and sales dashboard, then choose the budget increase decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the quarterly ad spend and sales dashboard, then choose the budget increase decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the quarterly ad spend and sales dashboard, then choose the budget increase decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the quarterly marketing dashboard to complete the budget increase form."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full-data analysis",
+    "Approve broader budget increase",
+    "Decline budget increase"
+  ],
+  "records": [
+    {
+      "id": "rec_01",
+      "O": [
+        "The chart displays a scatter plot with the title 'Selected High-Growth Quarters: Ad Spend vs Sales'.",
+        "The x-axis is labeled 'Advertising Spend ($ thousands)' and ranges from 25 to 75.",
+        "The y-axis is labeled 'Sales ($ thousands)' and ranges from 60 to 170.",
+        "There are five data points labeled Q2, Q3, Q4, Q5, and Q6.",
+        "The points are arranged in a pattern that slopes upward from left to right, with Q2 at the lowest position and Q6 at the highest position."
+      ],
+      "B": "If the visual pattern of the five plotted points is interpreted as a positive correlation, then the data suggests that higher advertising spend is associated with higher sales for these specific quarters."
+    },
+    {
+      "id": "rec_02",
+      "O": [
+        "The data point labeled 'Q2' is located at an x-value of approximately 30 and a y-value of approximately 68.",
+        "The data point labeled 'Q6' is located at an x-value of approximately 70 and a y-value of approximately 168.",
+        "The vertical distance between the Q2 point and the Q6 point is the largest gap between any two consecutive points in the series."
+      ],
+      "B": "Assuming the axis scales are linear and the points represent the only data available, the transition from Q2 to Q6 represents the largest absolute increase in both advertising spend and sales volume among the displayed quarters."
+    },
+    {
+      "id": "rec_03",
+      "O": [
+        "The chart title specifies 'Selected High-Growth Quarters'.",
+        "The x-axis begins at a value of 25, leaving a gap before the first data point at 30.",
+        "The y-axis begins at a value of 60, leaving a gap below the first data point at approximately 68.",
+        "There are no data points present in the lower-left quadrant of the plot area."
+      ],
+      "B": "If the selection of data points is interpreted as a filter for 'high-growth' performance, then the chart does not provide a baseline for quarters with lower spend or sales, making it impossible to determine the overall average performance from this view alone."
+    }
+  ]
+}

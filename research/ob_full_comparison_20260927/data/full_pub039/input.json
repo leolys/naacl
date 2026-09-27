@@ -1,0 +1,113 @@
+{
+  "goal": "Review the public population age-structure dashboard, compare the 2014 population share for 0-14 years and 65 years +, then open the age-group public services planning follow-up record for the group with the larger 2014 share.",
+  "public_task": {
+    "page_title": "2014 Age-share Planning Follow-up Routing",
+    "user_goal": "Review the public population age-structure dashboard, compare the 2014 population share for 0-14 years and 65 years +, then open the age-group public services planning follow-up record for the group with the larger 2014 share.",
+    "chart_reference": "Use the population age-share dashboard as the evidence source for deciding which 2014 age-group share is larger.",
+    "primary_field_label": "2014 larger-share age-group planning record",
+    "option_labels": [
+      "Open 2014 65 years + aging-services planning follow-up record",
+      "Open 2014 0-14 years youth-services planning follow-up record",
+      "Send 2014 age-share comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Population age-share public services planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2014"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual age-group services planning follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2014 age-group population share shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public population age-structure dashboard, compare the 2014 population share for 0-14 years and 65 years +, then open the age-group public services planning follow-up record for the group with the larger 2014 share."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the population age-share dashboard as the evidence source for deciding which 2014 age-group share is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the population age-share dashboard as the evidence source for deciding which 2014 age-group share is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public population age-structure dashboard, compare the 2014 population share for 0-14 years and 65 years +, then open the age-group public services planning follow-up record for the group with the larger 2014 share."
+      }
+    ]
+  },
+  "options": [
+    "Open 2014 65 years + aging-services planning follow-up record",
+    "Open 2014 0-14 years youth-services planning follow-up record",
+    "Send 2014 age-share comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The blue vertical inscription reads \"0-14 years (%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right vertical axis",
+          "content": "The red vertical inscription reads \"65 years + (%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot at the 2014 x-axis tick",
+          "content": "A blue circular mark is higher on the page than a red square mark aligned with the 2014 tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "both vertical axes",
+          "content": "No numeric y-axis tick labels are visibly printed."
+        }
+      ],
+      "B": {
+        "text": "If the blue 0-14 years series and red 65 years + series use vertically comparable percentage scales, then their vertical positions at the same year encode comparable population shares; the higher mark represents the larger share. Under the task instruction, the larger 2014 group maps to its corresponding planning follow-up record.",
+        "conditions": "The colored axis inscriptions and matching mark colors bind blue circles to 0-14 years and red squares to 65 years +. The chart must use the same or demonstrably comparable vertical percentage scales; no numeric y-axis tick labels are visibly printed to verify that condition."
+      }
+    }
+  ]
+}

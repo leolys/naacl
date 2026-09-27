@@ -1,0 +1,122 @@
+{
+  "goal": "Review the river temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+  "public_task": {
+    "page_title": "River Temperature Change Routing",
+    "user_goal": "Review the river temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+    "chart_reference": "Use the dashboard to determine whether the full-period river temperature change should enter substantial-change follow-up or remain in routine monitoring.",
+    "primary_field_label": "River temperature change route",
+    "option_labels": [
+      "Route the 2005 to 2014 river temperature change to substantial-change follow-up",
+      "Keep the 2005 to 2014 river temperature change on routine monitoring for ordinary variation",
+      "Route the river temperature record to archive and background filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Temperature monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "River Temperature change, 2005-2014"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Change-based follow-up routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether the full-period river temperature change requires substantial-change follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the river temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine whether the full-period river temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine whether the full-period river temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Review the river temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2005 to 2014 river temperature change to substantial-change follow-up",
+    "Keep the 2005 to 2014 river temperature change on routine monitoring for ordinary variation",
+    "Route the river temperature record to archive and background filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "visible chart area",
+          "content": "The chart shows temperature labels, year ticks, and axis labeling, but no visible text states a substantial-change threshold or routing rule."
+        }
+      ],
+      "B": {
+        "text": "If a substantial-change route requires an explicit displayed policy threshold or other supplied criterion, the chart alone does not establish that the full-period change meets it; under a policy that defaults unverified changes to routine monitoring, routine monitoring would apply.",
+        "conditions": "The supplied task names the criterion but provides no numeric threshold or default-routing policy; the routine-monitoring implication is conditional on such a default policy."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and vertical axis",
+          "content": "The title reads \"River Temperature Monitoring Record,\" and the vertical axis is labeled \"Water temperature (°C).\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "2005 x-axis tick and first plotted marker",
+          "content": "A plotted marker above the 2005 tick has the printed label \"23.9°C\" next to it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2014 x-axis tick and final plotted marker",
+          "content": "A plotted marker above the 2014 tick has the printed label \"10.1°C\" next to it."
+        }
+      ],
+      "B": {
+        "text": "If the plotted series is the river-temperature record, the x-axis year ticks bind the endpoint markers to 2005 and 2014, and the printed endpoint labels are their temperatures in °C, then the full-period change is 2014 minus 2005. If the routing program classifies a decrease of that magnitude as substantial, substantial-change follow-up is the applicable route.",
+        "conditions": "Applies only if the endpoint labels accurately annotate the plotted river-temperature series and if the program's unstated substantial-change criterion includes the derived magnitude."
+      }
+    }
+  ]
+}

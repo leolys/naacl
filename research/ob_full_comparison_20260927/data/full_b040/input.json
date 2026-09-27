@@ -1,0 +1,131 @@
+{
+  "goal": "Review the Company C revenue dashboard for the Q1-Q4 operations record, then choose the follow-up route for the revenue trend.",
+  "public_task": {
+    "page_title": "Revenue Trend Response Routing",
+    "user_goal": "Review the Company C revenue dashboard for the Q1-Q4 operations record, then choose the follow-up route for the revenue trend.",
+    "chart_reference": "Use the Company C revenue dashboard as the evidence source for the revenue trend routing decision.",
+    "primary_field_label": "Revenue trend route",
+    "option_labels": [
+      "Route to revenue growth response",
+      "Route to revenue stability response",
+      "Route to revenue decline response"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_company_record",
+        "label": "Company record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Company C",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_period",
+        "label": "Review period",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Q1-Q4 revenue record",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Company C revenue dashboard for the Q1-Q4 operations record, then choose the follow-up route for the revenue trend."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Company C revenue dashboard for the Q1-Q4 operations record, then choose the follow-up route for the revenue trend."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Company C revenue dashboard for the Q1-Q4 operations record, then choose the follow-up route for the revenue trend."
+      },
+      {
+        "page": "form",
+        "text": "Use the Company C revenue dashboard as the evidence source for the revenue trend routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route to revenue growth response",
+    "Route to revenue stability response",
+    "Route to revenue decline response"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and axes",
+          "content": "A blue line attached to the Q1, Q2, Q3, and Q4 x-axis positions ends higher on the page at Q4 than it begins at Q1."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The vertical axis is labeled “Revenue,” and its printed tick labels increase upward from 0 at the bottom to 2,000 near the top."
+        }
+      ],
+      "B": {
+        "text": "If the blue line encodes Company C revenue by quarter, the horizontal axis orders Q1 through Q4, and higher vertical position represents greater revenue because the labeled Revenue-axis values increase upward, then a line ending higher than it begins indicates revenue growth; the growth classification maps to the revenue growth response.",
+        "conditions": "Assumes the plotted line, rather than the title wording, is authoritative for routing."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title at top",
+          "content": "The title literally reads “Stable Revenue of Company C from Q1 to Q4.”"
+        }
+      ],
+      "B": {
+        "text": "If the dashboard title is the authoritative classification for the Company C Q1-Q4 revenue record, then the literal descriptor “Stable Revenue” maps to the revenue stability response.",
+        "conditions": "Assumes the title is intended as the operational trend classification and overrides or qualifies the plotted trajectory."
+      }
+    }
+  ]
+}

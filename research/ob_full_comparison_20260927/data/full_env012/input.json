@@ -1,0 +1,127 @@
+{
+  "goal": "Review the cooling water temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+  "public_task": {
+    "page_title": "Cooling Water Temperature Change Routing",
+    "user_goal": "Review the cooling water temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision.",
+    "chart_reference": "Use the dashboard to determine whether the full-period cooling water temperature change should enter substantial-change follow-up or remain in routine monitoring.",
+    "primary_field_label": "Cooling water temperature change route",
+    "option_labels": [
+      "Route the 2005 to 2014 cooling water temperature change to substantial-change follow-up",
+      "Keep the 2005 to 2014 cooling water temperature change on routine monitoring for ordinary variation",
+      "Route the cooling water temperature record to archive and background filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Cooling water monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Cooling Water Temperature change, 2005-2014"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Change-based follow-up routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether the full-period cooling water temperature change requires substantial-change follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the cooling water temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine whether the full-period cooling water temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine whether the full-period cooling water temperature change should enter substantial-change follow-up or remain in routine monitoring."
+      },
+      {
+        "page": "form",
+        "text": "Review the cooling water temperature dashboard for the 2005-2014 review period, determine whether the full-period change requires substantial-change follow-up, then submit the appropriate routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route the 2005 to 2014 cooling water temperature change to substantial-change follow-up",
+    "Keep the 2005 to 2014 cooling water temperature change on routine monitoring for ordinary variation",
+    "Route the cooling water temperature record to archive and background filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2005 x-axis tick and first plotted marker",
+          "content": "The first marker is vertically aligned with the printed year '2005' and has the inscription '23.9°C' immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2014 x-axis tick and last plotted marker",
+          "content": "The last marker is vertically aligned with the printed year '2014' and has the inscription '10.1°C' immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and vertical axis label",
+          "content": "The title reads 'Cooling Water Temperature Compliance' and the vertical axis label reads 'Cooling water temperature'."
+        }
+      ],
+      "B": {
+        "text": "If the plotted series is the cooling water temperature series and the value inscriptions attached to the 2005 and 2014 markers encode their respective annual temperatures, then the full-period change is the 2014 value minus the 2005 value; if a decrease of that magnitude qualifies as substantial under the routing criterion, select substantial-change follow-up.",
+        "conditions": "Applies to the 2005-2014 endpoints. The chart provides no numeric or qualitative definition of 'substantial,' so the final routing condition is not verified by the supplied evidence."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2005 and 2014 endpoint markers",
+          "content": "The endpoint inscriptions are '23.9°C' at 2005 and '10.1°C' at 2014."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart area",
+          "content": "No printed routing threshold, policy table, or definition of 'substantial change' is visible."
+        }
+      ],
+      "B": {
+        "text": "If substantial-change follow-up may be selected only when a stated threshold or policy definition is met, and no such threshold or definition is supplied, retain the record in routine monitoring rather than infer qualification from the chart magnitude alone.",
+        "conditions": "Applies if the workflow requires an explicit demonstrated threshold or policy basis; no policy table or threshold is supplied."
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "goal": "Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the output trend.",
+  "public_task": {
+    "page_title": "Output Trend Response Routing",
+    "user_goal": "Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the output trend.",
+    "chart_reference": "Use the Factory F production dashboard as the evidence source for the output trend routing decision.",
+    "primary_field_label": "Output trend route",
+    "option_labels": [
+      "Route to output decline response",
+      "Route to output growth response",
+      "Route to maintenance scheduling"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_facility_record",
+        "label": "Facility record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Factory F",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_period",
+        "label": "Review period",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "2018-2023 production record",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the output trend."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the output trend."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the output trend."
+      },
+      {
+        "page": "form",
+        "text": "Use the Factory F production dashboard as the evidence source for the output trend routing decision."
+      }
+    ]
+  },
+  "options": [
+    "Route to output decline response",
+    "Route to output growth response",
+    "Route to maintenance scheduling"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title is inscribed \"Increasing Production at Factory F from 2018 to 2023\"."
+        }
+      ],
+      "B": {
+        "text": "If the chart title is treated as the authoritative summary of the output trend rather than the plotted line, then the literal title wording indicates increasing production and would map to the output growth response.",
+        "conditions": "This conflicts with the plotted geometry and assumes the title is authoritative despite the line."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "A single blue line connects positions above the x-axis labels 2018, 2019, 2020, 2021, 2022, and 2023; each successive position is lower on the page than the preceding one."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes",
+          "content": "The horizontal axis is inscribed \"Year\" and has ticks labeled 2018 through 2023 from left to right; the vertical axis is inscribed \"Production\" and its visible numeric tick labels increase upward from 0 to 3,500."
+        }
+      ],
+      "B": {
+        "text": "If the blue line is the Factory F production series, the x-axis orders years from 2018 to 2023, and higher screen position corresponds to greater production on the upward-increasing y-axis, then a line that moves lower at each successive year indicates declining production; for this task, a declining output trend maps to the output decline response.",
+        "conditions": "Assumes the single plotted line represents Factory F production for the displayed years and the y-axis uses the conventional upward-increasing numeric scale."
+      }
+    }
+  ]
+}

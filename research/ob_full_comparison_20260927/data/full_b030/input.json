@@ -1,0 +1,174 @@
+{
+  "goal": "Review the store ad budget dashboard, then submit the budget planning decision.",
+  "public_task": {
+    "page_title": "Store Ad Budget Planning Review",
+    "user_goal": "Review the store ad budget dashboard, then submit the budget planning decision.",
+    "chart_reference": "Use the store ad budget dashboard to complete the planning review form.",
+    "primary_field_label": "Budget Recommendation",
+    "option_labels": [
+      "Hold and request full-store analysis",
+      "Approve broader ad budget increase",
+      "Keep current ad budgets unchanged"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Store ad budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Additional top-store request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Store budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the store ad budget dashboard, then submit the budget planning decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the store ad budget dashboard, then submit the budget planning decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the store ad budget dashboard, then submit the budget planning decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the store ad budget dashboard to complete the planning review form."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full-store analysis",
+    "Approve broader ad budget increase",
+    "Keep current ad budgets unchanged"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title literally reads \"Additional Top Stores: Ad Spend vs Sales.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "plotted points",
+          "content": "Five blue points are visibly labeled Store 6, Store 7, Store 8, Store 9, and Store 10; no other store labels or points are visible."
+        }
+      ],
+      "B": {
+        "text": "If a broader ad-budget increase requires evidence representative of the full store population, then a chart explicitly scoped to additional top stores cannot by itself establish support for that broader action.",
+        "conditions": "No supplied policy states that results from additional top stores alone are sufficient for a broader budget increase; the chart title is treated as defining the displayed population."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "axes and points",
+          "content": "The horizontal axis inscription reads \"Advertising Spend ($ thousands)\" and the vertical axis inscription reads \"Sales ($ thousands).\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "plotted points",
+          "content": "From Store 6 through Store 10, each successive labeled point is visibly farther right and higher on the page than the preceding one."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the displayed scales, then points farther right and higher represent stores with higher plotted spend and higher plotted sales, respectively; this visual association alone does not establish incremental sales, profitability, or causal return from spending.",
+        "conditions": "Axis labels apply to the plotted points; no causal, profit, or ROI measure is shown."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "axes and points",
+          "content": "The horizontal axis inscription reads \"Advertising Spend ($ thousands)\" and the vertical axis inscription reads \"Sales ($ thousands).\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "plotted points",
+          "content": "From Store 6 through Store 10, each successive labeled point is visibly farther right and higher on the page than the preceding one."
+        }
+      ],
+      "B": {
+        "text": "If a decision may be made from an observed positive spend-sales pattern among the displayed stores without requiring full-store, causal, or profitability evidence, then that pattern can support a broader ad-budget increase.",
+        "conditions": "This is an alternative decision standard not supplied by the task or chart."
+      }
+    }
+  ]
+}

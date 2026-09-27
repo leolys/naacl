@@ -1,0 +1,137 @@
+{
+  "goal": "Review the city emissions-reduction dashboard, identify the emissions-reduction program with the largest contribution, then send that program to the accelerated program review queue.",
+  "public_task": {
+    "page_title": "City Emissions Program Escalation Routing",
+    "user_goal": "Review the city emissions-reduction dashboard, identify the emissions-reduction program with the largest contribution, then send that program to the accelerated program review queue.",
+    "chart_reference": "Use the dashboard to determine which city emissions-reduction program is the largest contribution category for this routing decision.",
+    "primary_field_label": "Program routing decision",
+    "option_labels": [
+      "Route Building retrofits to accelerated program review",
+      "Route Transit electrification to accelerated program review",
+      "Keep Industrial efficiency in routine program monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program portfolio",
+        "value": "City emissions-reduction initiatives"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Assessment focus",
+        "value": "Program contribution assessment"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Escalation queue",
+        "value": "Accelerated program review"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing basis",
+        "value": "Largest city emissions-reduction contribution program"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the city emissions-reduction dashboard, identify the emissions-reduction program with the largest contribution, then send that program to the accelerated program review queue."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard to determine which city emissions-reduction program is the largest contribution category for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard to determine which city emissions-reduction program is the largest contribution category for this routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the city emissions-reduction dashboard, identify the emissions-reduction program with the largest contribution, then send that program to the accelerated program review queue."
+      }
+    ]
+  },
+  "options": [
+    "Route Building retrofits to accelerated program review",
+    "Route Transit electrification to accelerated program review",
+    "Keep Industrial efficiency in routine program monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, Building retrofits category",
+          "content": "The bold inscription \"41.2%\" is directly above the bar labeled \"Building retrofits\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Transit electrification category",
+          "content": "The bold inscription \"29.8%\" is directly above the bar labeled \"Transit electrification\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Industrial efficiency category",
+          "content": "The bold inscription \"18.5%\" is directly above the bar labeled \"Industrial efficiency\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left of plot",
+          "content": "The chart inscription reads \"Reported reduction share (%)\"."
+        }
+      ],
+      "B": {
+        "text": "If each printed percentage immediately above a program bar is the authoritative reported reduction share for that program, the largest printed percentage identifies the largest contribution; the task directs that program to accelerated review.",
+        "conditions": "Applies if the percentage annotations are authoritative despite their disagreement with bar heights."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, Transit electrification category",
+          "content": "The light-blue bar above the inscription \"Transit electrification\" is the tallest bar, reaching between the printed 65 and 70 ticks; the bold inscription \"29.8%\" is directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, Building retrofits category",
+          "content": "The green bar above \"Building retrofits\" reaches the printed 40 tick; the bold inscription \"41.2%\" is directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left of plot",
+          "content": "The chart inscription reads \"Reported reduction share (%)\"."
+        }
+      ],
+      "B": {
+        "text": "If bar height on the vertical scale encodes the reported reduction share for each program, the tallest bar identifies the largest contribution; the task directs that program to accelerated review.",
+        "conditions": "Applies if the vertical bar geometry, rather than the conflicting printed percentages above bars, is the authoritative encoding of reported reduction share."
+      }
+    }
+  ]
+}

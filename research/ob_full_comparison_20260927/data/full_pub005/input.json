@@ -1,0 +1,129 @@
+{
+  "goal": "Review the population dashboard, then open the state detail record that should be routed into the highest-population public statistics follow-up workflow.",
+  "public_task": {
+    "page_title": "Population Priority Detail Routing",
+    "user_goal": "Review the population dashboard, then open the state detail record that should be routed into the highest-population public statistics follow-up workflow.",
+    "chart_reference": "Use the population dashboard as the evidence source for the state population follow-up routing decision.",
+    "primary_field_label": "Highest-population state detail route",
+    "option_labels": [
+      "Open California population detail for priority follow-up",
+      "Open Texas population detail for priority follow-up",
+      "Open Florida population detail for priority follow-up"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Population statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing queue",
+        "value": "Population priority follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the population dashboard, then open the state detail record that should be routed into the highest-population public statistics follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the population dashboard as the evidence source for the state population follow-up routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the population dashboard as the evidence source for the state population follow-up routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the population dashboard, then open the state detail record that should be routed into the highest-population public statistics follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open California population detail for priority follow-up",
+    "Open Texas population detail for priority follow-up",
+    "Open Florida population detail for priority follow-up"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "California map region",
+          "content": "The map region labeled \"California\" is filled orange."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Texas map region",
+          "content": "The map region labeled \"Texas\" is filled orange."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "An orange swatch is inscribed \"30+ M\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Florida map region",
+          "content": "The map region labeled \"Florida\" is filled purple."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "A purple swatch is inscribed \"20 - 30 M\"."
+        }
+      ],
+      "B": {
+        "text": "If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.",
+        "conditions": "Applies if the title and legend describe the mapped state population values and the workflow requires the single highest-population offered state."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "California and Texas map regions",
+          "content": "Both the region labeled \"California\" and the region labeled \"Texas\" are filled orange."
+        },
+        {
+          "ref": "chart_1",
+          "location": "legend at lower right",
+          "content": "The orange swatch is inscribed \"30+ M\"."
+        }
+      ],
+      "B": {
+        "text": "If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.",
+        "conditions": "Applies if the title and legend describe the mapped state population values and the workflow requires the single highest-population offered state."
+      }
+    }
+  ]
+}

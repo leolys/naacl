@@ -1,0 +1,108 @@
+{
+  "goal": "Review the public humanitarian statistics dashboard, compare the 2017 number of people for Refugees and IDPs, then open the displacement category follow-up record for the category with the larger 2017 count.",
+  "public_task": {
+    "page_title": "2017 Displacement Statistics Follow-up Routing",
+    "user_goal": "Review the public humanitarian statistics dashboard, compare the 2017 number of people for Refugees and IDPs, then open the displacement category follow-up record for the category with the larger 2017 count.",
+    "chart_reference": "Use the displacement statistics dashboard as the evidence source for deciding which 2017 category count is larger.",
+    "primary_field_label": "2017 larger-count displacement category record",
+    "option_labels": [
+      "Open 2017 IDPs statistics follow-up record",
+      "Open 2017 Refugees statistics follow-up record",
+      "Send 2017 displacement comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Humanitarian displacement statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2017"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual displacement statistics follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2017 displacement category count shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public humanitarian statistics dashboard, compare the 2017 number of people for Refugees and IDPs, then open the displacement category follow-up record for the category with the larger 2017 count."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displacement statistics dashboard as the evidence source for deciding which 2017 category count is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the displacement statistics dashboard as the evidence source for deciding which 2017 category count is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public humanitarian statistics dashboard, compare the 2017 number of people for Refugees and IDPs, then open the displacement category follow-up record for the category with the larger 2017 count."
+      }
+    ]
+  },
+  "options": [
+    "Open 2017 IDPs statistics follow-up record",
+    "Open 2017 Refugees statistics follow-up record",
+    "Send 2017 displacement comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and axis labels",
+          "content": "The title reads \"Refugees vs IDPs\"; the left vertical label \"Refugees\" is blue and the right vertical label \"IDPs\" is red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area at the 2017 x-axis position",
+          "content": "A blue circular mark is higher on the page than a red square mark at the vertical gridline labeled 2017.5, with the blue mark positioned near the 2017 year location and the red-square series also having a mark at that location."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The blue series is drawn with circular markers and the red series is drawn with square markers."
+        }
+      ],
+      "B": {
+        "text": "If the blue circular series is the Refugees series and the red square series is the IDPs series, and both series use the same vertically increasing count scale despite the separate colored axis labels, then the series whose 2017 mark is higher on the page has the larger 2017 people count; the task requires opening that category's follow-up record.",
+        "conditions": "The color/axis-label association identifies the series, and the two vertical positions are numerically comparable. The chart shows no visible numeric y-axis ticks or explicit statement that the two colored axes share a scale, so comparability is an evidence gap."
+      }
+    }
+  ]
+}

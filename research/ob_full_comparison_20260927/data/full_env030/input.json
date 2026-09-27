@@ -1,0 +1,114 @@
+{
+  "goal": "Review the regional air-quality dashboard and select the follow-up route that best matches the overall dashboard trend for the 2018-2023 planning case.",
+  "public_task": {
+    "page_title": "Regional Air-Quality Trend Handling Queue",
+    "user_goal": "Review the regional air-quality dashboard and select the follow-up route that best matches the overall dashboard trend for the 2018-2023 planning case.",
+    "chart_reference": "Use the dashboard trend as the basis for assigning this case to the most appropriate follow-up pathway.",
+    "primary_field_label": "Regional air-quality handling route",
+    "option_labels": [
+      "Route the record to routine air-quality recovery monitoring",
+      "Route the record to air-quality recovery expansion follow-up",
+      "Route the record to air-quality deterioration response review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Regional air-quality recovery planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Assessment window",
+        "value": "2018-2023 air-quality trend review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Workflow stage",
+        "value": "Dashboard trend case routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the regional air-quality dashboard and select the follow-up route that best matches the overall dashboard trend for the 2018-2023 planning case."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard trend as the basis for assigning this case to the most appropriate follow-up pathway."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard trend as the basis for assigning this case to the most appropriate follow-up pathway."
+      },
+      {
+        "page": "form",
+        "text": "Review the regional air-quality dashboard and select the follow-up route that best matches the overall dashboard trend for the 2018-2023 planning case."
+      }
+    ]
+  },
+  "options": [
+    "Route the record to routine air-quality recovery monitoring",
+    "Route the record to air-quality recovery expansion follow-up",
+    "Route the record to air-quality deterioration response review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "blue line at 2018 and 2023 ticks",
+          "content": "The blue line at the 2023 tick is visibly lower on the page than the blue line at the 2018 tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The Recovery Score axis has visibly printed tick labels increasing upward from 0 near the bottom to 2,800 near the top."
+        }
+      ],
+      "B": {
+        "text": "If the x-axis years progress left to right and higher vertical position on the Recovery Score axis represents a higher recovery score, then a final mark lower than the initial mark indicates a lower final recovery score; if a lower overall recovery score warrants deterioration review, select that route.",
+        "conditions": "Assumes the plotted line is the relevant regional series, conventional upward-increasing y-axis encoding, and that endpoint comparison determines the overall trend; no explicit routing policy is shown."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title visibly reads \"Increasing Regional Air Quality Recovery from 2018 to 2023\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and y-axis labels",
+          "content": "The horizontal axis is visibly labeled \"Year\" and has printed years 2018 through 2023; the vertical axis is visibly labeled \"Recovery Score\"."
+        }
+      ],
+      "B": {
+        "text": "If the chart title is intended to summarize the overall 2018-2023 dashboard finding, and an increasing air-quality recovery finding is routed to recovery expansion follow-up, select the recovery expansion route.",
+        "conditions": "The title is authoritative for the overall trend and 'increasing recovery' maps to expansion rather than routine monitoring; no explicit routing policy is shown."
+      }
+    }
+  ]
+}

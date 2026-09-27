@@ -1,0 +1,87 @@
+{
+  "transfer/b002": {
+    "review_source": "独立Codex离线解读，不是人工确认或隐藏答案；对应run_transfer_001。",
+    "initial_chains": [
+      {
+        "id": "c1",
+        "O": "第三根绿柱上方写87%，第四根蓝柱上方写23%，第一根橙柱上方写5%；横轴依次是Chrome、Safari、Edge、Firefox、Others。",
+        "B": "将打印百分比作为market_share，按公开任务选择最高份额的浏览器。",
+        "C": "Edge的87%最高，分配Edge到优先兼容性测试队列。",
+        "assessment": "主要标注O有可见支持，B明确选择了一种编码读法；初始notes却错误声称柱高也与该排序一致。"
+      }
+    ],
+    "new_chains": [
+      {
+        "stage": "逐行动假设的Edge请求",
+        "id": "h1",
+        "status": "单次响应接受，整个V4分支后来失败，未合并核验",
+        "O": "Edge绿柱上方87%，Firefox蓝柱上方23%，Chrome橙柱上方5%。",
+        "B": "公开规则要求最大market_share；以打印百分比为该指标的证据。",
+        "C": "选择Edge进入优先测试队列。",
+        "assessment": "与初始链同读法、同结论，不是新增竞争解释。"
+      },
+      {
+        "stage": "逐行动假设的Firefox请求",
+        "status": "原始响应产生了链，但被接口拒绝，不能计作接受的新链",
+        "O": "列出五个产品的打印百分比及0到100纵轴。",
+        "B": "仍按打印百分比选最高份额。",
+        "C": "模型返回Edge，不是本次待考察的Firefox。",
+        "assessment": "改换目标选项导致retarget接口失败；不是Firefox空链。Chrome请求和该分支核验没有运行。"
+      }
+    ],
+    "caveats": [
+      "V1返回0个问题，补充调用跳过；不能说补充器执行后失败。",
+      "图中Firefox蓝柱明显高于Edge绿柱，V1称柱高与标注一致指向Edge的理由不符合可见图面关系。",
+      "V1核验支持百分比标注读取，没有检查覆盖是否遗漏柱高读取；支持一链不等于覆盖充分。",
+      "静态诊断，没有执行选择或提交；无端到端纠错结果。"
+    ]
+  },
+  "transfer/pub013": {
+    "review_source": "独立Codex离线解读，不是人工确认或隐藏答案；对应run_transfer_001。",
+    "initial_chains": [
+      {
+        "id": "c1",
+        "O": "图例上端浅黄标High/100，下端深红标Low/0；Kansas深酒红，Illinois浅黄，North Dakota深红；模型还将Delaware记成中红。",
+        "B": "假定风险指数越低反而表示风险越高，再在可选州中比较。",
+        "C": "Kansas风险最高，应进入优先跟进。",
+        "assessment": "Kansas、Illinois及图例端点有可见依据；Low指数等于高风险是未获公开定义支持的额外假设。Delaware在图中呈橙黄色，原O局部不准。"
+      },
+      {
+        "id": "c2",
+        "O": "Illinois为浅黄、Kansas为深红，分别接近High/100和Low/0端。",
+        "B": "采用Risk Index越高表示风险越高的直接读法；原B包含多种来回猜测，最后采用此读法。",
+        "C": "Illinois的风险指数最高，应进入优先跟进。",
+        "assessment": "主要O及直接读法有公开图面依据，但原O没有完整记录Delaware和全图其他州的比较，不能自动扩大成全图唯一最大。"
+      }
+    ],
+    "new_chains": [
+      {
+        "stage": "V1反问",
+        "status": "0问，补充未调用，无新增链",
+        "assessment": "初始已有Kansas/Illinois不同结论，无须强制再加第三种。"
+      },
+      {
+        "stage": "V4逐Illinois假设",
+        "status": "实际返回空链",
+        "assessment": "空链notes先称Illinois浅色为高风险，又借深色低端州否定它，并错误把Kansas说成不在选项里；拒绝理由不可靠。"
+      },
+      {
+        "stage": "V4逐Kansas假设",
+        "status": "实际返回空链",
+        "assessment": "按Risk Index直接图例读法，Kansas位于低端而非最高，这是可理解的拒绝理由；不能因此证明不存在其他条件候选。"
+      },
+      {
+        "stage": "V4逐Delaware假设",
+        "status": "实际返回空链",
+        "assessment": "Delaware选项是routine monitoring而非priority follow-up，公开动作语义确有区别；但模型同时误述其颜色为深红。"
+      }
+    ],
+    "caveats": [
+      "两条不同C已经存在，不代表两条B获得相同强度的图面支持，也不要求反问必须新增第三条。",
+      "两次核验都对原两链给O支持、B不确定、条件推导有效；这些是模型意见，不是人工核验结论。",
+      "核验未指出Delaware颜色误读，还用Low Safety这一理论可能性模糊了两种桥接的证据强弱。",
+      "三个V4假设均真实运行并返回空链，与b002接口失败后未运行的阶段不同。",
+      "没有真实选择和提交，不能称Kansas或Illinois已被执行或纠正。"
+    ]
+  }
+}

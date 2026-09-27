@@ -1,0 +1,111 @@
+{
+  "goal": "Review the public urban-rural population statistics dashboard, compare the 1990 percentage for Urban and Rural, then open the population category follow-up record for the category with the larger 1990 percentage.",
+  "public_task": {
+    "page_title": "1990 Urbanization Statistics Follow-up Routing",
+    "user_goal": "Review the public urban-rural population statistics dashboard, compare the 1990 percentage for Urban and Rural, then open the population category follow-up record for the category with the larger 1990 percentage.",
+    "chart_reference": "Use the urban-rural statistics dashboard as the evidence source for deciding which 1990 category percentage is larger.",
+    "primary_field_label": "1990 larger-percentage population category record",
+    "option_labels": [
+      "Open 1990 Urban statistics follow-up record",
+      "Open 1990 Rural statistics follow-up record",
+      "Send 1990 urban-rural comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Urbanization and population distribution statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "1990"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual urban-rural statistics follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 1990 category percentage shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public urban-rural population statistics dashboard, compare the 1990 percentage for Urban and Rural, then open the population category follow-up record for the category with the larger 1990 percentage."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the urban-rural statistics dashboard as the evidence source for deciding which 1990 category percentage is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the urban-rural statistics dashboard as the evidence source for deciding which 1990 category percentage is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public urban-rural population statistics dashboard, compare the 1990 percentage for Urban and Rural, then open the population category follow-up record for the category with the larger 1990 percentage."
+      }
+    ]
+  },
+  "options": [
+    "Open 1990 Urban statistics follow-up record",
+    "Open 1990 Rural statistics follow-up record",
+    "Send 1990 urban-rural comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "rec_01",
+      "O": [
+        "The chart displays a solid blue line with circular markers corresponding to the left Y-axis labeled 'Urban (%)'.",
+        "The chart displays a dashed red line with square markers corresponding to the right Y-axis labeled 'Rural (%)'.",
+        "At the x-axis value for 1990, the blue circular marker is positioned vertically lower than the red square marker."
+      ],
+      "B": "Assuming the vertical position on the graph corresponds to the magnitude of the percentage for each respective axis, the Rural percentage is larger than the Urban percentage in 1990."
+    },
+    {
+      "id": "rec_02",
+      "O": [
+        "A text label reading '44.20%' is positioned directly above the blue line's data point for the year 1980.",
+        "A text label reading '12.12%' is positioned below the red line's data point for the year 1980.",
+        "A text label reading '46.32%' is positioned above the blue line's data point for the year 2000.",
+        "A text label reading '12.57%' is positioned below the red line's data point for the year 2000."
+      ],
+      "B": "The chart uses specific data labels to highlight values at certain intervals. While the 1990 points are not explicitly labeled with text, their relative vertical positions suggest the red line (Rural) is higher than the blue line (Urban) at that specific year."
+    },
+    {
+      "id": "rec_03",
+      "O": [
+        "The blue line (Urban) shows a general upward trend from 1960 to 2020.",
+        "The red line (Rural) shows a peak around 1970, a dip in the 1980s, a plateau in the 1990s, and a sharp decline after 2000."
+      ],
+      "B": "The chart illustrates a long-term shift in population distribution. In the 1990s, the Rural percentage remains relatively high and stable compared to the Urban percentage, which is still in a phase of gradual increase."
+    }
+  ]
+}

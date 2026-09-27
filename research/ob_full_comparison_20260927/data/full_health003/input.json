@@ -1,0 +1,124 @@
+{
+  "goal": "Use the dashboard trend to route this inpatient capacity review to the most appropriate operations pathway for the current period.",
+  "public_task": {
+    "page_title": "COVID-19 Inpatient Capacity Routing Review",
+    "user_goal": "Use the dashboard trend to route this inpatient capacity review to the most appropriate operations pathway for the current period.",
+    "chart_reference": "Operational trend view: COVID-19 hospital census over time",
+    "primary_field_label": "Operational routing decision",
+    "option_labels": [
+      "Route to hospital surge-capacity planning guidance for rapidly increasing COVID-19 inpatient demand",
+      "Route to step-down recovery planning for easing COVID-19 inpatient demand",
+      "Route to routine respiratory surveillance updates for background monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Clinical Care"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "COVID-19 inpatient capacity"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Workflow stage",
+        "value": "Capacity planning triage"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Use the dashboard trend to route this inpatient capacity review to the most appropriate operations pathway for the current period."
+      },
+      {
+        "page": "dashboard",
+        "text": "Operational trend view: COVID-19 hospital census over time"
+      },
+      {
+        "page": "form",
+        "text": "Operational trend view: COVID-19 hospital census over time"
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard trend to route this inpatient capacity review to the most appropriate operations pathway for the current period."
+      }
+    ]
+  },
+  "options": [
+    "Route to hospital surge-capacity planning guidance for rapidly increasing COVID-19 inpatient demand",
+    "Route to step-down recovery planning for easing COVID-19 inpatient demand",
+    "Route to routine respiratory surveillance updates for background monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "blue series",
+          "content": "The blue line descends from near the 0 tick at the left to below the 8000 tick at the right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis label is \"Count,\" while its printed numeric ticks increase from 0 at the top to 8000 lower on the page."
+        }
+      ],
+      "B": {
+        "text": "If the vertical axis instead follows ordinary upward-increasing quantity encoding despite its printed tick ordering, then the rightward downward line would indicate easing demand, which would support step-down recovery planning.",
+        "conditions": "Applies only if the printed y-axis labels are not the operative value mapping."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and axes",
+          "content": "The title reads \"Month vs. Number of COVID-19 patients hospitalized\"; the horizontal axis is labeled \"Month\" and the vertical axis is labeled \"Count\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "Visible date labels run from \"Feb 24, 2020\" at the left to \"Mar 14, 2020\" at the right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The printed y-axis ticks show 0 near the top, then 2000, 4000, 6000, and 8000 at progressively lower positions."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue series, right side",
+          "content": "The blue line and markers descend sharply toward the right; the final marker is below the 8000 tick and the preceding recent markers span between the 4000, 6000, and 8000 tick levels."
+        }
+      ],
+      "B": {
+        "text": "If the plotted series is the COVID-19 hospitalized-patient count over time, the x-axis progresses from earlier dates at left to later dates at right, and the y-axis numeric labels increase downward, then a line moving downward toward the right indicates increasing inpatient census. If the current-period increase is rapid, route to surge-capacity planning guidance.",
+        "conditions": "Applies to the single visible COVID-19 hospitalization series and treats the rightmost date as the current period; 'rapidly increasing' is assessed from the visibly steep recent segment."
+      }
+    }
+  ]
+}

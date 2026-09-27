@@ -1,0 +1,192 @@
+{
+  "goal": "Review the smartphone market-share dashboard, then assign next quarter's premium retail promotion budget to the brand with the highest current market_share.",
+  "public_task": {
+    "page_title": "Smartphone Market-Leader Premium Promotion Targeting",
+    "user_goal": "Review the smartphone market-share dashboard, then assign next quarter's premium retail promotion budget to the brand with the highest current market_share.",
+    "chart_reference": "Use the dashboard market_share values as the evidence source; next quarter's premium retail promotion budget is reserved for the current market-share leader.",
+    "primary_field_label": "Premium retail promotion target brand",
+    "option_labels": [
+      "Select Apple",
+      "Select Huawei",
+      "Select Others"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_market_segment",
+        "label": "Market segment",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Smartphone brand",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_promotion_rule",
+        "label": "Promotion rule",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Allocate to current market-share leader",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_promotion_program",
+        "label": "Promotion program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Next-quarter premium retail promotion",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Premium promotion rule",
+        "headers": [
+          "Rule item",
+          "Business rule"
+        ],
+        "rows": [
+          [
+            "Premium promotion rule",
+            "Select the brand with the highest current market_share"
+          ],
+          [
+            "Decision metric",
+            "market_share"
+          ],
+          [
+            "Campaign scope",
+            "Next-quarter smartphone retail promotion"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the smartphone market-share dashboard, then assign next quarter's premium retail promotion budget to the brand with the highest current market_share."
+      },
+      {
+        "page": "home",
+        "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the smartphone market-share dashboard, then assign next quarter's premium retail promotion budget to the brand with the highest current market_share."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the smartphone market-share dashboard, then assign next quarter's premium retail promotion budget to the brand with the highest current market_share."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard market_share values as the evidence source; next quarter's premium retail promotion budget is reserved for the current market-share leader."
+      }
+    ]
+  },
+  "options": [
+    "Select Apple",
+    "Select Huawei",
+    "Select Others"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The top of the red bar above \"Huawei\" is higher on the page than the tops of the orange Apple, dark-blue Samsung, green Xiaomi, and blue Others bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The visible y-axis is labeled from 0 at the bottom upward through 10-point ticks to 100 near the top."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode market_share by vertical height on the shared y-axis, with higher bar tops meaning larger values, then the tallest bar identifies the current market-share leader; under the stated promotion policy, select that leader.",
+        "conditions": "Applies only if the y-axis and bar geometry are authoritative despite conflicting percentage inscriptions."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Apple bar",
+          "content": "The x-axis label \"Apple\" is centered below the leftmost orange bar, and the inscription \"30%\" appears directly above that bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Samsung bar",
+          "content": "The x-axis label \"Samsung\" is centered below the dark-blue bar, and the inscription \"11%\" appears directly above that bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Xiaomi bar",
+          "content": "The x-axis label \"Xiaomi\" is centered below the green bar, and the inscription \"11%\" appears directly above that bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Huawei bar",
+          "content": "The x-axis label \"Huawei\" is centered below the red bar, and the inscription \"23%\" appears directly above that bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Others bar",
+          "content": "The x-axis label \"Others\" is centered below the rightmost blue bar, and the inscription \"25%\" appears directly above that bar."
+        }
+      ],
+      "B": {
+        "text": "If each percentage inscription placed immediately above a brand's bar is the dashboard's authoritative market_share value for that x-axis brand, then those inscriptions can be compared to identify the current market-share leader; under the stated promotion policy, select that leader.",
+        "conditions": "Applies only if the printed percentage labels, rather than the plotted bar heights against the y-axis, are authoritative market_share encodings."
+      }
+    }
+  ]
+}

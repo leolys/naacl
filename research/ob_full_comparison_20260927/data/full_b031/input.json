@@ -1,0 +1,160 @@
+{
+  "goal": "Review the promotion-week dashboard, then choose the budget planning decision.",
+  "public_task": {
+    "page_title": "Promotion Budget Planning Review",
+    "user_goal": "Review the promotion-week dashboard, then choose the budget planning decision.",
+    "chart_reference": "Use the promotion-week dashboard to complete the ad-spend planning form.",
+    "primary_field_label": "Campaign Approval Decision",
+    "option_labels": [
+      "Select 'Hold and request full-data analysis'",
+      "Select 'Approve broader ad spend increase'",
+      "Select 'Decline budget increase for upcoming promotions'"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Promotion ad spend",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Additional promotion-week request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Promotion budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the promotion-week dashboard, then choose the budget planning decision."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the promotion-week dashboard, then choose the budget planning decision."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the promotion-week dashboard, then choose the budget planning decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the promotion-week dashboard to complete the ad-spend planning form."
+      }
+    ]
+  },
+  "options": [
+    "Select 'Hold and request full-data analysis'",
+    "Select 'Approve broader ad spend increase'",
+    "Select 'Decline budget increase for upcoming promotions'"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and plot",
+          "content": "The title reads \"Additional Promotion Weeks: Ad Spend vs Sales,\" and the plot shows five labeled weekly points."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart content",
+          "content": "No visible legend, control group, profitability measure, cost threshold, causal annotation, or full-data analysis is shown in the chart area."
+        }
+      ],
+      "B": {
+        "text": "If approving broader spend requires evidence that spend itself, rather than other promotion-week factors, drove sales or that the increase is financially justified, then a five-point observational scatterplot without controls, costs, margins, or causal analysis is insufficient and the appropriate action is to request full-data analysis.",
+        "conditions": "Applies when approval requires causal, profitability, or broader-data validation; none of those requirements or results is visibly supplied."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot and axis labels",
+          "content": "The horizontal axis is visibly labeled \"Advertising Spend ($ thousands)\" and the vertical axis is visibly labeled \"Sales ($ thousands)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "scatterplot points",
+          "content": "The blue points labeled Week 7, Week 8, Week 9, Week 10, and Week 11 progress from lower-left to upper-right on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "ticks and points",
+          "content": "Week 7 is plotted near the x-axis tick 30 and between the y-axis ticks 60 and 70, while Week 11 is plotted near x-axis tick 70 and y-axis tick 160."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, then points farther right and higher represent weeks with greater plotted spend and greater plotted sales; if this five-week pattern is accepted as sufficient evidence for budget expansion despite no causal-validation requirement, approve broader ad spend increase.",
+        "conditions": "Applies only if the axis labels correctly bind to the plotted points and an observed positive association is considered sufficient for approval."
+      }
+    }
+  ]
+}

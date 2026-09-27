@@ -1,0 +1,127 @@
+{
+  "goal": "Review the monthly energy dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly.",
+  "public_task": {
+    "page_title": "May Low-output Severity Routing",
+    "user_goal": "Review the monthly energy dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly.",
+    "chart_reference": "Use the dashboard record for May as the evidence source for deciding whether its low output should remain on standard follow-up or be escalated as a critical anomaly.",
+    "primary_field_label": "May low-output handling route",
+    "option_labels": [
+      "Route May to standard low-output follow-up",
+      "Escalate May to critical low-output anomaly review",
+      "Send May to background monthly record filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Energy operations monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "May low-output severity review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Low-output severity routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Whether May should be handled as a standard low-output case or as a critical anomaly"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the monthly energy dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard record for May as the evidence source for deciding whether its low output should remain on standard follow-up or be escalated as a critical anomaly."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard record for May as the evidence source for deciding whether its low output should remain on standard follow-up or be escalated as a critical anomaly."
+      },
+      {
+        "page": "form",
+        "text": "Review the monthly energy dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly."
+      }
+    ]
+  },
+  "options": [
+    "Route May to standard low-output follow-up",
+    "Escalate May to critical low-output anomaly review",
+    "Send May to background monthly record filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "bar above the x-axis label \"May\"",
+          "content": "The dark-red May bar is visibly shorter than each of the other five bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and axes",
+          "content": "The title reads \"Monthly Energy Usage (kWh)\" and the vertical axis is labeled \"Energy Usage (kWh)\"."
+        }
+      ],
+      "B": {
+        "text": "If critical escalation requires an explicit policy threshold or other stated severity criterion, then a chart-only relative low value does not establish critical status; standard low-output follow-up is the non-critical handling route.",
+        "conditions": "Assumes standard follow-up is the default for a low-output case not shown to meet critical criteria. No such threshold or default rule is provided in the task materials."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "bar above the x-axis label \"May\"",
+          "content": "The dark-red May bar is visibly shorter than each of the other five bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "May bar and y-axis",
+          "content": "The top of the May bar is below the printed 10,000 tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar above the x-axis label \"Jun\"",
+          "content": "The Jun bar, the next shortest visible bar, has its top between the printed 15,000 and 20,000 ticks."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode monthly energy usage on the shared vertical kWh scale and an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical, then May warrants critical-anomaly escalation.",
+        "conditions": "Assumes the May-labeled bar represents May, higher bar tops encode greater usage, the displayed months are comparable, and extreme relative low output is a critical-routing criterion; no explicit threshold is supplied."
+      }
+    }
+  ]
+}

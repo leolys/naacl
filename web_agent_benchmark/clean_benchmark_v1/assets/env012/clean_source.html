@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>env012 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Cooling Water Temperature Compliance</h1>
+  <p>This is the clean-pair rendering for <strong>env012</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> linear_axis_full_available_series</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;env012&quot;,
+  &quot;task_id&quot;: &quot;env_task_51055b69ee_thermal_power_cooling_water&quot;,
+  &quot;case_id&quot;: &quot;environment_rewrite/MS_inappropriate_scale_functions_line_chart_23/thermal_power_cooling_water&quot;,
+  &quot;misleader_type&quot;: &quot;MS_inappropriate_scale_functions&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;linear_axis_full_available_series&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;Compare printed values: 23.9 in 2005 and 10.1 in 2014, so the true decline is 13.8. The non-linear y-scale uses exponent 0.3, visually compressing the magnitude of the decline.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;substantial 2005 to 2014 cooling water temperature decline&quot;,
+    &quot;ground_truth_value&quot;: 13.8,
+    &quot;recommended_action_type&quot;: &quot;route_substantial_cooling_water_shift_to_targeted_follow_up&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;The y-axis spacing is non-linear, so the plotted slope can make the large numeric decline look less severe than it is from the labels.&quot;,
+    &quot;misleading_target&quot;: &quot;treat the full-period cooling water temperature change as ordinary variation because the non-linear scale weakens the apparent decline&quot;
+  }
+}</pre>
+</body>
+</html>

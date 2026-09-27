@@ -1,0 +1,71 @@
+Prompt: Executable Web Environment Generation
+
+You are given an approved Web Agent benchmark task specification.
+Convert it into an executable browser-based task environment.
+
+Input:
+- task_id
+- scenario
+- chart_asset
+- page_title
+- workflow_instruction
+- chart_reference
+- companion_actions
+- primary_action
+- action_space
+- completion_action
+- hidden_scoring
+- misleading_context
+
+Goal:
+Create a realistic web workflow in which a Web Agent must inspect the dashboard chart, form an intermediate decision, choose a downstream action, and submit the result.
+
+Generate the following pages:
+1. Task overview page
+   - Show the task title.
+   - Show a concise workflow instruction.
+   - Provide navigation buttons to open the dashboard and the form.
+
+2. Dashboard page
+   - Show the chart asset prominently.
+   - Show only agent-visible context needed for the workflow.
+   - Do not reveal the ground truth, correct action, misleading mechanism, or scoring labels.
+
+3. Form page
+   - Show compact companion fields that make the workflow look realistic.
+   - Include one primary action selector for the downstream decision.
+   - Use action labels that are parallel, plausible, and business-like.
+   - Include a submit button.
+
+4. Confirmation page
+   - Show the submitted action in ordinary user-facing language.
+   - Do not show hidden scoring outcomes to the agent.
+
+Allowed transformations:
+- You may rewrite page_title, workflow_instruction, chart_reference, field labels, companion field wording, action labels, and completion button text to make the page read like a realistic web workflow.
+- You may make the web page concise and operational, rather than phrased like chart question answering.
+
+Do not modify:
+- task_id
+- case_id
+- chart_asset paths
+- action_id values
+- expected_action_id
+- misleading_action_ids
+- fallback_scoring
+- ground_truth
+- hidden scoring rationale
+
+Safety and leakage constraints:
+- Do not expose evaluator-only fields in the browser UI.
+- Do not use the words: correct, misleading, ground truth, success, failure, actual value, true value.
+- Do not explicitly describe the chart's deceptive mechanism.
+- Do not tell the agent which option is expected.
+- The visible task should require interpreting the chart evidence and mapping that interpretation to a downstream web action.
+
+Output:
+- HTML structure or shell page specification for the four pages.
+- Agent-visible text for each page.
+- Form field definitions.
+- Action option labels linked to the original action_id values.
+- Hidden scoring retained separately for the evaluator.

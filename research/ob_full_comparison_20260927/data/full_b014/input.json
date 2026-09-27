@@ -1,0 +1,155 @@
+{
+  "goal": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product C merchandising review intake by selecting the appropriate product route.",
+  "public_task": {
+    "page_title": "Product C Merchandising Review Intake",
+    "user_goal": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product C merchandising review intake by selecting the appropriate product route.",
+    "chart_reference": "Use the Units Sold by Product dashboard as the evidence source for the Product C merchandising route.",
+    "primary_field_label": "Merchandising route",
+    "option_labels": [
+      "Open Product C low-demand review",
+      "Route Product C to critical low-demand escalation",
+      "Keep Product C on regular merchandising plan",
+      "Route Product C to expanded replenishment planning",
+      "Route Product C to growth allocation review",
+      "Flag Product C for manual merchandising check"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review product",
+        "value": "Product C"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review program",
+        "value": "Weekend pop-up merchandising review"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Merchandising policy levels",
+        "headers": [
+          "Unit condition",
+          "Merchandising route rule"
+        ],
+        "rows": [
+          [
+            "< 12,000 units",
+            "Critical low-demand escalation level"
+          ],
+          [
+            "< 25,000 units",
+            "Low-demand review queue activation level"
+          ],
+          [
+            "< 2,500 units from a decision threshold",
+            "Manual merchandising verification variance band"
+          ],
+          [
+            ">= 50,000 units",
+            "Expanded replenishment planning level"
+          ],
+          [
+            ">= 75,000 units",
+            "Growth allocation review level"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product C merchandising review intake by selecting the appropriate product route."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product C merchandising review intake by selecting the appropriate product route."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the weekend pop-up Units Sold by Product dashboard, then complete the Product C merchandising review intake by selecting the appropriate product route."
+      },
+      {
+        "page": "form",
+        "text": "Use the Units Sold by Product dashboard as the evidence source for the Product C merchandising route."
+      }
+    ]
+  },
+  "options": [
+    "Open Product C low-demand review",
+    "Route Product C to critical low-demand escalation",
+    "Keep Product C on regular merchandising plan",
+    "Route Product C to expanded replenishment planning",
+    "Route Product C to growth allocation review",
+    "Flag Product C for manual merchandising check"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title visibly reads \"Units Sold by Product (Weekend Pop-up)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis inscription visibly reads \"Units Sold,\" with visible tick labels including \"20,000\" and \"30,000\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Product C bar",
+          "content": "A dark red bar is positioned above the visible x-axis label \"Product C\"; its top lies between the 20,000 and 30,000 tick heights, roughly two-fifths of the way upward from the 20,000 tick."
+        }
+      ],
+      "B": {
+        "text": "If the vertical axis labeled \"Units Sold\" is a linear upward scale and the Product C bar is bound to its x-axis label, its height can be interpolated from the 20,000 and 30,000 ticks. A value below 25,000 and less than 2,500 units from that threshold meets the stated manual-verification variance band; selecting the manual-check option assumes that this band governs when it overlaps the low-demand rule.",
+        "conditions": "Applies to the weekend pop-up chart and Product C intake. The bar's approximate position must be sufficiently precise to establish both conditions; policy precedence for overlapping low-demand and manual-band conditions is not explicitly stated."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "vertical axis and Product C bar",
+          "content": "The Product C bar top lies between the visible 20,000 and 30,000 tick heights and is closer on the page to the 20,000 tick height than to the 30,000 tick height."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The visible label \"Product C\" is directly below the relevant dark red bar."
+        }
+      ],
+      "B": {
+        "text": "If the vertical axis is a linear upward Units Sold scale and the Product C bar is bound to its label, its height can be interpolated from the 20,000 and 30,000 ticks. Under the policy, a decoded Product C value below 25,000 activates the low-demand review queue.",
+        "conditions": "Applies to the weekend pop-up chart and Product C intake; the chart rendering is assumed precise enough to distinguish a value below 25,000."
+      }
+    }
+  ]
+}

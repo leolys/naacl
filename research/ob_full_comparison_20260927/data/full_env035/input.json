@@ -1,0 +1,129 @@
+{
+  "goal": "Review the historical petroleum price dashboard and route the year that should receive escalation follow-up for the highest per-barrel cost observed in this screening cycle.",
+  "public_task": {
+    "page_title": "Petroleum Price Escalation Review Routing",
+    "user_goal": "Review the historical petroleum price dashboard and route the year that should receive escalation follow-up for the highest per-barrel cost observed in this screening cycle.",
+    "chart_reference": "Historical petroleum price dashboard: Year and price in U.S. dollars per barrel",
+    "primary_field_label": "Route escalation year",
+    "option_labels": [
+      "Route 1980 escalation review",
+      "Route 1976 escalation review",
+      "Route 1986 mid-period review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Energy markets"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Historical petroleum price spike screening"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Analyst escalation routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the historical petroleum price dashboard and route the year that should receive escalation follow-up for the highest per-barrel cost observed in this screening cycle."
+      },
+      {
+        "page": "dashboard",
+        "text": "Historical petroleum price dashboard: Year and price in U.S. dollars per barrel"
+      },
+      {
+        "page": "form",
+        "text": "Historical petroleum price dashboard: Year and price in U.S. dollars per barrel"
+      },
+      {
+        "page": "form",
+        "text": "Review the historical petroleum price dashboard and route the year that should receive escalation follow-up for the highest per-barrel cost observed in this screening cycle."
+      }
+    ]
+  },
+  "options": [
+    "Route 1980 escalation review",
+    "Route 1976 escalation review",
+    "Route 1986 mid-period review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and y-axis",
+          "content": "The title visibly refers to \"Price in U.S. dollars per barrel,\" while the vertical axis visibly reads \"Count\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis ticks",
+          "content": "The y-axis visibly shows numeric ticks from 0 near the top through 35 lower on the page."
+        }
+      ],
+      "B": {
+        "text": "If the y-axis label \"Count\" is authoritative or the chart does not explicitly establish that its vertical values are U.S. dollars per barrel, the plotted vertical positions cannot be validated as the requested cost metric; the title alone leaves an encoding conflict.",
+        "conditions": "Applies if an explicit y-axis metric label is required to decode the chart for routing."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title visibly reads \"Year vs. Price in U.S. dollars per barrel\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and blue series",
+          "content": "The x-axis visibly lists years from 1976 through 1995, with a blue circular marker at each labeled year."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue marker at 1980",
+          "content": "The marker vertically aligned with \"1980\" is lower on the page than every other visible blue marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis ticks",
+          "content": "The visible y-axis tick inscriptions are 0 near the top, then 5, 10, 15, 20, 25, 30, and 35 at progressively lower positions."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis label",
+          "content": "The vertical axis is visibly labeled \"Count\"."
+        }
+      ],
+      "B": {
+        "text": "If the x-axis year labels bind each blue marker to its year, and the vertical tick scale is the plotted per-barrel price scale described by the chart title/task, then larger printed vertical-axis values represent higher per-barrel costs. This applies despite the conflicting y-axis label \"Count\" and therefore depends on treating that label as a labeling error rather than the metric definition.",
+        "conditions": "The chart title/task description governs the metric, the vertical scale increases from 0 at the top to 35 lower on the page, and escalation is routed for the displayed year with the largest plotted price."
+      }
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "goal": "Review the telehealth follow-up enrollment dashboard and select the operational route that best reflects the enrollment pattern across the 2013-2020 review window.",
+  "public_task": {
+    "page_title": "Telehealth Follow-Up Enrollment Escalation Review",
+    "user_goal": "Review the telehealth follow-up enrollment dashboard and select the operational route that best reflects the enrollment pattern across the 2013-2020 review window.",
+    "chart_reference": "Use the displayed enrollment trajectory for the full review window to determine whether this record should be routed for sustained growth planning, ongoing monitoring of a more recent upswing, or decline-response assessment.",
+    "primary_field_label": "Telehealth enrollment routing decision",
+    "option_labels": [
+      "Route to ongoing monitoring for a more recent enrollment upswing that still warrants observation",
+      "Route to sustained growth planning for an enrollment pattern that indicates broad multi-year expansion",
+      "Route to decline-response assessment for an enrollment pattern consistent with a downward trajectory"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Telehealth follow-up demand monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2013-2020 enrollment pattern review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard-based telehealth routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the telehealth follow-up enrollment dashboard and select the operational route that best reflects the enrollment pattern across the 2013-2020 review window."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed enrollment trajectory for the full review window to determine whether this record should be routed for sustained growth planning, ongoing monitoring of a more recent upswing, or decline-response assessment."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed enrollment trajectory for the full review window to determine whether this record should be routed for sustained growth planning, ongoing monitoring of a more recent upswing, or decline-response assessment."
+      },
+      {
+        "page": "form",
+        "text": "Review the telehealth follow-up enrollment dashboard and select the operational route that best reflects the enrollment pattern across the 2013-2020 review window."
+      }
+    ]
+  },
+  "options": [
+    "Route to ongoing monitoring for a more recent enrollment upswing that still warrants observation",
+    "Route to sustained growth planning for an enrollment pattern that indicates broad multi-year expansion",
+    "Route to decline-response assessment for an enrollment pattern consistent with a downward trajectory"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area and x-axis",
+          "content": "A teal line with circular markers is attached to the labeled year ticks 2017, 2018, 2019, and 2020."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Each successive teal marker from 2017 through 2020 is higher on the page than the preceding marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The earliest visible x-axis tick is 2017 and the latest is 2020."
+        }
+      ],
+      "B": {
+        "text": "If the visible series covers only a recent subset of the requested review window and rises within that subset, then the task's route for an upswing that still warrants observation may be appropriate rather than treating the subset as proof of broad full-window expansion.",
+        "conditions": "Applies because the x-axis visibly begins at 2017 while the task context states a 2013-2020 review scope; it does not establish the unshown earlier trajectory."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area and x-axis",
+          "content": "A teal line with circular markers is attached to the labeled year ticks 2017, 2018, 2019, and 2020."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Each successive teal marker from 2017 through 2020 is higher on the page than the preceding marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "title and y-axis",
+          "content": "The title reads \"Telehealth Follow-up Enrollment Trend,\" and the vertical axis is labeled \"Enrolled patients.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The earliest visible x-axis tick is 2017 and the latest is 2020."
+        }
+      ],
+      "B": {
+        "text": "If the chart title and axes bind the teal line to telehealth follow-up enrollment by year, and higher vertical position represents more enrolled patients on the labeled y-axis, then successive higher points at later year ticks indicate enrollment growth over the displayed years. This supports sustained-growth planning only if the displayed years adequately establish the requested full review-window pattern.",
+        "conditions": "Applies to the visible 2017-2020 series. The task requests a 2013-2020 assessment, but no 2013-2016 marks are displayed, so broad expansion across the entire stated window is unverified."
+      }
+    }
+  ]
+}

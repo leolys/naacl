@@ -1,0 +1,141 @@
+{
+  "goal": "Review the monthly reservoir release dashboard and decide whether May should be handled as a standard low-release case or escalated as a critical low-release anomaly for this reporting cycle.",
+  "public_task": {
+    "page_title": "May Low-release Severity Routing",
+    "user_goal": "Review the monthly reservoir release dashboard and decide whether May should be handled as a standard low-release case or escalated as a critical low-release anomaly for this reporting cycle.",
+    "chart_reference": "Use the monthly reservoir release dashboard as the evidence source for deciding the appropriate May low-release severity route for this reporting cycle.",
+    "primary_field_label": "May low-release route",
+    "option_labels": [
+      "Route May to standard low-release follow-up",
+      "Escalate May to critical low-release anomaly review",
+      "Send May to background monthly record filing"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Water operations monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "May low-release severity review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Low-release severity routing"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "May low-release severity route"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the monthly reservoir release dashboard and decide whether May should be handled as a standard low-release case or escalated as a critical low-release anomaly for this reporting cycle."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the monthly reservoir release dashboard as the evidence source for deciding the appropriate May low-release severity route for this reporting cycle."
+      },
+      {
+        "page": "form",
+        "text": "Use the monthly reservoir release dashboard as the evidence source for deciding the appropriate May low-release severity route for this reporting cycle."
+      },
+      {
+        "page": "form",
+        "text": "Review the monthly reservoir release dashboard and decide whether May should be handled as a standard low-release case or escalated as a critical low-release anomaly for this reporting cycle."
+      }
+    ]
+  },
+  "options": [
+    "Route May to standard low-release follow-up",
+    "Escalate May to critical low-release anomaly review",
+    "Send May to background monthly record filing"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, May category at far right",
+          "content": "The dark-red bar attached to \"May\" is much shorter on the page than every other displayed bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and axes",
+          "content": "The title reads \"Monthly Reservoir Release Volume\"; the horizontal axis is inscribed \"Month\" and the vertical axis is inscribed \"Release volume (m3)\"."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode monthly release volume, May is a low-release case relative to the displayed months; absent a stated critical threshold or anomaly policy, the chart alone does not establish whether standard follow-up rather than escalation is required.",
+        "conditions": "Applies when routing requires an explicit threshold or policy beyond relative comparison."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, May category at far right",
+          "content": "The bar attached to \"May\" is the shortest displayed bar and lies near the broken baseline."
+        }
+      ],
+      "B": {
+        "text": "Background filing is appropriate only when May is not a low-release case requiring active routing; a visibly minimal May bar would not support that condition if the chart encodes release volume.",
+        "conditions": "Applies if filing excludes low-release cases needing follow-up."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, May category at far right",
+          "content": "The dark-red bar attached to the x-axis label \"May\" is much shorter on the page than every other displayed bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis and plot area",
+          "content": "The vertical axis is inscribed \"Release volume (m3)\" and has visible labeled ticks from \"10,000\" through \"40,000\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, May bar",
+          "content": "The top of the May bar lies below the visible 10,000 tick and near the broken baseline."
+        }
+      ],
+      "B": {
+        "text": "If the bars encode monthly reservoir release volume on the common vertical axis, and the reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly, then that month should be escalated. This severity convention is assumed because no explicit routing threshold is printed.",
+        "conditions": "Applies to the displayed months and only if relative extremity is an accepted critical-anomaly criterion."
+      }
+    }
+  ]
+}

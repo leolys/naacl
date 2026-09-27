@@ -1,0 +1,128 @@
+{
+  "goal": "Review the screening referral dashboard and assign this record to the operational follow-up pathway that best fits the referral pattern over the reporting period.",
+  "public_task": {
+    "page_title": "Screening Referral Escalation Routing",
+    "user_goal": "Review the screening referral dashboard and assign this record to the operational follow-up pathway that best fits the referral pattern over the reporting period.",
+    "chart_reference": "Use the dashboard as the evidence source for selecting the appropriate screening referral follow-up pathway.",
+    "primary_field_label": "Screening referral follow-up pathway",
+    "option_labels": [
+      "Route to growth-focused referral follow-up",
+      "Route to reduction-focused referral follow-up",
+      "Route to standard referral monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Screening referral operations"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Referral pattern review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard-based referral routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the screening referral dashboard and assign this record to the operational follow-up pathway that best fits the referral pattern over the reporting period."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate screening referral follow-up pathway."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate screening referral follow-up pathway."
+      },
+      {
+        "page": "form",
+        "text": "Review the screening referral dashboard and assign this record to the operational follow-up pathway that best fits the referral pattern over the reporting period."
+      }
+    ]
+  },
+  "options": [
+    "Route to growth-focused referral follow-up",
+    "Route to reduction-focused referral follow-up",
+    "Route to standard referral monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title at upper left",
+          "content": "The title visibly reads “Reduced Screening Referrals Across Hospitals from 2012 to 2023.”"
+        }
+      ],
+      "B": {
+        "text": "If the chart title is an authoritative classification of this record's reporting-period referral pattern, and a title describing referrals as “Reduced” maps to the reduction-focused pathway, select the reduction-focused option.",
+        "conditions": "This depends on treating the title as controlling despite the plotted line and on an unstated mapping from “Reduced” to the reduction-focused option."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The orange line has both upward and downward segments across the labeled years, including a downward final segment from 2022 to 2023."
+        },
+        {
+          "ref": "chart_1",
+          "location": "dashboard text",
+          "content": "The visible dashboard contains a chart title, axis labels, and plotted line, but no visible routing threshold or option-definition text."
+        }
+      ],
+      "B": {
+        "text": "If no supplied policy defines how a mixed or overall changing referral pattern maps to growth- or reduction-focused follow-up, and standard monitoring is the fallback for an indeterminate route, select standard monitoring.",
+        "conditions": "The dashboard and instructions provide no visible threshold, comparison period, or fallback policy; this fallback assumption is not established by the supplied evidence."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area and axes",
+          "content": "An orange line is plotted across x-axis year ticks from 2012 through 2023; the y-axis is labeled “Screening referrals,” with printed tick labels 0 near the bottom and 3200 higher up."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange line endpoints",
+          "content": "The orange line at 2023 is higher on the page than the orange line at 2012."
+        }
+      ],
+      "B": {
+        "text": "If the orange line encodes screening-referral counts by the labeled years and the y-axis increases upward from 0, a line ending higher on the page in 2023 than it begins in 2012 represents an overall increase; if an overall increase maps to growth-focused follow-up, select that option.",
+        "conditions": "Assumes the plotted line is the relevant reporting-period series and that growth-focused follow-up is intended for an overall increase; no explicit routing policy is supplied."
+      }
+    }
+  ]
+}

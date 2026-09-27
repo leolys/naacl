@@ -1,0 +1,108 @@
+{
+  "goal": "Review the public international statistics dashboard, compare the 2020 reported value for U.S. and Rest of the world, then open the regional statistics follow-up record for the region with the larger 2020 value.",
+  "public_task": {
+    "page_title": "2020 International Statistics Follow-up Routing",
+    "user_goal": "Review the public international statistics dashboard, compare the 2020 reported value for U.S. and Rest of the world, then open the regional statistics follow-up record for the region with the larger 2020 value.",
+    "chart_reference": "Use the international statistics comparison dashboard as the evidence source for deciding which 2020 regional value is larger.",
+    "primary_field_label": "2020 larger-value regional statistics record",
+    "option_labels": [
+      "Open 2020 U.S. international statistics follow-up record",
+      "Open 2020 Rest of the world international statistics follow-up record",
+      "Send 2020 regional comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "International public statistics comparison"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2020"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual regional statistics follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2020 regional value shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public international statistics dashboard, compare the 2020 reported value for U.S. and Rest of the world, then open the regional statistics follow-up record for the region with the larger 2020 value."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the international statistics comparison dashboard as the evidence source for deciding which 2020 regional value is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the international statistics comparison dashboard as the evidence source for deciding which 2020 regional value is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public international statistics dashboard, compare the 2020 reported value for U.S. and Rest of the world, then open the regional statistics follow-up record for the region with the larger 2020 value."
+      }
+    ]
+  },
+  "options": [
+    "Open 2020 U.S. international statistics follow-up record",
+    "Open 2020 Rest of the world international statistics follow-up record",
+    "Send 2020 regional comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2020.0 vertical gridline at the right side of the plot",
+          "content": "A blue circular mark lies substantially higher on the page than a red square mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left and right vertical axis labels",
+          "content": "The left label \"Rest of the world\" is blue, and the right label \"U.S.\" is red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2018 and 2019 plotted marks",
+          "content": "Blue point-adjacent inscriptions read \"13993\" and \"14272\"; red point-adjacent inscriptions read \"15875\" and \"16994\"."
+        }
+      ],
+      "B": {
+        "text": "If the blue Rest of the world series and red U.S. series use vertically comparable 2020 value scales, then the series whose 2020 mark is higher on the plot has the larger reported value; the task directs opening that region's follow-up record.",
+        "conditions": "This requires that the colored axis labels bind blue to Rest of the world and red to U.S., and that the two differently placed vertical axes are comparable for ranking. No numeric tick labels or 2020 point labels are visible to verify cross-axis comparability."
+      }
+    }
+  ]
+}

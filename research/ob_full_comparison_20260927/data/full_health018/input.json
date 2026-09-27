@@ -1,0 +1,109 @@
+{
+  "goal": "Review the respiratory infection surveillance dashboard and select the operational route that best fits the overall case pattern for this record.",
+  "public_task": {
+    "page_title": "Respiratory Infection Surveillance Escalation Routing",
+    "user_goal": "Review the respiratory infection surveillance dashboard and select the operational route that best fits the overall case pattern for this record.",
+    "chart_reference": "Use the dashboard as the evidence source for selecting the appropriate respiratory infection surveillance follow-up route.",
+    "primary_field_label": "Respiratory infection surveillance route",
+    "option_labels": [
+      "Route the record to increasing-activity follow-up",
+      "Route the record to easing-activity follow-up",
+      "Route the record to standard surveillance monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Infection surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Respiratory infection case trend review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard-based surveillance handling"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the respiratory infection surveillance dashboard and select the operational route that best fits the overall case pattern for this record."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate respiratory infection surveillance follow-up route."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate respiratory infection surveillance follow-up route."
+      },
+      {
+        "page": "form",
+        "text": "Review the respiratory infection surveillance dashboard and select the operational route that best fits the overall case pattern for this record."
+      }
+    ]
+  },
+  "options": [
+    "Route the record to increasing-activity follow-up",
+    "Route the record to easing-activity follow-up",
+    "Route the record to standard surveillance monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "purple line endpoints above x-axis ticks 2012 and 2023",
+          "content": "The purple line endpoint aligned with 2023 is higher on the page than the line point aligned with 2012."
+        }
+      ],
+      "B": {
+        "text": "If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and 'overall case pattern' is evaluated by comparing the 2012 and 2023 endpoints, then a higher 2023 endpoint indicates an increase over that span; if such an overall increase maps to increasing-activity follow-up, that route is supported. The task supplies no rule choosing endpoint comparison over recent change.",
+        "conditions": "Applies only if endpoint comparison is the intended definition of overall pattern and the route convention maps net increase to increasing-activity follow-up."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title at upper left",
+          "content": "The title visibly reads “Falling Respiratory Infection Cases in Sentinel Sites from 2012 to 2023.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "right end of purple line, above x-axis ticks 2022 and 2023",
+          "content": "The purple line vertex aligned with 2023 is lower on the page than the preceding vertex aligned with 2022."
+        }
+      ],
+      "B": {
+        "text": "If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and the routing convention treats a decline in the most recent year-to-year segment (or the chart's stated falling pattern) as easing activity, then a 2022-to-2023 downward segment supports easing-activity follow-up. This task-to-route convention is not explicitly supplied.",
+        "conditions": "Applies if the title and plotted series describe this record, the years align with the line vertices, and recent change is the relevant meaning of the overall pattern."
+      }
+    }
+  ]
+}

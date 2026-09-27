@@ -1,0 +1,189 @@
+{
+  "goal": "Review the Store B monthly sales dashboard for April through June, then choose the April route in the monthly sales operations form.",
+  "public_task": {
+    "page_title": "April Sales Route Assignment",
+    "user_goal": "Review the Store B monthly sales dashboard for April through June, then choose the April route in the monthly sales operations form.",
+    "chart_reference": "Use the Store B sales dashboard as the evidence source for the April sales route.",
+    "primary_field_label": "April sales route",
+    "option_labels": [
+      "Route April to low-sales response",
+      "Keep April on normal sales monitoring",
+      "Route April to strong-sales response"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_store_unit",
+        "label": "Store unit",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Store B",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_month",
+        "label": "Review month",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "April",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_sales_record",
+        "label": "Sales record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Monthly sales",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_operations_program",
+        "label": "Operations program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Monthly sales status routing",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Store B monthly sales dashboard for April through June, then choose the April route in the monthly sales operations form."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Store B monthly sales dashboard for April through June, then choose the April route in the monthly sales operations form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Store B monthly sales dashboard for April through June, then choose the April route in the monthly sales operations form."
+      },
+      {
+        "page": "form",
+        "text": "Use the Store B sales dashboard as the evidence source for the April sales route."
+      }
+    ]
+  },
+  "options": [
+    "Route April to low-sales response",
+    "Keep April on normal sales monitoring",
+    "Route April to strong-sales response"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at the April x-axis label",
+          "content": "The left orange bar is horizontally aligned with the printed x-axis label \"April\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area and y-axis",
+          "content": "The top edge of the April bar aligns with the red dashed horizontal line at the y-axis tick inscribed \"250\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right side of the dashed line",
+          "content": "The red dashed horizontal line is inscribed \"Average\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis",
+          "content": "The vertical-axis label is inscribed \"Sales ($K)\"."
+        }
+      ],
+      "B": {
+        "text": "If the orange bars encode Store B monthly sales on the vertical axis and the red dashed line labeled \"Average\" is the comparison benchmark, then an April bar whose top aligns with that line represents April sales at the displayed average level. Routing that level to a low-sales response requires an unstated policy that average-level sales qualify as low sales.",
+        "conditions": "Applies only if the chart’s bar and axis encodings are authoritative and if the operations program treats sales at the average benchmark as low-sales."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at the April x-axis label",
+          "content": "The left orange bar is horizontally aligned with the printed x-axis label \"April\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area and y-axis",
+          "content": "The top edge of the April bar aligns with the red dashed horizontal line at the y-axis tick inscribed \"250\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right side of the dashed line",
+          "content": "The red dashed horizontal line is inscribed \"Average\"."
+        }
+      ],
+      "B": {
+        "text": "If the operations program has no supplied rule mapping average-level sales to a low, normal, or strong route, the chart alone does not determine the route; selecting normal monitoring would additionally require an unstated default-normal policy for cases without a specified trigger.",
+        "conditions": "Applies because no policy table, interpretation rule, or routing threshold is supplied in the task state."
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "goal": "Review the state prevalence dashboard, then open the state statistics view that should be routed into the highest-prevalence priority follow-up workflow.",
+  "public_task": {
+    "page_title": "State Prevalence Priority View Routing",
+    "user_goal": "Review the state prevalence dashboard, then open the state statistics view that should be routed into the highest-prevalence priority follow-up workflow.",
+    "chart_reference": "Use the state prevalence dashboard as the evidence source for the state priority view routing decision.",
+    "primary_field_label": "Highest-prevalence state statistics route",
+    "option_labels": [
+      "Open New Hampshire (NH) statistics view for priority follow-up",
+      "Open Florida (FL) statistics view for priority follow-up",
+      "Open Delaware (DE) statistics view for priority follow-up"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Condition A surveillance"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Jurisdiction level",
+        "value": "State"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing queue",
+        "value": "Prevalence priority follow-up"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the state prevalence dashboard, then open the state statistics view that should be routed into the highest-prevalence priority follow-up workflow."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the state prevalence dashboard as the evidence source for the state priority view routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Use the state prevalence dashboard as the evidence source for the state priority view routing decision."
+      },
+      {
+        "page": "form",
+        "text": "Review the state prevalence dashboard, then open the state statistics view that should be routed into the highest-prevalence priority follow-up workflow."
+      }
+    ]
+  },
+  "options": [
+    "Open New Hampshire (NH) statistics view for priority follow-up",
+    "Open Florida (FL) statistics view for priority follow-up",
+    "Open Delaware (DE) statistics view for priority follow-up"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "map legend at lower right",
+          "content": "The vertical color legend is labeled \"High\" at the light-yellow top beside \"100\" and \"Low\" at the dark-red bottom beside \"0\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "New England map, state labeled NH",
+          "content": "The area carrying the inscription \"NH\" is filled very pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "mid-Atlantic map, state labeled DE",
+          "content": "The area carrying the inscription \"DE\" is filled orange."
+        },
+        {
+          "ref": "chart_1",
+          "location": "southeastern map, state labeled FL",
+          "content": "The area carrying the inscription \"FL\" is filled dark burgundy."
+        }
+      ],
+      "B": {
+        "text": "If the map fill is encoded by the adjacent color legend, then lighter yellow corresponds to higher plotted values because the legend places \"High\" and \"100\" at its light-yellow top and \"Low\" and \"0\" at its dark-red bottom; among compared state fills, the lighter fill has the higher plotted value.",
+        "conditions": "Applies to states with visible labeled fills on this map and assumes the legend governs those fills."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "top title",
+          "content": "The title visibly reads \"Incidence of Condition A in US States.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "map legend and the labeled NH, DE, and FL areas",
+          "content": "The legend runs from light-yellow \"High\"/\"100\" to dark-red \"Low\"/\"0\"; NH is pale yellow, DE is orange, and FL is dark burgundy."
+        }
+      ],
+      "B": {
+        "text": "If the dashboard named by the task is intended as the evidence source for the requested prevalence-priority route despite the chart title using \"Incidence,\" then the state with the highest plotted map value among the listed options is the state to route for highest-prevalence follow-up.",
+        "conditions": "Requires treating the chart's plotted measure as applicable to the task's prevalence criterion; this is not explicitly established because the visible title says \"Incidence of Condition A in US States.\""
+      }
+    }
+  ]
+}

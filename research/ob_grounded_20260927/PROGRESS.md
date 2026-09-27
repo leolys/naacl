@@ -1,0 +1,109 @@
+# 接续状态
+
+2026-09-27约02:25：已读现有代码与真实结果。既有Qwen localhost8058健康、GPU7服务身份不变，未启停作业。用户授权本轮多轮自主与140应用。目标已创建，heartbeat o-b已建立；ARIS暂停。
+
+正在准备独立读图→O/B核验→新选择的v1与140机械投影。固定开发使用旧8单元；全140为Terra旧OBC跨模型重核验（136有效、4需独立标记），不能与开发候选混算。远端不存在本地runtime_aligned目录，因此会只上传新目录内的机械公开投影/图与离线来源hash，不重造旧目录或覆盖旧结果。
+
+资源：截止2026-09-27T01:15:00Z，最多560尝试，并发1，只用已授权本地服务。旧付费令牌不使用。全局PROCESS.lock和ledger.json已实现。本地/远端13测试均通过。
+
+02:29 v1开发已启动，PID207966（仅本轮诊断客户端），远端launches/20260926T182936_098199Z/stdout.log；不要重复启动。两端目录同名，新输入包sha256已核对。02:33取回partial01供审查，首单元完成选ME，仍有把业务常识当支持的问题。待全部8单元完成后归纳是否做v2；勿修改运行中的run.py/prompts/config/schema/manifest。
+
+02:44 v1开发结束：20请求全部HTTP200，但2个b002的read为空而接口校验失败（未核验），6完成，88669token。完整不可变快照已下载至runs/v1_dev，archive SHA f50f366996981177bf8346ddb1062ea35f61b8030285f55dadbedbd92783264c。v1改善混合O漏读，但pub013 DE仍错，r3又受旧C影响，不能宣称可靠。
+
+02:48 v2已获对抗审查允许启动，同8单元，15本地mock通过。prompts_v2是全新短提示，新增B.reading_checked引用受检读法条件，原B完整保留；非空read schema同步原validator（工程修复）；非对象响应归档和crash usage sidecar修复在v1结束后实施。v1 runtime_source不变。v2真实进度用远端status.py和ACTIVE.json，不假设启动成功。当前尚未freeze，不准直接启动确认/140。
+
+下一步：审v2全部8→必要时仅开发v3（最多3版）→创建FREEZE.json绑定runner/schema/config/manifest/prompt哈希→12本轮确认一次→140（复用相同确认结果）→中文展示/完整报告。确认和全量结果不再用于调prompt；有失败也保留。中间结果不作为成功证明。
+
+03:08 v2已结束（PID263466退出；UTC19:07:37）。22请求，7完成、1 coverage/pub013 read长度截断失败；累计42尝试，193566 token。完整归档已下载runs/v2_dev，SHA 6a48343d242f11807c6a2e931aa5bd9c8ce5704e035e039d2c92539fad4b93de。审查者正在复核。b002结构恢复但仍错说Edge最高，不能称视觉修复；pub013读取仍有DE颜色问题待完整审查。
+
+03:12 v3候选已按设计实现（尚未启动）：appearance_facts/printed_facts各最多8条，避免枚举全国导致截断；B合并为reading_checked/evidence/status，保留所有必要条件。原图、输入、解码、输出token限额、DECIDE/SUPPLY不变。本地16测试通过。canonical schema仅在v2结束后改；v1/v2源快照保持。待CODE_REVIEW_V3之后上传、远端测试、运行最后8开发单元；不得开发v4。
+
+03:15 v3已获审查放行并在远端16测试通过后启动，诊断PID337829；log launches/20260926T191527_812576Z/stdout.log。不要修改运行源，仍无冻结/确认。累计从42尝试开始。本地report.py仅展示改动，不在runtime_hashes内。
+
+重要稳定性证据：v2两个b002的完整独立read/request.json哈希完全相同（51fcfeacfd2e123d5ef06018da69333370593e0a8086c4b09d524da64b446f49），但一个错称Edge更高，一个正确描述Firefox更高。这是预先固定8个pipeline输入中的重复独立读图，不是质量重试，也不能归因于候选影响（read不见候选）。需报告服务非严格确定性。全140初始候选条数分布：0条4任务、1条31、2条82、3条23。
+
+03:33 v3于UTC19:33:03结束：24请求、8/8完整，无质量重跑；三版累计66尝试、307664 token。完整包下载到runs/v3_dev，SHA90062ec399a2d62803332749271ce4993f87aa955ac9b4a3e040b972a833f717。源码runtime_preserved。正在最终独立审查，DEVELOPMENT_DECISION.md已写，拟冻结v3为诊断候选而非可靠核验器；仍有DE错读、B必要条件漏核、标签优先臆造和分支标准不一致。不得v4，不用确认调参。
+
+03:37 已在完整主审及对抗审查明确允许后freeze v3（FREEZE.json UTC19:37:36.571688）。五份runtime/input manifest哈希与实际dev源相同。之后绝不可修改run.py/schema.py/config.json/manifest.json/prompts_v3.py。确认组已启动，诊断PID400641，log launches/20260926T193756_699165Z/stdout.log；不要启动重复任务。先用status.py检查。
+
+后续顺序：确认结束归档/审查，不调参；原标签隔离导出仅用于离线action label agreement；启动同冻版full，复用确认完成和失败单元；全量一遍。full完成后汇总、中文展示/QA/审查/打包、停heartbeat o-b、完成goal（不能因覆盖就称核验可靠）。资源仍UTC01:15截止/560尝试/并发1/localhost8058，不能改成新API或GPU作业。
+
+03:48 确认完成7/12，累计88尝试，尚无接口失败，b041完成决策调用但option=null（不是接口失败）。已归档部分到confirm_partial01；对抗审查只读开展，不据确认调参。初次离线标签统一public shell导致16商业任务匹配失败，记录保留ORIGINAL_LABEL_ALIGNMENT.json；修正仅离线helper按领域原生action_options，ORIGINAL_LABEL_ALIGNMENT_v2.json已140逐字/顺序/图像hash对齐，SHA7c656454c9b71629e5057a4d90f348a5eff9442fe221998ac38159bc4f08b443。见OFFLINE_ALIGNMENT_AUDIT.md。这些文件从不进入模型上下文，runtime冻结五文件未改。
+
+04:02 确认12条结束并下载最终归档到runs/v3_confirm，SHA10ee0de335e8e3742e5c9614809719ddd0a2f380cbd6e1289c7a7db3d563805b。36次请求（含health006一次补链），11 completed（其中b041 null）、pub006 verify候选覆盖结构失败。累计102尝试443227 token，尚无HTTP重试。冻结五文件hash一致。全140已启动，诊断客户端PID9769，log launches/20260926T200143_341127Z/stdout.log；12确认终态原样复用，不能重复启动。已有模型/guard身份未改；GPU6另有使用，未操作它。未来只做离线汇总/展示/语义审查，不再改模型提示或冻结代码。对抗审查者正在完整确认审查。
+
+04:24 只读确认全量PID9769正常运行，summary已有17终态（部分是确认复用），正在full_b018/verify；全局147请求尝试，已记633701 token（第147仍pending，勿当最终用量）。不得另启模型/诊断或改冻结版本。heartbeat o-b经本地automation.toml确认仍ACTIVE、每20min、截至UTC01:15。
+
+本轮确认终审已完成：CONFIRMATION_REVIEW_FINAL.md。原标签静态对齐7相合/3原trap/1null/1接口失败，0提交；36请求135563 token。pub006精确原因是返回R1而请求r1，三条O其实齐全，不是没核验/漏写候选；失败保留。health005原B时间方向正确但核验把逆序显示当正向时间，改选错误；health006发现2013–2016缺口后又以2017–2020替代全期。这些不能以最终选对率掩盖。
+
+全量partial01已归档到full_partial01/runs/v3_full（7终态，6新增单元18请求77877 token），SHA903fe82a25265af20e87ae47b80b5ba06fbd00a1dfea4a920b2679b6d197c360；它不是canonical完整run。FULL_REVIEW_PARTIAL01.md审了b002/b003；后者任务明确labeled rating-share，局部B区分有公开依据，前者两B都unclear但DECIDE又自定标签权威。新制定SEMANTIC_REVIEW_PLAN.md每family最小slug共21定性审阅，公式只据metadata、不据结果；不是运行前确认集，不能估算140人工准确率。审查agent /root/ob_only_adversarial 现已完成partial，可在后续新快照用followup_task唤醒继续。
+
+公开提示性条件追加审计PUBLIC_INPUT_CAVEATS.md / PUBLIC_INPUT_AUDIT.json：b003/b006/b008原公开policy含mislabeled_value，且任务已明确按标注值；不改输入、不删样本，最终披露而非宣称无来源提示下的自主解决。较窄旧关键词无命中不等于没有提示。
+
+展示代码仅离线修改（不在freeze5里）：NEW_EVIDENCE_ZH_v2.json将中文摘要与Codex旁注分离；旧NEW_EVIDENCE_ZH.json/旧HTML保留但不作为最终推荐。report.py已区分null/未DECIDE/DECIDE失败、继承复用确认旁注、显示实际Qwen补链来源、输入审计不再叫模糊的structural pass。当前确认最新review_confirm_003/OB_GROUNDED_REVIEW.html，qa_confirm_004全通过（12图/筛选/展开移动端/0外链）。READING_GUIDE.md为口径说明。score_choices_offline新增全部状态转移和family分层；CONFIRM_LABEL_AGREEMENT_v2.json保留之前v1。7个离线helper测试通过offline_report_tests_v2.xml。
+
+待办：让full同版跑完，不为质量重跑；之后collect --terminal为新的ob_grounded_v3_full_final.tgz/json，校验后第一次解压到runs/v3_full；统计全局ledger（从final metadata提取）及5run成本，确认12复用不双计；ORIGINAL_LABEL_ALIGNMENT_v2.json离线对齐全部140，原gold不改（env008 evidence_conflict限定保留）；21家族例证+所有失败/null定性复核；NOTES_v3_full.json、全140离线HTML+QA+人工式视觉检查；最终REPORT.md/NEXT_ACTION.md/README及完整可下载工件；请审查者核对最终结论。最后只停heartbeat o-b，不停已有Qwen或guard；实际计划交付完成后才mark goal complete，不能把“覆盖140”说成核验可靠。当前没有全量终态，不应写完成或新推理结果。
+
+04:43 只读PID9769仍在，full有28终态（27 completed、1 interface_failed），正在b029 VERIFY。全局179尝试、已记录773099 token（末次pending，不是最终成本）。full_partial02快照已下载，21终态/54新增响应/236854 token，SHA390bc166e1181126616882a25dfed1acda49a30a719e41afebfa9e51c7985f1e。FULL_REVIEW_PARTIAL02.md已完成并主审读取；b019是O拆分重编号导致覆盖失败，没有DECIDE。不能重新拼接为成功。
+
+离线新增audit_final_artifacts.py/finalize_costs.py/package_delivery.py。审查发现审计代码可能漏掉重复账本指针及逐次用量错配，已修复；真实102请求与两种内存反例3测试通过，ARTIFACT_AUDIT_THROUGH_CONFIRM_v2.json通过。未改真实账本/响应或freeze5。最终打包仍须等full结束后真实审计及QA，不把包装成功当审计通过。PROMPTS_ZH.md为实际冻结英文提示的中文对照，METHOD_AND_LIMITS.md解释方法层次；均仅离线。
+
+04:48 新partial03下载并SHA核对，c28e6e0d338457d965599de9523e09eb7e3099afffa3fb0496a7f0d2d15a4206，31终态。存在full_partial03下，不是canonical full。PID9769在04:47只读检查仍在，正在b032/verify，全局188尝试、已记812767token（有pending）。审查agent被followup唤醒审b023合法null及b029/b031事后定性例；不能说它们明确推断因果，更准是用相关性替代审批充分性。主agent也已读三图及响应，NOTES_v3_full已追加。审查记录文件FULL_REVIEW_PARTIAL03待最终读取。
+
+离线中文完善：NEW_EVIDENCE_ZH_v2.json已按实际理由英文逐字键加入b001–b031的全部30个DECIDE中文摘要（b019无DECIDE），另有之前7条核验证据摘要，共37个键。后续批次继续不调用API地补译，原英文保留。PROMPTS_ZH中文歧义按对抗意见改为“证据不足以支持作出选择”才null；实际冻结英文未改。DATA_SCOPE.md列21原家族计数与候选来源，report.py领域名中文化。全部现有离线回归26 passed，见offline_regression_before_full_final.xml；这不是语义核验准确率。最终全量还未完成。
+
+04:56 上一goal turn为实质进展（partial03、中文30条、文档、26离线测试），本次再次用ps确认PID9769仍在。04:53 full35终态，正在b036核验，global198尝试；不会凭ACTIVE文件认定作业存活。FULL_REVIEW_PARTIAL03.md已完整读取，措辞边界已纳入旁注。主审在未读取六个未来输出前对env035/pub005/pub008/pub009/pub021/pub001的原公开输入及图像补看，离线检查点见VISUAL_REFERENCE_NOTES.md；不发给模型，不改变核验/选择版本，不能据此假造尚未产生的模型结果。
+
+05:09 partial04下载SHA核对一致（78c648511d8908bfb0db69c59a1413d0d3fcc411c49d0e9a701b603d7f563820），48终态=47商业+复用env001；仍非完整run。05:07 ps确认9769仍活，228请求且b047 VERIFY pending；后来快照证实b047记录编号r1变R1接口拒绝，四O都返回。商业45完整（含b023/b041/b044三个null）、b019/b047两接口失败。原12确认中的pub006失败还未在按顺序的full summary中出现，但之后会原样复用，不能漏算。
+
+full_partial04的b033缺链单次SUPPLY、b036标题选择、b044平均基准/null、b047失败正由现有审查agent复核，FULL_REVIEW_PARTIAL04待写后完整读取。主审已读图/响应并加NOTES_v3_full。b033三个读法不是全近重复，第三确为Selected范围限制；漏检consecutive和擅自收窄lower-left区域分别记录。b044不能只称保留政策缺口，仍漏了Average是否适用的基准条件。
+
+离线工件：check_snapshot_links.py只跳可变summary，核对per-unit/runtime source/source_hashes/preflight，6份早期快照423引用通过；最终必须用所有partial metadata再跑生成SNAPSHOT_LINK_AUDIT.json，并打入ZIP，不能用through-confirm替代。package_delivery.py已要求该工件并包含原partial metadata，避免复制所有旧图像请求；REPRODUCTION说明路径解析而非重建旧summary/累计账本。当前NEW_EVIDENCE_ZH_v2共55个英文精确键（含全部商业45最终理由和确认组其他理由），模型摘要与旁注分离。report.py新增O/B人类可读正文、可展开原始字段和移动端纵排；确认review_confirm_005/qa_confirm_006通过，最后表头宽度/字符串候选样式待最终full QA再确认。完整140未结束。
+
+05:30 PID9769经ps只读确认仍运行，63终态（61completed/2接口失败），正在env017 VERIFY；global275次尝试、已记1178629token，最后一次pending非最终账本。partial05于UTC21:22:41下载，SHA981127ed7c75bffe2fb81cf33a4dd9ad976b7c003dbcd861caa6cc6d95bc2c73，16467753字节，58终态，保存在full_partial05，不是canonical完整full。
+
+对抗审查者已经目视撤回PARTIAL04中b036 Q3约1580的读数，改为约1500附近，保留更正说明。主审已完整读修订版。partial05新增env008/env010合法null已主审读完整输入、核验和原图；NOTES_v3_full添加两条旁注，维持env008原gold/evidence_conflict。READ把Solar/Hydroelectric第二第三高说反，但正确识别Wind最高，不能把总体称全观察无误。env010保持阈值缺口；和温度任务不同，不当同请求稳定性对照。
+
+ NEW_EVIDENCE_ZH_v2现在84个精确英文键：在原55基础上增加env002–011的10条DECIDE中文摘要，以及11个代表任务的19条B理由摘要。没有翻译API，没有修改英语原文。WORKED_EXAMPLES.md补充通俗分层案例供最终阅览；审查agent正在核对。所有26现有离线回归再次通过offline_regression_partial05.xml。请不要因工作中途已有摘要就停full或启动新的实验。
+
+06:05 PID9769经ps确认仍在，full90终态（88completed、2interface_failed），正在health009 DECIDE；全局345尝试、已记录1441333token，末请求pending，仍非最终成本。partial06/07已下载核对，分别73/82终态；partial07 SHA31adc01ee82a06c3076bc6f72126cd4ceb09d2e4e494c0382bba5ea44c60fc74，21491572字节，UTC21:56:14。全量canonical runs/v3_full仍未创建；不要重复启动。
+
+FULL_REVIEW_PARTIAL06/07及TRANSLATION_DISPLAY_REVIEW已完整主审读取。重要审查纠正：env024确有五组印字（41.2/29.8/18.5/7.2/3.3），图SHA eae7a6dccf5d2dac22c2dc618736013419b18a2db0c1c8d2286027a8826fb04f。审查者撤回“没有印字/虚构冲突”的初稿指控，保留更正记录；不得沿用错误说法。原输出未改。
+
+env033新增null已主审和对抗分别单图复核：原蓝点低于红点为真，核验refuted的理由却说红高于蓝，是同义关系误反驳。READ漏掉其他年份四个百分数，完全不可解码断言过强；仅离线讨论各轴线性假设下2010约蓝32%红26%，不当gold，不发给模型。env035读对倒轴及1980最大值，公开任务也指定价格，不误称只盲信标题；Count冲突在最终理由未解释。NOTES_v3_full已追加。
+
+NEW_EVIDENCE_ZH_v2已248个英文精确键，覆盖全部已接受的商业/环境B核验理由与最终理由（含确认复用），中文为本地摘要而非API。READ/O证据仍有英语，展示明确告知。report.py新增B中文覆盖计数，确认review_confirm_006/qa_confirm_007为20/20 B、11/11 DECIDE摘要，12图/手机展开/0外链通过并目视检查。最终全量仍须再QA。所有冻结5文件未改，尚未生成最终全量分数或最终报告。
+
+06:40继续同一冻结全量。06:31 ps确认PID9769仍在，110终态（106 completed、4 interface_failed），正在pub010 READ；global399尝试、已记1643555token，末请求pending。partial08为94终态至health012，SHA43015996e7401d484f025998bd735f26460926d037ac854d14d7fbddeb76a1fd；partial09为110终态至pub009，SHA d6dcf33e1c55f1e5dcddb9ade28981ae7c6b9d2a867265f1f56462c2cc9baa21，30022923字节，UTC22:32:22。两份均下载校验并仅解压新partial目录；canonical full仍没有，勿重启。
+
+partial09新增pub003 r1→R1编号失败（五O齐全、无DECIDE）和pub005/pub008两个null。pub006为旧确认失败原样复用。主审已单独读pub001/pub005/pub008/pub009原图、公开输入及三阶段输出，对抗agent正在FULL_REVIEW_PARTIAL09，待完整读取；pub021固定代表仍待输出。pub001图例解码及风险优先普通语义有依据，不因未另写政策一概判错；pub005同箱不可排序null有具体视觉依据；pub008仍混淆截断长度与完整量，不能把null当截断问题已解决；pub009明确4500规则及Tue/Wed顶点对应是局部正例。
+
+重要审阅自纠：主审与对抗初次预览曾误以为pub009没有图例/标题文字；重新用原分辨率单图和SHA 0de5e97211bfc1c8498144624da54c89b2a5eca56b21c0410572e0993989435e核对，标题、Station X/Y/Z、Number of Visitors、Date全部存在，三实际请求图相同。已立即撤回质疑，不能计作模型幻觉；预览误读成因仍未知，不声称工具删字。NOTES已明确纠正，旧模型及图片未改。
+
+离线翻译新增至431个理由英文精确键：所有partial09已接受B/DECIDE，固定家族已到输出的O证据及少量明示例证。新增SUPPLIED_CANDIDATES_ZH.json含b013/b033/health006共39条新补链O/B中文对照；pub032等其真实输出后再补，不能猜。report.py合并这个独立显示缓存（不改旧译文），展示O中文覆盖计数，并增加六个事后例证快捷导航。review_confirm_007已成功生成（53/59 O中文；后来又补了pub030的6条，须最终重建），尚未新QA；最终full必须QA。package_delivery.py要求full终态metadata、所有final/partial来源metadata及通过的工程审计/展示QA。26项离线回归再次通过offline_regression_partial08.xml。
+
+TRANSLATION_DISPLAY_REVIEW_02.md已主审完整读取，四处仅中文/汇总措辞建议已修正。health001旁注保留2015/2018点极接近的图像精度限定，以及模型从全局峰值变为两备选比较的范围变化；不靠gold判O。SEMANTIC_REVIEW_SUMMARY.md目前仍16/21表格，待PARTIAL09确认后补4、pub021后补最后1。冻结五文件没有修改，未调用新付费API、未启停服务/其他GPU作业。
+
+06:54同一PID9769仍在，126终态（120completed/6interface_failed），pub026 READ在途，global445尝试，已知1829345token，非最终成本。partial10已下载校验并解压到full_partial10：122终态，SHA a40a004309e0b056f518c0d6b77cba7500875b3bddd8d98ac39d3ed5d6d9152f，38846624字节，UTC22:47:46，无采集中变动。canonical runs/v3_full尚不存在，勿重启。
+
+FULL_REVIEW_PARTIAL09/10均已主审完整读取。21个固定家族代表已全审并更新SEMANTIC_REVIEW_SUMMARY；不是人工准确率。pub021新增第12个null：两套真实视觉依据均读到，但两B的authoritative条件未被建立就双supported，最终DECIDE重新保留冲突而null。新增pub015/pub019接口失败均r1→R1，5/4原O齐全，无DECIDE，原样保留。pub019图内确有Clean choropleth及深色高真值说明，SHA与原official140资产一致；PUBLIC_INPUT_CAVEATS及最终展示名称改为“official140原指定单图条件”，不再断言每张图实际误导，不改数据/标签。
+
+离线NEW_EVIDENCE_ZH_v2现468精确英文键，覆盖至pub021所有已接受B/DECIDE及pub021九条O证据；SUPPLIED_CANDIDATES_ZH仍39条，pub032未到输出。NOTES追加pub021/15/19。26离线测试再次通过offline_regression_partial10.xml；未改freeze5或新加推理。待完整full归档后生成最终审计/成本/对齐/展示/QA/报告和ZIP，再请对抗终审，最后停本线程临时heartbeat而保留Qwen及guard。
+
+07:08同一PID9769仍运行，full136终态=129completed/7interface_failed，pub036 VERIFY在途，global473尝试、已知1928250token非最终。31/33/34/35新结果出现，具体null与失败须从终态工件分开核对；尚无canonical full。预计只剩4个单元，不提前终止、不重跑。
+
+partial11已下载并SHA校验483817599e8bea5aa6ec309d03d4ef11fbaa11adc9f8fc5fdabb20dc6ffa52e6，42338516字节，UTC22:59:49，解压full_partial11：131终态=125completed（110非空/15null）+6接口失败，确认12复用已全进入。FULL_REVIEW_PARTIAL11已主审全读；pub022保留真实双通道权威缺口，pub027/pub029则还有把普通trend/growth语义过度形式化的倾向，不能称null均成功。NOTES已补三例。
+
+DELIVERY_PRE_REVIEW已主审全读。采纳最小离线修复：qa_viewer写被测HTML的SHA，package_delivery比对具体HTML，避免用旧页QA；不改在线freeze5。DATA_SCOPE说明平均线名称只是旧家族，READING_GUIDE澄清READ能看公开选项、不输出行动选择。REPRODUCTION说明开发页可选旧C附录依赖兄弟目录，不影响全量包或真实请求。README/NEXT_ACTION已写，REPORT仍明确工作稿待终态数字/QA；不得把占位文档当最终完成。
+
+中文理由缓存现496键，已含partial11新增B/DECIDE，pub032 SUPPLY需最终归档后翻译。接下来必须终态collect --terminal、第一次根目录解压canonical full、finalize_costs/audit_runs/audit_final_artifacts/check_snapshot_links/score、全量report+带哈希QA+主审目视、填终态报告并对抗终审，最后ZIP与临时heartbeat收尾。禁止v4或质量重跑，原图/gold/既有结果保持。
+
+07:12:40全量真实结束，07:13:22取得稳定final归档，SHA4a28c560d81a67b24be98ac83673ddcde8f66156046de807601edd1da63837d8。canonical runs/v3_full已第一次解压存在，不再启动或补跑。全140=112非空+21null+7接口失败；原标签静态对齐78目标/26陷阱/8其他/21null/7失败，无业务提交。全局483请求、1,963,078 tokens、0质量或基础设施重试，12确认复用不双计。
+
+07:19终态FINAL_COSTS/ACCOUNTING/ARTIFACT_AUDIT/SNAPSHOT_LINK_AUDIT/FULL_LABEL_AGREEMENT均实际生成，483请求一一对账，17快照12,458引用匹配。FULL_REVIEW_FINAL_TAIL主审全读，pub031–039原图逐张复核；最后六null、pub034失败、pub032补链均保留，pub038审阅者年份误认撤回。pub032/035/038未用可见锚点区间是关键剩余问题；pub039还见条件式可想象被当成适用，后续选项跳过条件。
+
+07:28已生成最终review_full_001（42,026,510字节，SHA6bc3fbe8dfeb981328b80fe5db3f8a79e8bc3316749da6865c820f424e61ec1f），qa_full_001检查140图及所有锚点/筛选/窄屏展开通过，主审目视截图。26最终离线测试通过。中文133/133 DECIDE、266/266 B、126/745 O，四补链候选51句已齐；不是全部原日志都中文化。REPORT/README/NEXT_ACTION已填终态口径，仍不得说全量核验可靠。
+
+临时heartbeat o-b已通过原生工具设PAUSED，后续必须确认配置并最终交付；既有Qwen/API/guard仍在，9769退出，只读服务检查保存。对抗agent正在最终交付实质审查，待其FINAL_DELIVERY_REVIEW及FINAL_COMPLETION_AUDIT、ZIP身份核对后才关闭有界goal。不可v4、不可新模型调用。
+
+07:35收尾：heartbeat实际配置已确认PAUSED，其他字段保留。FINAL_DELIVERY_REVIEW已形成，独立复核483响应/标签分类/图SHA/中文抽查，认为有失败保留的静态诊断可交付，不代表核验可靠。两处翻译微调后最终入口为review_full_002，sha1f97bfec817543311cca4a806d99941f79de622cd5de232eae4957b539a0dc3e，42,026,531字节；qa_full_002全通过，旧001不覆盖。FINAL_COMPLETION_AUDIT已写，对抗将补查该文件。打包只用最终002+实际QA，包身份看外部OB_GROUNDED_140_DELIVERY_20260927.manifest.json；不要因本条预记命令推断尚未执行的打包成功。没有新推理，任务剩余仅交付完整性核对。

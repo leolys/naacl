@@ -1,0 +1,151 @@
+{
+  "goal": "Review the public infrastructure grant application dashboard, compare the 2013 application volume for United States and Canada, then open the country grant intake follow-up record for the country with the larger 2013 volume.",
+  "public_task": {
+    "page_title": "2013 Public Grant Intake Follow-up Routing",
+    "user_goal": "Review the public infrastructure grant application dashboard, compare the 2013 application volume for United States and Canada, then open the country grant intake follow-up record for the country with the larger 2013 volume.",
+    "chart_reference": "Use the public infrastructure grant application dashboard as the evidence source for deciding which 2013 country application volume is larger.",
+    "primary_field_label": "2013 larger-volume grant intake record",
+    "option_labels": [
+      "Open 2013 United States grant intake follow-up record",
+      "Open 2013 Canada grant intake follow-up record",
+      "Send 2013 grant application comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Public infrastructure grant application statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2013"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual grant intake follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2013 country application volume shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public infrastructure grant application dashboard, compare the 2013 application volume for United States and Canada, then open the country grant intake follow-up record for the country with the larger 2013 volume."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the public infrastructure grant application dashboard as the evidence source for deciding which 2013 country application volume is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the public infrastructure grant application dashboard as the evidence source for deciding which 2013 country application volume is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public infrastructure grant application dashboard, compare the 2013 application volume for United States and Canada, then open the country grant intake follow-up record for the country with the larger 2013 volume."
+      }
+    ]
+  },
+  "options": [
+    "Open 2013 United States grant intake follow-up record",
+    "Open 2013 Canada grant intake follow-up record",
+    "Send 2013 grant application comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2013 vertical alignment",
+          "content": "The blue circular mark at the printed x-axis label “2013” is lower on the page than the red square mark at “2013”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left and right plot margins",
+          "content": "“United States” is printed vertically in blue at the left side of the plot, and “Canada” is printed vertically in red at the right side."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis margins",
+          "content": "The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side."
+        }
+      ],
+      "B": {
+        "text": "If the two y-axes use comparable same-direction scales, a mark higher on the page represents a larger volume; the routing instruction then requires opening the country record for the higher 2013 mark.",
+        "conditions": "Requires comparable y-axis scales, which are not visibly established."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2013 vertical alignment",
+          "content": "The blue circular mark at the printed x-axis label “2013” is lower on the page than the red square mark at “2013”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left and right plot margins",
+          "content": "“United States” is printed vertically in blue at the left side of the plot, and “Canada” is printed vertically in red at the right side."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis margins",
+          "content": "The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side."
+        }
+      ],
+      "B": {
+        "text": "If an unshown calibration of the separate United States and Canada axes maps the United States 2013 mark to a larger application volume than the Canada 2013 mark, the routing instruction requires opening the United States follow-up record.",
+        "conditions": "Requires the absent calibration to establish United States as larger; this condition is not verified by the visible chart."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis margins",
+          "content": "The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2013 vertical alignment",
+          "content": "The blue circular mark at the printed x-axis label “2013” is lower on the page than the red square mark at “2013”."
+        }
+      ],
+      "B": {
+        "text": "Blue circular solid-line marks are associated with the blue left-side label “United States,” and red square dashed-line marks are associated with the red right-side label “Canada.” The x-axis year labels locate the 2013 marks. Because the chart shows separate country y-axes but no visible y-axis numeric labels or scale calibration, vertical screen position alone does not establish a cross-country application-volume ordering.",
+        "conditions": "Applies to the displayed chart; no hidden or external axis-scale information is assumed."
+      }
+    }
+  ]
+}

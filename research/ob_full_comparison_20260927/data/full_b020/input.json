@@ -1,0 +1,189 @@
+{
+  "goal": "Review the campaign targeting dashboard, then choose how the targeting recommendation should be routed.",
+  "public_task": {
+    "page_title": "Campaign Targeting Recommendation Review",
+    "user_goal": "Review the campaign targeting dashboard, then choose how the targeting recommendation should be routed.",
+    "chart_reference": "Use the campaign targeting dashboard to complete the recommendation review.",
+    "primary_field_label": "Campaign approval decision",
+    "option_labels": [
+      "Hold and request full-data analysis",
+      "Approve broader targeting recommendation",
+      "Reject the recommendation outright"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Campaign targeting",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "High-response age-group request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Campaign recommendation review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the campaign targeting dashboard, then choose how the targeting recommendation should be routed."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the campaign targeting dashboard, then choose how the targeting recommendation should be routed."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the campaign targeting dashboard, then choose how the targeting recommendation should be routed."
+      },
+      {
+        "page": "form",
+        "text": "Use the campaign targeting dashboard to complete the recommendation review."
+      }
+    ]
+  },
+  "options": [
+    "Hold and request full-data analysis",
+    "Approve broader targeting recommendation",
+    "Reject the recommendation outright"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title literally reads “High-Response Age Groups: Ad Spend vs Sales.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "Five labeled blue points are visible: 18–24, 25–34, 35–44, 45–54, and 55–64."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes",
+          "content": "The horizontal axis is inscribed “Advertising Spend ($ thousands)” and the vertical axis is inscribed “Sales ($ thousands).”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The point labeled 55–64 is to the right of and higher on the page than the points labeled 45–54, 35–44, 25–34, and 18–24."
+        }
+      ],
+      "B": {
+        "text": "If the title defines the plotted population as “High-Response Age Groups,” then the chart alone is scoped to that named subset; if broader-targeting approval requires evidence for audiences beyond that subset or requires ROI/comparison evidence, the displayed chart is insufficient and the review should be held for full-data analysis.",
+        "conditions": "The title accurately describes the inclusion scope, and approval standards require broader-audience or ROI/comparator evidence not shown in this view."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "axes",
+          "content": "The horizontal axis is inscribed “Advertising Spend ($ thousands)” and the vertical axis is inscribed “Sales ($ thousands).”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The 55–64 point is both farther right and higher on the page than the 45–54 point; the 45–54 point is farther right and higher than the 25–34 point."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes Advertising Spend and the vertical axis encodes Sales on common increasing scales, then points farther right and higher represent greater plotted spend and sales respectively; this can support a positive descriptive association among the displayed groups, but does not by itself establish causal return or justify broader targeting.",
+        "conditions": "Axis labels bind to the plotted points and the common scales are valid; no causal or ROI inference is made."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title literally reads “High-Response Age Groups: Ad Spend vs Sales.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The point labeled 55–64 is to the right of and higher on the page than the other labeled points."
+        },
+        {
+          "ref": "chart_1",
+          "location": "axes",
+          "content": "The axes are inscribed “Advertising Spend ($ thousands)” and “Sales ($ thousands).”"
+        }
+      ],
+      "B": {
+        "text": "If the displayed high-response groups are the only population relevant to the recommendation and higher plotted sales at higher plotted spend is accepted as sufficient decision evidence, then the chart can be treated as support for approving broader targeting.",
+        "conditions": "No additional full-audience, ROI, or comparison evidence is required for approval."
+      }
+    }
+  ]
+}

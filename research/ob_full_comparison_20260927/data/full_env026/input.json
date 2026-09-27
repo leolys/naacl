@@ -1,0 +1,95 @@
+{
+  "goal": "Review the river-discharge dashboard for the monthly monitoring cycle and assign January to the handling route that fits its discharge position relative to the monthly average level.",
+  "public_task": {
+    "page_title": "Monthly River Discharge Review Routing",
+    "user_goal": "Review the river-discharge dashboard for the monthly monitoring cycle and assign January to the handling route that fits its discharge position relative to the monthly average level.",
+    "chart_reference": "Base the routing decision on the reported monthly discharge figures shown in the dashboard when determining January's position relative to the monthly average benchmark.",
+    "primary_field_label": "January discharge handling route",
+    "option_labels": [
+      "Route January to elevated discharge monitoring",
+      "Route January to average-band discharge monitoring",
+      "Route January to reduced discharge conservation review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the environment record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "River discharge monitoring operations"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "January discharge against the monthly average benchmark"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Monthly discharge routing review"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the river-discharge dashboard for the monthly monitoring cycle and assign January to the handling route that fits its discharge position relative to the monthly average level."
+      },
+      {
+        "page": "dashboard",
+        "text": "Base the routing decision on the reported monthly discharge figures shown in the dashboard when determining January's position relative to the monthly average benchmark."
+      },
+      {
+        "page": "form",
+        "text": "Base the routing decision on the reported monthly discharge figures shown in the dashboard when determining January's position relative to the monthly average benchmark."
+      },
+      {
+        "page": "form",
+        "text": "Review the river-discharge dashboard for the monthly monitoring cycle and assign January to the handling route that fits its discharge position relative to the monthly average level."
+      }
+    ]
+  },
+  "options": [
+    "Route January to elevated discharge monitoring",
+    "Route January to average-band discharge monitoring",
+    "Route January to reduced discharge conservation review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "January bar and dashed horizontal line",
+          "content": "The top edge of the blue bar above the printed label \"January\" is horizontally aligned with the dashed horizontal line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right end of dashed horizontal line",
+          "content": "The dashed horizontal line has the printed label \"Average\" beside it."
+        }
+      ],
+      "B": {
+        "text": "If each month’s bar encodes its reported discharge by vertical height on the shared discharge axis, and the dashed horizontal line labeled \"Average\" is the monthly-average benchmark, then a month whose bar top aligns with that line is at the average benchmark and belongs in the average-band route.",
+        "conditions": "Applies to the displayed monthly bars and assumes exact visible alignment denotes equality with the benchmark."
+      }
+    }
+  ]
+}

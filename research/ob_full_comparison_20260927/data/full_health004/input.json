@@ -1,0 +1,124 @@
+{
+  "goal": "Review the dashboard trend for physicians per 1,000 residents over the reporting period and route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern.",
+  "public_task": {
+    "page_title": "Physician Capacity Monitoring Triage",
+    "user_goal": "Review the dashboard trend for physicians per 1,000 residents over the reporting period and route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern.",
+    "chart_reference": "Reporting years vs. physicians per 1,000 inhabitants",
+    "primary_field_label": "Capacity follow-up pathway",
+    "option_labels": [
+      "Route to the physician capacity expansion review pathway",
+      "Route to the physician shortage response review pathway",
+      "Route to the general health system statistics page"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Health workforce planning"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Monitoring focus",
+        "value": "Physician capacity relative to population"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing workflow",
+        "value": "Dashboard-based follow-up assignment"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the dashboard trend for physicians per 1,000 residents over the reporting period and route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern."
+      },
+      {
+        "page": "dashboard",
+        "text": "Reporting years vs. physicians per 1,000 inhabitants"
+      },
+      {
+        "page": "form",
+        "text": "Reporting years vs. physicians per 1,000 inhabitants"
+      },
+      {
+        "page": "form",
+        "text": "Review the dashboard trend for physicians per 1,000 residents over the reporting period and route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern."
+      }
+    ]
+  },
+  "options": [
+    "Route to the physician capacity expansion review pathway",
+    "Route to the physician shortage response review pathway",
+    "Route to the general health system statistics page"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and axes",
+          "content": "The title reads \"Year vs. Number of doctors per 1,000 inhabitants\"; the horizontal axis is labeled \"Year\" and the vertical axis is labeled \"Count\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue series endpoints",
+          "content": "The rightmost blue marker is lower on the page than the leftmost blue marker."
+        },
+        {
+          "ref": "chart_1",
+          "location": "task state and supplied policy tables",
+          "content": "The supplied state lists three route options, while the supplied policy_tables and interpretation_rules are empty."
+        }
+      ],
+      "B": {
+        "text": "The chart alone shows the final plotted level and its change relative to the start, but no policy table, threshold, benchmark, or explicit routing criterion maps a level near the final point to either expansion or shortage. Therefore a definitive pathway selection cannot be validated from the displayed evidence alone.",
+        "conditions": "Applies because the supplied task state contains no policy tables or interpretation rules defining the pathway criteria."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and axes",
+          "content": "The title reads \"Year vs. Number of doctors per 1,000 inhabitants\"; the horizontal axis is labeled \"Year\" and the vertical axis is labeled \"Count\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis tick labels",
+          "content": "The visible y-axis labels run from 0.0 near the top to 2.5 near the bottom."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue series endpoints",
+          "content": "The leftmost blue marker near year 2000 is higher on the page than the rightmost blue marker near the 2017.5 tick; the rightmost marker is near the 2.5 y-axis tick."
+        }
+      ],
+      "B": {
+        "text": "The x-axis encodes reporting year from left to right, and the plotted line/markers encode the chart's labeled doctors-per-1,000 measure using the y-axis. Because the y-axis labels increase downward, a lower screen position corresponds to a larger plotted measure. If the task routes based on an end-of-period higher capacity pattern, the capacity expansion review pathway is the matching option; no displayed rule defines a shortage threshold or says that a higher final value requires shortage routing.",
+        "conditions": "Applies if the chart title and axis labels correctly describe the single blue series and the pathway names are interpreted according to their ordinary capacity meanings."
+      }
+    }
+  ]
+}

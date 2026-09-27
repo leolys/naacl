@@ -1,0 +1,133 @@
+{
+  "goal": "Assess the emergency department utilization dashboard and assign the record to the follow-up pathway that best fits the overall utilization pattern over the review period.",
+  "public_task": {
+    "page_title": "Emergency Department Utilization Escalation Review",
+    "user_goal": "Assess the emergency department utilization dashboard and assign the record to the follow-up pathway that best fits the overall utilization pattern over the review period.",
+    "chart_reference": "Use the dashboard as the evidence source for selecting the appropriate emergency department utilization follow-up pathway.",
+    "primary_field_label": "Emergency department utilization routing decision",
+    "option_labels": [
+      "Route the emergency department visit record to utilization-growth follow-up",
+      "Route the emergency department visit record to utilization-decrease follow-up",
+      "Route the emergency department visit record to standard trend monitoring"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Clinical demand monitoring"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "2012-2023 emergency department utilization review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Dashboard-based utilization routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Assess the emergency department utilization dashboard and assign the record to the follow-up pathway that best fits the overall utilization pattern over the review period."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate emergency department utilization follow-up pathway."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard as the evidence source for selecting the appropriate emergency department utilization follow-up pathway."
+      },
+      {
+        "page": "form",
+        "text": "Assess the emergency department utilization dashboard and assign the record to the follow-up pathway that best fits the overall utilization pattern over the review period."
+      }
+    ]
+  },
+  "options": [
+    "Route the emergency department visit record to utilization-growth follow-up",
+    "Route the emergency department visit record to utilization-decrease follow-up",
+    "Route the emergency department visit record to standard trend monitoring"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The red line has visible downward-sloping segments between some adjacent yearly vertices, including after 2014, after 2018, and after 2022."
+        },
+        {
+          "ref": "chart_1",
+          "location": "task policy state",
+          "content": "No policy tables or routing thresholds are supplied in the task state."
+        }
+      ],
+      "B": {
+        "text": "If routing requires a stated threshold, sustained-direction criterion, or policy rule not supplied in the task, and the plotted series has both rises and declines, then standard trend monitoring may be appropriate rather than an escalation pathway.",
+        "conditions": "This is conditional because no routing thresholds or escalation policy rules are provided."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The visible title reads \"Declining Emergency Department Visits in Region Z from 2012 to 2023\"."
+        }
+      ],
+      "B": {
+        "text": "If the dashboard title is an authoritative summary of the utilization pattern, then its literal characterization of visits as declining from 2012 to 2023 supports utilization-decrease follow-up.",
+        "conditions": "Applies only if title text overrides or resolves any apparent conflict with the plotted series."
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area at x-axis tick 2012",
+          "content": "The red line's vertex at 2012 is lower on the page than its vertex at 2023."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left y-axis",
+          "content": "The vertical axis is visibly labeled \"Emergency department visits\" and has printed tick labels 0, 800, 1600, 2400, and 3200, with 0 at the bottom and 3200 higher on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom x-axis",
+          "content": "The horizontal axis is visibly labeled \"Year\" and has printed yearly ticks from 2012 through 2023."
+        }
+      ],
+      "B": {
+        "text": "If the plotted line encodes emergency department visits by year, with higher vertical position corresponding to larger values as indicated by the ascending y-axis tick labels, then a later endpoint plotted higher than the earlier endpoint indicates overall utilization growth; under the task's overall-pattern routing instruction, this supports utilization-growth follow-up.",
+        "conditions": "Applies if the single red line is the reviewed Region Z utilization series and endpoint comparison is an appropriate measure of the review-period overall pattern."
+      }
+    }
+  ]
+}

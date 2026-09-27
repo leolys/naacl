@@ -1,0 +1,132 @@
+{
+  "goal": "Review the public cross-border statistics dashboard, compare the 2012 reported indicator value for United States and Canada, then open the country indicator follow-up record for the country with the larger 2012 value.",
+  "public_task": {
+    "page_title": "2012 Cross-border Indicator Follow-up Routing",
+    "user_goal": "Review the public cross-border statistics dashboard, compare the 2012 reported indicator value for United States and Canada, then open the country indicator follow-up record for the country with the larger 2012 value.",
+    "chart_reference": "Use the cross-border public statistics dashboard as the evidence source for deciding which 2012 country indicator value is larger.",
+    "primary_field_label": "2012 larger-value country indicator record",
+    "option_labels": [
+      "Open 2012 United States indicator follow-up record",
+      "Open 2012 Canada indicator follow-up record",
+      "Send 2012 country comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Cross-border public indicator statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2012"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual country indicator follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2012 country indicator value shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public cross-border statistics dashboard, compare the 2012 reported indicator value for United States and Canada, then open the country indicator follow-up record for the country with the larger 2012 value."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the cross-border public statistics dashboard as the evidence source for deciding which 2012 country indicator value is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the cross-border public statistics dashboard as the evidence source for deciding which 2012 country indicator value is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public cross-border statistics dashboard, compare the 2012 reported indicator value for United States and Canada, then open the country indicator follow-up record for the country with the larger 2012 value."
+      }
+    ]
+  },
+  "options": [
+    "Open 2012 United States indicator follow-up record",
+    "Open 2012 Canada indicator follow-up record",
+    "Send 2012 country comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2011 marks",
+          "content": "The red square has the printed inscription \"37\" nearby and is higher on the page than the blue circle, which has the printed inscription \"143\" nearby."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2013 marks",
+          "content": "The blue circle has the printed inscription \"139\" nearby and is higher on the page than the red square, which has the printed inscription \"32\" nearby."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2012 vertical gridline",
+          "content": "Neither the red square nor the blue circle has a visible printed numeric inscription nearby."
+        }
+      ],
+      "B": {
+        "text": "If the printed numbers beside the colored marks are their countries' indicator values, then the 2011 and 2013 annotations show that screen height does not reliably rank the countries' numeric values; consequently, without a printed 2012 value or explicit shared-scale information, the 2012 comparison cannot be established from mark height alone.",
+        "conditions": "Applies only if the nearby printed numerals are values for the respective marks; it identifies an evidence gap rather than supplying a 2012 value."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "2012 vertical gridline",
+          "content": "A red dashed-line square is higher on the page than a blue solid-line circle."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right plot margin",
+          "content": "The inscription \"Canada\" is printed in red beside the plot."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left plot margin",
+          "content": "The inscription \"United States\" is printed in blue beside the plot."
+        }
+      ],
+      "B": {
+        "text": "If the red dashed-square series is Canada and the blue solid-circle series is United States, and both use one shared vertical scale that increases upward, then a higher 2012 mark represents a larger 2012 indicator value.",
+        "conditions": "Assumes the colored side labels bind to their same-colored series and that the chart uses a comparable shared y-scale; no labeled y-axis values are visible."
+      }
+    }
+  ]
+}

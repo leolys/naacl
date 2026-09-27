@@ -1,0 +1,202 @@
+{
+  "goal": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share.",
+  "public_task": {
+    "page_title": "Top Rating-Share Category Promotion Budget Request",
+    "user_goal": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share.",
+    "chart_reference": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal.",
+    "primary_field_label": "Promotional budget category",
+    "option_labels": [
+      "Select Other",
+      "Select Design",
+      "Select Support"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_budget_action",
+        "label": "Budget action",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Assign additional promotional budget",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_queue_rule",
+        "label": "Queue rule",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Prioritize highest current rating share",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_campaign_program",
+        "label": "Campaign program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Rating-share category promotion",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [
+      {
+        "title": "Promotion budget rule",
+        "headers": [
+          "Rule item",
+          "Business rule"
+        ],
+        "rows": [
+          [
+            "Promotion budget rule",
+            "Select the category with the highest current labeled rating share"
+          ],
+          [
+            "Decision metric",
+            "mislabeled_value / labeled rating share"
+          ],
+          [
+            "Business reason",
+            "Highest-share category has the strongest current customer signal"
+          ]
+        ]
+      }
+    ],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+      },
+      {
+        "page": "home",
+        "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+      },
+      {
+        "page": "form",
+        "text": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+      }
+    ]
+  },
+  "options": [
+    "Select Other",
+    "Select Design",
+    "Select Support"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot area",
+          "content": "The blue circular mark above \"Design\" is visibly higher on the page than the marks above Quality, Price, Support, Delivery, and Other."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The vertical axis is visibly labeled \"Value\" and has printed ticks increasing upward from 0 to 55."
+        }
+      ],
+      "B": {
+        "text": "If the vertical positions of the plotted markers encode the current rating-share values on the y-axis labeled \"Value,\" then the highest marker corresponds to the greatest value and should be selected under the promotion rule.",
+        "conditions": "Alternative interpretation; assumes marker height, rather than the attached percentage inscription, is the relevant rating-share encoding."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "Other category mark at the far right",
+          "content": "A blue circular mark aligned above the x-axis label \"Other\" has the printed inscription \"53%\" immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category mark",
+          "content": "A blue circular mark aligned above the x-axis label \"Support\" has the printed inscription \"45%\" immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Design category mark",
+          "content": "A blue circular mark aligned above the x-axis label \"Design\" has the printed inscription \"34%\" immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delivery category mark",
+          "content": "A blue circular mark aligned above the x-axis label \"Delivery\" has the printed inscription \"43%\" immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Price category mark",
+          "content": "A blue circular mark aligned above the x-axis label \"Price\" has the printed inscription \"38%\" immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality category mark",
+          "content": "A blue circular mark aligned above the x-axis label \"Quality\" has the printed inscription \"36%\" immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title visibly reads \"Product Rating Share by Category\"."
+        }
+      ],
+      "B": {
+        "text": "If the percentage inscriptions attached to each category's plotted mark are the dashboard's current labeled rating-share values, then compare those inscriptions across all shown categories and select the category with the greatest value; the task policy assigns additional promotional budget to that category.",
+        "conditions": "Applies because the task explicitly names dashboard labeled rating-share values as the evidence source; assumes each percent inscription belongs to the adjacent category mark and is authoritative over the marker's vertical position."
+      }
+    }
+  ]
+}

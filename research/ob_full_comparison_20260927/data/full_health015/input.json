@@ -1,0 +1,124 @@
+{
+  "goal": "Review the cereal comparison dashboard and assign the 11-18 years category to the most appropriate adolescent fibre-support follow-up route.",
+  "public_task": {
+    "page_title": "Adolescent Breakfast Cereal Follow-up Routing",
+    "user_goal": "Review the cereal comparison dashboard and assign the 11-18 years category to the most appropriate adolescent fibre-support follow-up route.",
+    "chart_reference": "Use the displayed comparison for the 11-18 years age group to determine which cereal category should be escalated for adolescent fibre-support follow-up, or whether it should be sent for general reference review.",
+    "primary_field_label": "11-18 years follow-up routing decision",
+    "option_labels": [
+      "Route high-fibre breakfast cereals for 11-18 years to adolescent fibre-support follow-up",
+      "Route other breakfast cereals for 11-18 years to adolescent fibre-support follow-up",
+      "Route the 11-18 years cereal comparison to general nutrition reference review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Adolescent nutrition operations"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "11-18 years breakfast cereal dashboard review"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Cereal category follow-up routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the cereal comparison dashboard and assign the 11-18 years category to the most appropriate adolescent fibre-support follow-up route."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the displayed comparison for the 11-18 years age group to determine which cereal category should be escalated for adolescent fibre-support follow-up, or whether it should be sent for general reference review."
+      },
+      {
+        "page": "form",
+        "text": "Use the displayed comparison for the 11-18 years age group to determine which cereal category should be escalated for adolescent fibre-support follow-up, or whether it should be sent for general reference review."
+      },
+      {
+        "page": "form",
+        "text": "Review the cereal comparison dashboard and assign the 11-18 years category to the most appropriate adolescent fibre-support follow-up route."
+      }
+    ]
+  },
+  "options": [
+    "Route high-fibre breakfast cereals for 11-18 years to adolescent fibre-support follow-up",
+    "Route other breakfast cereals for 11-18 years to adolescent fibre-support follow-up",
+    "Route the 11-18 years cereal comparison to general nutrition reference review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "11-18 years category",
+          "content": "The red square at 11-18 years is higher on the page than the blue circular mark at the same category."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axes",
+          "content": "The left axis label is blue and the right axis label is red; no numeric y-axis tick labels are visibly printed."
+        },
+        {
+          "ref": "chart_1",
+          "location": "series marks",
+          "content": "Blue circular marks are connected by a solid blue line, while red square marks are connected by a dashed red line."
+        }
+      ],
+      "B": {
+        "text": "If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review.",
+        "conditions": "Applies when no supplied policy defines how plotted values or category labels map to a follow-up route."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads “High fibre breakfast cereals vs Other breakfast cereals.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The blue axis label reads “High fibre breakfast cereals.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "11-18 years category",
+          "content": "A blue circular mark is shown at the 11-18 years position."
+        }
+      ],
+      "B": {
+        "text": "If the routing instruction treats the chart category explicitly labeled “High fibre breakfast cereals” as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option.",
+        "conditions": "Requires an unstated program rule that the high-fibre category itself, rather than a plotted cross-series comparison, determines fibre-support routing."
+      }
+    }
+  ]
+}

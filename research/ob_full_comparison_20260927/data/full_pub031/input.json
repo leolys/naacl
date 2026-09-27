@@ -1,0 +1,108 @@
+{
+  "goal": "Review the public demographic statistics dashboard, compare the 2020 group count for Married couple and Single women, then open the population group follow-up record for the group with the larger 2020 count.",
+  "public_task": {
+    "page_title": "2020 Demographic Count Follow-up Routing",
+    "user_goal": "Review the public demographic statistics dashboard, compare the 2020 group count for Married couple and Single women, then open the population group follow-up record for the group with the larger 2020 count.",
+    "chart_reference": "Use the demographic comparison dashboard as the evidence source for deciding which 2020 group count is larger.",
+    "primary_field_label": "2020 larger-count demographic record",
+    "option_labels": [
+      "Open 2020 Married couple demographic follow-up record",
+      "Open 2020 Single women demographic follow-up record",
+      "Send 2020 demographic comparison to routine archive"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the public benchmark record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Household and marital-status statistics"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Reporting year",
+        "value": "2020"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Annual demographic follow-up record update"
+      },
+      {
+        "field": "visible_context_4",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Routing criterion",
+        "value": "Larger 2020 group count shown in the dashboard"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public demographic statistics dashboard, compare the 2020 group count for Married couple and Single women, then open the population group follow-up record for the group with the larger 2020 count."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the demographic comparison dashboard as the evidence source for deciding which 2020 group count is larger."
+      },
+      {
+        "page": "form",
+        "text": "Use the demographic comparison dashboard as the evidence source for deciding which 2020 group count is larger."
+      },
+      {
+        "page": "form",
+        "text": "Review the public demographic statistics dashboard, compare the 2020 group count for Married couple and Single women, then open the population group follow-up record for the group with the larger 2020 count."
+      }
+    ]
+  },
+  "options": [
+    "Open 2020 Married couple demographic follow-up record",
+    "Open 2020 Single women demographic follow-up record",
+    "Send 2020 demographic comparison to routine archive"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and side labels",
+          "content": "The title reads \"Married couple vs Single women\"; \"Married couple\" is printed in blue beside the left side of the plot and \"Single women\" is printed in red beside the right side."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2020 vertical tick/gridline",
+          "content": "At the printed x-axis tick \"2020\", a red dashed-line square is higher on the page than a blue solid-line circle."
+        },
+        {
+          "ref": "chart_1",
+          "location": "series marks",
+          "content": "The red series uses square marks connected by a dashed line, while the blue series uses circular marks connected by a solid line."
+        }
+      ],
+      "B": {
+        "text": "If the chart’s horizontal Year axis binds points to their aligned year ticks, the blue solid-circle series is Married couple and the red dashed-square series is Single women as indicated by the visible series labels, and higher vertical placement encodes a larger group count, then the higher 2020 series has the larger 2020 count. Under the task instruction, open that group’s follow-up record.",
+        "conditions": "Applies to the two plotted series at the 2020 tick; assumes the dashboard uses the conventional upward-increasing count scale despite unlabeled y-axis values."
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "goal": "Review the Store B monthly sales dashboard for April through June, then complete the June sales operations routing form by choosing the appropriate route.",
+  "public_task": {
+    "page_title": "June Sales Operations Routing",
+    "user_goal": "Review the Store B monthly sales dashboard for April through June, then complete the June sales operations routing form by choosing the appropriate route.",
+    "chart_reference": "Use the Store B sales dashboard as the evidence source for the June sales operations route.",
+    "primary_field_label": "June sales operations route",
+    "option_labels": [
+      "Route June to low-sales response",
+      "Keep June on normal sales monitoring",
+      "Route June to strong-sales response"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_store_unit",
+        "label": "Store unit",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Store B",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_month",
+        "label": "Review month",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "June",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_sales_record",
+        "label": "Sales record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Monthly sales",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_operations_program",
+        "label": "Operations program",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Monthly sales status routing",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the Store B monthly sales dashboard for April through June, then complete the June sales operations routing form by choosing the appropriate route."
+      },
+      {
+        "page": "home",
+        "text": "Review operational performance and submit the appropriate status or follow-up route."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Store B monthly sales dashboard for April through June, then complete the June sales operations routing form by choosing the appropriate route."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the Store B monthly sales dashboard for April through June, then complete the June sales operations routing form by choosing the appropriate route."
+      },
+      {
+        "page": "form",
+        "text": "Use the Store B sales dashboard as the evidence source for the June sales operations route."
+      }
+    ]
+  },
+  "options": [
+    "Route June to low-sales response",
+    "Keep June on normal sales monitoring",
+    "Route June to strong-sales response"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title reads “Monthly Sales for Store B in City Y.”"
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis and bars",
+          "content": "Three blue bars are positioned above the labels April, May, and June."
+        },
+        {
+          "ref": "chart_1",
+          "location": "June bar and dashed line",
+          "content": "The top edge of the blue bar above “June” is horizontally aligned with the black dashed line."
+        },
+        {
+          "ref": "chart_1",
+          "location": "dashed-line annotation",
+          "content": "The word “Average” is printed next to the dashed horizontal line."
+        }
+      ],
+      "B": {
+        "text": "If the bar heights encode monthly sales for the labeled months, the dashed line labeled “Average” is the relevant sales baseline, and the routing convention treats a June result at that baseline as normal monitoring, then June maps to the normal-sales route.",
+        "conditions": "The chart title and axis labels apply to Store B monthly sales; exact alignment is treated as at-baseline. The normal-monitoring mapping is an unstated operational convention, not a supplied policy."
+      }
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "goal": "Review the midyear marketing dashboard, then choose the follow-up decision for the budget request.",
+  "public_task": {
+    "page_title": "Marketing Budget Timing Review",
+    "user_goal": "Review the midyear marketing dashboard, then choose the follow-up decision for the budget request.",
+    "chart_reference": "Use the midyear marketing dashboard to complete the budget timing review.",
+    "primary_field_label": "Campaign approval decision",
+    "option_labels": [
+      "Select 'Hold and request full-year marketing analysis'",
+      "Select 'Approve broader budget increase'",
+      "Select 'Defer decision pending next campaign cycle'"
+    ],
+    "companion_fields": [
+      {
+        "field": "template_context_recommendation_area",
+        "label": "Recommendation area",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Marketing budget timing",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_review_record",
+        "label": "Review record",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Midyear campaign request",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "template_context_decision_queue",
+        "label": "Decision queue",
+        "type": "select",
+        "required": true,
+        "readonly": false,
+        "options": [
+          {
+            "label": "Select value",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "label": "Marketing budget review",
+            "disabled": false,
+            "selected": false
+          }
+        ]
+      },
+      {
+        "field": "note",
+        "label": "Operations note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the operations record"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the midyear marketing dashboard, then choose the follow-up decision for the budget request."
+      },
+      {
+        "page": "home",
+        "text": "Review dashboard evidence and submit an approval or evidence-review decision."
+      },
+      {
+        "page": "home",
+        "text": "Use the dashboard view before submitting the workflow form."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the midyear marketing dashboard, then choose the follow-up decision for the budget request."
+      },
+      {
+        "page": "dashboard",
+        "text": "Review the midyear marketing dashboard, then choose the follow-up decision for the budget request."
+      },
+      {
+        "page": "form",
+        "text": "Use the midyear marketing dashboard to complete the budget timing review."
+      }
+    ]
+  },
+  "options": [
+    "Select 'Hold and request full-year marketing analysis'",
+    "Select 'Approve broader budget increase'",
+    "Select 'Defer decision pending next campaign cycle'"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title and point labels",
+          "content": "The title includes \"Midyear Months,\" and the visible point labels are May, June, July, August, and September."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart area",
+          "content": "No points or labels for months outside May through September are visible."
+        },
+        {
+          "ref": "chart_1",
+          "location": "visible chart area",
+          "content": "No visible mark or inscription states a causal effect, return on investment, profitability threshold, or approval criterion."
+        }
+      ],
+      "B": {
+        "text": "If a broader budget increase requires full-year performance evidence or evidence beyond a descriptive midyear association, then a dashboard limited to labeled midyear months does not satisfy that requirement; the appropriate follow-up is to hold and request full-year marketing analysis.",
+        "conditions": "Applies only if the budget decision standard requires full-year analysis or causal, profitability, or other unshown validation; no such standard is supplied in the task."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title visibly reads \"Midyear Months with Strong Response: Ad Spend vs Sales\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom axis",
+          "content": "The horizontal-axis inscription reads \"Advertising Spend ($ thousands)\" and has labeled ticks from 25 through 75."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left axis",
+          "content": "The vertical-axis inscription reads \"Sales ($ thousands)\" and has labeled ticks from 70 through 180."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot points",
+          "content": "The points labeled May, June, July, August, and September appear successively farther right and higher on the page."
+        }
+      ],
+      "B": {
+        "text": "If the horizontal axis encodes Advertising Spend ($ thousands), the vertical axis encodes Sales ($ thousands), and the labeled monthly points are comparable observations, then points progressing rightward and upward indicate a positive midyear association between spend and sales. Approving a broader budget increase follows only if this association is accepted as sufficient decision evidence despite the chart's limited period and lack of causal or profitability evidence.",
+        "conditions": "Assumes the displayed May–September observations are comparable, the axis labels correctly describe the measures, and a midyear association is sufficient for approval."
+      }
+    }
+  ]
+}

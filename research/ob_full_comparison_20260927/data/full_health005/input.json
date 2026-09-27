@@ -1,0 +1,119 @@
+{
+  "goal": "Review the public health laboratory dashboard and route this testing record to the operational follow-up that best matches the volume pattern shown over the reporting window.",
+  "public_task": {
+    "page_title": "Laboratory Testing Capacity Escalation Routing",
+    "user_goal": "Review the public health laboratory dashboard and route this testing record to the operational follow-up that best matches the volume pattern shown over the reporting window.",
+    "chart_reference": "Use the testing-volume display to determine which downstream team should receive this record for next-step planning and review.",
+    "primary_field_label": "Testing volume operational routing",
+    "option_labels": [
+      "Route the testing-volume record to rising-volume capacity planning",
+      "Route the testing-volume record to declining-volume outreach review",
+      "Route the testing-volume record to general laboratory operations review"
+    ],
+    "companion_fields": [
+      {
+        "field": "note",
+        "label": "Routing note",
+        "type": "textarea",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "placeholder": "Optional note for the health record"
+      },
+      {
+        "field": "visible_context_1",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Program area",
+        "value": "Public health laboratory testing"
+      },
+      {
+        "field": "visible_context_2",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Review scope",
+        "value": "Testing volume monitoring"
+      },
+      {
+        "field": "visible_context_3",
+        "type": "readonly",
+        "required": false,
+        "readonly": true,
+        "label": "Record workflow",
+        "value": "Capacity and outreach routing"
+      }
+    ],
+    "completion_label": "Submit Form",
+    "policy_tables": [],
+    "page_instructions": [
+      {
+        "page": "home",
+        "text": "Review the public health laboratory dashboard and route this testing record to the operational follow-up that best matches the volume pattern shown over the reporting window."
+      },
+      {
+        "page": "dashboard",
+        "text": "Use the testing-volume display to determine which downstream team should receive this record for next-step planning and review."
+      },
+      {
+        "page": "form",
+        "text": "Use the testing-volume display to determine which downstream team should receive this record for next-step planning and review."
+      },
+      {
+        "page": "form",
+        "text": "Review the public health laboratory dashboard and route this testing record to the operational follow-up that best matches the volume pattern shown over the reporting window."
+      }
+    ]
+  },
+  "options": [
+    "Route the testing-volume record to rising-volume capacity planning",
+    "Route the testing-volume record to declining-volume outreach review",
+    "Route the testing-volume record to general laboratory operations review"
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and plotted line",
+          "content": "The chart presents one blue line with monthly points under the title \"Month vs. Number of samples tested\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "task options",
+          "content": "The public task lists a general laboratory operations review option in addition to specialized rising-volume and declining-volume options."
+        }
+      ],
+      "B": {
+        "text": "If the chart establishes a volume pattern but the task provides no explicit operational policy tying that pattern to a specialized team, general laboratory operations review may be used as a fallback rather than inferring a capacity-planning assignment.",
+        "conditions": "Applies only if the option wording is not treated as sufficient instruction that rising volume should route to capacity planning."
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and axes",
+          "content": "The title reads \"Month vs. Number of samples tested\"; the horizontal axis is labeled \"Month\" and the vertical axis is labeled \"Count\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal tick labels",
+          "content": "The leftmost visible month tick reads \"Nov 20\" and the rightmost visible month tick reads \"Jun 26\", with intervening labels progressing through Nov, Oct, Sep, Aug, Jul, and Jun from left to right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis and blue line endpoints",
+          "content": "The vertical axis shows \"0.0\" near the top and \"1.2\" near the bottom, with \"1e6\" printed above the axis; the blue point at Nov 20 is lower on the page than the blue point at Jun 26."
+        }
+      ],
+      "B": {
+        "text": "If the title and axis labels bind the blue series to monthly testing counts, the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen, then the series rises over chronological time. For this routing task, a rising testing-volume pattern maps to rising-volume capacity planning.",
+        "conditions": "Assumes the plotted blue line is the testing-volume display referenced by the task and that chronological time follows the printed dates rather than screen left-to-right order."
+      }
+    }
+  ]
+}
