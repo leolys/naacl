@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9295124061756ec9",
+    "object": "chat.completion",
+    "created": 1790624751,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image reads exactly 'Monthly Visitors at Museum C in Town Z.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The first green bar is located above the x-axis label 'July'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top edge of the July bar is visually aligned with the horizontal dashed orange line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The horizontal dashed orange line intersects the y-axis at the tick labeled '200'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The text 'Average' is printed in orange to the right of the dashed line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Green bars encode monthly Museum C visitor counts on an upward-increasing y-axis. 2. The bar above each month label is that month's count. 3. The dashed line labeled 'Average' is the average benchmark on the same scale. 4. A month whose bar top aligns with that line is at the average. 5. Routing labels map at-average results to average-level monitoring.\",\n        \"evidence\": \"Condition 1 is supported by the y-axis label 'Number of Visitors' and the bar chart format. Condition 2 is supported by the x-axis labels 'July', 'August', and 'September' positioned below the respective bars. Condition 3 is supported by the 'Average' label on the line at the 200 mark. Condition 4 is supported by the visual alignment of the July bar top with the 200 line. Condition 5 is supported by the task options which include 'Keep July on average-level visitor monitoring' as the logical counterpart to the 'at-average' finding.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3422,
+      "total_tokens": 3904,
+      "completion_tokens": 482,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

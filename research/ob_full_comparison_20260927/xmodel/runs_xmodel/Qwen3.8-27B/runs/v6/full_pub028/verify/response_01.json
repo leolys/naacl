@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c0747673146028a",
+    "object": "chat.completion",
+    "created": 1790625018,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart literally reads 'Shrinking Population of City A from 2010 to 2015'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative statement of the City A population trend for 2010-2015. 2. The workflow maps a stated shrinking trend to decline response.\",\n        \"evidence\": \"Condition 1 is not established: the title conflicts with the plotted line (which shows growth from 2,000 to 3,000), and no rule is provided to determine if the title overrides the data. Condition 2 is not established: the public task does not provide an explicit mapping of a 'shrinking trend' to the 'decline response' route.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains 'Shrinking Population', while the blue line's endpoint at 2015 (aligned with 3,000) is higher on the page than its endpoint at 2010 (aligned with 2,000).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Contradictory chart signals cannot be resolved. 2. No supplied policy specifies a route for conflicting or insufficient evidence. 3. The workflow permits routine monitoring for unresolved trends.\",\n        \"evidence\": \"Condition 1 is established by the conflict between the title and the line. Condition 2 is established as no policy table is provided. Condition 3 is not established: the task does not provide a rule allowing 'routine monitoring' as a specific response to unresolved or conflicting evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A single blue line begins at the 2010 tick aligned with the y-axis tick labeled '2,000' and ends at the 2015 tick aligned with the y-axis tick labeled '3,000'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks from '2010' to '2015'; the vertical axis is labeled 'Population' with values increasing upward from '0' to '3,500'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line is the dashboard's total-population series. 2. The horizontal axis maps left-to-right positions to the printed years. 3. The vertical axis increases upward as labeled. 4. The routing workflow maps observed growth to growth planning.\",\n        \"evidence\": \"Condition 1 is established by the context field 'Population record: Total population'. Condition 2 is established by the x-axis label 'Year' and the 2010-2015 ticks. Condition 3 is established by the y-axis label 'Population' and the upward-increasing scale. Condition 4 is not established: no explicit routing policy is provided in the task to map an observed growth trend to the 'growth planning' route.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4080,
+      "total_tokens": 4893,
+      "completion_tokens": 813,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

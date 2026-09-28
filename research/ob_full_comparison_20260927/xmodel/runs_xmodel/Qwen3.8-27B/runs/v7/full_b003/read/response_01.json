@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8970a3fd4531f4a6",
+    "object": "chat.completion",
+    "created": 1790625075,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"top-left\",\n      \"fact\": \"Chart title reads 'Product Rating Share by Category'. Plot area spans roughly x=270-1850, y=300-1560.\"\n    },\n    {\n      \"location\": \"x-axis left to right\",\n      \"fact\": \"Six blue circular markers at Quality (~x=450), Price (~x=690), Design (~x=930), Support (~x=1170), Delivery (~x=1410), Other (~x=1650).\"\n    },\n    {\n      \"location\": \"marker heights\",\n      \"fact\": \"Design marker is highest on the page (~y=400); Delivery next (~y=610); Other ~y=680; Price ~y=720; Quality ~y=830; Support lowest (~y=920).\"\n    },\n    {\n      \"location\": \"above each marker\",\n      \"fact\": \"Each marker has a small percentage text label directly above it.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Axis labeled 'Value'; ticks 0,5,10,...,55.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Axis labeled 'Category'; tick labels Quality, Price, Design, Support, Delivery, Other.\"\n    },\n    {\n      \"location\": \"point labels\",\n      \"fact\": \"Quality=36%, Price=38%, Design=34%, Support=45%, Delivery=43%, Other=53%.\"\n    },\n    {\n      \"location\": \"labeled rating share comparison\",\n      \"fact\": \"Among the six labeled values, Other (53%) is the largest, followed by Support (45%), Delivery (43%), Price (38%), Quality (36%), Design (34%).\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Promotion budget rule: Select the category with the highest current labeled rating share.\",\n    \"Decision metric: mislabeled_value / labeled rating share.\",\n    \"chart_reference: Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal.\"\n  ],\n  \"uncertain\": [\n    \"The y-axis 'Value' positions do not match the percentage labels (e.g., Design is plotted highest at ~54 but labeled 34%; Other is plotted ~41 but labeled 53%), so the plotted geometry and the printed labels disagree.\",\n    \"The task's selectable options are only Other, Design, and Support; the highest labeled value (Other, 53%) is among the options, but the visual peak (Design) is not the labeled maximum.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2772,
+      "total_tokens": 3434,
+      "completion_tokens": 662,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

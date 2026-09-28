@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a0a02aeac54eae87",
+    "object": "chat.completion",
+    "created": 1790623659,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual notes list five distinct blue points labeled Region A through E and confirm the axes are 'Advertising Spend' and 'Sales'. The notes and the chart image do not mention or show any ROI, profit, experimental comparison, or incremental-sales annotation.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. A broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI. 2. A cross-sectional scatter pattern alone does not meet that requirement. 3. Further regional spend-sales analysis is warranted.\",\n        \"evidence\": \"Condition 1 is a policy assumption not stated in the task. The task only says to 'Review the regional spend and sales dashboard, then choose the spend-increase decision.' It does not explicitly state that a 'broader' approval requires causal evidence. Condition 2 is a logical inference from the chart's nature (cross-sectional) but its application depends on Condition 1. Since the requirement for causal evidence is not established by the public task, the condition is not met.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The printed facts provide coordinates for the regions: A(30, 58), B(40, 66), C(50, 81), D(60, 106), E(70, 151). This sequence shows that as the x-value (spend) increases from 30 to 70, the y-value (sales) increases from 58 to 151. This confirms a left-to-right and lower-to-higher sequence.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. An observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout. 2. A limited pilot can be selected for regions rather than approving a broader increase. 3. The organization permits a pilot under uncertainty. 4. The chart itself supplies no pilot-selection criteria or outcome threshold.\",\n        \"evidence\": \"Condition 1 is an assumption about the sufficiency of the evidence. The task does not state that association is enough for testing but not rollout. Condition 3 is an assumption about organizational policy not present in the text. Condition 4 is supported by the visual notes, which show no such criteria. Because Conditions 1 and 3 are not established by the public task, the rule cannot be applied.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual notes confirm the title is 'Top Regions: Ad Spend vs Sales', the x-axis is 'Advertising Spend ($ thousands)', and the y-axis is 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The coordinates provided in the printed facts are A(30, 58), B(40, 66), C(50, 81), D(60, 106), E(70, 151). Comparing each pair: A's x (30) < B's x (40) and A's y (58) < B's y (66). B's x (40) < C's x (50) and B's y (66) < C's y (81). C's x (50) < D's x (60) and C's y (81) < D's y (106). D's x (60) < E's x (70) and D's y (106) < E's y (151). All parts of the statement are true.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes advertising spend. 2. The vertical axis encodes sales. 3. The ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales. 4. A region-wide spend increase is supported.\",\n        \"evidence\": \"Conditions 1 and 2 are established by the axis labels. Condition 3 is a subjective judgment ('considered sufficient') that is not a fact established by the chart or the task instructions. The task does not define what level of evidence is 'sufficient' for a region-wide increase. Therefore, the condition that the pattern is 'sufficient' is not met.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4232,
+      "total_tokens": 5301,
+      "completion_tokens": 1069,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

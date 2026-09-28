@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title reads 'Month vs. Number of samples tested' and the plot contains a single blue line with circular markers. This is a direct observation of the chart's visual content.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The 'options' list in the public task explicitly includes 'Route the testing-volume record to general laboratory operations review' alongside the rising and declining options.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart establishes a volume pattern. 2. The task provides no explicit operational policy tying that pattern to a specialized team. 3. The option wording is not treated as sufficient instruction that rising volume should route to capacity planning.",
+        "evidence": "The chart shows a clear pattern (Condition 1). The task instructions only say to 'route... to the operational follow-up that best matches the volume pattern' and do not provide a formal policy table or explicit rule mapping specific trends to teams (Condition 2). However, the option labels themselves ('rising-volume capacity planning', 'declining-volume outreach review') are sufficiently descriptive that they function as the operational instructions for this routing task. Treating these labels as the instructions makes the 'fallback' logic of B inapplicable because the specialized options are the primary instructions, not a lack thereof.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Month vs. Number of samples tested', the x-axis is labeled 'Month', and the y-axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis tick labels are printed from left to right as 'Nov 20' through 'Jun 26'. Chronologically, this is a reverse order (Nov 20 is later than Jun 26).",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis is inverted, with '0.0' at the top and '1.2' at the bottom. The blue point at 'Nov 20' (left) is at the bottom of the chart (high count), and the point at 'Jun 26' (right) is near the top (low count).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Title and axis labels bind the blue series to monthly testing counts. 2. Printed month ticks run from Jun 26 (right) toward Nov 20 (left). 3. Vertical Count scale has larger labeled values lower on the screen. 4. The series rises over chronological time. 5. A rising testing-volume pattern maps to rising-volume capacity planning.",
+        "evidence": "Conditions 1-3 are supported by the chart labels and axis orientation. However, Condition 4 is refuted by the data. Chronologically, the period starts at Jun 26 and ends at Nov 20. At the start (Jun 26, right), the count is low (~0.4e6). At the end (Nov 20, left), the count is high (~1.25e6). Therefore, the volume is rising over chronological time. The text of B correctly concludes that the series rises over chronological time. Wait, let me re-read B's text. 'the series rises over chronological time'. Yes, the text says it rises. My analysis: Jun (low) -> Nov (high). This is a rise. So Condition 4 is supported. Condition 5 is a mapping rule. The option 'rising-volume capacity planning' exists. Thus, the record should be routed there.",
+        "status": "supported"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97fd1128a224b702",
+    "object": "chat.completion",
+    "created": 1790624613,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The main title is 'Declining Telehealth Follow-up Requests from 2012 to 2023' (located in the chart title).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative dashboard summary of the record's demand pattern. 2. The title's explicit characterization of the requests as declining supports decline-response follow-up.\",\n        \"evidence\": \"Condition 1 is not established by the public task. The task asks to select the route that 'best fits the overall request pattern' using the dashboard as evidence, but does not state that the title is the authoritative source over the plotted data. The visual data (rising from ~800 to ~2900) contradicts the title's claim of 'declining', creating a conflict that leaves the authority of the title open. Condition 2 is a logical consequence of the title's text, but the antecedent (authority) is not proven.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line segment from the point above 2022 to the endpoint above 2023 slopes downward on the page (located in the plot, 2022-2023 segment).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed x-axis year labels place 2022 immediately before 2023 (located on the x-axis).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled 'Telehealth follow-up requests' (located on the y-axis).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The x-axis years order the plotted line chronologically. 2. Higher vertical position encodes more telehealth follow-up requests. 3. A downward final segment indicates a recent decline. 4. Routing is based on the latest year-to-year movement.\",\n        \"evidence\": \"Conditions 1-3 are supported by the visual facts (x-axis 2012-2023, y-axis 0-3000, 2022-2023 drop). However, Condition 4 is not established by the public task. The task asks for the route that 'best fits the overall request pattern', not specifically the latest interval. The task does not define 'overall pattern' as 'latest year-to-year movement'.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line's 2023 endpoint (near 2700) is higher on the page than its 2012 endpoint (near 800) (located in the plot, 2012 and 2023 endpoints).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed x-axis year labels run from 2012 at the left to 2023 at the right (located on the x-axis).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled 'Telehealth follow-up requests' (located on the y-axis).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The x-axis years order the plotted line chronologically. 2. The y-axis labels encode telehealth follow-up request magnitude increasing upward. 3. A substantially higher final plotted point than initial plotted point indicates overall growth across the displayed period. 4. The routing labels correspond to that overall pattern.\",\n        \"evidence\": \"Conditions 1-3 are supported by the visual facts (x-axis 2012-2023, y-axis 0-3000, 2023 > 2012). Condition 4 is supported by the public task's instruction to select the route that 'best fits the overall request pattern'. The visual evidence of growth (800 to 2700) aligns with the 'growth-response' label when assessing the 'overall' pattern.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3587,
+      "total_tokens": 4667,
+      "completion_tokens": 1080,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

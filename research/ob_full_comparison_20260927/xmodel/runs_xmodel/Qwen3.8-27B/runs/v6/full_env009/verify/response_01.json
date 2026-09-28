@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9a05477674c81f87",
+    "object": "chat.completion",
+    "created": 1790623987,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible chart area contains the title, axes, gridlines, and data points, but no text, line, or annotation indicating a threshold, cutoff, or decision rule.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The marker aligned with the 2005 x-axis tick is labeled '23.9°C' and the marker aligned with the 2014 x-axis tick is labeled '10.1°C'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Follow-up is threshold/criterion based. 2. No such criterion is displayed or supplied. 3. Routine monitoring is the default when the criterion cannot be verified.\",\n        \"evidence\": \"Condition 2 is established by the absence of a threshold in the chart. Condition 1 is not established; the task asks to determine if follow-up is required but does not state that it is threshold-based. Condition 3 is not established; the task does not state that routine monitoring is the default.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The marker at the 2005 x-axis tick has the text '23.9°C' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The marker at the 2014 x-axis tick has the text '10.1°C' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text at the top of the chart reads 'Regional Summer Temperature Trend' and the vertical axis label reads 'Temperature (°C)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title and axes indicate each marker represents regional summer temperature for its aligned year. 2. The °C inscriptions provide the plotted values. 3. The full-period change is evaluated as the end-year value minus the start-year value. 4. The routing program treats a temperature change of this magnitude as substantial without requiring a separately displayed threshold.\",\n        \"evidence\": \"Conditions 1 and 2 are established by the chart's title, axes, and labels. Condition 3 is a methodological assumption not stated in the task. Condition 4 is an assumption; the task does not state that the program treats this magnitude as substantial without a threshold.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4238,
+      "total_tokens": 4865,
+      "completion_tokens": 627,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b7f227598ec00dc5",
+    "object": "chat.completion",
+    "created": 1790624090,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost point at the 2005 tick is annotated with the text '24.0°C' as seen in the top-left of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost point at the 2015 tick is annotated with the text '10.0°C' as seen in the bottom-right of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The visible chart area contains only the title, axes, and data points; no additional text or lines indicate a threshold for 'substantial-change'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The interpretation is strict and requires an explicit numeric threshold or stated criterion for follow-up. 2. No such threshold or criterion is supplied in the chart or task materials. 3. The workflow defaults unverified changes to routine monitoring.\",\n        \"evidence\": \"Condition 1 is a matter of interpretive stance. Condition 2 is supported by the visible chart, which lacks a threshold. Condition 3 is not established by the provided materials; the 'Record workflow' field only states 'Change-based follow-up routing' without specifying a default for unverified cases.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost point at the 2005 tick is annotated with the text '24.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost point at the 2015 tick is annotated with the text '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'District Heating Demand Index', the x-axis is labeled 'Year', and the y-axis is labeled 'Demand index'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The series titled 'District Heating Demand Index' binds each year tick to its adjacent printed point label. 2. The full-period change is calculated as the 2015 labeled value minus the 2005 labeled value. 3. An approximately 14.0°C absolute change is treated as substantial for the routing criterion.\",\n        \"evidence\": \"Condition 1 is supported by the visual layout where labels are adjacent to their respective points. Condition 2 is a mathematical operation on the values in Condition 1 (10.0 - 24.0 = -14.0). Condition 3 is an assumption not supported by the chart or task instructions, which do not define what magnitude of change is 'substantial'.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4393,
+      "total_tokens": 5092,
+      "completion_tokens": 699,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

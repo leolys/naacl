@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afe6e9277261b7e2",
+    "object": "chat.completion",
+    "created": 1790627104,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title at the top reads 'Refugees vs IDPs'. The left vertical axis is labeled 'Refugees' in blue text, and the right vertical axis is labeled 'IDPs' in red text.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"At the x-axis position labeled 2017.5, the blue circular marker (Refugees) is visibly higher on the y-axis than the red square marker (IDPs).\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The blue line connecting the Refugees data points uses circular markers, while the red line connecting the IDPs data points uses square markers.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the blue circular series is the Refugees series and the red square series is the IDPs series, and both series use the same vertically increasing count scale despite the separate colored axis labels, then the series whose 2017 mark is higher on the page has the larger 2017 people count; the task requires opening that category's follow-up record.\", \"evidence\": \"The color and marker associations are correct (blue=circles=Refugees, red=squares=IDPs). However, the chart uses a dual-axis system (Refugees on the left, IDPs on the right). Crucially, the visible data labels show that the red series (IDPs) reaches values like 73,925,355, while the blue series (Refugees) is at 11,698,238 at a point where the red marker is much higher on the page. This indicates the two axes have vastly different scales (likely the right axis is much larger). Therefore, the vertical position on the page is not a reliable indicator of the actual count magnitude, and the condition that the scales are comparable is not met by the visible evidence.\", \"status\": \"refuted\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2933,
+      "total_tokens": 3366,
+      "completion_tokens": 433,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8adf30e3f61f9853",
+    "object": "chat.completion",
+    "created": 1790623651,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top-left title reads 'Top Product Lines: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bottom horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five blue circular markers are visible in the plot area, labeled 'Line A' through 'Line E'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The markers are positioned at (30, 60), (40, ~68), (50, ~84), (60, 110), and (70, ~157), showing a successive increase in both horizontal and vertical page position.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"A visual scan of the title, axes, and plot area confirms no text or mark indicates a timeframe, profitability, ROI, margin, budget threshold, or that the five lines represent the entire product-line population.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. A broader budget approval or rejection requires evidence beyond the displayed ad-spend and sales positions. 2. The chart does not state that sales alone is the decision criterion or provide profitability, ROI, timeframe, or full-scope information. 3. The task or a supplied policy does not explicitly authorize a broader budget conclusion from this scatterplot alone.\",\n        \"evidence\": \"Condition 1 is supported by the task's requirement to 'submit the budget conclusion' and the option 'Approve broader budget conclusion', which implies a decision beyond the current data points. Condition 2 is supported by O6, which confirms the absence of profitability, ROI, timeframe, or full-scope information. Condition 3 is supported by the 'policy_tables' field in the public task, which is empty, and the 'page_instructions', which do not provide an explicit authorization to use the scatterplot alone for a broader conclusion.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top-left title reads 'Top Product Lines: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bottom horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The markers are positioned at (30, 60), (40, ~68), (50, ~84), (60, 110), and (70, ~157), showing a successive increase in both horizontal and vertical page position.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The task treats the displayed product-line scatterplot as complete. 2. The task treats a higher ad-spend/higher sales pattern as sufficient support for a broader budget conclusion.\",\n        \"evidence\": \"Condition 1 is refuted by the chart title 'Top Product Lines', which implies a subset rather than a complete scope, and by O6 in r1 which notes the absence of a full-scope statement. Condition 2 is refuted by the absence of any policy or instruction in the public task that designates the ad-spend/sales pattern as a sufficient criterion for a broader budget conclusion.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4176,
+      "total_tokens": 5100,
+      "completion_tokens": 924,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4498759f910483c",
+    "object": "chat.completion",
+    "created": 1790624848,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map title at the top left visibly reads 'Prevalence of Species Z in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend at the lower right is a vertical ramp labeled 'High' at the top (pale yellow, 100) and 'Low' at the bottom (dark red, 0).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state polygon labeled 'NJ' is filled with a very pale yellow, corresponding to the high end of the scale.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state polygon labeled 'PA' is filled with a dark red/maroon color, corresponding to the low end of the scale.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The state polygon labeled 'DE' is filled with a pale yellow/orange color, which is visually lighter than PA but darker than NJ.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The map's color legend encodes prevalence with pale yellow as 'High' (100) and dark red as 'Low' (0). 2. States with paler fills have higher prevalence than states with darker fills. 3. The task requires routing the highest-prevalence state among the listed options (NJ, PA, DE). 4. Select that state's priority-follow-up detail option.\",\n        \"evidence\": \"Condition 1 is established by the legend (O2). Condition 2 is established by the color scale direction (O2). Condition 3 is established by the public task instructions. Condition 4 is satisfied by selecting the NJ option, as NJ is the palest (highest prevalence) among the three options (O3 vs O4 vs O5).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3669,
+      "total_tokens": 4152,
+      "completion_tokens": 483,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

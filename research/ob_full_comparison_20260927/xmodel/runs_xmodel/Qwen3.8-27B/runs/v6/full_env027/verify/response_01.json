@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2ca8e2b05f27514",
+    "object": "chat.completion",
+    "created": 1790624230,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top edge of the bar above the 'January' label is horizontally aligned with the dashed line at the 150 mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text 'Average' is printed at the right end of the dashed horizontal line.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The dashed horizontal line is positioned at the same height as the '150' tick mark on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The bars encode each labeled month's reported alert-day total on a shared vertical scale. 2. The dashed line labeled 'Average' marks the monthly average level. 3. A bar whose top coincides with that line is classified as average-level.\",\n        \"evidence\": \"Condition 1 is established by the shared y-axis (0-350) and the bar heights (Jan=150, Feb=300, Mar=250) which are consistent with the provided 'Average' label (mean of 150, 300, 250 is 233.3, but the line is at 150; however, the task is to use the line as the threshold). Condition 2 is established by the 'Average' label on the line. Condition 3 is established by the visual alignment of the January bar's top with the line.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3431,
+      "total_tokens": 3820,
+      "completion_tokens": 389,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

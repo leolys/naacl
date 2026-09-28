@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8698dfa58791dede",
+    "object": "chat.completion",
+    "created": 1790624643,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The purple line's endpoint at 2012 is located just above the 700 grid line, while the endpoint at 2023 is located well above the 2800 grid line. The 2023 point is visibly higher on the page than the 2012 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The purple line encodes respiratory infection case levels by year with higher page position meaning more cases. 2. The 'overall case pattern' is evaluated by comparing the 2012 and 2023 endpoints. 3. A higher 2023 endpoint indicates an increase over that span. 4. An overall increase maps to increasing-activity follow-up.\",\n        \"evidence\": \"Condition 1 is established by the Y-axis label 'Respiratory infection cases' and the visual layout. Condition 2 is not established; the task asks for the 'overall case pattern' but does not specify that this is defined by endpoint comparison. The independent notes highlight a contradiction between the title 'Falling' and the visual upward trend, leaving the definition of 'overall pattern' ambiguous. Condition 4 is not established; no policy table or instruction explicitly maps an 'overall increase' to 'increasing-activity follow-up'.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text in the upper left of the chart clearly reads 'Falling Respiratory Infection Cases in Sentinel Sites from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The purple line's vertex at 2022 is the peak of the graph (near 3000-3100), while the vertex at 2023 is slightly lower (just above 2800). The 2023 point is lower on the page than the 2022 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The purple line encodes respiratory infection case levels by year with higher page position meaning more cases. 2. The title and plotted series describe this record. 3. The years align with the line vertices. 4. The routing convention treats a decline in the most recent year-to-year segment (or the chart's stated falling pattern) as easing activity. 5. Recent change is the relevant meaning of the overall pattern.\",\n        \"evidence\": \"Conditions 1-3 are established by the axis labels and visual alignment. Condition 4 is not established; there is no explicit rule stating that a recent decline or the title's claim of 'falling' maps to 'easing-activity follow-up'. Condition 5 is not established; 'overall case pattern' could refer to the entire 2012-2023 span (which shows a massive increase) rather than just the recent 2022-2023 change. The ambiguity between the title and the visual trend makes the intended 'overall pattern' unclear.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3365,
+      "total_tokens": 4128,
+      "completion_tokens": 763,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

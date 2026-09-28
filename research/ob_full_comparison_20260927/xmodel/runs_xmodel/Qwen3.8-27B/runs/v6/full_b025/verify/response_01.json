@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-923be6407ed661f8",
+    "object": "chat.completion",
+    "created": 1790623545,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's title is 'Weeks with Promotional Campaigns: Ad Spend vs Sales', the x-axis is 'Advertising Spend ($ thousands)', and the y-axis is 'Sales ($ thousands)'. The plot contains points labeled Week 2 through Week 6. There are no other text annotations, data labels, or secondary axes indicating profit, margin, incremental sales, control groups, or causal methods.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The approval policy requires causal or profitability validation (rather than descriptive association).\",\n        \"evidence\": \"The public task instructions state to 'Review dashboard evidence and submit an approval or evidence-review decision.' There is no explicit policy text in the provided context that mandates a specific statistical standard (e.g., 'must prove causality' or 'must show profitability') for the 'Approve broader spend expansion' option. The condition 'Applies if approval policy requires causal or profitability validation' is not established by the visible task instructions, which only ask to review the dashboard. Therefore, it is unclear if the strict condition of B is met by the task's implicit or explicit rules.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is printed as 'Weeks with Promotional Campaigns: Ad Spend vs Sales'. The horizontal axis label is 'Advertising Spend ($ thousands)' and the vertical axis label is 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The points labeled Week 2, Week 3, Week 4, Week 5, and Week 6 are positioned at increasing x-values (approx 22, 32, 42, 52, 62) and increasing y-values (approx 65, 90, 120, 150, 190). Visually, each subsequent labeled point is to the right and higher on the page than the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands. 2. A consistent higher-spend/higher-sales pattern across the labeled campaign weeks is sufficient evidence for a spend recommendation. 3. The plotted weeks are comparable campaign observations. 4. The task permits an association-based expansion decision without requiring causal attribution, profitability, or additional controls.\",\n        \"evidence\": \"Condition 1 is supported by the axis labels 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. Condition 2 is supported by the visual trend of points moving from lower-left to upper-right. Condition 3 is supported by the title 'Weeks with Promotional Campaigns' and the labels 'Week 2' through 'Week 6'. Condition 4 is the critical open question: the task asks to 'Review dashboard evidence and submit an approval or evidence-review decision' but does not explicitly state that a simple correlation is sufficient for 'Approve broader spend expansion' versus 'Hold and request full-data analysis'. Without an explicit rule that association is sufficient, this condition remains unclear.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4043,
+      "total_tokens": 4810,
+      "completion_tokens": 767,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

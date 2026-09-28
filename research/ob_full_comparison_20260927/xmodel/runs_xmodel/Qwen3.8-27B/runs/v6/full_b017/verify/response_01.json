@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9bddcf2d1b428fbf",
+    "object": "chat.completion",
+    "created": 1790623385,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title inscription at the top of the image reads 'Top Performing Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The plot area contains five labeled points (Store 1 through Store 5). There is no legend or axis indicating profitability or ROI.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title limits the display to top-performing stores. 2. The only displayed measures are advertising spend and sales. 3. The view is not full-store, profitability/ROI, or causal evidence. 4. A broader budget increase requires those evidence types.\",\n        \"evidence\": \"Condition 1 is supported by the title 'Top Performing Stores: Ad Spend vs Sales'. Condition 2 is supported by the axis labels 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. Condition 3 follows from the absence of other measures in the chart. Condition 4 is an assumption stated in the record's conditions ('Assumes broader ad-budget approval requires evidence beyond a selected-store spend-sales association'), as no specific approval threshold is provided in the task.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The points labeled Store 1 through Store 5 are positioned successively farther right (increasing x) and higher (increasing y) on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes advertising spend. 2. The vertical axis encodes sales. 3. A set of labeled store points progressing generally up and to the right indicates a positive observed association between those two displayed measures. 4. Association among the displayed stores is sufficient evidence for a broader increase.\",\n        \"evidence\": \"Conditions 1 and 2 are supported by the axis labels. Condition 3 is supported by the visual arrangement of the points (Store 1 to Store 5 move up and right). Condition 4 is an assumption stated in the record's conditions ('Assumes... selected-store association is adequate for a broader budget decision'), as no specific approval threshold is provided in the task.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4065,
+      "total_tokens": 4768,
+      "completion_tokens": 703,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

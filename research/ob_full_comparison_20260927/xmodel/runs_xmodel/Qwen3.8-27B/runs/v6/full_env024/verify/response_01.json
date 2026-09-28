@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9294a59fd001baf0",
+    "object": "chat.completion",
+    "created": 1790624184,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual note for 'Bar 2, Groundwater' states it is 'the tallest bar on the chart, with its top edge reaching approximately 68 on the y-axis,' while the 'Surface water' bar reaches 40 and 'Desalination' reaches 50. This confirms Groundwater is higher than the others.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed facts list the chart title as 'Urban Water Supply by Source' and the y-axis label as 'Reported supply share (%)'. These match the record's content.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bar height on the vertical scale encodes urban reported supply contribution. 2. The routing criterion requires escalation of the largest contribution source. 3. Bar geometry is the authoritative encoding (not the percentage annotations).\",\n        \"evidence\": \"Condition 2 is supported by the 'Routing criterion' field. Condition 3 is not supported; the chart contains explicit numerical labels ('41.2%', '29.8%', etc.) that directly contradict the bar heights (e.g., Groundwater is the tallest bar but has the second-highest label). In a standard bar chart, the y-axis scale and labels are the primary data encodings, and the bar heights here appear to be erroneous or decorative. Because the condition that 'bar geometry... is the authoritative contribution encoding' is not established (and is likely false), the rule does not apply.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual note for 'Bar 1, Surface water' confirms a label '41.2%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visual note for 'Bar 2, Groundwater' confirms a label '29.8%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The visual note for 'Bar 3, Desalination' confirms a label '18.5%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The visual note for 'Bar 4, Recycled water' confirms a label '7.2%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The visual note for 'Bar 5, Rain capture' confirms a label '3.3%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The printed facts confirm the y-axis label is 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The percentage inscription directly above each source bar is the authoritative reported supply-share value. 2. The routing criterion requires escalation of the largest contribution source. 3. The bold percentages are valid source-specific reported supply shares.\",\n        \"evidence\": \"Condition 2 is supported by the 'Routing criterion' field. Condition 1 is supported by the y-axis label 'Reported supply share (%)' which matches the unit of the inscriptions. The inscriptions provide specific numerical values for each source. While the bar heights are inconsistent, the inscriptions are the only source of specific percentage data and align with the axis label. Thus, the condition that the inscriptions are the authoritative values is supported by the chart's labeling.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3985,
+      "total_tokens": 4857,
+      "completion_tokens": 872,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

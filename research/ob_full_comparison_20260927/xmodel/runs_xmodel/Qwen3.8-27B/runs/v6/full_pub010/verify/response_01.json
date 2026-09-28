@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a196e1539380ca22",
+    "object": "chat.completion",
+    "created": 1790624809,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the chart image contains the text 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is treated as an authoritative textual summary of the Town Z 1880-1891 series. 2. The title's stated trend is 'decreasing'. 3. The 'decreasing' trend maps to the 'decline-response' option for the routing task.\",\n        \"evidence\": \"Condition 1 is not established. The task instructs to 'Review the Town Z new-tourists dashboard' and 'choose the tourism program route that matches the overall visitor trend.' It does not specify that the title is authoritative over the plotted data. Furthermore, the plotted data (r2) shows an increase, which contradicts the title. Because the premise that the title is the authoritative summary is not supported by the task instructions and is contradicted by the visual evidence, the condition is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line starts at the 1880 tick at the level of the '1,000' y-axis tick. It ends at the 1891 tick at a level between the '2,500' and '3,000' ticks (approx 2,950), which is visually higher on the page than the 1,000 starting point.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis is labeled 'Number of Tourists' and has ticks 0, 500, 1,000, 1,500, 2,000, 2,500, 3,000, 3,500, increasing upwards.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis is labeled 'Year' and has ticks from 1880 to 1891.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis binds the line's endpoints to years. 2. The vertical axis 'Number of Tourists' increases upward. 3. A later endpoint higher on the page represents a higher tourist count. 4. An overall increase across 1880-1891 maps to the 'growth-planning' option.\",\n        \"evidence\": \"Condition 1 is supported by the x-axis ticks (1880-1891). Condition 2 is supported by the y-axis label and tick order. Condition 3 is supported by the visual geometry: the 1891 endpoint is higher than the 1880 start. Condition 4 is supported by the task options, where 'growth planning' corresponds to an increasing trend. All necessary conditions are established by the chart's visual encoding and the task's goal to match the 'overall visitor trend' shown in the dashboard.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4118,
+      "total_tokens": 4890,
+      "completion_tokens": 772,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

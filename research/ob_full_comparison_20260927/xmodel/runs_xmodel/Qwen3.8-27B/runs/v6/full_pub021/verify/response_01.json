@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bde597c8329c1c49",
+    "object": "chat.completion",
+    "created": 1790624874,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The independent visual notes state the 'Other' dot is positioned between the 20 and 25 marks, while 'Support Access' is between 35 and 40. This confirms 'Other' is lower on the page than the others.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart's left axis is labeled 'Value' with tick marks from 0 to 65 in increments of 5, increasing upward.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The title at the top of the chart reads 'Public Service Feedback Share by Category'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The vertical axis is labeled 'Value'. 2. Marker height on this axis encodes feedback share. 3. Larger values are higher on the axis. 4. The plotted vertical positions are treated as the authoritative encoding, overriding any percentage inscriptions.\",\n        \"evidence\": \"Conditions 1 and 3 are supported by the axis label and standard chart conventions. However, Condition 2 is refuted by the visual evidence: the marker for 'Service Design' is positioned at ~49 on the 'Value' axis, yet it is labeled '12%'. If the axis encoded the share, 'Service Design' would have the second-highest share, contradicting the printed label. Because the vertical positions are inconsistent with the percentage inscriptions, the condition to treat them as authoritative cannot be met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The label '52%' is clearly visible above the 'Service Quality' marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label '51%' is clearly visible above the 'Service Cost' marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The label '12%' is clearly visible above the 'Service Design' marker.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The label '17%' is clearly visible above the 'Support Access' marker.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The label '42%' is clearly visible above the 'Service Delivery' marker.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The label '41%' is clearly visible above the 'Other' marker.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Each percent inscription above a marker states that category's feedback share. 2. The category with the smallest printed percentage is the lowest-share category. 3. The percentage inscriptions are treated as the authoritative values, rather than the markers' vertical positions.\",\n        \"evidence\": \"Condition 1 is supported by the presence of a unique percentage label for each of the six categories. Condition 2 is supported by the fact that 12% (Service Design) is the smallest value among the printed labels (52, 51, 12, 17, 42, 41). Condition 3 is supported because the vertical positions are demonstrably inconsistent with the labels (e.g., Service Design is at ~49 on the axis but labeled 12%), making the labels the only consistent source of 'share' data.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3891,
+      "total_tokens": 4753,
+      "completion_tokens": 862,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

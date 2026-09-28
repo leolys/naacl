@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c8dfd62d9920631",
+    "object": "chat.completion",
+    "created": 1790626759,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical legend at the lower right of the map is labeled 'High' at the top next to the number 100 and 'Low' at the bottom next to the number 0. The color gradient transitions from light yellow at the top to dark red/maroon at the bottom.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The state labeled 'NH' in the New England region is filled with a very pale yellow color, which corresponds to the upper end of the legend scale (near 100).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state labeled 'DE' in the mid-Atlantic region is filled with an orange color, which corresponds to the middle section of the legend scale (approximately 40-60).\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state labeled 'FL' in the southeastern region is filled with a dark burgundy/maroon color, which corresponds to the lower end of the legend scale (near 0-20).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map fill is encoded by the adjacent color legend, then lighter yellow corresponds to higher plotted values because the legend places 'High' and '100' at its light-yellow top and 'Low' and '0' at its dark-red bottom; among compared state fills, the lighter fill has the higher plotted value.\",\n        \"evidence\": \"The legend explicitly maps the light yellow color to the 'High' end (100) and the dark red/maroon color to the 'Low' end (0). The visual observation confirms that NH is light yellow, DE is orange, and FL is dark maroon. Therefore, NH has the highest plotted value, followed by DE, then FL.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top left of the chart clearly reads 'Incidence of Condition A in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend and state fills are as described: the legend runs from light-yellow 'High'/'100' to dark-red 'Low'/'0'; NH is pale yellow, DE is orange, and FL is dark burgundy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the dashboard named by the task is intended as the evidence source for the requested prevalence-priority route despite the chart title using 'Incidence,' then the state with the highest plotted map value among the listed options is the state to route for highest-prevalence follow-up.\",\n        \"evidence\": \"The task explicitly instructs to 'Use the state prevalence dashboard as the evidence source for the state priority view routing decision.' This instruction establishes the chart as the relevant evidence source for the routing decision, overriding the semantic difference between the chart title ('Incidence') and the task terminology ('prevalence'). The condition 'intended as the evidence source' is met by the task instructions.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4183,
+      "total_tokens": 4965,
+      "completion_tokens": 782,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a39f89f6d9caae09",
+    "object": "chat.completion",
+    "created": 1790627083,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2011.0 data points show the red square marker positioned vertically higher than the blue circle marker. The red square is annotated with the number '37', while the blue circle is annotated with '143'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2013.0 data points show the blue circle marker positioned vertically higher than the red square marker. The blue circle is annotated with '139', and the red square is annotated with '32'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the 2012.0 gridline, there are markers for both the red and blue series, but no numerical annotations are printed next to them.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the printed numbers beside the colored marks are their countries' indicator values, then the 2011 and 2013 annotations show that screen height does not reliably rank the countries' numeric values; consequently, without a printed 2012 value or explicit shared-scale information, the 2012 comparison cannot be established from mark height alone.\",\n        \"evidence\": \"The condition that the printed numbers are the indicator values is supported by the proximity of the labels to the markers. The claim that screen height does not reliably rank values is supported by the 2011 data: the red marker (value 37) is higher on the screen than the blue marker (value 143), which contradicts a simple 'higher is larger' interpretation. The condition that there is no printed 2012 value is supported by observation. The conclusion that the comparison cannot be established from mark height alone is a valid inference given the 2011 contradiction.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the 2012.0 gridline, the red dashed-line square marker is positioned vertically higher on the page than the blue solid-line circle marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text 'Canada' is printed in red in the right margin of the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text 'United States' is printed in blue in the left margin of the plot area.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the red dashed-square series is Canada and the blue solid-circle series is United States, and both use one shared vertical scale that increases upward, then a higher 2012 mark represents a larger 2012 indicator value.\",\n        \"evidence\": \"The condition that the red series is Canada and the blue series is United States is supported by the color matching of the side labels to the lines. However, the condition that the chart uses a shared vertical scale that increases upward is refuted by the 2011 data. In 2011, the red marker (Canada, 37) is higher than the blue marker (United States, 143). If the scale increased upward, a higher position would mean a larger value, but 37 is not larger than 143. This indicates the vertical position does not correspond to a standard increasing value scale, or the scales are not comparable in that way. Therefore, the necessary condition for the rule is not met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2989,
+      "total_tokens": 3852,
+      "completion_tokens": 863,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

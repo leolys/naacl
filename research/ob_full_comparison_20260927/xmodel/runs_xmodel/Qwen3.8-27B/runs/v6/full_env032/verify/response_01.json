@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2468e9b0ca80d27",
+    "object": "chat.completion",
+    "created": 1790624335,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top center reads 'Coal vs Gas'. The left vertical axis label is 'Coal' and is printed in blue. The blue series uses circular markers.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The right vertical axis label is 'Gas' and is printed in red. The red series uses square markers.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the x-axis tick for 2010, the blue circular marker is positioned significantly higher on the y-axis than the red square marker.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue circular series is Coal. 2. The red square series is Gas. 3. Their vertical positions use a common upward-increasing residential consumption/demand scale.\",\n        \"evidence\": \"Condition 1 is supported by the blue 'Coal' label on the left axis and the blue circular markers. Condition 2 is supported by the red 'Gas' label on the right axis and the red square markers. Condition 3 is refuted by the data labels: at 2004, the blue marker (2.46) is visually lower than the red marker (7.04), and at 2009, the blue marker (3.27) is visually lower than the red marker (5.48). This indicates the two series are plotted on different scales (dual axes) where a higher position does not consistently mean a larger value across the series.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2826,
+      "total_tokens": 3231,
+      "completion_tokens": 405,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

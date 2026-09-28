@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The TX polygon is filled with a light yellow that matches the top of the vertical color scale.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The WA polygon is filled with a dark maroon/burgundy that matches the bottom of the vertical color scale.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical legend shows a gradient from light yellow at the top labeled 'High' and '100' to dark burgundy at the bottom labeled 'Low' and '0'.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The CO polygon is filled with a light gray color. The printed label 'CO' is clearly visible in the center of the polygon.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The map's vertical legend encodes incidence from burgundy at the printed low end (0) to pale yellow at the printed high end (100). 2. A state filled pale yellow has higher displayed incidence than a state filled burgundy. 3. All candidate jurisdictions are comparably encoded. 4. An unlegendized gray fill cannot be ranked without an additional missing-data rule.",
+        "evidence": "Condition 1 is established by the legend (yellow=100, burgundy=0). Condition 2 follows from Condition 1 (TX is yellow, WA is burgundy). Condition 3 is refuted by the presence of the gray-filled CO polygon, which is not part of the yellow-to-burgundy gradient scale. Condition 4 is established by the absence of a gray entry in the legend.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The TX polygon is filled with a light yellow color.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The WA polygon is filled with a dark maroon/burgundy color.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The CO polygon is gray. The vertical color scale contains a gradient from yellow to burgundy and does not include a gray swatch or label.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Gray-filled jurisdictions are excluded from the displayed-incidence comparison because gray denotes unavailable or non-displayed data. 2. The highest displayed incidence among the remaining candidate states should be routed.",
+        "evidence": "Condition 1 is an assumption not established by the chart, as there is no printed explanation for the gray fill. Condition 2 is a procedural rule that depends on the exclusion in Condition 1.",
+        "status": "unclear"
+      }
+    }
+  }
+}

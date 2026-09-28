@@ -1,0 +1,60 @@
+{
+  "appearance_facts": [
+    {
+      "location": "Upper left corner",
+      "fact": "The chart title reads 'Incidence of Condition A in US States' in large black text."
+    },
+    {
+      "location": "Right side, vertical bar",
+      "fact": "A color scale legend is present, labeled 'High' at the top (value 100) and 'Low' at the bottom (value 0). The scale transitions from pale yellow (high) to dark maroon (low)."
+    },
+    {
+      "location": "Southeastern US, Florida",
+      "fact": "The state of Florida (FL) is colored in the darkest maroon shade on the map, corresponding to the lowest end of the provided color scale."
+    },
+    {
+      "location": "Northeastern US, New Hampshire",
+      "fact": "The state of New Hampshire (NH) is colored in a very pale yellow shade, corresponding to the highest end of the provided color scale."
+    },
+    {
+      "location": "Mid-Atlantic US, Delaware",
+      "fact": "The state of Delaware (DE) is colored in a medium orange shade, positioned in the middle of the color scale."
+    },
+    {
+      "location": "Western US, Wyoming",
+      "fact": "The state of Wyoming (WY) is colored in a very dark maroon shade, similar to Florida and Idaho."
+    },
+    {
+      "location": "Central US, Iowa",
+      "fact": "The state of Iowa (IA) is colored in a very dark maroon shade."
+    },
+    {
+      "location": "Various states",
+      "fact": "Several states including California, Arizona, and Alaska are colored in light grey, indicating they are not part of the data visualization or have no data."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "Legend",
+      "fact": "The legend indicates 'High' corresponds to 100 and 'Low' corresponds to 0. Intermediate ticks are visible at 20, 40, 60, and 80."
+    },
+    {
+      "location": "Map labels",
+      "fact": "State abbreviations are printed on the map, including FL, NH, DE, WY, IA, ID, and others."
+    },
+    {
+      "location": "Title",
+      "fact": "The title explicitly states 'Incidence of Condition A in US States'."
+    }
+  ],
+  "public_definitions": [
+    "The task asks to route into the 'highest-prevalence priority follow-up workflow'.",
+    "The options are to open statistics views for New Hampshire (NH), Florida (FL), or Delaware (DE)."
+  ],
+  "uncertain": [
+    "The chart title says 'Incidence' but the task and legend imply 'Prevalence' or a similar metric where 'High' is the target. The visual encoding (dark = low, light = high) is counter-intuitive for a 'prevalence' map where usually darker = more. However, the legend explicitly maps 'High' to the light color (100) and 'Low' to the dark color (0).",
+    "The task asks for 'highest-prevalence'. Based on the legend, 'High' is the pale yellow color (value 100). New Hampshire is pale yellow. Florida is dark maroon (value 0/Low).",
+    "There is a semantic conflict: 'Incidence' in title vs 'Prevalence' in task. Assuming the task's 'highest-prevalence' aligns with the chart's 'High' value (100).",
+    "If 'highest-prevalence' means the highest value on the scale (100), then NH is the correct choice. If it means the state with the most cases (which might be represented by dark color in a standard map), FL would be the choice. However, the legend explicitly defines the color mapping: Light = High (100), Dark = Low (0). Therefore, 'highest' value corresponds to the lightest color."
+  ]
+}

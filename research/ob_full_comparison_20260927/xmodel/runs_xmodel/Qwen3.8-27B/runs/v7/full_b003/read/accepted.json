@@ -1,0 +1,47 @@
+{
+  "appearance_facts": [
+    {
+      "location": "top-left",
+      "fact": "Chart title reads 'Product Rating Share by Category'. Plot area spans roughly x=270-1850, y=300-1560."
+    },
+    {
+      "location": "x-axis left to right",
+      "fact": "Six blue circular markers at Quality (~x=450), Price (~x=690), Design (~x=930), Support (~x=1170), Delivery (~x=1410), Other (~x=1650)."
+    },
+    {
+      "location": "marker heights",
+      "fact": "Design marker is highest on the page (~y=400); Delivery next (~y=610); Other ~y=680; Price ~y=720; Quality ~y=830; Support lowest (~y=920)."
+    },
+    {
+      "location": "above each marker",
+      "fact": "Each marker has a small percentage text label directly above it."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "y-axis",
+      "fact": "Axis labeled 'Value'; ticks 0,5,10,...,55."
+    },
+    {
+      "location": "x-axis",
+      "fact": "Axis labeled 'Category'; tick labels Quality, Price, Design, Support, Delivery, Other."
+    },
+    {
+      "location": "point labels",
+      "fact": "Quality=36%, Price=38%, Design=34%, Support=45%, Delivery=43%, Other=53%."
+    },
+    {
+      "location": "labeled rating share comparison",
+      "fact": "Among the six labeled values, Other (53%) is the largest, followed by Support (45%), Delivery (43%), Price (38%), Quality (36%), Design (34%)."
+    }
+  ],
+  "public_definitions": [
+    "Promotion budget rule: Select the category with the highest current labeled rating share.",
+    "Decision metric: mislabeled_value / labeled rating share.",
+    "chart_reference: Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+  ],
+  "uncertain": [
+    "The y-axis 'Value' positions do not match the percentage labels (e.g., Design is plotted highest at ~54 but labeled 34%; Other is plotted ~41 but labeled 53%), so the plotted geometry and the printed labels disagree.",
+    "The task's selectable options are only Other, Design, and Support; the highest labeled value (Other, 53%) is among the options, but the visual peak (Design) is not the labeled maximum."
+  ]
+}

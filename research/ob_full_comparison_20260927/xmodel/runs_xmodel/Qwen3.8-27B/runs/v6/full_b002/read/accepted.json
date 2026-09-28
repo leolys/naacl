@@ -1,0 +1,57 @@
+{
+  "appearance_facts": [
+    {
+      "location": "Bar for Chrome (leftmost, orange)",
+      "fact": "Top of bar is just above the 10 gridline; printed label above reads 5%."
+    },
+    {
+      "location": "Bar for Safari (second, dark blue)",
+      "fact": "Top of bar is at the 20 gridline; printed label above reads 1%."
+    },
+    {
+      "location": "Bar for Edge (middle, green)",
+      "fact": "Top of bar is just below the 80 gridline; printed label above reads 87%."
+    },
+    {
+      "location": "Bar for Firefox (fourth, blue)",
+      "fact": "Top of bar is between the 80 and 90 gridlines, visibly the tallest bar; printed label above reads 23%."
+    },
+    {
+      "location": "Bar for Others (rightmost, orange-yellow)",
+      "fact": "Top of bar is between the 10 and 20 gridlines; printed label above reads 3%."
+    },
+    {
+      "location": "Comparison of bar heights",
+      "fact": "The green Edge bar is the tallest by visual height, followed by the blue Firefox bar; the printed labels (87% vs 23%) do not match the visual heights."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "Chart title",
+      "fact": "Browser Usage Share by Product"
+    },
+    {
+      "location": "Y-axis",
+      "fact": "Numeric scale from 0 to 100 with ticks at 10, 20, 30, 40, 50, 60, 70, 80, 90, 100; no axis unit label printed."
+    },
+    {
+      "location": "X-axis category labels",
+      "fact": "Chrome, Safari, Edge, Firefox, Others (left to right)."
+    },
+    {
+      "location": "Data labels above bars",
+      "fact": "Chrome 5%, Safari 1%, Edge 87%, Firefox 23%, Others 3%."
+    }
+  ],
+  "public_definitions": [
+    "Goal: assign the browser with the highest current market_share to the priority compatibility-testing queue.",
+    "Evidence source: dashboard market_share values.",
+    "Queue rule: Prioritize highest current usage share; decision metric is market_share.",
+    "Options: Assign Edge / Assign Firefox / Assign Chrome to the priority compatibility-testing queue."
+  ],
+  "uncertain": [
+    "The printed percentage labels do not sum to 100% (5+1+87+23+3 = 119), so the label set is internally inconsistent.",
+    "The visual bar heights conflict with the printed labels (Edge bar is tallest but labeled 87% while Firefox bar is shorter and labeled 23%); it is unclear whether to trust the printed numbers or the bar geometry for 'highest market_share'.",
+    "No explicit 'current' date or time-period marker is shown on the dashboard."
+  ]
+}

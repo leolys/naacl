@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-973b207aaa43860d",
+    "object": "chat.completion",
+    "created": 1790624104,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above the x-axis label 'May' is visibly the shortest bar on the chart and its top is far below the '10,000' y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Solar output (MWh)' and the horizontal axis is labeled 'Month'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The public task contains no policy tables, and the page instructions do not provide any numerical threshold or rule for distinguishing standard from critical routing.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Critical escalation requires an explicit numerical threshold or documented anomaly criterion. 2. Standard follow-up is the default for visibly low output when that criterion is absent.\",\n        \"evidence\": \"Condition 1 is supported by the absence of any policy table or printed threshold in the public task. Condition 2 is not established; the task asks for a decision but does not state that standard follow-up is the default when a threshold is missing.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above 'May' is the shortest visible bar and its top is below the '10,000' y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bars for Apr (~30k), Jan (40k), Jun (~17.5k), Feb (20k), and Mar (~27k) all extend above the '15,000' y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Solar output (MWh)' and the horizontal axis is labeled 'Month'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. All bars use the same y-scale. 2. Each month label identifies its aligned bar. 3. The workflow permits critical escalation based on an exceptionally low relative monthly value.\",\n        \"evidence\": \"Conditions 1 and 2 are supported by the chart's single y-axis and aligned bars. Condition 3 is not established; the public task does not state that relative isolation alone permits critical escalation.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4065,
+      "total_tokens": 4674,
+      "completion_tokens": 609,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

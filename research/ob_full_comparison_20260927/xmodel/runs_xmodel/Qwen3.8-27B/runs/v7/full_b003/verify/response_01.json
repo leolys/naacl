@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4113469cfb5978d",
+    "object": "chat.completion",
+    "created": 1790625157,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The image shows the blue circular mark above the x-axis label 'Design' positioned at a y-value of approximately 54. The marks above 'Other' (~41), 'Delivery' (~44), 'Price' (~39), 'Quality' (~34), and 'Support' (~30) are all visibly lower on the page.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The vertical axis on the left is explicitly labeled 'Value'. The axis features printed numerical ticks starting at 0 at the bottom and increasing in increments of 5 up to 55 at the top.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading assumes that the vertical positions of the plotted markers encode the current rating-share values on the y-axis labeled 'Value', and that the highest marker corresponds to the greatest value.\", \"evidence\": \"The chart visually supports the condition that the y-axis is labeled 'Value' and that the Design marker is the highest plotted point. However, the task's policy table and page instructions explicitly define the 'Decision metric' as 'labeled rating share' and instruct to use 'dashboard labeled rating-share values' as the evidence source. The percentage inscriptions (e.g., '34%') are the 'labeled' values, whereas the y-axis 'Value' appears to be a separate, non-matching scale (e.g., Design is plotted at ~54 but labeled 34%). Because the task specifically prioritizes the 'labeled' values over the general chart geometry, this reading's condition that marker height is the relevant encoding is not met by the task's explicit evidence requirements.\", \"status\": \"refuted\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"A blue circular mark is aligned above the x-axis label 'Other'. The text '53%' is printed immediately above this mark.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"A blue circular mark is aligned above the x-axis label 'Support'. The text '45%' is printed immediately above this mark.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"A blue circular mark is aligned above the x-axis label 'Design'. The text '34%' is printed immediately above this mark.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"A blue circular mark is aligned above the x-axis label 'Delivery'. The text '43%' is printed immediately above this mark.\", \"status\": \"supported\"}, \"5\": {\"evidence\": \"A blue circular mark is aligned above the x-axis label 'Price'. The text '38%' is printed immediately above this mark.\", \"status\": \"supported\"}, \"6\": {\"evidence\": \"A blue circular mark is aligned above the x-axis label 'Quality'. The text '36%' is printed immediately above this mark.\", \"status\": \"supported\"}, \"7\": {\"evidence\": \"The title at the top of the chart clearly reads 'Product Rating Share by Category'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading states that if the percentage inscriptions are the dashboard's current labeled rating-share values, one should compare them and select the category with the greatest value as per the promotion rule.\", \"evidence\": \"The task's 'Promotion budget rule' and 'chart_reference' explicitly state to use 'dashboard labeled rating-share values' and select the category with the 'highest current labeled rating share'. The percentage inscriptions (53%, 45%, 34%, 43%, 38%, 36%) are the only 'labeled' values provided for each category. Comparing these values, 'Other' (53%) is the highest. The condition that these inscriptions are the relevant 'labeled rating-share values' is supported by the task's explicit instructions to use labeled values.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4325,
+      "total_tokens": 5177,
+      "completion_tokens": 852,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

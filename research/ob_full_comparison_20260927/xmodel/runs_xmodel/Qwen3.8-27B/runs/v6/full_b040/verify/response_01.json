@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bb197ea9be743def",
+    "object": "chat.completion",
+    "created": 1790623747,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the Q1 x-axis position at a vertical level just above the 1,000 tick (approx. 1,080) and ends at the Q4 x-axis position at a vertical level just above the 1,800 tick (approx. 1,840). The endpoint is visibly higher on the page than the start point.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is explicitly labeled 'Revenue'. The numerical tick labels are printed in ascending order from bottom to top: 0, 200, 400, ..., 1,800, 2,000. This confirms that higher vertical position corresponds to a greater revenue value.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line encodes Company C revenue by quarter. 2. The horizontal axis orders Q1 through Q4. 3. Higher vertical position represents greater revenue (labeled axis values increase upward). 4. The line ends higher than it begins. 5. This indicates revenue growth. 6. Growth classification maps to the revenue growth response.\",\n        \"evidence\": \"Condition 1 is supported by the chart title 'Stable Revenue of Company C...' and the y-axis label 'Revenue'. Condition 2 is supported by the x-axis labels 'Q1', 'Q2', 'Q3', 'Q4' in that order. Condition 3 is supported by the y-axis tick labels increasing upward from 0 to 2,000. Condition 4 is supported by the visual observation that the Q4 point is higher than the Q1 point. Conditions 5 and 6 follow logically from the established data trend.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart clearly reads 'Stable Revenue of Company C from Q1 to Q4'. The word 'Stable' is the first word of the title.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The dashboard title is the authoritative classification for the Company C Q1-Q4 revenue record. 2. The literal descriptor 'Stable Revenue' maps to the revenue stability response.\",\n        \"evidence\": \"Condition 1 is not established. While the title contains the word 'Stable', the plotted data (a line rising from ~1,080 to ~1,840) contradicts this descriptor. The instructions state to use the dashboard as the evidence source, but do not specify that the title overrides the plotted data. In standard data interpretation, the data itself is the primary evidence for a trend, making the title's authority over the data's trajectory unclear or unsupported.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3779,
+      "total_tokens": 4474,
+      "completion_tokens": 695,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

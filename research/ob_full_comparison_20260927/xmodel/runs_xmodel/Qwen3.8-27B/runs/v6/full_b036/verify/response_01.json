@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b0b4d022860dc5a9",
+    "object": "chat.completion",
+    "created": 1790623681,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The independent visual notes place the Q1 data point at a y-value slightly above 1,000 and the Q4 data point at approximately 1,450. On the vertical axis, 1,450 is higher than 1,000, confirming the Q4 endpoint is higher on the page than the Q1 endpoint.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed facts confirm the x-axis is labeled 'Quarter' with ticks Q1-Q4 and the y-axis is labeled 'Revenue' with values from 0 to 1,600. The appearance facts confirm these values increase upward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The visible line is Company C's revenue series. 2. The line encodes Revenue by the left vertical axis. 3. The line encodes Q1-Q4 by the horizontal quarter labels. 4. Larger revenue is higher on the page. 5. A Q4 endpoint higher than the Q1 endpoint indicates an overall increase. 6. Any overall increase is treated as growth. 7. Growth maps to the revenue growth response.\",\n        \"evidence\": \"Conditions 2-4 are supported by the axis labels and the appearance of the plot. Condition 1 is supported by the title 'Stable Revenue of Company C'. Condition 5 is supported by the O1 fact that the Q4 endpoint is higher than the Q1 endpoint. However, Condition 6 ('treating any overall increase as growth') is an assumption not supported by the public task or policy tables. The chart title explicitly labels the revenue as 'Stable', which directly contradicts the interpretation of the trend as 'growth'. Because the necessary condition that 'any increase is growth' is not established by the provided evidence (and is contradicted by the title), the B is not supported.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The printed facts and the chart image show the title text at the top reads 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative qualitative classification for the displayed Company C Q1-Q4 revenue record. 2. The word 'Stable' maps the record to the revenue stability response option.\",\n        \"evidence\": \"Condition 1 is the core of this record. The title is present and uses the word 'Stable'. While the task instructions do not explicitly state 'the title is the routing rule', in the absence of a policy table or specific numerical thresholds for 'growth' vs 'stability', the qualitative label provided in the chart title is the most direct evidence for the 'revenue trend' classification. The title 'Stable Revenue' provides a direct mapping to the 'Route to revenue stability response' option. The conditions are met by the presence of the title and the available options.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3889,
+      "total_tokens": 4624,
+      "completion_tokens": 735,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

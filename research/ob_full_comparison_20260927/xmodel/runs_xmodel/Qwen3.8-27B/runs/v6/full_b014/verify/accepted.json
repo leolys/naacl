@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads 'Units Sold by Product (Weekend Pop-up)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis is labeled 'Units Sold' and displays tick labels including '20,000' and '30,000'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The bar above 'Product C' is dark red. Its top edge is between the 20,000 and 30,000 tick marks, positioned slightly below the midpoint (25,000), consistent with 'roughly two-fifths of the way upward'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart is the weekend pop-up chart for Product C. 2. The vertical axis is a linear upward scale. 3. The Product C bar is bound to its x-axis label. 4. The bar's height can be interpolated from the 20,000 and 30,000 ticks. 5. The decoded value is below 25,000. 6. The decoded value is less than 2,500 units from the 25,000 threshold. 7. The manual-check option is selected based on the assumption that the variance band governs when it overlaps the low-demand rule.",
+        "evidence": "Conditions 1-4 are established by the chart's title, axis labels, and bar position. Condition 5 is supported by the bar's position below the midpoint of 20k-30k. Condition 6 is supported by the bar's position being close to the 25k midpoint (estimated ~24k). Condition 7 is a policy interpretation assumption stated in the text, not a verifiable chart fact, but the antecedent conditions for the rule application are met.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The Product C bar top is between the 20,000 and 30,000 ticks. Visually, it is closer to the 20,000 line than the 30,000 line (approx 24k vs 25k midpoint).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The label 'Product C' is directly below the corresponding dark red bar on the x-axis.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart is the weekend pop-up chart for Product C. 2. The vertical axis is a linear upward Units Sold scale. 3. The Product C bar is bound to its label. 4. The height can be interpolated from the 20,000 and 30,000 ticks. 5. The decoded Product C value is below 25,000.",
+        "evidence": "Conditions 1-4 are established by the chart features. Condition 5 is established by the bar's position being below the visual midpoint between 20,000 and 30,000.",
+        "status": "supported"
+      }
+    }
+  }
+}

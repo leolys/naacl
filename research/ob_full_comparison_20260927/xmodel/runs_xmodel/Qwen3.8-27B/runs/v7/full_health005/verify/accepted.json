@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title reads 'Month vs. Number of samples tested' and a single blue line with circular markers is plotted across the visible window. The task options include a general laboratory operations review option alongside specialized rising and declining volume options.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The task options list 'Route the testing-volume record to general laboratory operations review' as a distinct choice from the rising and declining volume options.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading posits that if the task lacks an explicit policy table tying a specific volume pattern to a specialized team, the general laboratory operations review option may be used as a fallback rather than inferring a capacity-planning assignment.",
+        "evidence": "The public task contains no policy table (policy_tables is empty). The instructions state to route the record to the follow-up that 'best matches the volume pattern shown.' The option labels themselves ('rising-volume capacity planning', 'declining-volume outreach review') provide a direct mapping between the observed pattern and the destination. The reading's condition is that the option wording is 'not treated as sufficient instruction.' However, the task explicitly asks to match the 'volume pattern' to the 'operational follow-up,' and the options are named specifically for those patterns. The reading's fallback logic is not supported by the visible evidence because the option labels are sufficiently descriptive to serve as the routing instruction without an external policy table.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Month vs. Number of samples tested'. The x-axis is labeled 'Month' and the y-axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis tick labels progress from 'Nov 20' on the left to 'Jun 26' on the right. The sequence is Nov 20, Nov 12, Nov 4, Oct 20, Oct 12, Sep 7, Aug 31, Aug 24, Aug 14, Aug 10, Aug 3, Jul 27, Jul 20, Jul 13, Jul 10, Jul 3, Jul 1, Jun 30, Jun 29, Jun 26. This is a reverse-chronological order (newest to oldest from left to right).",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis is inverted, with '0.0' at the top and '1.2' at the bottom (with a '1e6' multiplier). The blue point at Nov 20 (left) is at the bottom of the chart (near 1.2), and the blue point at Jun 26 (right) is higher up (near 0.4).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading states that the series rises over chronological time because the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen. It concludes that a rising testing-volume pattern maps to rising-volume capacity planning.",
+        "evidence": "The reading correctly identifies the inverted y-axis (larger values lower) and the reverse-chronological x-axis (newest on left). However, the conclusion that the series 'rises over chronological time' is incorrect. Chronologically, the period starts at Jun 26 (rightmost point, low count ~0.4e6) and ends at Nov 20 (leftmost point, high count ~1.2e6). Therefore, over chronological time, the volume is rising. Wait, let me re-evaluate. The x-axis is Nov 20 (left) to Jun 26 (right). Chronologically, Jun 26 is earlier than Nov 20. So time flows from right to left. At Jun 26 (right), the count is ~0.4e6. At Nov 20 (left), the count is ~1.2e6. So as time progresses from Jun to Nov, the count increases. The volume is rising. The reading concludes 'the series rises over chronological time.' This is correct. The reading then maps this to 'rising-volume capacity planning.' This mapping is supported by the option labels. The reading's logic holds: the volume is rising chronologically, so it should be routed to rising-volume capacity planning.",
+        "status": "supported"
+      }
+    }
+  }
+}

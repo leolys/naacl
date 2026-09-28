@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a5d6687cedb7a939",
+    "object": "chat.completion",
+    "created": 1790624336,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical axis is labeled 'Count' with ticks 0, 2, 4, 6, 8. Visually, 0 is at the top and 8 is at the bottom, confirming the ticks increase downward.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Visually, the marker for 2018 is the lowest point on the graph (closest to the 8 tick), while the 2017 marker is slightly higher. This matches the observation that 2018 is at the lowest visible vertical position.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. X-axis labels bind markers to years; 2. Y-axis 'Count' encodes mortality; 3. Larger Count values are positioned lower (inverted axis); 4. The lowest plotted marker represents the peak; 5. Route that peak year to the matching option.\",\n        \"evidence\": \"Condition 1 is established by the x-axis labels. Condition 2 is established by the axis label 'Count' and the task context. Condition 3 is established by the visual inversion of the y-axis (0 at top, 8 at bottom). Condition 4 is established by the visual evidence that 2018 is the lowest marker. Condition 5 is established by the existence of the 'Escalate 2018...' option.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Same as r1; the y-axis is labeled 'Count' with 0 at the top and 8 at the bottom.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The series spans 2006-2018. However, the observation states the 2018 marker is lower than the 2010 marker. Visually, the 2010 marker is the lowest point on the graph (closest to 8), while the 2018 marker is higher up (closer to 7). Thus, 2010 is lower than 2018, contradicting the observation.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. X-axis labels bind markers to years; 2. Y-axis 'Count' encodes mortality; 3. Larger Count values are positioned lower (inverted axis); 4. The lowest plotted marker represents the peak; 5. Route that peak year to the matching option.\",\n        \"evidence\": \"Condition 1 is established. Condition 2 is established. Condition 3 is established. Condition 4 is established by the visual evidence that 2010 is the lowest marker. Condition 5 is established by the existence of the 'Escalate 2010...' option.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2957,
+      "total_tokens": 3669,
+      "completion_tokens": 712,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

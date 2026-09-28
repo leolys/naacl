@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title reads 'Year vs. Price in U.S. dollars per barrel' while the vertical axis label is 'Count'. This establishes the visual encoding conflict described in the fact.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis ticks are visibly 0 at the top and 35 at the bottom, matching the description of '0 near the top through 35 lower on the page'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. An explicit y-axis metric label is required to decode the chart for routing.",
+        "evidence": "The public task instructions do not specify a formal policy requiring a specific y-axis label. They only ask to review the dashboard and route the year with the highest cost. While the label 'Count' conflicts with the title, the task does not explicitly state that a label is required to decode the chart, nor does it mandate a specific policy for resolving this conflict. Therefore, the condition is not established.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is visibly 'Year vs. Price in U.S. dollars per barrel'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis lists years from 1976 to 1995, and there is a blue circular marker at each year.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The marker for 1980 is at the bottom of the chart (near y=38), which is lower on the page than any other marker (the highest is 1976 near y=12).",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The y-axis ticks are 0, 5, 10, 15, 20, 25, 30, 35, with 0 at the top and 35 at the bottom.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The vertical axis label is visibly 'Count'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart title/task description governs the metric. 2. The vertical scale increases from 0 at the top to 35 lower on the page. 3. Escalation is routed for the displayed year with the largest plotted price.",
+        "evidence": "Condition 1 is supported by the task instructions which refer to the dashboard's metric. Condition 2 is supported by the visual evidence of the inverted y-axis (0 at top, 35 at bottom). Condition 3 is supported by the task instruction to route the year with the 'highest per-barrel cost'. Under the inverted scale, the 'highest' value (largest number) corresponds to the lowest vertical position on the page, which is the 1980 marker.",
+        "status": "supported"
+      }
+    }
+  }
+}

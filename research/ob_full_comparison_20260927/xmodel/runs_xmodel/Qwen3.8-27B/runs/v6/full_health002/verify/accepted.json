@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The public chart image and task materials show a line plot titled “Month vs. Number of cases” with a “Count” axis and date labels, but no visible numeric cutoff, alert line, or routing policy table. The task’s policy_tables field is empty.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. An unstated escalation policy threshold is required for routing. 2. No such threshold is supplied in the task materials.",
+        "evidence": "Condition 1 is not established by the public task. The instructions say to “select the operational route that best matches the observed case trajectory,” which is an ordinary trajectory-matching requirement, not a requirement to find an explicit policy threshold. Condition 2 is established (no threshold is printed), but because condition 1 is not required, the B condition as a whole does not apply.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "Visually, the blue line starts near the top of the plot area (near the 0 tick) and moves downward on the page to near the bottom (near the 1400 tick) as the dates progress from left to right.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The printed vertical tick labels are disregarded or treated as nonauthoritative. 2. Chart geometry is interpreted by the usual upward-is-higher convention.",
+        "evidence": "Condition 1 is not established. The printed y-axis labels (0, 200, ..., 1400) are clearly visible and are the authoritative scale for the “Count” metric. The task does not instruct the user to ignore them. Therefore, the premise that the printed labels are disregarded does not hold, and the B condition does not apply.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is “Month vs. Number of cases” and the y-axis label is “Count.”",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis tick labels are 0, 200, 400, 600, 800, 1000, 1200, 1400. The 0 is at the top and the values increase downwards, with 1400 at the bottom.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The leftmost blue markers (Jan 27, 2020) are positioned near the 0 tick. The rightmost blue marker (Mar 22, 2020) is positioned near the 1400 tick.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The x-axis labels proceed chronologically from left to right (Jan 27, 2020 to Mar 22, 2020). The blue line's markers move lower on the page as the dates progress.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Horizontal labels encode the displayed reporting sequence from left to right. 2. The vertical axis labeled “Count” uses its printed tick values. 3. Larger printed values are lower on the page. 4. The line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. 5. An increasing reported-case trajectory maps to rising-case escalation follow-up.",
+        "evidence": "Condition 1 is supported by the x-axis labels (Jan 27, 2020 to Mar 22, 2020). Condition 2 is supported by the visible y-axis label “Count” and its ticks. Condition 3 is supported by the visual layout (0 at top, 1400 at bottom). Condition 4 follows from the combination of the line's position (moving from near 0 to near 1400) and the axis orientation (higher values are lower). Condition 5 is supported by the option label “Route the surveillance record to rising-case escalation follow-up,” which directly matches the observed increasing trajectory.",
+        "status": "supported"
+      }
+    }
+  }
+}

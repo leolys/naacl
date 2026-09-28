@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87aff85c244f4285",
+    "object": "chat.completion",
+    "created": 1790623906,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above the x-axis label 'Week 1' is visibly shorter than the dashed horizontal line at the 550 level.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A dashed line spans the chart at the 550 y-axis tick, and the text 'Average' is printed to its right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The task state contains route labels. 2. The task state contains no policy table or explicit threshold defining the routes.\",\n        \"evidence\": \"1. The form provides three specific route options. 2. The 'policy_tables' list is empty and no other instructions define a numerical threshold for 'low-revenue' or 'normal tracking'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above the x-axis label 'Week 1' is visibly shorter than the dashed horizontal line at the 550 level.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A dashed line spans the chart at the 550 y-axis tick, and the text 'Average' is printed to its right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Revenue' and displays numerical ticks including 450, 500, 550, and 600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bars encode weekly revenue with higher vertical position meaning greater revenue. 2. The Week 1 bar is bound to the Week 1 label. 3. The dashed line labeled 'Average' is the applicable revenue-average benchmark. 4. A Week 1 bar below that line indicates below-average Week 1 revenue. 5. The routing form uses below-average revenue as the criterion for low-revenue response.\",\n        \"evidence\": \"1. The y-axis is labeled 'Revenue' and bars extend from the zero baseline. 2. The bar is positioned directly above the 'Week 1' label. 3. The line is explicitly labeled 'Average'. 4. The Week 1 bar's top is visually below the 550 line. 5. This condition is an interpretation; the task provides a 'low-revenue response' option but does not explicitly state it is triggered by being below the average line.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4406,
+      "total_tokens": 5040,
+      "completion_tokens": 634,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

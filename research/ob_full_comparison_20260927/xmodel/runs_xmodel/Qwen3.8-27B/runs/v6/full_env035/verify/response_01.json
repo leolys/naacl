@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8b50acfa2b8facb7",
+    "object": "chat.completion",
+    "created": 1790624339,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Year vs. Price in U.S. dollars per barrel' while the vertical axis label is 'Count'. This establishes the visual encoding conflict described in the fact.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis ticks are visibly 0 at the top and 35 at the bottom, matching the description of '0 near the top through 35 lower on the page'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. An explicit y-axis metric label is required to decode the chart for routing.\",\n        \"evidence\": \"The public task instructions do not specify a formal policy requiring a specific y-axis label. They only ask to review the dashboard and route the year with the highest cost. While the label 'Count' conflicts with the title, the task does not explicitly state that a label is required to decode the chart, nor does it mandate a specific policy for resolving this conflict. Therefore, the condition is not established.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is visibly 'Year vs. Price in U.S. dollars per barrel'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis lists years from 1976 to 1995, and there is a blue circular marker at each year.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The marker for 1980 is at the bottom of the chart (near y=38), which is lower on the page than any other marker (the highest is 1976 near y=12).\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The y-axis ticks are 0, 5, 10, 15, 20, 25, 30, 35, with 0 at the top and 35 at the bottom.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The vertical axis label is visibly 'Count'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title/task description governs the metric. 2. The vertical scale increases from 0 at the top to 35 lower on the page. 3. Escalation is routed for the displayed year with the largest plotted price.\",\n        \"evidence\": \"Condition 1 is supported by the task instructions which refer to the dashboard's metric. Condition 2 is supported by the visual evidence of the inverted y-axis (0 at top, 35 at bottom). Condition 3 is supported by the task instruction to route the year with the 'highest per-barrel cost'. Under the inverted scale, the 'highest' value (largest number) corresponds to the lowest vertical position on the page, which is the 1980 marker.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3170,
+      "total_tokens": 3932,
+      "completion_tokens": 762,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af80eddebf0f5a64",
+    "object": "chat.completion",
+    "created": 1790626667,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top-left reads 'Risk Index of Hazard H in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The map region labeled 'ID' (Idaho) is filled with a pale yellow color, corresponding to the upper end of the color scale.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The map region labeled 'SC' (South Carolina) is filled with a dark burgundy/maroon color, corresponding to the lower end of the color scale.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The map region for Arizona (located below Utah and left of New Mexico) is filled with a solid gray color. Unlike other states, it does not have a visible 'AZ' label inscription.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The vertical color scale on the right shows pale yellow at the top, labeled 'High' and '100', and dark burgundy at the bottom, labeled 'Low' and '0'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map's state fills are encoded by the adjacent color scale, the pale-yellow end labeled 'High' and '100' represents higher Risk Index values than the dark burgundy end labeled 'Low' and '0'. For this routing task, select the offered state with the highest displayed risk; gray is not assigned a position on the shown color scale.\",\n        \"evidence\": \"The color scale explicitly maps pale yellow to 'High' (100) and dark burgundy to 'Low' (0). The state 'ID' is colored pale yellow, 'SC' is dark burgundy, and 'AZ' is gray. Gray is not part of the gradient scale, which transitions from yellow to red/burgundy. Therefore, 'ID' has the highest risk value among the options.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3483,
+      "total_tokens": 3990,
+      "completion_tokens": 507,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

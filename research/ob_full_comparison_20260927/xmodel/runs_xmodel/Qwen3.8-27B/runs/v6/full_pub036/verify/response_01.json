@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-836e3d1fc0efacbf",
+    "object": "chat.completion",
+    "created": 1790625100,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the x-axis label '2013', the blue circular marker is in the lower third of the plot area, while the red square marker is higher, near the upper-middle of the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text 'United States' is printed vertically in blue on the left margin, and 'Canada' is printed vertically in red on the right margin.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot contains horizontal gridlines, but there are no numeric tick labels visible on either the left or right y-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The two y-axes use comparable same-direction scales.\",\n        \"evidence\": \"The chart displays separate y-axes for the two countries with no visible numeric tick labels. While data labels for 2014 and 2017 suggest a shared magnitude scale (e.g., 1257.35 for US vs 434.33 for Canada), the absence of explicit axis calibration means the condition of 'comparable scales' is not explicitly established by the visible chart elements.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the x-axis label '2013', the blue circular marker is visibly lower on the page than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label 'United States' appears in blue on the left, and 'Canada' appears in red on the right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart shows horizontal gridlines but lacks visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. An unshown calibration of the separate axes maps the United States 2013 mark to a larger application volume than the Canada 2013 mark.\",\n        \"evidence\": \"The visible chart shows the US mark lower than the Canada mark. While data labels for other years (2014, 2017) suggest the US values are larger, there are no data labels for 2013. The condition relies on an 'unshown calibration' that is not present in the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2013 position, the blue circular mark is lower on the page than the red square mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Blue circular solid-line marks are associated with the blue left-side label 'United States', and red square dashed-line marks are associated with the red right-side label 'Canada'. 2. The x-axis year labels locate the 2013 marks. 3. The chart shows separate country y-axes but no visible y-axis numeric labels or scale calibration. 4. Vertical screen position alone does not establish a cross-country application-volume ordering.\",\n        \"evidence\": \"The visual evidence confirms the color and marker associations (blue/circle/US, red/square/Canada) and the presence of x-axis labels. It also confirms the absence of y-axis numeric labels. Consequently, the conclusion that vertical position alone is insufficient to determine the volume ordering is supported by the lack of scale calibration.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3377,
+      "total_tokens": 4305,
+      "completion_tokens": 928,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

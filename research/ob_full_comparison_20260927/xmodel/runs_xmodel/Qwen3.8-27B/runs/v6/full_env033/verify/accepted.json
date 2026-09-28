@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Hydroelectricity vs Nuclear energy'. The left axis is blue and labeled 'Hydroelectricity (%)', and the right axis is red and labeled 'Nuclear energy (%)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axes have no visible numeric tick labels. At the x-axis tick '2010', there are no percentage labels attached to the blue or red data points.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The public task requests the source with the higher 2010 generation share. 2. No archive fallback policy is supplied.",
+        "evidence": "The task text explicitly requests routing the source with the 'higher generation-share case'. The public task and form fields do not provide a policy for an 'unresolved comparison' or an 'archive' fallback.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "Title and axis labels match the description in r1.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "At the 2010 x-axis position, the red square (Nuclear) is vertically higher on the page than the blue circle (Hydroelectricity).",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axes have no visible numeric tick labels. The 2010 data points have no visible percentage labels.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The blue series is Hydroelectricity (left axis). 2. The red series is Nuclear energy (right axis). 3. Comparison requires decodable, comparable 2010 values from the axes or a common-scale statement. 4. Screen-space height alone is not comparable across separate y-axes.",
+        "evidence": "The chart uses a dual-axis format (left: Hydroelectricity, right: Nuclear energy). There are no numeric tick marks on either axis to establish a shared scale or determine the relative magnitude of the two series at 2010. While the red point is higher on the screen, this is not a valid comparison of 'generation share' without a common scale or explicit values.",
+        "status": "supported"
+      }
+    }
+  }
+}

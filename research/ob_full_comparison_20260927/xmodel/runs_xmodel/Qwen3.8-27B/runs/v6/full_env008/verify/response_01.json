@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8e76bd33122e342a",
+    "object": "chat.completion",
+    "created": 1790623978,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The independent visual notes state the Wind bar's top edge is between the 65 and 70 ticks, while the Solar bar aligns with 40. This confirms Wind is taller than Solar, but the statement claims Wind is taller than Hydroelectric (approx. 52), Biomass (approx. 22), and Geothermal (approx. 35). The notes confirm Wind is the tallest bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The independent visual notes describe a vertical scale from 0 to 70 with labeled ticks at intervals of 5. This matches the description of a shared vertical axis with ticks from 0 through 70.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The independent visual notes identify the light blue bar (Bar 2) as the tallest and state its x-axis label is 'Wind'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bar height against the shared vertical axis encodes renewable-generation contribution. 2. The tallest source bar is the largest contribution source. 3. The task requires routing that source to its matching priority follow-up option. 4. The bar geometry is authoritative despite the conflicting percentage inscriptions.\",\n        \"evidence\": \"The chart displays a clear conflict: the Wind bar is the tallest (approx. 68 on the y-axis), but it is labeled '29.8%'. The Solar bar is shorter (approx. 40) but labeled '41.2%'. The condition requires that bar geometry be authoritative *despite* the conflicting inscriptions. There is no public information in the task or chart (such as a legend or instruction) that establishes bar height as the correct metric over the printed percentages. In fact, the title 'Renewable Energy Production by Source' and the percentage labels suggest the labels are the intended data, while the bar heights appear to be inconsistent or on a different scale. Therefore, the condition that bar geometry is authoritative is not established.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The independent visual notes state the yellow bar above 'Solar' has the printed label '41.2%'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The independent visual notes state the light blue bar above 'Wind' has the printed label '29.8%'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The independent visual notes state the medium blue bar above 'Hydroelectric' has the printed label '18.5%'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The independent visual notes state the green bar above 'Biomass' has the printed label '7.2%'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The independent visual notes state the brown bar above 'Geothermal' has the printed label '3.3%'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Each percentage inscription is attached to its source bar. 2. The inscriptions denote that source's renewable-generation contribution on a common comparable basis. 3. The source with the greatest printed percentage is the largest contribution source. 4. The task requires routing that source to its matching priority follow-up option. 5. The printed percentages, rather than bar heights, are the authoritative contribution encoding.\",\n        \"evidence\": \"The inscriptions are clearly attached to the bars (O1-O5). They are percentages, implying a common basis. Solar has the greatest percentage (41.2%). The task requires routing the largest source. The condition asks if percentages are authoritative *rather than* bar heights. While there is a conflict, the printed data (percentages) is a standard way to encode contribution in such charts, and the bar heights are inconsistent with the percentages (e.g., 29.8% is the second highest value but the tallest bar). In the absence of a rule declaring the bars authoritative, the explicit data labels are the most direct evidence of the 'contribution' values. However, strictly speaking, the condition 'printed percentages... are the authoritative contribution encoding' is an assumption not explicitly proven by a public rule, but it is the standard interpretation of data labels. Given the conflict, one must choose. The labels are explicit values; the bars are graphical representations that are internally inconsistent with the labels. It is more reasonable to treat the explicit labels as the data. Thus, the condition is supported by the nature of the evidence (explicit labels vs inconsistent graphics).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4107,
+      "total_tokens": 5231,
+      "completion_tokens": 1124,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ace15a86a42f874f",
+    "object": "chat.completion",
+    "created": 1790626977,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title at the top of the image literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading claims that if the chart title is the authoritative characterization of the trend, the word 'Decreasing' serves as the routing signal for a declining trend, leading to the decline-response option.\", \"evidence\": \"The condition that the title is 'authoritative' is not supported by the visual evidence. The plotted line, which is the primary data representation, clearly shows an increasing trend (from ~1,100 to ~3,200), directly contradicting the title's 'Decreasing' claim. Furthermore, the task provides no explicit routing policy stating that a declining trend maps to the 'decline response' option.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title contains the word 'Decreasing', while the blue line's 1891 endpoint is visibly higher on the page (y-axis value ~3,200) than its 1880 endpoint (y-axis value ~1,100).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading suggests that conflicting signals (title vs. plot) and the absence of an explicit routing threshold prevent reliable classification, necessitating a default to routine monitoring.\", \"evidence\": \"The conflict between the title and the plot is supported by the visual evidence. However, the condition that a 'conservative default of routine monitoring' applies is not stated in the task instructions or policy tables. The task asks to 'choose the follow-up route', implying a decision based on the trend, but does not define what happens when evidence is conflicting.\", \"status\": \"unclear\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The blue line begins near the 1880 tick at a lower screen position (~1,100) and ends near the 1891 tick at a substantially higher screen position (~3,200).\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis is labeled 'Year' and shows ticks from 1880 through 1891 in left-to-right order.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The vertical axis is labeled 'Number of Tourists' and its printed ticks increase upward from 0 to 3,500.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading argues that if the plotted line is the authoritative record, the higher endpoint at the later year indicates an increase, which should be routed to growth planning.\", \"evidence\": \"The visual evidence strongly supports the premise that the line indicates an increase: the line starts low (~1,100) and ends high (~3,200) on a standard y-axis. The condition that 'increasing trends map to growth planning' is a reasonable semantic inference from the option labels ('Route to tourism growth planning'), though not explicitly defined in a policy table. The assumption that the line is authoritative over the contradictory title is a standard data interpretation practice.\", \"status\": \"supported\"}}}\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4384,
+      "total_tokens": 5112,
+      "completion_tokens": 728,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

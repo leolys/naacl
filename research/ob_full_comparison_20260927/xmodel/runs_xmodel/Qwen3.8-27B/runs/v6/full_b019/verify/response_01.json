@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a5e8b377280e8e91",
+    "object": "chat.completion",
+    "created": 1790623376,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Coordinates show Store 6 (30, 60), Store 7 (35, 68), Store 8 (42, 85), Store 9 (48, 96), and Store 10 (70, 181). Each successive store is positioned further right and higher than the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Decision-makers may treat the plotted additional top stores as representative of the company. 2. A positive spend-sales association is accepted as sufficient approval evidence. 3. The displayed pattern supports company-wide expansion.\",\n        \"evidence\": \"Condition 1 is not established; the chart title is 'Additional Top Stores' and the independent notes state that data for the rest of the company's stores is not visible. Condition 2 is not established; the task instructions do not provide a policy stating that a positive association is sufficient for approval. Because the necessary conditions for treating this subset as representative of the whole company are not met, the B fragment is not supported.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue circles are visible and labeled 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart's title and store labels define its scope as the additional top stores shown. 2. A company-wide approval requires evidence covering the full store population. 3. Evidence limited to the plotted stores supports requesting full-store analysis rather than approving company-wide expansion.\",\n        \"evidence\": \"Condition 1 is supported by the title 'Additional Top Stores'. Condition 2 is supported by the option 'Approve company-wide budget expansion' which implies a need for company-wide evidence. Condition 3 is supported by the fact that the chart only shows stores 6-10, and the 'uncertain' note confirms that data for the rest of the company's stores is not visible. The available evidence is limited to a subset, making 'Hold and request full-store analysis' the appropriate choice.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Coordinates show Store 6 (30, 60), Store 7 (35, 68), Store 8 (42, 85), Store 9 (48, 96), and Store 10 (70, 181). Each successive store is positioned further right and higher than the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes advertising spend. 2. The vertical axis encodes sales. 3. Points farther right and higher represent stores with greater plotted spend and greater plotted sales. 4. This is an association only, not proof of causality or profitability.\",\n        \"evidence\": \"Conditions 1 and 2 are supported by the axis labels. Condition 3 is supported by the coordinates of the five stores. Condition 4 is a logical interpretation of a scatter plot showing a correlation. The fragment correctly identifies the nature of the data shown for the five labeled stores.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4043,
+      "total_tokens": 5002,
+      "completion_tokens": 959,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

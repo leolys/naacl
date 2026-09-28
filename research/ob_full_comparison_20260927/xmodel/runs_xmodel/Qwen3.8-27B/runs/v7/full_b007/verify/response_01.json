@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9d1d34ba4a7a8a9b",
+    "object": "chat.completion",
+    "created": 1790625259,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar plot area shows the Safari bar extending higher than the Chrome, Edge, Firefox, and Others bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis has printed ticks increasing upward from 0 at the bottom to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the shared vertical axis encodes current market_share and higher bars represent larger shares, the tallest browser bar is the highest-share browser; under the task rule, select that browser.\",\n        \"evidence\": \"The visual geometry supports the condition that bar height encodes market share, with the Safari bar being the tallest.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The inscription '38%' is immediately above the bar aligned with the x-axis label 'Chrome'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The inscription '4%' is immediately above the bar aligned with the x-axis label 'Safari'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The inscription '44%' is immediately above the bar aligned with the x-axis label 'Edge'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The inscription '4%' is immediately above the bar aligned with the x-axis label 'Firefox'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The inscription '10%' is immediately above the bar aligned with the x-axis label 'Others'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription immediately above a browser's bar is that browser's current market_share, and the task rule is to assign added support capacity to the browser with the highest current market_share, select the option for the largest such inscription.\",\n        \"evidence\": \"The percentage labels are visible and the largest is 44% for Edge. However, the condition that these labels are the authoritative market_share values is in direct conflict with the visual bar heights (e.g., Safari's 4% label vs. ~63% height).\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4506,
+      "total_tokens": 5108,
+      "completion_tokens": 602,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

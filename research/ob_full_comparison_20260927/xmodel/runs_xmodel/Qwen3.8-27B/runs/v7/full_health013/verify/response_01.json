@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a90e81f12944f5b9",
+    "object": "chat.completion",
+    "created": 1790626581,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's subtitle, located directly beneath the main title, reads 'Selected large-volume hospitals shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The scatter plot area displays exactly five distinct data points, each labeled with a hospital name: Hospital A, Hospital B, Hospital C, Hospital D, and Hospital E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a chart is only a descriptive comparison and lacks evidence establishing a causal, policy, or population-wide conclusion, it may be retained as contextual material rather than used as support for enterprise approval.\",\n        \"evidence\": \"The chart displays a descriptive scatter plot of five specific hospitals. There are no statistical tests, causal indicators, or population-wide data presented. The task context is 'Enterprise escalation assessment' and the proposed statement is 'enterprise-level'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle beneath the title explicitly states 'Selected large-volume hospitals shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The main title at the top of the chart reads 'Top Hospitals: Nurse Hours vs Discharge Count.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a dashboard explicitly displays only a selected hospital subset, its plotted relationship is not evidence for the full hospital population; for an enterprise-level statement, the task's routing choices require full-population review before enterprise approval.\",\n        \"evidence\": \"The chart is explicitly labeled as showing a 'Selected' subset. The user goal is to handle a 'proposed enterprise-level statement'. The task instructions state the decision must be based on the dashboard relationship to determine if it 'needs broader review across the full hospital population'. The subset nature of the chart supports the condition that it is not evidence for the full population.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Visually, the points are arranged in a diagonal line from bottom-left to top-right. Hospital A is the lowest and leftmost, followed by B, C, D, and E which is the highest and rightmost.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis label at the bottom reads 'Weekly nurse hours (thousands)' and the y-axis label on the left reads 'Monthly discharge count (thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes weekly nurse hours and the vertical axis encodes monthly discharge count, with both scales increasing rightward/upward, points positioned successively farther right and higher indicate a positive displayed association for the plotted hospitals; this is descriptive only and does not establish causation or enterprise generalizability.\",\n        \"evidence\": \"The axes are labeled as stated. The points (A through E) show a clear positive trend where higher nurse hours correspond to higher discharge counts. The chart is a simple scatter plot without regression lines or statistical significance markers, supporting the 'descriptive only' characterization.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3608,
+      "total_tokens": 4416,
+      "completion_tokens": 808,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

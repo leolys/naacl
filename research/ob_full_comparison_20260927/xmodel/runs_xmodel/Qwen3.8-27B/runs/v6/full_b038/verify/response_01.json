@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc2ecd772087f6af",
+    "object": "chat.completion",
+    "created": 1790623698,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual notes state the line shows an upward trend from Q1 to Q2, remains flat from Q2 to Q3, and rises again from Q3 to Q4. This matches the content description.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed facts and visual notes confirm the vertical axis is labeled 'Revenue'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed facts and visual notes confirm the horizontal axis is labeled 'Quarter' with Q1, Q2, Q3, and Q4 as labels.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis orders Q1 through Q4 chronologically. 2. The vertical axis encodes Revenue with higher page position representing greater revenue. 3. The workflow routes an overall rise from the first to final quarter to the growth response.\",\n        \"evidence\": \"Conditions 1 and 2 are established by the axis labels and standard chart conventions (higher y-value is higher on the page). Condition 3 is not established; the public task does not provide a routing policy that defines 'overall rise' as the trigger for the 'revenue growth response'. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text is clearly visible at the top of the chart and reads 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis labels are clearly visible as Q1, Q2, Q3, and Q4.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative summary of the Company C Q1-Q4 revenue record. 2. The workflow treats a chart explicitly described as 'Stable Revenue' as requiring the stability response.\",\n        \"evidence\": \"Condition 1 is not established; the title is a label, but there is no public fact stating it is an 'authoritative summary' that overrides the visual data. Condition 2 is not established; there is no public routing policy linking the title text 'Stable Revenue' to the 'revenue stability response' option. Both conditions remain open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3923,
+      "total_tokens": 4525,
+      "completion_tokens": 602,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

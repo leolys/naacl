@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-96558d6f7ed95754",
+    "object": "chat.completion",
+    "created": 1790623472,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top is 'Midyear Months with Strong Response: Ad Spend vs Sales', and the five visible point labels are May, June, July, August, and September.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible plot area contains only the five labeled points (May through September). No points or labels for other months are visible in the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart consists of a title, axis labels ('Advertising Spend ($ thousands)' and 'Sales ($ thousands)'), tick marks, and data points. There are no inscriptions or marks stating causal effects, ROI, profitability thresholds, or approval criteria.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The budget decision standard requires full-year analysis or causal/profitability validation. 2. The dashboard is limited to labeled midyear months. 3. The dashboard does not satisfy the requirement in condition 1.\",\n        \"evidence\": \"Condition 2 is established by the visible labels (May–September) and the absence of other months. Condition 1 is not established; the public task and instructions do not supply a standard requiring full-year analysis or causal validation. The B text itself notes that 'no such standard is supplied in the task.'\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart visibly reads 'Midyear Months with Strong Response: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bottom axis is labeled 'Advertising Spend ($ thousands)' and has labeled ticks at 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, and 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left axis is labeled 'Sales ($ thousands)' and has labeled ticks from 70 to 180 in increments of 10.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The points are located at approximately (30, 71) for May, (40, 115) for June, (50, 142) for July, (60, 162) for August, and (70, 175) for September. These coordinates show a successive progression to the right and upward on the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes Advertising Spend ($ thousands). 2. The vertical axis encodes Sales ($ thousands). 3. The labeled monthly points are comparable observations. 4. Points progressing rightward and upward indicate a positive midyear association. 5. A midyear association is accepted as sufficient decision evidence for approving a broader budget increase.\",\n        \"evidence\": \"Conditions 1 and 2 are established by the axis labels. Condition 3 is plausible given the consistent monthly labeling. Condition 4 is established by the coordinates (x and y both increase from May to September). Condition 5 is not established; the task does not state that a midyear association is sufficient for approval, and the chart lacks causal or profitability evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4078,
+      "total_tokens": 4926,
+      "completion_tokens": 848,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

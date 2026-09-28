@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8322623036d1aaca",
+    "object": "chat.completion",
+    "created": 1790626545,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart subtitle at the top of the image clearly states 'Selected high-referral centers shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The scatter plot displays five distinct orange data points, each labeled: Center A, Center B, Center C, Center D, and Center E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart is explicitly limited to selected high-referral centers, then its pattern may be affected by selection and does not by itself characterize all centers in the network; such evidence can be retained as contextual information pending broader comparison.\",\n        \"evidence\": \"The visible subtitle confirms the data is limited to 'Selected high-referral centers'. The visual notes and chart do not provide any network-wide sampling data, comparison groups, or outcome evidence beyond these five points. Therefore, the condition 'no additional network-wide sampling... is supplied' is met.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart reads 'Top Screening Centers: Outreach Hours vs Referral Count' and the subtitle reads 'Selected high-referral centers shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Monthly outreach hours' with visible tick marks increasing from 30 to 70. The vertical axis is labeled 'Referral count' with visible tick marks increasing from 60 to 160.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Visually, Center A is the leftmost (lowest x-value) and lowest (lowest y-value) point. Moving right and up, Center B is higher than A, Center C is higher than B, Center D is higher than C, and Center E is the rightmost (highest x-value) and highest (highest y-value) point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes monthly outreach hours increasing left-to-right and the vertical axis encodes referral count increasing upward, then the labeled center points can be compared as an observed association. A consistent higher-hours/higher-referrals pattern among the displayed selected centers is suitable for broader network review, but this cross-sectional selected-center chart alone does not establish causality, network-wide representativeness, or grounds for immediate network-level advancement.\",\n        \"evidence\": \"The axes are correctly identified as increasing left-to-right and bottom-to-top. The points show a clear positive association (higher hours correspond to higher referrals). However, the subtitle explicitly limits the data to 'Selected high-referral centers', which introduces selection bias. The chart is a static cross-sectional snapshot of a subset, providing no causal mechanism or network-wide baseline. Therefore, the conditions for the reading are met: it is a selected-center chart showing an association that is suitable for review but not for immediate advancement.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3534,
+      "total_tokens": 4272,
+      "completion_tokens": 738,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

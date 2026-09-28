@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b52844001e5322be",
+    "object": "chat.completion",
+    "created": 1790624101,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The rightmost bar above the x-axis label 'May' is visibly much shorter than the other five bars (Apr, Jan, Jun, Feb, Mar).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title is 'Monthly Reservoir Release Volume', the y-axis is 'Release volume (m3)', and the x-axis is 'Month'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Routing requires an explicit threshold or policy beyond relative comparison.\",\n        \"evidence\": \"The task instructions and visible fields do not print an explicit numerical threshold or a formal policy table defining when to escalate. The decision is based on the visual comparison of the May bar to the others.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above 'May' is the shortest on the chart, with its top near the x-axis baseline and well below the 10,000 m3 tick.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Filing excludes low-release cases needing follow-up.\",\n        \"evidence\": \"The task explicitly asks to decide between 'standard low-release follow-up' and 'critical low-release anomaly review'. 'Background monthly record filing' is a third option, but the primary decision is between the two active routing paths. Since May is a low-release case, it requires active routing, not just filing.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above 'May' is much shorter than all other bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis is labeled 'Release volume (m3)' with ticks from 10,000 to 40,000.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the May bar is below the 10,000 tick, near the baseline.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bars encode monthly reservoir release volume on a common vertical axis. 2. The reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly.\",\n        \"evidence\": \"Condition 1 is supported by the axis labels. Condition 2 is an assumption because no explicit policy is printed; however, the visual extremity of the May bar (near zero compared to 17,500-40,000 for others) strongly suggests it is an anomaly rather than a standard low-release case (like Jun or Feb).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4091,
+      "total_tokens": 4805,
+      "completion_tokens": 714,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

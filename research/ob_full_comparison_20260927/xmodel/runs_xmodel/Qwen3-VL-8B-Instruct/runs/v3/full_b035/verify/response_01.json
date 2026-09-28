@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9e5e6f7b17c3a18c",
+    "object": "chat.completion",
+    "created": 1790627729,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title visibly reads 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative textual summary of Factory F's 2018-2023 production direction and route labels follow that summary, the title's stated direction determines the growth-versus-decline response route.\",\n        \"evidence\": \"The chart title is visible and reads 'Increasing Production at Factory F from 2018 to 2023'.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at the vertical position of the printed y-axis tick inscription '3,500' and above the printed x-axis inscription '2018'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The blue line ends above the printed x-axis inscription '2023' at a vertical position just above the printed y-axis tick inscription '2,000'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical axis is visibly inscribed 'Production' and the horizontal axis is visibly inscribed 'Year'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the Factory F production series, the horizontal year ticks bind its endpoints to 2018 and 2023, and higher vertical position on the labeled Production axis encodes greater production, then the endpoint positions determine the net production direction over the review period. If a net decrease is to be routed to the correspondingly named trend-response option, select the decline response.\",\n        \"evidence\": \"The blue line starts at 3,500 in 2018 and ends below 2,000 in 2023. The vertical axis is labeled 'Production' and the horizontal axis is labeled 'Year'.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3877,
+      "total_tokens": 4400,
+      "completion_tokens": 523,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

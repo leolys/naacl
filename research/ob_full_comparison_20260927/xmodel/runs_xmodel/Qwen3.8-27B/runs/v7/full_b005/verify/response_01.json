@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97de0fda6220a214",
+    "object": "chat.completion",
+    "created": 1790625253,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Supported. In the chart, the top of the red Safari bar is visibly higher than the top of the purple Chrome bar. The Safari bar reaches just above the 70 gridline, while the Chrome bar reaches just above the 65 gridline.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Supported. The vertical axis on the left of the chart clearly displays tick marks and labels starting at 0 at the baseline and increasing in increments of 10 up to 100.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height against the vertical axis is the authoritative usage-share encoding, with higher bar tops indicating greater share, and the primary target is the selectable browser with the greatest share, select the browser with the highest bar among the selectable products.\",\n        \"evidence\": \"The condition 'Applies only if the plotted bar geometry is authoritative despite the percentage inscriptions that conflict with it' is not supported. The chart contains explicit percentage inscriptions (73%, 12%, etc.) that directly conflict with the bar heights (e.g., Chrome is 73% but its bar is lower than Safari's 12% bar). In data visualization, explicit data labels are generally considered the authoritative source for the specific value of a data point, especially when they contradict the visual geometry. Therefore, the condition that bar geometry is authoritative despite conflicting inscriptions is not met.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Supported. The text 'Browser Usage Share by Product' is clearly visible as the title in the upper-left corner of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Supported. The text '73%' is printed directly above the purple bar labeled 'Chrome' on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Supported. The text '12%' is printed directly above the red bar labeled 'Safari' on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Supported. The text '6%' is printed directly above the blue bar labeled 'Firefox' on the x-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscriptions above product bars are the authoritative browser usage-share values, and primary compatibility targeting is assigned to the selectable browser with the greatest shown usage share, select that browser.\",\n        \"evidence\": \"The condition 'Applies only if each printed percentage belongs to the bar directly below it and printed labels, rather than conflicting bar heights, encode the intended shares' is supported. The labels are positioned directly above their respective bars (Chrome: 73%, Safari: 12%, Firefox: 6%). In the context of a dashboard, explicit numeric labels are the standard way to convey precise values, and they take precedence over the visual height of the bars, which appears to be incorrectly scaled or plotted in this specific chart (a common data visualization error where the visual representation contradicts the data labels). Thus, the printed labels are the intended source of truth.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4474,
+      "total_tokens": 5268,
+      "completion_tokens": 794,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

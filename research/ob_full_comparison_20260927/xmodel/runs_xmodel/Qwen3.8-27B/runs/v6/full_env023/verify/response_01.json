@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-884338fee3858dd0",
+    "object": "chat.completion",
+    "created": 1790624172,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bold inscription '41.2%' is printed directly above the yellow bar labeled 'Solar'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bold inscription '29.8%' is printed directly above the light-blue bar labeled 'Wind'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The bold inscription '18.5%' is printed directly above the blue bar labeled 'Hydroelectric'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The bold inscriptions '7.2%' and '3.3%' are printed above the bars labeled 'Biomass' and 'Geothermal', respectively.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The bold percentage annotations attached above each source bar are the operative reported production-share values. 2. The source with the greatest printed percentage is the largest contribution source. 3. The routing criterion requires escalating that source.\",\n        \"evidence\": \"Condition 1 is open because the chart displays a direct conflict between the printed percentages (Solar: 41.2%) and the bar heights (Wind: ~68%). The chart's y-axis is labeled 'Reported production share (%)', but the bars do not match the printed labels (e.g., the 29.8% label is on the tallest bar, while the 41.2% label is on a shorter bar). No policy or instruction explicitly designates the printed text as the 'operative' value over the visual geometry.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The light-blue bar above 'Wind' is the tallest bar in the chart, reaching near the 70 y-axis tick, with the inscription '29.8%' above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The yellow bar above 'Solar' reaches the 40 y-axis tick, with the inscription '41.2%' above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue bar above 'Hydroelectric' reaches between the 50 and 55 y-axis ticks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bar height is the operative encoding of reported production share on the labeled vertical scale. 2. The tallest source bar is the largest contribution source. 3. The routing criterion requires escalating that source.\",\n        \"evidence\": \"Condition 1 is open because the chart's y-axis is explicitly labeled 'Reported production share (%)'. In standard data visualization, the vertical axis defines the scale for the bars. However, the bar heights (Wind ~68, Solar ~40) contradict the printed labels (Wind 29.8%, Solar 41.2%). Since the axis label explicitly names the quantity being measured, the bar height is the primary visual encoding for that quantity, but the conflict with the labels creates ambiguity about which is 'operative'.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4066,
+      "total_tokens": 4847,
+      "completion_tokens": 781,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

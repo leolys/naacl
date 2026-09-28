@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8ad94991666c88b8",
+    "object": "chat.completion",
+    "created": 1790626348,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular marker for the 'Service' category is positioned visibly higher on the chart than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis is labeled '2011' in blue text, and the right vertical axis is labeled '2030' in red text, matching the colors of the respective series lines.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The word 'Service' is clearly printed as a category label on the x-axis, directly beneath the compared markers.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue 2011 series and red 2030 series are bound by the matching colored year labels, and vertical position encodes comparable Service support cost with higher marks meaning higher cost, then the higher Service mark identifies the entry for the higher-cost follow-up queue.\",\n        \"evidence\": \"The chart lacks a visible y-axis metric name or numeric tick labels to confirm that vertical position represents a comparable 'support cost' measure. Additionally, the presence of two separate vertical axes (left for 2011, right for 2030) without visible scale indicators prevents a direct comparison of the absolute values between the two series.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"There are no visible y-axis metric names or numeric tick labels printed on either the left or right vertical axes.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue circular marker and the red square marker for the 'Service' category are at different vertical positions on the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart does not establish that its vertical positions encode the relevant support-cost measure or the direction of that measure, then it does not provide sufficient evidence to identify either year as higher cost; routine archive review remains the non-escalation alternative.\",\n        \"evidence\": \"The chart is a dual-axis plot (left axis for 2011, right axis for 2030) with no visible scale or units. This makes it impossible to determine if the higher visual position of the blue marker corresponds to a higher actual cost value compared to the red marker.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2911,
+      "total_tokens": 3524,
+      "completion_tokens": 613,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

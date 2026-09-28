@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top of the chart literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The blue line begins at the 1880 tick aligned with the y-axis tick labeled '1,000' and ends at the 1891 tick above the y-axis tick labeled '2,500'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart title is an authoritative textual classification of the tourism trend. 2. Unresolved contradictory chart evidence should not trigger a directional response.",
+        "evidence": "Condition 1 is not established. The title says 'Decreasing', but the plotted line ends at ~2,700 in 1891, which is higher than the ~1,000 starting point in 1880. This is a direct contradiction between the title and the data. There is no rule provided that makes the title 'authoritative' over the data, nor is there a rule stating that contradictory evidence should be ignored in favor of routine monitoring. The task asks to use the dashboard as the evidence source, which typically implies the data is the primary source.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The blue line begins at the 1880 tick aligned with the y-axis tick labeled '1,000' and ends at the 1891 tick above the y-axis tick labeled '2,500'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is inscribed 'Year' with ticks from 1880 to 1891, and the vertical axis is inscribed 'Number of Tourists' with increasing values upward.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The blue line is the new-tourist series. 2. The horizontal year ticks bind its endpoints to 1880 and 1891. 3. Higher vertical position maps to a larger number of tourists. 4. Routing is based on net growth (whole-period endpoint change).",
+        "evidence": "Condition 1 is supported by the context 'Visitor record: New tourists' and the chart title mentioning 'New Tourists'. Condition 2 is supported by the x-axis labels. Condition 3 is supported by the y-axis labels. Condition 4 is a reasonable interpretation of 'trend' over a period, though not explicitly defined as 'endpoint change'. However, given the options (growth vs decline), net change is the standard metric. The line goes from 1,000 to ~2,700, indicating net growth.",
+        "status": "supported"
+      }
+    }
+  }
+}

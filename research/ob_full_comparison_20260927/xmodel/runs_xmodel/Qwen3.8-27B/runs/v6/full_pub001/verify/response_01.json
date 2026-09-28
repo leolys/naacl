@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a1b899cc61324c7b",
+    "object": "chat.completion",
+    "created": 1790624646,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The label “ME” is printed inside the northeastern state polygon, and that polygon is filled with the pale-yellow color at the top of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label “OK” is printed inside the Oklahoma polygon, which is filled with the dark burgundy color at the bottom of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The label “TX” is printed inside the Texas polygon, which is filled with the same dark burgundy color at the bottom of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The vertical legend shows the pale-yellow top adjacent to “High” and “100,” and the dark-burgundy bottom adjacent to “Low” and “0.”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. State labels identify their filled map areas. 2. The legend governs those fills. 3. Priority review means choosing the highest Hazard H risk index among ME, OK, and TX.\",\n        \"evidence\": \"Conditions 1 and 2 are established: ME, OK, and TX labels are inside their respective filled polygons, and the legend maps pale yellow to High/100 and dark burgundy to Low/0. Condition 3 is not established: the public task says to “choose the state record that should be added to the priority review list” but does not define “priority review” as the highest risk index. No policy table or instruction specifies this criterion.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads “Risk Index of Hazard H in US States.” The legend is labeled with “High” at the top (100) and “Low” at the bottom (0), with numeric ticks, but no program rule or threshold is printed.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. No external or supplied policy defines how the risk index determines priority-review inclusion.\",\n        \"evidence\": \"The public task provides no policy table, no threshold, and no explicit rule linking the risk index to priority-review inclusion. The instructions only say to “review the state hazard dashboard” and “choose the state record that should be added.” The chart itself contains no such rule. Therefore, the condition that no policy defines the criterion is met.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3657,
+      "total_tokens": 4288,
+      "completion_tokens": 631,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c58cff0acef6e5c",
+    "object": "chat.completion",
+    "created": 1790624316,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"The chart displays a single red line with circular markers connecting four data points.\",\n      \"fact\": \"The line shows a steady, linear upward trend from left to right across the visible x-axis range.\"\n    },\n    {\n      \"location\": \"The data points are located at x-axis positions corresponding to 2017, 2018, 2019, and 2020.\",\n      \"fact\": \"The y-values for these points are approximately 132, 145, 158, and 171 respectively, indicating consistent year-over-year growth.\"\n    },\n    {\n      \"location\": \"The visible x-axis range starts at 2017 and ends at 2020.\",\n      \"fact\": \"The chart does not display data for the years 2013, 2014, 2015, or 2016, despite the task mentioning a 2013-2020 window.\"\n    },\n    {\n      \"location\": \"The y-axis is labeled 'Clinic visits (thousands)' and ranges from 130 to 170 with gridlines every 10 units.\",\n      \"fact\": \"The scale is linear and the data points align clearly with the gridlines.\"\n    },\n    {\n      \"location\": \"The title of the chart is 'Respiratory Clinic Visits'.\",\n      \"fact\": \"A subtitle reads 'Reported window shown in the dashboard summary'.\"\n    },\n    {\n      \"location\": \"The visual pattern is a straight line with a positive slope.\",\n      \"fact\": \"There are no dips, plateaus, or recent sharp spikes visible in the 2017-2020 segment; the growth appears constant.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"X-axis labels\",\n      \"fact\": \"The years 2017, 2018, 2019, and 2020 are explicitly labeled.\"\n    },\n    {\n      \"location\": \"Y-axis labels\",\n      \"fact\": \"Values 130, 140, 150, 160, and 170 are labeled.\"\n    },\n    {\n      \"location\": \"Axis titles\",\n      \"fact\": \"The x-axis is titled 'Year' and the y-axis is titled 'Clinic visits (thousands)'.\"\n    },\n    {\n      \"location\": \"Chart Title\",\n      \"fact\": \"The main title is 'Respiratory Clinic Visits'.\"\n    },\n    {\n      \"location\": \"Task Context\",\n      \"fact\": \"The form context specifies a '2013-2020 end-to-end visit trend review' and asks to route based on 'sustained growth', 'recent upward shift', or 'decline-response'.\"\n    }\n  ]\n,\n  \"public_definitions\": [\n    \"Goal: Review the respiratory clinic volume dashboard and assign the record to the follow-up pathway that best fits the end-to-end utilization pattern for the full 2013-2020 monitoring window.\",\n    \"Comparison Scope: Use the displayed yearly visit pattern across the entire review window to determine whether this record should be routed for sustained growth follow-up, continued monitoring of a more recent upswing, or decline-response review.\",\n    \"Options: 1. Route to continued monitoring for a recent upward shift in respiratory clinic visits, 2. Route to sustained growth follow-up for respiratory clinic visits, 3. Route to decline-response review for respiratory clinic visits.\"\n  ],\n  \"uncertain\": [\n    \"The chart only displays data from 2017 to 2020, but the task instructions refer to a 'full 2013-2020 monitoring window'. The trend for 2013-2016 is not visible.\",\n    \"It is unclear if the 'sustained growth' option implies growth over the entire 2013-2020 period or just the visible period. Given the visible data shows a steady linear increase, 'sustained growth' is the most likely fit for the visible portion, but the missing early years create ambiguity regarding the 'end-to-end' pattern.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2024,
+      "total_tokens": 3010,
+      "completion_tokens": 986,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

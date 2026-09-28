@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-828068b1f3f65398",
+    "object": "chat.completion",
+    "created": 1790624730,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The y-axis is labeled with a lowest tick of '1,500'. The May 06 bar's bottom-most blue segment begins at this line, and the green segment starts immediately above it. The visual note confirms the blue segment is 'very thin' and 'near or just above the 1,500 axis floor'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A full review of the chart image shows only the title, axis labels, tick marks, and legend. There are no text boxes, arrows, or annotations indicating specific thresholds or routing instructions.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart's y-axis is clipped/begins at 1,500. 2. The visible height of the bottom segment (blue) measures only the portion above 1,500. 3. No routing thresholds are supplied. 4. A conservative default is normal monitoring.\",\n        \"evidence\": \"Condition 1 is supported by the y-axis label '1,500'. Condition 2 is supported by the visual note that the blue segment is 'very thin' and sits at the bottom, implying the visible height is small relative to the full value if it were a cumulative stack starting from 0. Condition 3 is supported by O2 (no thresholds printed). Condition 4 is a normative conclusion; while the conditions for the uncertainty are met, the 'conservative default' is an interpretation not explicitly printed in the task or chart.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The legend in the top right corner clearly shows a blue square next to the text 'Station X'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Looking at the bar for 'May 06', there is a distinct blue section at the bottom. It is significantly thinner than the blue section on May 09 and is barely visible compared to the green section above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis labels are 1,500, 2,000, 2,500, etc. The lowest label is 1,500.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"On the May 06 bar, the green section extends from the top of the blue section (approx 1,500) to approx 3,500. The orange section extends from 3,500 to over 5,000. Both are visually much taller than the thin blue sliver at the bottom.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Legend binds blue to Station X. 2. Stacked bar encodes visitor counts cumulatively from zero. 3. Top of blue segment represents Station X count. 4. Routing program classifies that count as low. 5. Low-demand response is appropriate.\",\n        \"evidence\": \"Condition 1 is supported by the legend. Condition 2 is an assumption about the chart type (standard for stacked bars). Condition 3 follows from 1 and 2. Condition 4 is the critical failure point: the task provides no 'routing program' rules or thresholds to classify the count as 'low'. While the count is visually low (thin bar), the *classification* is not established by the evidence. Condition 5 depends on 4.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3947,
+      "total_tokens": 4819,
+      "completion_tokens": 872,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

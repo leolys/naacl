@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b3a2790cb3b250ba",
+    "object": "chat.completion",
+    "created": 1790624932,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the image contains the large text “Decreasing Number of New Tourists in Town Z from 1880 to 1891.”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative statement of the tourism trend. 2. The word “Decreasing” is intended as the routing-relevant classification.\",\n        \"evidence\": \"The title text is present, but the chart also shows a plotted line that rises from about 1,100 at 1880 to about 3,000 at 1891, and the task supplies no rule making the title authoritative over the plotted data. Therefore, the title’s authority and its routing intent are not established.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title includes “Decreasing,” and the blue line’s 1891 endpoint is visibly higher on the page than its 1880 start point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Contradictory chart signals cannot be resolved because neither an authority hierarchy nor a routing threshold is supplied. 2. Routine monitoring is the appropriate default for unresolved evidence.\",\n        \"evidence\": \"The chart does contain a title/plot conflict, and the task supplies no explicit authority hierarchy or routing threshold. However, the task also does not state that routine monitoring is the default for unresolved evidence, so that condition is not established.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the vertical alignment of the x-axis tick “1880.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line ends at the vertical alignment of the x-axis tick “1891” and is higher on the page than its 1880 start.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled “Year” and the vertical axis is labeled “Number of New Tourists” with printed values increasing upward from 0 to 4,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The single plotted line is the dashboard’s New tourists series. 2. The horizontal axis encodes chronological year left-to-right. 3. Higher vertical position maps to a larger number of new tourists using the upward-increasing y-axis. 4. A line ending higher than it begins indicates growth over the reviewed period. 5. The routing labels are intended to map a growth trend to growth planning.\",\n        \"evidence\": \"The chart has one blue line, the x-axis is “Year” from 1880 to 1891, and the y-axis is “Number of New Tourists” increasing upward, so the plotted line ending higher than it begins does indicate an increase in the displayed series. The task’s context labels the visitor record as “New tourists,” supporting the line’s identity. However, the task does not explicitly state that a growth trend maps to the growth-planning route, so the final routing-mapping condition is not established.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4091,
+      "total_tokens": 4919,
+      "completion_tokens": 828,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

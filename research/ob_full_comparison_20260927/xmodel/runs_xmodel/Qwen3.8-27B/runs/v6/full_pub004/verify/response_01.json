@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a6f5d70659a3f516",
+    "object": "chat.completion",
+    "created": 1790624688,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top left is printed as 'Risk Index of Hazard H in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The region labeled 'ID' is filled with a very light cream/pale yellow color, which is the lightest shade on the map.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The region labeled 'SC' is filled with the darkest maroon/burgundy color on the map.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The region for Arizona is filled with a medium orange color and has the 'AZ' label printed in black text within its boundary.\",\n          \"status\": \"refuted\"\n        },\n        \"5\": {\n          \"evidence\": \"The vertical scale in the lower-right shows pale yellow at the top next to 'High' and '100', and dark burgundy at the bottom next to 'Low' and '0'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The map's state fills are encoded by the adjacent color scale. 2. The pale-yellow end labeled 'High' and '100' represents higher Risk Index values than the dark burgundy end labeled 'Low' and '0'. 3. Gray is not assigned a position on the shown color scale.\",\n        \"evidence\": \"Condition 1 is supported as the map uses a continuous color gradient for states. Condition 2 is supported by the legend which places 'High' and '100' at the pale-yellow end and 'Low' and '0' at the dark burgundy end. Condition 3 is supported as the legend's color bar does not include the gray color used for states like California.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3720,
+      "total_tokens": 4185,
+      "completion_tokens": 465,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

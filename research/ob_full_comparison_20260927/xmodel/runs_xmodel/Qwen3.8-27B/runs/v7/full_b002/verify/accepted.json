@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "In the plot area, the top of the blue Firefox bar is visibly higher on the page than the top of the green Edge bar.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "In the plot area, the top of the blue Firefox bar is visibly higher on the page than the top of the orange Chrome bar.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The left vertical axis shows tick labels increasing upward from 0 at the baseline through 100 near the top.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If bar height on the shared vertical axis encodes current market_share with greater vertical height meaning greater share, then the tallest browser bar has the highest market_share; the compatibility queue rule requires selecting that browser.",
+        "evidence": "The chart is a bar chart with a shared vertical axis (0-100) and the Firefox bar is the tallest, reaching approximately 85 on the scale. The task requires selecting the browser with the highest market_share. However, the condition 'bar height encodes market_share' is not met because the printed percentage annotations (e.g., Firefox 23%, Edge 87%) contradict the bar heights (Firefox ~85, Edge ~78). The annotations sum to 119%, which is impossible for a share, indicating a data integrity issue. Because the visual encoding (height) conflicts with the explicit data labels, it is unclear which is the authoritative source for 'market_share'.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The printed inscription above the green bar aligned with the x-axis label Edge is '87%'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The printed inscription above the blue bar aligned with the x-axis label Firefox is '23%'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The printed inscription above the orange bar aligned with the x-axis label Chrome is '5%'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If each percentage inscription above a product's bar is that product's current market_share in the dashboard, then compare those inscriptions; the compatibility queue rule requires selecting the browser with the greatest current market_share.",
+        "evidence": "The printed inscriptions are clearly visible: Edge is 87%, Firefox is 23%, and Chrome is 5%. The task requires using the dashboard market_share values as the evidence source. If these inscriptions are the values, Edge has the highest share (87%). However, the condition that these are the 'current market_share' is undermined by the fact that the values sum to 119% (5+1+87+23+3), which is logically impossible for a usage share percentage. This internal contradiction makes it unclear if the labels are reliable indicators of the true market share.",
+        "status": "unclear"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a blue marker above the x-axis label 'Service Delivery' with the text '18%' printed directly above it.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart shows a blue marker above the x-axis label 'Other' with the text '38%' printed directly above it.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The chart shows markers for 'Service Cost', 'Service Quality', 'Service Design', and 'Support Access' with the text '42%', '50%', '47%', and '51%' printed directly above them respectively.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Each percentage inscription immediately above a category's marker is the authoritative feedback-share value. 2. The smallest printed percentage identifies the lowest-share category. 3. The task routes that category to low-feedback coverage follow-up.",
+        "evidence": "Condition 1 is an assumption about the chart's semantics (that the printed % labels are the true values) which is not explicitly stated in the public task or chart title, though it is a common convention. Condition 2 is established by the visual evidence: 18% is the smallest value among the printed labels (18, 38, 42, 47, 50, 51). Condition 3 is established by the task instructions which state to 'choose the service category that should enter the low-feedback coverage follow-up workflow' based on the 'lowest-share feedback category'.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "Visually, the blue marker above 'Other' is positioned at approximately y=23, which is lower than the marker for 'Service Delivery' at y=31, and significantly lower than the others (y=43, y=60).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The label 'Other' is printed on the x-axis directly below the rightmost blue marker.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The 'Routing criterion' field in the form explicitly states 'Lowest feedback share in the dashboard' and the 'Record workflow' is 'Low-feedback coverage follow-up'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The blue marker's vertical position encodes feedback share on the common y-axis. 2. Lower marker position means lower feedback share. 3. The task routes the category with the lowest share to low-feedback coverage follow-up.",
+        "evidence": "Condition 1 is an assumption that the y-axis 'Value' represents the feedback share. While the y-axis is labeled 'Value' and the chart title is 'Feedback Share', the printed labels are percentages (e.g., 50%) while the y-axis goes to 65. The marker for 'Service Quality' is at y=60 but labeled 50%. This discrepancy makes the assumption that the y-axis position is the *authoritative* share value less certain than the printed labels, but it is a valid interpretation of the visual data. Condition 2 is established by the visual evidence: the 'Other' marker is the lowest. Condition 3 is established by the task instructions.",
+        "status": "supported"
+      }
+    }
+  }
+}

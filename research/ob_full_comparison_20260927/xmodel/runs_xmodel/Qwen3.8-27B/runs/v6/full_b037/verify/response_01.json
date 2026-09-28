@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b34589e659fbdc0f",
+    "object": "chat.completion",
+    "created": 1790623721,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's top title text is located and reads exactly 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is treated as the authoritative summary of the output trend rather than the plotted line. 2. The literal title wording indicates increasing production. 3. This interpretation maps to the output growth response.\",\n        \"evidence\": \"Condition 1 is not established by the public task, which requires using the dashboard as the evidence source for the trend; the plotted line shows a clear downward slope, conflicting with the title. Condition 2 is supported by the title text. Condition 3 is a semantic mapping. Because Condition 1 is not established and is contradicted by the visual data, the conditional does not apply.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A single blue line is visible in the plot area connecting the years 2018-2023. The line's vertical position decreases with each successive year, starting near 3,500 and ending near 1,800.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks 2018-2023. The vertical axis is labeled 'Production' with numeric ticks increasing upward from 0 to 3,500.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line represents the Factory F production series. 2. The x-axis orders years from 2018 to 2023. 3. Higher screen position corresponds to greater production on the upward-increasing y-axis. 4. A line moving lower at each successive year indicates declining production. 5. A declining output trend maps to the output decline response.\",\n        \"evidence\": \"Condition 1 is supported by the chart title and task context. Condition 2 is supported by the x-axis labels. Condition 3 is supported by the y-axis scale. Condition 4 is supported by the visual geometry of the line. Condition 5 is the required task mapping. All conditions are established by the chart and task.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4005,
+      "total_tokens": 4591,
+      "completion_tokens": 586,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

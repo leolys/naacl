@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8a2d923537a58d21",
+    "object": "chat.completion",
+    "created": 1790625915,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis has a tick labeled '2005' at the far left. A black point is plotted directly above this tick. The text '$24.0°C' is positioned immediately above and to the left of this point. The y-axis is labeled 'Temperature (°C)' with a scale from 0 to 20, and the point's vertical position is above the '20' tick, consistent with a value of 24.0.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart's x-axis has a tick labeled '2015' at the far right. A black point is plotted directly above this tick. The text '$10.0°C' is positioned immediately above and to the right of this point. The point's vertical position aligns with the '10' tick on the y-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue line connects the data points. The line segment starting from the 2005 point and ending at the 2015 point shows a continuous downward slope across the page, with the 2015 point being significantly lower than the 2005 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted points are yearly temperature readings because their horizontal positions align with the year ticks and the adjacent °C inscriptions label those readings, then the 2005-to-2015 change is the 2015 reading minus the 2005 reading. If the substantial-trend workflow permits qualitative judgment of a large multi-year magnitude without a stated numeric cutoff, a 14.0°C decrease warrants follow-up.\",\n        \"evidence\": \"The first condition is supported: the points align with year ticks (2005, 2015) and have °C labels. The calculation (10.0 - 24.0 = -14.0) is correct based on the labels. However, the second condition is not supported by the visible task state. The 'Routing criterion' is 'Magnitude of change across the review period', but no specific numeric threshold (e.g., 'change > 5°C') or policy table defining what constitutes a 'substantial' change is provided. The workflow is named 'Substantial trend follow-up', but the definition of 'substantial' is absent.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis has a tick labeled '2005' at the far left. A black point is plotted directly above this tick. The text '$24.0°C' is positioned immediately above and to the left of this point.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart's x-axis has a tick labeled '2015' at the far right. A black point is plotted directly above this tick. The text '$10.0°C' is positioned immediately above and to the right of this point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the substantial-trend workflow requires a specified numeric threshold or other unstated qualification before escalation, then the plotted endpoint change alone cannot establish that the follow-up criterion is met; absent demonstrated qualification, the record may remain on routine monitoring rather than be escalated.\",\n        \"evidence\": \"This reading is a conditional statement: 'If [threshold required], then [cannot establish]'. The task state does not provide a threshold, but it also does not explicitly state that one is *required*. It only gives a general criterion ('Magnitude of change'). Therefore, the premise of the conditional ('requires a specified numeric threshold') is not confirmed by the visible evidence. We cannot confirm that a threshold is required, so we cannot confirm the conclusion that it 'cannot establish' the criterion. The absence of a threshold in the visible fields means the condition for escalation is unclear, not that it is definitively unmet.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4266,
+      "total_tokens": 5243,
+      "completion_tokens": 977,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

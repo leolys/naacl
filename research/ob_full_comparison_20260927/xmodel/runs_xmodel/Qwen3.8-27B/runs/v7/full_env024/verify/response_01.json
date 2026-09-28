@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97866c469f3bd9b0",
+    "object": "chat.completion",
+    "created": 1790626218,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays five bars. The bar labeled 'Groundwater' extends vertically to approximately 68 on the y-axis, which is visibly higher than the 'Surface water' bar (~41), 'Desalination' bar (~53), 'Recycled water' bar (~22), and 'Rain capture' bar (~35).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text at the top of the chart reads 'Urban Water Supply by Source'. The label on the vertical axis reads 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each source’s bar height on the vertical scale encodes its urban reported supply contribution, and the routing criterion requires escalation of the largest contribution source, select the option for the source with the tallest bar.\",\n        \"evidence\": \"The y-axis is explicitly labeled 'Reported supply share (%)', providing a quantitative scale for the bar heights. The 'Groundwater' bar is the tallest, reaching near the 70 mark, while the next highest ('Desalination') is near 53. The condition that bar geometry is the authoritative encoding is supported by the presence of the labeled axis scale, even though the data labels above the bars conflict with the geometry.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text '41.2%' is printed directly above the blue bar labeled 'Surface water'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text '29.8%' is printed directly above the teal bar labeled 'Groundwater'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text '18.5%' is printed directly above the indigo bar labeled 'Desalination'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The text '7.2%' is printed directly above the green bar labeled 'Recycled water'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The text '3.3%' is printed directly above the brown bar labeled 'Rain capture'.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The vertical axis is labeled 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscription directly above each source bar is the authoritative reported supply-share value, compare those inscriptions; under the stated largest-contribution routing criterion, select the option for the source with the greatest printed share.\",\n        \"evidence\": \"The condition requires that the inscriptions be the 'authoritative' value. However, the chart provides a y-axis with a specific scale ('Reported supply share (%)') where the bar heights (e.g., Groundwater ~68) drastically contradict the printed labels (e.g., Groundwater 29.8%). Because the visual geometry and the axis scale do not support the printed labels as accurate representations of the plotted data, the condition that they are the authoritative encoding is not met by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4189,
+      "total_tokens": 4999,
+      "completion_tokens": 810,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

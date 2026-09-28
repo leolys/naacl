@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c6aff9284b62adb",
+    "object": "chat.completion",
+    "created": 1790623011,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The left vertical axis is visibly labeled 'Agriculture (%)' in blue, and the right vertical axis is visibly labeled 'Industry (%)' in red. The color and position match the assertion.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2014 vertical gridline, there are no printed percentage labels next to the data marks. Additionally, the vertical axes (both left and right) do not display any numeric tick labels.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values. Applies because distinct colored vertical axis labels are visibly present; no equivalence of their numeric scales may be assumed.\",\n        \"evidence\": \"The condition that distinct colored vertical axis labels are present is supported by the chart (blue 'Agriculture (%)' on the left, red 'Industry (%)' on the right). The condition that no equivalence of scales may be assumed is supported by the absence of numeric tick labels on either axis, which prevents verification of scale equivalence. The logical claim that screen-space height is insufficient without these conditions is a valid methodological principle for dual-axis charts.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the 2014 vertical gridline, the blue circular mark is positioned higher on the page (further up the y-axis) than the red square mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis is visibly labeled 'Agriculture (%)' in blue, and the right vertical axis is visibly labeled 'Industry (%)' in red.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the larger 2014 percentage. Applies only if both colored series' 2014 vertical positions are directly comparable despite the separate left and right axis labels.\",\n        \"evidence\": \"The condition requires that the two series use the 'same vertically comparable percentage scale' and that their positions are 'directly comparable despite the separate left and right axis labels.' The chart provides no numeric tick labels on either axis, making it impossible to verify if the scales are equivalent. Without numeric labels, one cannot establish that the vertical positions are directly comparable in terms of value. Therefore, the necessary condition for the inference (that the scales are comparable) is not met by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2869,
+      "total_tokens": 3551,
+      "completion_tokens": 682,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

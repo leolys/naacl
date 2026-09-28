@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-88c650b0ac1a55e0",
+    "object": "chat.completion",
+    "created": 1790623623,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"rec_01\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image is printed as 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis label is 'Advertising Spend ($ thousands)' and the numerical ticks are visible from 25 to 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis label is 'Sales ($ thousands)' and the numerical ticks are visible from 60 to 170.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five distinct blue points are visible on the plot, each with a text label: Q2, Q3, Q4, Q5, and Q6.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The points are arranged in an ascending sequence from left to right. Q2 is at the bottom-left (lowest position) and Q6 is at the top-right (highest position).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The visual pattern of the five plotted points is interpreted as a positive correlation.\",\n        \"evidence\": \"The five points (Q2 through Q6) are positioned in a strictly increasing order from left to right (e.g., Q2 at x=30, y=68 to Q6 at x=70, y=167). This arrangement visually constitutes a positive correlation.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_02\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The point labeled 'Q2' is located at the x-tick 30 and is vertically positioned between the 60 and 70 y-ticks, appearing closer to 70 (approx 68).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The point labeled 'Q6' is located at the x-tick 70 and is vertically positioned just below the 170 y-tick (approx 168).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical gap between Q2 (y~68) and Q6 (y~168) is approximately 100 units. The gaps between consecutive points are much smaller (e.g., Q2 to Q3 is ~42 units).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The axis scales are linear. 2. The points represent the only data available.\",\n        \"evidence\": \"The axes show uniform spacing between numerical ticks (e.g., 25, 30, 35 on x-axis), indicating linear scales. The chart displays only the five labeled points (Q2-Q6) with no other data markers present.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_03\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text 'Selected High-Growth Quarters' is printed as the first part of the chart title.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis scale starts at 25, while the first data point (Q2) is at x=30, leaving a visible gap of 5 units.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis scale starts at 60, while the first data point (Q2) is at y~68, leaving a visible gap of 8 units.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The area of the plot where x < 30 and y < 68 is empty; no data points are present in that lower-left section.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The selection of data points is interpreted as a filter for 'high-growth' performance.\",\n        \"evidence\": \"The chart title explicitly states 'Selected High-Growth Quarters', which serves as the printed basis for interpreting the data points as a specific filtered subset rather than a complete dataset.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3783,
+      "total_tokens": 4852,
+      "completion_tokens": 1069,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

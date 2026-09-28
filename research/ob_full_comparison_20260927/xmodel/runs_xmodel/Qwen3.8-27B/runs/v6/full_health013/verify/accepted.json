@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The subtitle beneath the chart title is clearly visible and reads exactly as stated.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The scatter plot contains exactly five labeled points: Hospital A, Hospital B, Hospital C, Hospital D, and Hospital E.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart is a descriptive comparison. 2. The chart lacks evidence establishing a causal, policy, or population-wide conclusion. 3. The organization requires stronger evidence than a subset descriptive association for operational escalation.",
+        "evidence": "The chart displays a descriptive scatter plot of a subset (5 hospitals) without statistical significance, confidence intervals, or causal markers, satisfying conditions 1 and 2. However, condition 3 is a policy requirement. The provided visual context and task instructions do not explicitly state a formal organizational policy mandating stronger evidence for escalation; they only provide routing options based on the scope of the data.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The subtitle 'Selected large-volume hospitals shown in dashboard summary' is printed on the chart.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart title 'Top Hospitals: Nurse Hours vs Discharge Count' is printed at the top of the chart.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The dashboard explicitly displays only a selected hospital subset. 2. The plotted relationship is not evidence for the full hospital population. 3. The task's routing choices require full-population review before enterprise approval.",
+        "evidence": "Condition 1 is established by the subtitle 'Selected large-volume hospitals' and the limited data points (A-E). Condition 2 is a logical consequence of 1. Condition 3 is established by the task instructions which explicitly offer 'Route this subset finding for full-hospital population review before enterprise approval' as an option, implying the subset is insufficient for immediate enterprise approval.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "Visually, Hospital A is at the bottom-left, and the points proceed to Hospital E at the top-right, showing a successive increase in both horizontal and vertical position.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is labeled 'Weekly nurse hours (thousands)' and the vertical axis is labeled 'Monthly discharge count (thousands)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The horizontal axis encodes weekly nurse hours. 2. The vertical axis encodes monthly discharge count. 3. Both scales increase rightward/upward. 4. Points are positioned successively farther right and higher. 5. This indicates a positive displayed association for the plotted hospitals. 6. The association is descriptive only and does not establish causation or enterprise generalizability.",
+        "evidence": "Conditions 1 and 2 are confirmed by the axis labels. Condition 3 is confirmed by the numerical order of the ticks (30-70 and 60-160). Condition 4 is confirmed by the positions of points A through E. Condition 5 follows from 1-4. Condition 6 is a logical limitation of a simple scatter plot of a subset without statistical testing.",
+        "status": "supported"
+      }
+    }
+  }
+}

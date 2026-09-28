@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a09bd47e55a7256d",
+    "object": "chat.completion",
+    "created": 1790627086,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"Title at top center reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'. The blue line's rightmost point (1891) is at y≈540, while the leftmost point (1880) is at y≈1230. Since the y-axis increases upward, the right endpoint is higher on the page than the left endpoint.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.\", \"evidence\": \"The title states 'Decreasing' while the plotted line shows a clear increase from ~1,000 to ~3,200. This is a direct conflict. However, the condition 'prevents a reliable classification' is debatable; the visual data is quite clear, but the title is contradictory. The assumption that routine monitoring is the fallback for unresolved conflict is not explicitly stated in the task instructions, which only ask to choose a route based on the trend.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart explicitly reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word 'Decreasing' supports classifying the trend as decline; routing a decline trend requires the decline-response option.\", \"evidence\": \"The title does say 'Decreasing'. However, the condition that the title is 'authoritative' despite the plotted data showing a clear increase (from ~1,000 to ~3,200) is not supported. The visual data contradicts the title. There is no explicit policy stating the title overrides the data.\", \"status\": \"unclear\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The x-axis has ticks from 1880 (left) to 1891 (right). The y-axis is labeled 'Number of Tourists' with ticks 0, 500, 1,000... 3,500 increasing upward.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The blue line at the 1891 tick (x≈2100) is at y≈540. The blue line at the 1880 tick (x≈255) is at y≈1230. Since y increases upward, the 1891 point is higher on the page than the 1880 point.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.\", \"evidence\": \"The axes are standard (years left-to-right, count bottom-to-top). The blue line is the only data series and matches the 'New Tourists' description in the context fields. The endpoint at 1891 is significantly higher than at 1880. This indicates an overall increase. The assumption that an increase requires the growth-planning option is a standard interpretation of the provided options.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4499,
+      "total_tokens": 5304,
+      "completion_tokens": 805,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

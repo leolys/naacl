@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title reads 'Units Sold by Product (Weekend Pop-up)' and the vertical axis label is 'Units Sold', matching the assertion.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis displays tick labels at 2,000, 4,000, 6,000, 8,000, and 10,000.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "A dark-red bar is positioned above the 'Product A' label on the x-axis. Its top edge is visibly below the 2,000 tick mark and above the baseline.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading posits that Product A's value (approx. 1,700-1,800) is within 500 units of the 2,000 decision threshold, triggering the 'Manual merchandising verification variance band' rule. It assumes this specific variance rule takes precedence over the general 'Low-sales review queue' tier (1,000-2,000 units).",
+        "evidence": "The visual evidence supports the premise that the value is between 1,000 and 2,000 (specifically just under 2,000). However, the policy table lists the 'Low-sales review queue activation level' for the range '>= 1,000 and < 2,000 units' and the 'Manual merchandising verification variance band' for '< 500 units from a decision threshold'. The policy table does not provide an explicit precedence rule or hierarchy for when a value falls into multiple categories (e.g., 1,800 is in the 1,000-2,000 range AND is < 500 from 2,000). Without a defined rule for resolving this overlap, the condition that the variance band is the operative route is not supported by the provided text.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title and vertical axis label match the assertion.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis tick marks are visible at the stated intervals.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The Product A bar is correctly identified and its position relative to the 2,000 tick is accurate.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading posits that Product A's value (approx. 1,700-1,800) falls into the '>= 1,000 and < 2,000 units' range, activating the 'Low-sales review queue'. It assumes this base unit-condition tier takes precedence over the overlapping 'Manual merchandising verification variance band' rule.",
+        "evidence": "The visual evidence supports the premise that the value is between 1,000 and 2,000. Similar to r1, the policy table contains overlapping conditions for this value range (1,000-2,000 and <500 from threshold). The policy table does not explicitly state that the base tier takes precedence over the variance band. Therefore, the condition that the base tier governs is not explicitly supported by the provided policy text.",
+        "status": "unclear"
+      }
+    }
+  }
+}

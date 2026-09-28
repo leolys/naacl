@@ -20,7 +20,8 @@ rm -rf eval
 python3 eval_xmodel.py --out runs_xmodel/* --output eval || { echo "EVAL FAILED"; exit 1; }
 
 # 2) git push small artifacts (code, summaries, ledgers, eval; no request bodies)
-cd "$XM/../.."   # repo root
+REPO_ROOT=$(git -C "$XM" rev-parse --show-toplevel)
+cd "$REPO_ROOT"   # repo root (XM sits three levels deep)
 git add -A research/ob_full_comparison_20260927/xmodel
 # double-guard: never stage heavy request artifacts even if .gitignore regresses
 git reset -q -- 'research/ob_full_comparison_20260927/xmodel/runs_xmodel/**/request.json' \

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8f879c702bb655c8",
+    "object": "chat.completion",
+    "created": 1790624448,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays a teal line with circular markers at the x-axis positions labeled 2017, 2018, 2019, and 2020.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2017 marker is at the 260 level, the 2018 marker is near 295, the 2019 marker is near 335, and the 2020 marker is near 375. Each point is vertically higher than the previous one.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis labels are 2017, 2018, 2019, and 2020. No earlier years (2013-2016) are displayed.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The visible series covers only a recent subset of the requested review window. 2. The series rises within that subset.\",\n        \"evidence\": \"The task specifies a 2013-2020 review window, but the chart only displays 2017-2020, satisfying condition 1. The data points show a consistent increase from 260 in 2017 to ~375 in 2020, satisfying condition 2.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays a teal line with circular markers at the x-axis positions labeled 2017, 2018, 2019, and 2020.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-values increase from 260 (2017) to ~295 (2018), ~335 (2019), and ~375 (2020).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Telehealth Follow-up Enrollment Trend' and the y-axis is labeled 'Enrolled patients'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The x-axis labels are 2017, 2018, 2019, and 2020.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title and axes bind the teal line to telehealth follow-up enrollment by year. 2. Higher vertical position represents more enrolled patients. 3. Successive higher points at later year ticks indicate enrollment growth over the displayed years. 4. The displayed years adequately establish the requested full review-window pattern.\",\n        \"evidence\": \"Conditions 1-3 are supported by the title, axis labels, and increasing y-values. However, condition 4 is not established because the chart only shows 2017-2020, whereas the task requires a 2013-2020 assessment. The missing 2013-2016 data means the full window pattern is unverified.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3903,
+      "total_tokens": 4731,
+      "completion_tokens": 828,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

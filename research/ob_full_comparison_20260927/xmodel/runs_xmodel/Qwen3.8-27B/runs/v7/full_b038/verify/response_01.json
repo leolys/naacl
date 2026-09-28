@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be621217f03e9cdc",
+    "object": "chat.completion",
+    "created": 1790625748,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart's blue line starts at the Q1 position (approx. 1,080) and rises to the Q2 position (approx. 1,360).\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The vertical axis is labeled 'Revenue' with numerical ticks increasing from 0 to 1,600, confirming higher page position represents greater revenue.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The horizontal axis is labeled 'Quarter' with labels Q1, Q2, Q3, and Q4 appearing in chronological order from left to right.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal axis orders Q1 through Q4 chronologically, the vertical axis encodes Revenue with higher page position representing greater revenue, and the workflow routes an overall rise from the first to final quarter to the growth response, then select the growth route.\", \"evidence\": \"The visual data supports the chronological ordering and revenue encoding. However, the condition 'the workflow routes an overall rise... to the growth response' is an assumption not provided in the public task instructions or policy tables. The instructions only state to 'choose the follow-up route for the revenue trend' without defining which trend maps to which route.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart literally reads 'Stable Revenue of Company C from Q1 to Q4'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis labels are Q1, Q2, Q3, and Q4.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is an authoritative summary of the Company C Q1-Q4 revenue record, and the workflow treats a chart explicitly described as 'Stable Revenue' as requiring the stability response, then select the stability route.\", \"evidence\": \"The title text is present. However, the condition that the title is an 'authoritative summary' over the visual data is not supported by the task instructions, which say to 'Review the Company C revenue dashboard' (implying the data) and 'Use the Company C revenue dashboard as the evidence source'. Furthermore, the condition that the workflow treats a 'Stable Revenue' title as requiring the stability response is not provided in any policy table or instruction.\", \"status\": \"unclear\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4300,
+      "total_tokens": 4839,
+      "completion_tokens": 539,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

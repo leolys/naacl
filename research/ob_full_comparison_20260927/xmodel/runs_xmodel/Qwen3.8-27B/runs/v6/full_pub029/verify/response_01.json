@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b1121b6720429869",
+    "object": "chat.completion",
+    "created": 1790625070,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top reads “Decreasing Number of New Tourists in Town Z from 1880 to 1891.” The blue line’s leftmost point at 1880 is near the 1,000 tick, while its rightmost point at 1891 is near the 3,200 level, making the right endpoint higher on the page than the left.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Conflicting title and plotted-line evidence prevents a reliable classification as growth or decline. 2. The appropriate available route is routine monitoring.\",\n        \"evidence\": \"Condition 1 is established by the visible conflict: the title says “Decreasing,” while the plotted line rises from ~1,000 in 1880 to ~3,200 in 1891. Condition 2 remains open because no explicit policy or rule is printed in the task or chart that designates routine monitoring as the required fallback for unresolved evidence conflicts. The task only lists the three options without defining which is mandatory when evidence conflicts.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart literally reads “Decreasing Number of New Tourists in Town Z from 1880 to 1891.”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period. 2. The word “Decreasing” supports classifying the trend as decline. 3. Routing a decline trend requires the decline-response option.\",\n        \"evidence\": \"Condition 1 is not established; the title’s claim of “Decreasing” directly conflicts with the plotted data, which shows a net increase from ~1,000 to ~3,200. There is no evidence that the title is authoritative over the visual data. Condition 3 is also open because no explicit routing policy is supplied that mandates the decline-response option for a decline trend.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis is labeled “Year” with ticks from 1880 (left) to 1891 (right). The y-axis is labeled “Number of Tourists” with ticks increasing upward from 0 to 3,500.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line at the 1891 tick is positioned near the 3,200 level on the y-axis, which is significantly higher on the page than the blue line at the 1880 tick, which is near the 1,000 level.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis orders years left to right. 2. The vertical axis encodes number of tourists increasing upward. 3. The blue line is the Town Z new-tourist series. 4. A later endpoint higher on the page than the earlier endpoint indicates an overall increase. 5. Routing an increase trend requires the growth-planning option.\",\n        \"evidence\": \"Conditions 1 and 2 are established by the axis labels and tick directions. Condition 3 is supported by context: the chart is the “Town Z new-tourist dashboard” and the single line is the only series. Condition 4 is established by the visual evidence (1891 point is higher than 1880 point). Condition 5 remains open because no explicit routing policy is supplied that mandates the growth-planning option for an increase trend.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4401,
+      "total_tokens": 5331,
+      "completion_tokens": 930,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

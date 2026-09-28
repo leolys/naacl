@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a41a5bdcf32ad346",
+    "object": "chat.completion",
+    "created": 1790626976,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart is clearly visible and reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is the authoritative trend classification for the routing task, then the literal word 'Decreasing' in that title supports the decline-response route.\", \"evidence\": \"The condition requires the title to be the 'authoritative trend classification'. While the title is present, the chart itself shows a clear upward trend (rising from ~1,000 to ~3,000), which contradicts the title's description of 'Decreasing'. There is no explicit policy table or instruction stating that the title overrides the plotted data.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title contains the word 'Decreasing'. The plotted line starts at approximately 1,000 in 1880 and ends at approximately 2,900 in 1891. The 1891 endpoint is visibly higher on the y-axis than the 1880 endpoint.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If conflicting chart signals or the absence of a supplied routing threshold prevents a reliable growth-versus-decline classification, then the conservative available route is routine monitoring.\", \"evidence\": \"There is a clear conflict between the title ('Decreasing') and the data (increasing trend). There are no policy tables or explicit routing thresholds provided in the task description. Therefore, the condition for 'conflicting chart signals' and 'absence of a supplied routing threshold' is met.\", \"status\": \"supported\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The blue line starts at the 1880 tick at a y-value just below 1,000. It ends at the 1891 tick at a y-value just below 3,000. The 1891 point is visibly higher than the 1880 point.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The horizontal axis is labeled 'Year' with ticks from 1880 to 1891. The vertical axis is labeled 'Number of Tourists' with ticks 0, 500, 1,000, 1,500, 2,000, 2,500, and 3,000.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal axis labeled 'Year' orders the plotted line from 1880 to 1891 and the vertical axis labeled 'Number of Tourists' uses the visible numeric ticks with larger values higher on the page, then a line endpoint higher at 1891 than at 1880 indicates a higher new-tourist count at the end than at the start. If routing is based on overall endpoint growth, that interpretation supports growth planning.\", \"evidence\": \"The axes are correctly labeled and ordered. The line clearly shows an increase from start to end. However, the condition 'If routing is based on overall endpoint growth' is not explicitly stated in the task instructions. The task simply asks to 'choose the follow-up route'. Given the conflict with the title, assuming endpoint growth is the sole criterion is an assumption not fully supported by the provided text.\", \"status\": \"unclear\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4116,
+      "total_tokens": 4890,
+      "completion_tokens": 774,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

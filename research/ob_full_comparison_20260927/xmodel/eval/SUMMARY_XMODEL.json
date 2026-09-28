@@ -1,0 +1,4674 @@
+{
+  "scope": "single-image original-label agreement, known dataset, no browser submissions",
+  "protocol": "xmodel_20260928",
+  "models": {
+    "Qwen3-VL-8B-Instruct": {
+      "root": "runs_xmodel/Qwen3-VL-8B-Instruct",
+      "identity": {
+        "model": "Qwen3-VL-8B-Instruct",
+        "endpoint": "http://127.0.0.1:8057",
+        "versions": [
+          "plain",
+          "v3",
+          "v4",
+          "v5",
+          "v6",
+          "v7"
+        ],
+        "enable_thinking_chat_template": false,
+        "labels_sha256": "d8b1798adcdf665eb971f167fa7951bb3ac9f68d0e772eac751e5cde43336a40",
+        "runner": "xmodel_20260928",
+        "max_total_attempts": 2600,
+        "decoding": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "seed": 12345,
+          "max_output_tokens": {
+            "read": 1500,
+            "verify": 3600,
+            "decide": 700,
+            "control": 64
+          }
+        }
+      },
+      "all_terminal": true,
+      "counts": {
+        "plain": {
+          "target": 65,
+          "trap": 68,
+          "interface_failed": 1,
+          "other": 3,
+          "no_option": 3
+        },
+        "v3": {
+          "interface_failed": 51,
+          "target": 50,
+          "trap": 26,
+          "other": 9,
+          "no_option": 4
+        },
+        "v4": {
+          "target": 77,
+          "other": 8,
+          "trap": 47,
+          "no_option": 6,
+          "interface_failed": 2
+        },
+        "v5": {
+          "target": 75,
+          "interface_failed": 4,
+          "other": 10,
+          "trap": 43,
+          "no_option": 8
+        },
+        "v6": {
+          "target": 71,
+          "other": 6,
+          "trap": 50,
+          "no_option": 5,
+          "interface_failed": 8
+        },
+        "v7": {
+          "target": 80,
+          "trap": 41,
+          "other": 14,
+          "interface_failed": 2,
+          "no_option": 3
+        }
+      },
+      "comparisons": {
+        "plain": {
+          "version": "plain",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 65,
+                "trap": 68,
+                "interface_failed": 1,
+                "other": 3,
+                "no_option": 3
+              },
+              "agreement_rate": 0.4642857142857143
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 13,
+                "trap": 9,
+                "other": 1,
+                "no_option": 1
+              },
+              "agreement_rate": 0.5416666666666666
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 52,
+                "trap": 59,
+                "interface_failed": 1,
+                "other": 2,
+                "no_option": 2
+              },
+              "agreement_rate": 0.4482758620689655
+            }
+          }
+        },
+        "v3": {
+          "version": "v3",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "interface_failed": 51,
+                "target": 50,
+                "trap": 26,
+                "other": 9,
+                "no_option": 4
+              },
+              "agreement_rate": 0.35714285714285715,
+              "vs_plain": {
+                "n": 140,
+                "net_target": -15,
+                "broad_transitions": {
+                  "target_to_null_or_failure": 25,
+                  "target_maintained": 30,
+                  "other_transition": 55,
+                  "null_or_failure_to_target": 2,
+                  "wrong_to_target": 18,
+                  "target_to_wrong": 10
+                },
+                "exact_transitions": {
+                  "target -> interface_failed": 24,
+                  "target -> target": 30,
+                  "trap -> trap": 18,
+                  "interface_failed -> target": 1,
+                  "trap -> interface_failed": 26,
+                  "trap -> target": 18,
+                  "trap -> other": 4,
+                  "target -> trap": 7,
+                  "trap -> no_option": 2,
+                  "other -> interface_failed": 1,
+                  "other -> trap": 1,
+                  "target -> no_option": 1,
+                  "target -> other": 3,
+                  "no_option -> target": 1,
+                  "other -> other": 1,
+                  "no_option -> no_option": 1,
+                  "no_option -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": -4
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -2
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 2
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 5
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -8
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": -2
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 2
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": -1
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 88,
+                  "net_target": 8
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 82,
+                  "net_target": 8
+                },
+                "mcnemar": 0.3698666840791702,
+                "bootstrap": {
+                  "point": -0.10714285714285715,
+                  "ci95": [
+                    -0.21428571428571425,
+                    -0.0071428571428571175
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "interface_failed": 12,
+                "target": 7,
+                "trap": 3,
+                "other": 1,
+                "no_option": 1
+              },
+              "agreement_rate": 0.2916666666666667,
+              "vs_plain": {
+                "n": 24,
+                "net_target": -6,
+                "broad_transitions": {
+                  "target_to_null_or_failure": 6,
+                  "target_maintained": 5,
+                  "other_transition": 9,
+                  "target_to_wrong": 2,
+                  "wrong_to_target": 2
+                },
+                "exact_transitions": {
+                  "target -> interface_failed": 6,
+                  "target -> target": 5,
+                  "trap -> trap": 1,
+                  "trap -> interface_failed": 6,
+                  "target -> trap": 2,
+                  "other -> other": 1,
+                  "no_option -> no_option": 1,
+                  "trap -> target": 2
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": -1
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 12,
+                  "net_target": 0
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 11,
+                  "net_target": 0
+                },
+                "mcnemar": 1.0,
+                "bootstrap": {
+                  "point": -0.24999999999999994,
+                  "ci95": [
+                    -0.5,
+                    0.0
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "interface_failed": 39,
+                "target": 43,
+                "trap": 23,
+                "other": 8,
+                "no_option": 3
+              },
+              "agreement_rate": 0.3706896551724138,
+              "vs_plain": {
+                "n": 116,
+                "net_target": -9,
+                "broad_transitions": {
+                  "target_to_null_or_failure": 19,
+                  "target_maintained": 25,
+                  "other_transition": 46,
+                  "null_or_failure_to_target": 2,
+                  "wrong_to_target": 16,
+                  "target_to_wrong": 8
+                },
+                "exact_transitions": {
+                  "target -> interface_failed": 18,
+                  "target -> target": 25,
+                  "trap -> trap": 17,
+                  "interface_failed -> target": 1,
+                  "trap -> interface_failed": 20,
+                  "trap -> target": 16,
+                  "trap -> other": 4,
+                  "target -> trap": 5,
+                  "trap -> no_option": 2,
+                  "other -> interface_failed": 1,
+                  "other -> trap": 1,
+                  "target -> no_option": 1,
+                  "target -> other": 3,
+                  "no_option -> target": 1,
+                  "no_option -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": -3
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -2
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 2
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 5
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -7
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -3
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 2
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 76,
+                  "net_target": 8
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 71,
+                  "net_target": 8
+                },
+                "mcnemar": 0.3031792640686035,
+                "bootstrap": {
+                  "point": -0.07758620689655171,
+                  "ci95": [
+                    -0.1896551724137931,
+                    0.03448275862068967
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v4": {
+          "version": "v4",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 77,
+                "other": 8,
+                "trap": 47,
+                "no_option": 6,
+                "interface_failed": 2
+              },
+              "agreement_rate": 0.55,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 12,
+                "broad_transitions": {
+                  "target_maintained": 45,
+                  "other_transition": 43,
+                  "null_or_failure_to_target": 2,
+                  "wrong_to_target": 30,
+                  "target_to_wrong": 17,
+                  "target_to_null_or_failure": 3
+                },
+                "exact_transitions": {
+                  "target -> target": 45,
+                  "trap -> other": 5,
+                  "trap -> trap": 30,
+                  "interface_failed -> target": 1,
+                  "trap -> no_option": 2,
+                  "trap -> target": 29,
+                  "target -> trap": 14,
+                  "other -> trap": 2,
+                  "target -> no_option": 3,
+                  "target -> other": 3,
+                  "no_option -> trap": 1,
+                  "other -> target": 1,
+                  "trap -> interface_failed": 2,
+                  "no_option -> no_option": 1,
+                  "no_option -> target": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 3
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 10
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -6
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": 2
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 6
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 137,
+                  "net_target": 11
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 129,
+                  "net_target": 13
+                },
+                "mcnemar": 0.15788138736297697,
+                "bootstrap": {
+                  "point": 0.08571428571428574,
+                  "ci95": [
+                    -0.014285714285714346,
+                    0.18571428571428567
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 13,
+                "other": 2,
+                "no_option": 3,
+                "trap": 6
+              },
+              "agreement_rate": 0.5416666666666666,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 0,
+                "broad_transitions": {
+                  "target_maintained": 10,
+                  "other_transition": 8,
+                  "wrong_to_target": 3,
+                  "target_to_wrong": 2,
+                  "target_to_null_or_failure": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 10,
+                  "trap -> other": 1,
+                  "trap -> no_option": 1,
+                  "trap -> trap": 5,
+                  "trap -> target": 2,
+                  "target -> trap": 1,
+                  "other -> target": 1,
+                  "no_option -> no_option": 1,
+                  "target -> other": 1,
+                  "target -> no_option": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 24,
+                  "net_target": 0
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 21,
+                  "net_target": 1
+                },
+                "mcnemar": 1.0,
+                "bootstrap": {
+                  "point": 0.0,
+                  "ci95": [
+                    -0.20833333333333331,
+                    0.20833333333333331
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 64,
+                "trap": 41,
+                "other": 6,
+                "no_option": 3,
+                "interface_failed": 2
+              },
+              "agreement_rate": 0.5517241379310345,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 12,
+                "broad_transitions": {
+                  "target_maintained": 35,
+                  "other_transition": 35,
+                  "null_or_failure_to_target": 2,
+                  "wrong_to_target": 27,
+                  "target_to_wrong": 15,
+                  "target_to_null_or_failure": 2
+                },
+                "exact_transitions": {
+                  "target -> target": 35,
+                  "trap -> trap": 25,
+                  "interface_failed -> target": 1,
+                  "trap -> target": 27,
+                  "target -> trap": 13,
+                  "trap -> other": 4,
+                  "other -> trap": 2,
+                  "trap -> no_option": 1,
+                  "target -> no_option": 2,
+                  "target -> other": 2,
+                  "no_option -> trap": 1,
+                  "trap -> interface_failed": 2,
+                  "no_option -> target": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 3
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 10
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -6
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 5
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 113,
+                  "net_target": 11
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 108,
+                  "net_target": 12
+                },
+                "mcnemar": 0.17685909397550859,
+                "bootstrap": {
+                  "point": 0.10344827586206895,
+                  "ci95": [
+                    -0.008620689655172431,
+                    0.2155172413793104
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v5": {
+          "version": "v5",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 75,
+                "interface_failed": 4,
+                "other": 10,
+                "trap": 43,
+                "no_option": 8
+              },
+              "agreement_rate": 0.5357142857142857,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 10,
+                "broad_transitions": {
+                  "target_maintained": 42,
+                  "target_to_null_or_failure": 6,
+                  "other_transition": 42,
+                  "wrong_to_target": 32,
+                  "target_to_wrong": 17,
+                  "null_or_failure_to_target": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 42,
+                  "target -> interface_failed": 2,
+                  "trap -> other": 7,
+                  "trap -> trap": 26,
+                  "interface_failed -> no_option": 1,
+                  "trap -> interface_failed": 2,
+                  "trap -> target": 31,
+                  "target -> trap": 14,
+                  "trap -> no_option": 2,
+                  "other -> trap": 2,
+                  "target -> no_option": 4,
+                  "target -> other": 3,
+                  "no_option -> trap": 1,
+                  "other -> target": 1,
+                  "no_option -> no_option": 1,
+                  "no_option -> target": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -2
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 11
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -6
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": 0
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 2
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 6
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 135,
+                  "net_target": 12
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 126,
+                  "net_target": 15
+                },
+                "mcnemar": 0.08876832197429962,
+                "bootstrap": {
+                  "point": 0.0714285714285714,
+                  "ci95": [
+                    -0.0357142857142857,
+                    0.17142857142857149
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 14,
+                "other": 2,
+                "interface_failed": 1,
+                "trap": 5,
+                "no_option": 2
+              },
+              "agreement_rate": 0.5833333333333334,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 1,
+                "broad_transitions": {
+                  "target_maintained": 9,
+                  "other_transition": 6,
+                  "target_to_wrong": 3,
+                  "wrong_to_target": 5,
+                  "target_to_null_or_failure": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 9,
+                  "trap -> other": 1,
+                  "trap -> interface_failed": 1,
+                  "trap -> trap": 3,
+                  "target -> trap": 2,
+                  "trap -> target": 4,
+                  "other -> target": 1,
+                  "no_option -> no_option": 1,
+                  "target -> no_option": 1,
+                  "target -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 23,
+                  "net_target": 1
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 21,
+                  "net_target": 2
+                },
+                "mcnemar": 1.0,
+                "bootstrap": {
+                  "point": 0.04166666666666674,
+                  "ci95": [
+                    -0.20833333333333331,
+                    0.2916666666666667
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 61,
+                "interface_failed": 3,
+                "trap": 38,
+                "no_option": 6,
+                "other": 8
+              },
+              "agreement_rate": 0.5258620689655172,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 9,
+                "broad_transitions": {
+                  "target_maintained": 33,
+                  "target_to_null_or_failure": 5,
+                  "other_transition": 36,
+                  "wrong_to_target": 27,
+                  "target_to_wrong": 14,
+                  "null_or_failure_to_target": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 33,
+                  "target -> interface_failed": 2,
+                  "trap -> trap": 23,
+                  "interface_failed -> no_option": 1,
+                  "trap -> target": 27,
+                  "trap -> other": 6,
+                  "target -> trap": 12,
+                  "trap -> no_option": 2,
+                  "other -> trap": 2,
+                  "target -> no_option": 3,
+                  "trap -> interface_failed": 1,
+                  "target -> other": 2,
+                  "no_option -> trap": 1,
+                  "no_option -> target": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -2
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 11
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -5
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 5
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 112,
+                  "net_target": 11
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 105,
+                  "net_target": 13
+                },
+                "mcnemar": 0.11916777603619266,
+                "bootstrap": {
+                  "point": 0.07758620689655171,
+                  "ci95": [
+                    -0.03448275862068967,
+                    0.18965517241379315
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v6": {
+          "version": "v6",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 71,
+                "other": 6,
+                "trap": 50,
+                "no_option": 5,
+                "interface_failed": 8
+              },
+              "agreement_rate": 0.5071428571428571,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 6,
+                "broad_transitions": {
+                  "target_maintained": 41,
+                  "target_to_wrong": 18,
+                  "other_transition": 45,
+                  "null_or_failure_to_target": 3,
+                  "wrong_to_target": 27,
+                  "target_to_null_or_failure": 6
+                },
+                "exact_transitions": {
+                  "target -> target": 41,
+                  "target -> other": 3,
+                  "trap -> other": 3,
+                  "trap -> trap": 33,
+                  "interface_failed -> target": 1,
+                  "trap -> target": 26,
+                  "trap -> no_option": 2,
+                  "target -> trap": 15,
+                  "other -> trap": 2,
+                  "target -> interface_failed": 4,
+                  "target -> no_option": 2,
+                  "trap -> interface_failed": 4,
+                  "no_option -> target": 2,
+                  "other -> target": 1,
+                  "no_option -> no_option": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": -1
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -4
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 4
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 7
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -7
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": 2
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 5
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 131,
+                  "net_target": 9
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 124,
+                  "net_target": 9
+                },
+                "mcnemar": 0.4653863838166217,
+                "bootstrap": {
+                  "point": 0.042857142857142816,
+                  "ci95": [
+                    -0.06428571428571422,
+                    0.1428571428571429
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 14,
+                "other": 2,
+                "trap": 7,
+                "interface_failed": 1
+              },
+              "agreement_rate": 0.5833333333333334,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 1,
+                "broad_transitions": {
+                  "target_maintained": 9,
+                  "other_transition": 6,
+                  "target_to_wrong": 4,
+                  "wrong_to_target": 4,
+                  "null_or_failure_to_target": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 9,
+                  "trap -> other": 1,
+                  "trap -> trap": 4,
+                  "target -> trap": 3,
+                  "trap -> target": 3,
+                  "trap -> interface_failed": 1,
+                  "other -> target": 1,
+                  "no_option -> target": 1,
+                  "target -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 23,
+                  "net_target": 1
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 22,
+                  "net_target": 0
+                },
+                "mcnemar": 1.0,
+                "bootstrap": {
+                  "point": 0.04166666666666674,
+                  "ci95": [
+                    -0.20833333333333331,
+                    0.2916666666666667
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 57,
+                "other": 4,
+                "trap": 43,
+                "no_option": 5,
+                "interface_failed": 7
+              },
+              "agreement_rate": 0.49137931034482757,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 5,
+                "broad_transitions": {
+                  "target_maintained": 32,
+                  "target_to_wrong": 14,
+                  "other_transition": 39,
+                  "null_or_failure_to_target": 2,
+                  "wrong_to_target": 23,
+                  "target_to_null_or_failure": 6
+                },
+                "exact_transitions": {
+                  "target -> target": 32,
+                  "target -> other": 2,
+                  "trap -> trap": 29,
+                  "interface_failed -> target": 1,
+                  "trap -> target": 23,
+                  "trap -> no_option": 2,
+                  "target -> trap": 12,
+                  "trap -> other": 2,
+                  "other -> trap": 2,
+                  "target -> interface_failed": 4,
+                  "target -> no_option": 2,
+                  "no_option -> target": 1,
+                  "trap -> interface_failed": 3,
+                  "no_option -> no_option": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": -1
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -4
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 4
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 7
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": -2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -6
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 4
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 108,
+                  "net_target": 8
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 102,
+                  "net_target": 9
+                },
+                "mcnemar": 0.37548311799764633,
+                "bootstrap": {
+                  "point": 0.043103448275862044,
+                  "ci95": [
+                    -0.06896551724137928,
+                    0.1637931034482758
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v7": {
+          "version": "v7",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 80,
+                "trap": 41,
+                "other": 14,
+                "interface_failed": 2,
+                "no_option": 3
+              },
+              "agreement_rate": 0.5714285714285714,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 15,
+                "broad_transitions": {
+                  "target_maintained": 46,
+                  "other_transition": 41,
+                  "null_or_failure_to_target": 1,
+                  "wrong_to_target": 33,
+                  "target_to_wrong": 16,
+                  "target_to_null_or_failure": 3
+                },
+                "exact_transitions": {
+                  "target -> target": 46,
+                  "trap -> trap": 27,
+                  "interface_failed -> target": 1,
+                  "trap -> target": 32,
+                  "target -> trap": 11,
+                  "trap -> other": 8,
+                  "trap -> interface_failed": 1,
+                  "other -> trap": 2,
+                  "target -> no_option": 2,
+                  "target -> interface_failed": 1,
+                  "target -> other": 5,
+                  "no_option -> trap": 1,
+                  "other -> target": 1,
+                  "no_option -> no_option": 1,
+                  "no_option -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 4
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 10
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -6
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 2
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 4
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 137,
+                  "net_target": 15
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 132,
+                  "net_target": 17
+                },
+                "mcnemar": 0.04258822828277431,
+                "bootstrap": {
+                  "point": 0.1071428571428571,
+                  "ci95": [
+                    0.0071428571428571175,
+                    0.20714285714285718
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 17,
+                "trap": 4,
+                "no_option": 1,
+                "other": 2
+              },
+              "agreement_rate": 0.7083333333333334,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 4,
+                "broad_transitions": {
+                  "target_maintained": 10,
+                  "other_transition": 4,
+                  "wrong_to_target": 7,
+                  "target_to_wrong": 3
+                },
+                "exact_transitions": {
+                  "target -> target": 10,
+                  "trap -> trap": 3,
+                  "trap -> target": 6,
+                  "target -> trap": 1,
+                  "other -> target": 1,
+                  "no_option -> no_option": 1,
+                  "target -> other": 2
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 24,
+                  "net_target": 4
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 23,
+                  "net_target": 4
+                },
+                "mcnemar": 0.6875,
+                "bootstrap": {
+                  "point": 0.16666666666666674,
+                  "ci95": [
+                    -0.08333333333333337,
+                    0.4166666666666667
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 63,
+                "trap": 37,
+                "other": 12,
+                "interface_failed": 2,
+                "no_option": 2
+              },
+              "agreement_rate": 0.5431034482758621,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 11,
+                "broad_transitions": {
+                  "target_maintained": 36,
+                  "other_transition": 37,
+                  "null_or_failure_to_target": 1,
+                  "wrong_to_target": 26,
+                  "target_to_wrong": 13,
+                  "target_to_null_or_failure": 3
+                },
+                "exact_transitions": {
+                  "target -> target": 36,
+                  "trap -> trap": 24,
+                  "interface_failed -> target": 1,
+                  "trap -> target": 26,
+                  "target -> trap": 10,
+                  "trap -> other": 8,
+                  "trap -> interface_failed": 1,
+                  "other -> trap": 2,
+                  "target -> no_option": 2,
+                  "target -> interface_failed": 1,
+                  "target -> other": 3,
+                  "no_option -> trap": 1,
+                  "no_option -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 4
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 9
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -2
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -6
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": 0
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 3
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 113,
+                  "net_target": 11
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 109,
+                  "net_target": 13
+                },
+                "mcnemar": 0.10650382819585502,
+                "bootstrap": {
+                  "point": 0.09482758620689657,
+                  "ci95": [
+                    -0.017241379310344807,
+                    0.2068965517241379
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        }
+      },
+      "cost": {
+        "plain": {
+          "attempts": 142,
+          "known_usage": {
+            "prompt_tokens": 297654,
+            "completion_tokens": 14927,
+            "total_tokens": 312581
+          },
+          "unknown_usage_attempts": 2,
+          "known_request_seconds_sum": 672.3,
+          "http_status": {
+            "200": 140,
+            "None": 2
+          }
+        },
+        "v3": {
+          "attempts": 375,
+          "known_usage": {
+            "prompt_tokens": 1220974,
+            "completion_tokens": 255475,
+            "total_tokens": 1476449
+          },
+          "unknown_usage_attempts": 4,
+          "known_request_seconds_sum": 16534.7,
+          "http_status": {
+            "200": 371,
+            "500": 4
+          }
+        },
+        "v4": {
+          "attempts": 419,
+          "known_usage": {
+            "prompt_tokens": 1370828,
+            "completion_tokens": 195836,
+            "total_tokens": 1566664
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 13326.9,
+          "http_status": {
+            "200": 419
+          }
+        },
+        "v5": {
+          "attempts": 416,
+          "known_usage": {
+            "prompt_tokens": 1373897,
+            "completion_tokens": 213135,
+            "total_tokens": 1587032
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 14126.0,
+          "http_status": {
+            "200": 416
+          }
+        },
+        "v6": {
+          "attempts": 412,
+          "known_usage": {
+            "prompt_tokens": 1390828,
+            "completion_tokens": 229251,
+            "total_tokens": 1620079
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 14736.2,
+          "http_status": {
+            "200": 412
+          }
+        },
+        "v7": {
+          "attempts": 418,
+          "known_usage": {
+            "prompt_tokens": 1376759,
+            "completion_tokens": 197246,
+            "total_tokens": 1574005
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 12540.0,
+          "http_status": {
+            "200": 418
+          }
+        },
+        "service_controls": {
+          "attempts": 2,
+          "known_usage": {
+            "prompt_tokens": 147,
+            "completion_tokens": 12,
+            "total_tokens": 159
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 0.3,
+          "http_status": {
+            "200": 2
+          }
+        }
+      },
+      "domain_counts": {
+        "plain": {
+          "business47": {
+            "target": 18,
+            "trap": 26,
+            "interface_failed": 1,
+            "other": 2
+          },
+          "environment35": {
+            "target": 25,
+            "trap": 10
+          },
+          "health19": {
+            "no_option": 1,
+            "trap": 12,
+            "target": 6
+          },
+          "public39": {
+            "other": 1,
+            "trap": 20,
+            "no_option": 2,
+            "target": 16
+          }
+        },
+        "v3": {
+          "business47": {
+            "interface_failed": 16,
+            "target": 16,
+            "trap": 12,
+            "other": 2,
+            "no_option": 1
+          },
+          "environment35": {
+            "trap": 6,
+            "interface_failed": 11,
+            "target": 13,
+            "no_option": 2,
+            "other": 3
+          },
+          "health19": {
+            "target": 8,
+            "interface_failed": 7,
+            "trap": 3,
+            "other": 1
+          },
+          "public39": {
+            "other": 3,
+            "target": 13,
+            "interface_failed": 17,
+            "no_option": 1,
+            "trap": 5
+          }
+        },
+        "v4": {
+          "business47": {
+            "target": 24,
+            "other": 2,
+            "trap": 19,
+            "no_option": 2
+          },
+          "environment35": {
+            "target": 18,
+            "trap": 14,
+            "no_option": 1,
+            "other": 2
+          },
+          "health19": {
+            "trap": 9,
+            "target": 10
+          },
+          "public39": {
+            "target": 25,
+            "interface_failed": 2,
+            "no_option": 3,
+            "other": 4,
+            "trap": 5
+          }
+        },
+        "v5": {
+          "business47": {
+            "target": 22,
+            "interface_failed": 2,
+            "other": 4,
+            "trap": 17,
+            "no_option": 2
+          },
+          "environment35": {
+            "trap": 12,
+            "target": 16,
+            "no_option": 4,
+            "interface_failed": 1,
+            "other": 2
+          },
+          "health19": {
+            "trap": 6,
+            "target": 12,
+            "interface_failed": 1
+          },
+          "public39": {
+            "target": 25,
+            "trap": 8,
+            "no_option": 2,
+            "other": 4
+          }
+        },
+        "v6": {
+          "business47": {
+            "target": 22,
+            "other": 4,
+            "trap": 20,
+            "no_option": 1
+          },
+          "environment35": {
+            "trap": 14,
+            "target": 14,
+            "interface_failed": 5,
+            "no_option": 1,
+            "other": 1
+          },
+          "health19": {
+            "target": 12,
+            "trap": 6,
+            "interface_failed": 1
+          },
+          "public39": {
+            "target": 23,
+            "trap": 10,
+            "interface_failed": 2,
+            "no_option": 3,
+            "other": 1
+          }
+        },
+        "v7": {
+          "business47": {
+            "target": 26,
+            "trap": 18,
+            "other": 2,
+            "interface_failed": 1
+          },
+          "environment35": {
+            "target": 19,
+            "trap": 11,
+            "no_option": 1,
+            "interface_failed": 1,
+            "other": 3
+          },
+          "health19": {
+            "trap": 6,
+            "target": 13
+          },
+          "public39": {
+            "target": 22,
+            "other": 9,
+            "no_option": 2,
+            "trap": 6
+          }
+        }
+      }
+    },
+    "Qwen3.8-27B": {
+      "root": "runs_xmodel/Qwen3.8-27B",
+      "identity": {
+        "model": "Qwen3.8-27B",
+        "endpoint": "http://127.0.0.1:8058",
+        "versions": [
+          "plain",
+          "v3",
+          "v4",
+          "v5",
+          "v6",
+          "v7"
+        ],
+        "enable_thinking_chat_template": true,
+        "labels_sha256": "d8b1798adcdf665eb971f167fa7951bb3ac9f68d0e772eac751e5cde43336a40",
+        "runner": "xmodel_20260928",
+        "max_total_attempts": 2600,
+        "decoding": {
+          "temperature": 0.7,
+          "top_p": 0.8,
+          "top_k": 20,
+          "seed": 12345,
+          "max_output_tokens": {
+            "read": 1500,
+            "verify": 3600,
+            "decide": 700,
+            "control": 64
+          }
+        }
+      },
+      "all_terminal": true,
+      "counts": {
+        "plain": {
+          "target": 73,
+          "trap": 64,
+          "other": 3
+        },
+        "v3": {
+          "interface_failed": 8,
+          "trap": 33,
+          "target": 75,
+          "no_option": 21,
+          "other": 3
+        },
+        "v4": {
+          "target": 86,
+          "no_option": 11,
+          "trap": 34,
+          "other": 7,
+          "interface_failed": 2
+        },
+        "v5": {
+          "target": 90,
+          "no_option": 5,
+          "trap": 32,
+          "other": 10,
+          "interface_failed": 3
+        },
+        "v6": {
+          "target": 86,
+          "no_option": 12,
+          "other": 13,
+          "trap": 27,
+          "interface_failed": 2
+        },
+        "v7": {
+          "target": 89,
+          "trap": 38,
+          "no_option": 5,
+          "other": 7,
+          "interface_failed": 1
+        }
+      },
+      "comparisons": {
+        "plain": {
+          "version": "plain",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 73,
+                "trap": 64,
+                "other": 3
+              },
+              "agreement_rate": 0.5214285714285715
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 13,
+                "trap": 11
+              },
+              "agreement_rate": 0.5416666666666666
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 60,
+                "trap": 53,
+                "other": 3
+              },
+              "agreement_rate": 0.5172413793103449
+            }
+          }
+        },
+        "v3": {
+          "version": "v3",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "interface_failed": 8,
+                "trap": 33,
+                "target": 75,
+                "no_option": 21,
+                "other": 3
+              },
+              "agreement_rate": 0.5357142857142857,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 2,
+                "broad_transitions": {
+                  "target_to_null_or_failure": 22,
+                  "target_to_wrong": 6,
+                  "target_maintained": 45,
+                  "other_transition": 37,
+                  "wrong_to_target": 30
+                },
+                "exact_transitions": {
+                  "target -> interface_failed": 7,
+                  "target -> trap": 6,
+                  "target -> target": 45,
+                  "target -> no_option": 15,
+                  "trap -> trap": 26,
+                  "trap -> target": 30,
+                  "trap -> no_option": 6,
+                  "other -> other": 2,
+                  "other -> trap": 1,
+                  "trap -> other": 1,
+                  "trap -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": -2
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -8
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 18
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": 0
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -3
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": -5
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 132,
+                  "net_target": 9
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 111,
+                  "net_target": 24
+                },
+                "mcnemar": 0.00013920338824391365,
+                "bootstrap": {
+                  "point": 0.014285714285714235,
+                  "ci95": [
+                    -0.09285714285714286,
+                    0.12142857142857139
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "interface_failed": 1,
+                "trap": 7,
+                "target": 12,
+                "no_option": 4
+              },
+              "agreement_rate": 0.5,
+              "vs_plain": {
+                "n": 24,
+                "net_target": -1,
+                "broad_transitions": {
+                  "target_to_null_or_failure": 3,
+                  "target_to_wrong": 1,
+                  "target_maintained": 9,
+                  "other_transition": 8,
+                  "wrong_to_target": 3
+                },
+                "exact_transitions": {
+                  "target -> interface_failed": 1,
+                  "target -> trap": 1,
+                  "target -> target": 9,
+                  "trap -> trap": 6,
+                  "trap -> target": 3,
+                  "trap -> no_option": 2,
+                  "target -> no_option": 2
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": -1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 23,
+                  "net_target": 0
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 19,
+                  "net_target": 2
+                },
+                "mcnemar": 1.0,
+                "bootstrap": {
+                  "point": -0.04166666666666663,
+                  "ci95": [
+                    -0.25000000000000006,
+                    0.16666666666666669
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 63,
+                "no_option": 17,
+                "trap": 26,
+                "other": 3,
+                "interface_failed": 7
+              },
+              "agreement_rate": 0.5431034482758621,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 3,
+                "broad_transitions": {
+                  "target_maintained": 36,
+                  "target_to_null_or_failure": 19,
+                  "wrong_to_target": 27,
+                  "target_to_wrong": 5,
+                  "other_transition": 29
+                },
+                "exact_transitions": {
+                  "target -> target": 36,
+                  "target -> no_option": 13,
+                  "trap -> target": 27,
+                  "target -> trap": 5,
+                  "trap -> no_option": 4,
+                  "trap -> trap": 20,
+                  "other -> other": 2,
+                  "target -> interface_failed": 6,
+                  "other -> trap": 1,
+                  "trap -> other": 1,
+                  "trap -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": -1
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -7
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 17
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": -1
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -3
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -4
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 109,
+                  "net_target": 9
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 92,
+                  "net_target": 22
+                },
+                "mcnemar": 0.00022614840418100357,
+                "bootstrap": {
+                  "point": 0.025862068965517238,
+                  "ci95": [
+                    -0.09482758620689657,
+                    0.14655172413793105
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v4": {
+          "version": "v4",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 86,
+                "no_option": 11,
+                "trap": 34,
+                "other": 7,
+                "interface_failed": 2
+              },
+              "agreement_rate": 0.6142857142857143,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 13,
+                "broad_transitions": {
+                  "target_maintained": 53,
+                  "target_to_null_or_failure": 8,
+                  "other_transition": 34,
+                  "wrong_to_target": 33,
+                  "target_to_wrong": 12
+                },
+                "exact_transitions": {
+                  "target -> target": 53,
+                  "target -> no_option": 7,
+                  "trap -> trap": 24,
+                  "trap -> other": 2,
+                  "trap -> target": 33,
+                  "other -> other": 2,
+                  "target -> trap": 9,
+                  "other -> trap": 1,
+                  "trap -> no_option": 4,
+                  "target -> other": 3,
+                  "trap -> interface_failed": 1,
+                  "target -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -6
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 18
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": 3
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": -6
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": -1
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 138,
+                  "net_target": 14
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 127,
+                  "net_target": 21
+                },
+                "mcnemar": 0.0049178006441934485,
+                "bootstrap": {
+                  "point": 0.09285714285714286,
+                  "ci95": [
+                    -0.0071428571428572285,
+                    0.19285714285714284
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 15,
+                "trap": 6,
+                "no_option": 3
+              },
+              "agreement_rate": 0.625,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 2,
+                "broad_transitions": {
+                  "target_maintained": 11,
+                  "other_transition": 7,
+                  "wrong_to_target": 4,
+                  "target_to_null_or_failure": 1,
+                  "target_to_wrong": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 11,
+                  "trap -> trap": 5,
+                  "trap -> target": 4,
+                  "trap -> no_option": 2,
+                  "target -> no_option": 1,
+                  "target -> trap": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 24,
+                  "net_target": 2
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 21,
+                  "net_target": 3
+                },
+                "mcnemar": 0.75,
+                "bootstrap": {
+                  "point": 0.08333333333333337,
+                  "ci95": [
+                    -0.125,
+                    0.29166666666666663
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 71,
+                "no_option": 8,
+                "other": 7,
+                "trap": 28,
+                "interface_failed": 2
+              },
+              "agreement_rate": 0.6120689655172413,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 11,
+                "broad_transitions": {
+                  "target_maintained": 42,
+                  "target_to_null_or_failure": 7,
+                  "other_transition": 27,
+                  "wrong_to_target": 29,
+                  "target_to_wrong": 11
+                },
+                "exact_transitions": {
+                  "target -> target": 42,
+                  "target -> no_option": 6,
+                  "trap -> other": 2,
+                  "trap -> target": 29,
+                  "trap -> trap": 19,
+                  "other -> other": 2,
+                  "target -> trap": 8,
+                  "other -> trap": 1,
+                  "target -> other": 3,
+                  "trap -> interface_failed": 1,
+                  "target -> interface_failed": 1,
+                  "trap -> no_option": 2
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -6
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 17
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": 2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -6
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": -1
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 114,
+                  "net_target": 12
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 106,
+                  "net_target": 18
+                },
+                "mcnemar": 0.012853152191382833,
+                "bootstrap": {
+                  "point": 0.09482758620689646,
+                  "ci95": [
+                    -0.017241379310344862,
+                    0.206896551724138
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v5": {
+          "version": "v5",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 90,
+                "no_option": 5,
+                "trap": 32,
+                "other": 10,
+                "interface_failed": 3
+              },
+              "agreement_rate": 0.6428571428571429,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 17,
+                "broad_transitions": {
+                  "target_maintained": 57,
+                  "target_to_null_or_failure": 5,
+                  "other_transition": 34,
+                  "target_to_wrong": 11,
+                  "wrong_to_target": 33
+                },
+                "exact_transitions": {
+                  "target -> target": 57,
+                  "target -> no_option": 3,
+                  "trap -> trap": 24,
+                  "target -> other": 4,
+                  "target -> trap": 7,
+                  "trap -> target": 33,
+                  "other -> other": 2,
+                  "trap -> other": 4,
+                  "other -> trap": 1,
+                  "trap -> no_option": 2,
+                  "target -> interface_failed": 2,
+                  "trap -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -3
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": -1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 18
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": 3
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": -5
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 2
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 137,
+                  "net_target": 19
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 132,
+                  "net_target": 22
+                },
+                "mcnemar": 0.002520067632531209,
+                "bootstrap": {
+                  "point": 0.12142857142857144,
+                  "ci95": [
+                    0.02857142857142847,
+                    0.2142857142857143
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 14,
+                "trap": 7,
+                "no_option": 3
+              },
+              "agreement_rate": 0.5833333333333334,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 1,
+                "broad_transitions": {
+                  "target_maintained": 11,
+                  "other_transition": 8,
+                  "wrong_to_target": 3,
+                  "target_to_null_or_failure": 1,
+                  "target_to_wrong": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 11,
+                  "trap -> trap": 6,
+                  "trap -> target": 3,
+                  "trap -> no_option": 2,
+                  "target -> no_option": 1,
+                  "target -> trap": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": -1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 24,
+                  "net_target": 1
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 21,
+                  "net_target": 2
+                },
+                "mcnemar": 1.0,
+                "bootstrap": {
+                  "point": 0.04166666666666674,
+                  "ci95": [
+                    -0.12500000000000006,
+                    0.20833333333333337
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 76,
+                "no_option": 2,
+                "trap": 25,
+                "other": 10,
+                "interface_failed": 3
+              },
+              "agreement_rate": 0.6551724137931034,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 16,
+                "broad_transitions": {
+                  "target_maintained": 46,
+                  "target_to_null_or_failure": 4,
+                  "other_transition": 26,
+                  "target_to_wrong": 10,
+                  "wrong_to_target": 30
+                },
+                "exact_transitions": {
+                  "target -> target": 46,
+                  "target -> no_option": 2,
+                  "trap -> trap": 18,
+                  "target -> other": 4,
+                  "target -> trap": 6,
+                  "trap -> target": 30,
+                  "other -> other": 2,
+                  "trap -> other": 4,
+                  "other -> trap": 1,
+                  "target -> interface_failed": 2,
+                  "trap -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -3
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": -1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 17
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": 2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -4
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 2
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 113,
+                  "net_target": 18
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 111,
+                  "net_target": 20
+                },
+                "mcnemar": 0.004442867546458729,
+                "bootstrap": {
+                  "point": 0.13793103448275856,
+                  "ci95": [
+                    0.025862068965517238,
+                    0.25
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v6": {
+          "version": "v6",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 86,
+                "no_option": 12,
+                "other": 13,
+                "trap": 27,
+                "interface_failed": 2
+              },
+              "agreement_rate": 0.6142857142857143,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 13,
+                "broad_transitions": {
+                  "target_maintained": 55,
+                  "target_to_null_or_failure": 9,
+                  "other_transition": 36,
+                  "wrong_to_target": 31,
+                  "target_to_wrong": 9
+                },
+                "exact_transitions": {
+                  "target -> target": 55,
+                  "target -> no_option": 8,
+                  "trap -> other": 6,
+                  "trap -> target": 31,
+                  "target -> trap": 4,
+                  "trap -> trap": 22,
+                  "trap -> no_option": 4,
+                  "other -> other": 2,
+                  "other -> trap": 1,
+                  "target -> other": 5,
+                  "trap -> interface_failed": 1,
+                  "target -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -4
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 15
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": 5
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": -6
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 138,
+                  "net_target": 14
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 126,
+                  "net_target": 22
+                },
+                "mcnemar": 0.001359096509986557,
+                "bootstrap": {
+                  "point": 0.09285714285714286,
+                  "ci95": [
+                    0.0,
+                    0.18571428571428572
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 16,
+                "other": 5,
+                "no_option": 2,
+                "trap": 1
+              },
+              "agreement_rate": 0.6666666666666666,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 3,
+                "broad_transitions": {
+                  "target_maintained": 11,
+                  "other_transition": 6,
+                  "wrong_to_target": 5,
+                  "target_to_null_or_failure": 1,
+                  "target_to_wrong": 1
+                },
+                "exact_transitions": {
+                  "target -> target": 11,
+                  "trap -> other": 4,
+                  "trap -> target": 5,
+                  "trap -> no_option": 1,
+                  "trap -> trap": 1,
+                  "target -> no_option": 1,
+                  "target -> other": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": -1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 24,
+                  "net_target": 3
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 22,
+                  "net_target": 4
+                },
+                "mcnemar": 0.4375,
+                "bootstrap": {
+                  "point": 0.125,
+                  "ci95": [
+                    -0.08333333333333337,
+                    0.3333333333333333
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 70,
+                "no_option": 10,
+                "trap": 26,
+                "other": 8,
+                "interface_failed": 2
+              },
+              "agreement_rate": 0.603448275862069,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 10,
+                "broad_transitions": {
+                  "target_maintained": 44,
+                  "target_to_null_or_failure": 8,
+                  "wrong_to_target": 26,
+                  "target_to_wrong": 8,
+                  "other_transition": 30
+                },
+                "exact_transitions": {
+                  "target -> target": 44,
+                  "target -> no_option": 7,
+                  "trap -> target": 26,
+                  "target -> trap": 4,
+                  "trap -> trap": 21,
+                  "trap -> no_option": 3,
+                  "other -> other": 2,
+                  "other -> trap": 1,
+                  "trap -> other": 2,
+                  "target -> other": 4,
+                  "trap -> interface_failed": 1,
+                  "target -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -4
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 0
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 14
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": 4
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -5
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 114,
+                  "net_target": 11
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 104,
+                  "net_target": 18
+                },
+                "mcnemar": 0.005870111286640167,
+                "bootstrap": {
+                  "point": 0.08620689655172409,
+                  "ci95": [
+                    -0.025862068965517238,
+                    0.19827586206896547
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        },
+        "v7": {
+          "version": "v7",
+          "panels": {
+            "full140": {
+              "n": 140,
+              "counts": {
+                "target": 89,
+                "trap": 38,
+                "no_option": 5,
+                "other": 7,
+                "interface_failed": 1
+              },
+              "agreement_rate": 0.6357142857142857,
+              "vs_plain": {
+                "n": 140,
+                "net_target": 16,
+                "broad_transitions": {
+                  "target_maintained": 56,
+                  "target_to_wrong": 12,
+                  "target_to_null_or_failure": 5,
+                  "wrong_to_target": 33,
+                  "other_transition": 34
+                },
+                "exact_transitions": {
+                  "target -> target": 56,
+                  "target -> trap": 10,
+                  "target -> no_option": 5,
+                  "trap -> target": 33,
+                  "trap -> trap": 27,
+                  "other -> other": 2,
+                  "other -> trap": 1,
+                  "trap -> other": 3,
+                  "target -> other": 2,
+                  "trap -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 7,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 9,
+                    "net_target": -6
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 4,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 10,
+                    "net_target": 2
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 22,
+                    "net_target": 16
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 20,
+                    "net_target": 3
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 13,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 10,
+                    "net_target": -2
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 14,
+                    "net_target": -1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 2,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 3,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 4,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 13,
+                    "net_target": 1
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 2,
+                    "net_target": -1
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 139,
+                  "net_target": 16
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 134,
+                  "net_target": 21
+                },
+                "mcnemar": 0.0049178006441934485,
+                "bootstrap": {
+                  "point": 0.11428571428571421,
+                  "ci95": [
+                    0.021428571428571352,
+                    0.20714285714285718
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "previous_dev24": {
+              "n": 24,
+              "counts": {
+                "target": 16,
+                "trap": 6,
+                "no_option": 2
+              },
+              "agreement_rate": 0.6666666666666666,
+              "vs_plain": {
+                "n": 24,
+                "net_target": 3,
+                "broad_transitions": {
+                  "target_maintained": 9,
+                  "target_to_wrong": 2,
+                  "wrong_to_target": 7,
+                  "other_transition": 4,
+                  "target_to_null_or_failure": 2
+                },
+                "exact_transitions": {
+                  "target -> target": 9,
+                  "target -> trap": 2,
+                  "trap -> target": 7,
+                  "trap -> trap": 4,
+                  "target -> no_option": 2
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "异质指标堆叠：只判断目标序列最近一期变化": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 4,
+                    "net_target": 1
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "时间与纵轴同时反向：恢复时间顺序后判断趋势": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "连续量的类别色地图：解码人口区间并选择地区": {
+                    "n": 1,
+                    "net_target": -1
+                  },
+                  "地图面积显著性：区分地理面积与数值大小": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：判断指定分量的阈值": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "截断堆叠柱图：合计各分量后按阈值多选日期": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": 0
+                  },
+                  "醒目少数扇区：判断实际过半的交通方式": {
+                    "n": 1,
+                    "net_target": 0
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 24,
+                  "net_target": 3
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 22,
+                  "net_target": 5
+                },
+                "mcnemar": 0.359375,
+                "bootstrap": {
+                  "point": 0.125,
+                  "ci95": [
+                    -0.12500000000000006,
+                    0.37500000000000006
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            },
+            "remaining116": {
+              "n": 116,
+              "counts": {
+                "target": 73,
+                "no_option": 3,
+                "trap": 32,
+                "other": 7,
+                "interface_failed": 1
+              },
+              "agreement_rate": 0.6293103448275862,
+              "vs_plain": {
+                "n": 116,
+                "net_target": 13,
+                "broad_transitions": {
+                  "target_maintained": 47,
+                  "target_to_null_or_failure": 3,
+                  "other_transition": 30,
+                  "wrong_to_target": 26,
+                  "target_to_wrong": 10
+                },
+                "exact_transitions": {
+                  "target -> target": 47,
+                  "target -> no_option": 3,
+                  "trap -> trap": 23,
+                  "trap -> target": 26,
+                  "other -> other": 2,
+                  "target -> trap": 8,
+                  "other -> trap": 1,
+                  "trap -> other": 3,
+                  "target -> other": 2,
+                  "trap -> interface_failed": 1
+                },
+                "families": {
+                  "饼图：对照标注份额与扇区大小，选择最大类别": {
+                    "n": 6,
+                    "net_target": 0
+                  },
+                  "柱图：对照数值与柱高，选择最大类别": {
+                    "n": 8,
+                    "net_target": -5
+                  },
+                  "类别点图：对照数值与点高，选择最大类别": {
+                    "n": 3,
+                    "net_target": 0
+                  },
+                  "截断柱图：读指定对象数值，判断阈值或低值严重度": {
+                    "n": 9,
+                    "net_target": 1
+                  },
+                  "精选子集散点：判断能否支持全体范围的业务结论": {
+                    "n": 21,
+                    "net_target": 15
+                  },
+                  "标题与折线不符：判断上升、下降或波动趋势": {
+                    "n": 19,
+                    "net_target": 2
+                  },
+                  "错误平均线：重算平均并比较指定时点": {
+                    "n": 12,
+                    "net_target": -1
+                  },
+                  "非线性纵轴折线：判断全期数值变化幅度": {
+                    "n": 9,
+                    "net_target": -1
+                  },
+                  "双纵轴：比较同一时点／类别的两条序列": {
+                    "n": 10,
+                    "net_target": -2
+                  },
+                  "反向纵轴：选择数值最大的年份": {
+                    "n": 1,
+                    "net_target": 1
+                  },
+                  "反向纵轴：判断随时间变化的方向": {
+                    "n": 2,
+                    "net_target": 0
+                  },
+                  "截取时间窗折线：区分局部上涨与全期结论": {
+                    "n": 3,
+                    "net_target": 3
+                  },
+                  "分级设色地图：按图例找最高值地区（原反向色标组）": {
+                    "n": 12,
+                    "net_target": 1
+                  },
+                  "类别点图：对照数值与点高，选择最小类别": {
+                    "n": 1,
+                    "net_target": -1
+                  }
+                },
+                "common_parsed_including_null": {
+                  "n": 115,
+                  "net_target": 13
+                },
+                "both_nonnull_auxiliary": {
+                  "n": 112,
+                  "net_target": 16
+                },
+                "mcnemar": 0.022661968367174268,
+                "bootstrap": {
+                  "point": 0.11206896551724133,
+                  "ci95": [
+                    0.008620689655172376,
+                    0.21551724137931033
+                  ],
+                  "b": 10000,
+                  "seed": 20260928
+                }
+              }
+            }
+          }
+        }
+      },
+      "cost": {
+        "plain": {
+          "attempts": 140,
+          "known_usage": {
+            "prompt_tokens": 311006,
+            "completion_tokens": 17170,
+            "total_tokens": 328176
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 2532.0,
+          "http_status": {
+            "200": 140
+          }
+        },
+        "v3": {
+          "attempts": 418,
+          "known_usage": {
+            "prompt_tokens": 1409535,
+            "completion_tokens": 210254,
+            "total_tokens": 1619789
+          },
+          "unknown_usage_attempts": 8,
+          "known_request_seconds_sum": 28536.8,
+          "http_status": {
+            "200": 410,
+            "None": 8
+          }
+        },
+        "v4": {
+          "attempts": 418,
+          "known_usage": {
+            "prompt_tokens": 1499301,
+            "completion_tokens": 227421,
+            "total_tokens": 1726722
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 30110.9,
+          "http_status": {
+            "200": 418
+          }
+        },
+        "v5": {
+          "attempts": 417,
+          "known_usage": {
+            "prompt_tokens": 1478230,
+            "completion_tokens": 231680,
+            "total_tokens": 1709910
+          },
+          "unknown_usage_attempts": 1,
+          "known_request_seconds_sum": 31010.7,
+          "http_status": {
+            "200": 416,
+            "None": 1
+          }
+        },
+        "v6": {
+          "attempts": 416,
+          "known_usage": {
+            "prompt_tokens": 1474817,
+            "completion_tokens": 223991,
+            "total_tokens": 1698808
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 32289.3,
+          "http_status": {
+            "200": 416
+          }
+        },
+        "v7": {
+          "attempts": 419,
+          "known_usage": {
+            "prompt_tokens": 1522072,
+            "completion_tokens": 235248,
+            "total_tokens": 1757320
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 32762.7,
+          "http_status": {
+            "200": 419
+          }
+        },
+        "service_controls": {
+          "attempts": 2,
+          "known_usage": {
+            "prompt_tokens": 159,
+            "completion_tokens": 12,
+            "total_tokens": 171
+          },
+          "unknown_usage_attempts": 0,
+          "known_request_seconds_sum": 0.6,
+          "http_status": {
+            "200": 2
+          }
+        }
+      },
+      "domain_counts": {
+        "plain": {
+          "business47": {
+            "target": 17,
+            "trap": 29,
+            "other": 1
+          },
+          "environment35": {
+            "target": 24,
+            "trap": 10,
+            "other": 1
+          },
+          "health19": {
+            "trap": 11,
+            "target": 8
+          },
+          "public39": {
+            "target": 24,
+            "trap": 14,
+            "other": 1
+          }
+        },
+        "v3": {
+          "business47": {
+            "interface_failed": 1,
+            "trap": 8,
+            "target": 29,
+            "no_option": 8,
+            "other": 1
+          },
+          "environment35": {
+            "target": 12,
+            "interface_failed": 3,
+            "trap": 14,
+            "no_option": 5,
+            "other": 1
+          },
+          "health19": {
+            "target": 15,
+            "trap": 3,
+            "interface_failed": 1
+          },
+          "public39": {
+            "target": 19,
+            "interface_failed": 3,
+            "no_option": 8,
+            "trap": 8,
+            "other": 1
+          }
+        },
+        "v4": {
+          "business47": {
+            "target": 33,
+            "no_option": 1,
+            "trap": 11,
+            "other": 2
+          },
+          "environment35": {
+            "target": 16,
+            "trap": 14,
+            "no_option": 3,
+            "other": 2
+          },
+          "health19": {
+            "target": 15,
+            "trap": 2,
+            "interface_failed": 1,
+            "other": 1
+          },
+          "public39": {
+            "target": 22,
+            "interface_failed": 1,
+            "no_option": 7,
+            "trap": 7,
+            "other": 2
+          }
+        },
+        "v5": {
+          "business47": {
+            "target": 33,
+            "no_option": 1,
+            "trap": 10,
+            "other": 3
+          },
+          "environment35": {
+            "target": 19,
+            "trap": 12,
+            "other": 3,
+            "no_option": 1
+          },
+          "health19": {
+            "target": 14,
+            "trap": 3,
+            "interface_failed": 2
+          },
+          "public39": {
+            "target": 24,
+            "no_option": 3,
+            "trap": 7,
+            "other": 4,
+            "interface_failed": 1
+          }
+        },
+        "v6": {
+          "business47": {
+            "target": 30,
+            "no_option": 5,
+            "other": 2,
+            "trap": 10
+          },
+          "environment35": {
+            "target": 17,
+            "trap": 10,
+            "no_option": 3,
+            "other": 5
+          },
+          "health19": {
+            "trap": 3,
+            "target": 15,
+            "other": 1
+          },
+          "public39": {
+            "target": 24,
+            "no_option": 4,
+            "trap": 4,
+            "interface_failed": 2,
+            "other": 5
+          }
+        },
+        "v7": {
+          "business47": {
+            "target": 32,
+            "trap": 13,
+            "no_option": 1,
+            "other": 1
+          },
+          "environment35": {
+            "trap": 15,
+            "target": 17,
+            "other": 3
+          },
+          "health19": {
+            "target": 16,
+            "trap": 3
+          },
+          "public39": {
+            "target": 24,
+            "no_option": 4,
+            "trap": 7,
+            "other": 3,
+            "interface_failed": 1
+          }
+        }
+      }
+    }
+  },
+  "labels_sha256": "d8b1798adcdf665eb971f167fa7951bb3ac9f68d0e772eac751e5cde43336a40"
+}

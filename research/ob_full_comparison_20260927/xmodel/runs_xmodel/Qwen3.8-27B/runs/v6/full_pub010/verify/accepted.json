@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The top of the chart image contains the text 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart title is treated as an authoritative textual summary of the Town Z 1880-1891 series. 2. The title's stated trend is 'decreasing'. 3. The 'decreasing' trend maps to the 'decline-response' option for the routing task.",
+        "evidence": "Condition 1 is not established. The task instructs to 'Review the Town Z new-tourists dashboard' and 'choose the tourism program route that matches the overall visitor trend.' It does not specify that the title is authoritative over the plotted data. Furthermore, the plotted data (r2) shows an increase, which contradicts the title. Because the premise that the title is the authoritative summary is not supported by the task instructions and is contradicted by the visual evidence, the condition is not met.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The blue line starts at the 1880 tick at the level of the '1,000' y-axis tick. It ends at the 1891 tick at a level between the '2,500' and '3,000' ticks (approx 2,950), which is visually higher on the page than the 1,000 starting point.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis is labeled 'Number of Tourists' and has ticks 0, 500, 1,000, 1,500, 2,000, 2,500, 3,000, 3,500, increasing upwards.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The x-axis is labeled 'Year' and has ticks from 1880 to 1891.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The horizontal axis binds the line's endpoints to years. 2. The vertical axis 'Number of Tourists' increases upward. 3. A later endpoint higher on the page represents a higher tourist count. 4. An overall increase across 1880-1891 maps to the 'growth-planning' option.",
+        "evidence": "Condition 1 is supported by the x-axis ticks (1880-1891). Condition 2 is supported by the y-axis label and tick order. Condition 3 is supported by the visual geometry: the 1891 endpoint is higher than the 1880 start. Condition 4 is supported by the task options, where 'growth planning' corresponds to an increasing trend. All necessary conditions are established by the chart's visual encoding and the task's goal to match the 'overall visitor trend' shown in the dashboard.",
+        "status": "supported"
+      }
+    }
+  }
+}

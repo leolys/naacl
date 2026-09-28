@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8276fe7b2b967757",
+    "object": "chat.completion",
+    "created": 1790623454,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top left reads 'Top Regions: Ad Spend vs Sales' and the plot area contains five distinct blue points labeled Region A through Region E.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible axis labels are 'Advertising Spend ($ thousands)' on the x-axis and 'Sales ($ thousands)' on the y-axis. No other quantitative axes are present.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The organization requires causal, return, or full-population evidence before approving expansion.\",\n        \"evidence\": \"The public task instructions state to 'Review dashboard evidence and submit an approval or evidence-review decision.' However, there is no printed policy or formal rule within the provided text that explicitly mandates causal impact, ROI, or full-population coverage as a prerequisite for approval. The absence of such a rule does not establish the requirement.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the tick marks are labeled 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, increasing from left to right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and the tick marks are labeled 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, increasing from bottom to top.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The points are positioned such that Region A is at the bottom left (~30, 57) and Region E is at the top right (~70, 173). The sequence A, B, C, D, E follows a diagonal path from lower-left to upper-right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes Advertising Spend and increases left-to-right. 2. The vertical axis encodes Sales and increases upward. 3. The labeled regional points are comparable observations. 4. The plotted ordering indicates that higher-spend regions in this displayed set also have higher sales.\",\n        \"evidence\": \"1. The x-axis is labeled 'Advertising Spend' and ticks increase left-to-right (25 to 75). 2. The y-axis is labeled 'Sales' and ticks increase upward (50 to 180). 3. The points are all labeled 'Region [Letter]' and plotted on the same axes, making them comparable. 4. Comparing the points: Region A (30, 57) < Region B (35, 65) < Region C (42, 81) < Region D (48, 92) < Region E (70, 173). As spend increases, sales also increase for every pair of points.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3953,
+      "total_tokens": 4803,
+      "completion_tokens": 850,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

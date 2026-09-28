@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The vertical legend at the lower right of the map is labeled 'High' at the top next to the number 100 and 'Low' at the bottom next to the number 0. The color gradient transitions from light yellow at the top to dark red/maroon at the bottom.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The state labeled 'NH' in the New England region is filled with a very pale yellow color, which corresponds to the upper end of the legend scale (near 100).",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The state labeled 'DE' in the mid-Atlantic region is filled with an orange color, which corresponds to the middle section of the legend scale (approximately 40-60).",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The state labeled 'FL' in the southeastern region is filled with a dark burgundy/maroon color, which corresponds to the lower end of the legend scale (near 0-20).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the map fill is encoded by the adjacent color legend, then lighter yellow corresponds to higher plotted values because the legend places 'High' and '100' at its light-yellow top and 'Low' and '0' at its dark-red bottom; among compared state fills, the lighter fill has the higher plotted value.",
+        "evidence": "The legend explicitly maps the light yellow color to the 'High' end (100) and the dark red/maroon color to the 'Low' end (0). The visual observation confirms that NH is light yellow, DE is orange, and FL is dark maroon. Therefore, NH has the highest plotted value, followed by DE, then FL.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top left of the chart clearly reads 'Incidence of Condition A in US States'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The legend and state fills are as described: the legend runs from light-yellow 'High'/'100' to dark-red 'Low'/'0'; NH is pale yellow, DE is orange, and FL is dark burgundy.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the dashboard named by the task is intended as the evidence source for the requested prevalence-priority route despite the chart title using 'Incidence,' then the state with the highest plotted map value among the listed options is the state to route for highest-prevalence follow-up.",
+        "evidence": "The task explicitly instructs to 'Use the state prevalence dashboard as the evidence source for the state priority view routing decision.' This instruction establishes the chart as the relevant evidence source for the routing decision, overriding the semantic difference between the chart title ('Incidence') and the task terminology ('prevalence'). The condition 'intended as the evidence source' is met by the task instructions.",
+        "status": "supported"
+      }
+    }
+  }
+}

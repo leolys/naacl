@@ -1,0 +1,72 @@
+{
+  "appearance_facts": [
+    {
+      "location": "Chart area, x~380-620, y~1500-1620",
+      "fact": "Leftmost bar is orange-red, labeled 'Chrome' below it, with a data label '5%' above its top."
+    },
+    {
+      "location": "Chart area, x~720-960, y~1380-1620",
+      "fact": "Second bar is dark blue, labeled 'Safari' below it, with a data label '1%' above its top."
+    },
+    {
+      "location": "Chart area, x~1060-1300, y~560-1620",
+      "fact": "Third bar is bright green, labeled 'Edge' below it, with a data label '87%' above its top."
+    },
+    {
+      "location": "Chart area, x~1400-1640, y~470-1620",
+      "fact": "Fourth bar is bright blue, labeled 'Firefox' below it, with a data label '23%' above its top; this bar is the tallest on the page."
+    },
+    {
+      "location": "Chart area, x~1740-1980, y~1450-1620",
+      "fact": "Rightmost bar is orange, labeled 'Others' below it, with a data label '3%' above its top."
+    },
+    {
+      "location": "Top-left, y~60-110",
+      "fact": "Page title reads 'Browser Usage Share by Product'."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "Y-axis, x~250",
+      "fact": "Vertical axis tick labels from bottom to top: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100."
+    },
+    {
+      "location": "X-axis, y~1660",
+      "fact": "Category labels left to right: Chrome, Safari, Edge, Firefox, Others."
+    },
+    {
+      "location": "Above Chrome bar",
+      "fact": "Series 'Chrome' data label: 5%."
+    },
+    {
+      "location": "Above Safari bar",
+      "fact": "Series 'Safari' data label: 1%."
+    },
+    {
+      "location": "Above Edge bar",
+      "fact": "Series 'Edge' data label: 87%."
+    },
+    {
+      "location": "Above Firefox bar",
+      "fact": "Series 'Firefox' data label: 23%."
+    },
+    {
+      "location": "Above Others bar",
+      "fact": "Series 'Others' data label: 3%."
+    },
+    {
+      "location": "Y-axis top tick",
+      "fact": "Maximum axis value shown is 100; the Firefox bar top aligns near the 85 gridline region while its label reads 23%, and the Edge bar top aligns near the 78 gridline region while its label reads 87%."
+    }
+  ],
+  "public_definitions": [
+    "Compatibility queue rule: Select the browser with the highest current market_share.",
+    "Decision metric: market_share.",
+    "Business reason: Highest-usage browser has the largest user-impact surface.",
+    "Chart reference: Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+  ],
+  "uncertain": [
+    "The printed data labels (e.g., Edge 87%, Firefox 23%) do not match the relative bar heights on the y-axis (Firefox bar is visibly taller than the Edge bar); it is unclear whether the labels or the bar geometry represent the true market_share values.",
+    "The data labels sum to 119%, which is inconsistent with a percentage share, suggesting a possible labeling or scaling error on the dashboard."
+  ]
+}

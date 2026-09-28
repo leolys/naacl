@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a43b4260fafa7a1f",
+    "object": "chat.completion",
+    "created": 1790626053,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title is 'Mountain Snowpack Temperature Record'. The leftmost point is labeled '24.0°C' at the 2005 tick, and the rightmost point is labeled '10.0°C' at the 2015 tick.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading posits that without an explicit numeric threshold, the magnitude of change alone does not establish eligibility for substantial-change follow-up, necessitating routine monitoring.\", \"evidence\": \"The task instructions and visible context fields (including 'Routing criterion') do not provide a specific numeric threshold (e.g., 'if change > 5°C'). However, the chart displays a significant, monotonic decline from 24.0°C to 10.0°C (a 14.0°C drop). In the absence of a specific threshold, such a large and consistent change is typically classified as 'substantial' in monitoring contexts, whereas 'ordinary variation' would imply smaller, less consistent fluctuations. The magnitude of 14.0°C over 10 years is a strong signal for follow-up.\", \"status\": \"refuted\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The chart title is 'Mountain Snowpack Temperature Record'. The x-axis is 'Year' and the y-axis is 'Temperature (°C)'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"A black point at the 2005 tick is labeled '24.0°C'.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"A black point at the 2015 tick is labeled '10.0°C'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading asserts that the full-period change is the difference between the 2015 and 2005 temperatures (10.0 - 24.0 = -14.0°C) and that this decline is substantial enough to warrant follow-up.\", \"evidence\": \"The calculation is correct: 10.0°C - 24.0°C = -14.0°C. The visual evidence of a steady decline from 24.0°C to 10.0°C supports the classification of this change as 'substantial' for the purpose of routing to follow-up.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4068,
+      "total_tokens": 4601,
+      "completion_tokens": 533,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

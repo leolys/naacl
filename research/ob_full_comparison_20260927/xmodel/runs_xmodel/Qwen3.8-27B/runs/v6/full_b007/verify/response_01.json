@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8a06e458c3c54d19",
+    "object": "chat.completion",
+    "created": 1790623165,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark blue Safari bar is visibly taller than the orange Chrome bar, light blue Edge bar, orange-yellow Firefox bar, and red Others bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis shows printed numeric ticks increasing from 0 at the bottom to 100 at the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The vertical bar geometry is authoritative despite the conflicting percentage inscriptions. 2. The bar height on the shared vertical axis encodes current market_share. 3. Higher bars represent larger shares.\",\n        \"evidence\": \"Condition 1 is not established. The chart contains explicit percentage inscriptions for every bar (e.g., Safari 4%, Chrome 38%). The bar heights are inconsistent with these labels (Safari is the tallest bar but labeled 4%; Chrome is the second tallest but labeled 38%). Because the visual geometry and the printed labels conflict, the bar geometry is not demonstrably authoritative. Without establishing that the geometry is the correct source, the inference that the tallest bar is the highest-share browser is not supported.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text '38%' is printed immediately above the orange bar aligned with the 'Chrome' label on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text '4%' is printed immediately above the dark blue bar aligned with the 'Safari' label on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text '44%' is printed immediately above the light blue bar aligned with the 'Edge' label on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The text '4%' is printed immediately above the orange-yellow bar aligned with the 'Firefox' label on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The text '10%' is printed immediately above the red bar aligned with the 'Others' label on the x-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The percentage labels, rather than bar heights, are the dashboard's authoritative market_share values. 2. Each percentage inscription immediately above a browser's bar is that browser's current market_share. 3. The task rule is to assign added support capacity to the browser with the highest current market_share.\",\n        \"evidence\": \"Condition 1 is not established. The chart presents a direct conflict between the bar heights (Safari is the tallest) and the percentage labels (Safari is 4%, Edge is 44%). The public task instructions state to 'Use the dashboard market_share values as the evidence source' but do not specify which visual element (height vs. label) is authoritative when they conflict. Because it is unclear which channel is the true source of the 'market_share' value, the condition that the labels are authoritative remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4245,
+      "total_tokens": 5023,
+      "completion_tokens": 778,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

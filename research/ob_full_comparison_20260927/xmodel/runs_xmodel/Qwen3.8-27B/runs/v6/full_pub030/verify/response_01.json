@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b33ddb1bc363abd7",
+    "object": "chat.completion",
+    "created": 1790624992,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is located at the top of the image and reads 'Preferred Mode of Transport in Region R'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend at the upper right shows a light-gray swatch next to the text 'Public Transit'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The light-gray slice of the pie chart contains the printed text '58%'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The legend at the upper right shows a red swatch next to the text 'Car'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The red slice of the pie chart contains the printed text '42%'.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The task context includes 'Routing criterion: Majority-share transport mode' and the option 'Route Public Transit to majority-preference policy follow-up'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The legend binds the light-gray slice to Public Transit. 2. The slice inscriptions are percentage shares. 3. The light-gray slice's printed 58% is Public Transit's share. 4. A share above 50% is a majority share. 5. The majority-share mode is routed to its matching majority-preference policy-follow-up option.\",\n        \"evidence\": \"Condition 1 is established by the legend (red=Car, light-gray=Public Transit). Condition 2 is established by the printed labels '42%' and '58%' on the slices. Condition 3 follows from 1 and 2. Condition 4 is a standard mathematical definition (58 > 50). Condition 5 is established by the task instructions which ask to choose the mode for follow-up based on the majority-share criterion, and the available option 'Route Public Transit to majority-preference policy follow-up' matches the identified mode.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3529,
+      "total_tokens": 4056,
+      "completion_tokens": 527,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

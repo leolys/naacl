@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a1e7395ad056ce9b",
+    "object": "chat.completion",
+    "created": 1790623341,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost bar on the x-axis is positioned directly above the label 'Product E'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis is labeled 'Units Sold' with visible ticks at 10,000 and 20,000. The top of the 'Product E' bar is positioned between these two ticks, visually closer to the 10,000 line than the 20,000 line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The vertical axis is a linear quantitative scale with equal tick spacing. 2. A bar's top decodes to its units-sold value. 3. Product E is within 2,000 units of the 12,500-unit policy decision threshold. 4. The manual-verification variance band applies when it overlaps other policy ranges.\",\n        \"evidence\": \"Condition 1 is supported by the visual representation of the y-axis, which shows evenly spaced ticks at 10,000-unit intervals (10,000 to 80,000). Condition 2 is supported by the standard bar chart convention where height corresponds to value. Condition 3 is refuted by the visual evidence: the top of the 'Product E' bar is clearly above the 10,000 line and appears to be around 13,000 units. The distance between 13,000 and the 12,500 threshold is 500, which is within 2,000, but the visual position is much closer to 13,000 than to 10,500 (which would be 2,000 from 12,500). More importantly, the visual gap between the bar top and the 10,000 line is about 30% of the 10,000-unit interval, suggesting a value near 13,000. While 13,000 is within 2,000 of 12,500, the visual evidence does not support a value low enough to be 'within 2,000' in a way that would trigger the variance band over the 'low-sales review queue' (which is >= 8,000 and < 12,500). The bar is clearly above the 12,500 mark (which would be 25% of the way from 10,000 to 20,000). The bar top is higher than that 25% mark. Therefore, it is not within 2,000 of 12,500 in the lower direction, and if it is 13,000, it is 500 away. However, the visual evidence is most consistent with a value around 13,000, which is > 12,500. Thus, the condition 'within 2,000 of the 12,500 threshold' is not clearly met in a way that overrides the primary range. The bar is visually above the 12,500 mark. Condition 4 is not supported by the policy table, which lists distinct ranges without mentioning overlap resolution.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4073,
+      "total_tokens": 4870,
+      "completion_tokens": 797,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

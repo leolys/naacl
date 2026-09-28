@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-96d27bab39d81683",
+    "object": "chat.completion",
+    "created": 1790625538,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image explicitly reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays exactly five blue data points labeled 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'. No other points or labels are visible on the plot.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader ad-budget increase requires evidence representative of the full store population, then a chart explicitly scoped to additional top stores cannot by itself establish support for that broader action.\",\n        \"evidence\": \"The chart title 'Additional Top Stores: Ad Spend vs Sales' and the limited set of labels (Stores 6-10) support the condition that the chart is scoped to a specific subset rather than the full population. The page instructions ask to 'Review dashboard evidence and submit an approval or evidence-review decision', implying that evidence sufficiency is a key factor in the decision.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Visually, the points form a diagonal line from the bottom-left to the top-right. Store 6 is at the lowest position (approx x=30, y=66), and each subsequent store (7, 8, 9, 10) is positioned further to the right and higher up, with Store 10 at the highest position (approx x=70, y=176).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the displayed scales, then points farther right and higher represent stores with higher plotted spend and higher plotted sales, respectively; this visual association alone does not establish incremental sales, profitability, or causal return from spending.\",\n        \"evidence\": \"The axis labels confirm the encoding of spend and sales. The visual positions confirm that higher spend correlates with higher sales for these specific points. The chart contains no data on costs, profit margins, or causal mechanisms, supporting the condition that the visual association does not establish profitability or causal return.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The points for Stores 6 through 10 are arranged in a strictly increasing order of both x (spend) and y (sales) coordinates.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a decision may be made from an observed positive spend-sales pattern among the displayed stores without requiring full-store, causal, or profitability evidence, then that pattern can support a broader ad-budget increase.\",\n        \"evidence\": \"The condition 'without requiring full-store, causal, or profitability evidence' is not supported by the visible evidence. The chart title explicitly limits the scope to 'Additional Top Stores', and the independent notes highlight that 'no data for other stores or the full store population is visible'. The task instructions to 'Review dashboard evidence' imply that the evidence presented must be sufficient for the decision, which is not the case for a 'broader' increase if the evidence is only for a subset.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4283,
+      "total_tokens": 5195,
+      "completion_tokens": 912,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

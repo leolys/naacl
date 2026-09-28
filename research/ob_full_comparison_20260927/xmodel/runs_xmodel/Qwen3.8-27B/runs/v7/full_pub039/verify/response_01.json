@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a81bdd62915d13c6",
+    "object": "chat.completion",
+    "created": 1790627208,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The left vertical axis label is clearly visible in blue text, reading '0-14 years (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The right vertical axis label is clearly visible in red text, reading '65 years + (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the 2014 tick on the x-axis, the blue circular marker is positioned higher on the y-axis than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The vertical axes have gridlines but no visible numeric tick labels (e.g., 0, 10, 20).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue 0-14 years series and red 65 years + series use vertically comparable percentage scales, then their vertical positions at the same year encode comparable population shares; the higher mark represents the larger share.\",\n        \"evidence\": \"The chart is a dual-axis chart (left axis for 0-14, right axis for 65+). The independent notes and visible annotations provide data points that allow for scale calibration. The blue series has a point at 14.82% (approx 2012) and 14.2% (approx 2016). The red series has a point at 20.1% (approx 2013) and 21.4% (approx 2017). At 2014, the blue point is between 14.82% and 14.2%, and the red point is between 20.1% and 21.4%. Even without exact axis calibration, the magnitude of the red values (20%+) is significantly higher than the blue values (14%+). Therefore, the red series (65 years +) represents the larger population share in 2014.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3179,
+      "total_tokens": 3698,
+      "completion_tokens": 519,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

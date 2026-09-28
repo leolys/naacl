@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-823e0cca3709f7a4",
+    "object": "chat.completion",
+    "created": 1790624686,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top-left title is visibly printed as “Incidence of Condition A in US States.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The right-side legend is a vertical gradient. “High” and “100” are printed at the top, “Low” and “0” are printed at the bottom, and the color at the top is pale yellow while the color at the bottom is dark burgundy/maroon.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The polygon labeled “WV” is filled with a pale-yellow color, which is the same color at the top of the legend (High/100).\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The polygon labeled “UT” is filled with a dark-burgundy/maroon color, which is the same color at the bottom of the legend (Low/0).\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The polygon in the position of Alabama is filled with gray and has no visible “AL” inscription. Gray is not part of the color gradient on the legend.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The legend governs the state fills. 2. Gray is an unmapped/missing category. 3. The chart does not visibly print an Alabama label or define gray. 4. Among the offered eligible state records, route the highest-incidence one.\",\n        \"evidence\": \"Condition 1 is supported by the visual correspondence between state colors and the legend gradient (e.g., WV is pale yellow/High, UT is dark maroon/Low). Condition 2 is supported by the fact that gray is not on the legend scale and is used for other states like California and Alaska, which are not the focus of the options. Condition 3 is supported by the visible absence of an 'AL' label on the gray polygon. Condition 4 is met by identifying WV (High/100) as the highest incidence among the eligible mapped states (WV vs UT).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3836,
+      "total_tokens": 4378,
+      "completion_tokens": 542,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

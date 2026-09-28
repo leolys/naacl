@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-982553d96e001f64",
+    "object": "chat.completion",
+    "created": 1790624046,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart contains a title, axis labels, year ticks, and data-point labels, but no legend, annotation, or text defining a threshold, escalation rule, or routing instruction.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost marker is aligned with the 2005 tick and labeled 24.0°C; the rightmost marker is aligned with the 2015 tick and labeled 10.0°C.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The workflow requires an explicit displayed or supplied substantial-change threshold before escalation. 2. Such a threshold is absent. 3. A routine-by-default policy applies.\",\n        \"evidence\": \"Condition 2 is supported by O1 (no threshold visible). Condition 1 is not established; the task asks for a routing decision but does not state that an explicit threshold is required. Condition 3 is explicitly not supplied. The conditional's premise is unmet.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A black circular marker is positioned at the 2005 tick with the adjacent label 24.0°C.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A black circular marker is positioned at the 2015 tick with the adjacent label 10.0°C.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Coastal Water Temperature Trend' and the vertical axis is labeled 'Water temperature (°C)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The plotted markers are coastal water-temperature readings for their aligned year ticks. 2. The adjacent °C inscriptions label those readings. 3. The full-period change is the 2015 reading minus the 2005 reading. 4. A decrease of that magnitude meets the unspecified substantial-change criterion.\",\n        \"evidence\": \"Conditions 1-3 are supported by the chart's title, axis label, and the specific labels 24.0°C (2005) and 10.0°C (2015). Condition 4 is open because the chart and task do not define what magnitude constitutes a 'substantial change'.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4154,
+      "total_tokens": 4776,
+      "completion_tokens": 622,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

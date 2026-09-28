@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is visible at the top and reads 'Advertising Budget vs Revenue (High-Performing Regions)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The plot area contains exactly five data points labeled January, February, March, April, and May. No other regional groups, lines, or markers are present.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a broader budget increase requires evidence from regions beyond the displayed high-performing subset or evidence that budget increases caused revenue increases, then a chart limited to that subset and showing only plotted monthly association is insufficient, supporting a request for full-data analysis.",
+        "evidence": "The chart is explicitly limited to 'High-Performing Regions' as per the title. The data represents a time series (Jan-May) of association between budget and revenue, not a causal experiment or a representative sample of all regions. The instruction 'Review dashboard evidence and submit an approval or evidence-review decision' implies that if the evidence is insufficient for approval, an evidence-review (hold) decision is appropriate.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is visible at the top and reads 'Advertising Budget vs Revenue (High-Performing Regions)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis is labeled 'Advertising Budget ($)'. The tick marks are labeled 0, 10, 20, 30, 40, 50, 60, 70, increasing from left to right.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis is labeled 'Revenue ($)'. The tick marks are labeled 0, 20, 40, ..., 220, increasing from bottom to top.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The points are labeled January through May. Visually, January is the lowest/leftmost point, and each subsequent month (Feb, Mar, Apr, May) is positioned further right and higher than the previous one.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal and vertical axes encode advertising budget and revenue respectively, with values increasing rightward and upward, then the labeled monthly points form a positive budget-revenue association; if the review permits broader approval from this high-performing-region association alone, it supports approval.",
+        "evidence": "The axes and point positions confirm a positive association. However, the condition 'if the review permits broader approval from this high-performing-region association alone' is not met by the public task. The task asks to review the 'regional advertising dashboard' (implying the whole region) but the chart only shows 'High-Performing Regions'. Therefore, the condition for approval based *only* on this subset is not supported by the task instructions which likely require a broader view.",
+        "status": "unclear"
+      }
+    }
+  }
+}

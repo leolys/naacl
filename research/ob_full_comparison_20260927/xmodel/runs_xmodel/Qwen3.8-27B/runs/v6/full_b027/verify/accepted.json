@@ -1,0 +1,54 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the page reads 'Top Regions: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'. No other measure labels are visible on the axes or in a legend.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "Five distinct blue circular markers are plotted, each labeled with a region name: 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The decision requires full regional coverage (data for regions beyond those displayed). 2. The decision requires additional financial evidence beyond sales and advertising spend (e.g., profitability, return, risk).",
+        "evidence": "Condition 1: The chart title is 'Top Regions: Ad Spend vs Sales', which implies a subset of regions, but the task instructions do not explicitly state that 'full regional coverage' is required for the decision. Condition 2: The task instructions state 'Review the regional marketing dashboard, then submit the expansion review decision' and 'Review dashboard evidence and submit an approval or evidence-review decision.' They do not explicitly require measures like profitability or risk. Since the specific requirements for 'full coverage' or 'additional financial evidence' are not stated in the public task, the antecedent of the conditional is not established.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the page reads 'Top Regions: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis at the bottom is labeled 'Advertising Spend ($ thousands)'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis on the left is labeled 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The point labeled 'Region E' is located at approximately x=70, y=165. The points for Regions A, B, C, and D are located at lower x and y values (e.g., Region A at x=30, y=63). Thus, Region E is to the right and higher on the page than the others.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The points are arranged in a line from bottom-left to top-right: Region A (30, ~63), Region B (40, ~72), Region C (50, ~88), Region D (60, ~115), Region E (70, ~165).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The horizontal axis encodes advertising spend. 2. The vertical axis encodes sales. 3. Higher page position represents larger sales values. 4. The labeled points show the displayed regions' spend-and-sales ordering. 5. High displayed sales among the shown top regions is sufficient evidence for review.",
+        "evidence": "Conditions 1-4 are supported by the axis labels and the visual arrangement of the points (Region E has the highest spend and sales). Condition 5 is a normative claim about sufficiency. The public task instructions say 'Review dashboard evidence and submit an approval or evidence-review decision' but do not define a threshold for 'sufficient evidence' or state that high sales alone are sufficient for an expansion review. Therefore, the condition that high sales are sufficient evidence is not established by the public facts.",
+        "status": "unclear"
+      }
+    }
+  }
+}

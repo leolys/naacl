@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a3810dcb115e557a",
+    "object": "chat.completion",
+    "created": 1790625393,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image reads exactly “High-Response Age Groups: Ad Spend vs Sales.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot area contains five distinct blue circular points labeled 18–24, 25–34, 35–44, 45–54, and 55–64.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled “Advertising Spend ($ thousands)” and the vertical axis is labeled “Sales ($ thousands).”\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The point labeled 55–64 is positioned at approximately x=70, y=165. This is to the right of and higher than the 45–54 point (x=60, y=142), the 35–44 point (x=50, y=75), the 25–34 point (x=40, y=96), and the 18–24 point (x=30, y=73).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading posits that the title defines the population scope as a specific subset (“High-Response Age Groups”). It concludes that if broader approval requires evidence beyond this subset, the chart is insufficient.\",\n        \"evidence\": \"The title explicitly names the subset “High-Response Age Groups,” confirming the chart is scoped to a specific population rather than a general one. The chart contains no data for groups outside these five labels.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is labeled “Advertising Spend ($ thousands)” and the vertical axis is labeled “Sales ($ thousands).”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 55–64 point (x=70, y=165) is farther right and higher than the 45–54 point (x=60, y=142). The 45–54 point (x=60, y=142) is farther right and higher than the 25–34 point (x=40, y=96).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading interprets the axes as encoding spend and sales on increasing scales, allowing for a descriptive association. It explicitly limits the conclusion to descriptive association and denies that it establishes causal return or justifies broader targeting on its own.\",\n        \"evidence\": \"The axis labels and tick values (increasing from left to right and bottom to top) support the interpretation that higher position corresponds to higher values. The reading correctly identifies that a scatter plot of five points shows association, not causation.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image reads exactly “High-Response Age Groups: Ad Spend vs Sales.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The point labeled 55–64 is positioned at the far upper-right of the plot area, to the right of and higher than all other labeled points.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The axes are labeled “Advertising Spend ($ thousands)” and “Sales ($ thousands).”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading suggests that if the displayed groups are the only relevant population and the observed trend is sufficient, the chart supports approving broader targeting.\",\n        \"evidence\": \"The chart is explicitly titled “High-Response Age Groups,” which implies a specific subset of a larger population. The data shows a positive trend, but the 35–44 point (x=50, y=75) is notably lower than the 25–34 point (x=40, y=96), breaking a simple monotonic trend. The chart does not provide ROI data or evidence for groups outside the “High-Response” subset. Therefore, the condition that this is the *only* relevant population is not supported by the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4554,
+      "total_tokens": 5660,
+      "completion_tokens": 1106,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-958e293de60c27a5",
+    "object": "chat.completion",
+    "created": 1790626200,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The image shows the bold text '41.2%' positioned directly above the yellow bar labeled 'Solar'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The image shows the bold text '29.8%' positioned directly above the light-blue bar labeled 'Wind'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The image shows the bold text '18.5%' positioned directly above the blue bar labeled 'Hydroelectric'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The image shows the bold text '7.2%' above the 'Biomass' bar and '3.3%' above the 'Geothermal' bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bold percentage annotations attached above each source bar are the operative reported production-share values, the source with the greatest printed percentage is the largest contribution source; the routing criterion requires escalating that source.\",\n        \"evidence\": \"The chart's y-axis is labeled 'Reported production share (%)'. In a standard bar chart, the geometric height of the bar against this axis is the primary encoding of the value. The visual evidence shows a massive discrepancy between the annotations and the bar heights (e.g., the 'Wind' bar reaches ~68 on the y-axis but is labeled '29.8%'). Because the bar geometry contradicts the annotations, the condition that the annotations are the 'operative' values is not supported by the chart's structure.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The light-blue 'Wind' bar is the tallest on the chart, with its top edge positioned between the 65 and 70 y-axis ticks. The text '29.8%' is visible above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The yellow 'Solar' bar reaches the 40 y-axis tick. The text '41.2%' is visible above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue 'Hydroelectric' bar reaches a height between the 50 and 55 y-axis ticks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height is the operative encoding of reported production share on the labeled vertical scale, the tallest source bar is the largest contribution source; the routing criterion requires escalating that source.\",\n        \"evidence\": \"The y-axis is explicitly labeled 'Reported production share (%)'. The visual height of the 'Wind' bar (approx. 68) is significantly larger than all other bars, and it aligns with the scale provided. This reading treats the chart's primary visual encoding (bar height) as the source of truth for the 'production share'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4121,
+      "total_tokens": 4863,
+      "completion_tokens": 742,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

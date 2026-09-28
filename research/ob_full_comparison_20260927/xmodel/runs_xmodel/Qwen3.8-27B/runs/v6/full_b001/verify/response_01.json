@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b9a5cea8d795a176",
+    "object": "chat.completion",
+    "created": 1790623011,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top-left of the chart is printed as 'Smartphone Market Share in Europe'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The light-orange slice in the upper-left quadrant contains the text 'Apple (45%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The orange slice in the lower-left quadrant contains the text 'Xiaomi (30%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The pale-yellow slice in the lower-right quadrant contains the text 'Samsung (15%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The red slice in the upper-right quadrant contains the text 'Others (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart is titled 'Smartphone Market Share in Europe'. 2. The printed percentages on the slices represent current market share for the labeled brands. 3. The largest printed percentage identifies the current market-share leader. 4. The premium retail promotion budget is allocated to that leader.\",\n        \"evidence\": \"Condition 1 is established by the chart title (O1). Condition 2 is established by the task instruction 'Use the dashboard market-share values as the evidence source' and the policy 'Decision metric: market_share'. Condition 3 is established by the numerical comparison of the printed values: 45% (Apple) > 30% (Xiaomi) > 15% (Samsung) > 10% (Others). Condition 4 is established by the policy 'Select the brand with the highest current market share'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3821,
+      "total_tokens": 4276,
+      "completion_tokens": 455,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b6b2ad0972e605fd",
+    "object": "chat.completion",
+    "created": 1790625355,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The leftmost bar is positioned directly above the x-axis label 'Product A' and is colored dark red.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The y-axis is labeled 'Units Sold' and has a tick for '10,000'. The top of the Product A bar is clearly below this 10,000 mark.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading assumes the bar height decodes to approximately 8,000 units.\", \"evidence\": \"The chart provides a linear scale with evenly spaced ticks (10,000, 20,000, etc.). Visually, the Product A bar reaches about 80% of the height of the 10,000 tick, which corresponds to an estimated 8,000 units. This value falls within the policy condition '>= 4,000 and < 9,000 units'.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The y-axis displays evenly spaced ticks labeled from 10,000 up to 80,000.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The Product A bar is very short, rising only a small distance above the baseline and staying well below the 10,000 tick.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading assumes the bar height decodes to an estimate below 4,000 units.\", \"evidence\": \"This is contradicted by the visual evidence. The bar's height is roughly 80% of the distance to the 10,000 tick, indicating a value near 8,000, which is significantly higher than 4,000.\", \"status\": \"refuted\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4631,
+      "total_tokens": 5067,
+      "completion_tokens": 436,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

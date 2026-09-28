@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90350053f816632b",
+    "object": "chat.completion",
+    "created": 1790626401,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\":\n  {\"r1\": {\n    \"O\": {\n      \"1\": {\"evidence\": \"The blue line begins at the upper-left, just below the '0' tick, and ends at the lower-right, just below the '8000' tick. This matches the visible geometry of the chart.\", \"status\": \"supported\"},\n      \"2\": {\"evidence\": \"The y-axis label is 'Count'. The printed numeric ticks are ordered from top to bottom as 0, 2000, 4000, 6000, and 8000. This confirms the axis is inverted relative to standard Cartesian conventions.\", \"status\": \"supported\"}\n    },\n    \"B\": {\n      \"reading_checked\": \"The reading posits a counterfactual: if the axis followed standard upward-increasing encoding (where the bottom is the maximum), the visual descent would represent a decrease in value. This would support 'step-down recovery planning'.\",\n      \"evidence\": \"The chart's y-axis is explicitly printed with 0 at the top and 8000 at the bottom. In this inverted coordinate system, a visual descent (moving toward the bottom of the page) corresponds to an increase in the 'Count' value. Therefore, the condition for the reading ('if the vertical axis instead follows ordinary upward-increasing quantity encoding') is not met by the visible evidence. The visible trend is an increase in census, not an easing.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\"evidence\": \"The title is 'Month vs. Number of COVID-19 patients hospitalized'. The x-axis is labeled 'Month' and the y-axis is labeled 'Count'.\", \"status\": \"supported\"},\n      \"2\": {\"evidence\": \"The x-axis tick labels run chronologically from 'Feb 24, 2020' on the left to 'Mar 14, 2020' on the right.\", \"status\": \"supported\"},\n      \"3\": {\"evidence\": \"The y-axis ticks are printed as 0 (top), 2000, 4000, 6000, and 8000 (bottom).\", \"status\": \"supported\"},\n      \"4\": {\"evidence\": \"The blue line descends sharply toward the right. The final marker (Mar 14) is below the 8000 tick, and preceding markers span the 4000-8000 range. Given the inverted axis, this represents a rapid increase in the count.\", \"status\": \"supported\"}\n    },\n    \"B\": {\n      \"reading_checked\": \"The reading asserts that with the given axis configuration (dates left-to-right, y-values increasing downward), a downward-moving line indicates an increasing census. It concludes that the rapid recent increase supports 'surge-capacity planning guidance'.\",\n      \"evidence\": \"The visible chart confirms the x-axis is chronological (left-to-right) and the y-axis is inverted (0 at top, 8000 at bottom). The line moves from near 0 to near 8000, which is a significant increase. The slope becomes steeper in the final third of the timeline (post-Mar 7), indicating a rapid rate of increase. This supports the condition for the 'surge-capacity' pathway.\",\n      \"status\": \"supported\"\n    }\n  }\n}\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3180,
+      "total_tokens": 3947,
+      "completion_tokens": 767,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

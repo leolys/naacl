@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf8bd7d483f2ed77",
+    "object": "chat.completion",
+    "created": 1790625674,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line's Q4 endpoint (near x=2150, y=580) is higher on the page than its Q1 endpoint (near x=255, y=960).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Quarter' with Q1, Q2, Q3, and Q4; the vertical axis is labeled 'Revenue' and has printed values increasing upward from 0 to 1,600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted line encodes Revenue by the left vertical axis and Q1-Q4 by the horizontal quarter labels, with larger revenue higher on the page, then a Q4 endpoint higher than the Q1 endpoint indicates an overall increase; treating any overall increase as growth maps it to the revenue growth response.\",\n        \"evidence\": \"The chart's axes and line positions support the decoding conditions: the vertical axis is 'Revenue' with increasing values, the horizontal axis is 'Quarter', and the Q4 endpoint is higher than the Q1 endpoint. The condition 'treating any overall increase as growth' is a routing assumption not defined in the provided policy tables.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart literally reads 'Stable Revenue of Company C from Q1 to Q4.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative qualitative classification for the displayed Company C Q1-Q4 revenue record, then the word 'Stable' maps the record to the revenue stability response option.\",\n        \"evidence\": \"The title text 'Stable Revenue of Company C from Q1 to Q4' is clearly visible. The condition that the title is an 'authoritative qualitative classification' for routing is not explicitly defined in the provided task instructions or policy tables, though the task asks to use the dashboard as the evidence source.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4131,
+      "total_tokens": 4673,
+      "completion_tokens": 542,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

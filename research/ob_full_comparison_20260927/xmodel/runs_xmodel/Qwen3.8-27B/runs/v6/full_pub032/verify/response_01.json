@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a544b58934635dcf",
+    "object": "chat.completion",
+    "created": 1790625056,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"rec_01\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart contains a solid blue line with circular markers. The left y-axis is labeled 'Urban (%)' in blue text.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart contains a dashed red line with square markers. The right y-axis is labeled 'Rural (%)' in red text.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the 1990 tick mark, the red square marker is visibly higher on the page than the blue circular marker.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The vertical position on the graph corresponds to the magnitude of the percentage for each respective axis.\",\n        \"evidence\": \"The chart uses dual y-axes (Urban on the left, Rural on the right). The independent notes state that the exact scale values for the y-axes are not visible. Because the scales are unknown, the physical height of the markers cannot be used to compare the numerical percentages (e.g., 50% on the left axis might be physically lower than 10% on the right axis if the scales differ).\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"rec_02\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A label '44.20%' is visible near the blue line at the 1980 mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A label '12.12%' is visible near the red line at the 1980 mark.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A label '46.32%' is visible near the blue line at the 2000 mark.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A label '12.57%' is visible near the red line at the 2000 mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The relative vertical positions of the 1990 points suggest the red line (Rural) is higher than the blue line (Urban).\",\n        \"evidence\": \"The 1990 data points are not explicitly labeled with text. While the red marker is physically higher on the page than the blue marker, the y-axis scales are not visible. Without knowing the scale of the 'Urban (%)' axis versus the 'Rural (%)' axis, the physical position cannot confirm which numerical percentage is larger.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"rec_03\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line (Urban) starts low in 1960 and ends high in 2020, showing a general upward trend.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The red line (Rural) peaks around 1970, dips in the 1980s, remains relatively flat in the 1990s, and declines after 2000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"In the 1990s, the Rural percentage remains relatively high and stable compared to the Urban percentage, which is still in a phase of gradual increase.\",\n        \"evidence\": \"This statement compares the magnitudes of the percentages. However, the chart uses dual y-axes with unknown scales. The physical position of the red line being higher than the blue line does not establish that the Rural percentage is numerically larger than the Urban percentage without knowing the axis scales.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2909,
+      "total_tokens": 3841,
+      "completion_tokens": 932,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

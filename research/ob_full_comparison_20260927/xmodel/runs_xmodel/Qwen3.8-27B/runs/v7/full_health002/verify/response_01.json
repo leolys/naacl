@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9637ebf7b29fa1d4",
+    "object": "chat.completion",
+    "created": 1790626383,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The visible chart contains the title, axis labels, tick values, and the plotted blue series. No printed threshold line, alert cutoff, or policy criterion is present in the chart area or task materials.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If routing requires an explicit policy threshold or sustained-trend criterion beyond the general instruction to select the pathway that best matches the observed trajectory, the chart alone does not provide that threshold; background monitoring could be retained pending such a criterion.\", \"evidence\": \"The task instructions state to 'select the operational route that best matches the observed case trajectory' and 'determine which follow-up pathway should receive this record'. No specific numerical threshold (e.g., 'escalate if >500 cases') is provided in the text or visible on the chart.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"Visually, the blue line starts near the top-left of the plot area and moves towards the bottom-right.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering, the line's downward screen movement would appear to represent a declining trajectory; under the task labels, a declining trajectory maps to declining-case stabilization review.\", \"evidence\": \"This reading relies on the condition that 'the printed vertical tick labels are disregarded or treated as nonauthoritative'. However, the chart explicitly labels the y-axis 'Count' with specific values (0, 200, ... 1400). In data visualization, axis labels define the scale. Disregarding them in favor of generic screen geometry contradicts the explicit data provided.\", \"status\": \"refuted\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The chart title is 'Month vs. Number of cases' and the y-axis is labeled 'Count'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The y-axis ticks are printed as 0 at the top, followed by 200, 400, 600, 800, 1000, 1200, and 1400 at progressively lower positions.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The leftmost blue marker is aligned with the 0 tick (top). The rightmost blue marker is aligned with the 1400 tick (bottom).\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The x-axis shows dates from Jan 27, 2020 to Mar 22, 2020. The blue line connects markers that move from the top-left (low count) to the bottom-right (high count).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal labels encode the displayed reporting sequence from left to right, the vertical axis labeled 'Count' uses its printed tick values, and larger printed values are lower on the page, then the line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. For this task, an increasing reported-case trajectory maps to rising-case escalation follow-up.\", \"evidence\": \"The x-axis dates are in chronological order (Jan 27 to Mar 22). The y-axis 'Count' has 0 at the top and 1400 at the bottom. The line moves from the 0 level to the 1400 level. Therefore, the count of cases is increasing over time. This matches the 'rising-case' option.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3210,
+      "total_tokens": 4020,
+      "completion_tokens": 810,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

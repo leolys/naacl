@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b7ee7188dbc1adea",
+    "object": "chat.completion",
+    "created": 1790626685,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\":\n  {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map title at the top left reads 'Incidence of Condition A in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend on the right shows a vertical gradient bar. The top is labeled 'High' with a tick for '100' and is colored pale yellow. The bottom is labeled 'Low' with a tick for '0' and is colored dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state labeled 'WV' (West Virginia) is filled with a pale yellow color, corresponding to the 'High' end of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state labeled 'UT' (Utah) is filled with a dark burgundy color, corresponding to the 'Low' end of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The state labeled 'AL' (Alabama) is filled with a light yellow color, similar to WV, and is clearly labeled on the map. It is not gray.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that pale yellow is higher than dark burgundy based on the legend, and that a gray Alabama polygon would be ineligible. It concludes to route the highest-incidence state.\",\n        \"evidence\": \"The legend clearly shows 'High' at the top (pale yellow) and 'Low' at the bottom (dark burgundy). WV is pale yellow (High) and UT is dark burgundy (Low). Therefore, WV has a higher incidence than UT. AL is also pale yellow (High). The reading's core logic—that the legend governs the fills and pale yellow is higher—is correct. The condition about a 'gray Alabama' is factually incorrect as AL is yellow, but the conclusion to route the highest-incidence state (WV or AL) is valid.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3846,
+      "total_tokens": 4354,
+      "completion_tokens": 508,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

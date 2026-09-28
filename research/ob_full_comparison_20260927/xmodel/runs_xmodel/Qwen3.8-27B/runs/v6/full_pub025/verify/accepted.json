@@ -1,0 +1,51 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top of the chart reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart title is the authoritative characterization of the tourism trend. 2. The word 'Decreasing' is intended as the routing signal. 3. A declining new-tourist trend is routed to decline response.",
+        "evidence": "The task does not specify that the title overrides the data or that 'Decreasing' is the routing signal. While the title says 'Decreasing', the plotted data shows an increase. The routing policy (declining -> decline response) is a reasonable inference but not explicitly stated.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title contains 'Decreasing', while the blue line's 1891 endpoint (~3,200) is higher on the page than its 1880 endpoint (~1,100).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. There are conflicting title and plotted-line signals. 2. There is an absence of an explicit routing threshold or precedence rule. 3. A conservative default of routine monitoring is required under unresolved evidence conflict.",
+        "evidence": "There is a conflict between the title ('Decreasing') and the data (increasing). There is no explicit precedence rule. However, the task does not state a default to 'routine monitoring' when evidence is conflicting.",
+        "status": "unclear"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The blue line starts at ~1,100 in 1880 and ends at ~3,200 in 1891, showing a higher endpoint at the later year.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis is labeled 'Year' with ticks from 1880 to 1891 in left-to-right order.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis is labeled 'Number of Tourists' with ticks increasing upward from 0 to 3,500.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The blue line is the series encoded by the chart axes. 2. The horizontal axis orders years left-to-right. 3. Higher vertical positions correspond to larger values on the tourist-count scale. 4. A higher endpoint at the later year indicates an increase. 5. An increasing new-tourist trend is routed to growth planning.",
+        "evidence": "The blue line is the only data series and aligns with the axes. The x-axis is chronological. The y-axis is numerical and increasing upward. The endpoint is higher, indicating an increase. The routing policy (increasing -> growth planning) is not explicitly stated but is the logical counterpart to the decline option.",
+        "status": "unclear"
+      }
+    }
+  }
+}

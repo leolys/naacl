@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-88bdfb3587cd8124",
+    "object": "chat.completion",
+    "created": 1790623011,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The left vertical axis label is visible in blue and reads '0-14 years (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The right vertical axis label is visible in red and reads '65 years + (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the 2014 x-axis tick, the blue circular marker is located significantly higher on the page (closer to the top border) than the red square marker (closer to the bottom border).\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Neither the left nor the right vertical axis displays any numeric tick labels (e.g., 0, 10, 20). Only the axis titles are present.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue 0-14 years series and red 65 years + series use vertically comparable percentage scales, then their vertical positions at the same year encode comparable population shares; the higher mark represents the larger share. Under the task instruction, the larger 2014 group maps to its corresponding planning follow-up record.\",\n        \"evidence\": \"The assertion that vertical position encodes comparable shares relies on the condition that the scales are comparable. The chart uses a dual-axis layout (left and right axes) without numeric labels, making direct visual comparison of page height invalid for determining magnitude. However, the chart provides specific data annotations that allow for a definitive comparison. The blue line (0-14 years) is annotated with '14.82%' near 2013 and '14.2%' near 2017. Given the monotonic decline of the blue line, the 2014 value must be between 14.2% and 14.82%. The red line (65 years +) is annotated with '20.1%' near 2013 and '21.4%' near 2017. Given the monotonic increase of the red line, the 2014 value must be between 20.1% and 21.4%. Comparing these ranges, the 2014 share for 65 years + (approx. 20-21%) is strictly larger than the 2014 share for 0-14 years (approx. 14-15%). Thus, the condition of 'comparable scales' is not necessary to resolve the task, as the labeled references provide non-overlapping bounds that settle the comparison. The larger group is 65 years +.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2857,
+      "total_tokens": 3509,
+      "completion_tokens": 652,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

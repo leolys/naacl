@@ -1,0 +1,34 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads 'Increasing Production at Factory F from 2018 to 2023'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is treated as the authoritative summary of the output trend rather than the plotted line, then the literal title wording indicates increasing production and would map to the output growth response.",
+        "evidence": "The title text is visible and contains the word 'Increasing'. However, the plotted line shows a clear downward trend from ~3,450 in 2018 to ~1,800 in 2023. The reading's condition is that the title is treated as authoritative 'rather than the plotted line'. In a data dashboard context, the plotted data is the primary evidence source for the trend, while the title is a label. The instruction is to 'Review the Factory F production dashboard... as the evidence source'. The data evidence (the line) contradicts the title. Therefore, the condition that the title is the authoritative summary over the data is not supported by the task instructions or standard data interpretation practices.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart displays a single blue line connecting data points for the years 2018 through 2023. Visually, the line starts high on the left (2018) and descends to a lower position on the right (2023).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is labeled 'Year' with ticks 2018-2023. The vertical axis is labeled 'Production' with numeric ticks increasing from 0 at the bottom to 3,500 at the top.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the blue line is the Factory F production series, the x-axis orders years from 2018 to 2023, and higher screen position corresponds to greater production on the upward-increasing y-axis, then a line that moves lower at each successive year indicates declining production; for this task, a declining output trend maps to the output decline response.",
+        "evidence": "The blue line is the only data series and corresponds to the 'Production' axis. The x-axis clearly orders years 2018-2023. The y-axis is a standard numeric scale increasing upwards. The line geometry shows a consistent decrease in value from left to right (approx. 3,450 down to 1,800). This confirms a declining output trend. The task asks to choose a route based on the output trend. A declining trend maps to the 'Route to output decline response' option.",
+        "status": "supported"
+      }
+    }
+  }
+}

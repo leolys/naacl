@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b95689063d63cb7",
+    "object": "chat.completion",
+    "created": 1790626135,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The bar directly above the printed x-axis label 'May' is the shortest visible bar in the plot area, and its top edge is clearly below the lowest printed y-axis tick, which is '10,000'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The vertical axis on the left is explicitly labeled 'Solar output (MWh)' and the horizontal axis at the bottom is labeled 'Month'.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The provided task context, form fields, and page instructions do not include any policy table, interpretation rule, or specific numerical criterion for distinguishing between standard and critical routing.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the same bar encoding applies, May is a low-output month. If critical routing requires a stated numerical threshold or other documented anomaly criterion that is not provided, the chart alone cannot establish critical severity; under a policy of routing unthresholded low-output cases to ordinary follow-up, May should receive standard follow-up.\", \"evidence\": \"The chart uses a consistent bar encoding for all months, and May's bar is visibly the shortest, supporting the 'low-output' characterization. The task materials do not provide an explicit threshold for 'critical' severity. The condition for this reading is that standard follow-up is the default when no explicit threshold is met.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The bar aligned with the 'May' label is the shortest visible bar and its top is below the '10,000' y-axis tick.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The bars for 'Apr', 'Jan', 'Jun', 'Feb', and 'Mar' all extend above the '15,000' y-axis tick. Specifically, Apr is near 30,000, Jan is at 40,000, Jun is near 17,500, Feb is at 20,000, and Mar is near 27,000.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The vertical axis is labeled 'Solar output (MWh)' and the bottom axis is labeled 'Month'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the vertical axis labeled 'Solar output (MWh)' encodes bar height on a common increasing scale and each month label identifies its aligned bar, then May's much shorter bar represents substantially lower output than the other displayed months. If this degree of relative isolation is treated by the routing workflow as a critical anomaly, May should be escalated.\", \"evidence\": \"The chart clearly shows May's output is dramatically lower than the other months (below 10,000 vs. all others above 15,000). The condition for this reading is that the workflow treats such 'relative isolation' as a critical anomaly. Since no explicit threshold is provided, the applicability of this reading depends on the unstated workflow policy.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4302,
+      "total_tokens": 4980,
+      "completion_tokens": 678,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

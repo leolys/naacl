@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b950d8f5d02d6419",
+    "object": "chat.completion",
+    "created": 1790626405,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title at the top reads 'Year vs. Number of doctors per 1,000 inhabitants'. The y-axis on the left is labeled 'Count' and the x-axis at the bottom is labeled 'Year'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The blue line with circular markers starts at a y-position of approximately 1.3 on the left (year 2000) and ends at a y-position of approximately 2.4 on the right (year 2017.5). Since the y-axis is inverted (0.0 at the top, 2.5 at the bottom), the rightmost marker is physically lower on the page than the leftmost marker.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The task state lists three options for 'Capacity follow-up pathway'. The 'policy_tables' field in the task state is an empty array.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The chart alone shows the final plotted level and its change relative to the start, but no policy table, threshold, benchmark, or explicit routing criterion maps a level near the final point to either expansion or shortage. Therefore a definitive pathway selection cannot be validated from the displayed evidence alone.\", \"evidence\": \"The visible context fields ('Program area', 'Monitoring focus', 'Routing workflow') provide no specific numerical thresholds or decision rules. The task instructions ask to route based on the 'observed end-of-period capacity pattern' but do not define what constitutes an 'expansion' vs 'shortage' pattern in terms of the specific values on the chart. The chart shows a clear trend (physician count increasing from ~1.3 to ~2.4), but without a defined benchmark (e.g., 'if count > 2.0, route to shortage'), the mapping from data to pathway is not explicitly defined in the provided materials.\", \"status\": \"supported\"}}\n, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The chart title at the top reads 'Year vs. Number of doctors per 1,000 inhabitants'. The y-axis on the left is labeled 'Count' and the x-axis at the bottom is labeled 'Year'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The y-axis tick labels are visible on the left side of the chart. They read 0.0, 0.5, 1.0, 1.5, 2.0, 2.5 from top to bottom.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The leftmost blue marker is at x=2000.0, y≈1.3. The rightmost blue marker is at x=2017.5, y≈2.4. Since the y-axis values increase downwards (0.0 at top, 2.5 at bottom), the leftmost marker (1.3) is physically higher on the page than the rightmost marker (2.4). The rightmost marker is near the 2.5 tick.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The x-axis encodes reporting year from left to right, and the plotted line/markers encode the chart's labeled doctors-per-1,000 measure using the y-axis. Because the y-axis labels increase downward, a lower screen position corresponds to a larger plotted measure. If the task routes based on an end-of-period higher capacity pattern, the capacity expansion review pathway is the matching option; no displayed rule defines a shortage threshold or says that a higher final value requires shortage routing.\", \"evidence\": \"The x-axis clearly represents time (Year) increasing from left to right. The y-axis represents the count of doctors per 1,000 inhabitants, with values increasing downwards (0.0 to 2.5). The series starts at ~1.3 and ends at ~2.4. This indicates an increase in the number of doctors per 1,000 inhabitants over the reporting period. The option 'Route to the physician capacity expansion review pathway' is semantically consistent with an observed increase in capacity (more doctors per resident). The option 'Route to the physician shortage response review pathway' would typically imply a decrease or a level below a critical threshold, which is not supported by the trend of increasing values. The reading correctly identifies the direction of the data trend relative to the axis orientation.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3192,
+      "total_tokens": 4158,
+      "completion_tokens": 966,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

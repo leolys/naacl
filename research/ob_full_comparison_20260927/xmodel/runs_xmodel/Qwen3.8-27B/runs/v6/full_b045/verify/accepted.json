@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The leftmost orange bar is positioned directly above the x-axis tick labeled 'April'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The top of the April bar is at the same vertical level as the red dashed line, which intersects the y-axis at the tick labeled '250'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The red dashed line has the text 'Average' printed in red at its right-hand end.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The vertical axis on the left is labeled 'Sales ($K)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The chart's bar and axis encodings are authoritative. 2. The operations program treats sales at the average benchmark as low-sales.",
+        "evidence": "The chart is titled 'Monthly Sales for Store B in City Y' and the y-axis is 'Sales ($K)', which supports the encoding of Store B monthly sales. However, the task state provides no policy table or instruction defining 'low-sales' as 'at the average level'. The condition that the program treats average-level sales as low-sales is not established by any public fact.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The leftmost orange bar is positioned directly above the x-axis tick labeled 'April'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The top of the April bar is at the same vertical level as the red dashed line, which intersects the y-axis at the tick labeled '250'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The red dashed line has the text 'Average' printed in red at its right-hand end.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The operations program has no supplied rule mapping average-level sales to a specific route (low, normal, or strong). 2. The chart alone does not determine the route. 3. Selecting normal monitoring would require an unstated default-normal policy.",
+        "evidence": "The 'policy_tables' field in the task state is empty, and the 'page_instructions' do not provide any numerical thresholds or definitions for 'low-sales' or 'strong-sales'. This confirms that no rule is supplied to map the observed 'average' level to a specific route. The chart shows April is at the average, but without a rule, the route is not determined by the chart alone.",
+        "status": "supported"
+      }
+    }
+  }
+}

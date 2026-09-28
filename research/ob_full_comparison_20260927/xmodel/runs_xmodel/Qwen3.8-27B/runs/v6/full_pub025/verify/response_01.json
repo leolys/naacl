@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a965a304d0ef834c",
+    "object": "chat.completion",
+    "created": 1790624929,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is the authoritative characterization of the tourism trend. 2. The word 'Decreasing' is intended as the routing signal. 3. A declining new-tourist trend is routed to decline response.\",\n        \"evidence\": \"The task does not specify that the title overrides the data or that 'Decreasing' is the routing signal. While the title says 'Decreasing', the plotted data shows an increase. The routing policy (declining -> decline response) is a reasonable inference but not explicitly stated.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains 'Decreasing', while the blue line's 1891 endpoint (~3,200) is higher on the page than its 1880 endpoint (~1,100).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. There are conflicting title and plotted-line signals. 2. There is an absence of an explicit routing threshold or precedence rule. 3. A conservative default of routine monitoring is required under unresolved evidence conflict.\",\n        \"evidence\": \"There is a conflict between the title ('Decreasing') and the data (increasing). There is no explicit precedence rule. However, the task does not state a default to 'routine monitoring' when evidence is conflicting.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line starts at ~1,100 in 1880 and ends at ~3,200 in 1891, showing a higher endpoint at the later year.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis is labeled 'Year' with ticks from 1880 to 1891 in left-to-right order.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Number of Tourists' with ticks increasing upward from 0 to 3,500.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line is the series encoded by the chart axes. 2. The horizontal axis orders years left-to-right. 3. Higher vertical positions correspond to larger values on the tourist-count scale. 4. A higher endpoint at the later year indicates an increase. 5. An increasing new-tourist trend is routed to growth planning.\",\n        \"evidence\": \"The blue line is the only data series and aligns with the axes. The x-axis is chronological. The y-axis is numerical and increasing upward. The endpoint is higher, indicating an increase. The routing policy (increasing -> growth planning) is not explicitly stated but is the logical counterpart to the decline option.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4091,
+      "total_tokens": 4879,
+      "completion_tokens": 788,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

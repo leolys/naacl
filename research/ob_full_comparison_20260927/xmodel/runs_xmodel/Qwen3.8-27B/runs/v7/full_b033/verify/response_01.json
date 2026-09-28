@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ade81861b0c2e105",
+    "object": "chat.completion",
+    "created": 1790625577,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"rec_01\": {\"O\": {\"1\": {\"evidence\": \"The chart's title at the top is clearly visible as 'Selected High-Growth Quarters: Ad Spend vs Sales'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis is labeled 'Advertising Spend ($ thousands)' and the tick marks start at 25 and end at 75.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The y-axis is labeled 'Sales ($ thousands)' and the tick marks start at 60 and end at 170.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"Five distinct data points are plotted, each with a label: Q2, Q3, Q4, Q5, and Q6.\", \"status\": \"supported\"}, \"5\": {\"evidence\": \"The points form a clear upward-sloping line from the bottom-left (Q2) to the top-right (Q6).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the visual pattern of the five plotted points is interpreted as a positive correlation, then the data suggests that higher advertising spend is associated with higher sales for these specific quarters.\", \"evidence\": \"The visual pattern of the points (Q2 at approx. 30, 68 to Q6 at approx. 70, 167) clearly shows that as the x-value (ad spend) increases, the y-value (sales) also increases. This supports the interpretation of a positive correlation.\", \"status\": \"supported\"}}, \"rec_02\": {\"O\": {\"1\": {\"evidence\": \"The point labeled 'Q2' is positioned horizontally above the x-axis tick for 30 and vertically between the y-axis ticks for 60 and 70, appearing closer to 70 (approx. 68).\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The point labeled 'Q6' is positioned horizontally above the x-axis tick for 70 and vertically just below the y-axis tick for 170 (approx. 167).\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The vertical distance between Q2 (y≈68) and Q6 (y≈167) is approximately 99 units. The distance between any other pair of points is smaller (e.g., Q5 to Q6 is approx. 12 units).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"Assuming the axis scales are linear and the points represent the only data available, the transition from Q2 to Q6 represents the largest absolute increase in both advertising spend and sales volume among the displayed quarters.\", \"evidence\": \"The x-axis and y-axis show evenly spaced tick marks, indicating linear scales. The total increase from Q2 to Q6 (x: 30 to 70, y: 68 to 167) is larger than the increase between any other two points on the chart.\", \"status\": \"supported\"}}, \"rec_03\": {\"O\": {\"1\": {\"evidence\": \"The title of the chart explicitly includes the phrase 'Selected High-Growth Quarters'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis scale starts at 25, and the first data point (Q2) is at x=30, creating a visible gap.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The y-axis scale starts at 60, and the first data point (Q2) is at y≈68, creating a visible gap.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The area of the plot where x < 30 and y < 68 contains no data points.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the selection of data points is interpreted as a filter for 'high-growth' performance, then the chart does not provide a baseline for quarters with lower spend or sales, making it impossible to determine the overall average performance from this view alone.\", \"evidence\": \"The title 'Selected High-Growth Quarters' implies that not all quarters are shown. Because the chart only displays a subset of the data (those with high growth), it is impossible to calculate an overall average for all quarters from this view.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4090,
+      "total_tokens": 5045,
+      "completion_tokens": 955,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

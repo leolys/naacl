@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8b1ff02046aaae03",
+    "object": "chat.completion",
+    "created": 1790623663,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image visibly reads 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative textual summary of Factory F's 2018-2023 production direction. 2. The route labels follow that summary. 3. The title's stated direction determines the growth-versus-decline response route.\",\n        \"evidence\": \"The title is printed as 'Increasing Production...', which conflicts with the plotted data showing a net decrease from 3,500 in 2018 to ~2,100 in 2023. There is no public policy or instruction establishing that the title is an authoritative override of the plotted data. The condition that the title is intended to override the line encoding is not established by any public fact.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line starts at the 2018 x-axis tick at a vertical position aligned with the 3,500 y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line ends at the 2023 x-axis tick at a vertical position just above the 2,000 y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Production' and the horizontal axis is labeled 'Year'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line is the Factory F production series. 2. The horizontal year ticks bind its endpoints to 2018 and 2023. 3. Higher vertical position on the labeled Production axis encodes greater production. 4. The endpoint positions determine the net production direction over the review period. 5. A net decrease is to be routed to the correspondingly named trend-response option (decline response).\",\n        \"evidence\": \"The chart title identifies the data as 'Factory F' and the axes are labeled 'Year' and 'Production'. The line starts at 3,500 in 2018 and ends at ~2,100 in 2023, indicating a net decrease. The option 'Route to production decline response' is present. The conditions are established by the chart's public labels and the plotted data.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4083,
+      "total_tokens": 4725,
+      "completion_tokens": 642,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The rightmost bar above the x-axis label 'May' is visibly much shorter than the other five bars (Apr, Jan, Jun, Feb, Mar).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart title is 'Monthly Reservoir Release Volume', the y-axis is 'Release volume (m3)', and the x-axis is 'Month'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Routing requires an explicit threshold or policy beyond relative comparison.",
+        "evidence": "The task instructions and visible fields do not print an explicit numerical threshold or a formal policy table defining when to escalate. The decision is based on the visual comparison of the May bar to the others.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The bar above 'May' is the shortest on the chart, with its top near the x-axis baseline and well below the 10,000 m3 tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Filing excludes low-release cases needing follow-up.",
+        "evidence": "The task explicitly asks to decide between 'standard low-release follow-up' and 'critical low-release anomaly review'. 'Background monthly record filing' is a third option, but the primary decision is between the two active routing paths. Since May is a low-release case, it requires active routing, not just filing.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The bar above 'May' is much shorter than all other bars.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis is labeled 'Release volume (m3)' with ticks from 10,000 to 40,000.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The top of the May bar is below the 10,000 tick, near the baseline.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Bars encode monthly reservoir release volume on a common vertical axis. 2. The reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly.",
+        "evidence": "Condition 1 is supported by the axis labels. Condition 2 is an assumption because no explicit policy is printed; however, the visual extremity of the May bar (near zero compared to 17,500-40,000 for others) strongly suggests it is an anomaly rather than a standard low-release case (like Jun or Feb).",
+        "status": "supported"
+      }
+    }
+  }
+}

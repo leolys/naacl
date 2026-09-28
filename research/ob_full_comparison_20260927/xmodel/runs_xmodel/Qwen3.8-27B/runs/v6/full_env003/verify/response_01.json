@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afd3379fd55f3f13",
+    "object": "chat.completion",
+    "created": 1790623882,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The orange wedge labeled 'Hydroelectric (10%)' spans roughly 12 o'clock to 4 o'clock (approx. 120 degrees). The pale-yellow wedge labeled 'Nuclear (45%)' spans roughly 12 o'clock to 9 o'clock (approx. 135 degrees). The visual evidence shows the Nuclear slice has a greater angular extent than the Hydroelectric slice.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The orange slice on the right side of the chart is clearly inscribed with the text 'Hydroelectric (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Pie-slice angular area is the authoritative encoding of category size (rather than printed labels). 2. The angular area conflicts with or supersedes the inscriptions. 3. The task offers no priority route for Fossil Fuels.\",\n        \"evidence\": \"Condition 1 is not established; the chart contains explicit percentage labels which are the standard encoding for such data. Condition 2 is refuted because the visual angular area (Nuclear > Hydroelectric) aligns with the printed percentages (45% > 10%), so there is no conflict. Condition 3 is supported by the option list, but the failure of the antecedent conditions renders the rule inapplicable.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text 'Global Energy Consumption by Source' is printed in the top-left corner of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The pale-yellow slice in the upper-left quadrant is inscribed with 'Nuclear (45%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red slice in the lower-left quadrant is inscribed with 'Fossil Fuels (30%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The light-orange slice at the bottom is inscribed with 'Renewables (15%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The orange slice on the right is inscribed with 'Hydroelectric (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Pie-slice inscriptions identify each source's share of the chart. 2. The chart is titled 'Global Energy Consumption by Source'. 3. The category with the greatest printed percentage is the largest global energy-consumption category. 4. If that category is Nuclear, select its matching priority-monitoring route.\",\n        \"evidence\": \"Condition 1 is supported by the presence of percentage labels on each slice. Condition 2 is supported by the visible title. Condition 3 is supported by comparing the values: 45% (Nuclear) is greater than 30%, 15%, and 10%. Condition 4 is supported by the option 'Route Nuclear to priority source monitoring' being available and matching the identified category.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3735,
+      "total_tokens": 4524,
+      "completion_tokens": 789,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

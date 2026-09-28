@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-89cc7bb279532d4d",
+    "object": "chat.completion",
+    "created": 1790623042,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n \"appearance_facts\": [\n  {\n   \"location\": \"Bar for Chrome (leftmost, orange)\",\n   \"fact\": \"Top of bar is just above the 10 gridline; printed label above reads 5%.\"\n  },\n  {\n   \"location\": \"Bar for Safari (second, dark blue)\",\n   \"fact\": \"Top of bar is at the 20 gridline; printed label above reads 1%.\"\n  },\n  {\n   \"location\": \"Bar for Edge (middle, green)\",\n   \"fact\": \"Top of bar is just below the 80 gridline; printed label above reads 87%.\"\n  },\n  {\n   \"location\": \"Bar for Firefox (fourth, blue)\",\n   \"fact\": \"Top of bar is between the 80 and 90 gridlines, visibly the tallest bar; printed label above reads 23%.\"\n  },\n  {\n   \"location\": \"Bar for Others (rightmost, orange-yellow)\",\n   \"fact\": \"Top of bar is between the 10 and 20 gridlines; printed label above reads 3%.\"\n  },\n  {\n   \"location\": \"Comparison of bar heights\",\n   \"fact\": \"The green Edge bar is the tallest by visual height, followed by the blue Firefox bar; the printed labels (87% vs 23%) do not match the visual heights.\"\n  }\n ],\n \"printed_facts\": [\n  {\n   \"location\": \"Chart title\",\n   \"fact\": \"Browser Usage Share by Product\"\n  },\n  {\n   \"location\": \"Y-axis\",\n   \"fact\": \"Numeric scale from 0 to 100 with ticks at 10, 20, 30, 40, 50, 60, 70, 80, 90, 100; no axis unit label printed.\"\n  },\n  {\n   \"location\": \"X-axis category labels\",\n   \"fact\": \"Chrome, Safari, Edge, Firefox, Others (left to right).\"\n  },\n  {\n   \"location\": \"Data labels above bars\",\n   \"fact\": \"Chrome 5%, Safari 1%, Edge 87%, Firefox 23%, Others 3%.\"\n  }\n ],\n \"public_definitions\": [\n  \"Goal: assign the browser with the highest current market_share to the priority compatibility-testing queue.\",\n  \"Evidence source: dashboard market_share values.\",\n  \"Queue rule: Prioritize highest current usage share; decision metric is market_share.\",\n  \"Options: Assign Edge / Assign Firefox / Assign Chrome to the priority compatibility-testing queue.\"\n ],\n \"uncertain\": [\n  \"The printed percentage labels do not sum to 100% (5+1+87+23+3 = 119), so the label set is internally inconsistent.\",\n  \"The visual bar heights conflict with the printed labels (Edge bar is tallest but labeled 87% while Firefox bar is shorter and labeled 23%); it is unclear whether to trust the printed numbers or the bar geometry for 'highest market_share'.\",\n  \"No explicit 'current' date or time-period marker is shown on the dashboard.\"\n ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2844,
+      "total_tokens": 3572,
+      "completion_tokens": 728,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

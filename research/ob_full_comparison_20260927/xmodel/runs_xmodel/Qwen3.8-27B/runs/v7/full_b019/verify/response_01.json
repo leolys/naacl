@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8943a00deb190d6b",
+    "object": "chat.completion",
+    "created": 1790625341,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Visually, the points labeled Store 6 through Store 10 show a monotonic increase in both x-position (spend) and y-position (sales). Store 6 is at approx (30, 60), Store 7 at (35, 68), Store 8 at (42, 85), Store 9 at (48, 96), and Store 10 at (70, 181).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading posits that if the plotted stores are treated as representative and the association is sufficient, the pattern supports company-wide expansion.\",\n        \"evidence\": \"The chart title is 'Additional Top Stores: Ad Spend vs Sales'. The word 'Additional' and the specific store labels (6-10) suggest this is a subset of the total population, not the entire company. The chart displays a correlation, but the reading's condition relies on an assumption of representativeness and sufficiency that is not provided by the visible evidence or policy.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"There are five blue circular markers in the plot area, each with a text label: 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading posits that because the chart is limited to 'Additional Top Stores' (a subset), and company-wide approval requires full-population evidence, the appropriate action is to request a full-store analysis.\",\n        \"evidence\": \"The title explicitly limits the scope to 'Additional Top Stores'. The data points are labeled Store 6 through Store 10, implying the existence of Stores 1-5 which are not shown. Therefore, the evidence provided is a subset, not the full store population required for a company-wide decision.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The points for Store 6 through Store 10 are positioned progressively further to the right (higher spend) and higher up (higher sales) on the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading posits that the axes encode spend and sales, so the positions indicate greater spend and sales for later stores, but this is an association only, not proof of causality or profitability.\",\n        \"evidence\": \"The axes are clearly labeled as stated. The visual arrangement of points confirms the monotonic increase. The limitation that this is an association and not a proof of causality or company-wide representativeness is a valid logical constraint on the data presented.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3987,
+      "total_tokens": 4841,
+      "completion_tokens": 854,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

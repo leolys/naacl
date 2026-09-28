@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart displays a title, axis labels, tick values, and data-point temperature labels, but no text, line, or annotation indicates a numerical threshold, escalation rule, or routing instruction.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The leftmost marker aligns with the x-axis tick '2005' and is labeled '24.0°C'. The rightmost marker aligns with the x-axis tick '2015' and is labeled '10.0°C'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.",
+        "evidence": "The chart does not display a threshold. The task text and companion fields do not supply a numerical or qualitative definition of 'substantial change'. The condition of a 'routine-by-default policy' is not explicitly stated in the provided materials.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The leftmost data point is a black circular marker aligned with the x-axis tick '2005', with the printed label '24.0°C' directly above it.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The rightmost data point is a black circular marker aligned with the x-axis tick '2015', with the printed label '10.0°C' directly above it.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The title at the top of the chart reads 'Coastal Water Temperature Trend'. The vertical axis is labeled 'Water temperature (°C)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.",
+        "evidence": "The markers and labels are consistent with the axis labels and title. The calculation (10.0 - 24.0 = -14.0) is a valid interpretation of the 'full-period change'. However, the condition 'If a decrease of that magnitude meets the unspecified substantial-change criterion' cannot be evaluated because no such criterion is provided in the chart or task description.",
+        "status": "unclear"
+      }
+    }
+  }
+}

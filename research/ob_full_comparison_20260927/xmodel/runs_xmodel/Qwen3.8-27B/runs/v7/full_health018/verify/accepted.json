@@ -1,0 +1,34 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart's y-axis is labeled 'Respiratory infection cases' with a vertical scale (0 to 2800+), confirming higher page position means more cases. The purple line's vertex above the x-axis tick '2012' is at a lower vertical position (approx. 1000) than the vertex above the x-axis tick '2023' (approx. 2850).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and 'overall case pattern' is evaluated by comparing the 2012 and 2023 endpoints, then a higher 2023 endpoint indicates an increase over that span; if such an overall increase maps to increasing-activity follow-up, that route is supported. The task supplies no rule choosing endpoint comparison over recent change.",
+        "evidence": "The condition that the line encodes case levels with higher position meaning more cases is supported by the y-axis label and scale. The condition that the 2023 endpoint is higher than the 2012 endpoint is supported by the visual data. The condition that 'overall case pattern' is defined by endpoint comparison is not explicitly stated in the task, but 'overall' typically implies the full span rather than just the final segment. The mapping of 'net increase' to 'increasing-activity follow-up' is a reasonable operational interpretation given the available options.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top left of the chart clearly reads 'Falling Respiratory Infection Cases in Sentinel Sites from 2012 to 2023'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The purple line's vertex above the x-axis tick '2023' is at a lower vertical position (approx. 2850) than the preceding vertex above the x-axis tick '2022' (approx. 3000).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and the routing convention treats a decline in the most recent year-to-year segment (or the chart's stated falling pattern) as easing activity, then a 2022-to-2023 downward segment supports easing-activity follow-up. This task-to-route convention is not explicitly supplied.",
+        "evidence": "The condition that the line encodes case levels is supported. The condition of a 2022-to-2023 decline is supported by the visual data. However, the condition that 'easing activity' is defined by the most recent year-to-year segment is not supported by the task's request for the 'overall case pattern'. Furthermore, the chart title claims 'Falling' cases, which directly contradicts the plotted data showing a massive net increase from 2012 to 2023. Relying on the title or just the final segment ignores the dominant trend shown in the data.",
+        "status": "refuted"
+      }
+    }
+  }
+}

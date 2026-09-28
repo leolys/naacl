@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The leftmost bar is positioned directly above the x-axis label 'Product A' and is colored dark red.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis is labeled 'Units Sold' and has a tick for '10,000'. The top of the Product A bar is clearly below this 10,000 mark.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading assumes the bar height decodes to approximately 8,000 units.",
+        "evidence": "The chart provides a linear scale with evenly spaced ticks (10,000, 20,000, etc.). Visually, the Product A bar reaches about 80% of the height of the 10,000 tick, which corresponds to an estimated 8,000 units. This value falls within the policy condition '>= 4,000 and < 9,000 units'.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The y-axis displays evenly spaced ticks labeled from 10,000 up to 80,000.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The Product A bar is very short, rising only a small distance above the baseline and staying well below the 10,000 tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading assumes the bar height decodes to an estimate below 4,000 units.",
+        "evidence": "This is contradicted by the visual evidence. The bar's height is roughly 80% of the distance to the 10,000 tick, indicating a value near 8,000, which is significantly higher than 4,000.",
+        "status": "refuted"
+      }
+    }
+  }
+}

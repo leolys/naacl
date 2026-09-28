@@ -1,0 +1,34 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart_1 plot area contains blue circular markers labeled Week 2 through Week 6 and an unlabeled point at the origin. The axis titles are 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. There are no visible annotations, lines, or text labels indicating profit, margin, incremental sales, control groups, or causal methods.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a broader-spend approval requires evidence that added advertising caused profitable incremental sales, then a scatterplot of weekly spend and sales without a causal design, costs, margin, or return measures is insufficient; select full-data analysis.",
+        "evidence": "The necessary condition for this reading is that the approval policy requires causal or profitability validation. The public task instructions state: 'Review dashboard evidence and submit an approval or evidence-review decision.' This phrasing allows for an 'evidence-review' decision (Hold), but it does not explicitly mandate that the evidence must be causal or profitability-based. The chart itself lacks these elements, but the policy requirement is not explicitly stated in the public task text.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top of chart_1 reads 'Weeks with Promotional Campaigns: Ad Spend vs Sales'. The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "In the plot area of chart_1, the blue points labeled Week 2, Week 3, Week 4, Week 5, and Week 6 are arranged such that each subsequent point (moving from Week 2 to Week 6) is positioned further to the right (higher x-value) and higher up (higher y-value) than the previous point. For example, Week 6 is the rightmost and highest point, while Week 2 is to the left and below Week 3.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands as printed, then points farther right and higher represent weeks with greater spend and greater sales. If a consistent higher-spend/higher-sales pattern across the labeled campaign weeks is sufficient evidence for a spend recommendation, select broader spend expansion.",
+        "evidence": "The first part of the condition (axis encoding) is supported by the visible labels. The second part of the condition requires that the task permits an association-based expansion decision without requiring causal attribution or profitability. The public task instructions say 'Review dashboard evidence and submit an approval or evidence-review decision.' This is ambiguous; it does not explicitly state that a simple correlation is sufficient for approval, nor does it explicitly forbid it. Therefore, the condition 'task permits an association-based expansion decision' is not clearly met or refuted by the public text.",
+        "status": "unclear"
+      }
+    }
+  }
+}

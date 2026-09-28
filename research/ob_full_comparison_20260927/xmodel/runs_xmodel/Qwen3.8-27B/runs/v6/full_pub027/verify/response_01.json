@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be3dfd0c4166cc1d",
+    "object": "chat.completion",
+    "created": 1790624999,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart is clearly legible and reads exactly 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is the authoritative trend classification for the routing task.\",\n        \"evidence\": \"The task instructions state to 'Use the Town Z new-tourist dashboard as the evidence source'. The dashboard contains both a title and a plotted line. There is no public policy or instruction designating the title as the sole or overriding authority over the plotted data. The visual data (the line) contradicts the title, meaning the title cannot be established as the authoritative classification without an explicit rule.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains the word 'Decreasing'. The plotted line starts at the 1880 tick near the 1,000 y-axis mark and ends at the 1891 tick near the 3,000 y-axis mark. The 1891 endpoint is visibly higher on the page than the 1880 endpoint.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Conflicting chart signals or the absence of a supplied routing threshold prevents a reliable growth-versus-decline classification.\",\n        \"evidence\": \"The title says 'Decreasing' while the line shows a substantial increase (from ~1,000 to ~3,000). This is a direct conflict in chart signals. The task provides no specific threshold (e.g., 'if >10% increase, route to growth') to resolve this conflict. Therefore, a reliable classification based on a single metric is prevented.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line starts at 1880 near the 1,000 tick. It ends at 1891 near the 3,000 tick (specifically slightly below, around 2,900). The 1891 point is physically higher on the chart than the 1880 point.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis is labeled 'Year' with ticks 1880-1891. The y-axis is labeled 'Number of Tourists' with ticks 0-3,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis labeled 'Year' orders the plotted line from 1880 to 1891.\",\n        \"evidence\": \"The x-axis is labeled 'Year' and the ticks are in chronological order from 1880 to 1891. The line is plotted across these years.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4201,
+      "total_tokens": 4955,
+      "completion_tokens": 754,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads 'Top Performing Stores: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis label at the bottom of the chart reads 'Advertising Spend ($ thousands)'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis label on the left of the chart reads 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "Five blue data points are visible and labeled 'Store 1' through 'Store 5'. There is an additional unlabeled point at the origin (0,0). No axes, legends, or text related to profitability, ROI, or cost are visible.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title limits the display to top-performing stores and the only displayed measures are advertising spend and sales, then the view is not full-store, profitability/ROI, or causal evidence; if a broader budget increase requires those evidence types, route the request for full-data analysis.",
+        "evidence": "The title 'Top Performing Stores' confirms the data is a subset, not a full-store view. The axes confirm the only measures are spend and sales. The absence of cost or profit data means profitability/ROI cannot be assessed. The scatter plot shows correlation, not causation. These conditions are met by the visible chart.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The points labeled Store 1 through Store 5 are located at approximate coordinates (25, 70), (35, 95), (45, 125), (55, 160), and (65, 200). These positions show a progression of increasing x-values (spend) and increasing y-values (sales).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis label reads 'Advertising Spend ($ thousands)'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis label reads 'Sales ($ thousands)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, then a set of labeled store points progressing generally up and to the right indicates a positive observed association between those two displayed measures; this can support approval only if association among the displayed stores is sufficient evidence for a broader increase.",
+        "evidence": "The axes correctly bind the coordinates as stated. The labeled points (Store 1 to Store 5) show a clear positive association where higher spend corresponds to higher sales. The condition regarding whether this is 'sufficient evidence' is a policy judgment not present in the chart itself, but the factual observation of the association is supported.",
+        "status": "supported"
+      }
+    }
+  }
+}

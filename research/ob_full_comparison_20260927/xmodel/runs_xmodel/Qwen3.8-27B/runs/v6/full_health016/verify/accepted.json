@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The red line clearly drops between 2014 and 2015, between 2018 and 2020, and between 2022 and 2023.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The task state's `policy_tables` field is an empty list, and no other routing rules or thresholds are present in the public task.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Routing requires a stated threshold, sustained-direction criterion, or policy rule not supplied in the task. 2. The plotted series has both rises and declines.",
+        "evidence": "Condition 1 is met as no policy rules are provided. Condition 2 is met as the series shows both increases (e.g., 2012-2014) and decreases (e.g., 2014-2015).",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top of the chart reads 'Declining Emergency Department Visits in Region Z from 2012 to 2023'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The dashboard title is an authoritative summary of the utilization pattern.",
+        "evidence": "The task does not state that the title is authoritative. Furthermore, the title's claim of 'Declining' directly contradicts the plotted data, which shows a significant increase from ~1200 in 2012 to over 3200 in 2022. The condition is not established.",
+        "status": "unclear"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The vertex for 2012 is at a vertical position corresponding to ~1200, while the vertex for 2023 is at a vertical position corresponding to ~3200. The 2023 point is physically higher on the page.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis is labeled 'Emergency department visits' and has tick labels 0, 800, 1600, 2400, and 3200 in ascending order from bottom to top.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The x-axis is labeled 'Year' and has tick marks for every year from 2012 to 2023.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The plotted line encodes emergency department visits by year, with higher vertical position corresponding to larger values. 2. A later endpoint plotted higher than the earlier endpoint indicates overall utilization growth. 3. Endpoint comparison is an appropriate measure of the review-period overall pattern.",
+        "evidence": "Condition 1 is established by the axis labels. Condition 2 is established by the fact that the 2023 point (~3200) is higher than the 2012 point (~1200). Condition 3 is supported by the task instruction to assess the 'overall utilization pattern over the review period', where the endpoints represent the start and end of that period.",
+        "status": "supported"
+      }
+    }
+  }
+}

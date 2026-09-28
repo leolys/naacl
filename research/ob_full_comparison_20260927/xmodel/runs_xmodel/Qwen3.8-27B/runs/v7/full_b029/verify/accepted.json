@@ -1,0 +1,47 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The visible chart contains five labeled scatter points (Region A through Region E) and two printed axes: 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. There are no visible annotations, labels, or data series representing ROI, profit, experimental comparisons, or incremental sales.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI, then a cross-sectional scatter pattern alone does not meet that requirement; further regional spend-sales analysis is warranted.",
+        "evidence": "The chart provides a cross-sectional view of five regions. It does not provide causal evidence (e.g., A/B testing) or return-on-investment metrics. The condition 'if a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI' is a policy assumption not explicitly defined in the public task text, though the instruction to 'Review dashboard evidence' implies a standard of proof.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The points are arranged in a monotonic sequence. Region A (approx. 30, 58) is to the left and below Region B (approx. 40, 66). Region B is to the left and below Region C (approx. 50, 81). Region C is to the left and below Region D (approx. 60, 106). Region D is to the left and below Region E (approx. 70, 151).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If an observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout, then a limited pilot can be selected for regions rather than approving a broader increase.",
+        "evidence": "The chart shows a strong positive association. However, the chart itself contains no 'pilot-selection criteria' or 'outcome threshold' to distinguish which regions should be selected for a pilot versus a broader rollout. The condition 'Assumes the organization permits a pilot under uncertainty' is an external policy assumption.",
+        "status": "unclear"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top-left reads 'Top Regions: Ad Spend vs Sales'. The vertical axis is labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Visually, the points form a diagonal line from bottom-left to top-right. Region A is at the lowest x and y values, followed sequentially by B, C, D, and E at progressively higher x and y values.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels indicate, and if the ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales, then a region-wide spend increase is supported.",
+        "evidence": "The axis labels and point ordering are factually supported by the image. However, the condition 'if the ordered cross-regional pattern is considered sufficient evidence' is a subjective judgment. The chart shows correlation, not causation, and lacks ROI data. Whether this is 'sufficient' for a 'region-wide spend increase' is a policy decision not grounded in the visible data alone.",
+        "status": "unclear"
+      }
+    }
+  }
+}

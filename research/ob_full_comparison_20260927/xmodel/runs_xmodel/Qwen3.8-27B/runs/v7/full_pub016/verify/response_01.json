@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a858a1b6b6dfb5e9",
+    "object": "chat.completion",
+    "created": 1790626895,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title in the top-left of the image visibly reads 'Prevalence of Species Z in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend on the right side of the map is a vertical color bar. The top is labeled 'High' and corresponds to the number 100, with a pale yellow color. The bottom is labeled 'Low' and corresponds to the number 0, with a dark red color.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state labeled 'NJ' (New Jersey) is filled with a pale yellow color, which corresponds to the high end of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state labeled 'PA' (Pennsylvania) is filled with a dark red color, which corresponds to the low end of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The state labeled 'DE' (Delaware) is filled with a pale yellow color, similar to NJ. It is not 'orange-red' as claimed, but rather a high-value pale yellow.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map's color legend encodes prevalence with the pale yellow end marked 'High' and '100' and the dark red end marked 'Low' and '0', then states with paler fills have higher prevalence than states with darker fills. If the task requires routing the highest-prevalence state among the listed options, select that state's priority-follow-up detail option.\",\n        \"evidence\": \"The legend confirms that pale yellow represents high prevalence (100) and dark red represents low prevalence (0). Comparing the options: NJ is pale yellow (high), PA is dark red (low), and DE is pale yellow (high). NJ and DE are both high prevalence, but PA is low. The task requires the highest-prevalence state. Both NJ and DE are at the high end. The option for DE is 'routine monitoring', while the option for NJ is 'priority follow-up'. The goal is to open the record for the 'highest-prevalence priority follow-up workflow'. Since NJ is high prevalence and has a priority follow-up option, it fits the criteria. DE is also high prevalence but its option is routine monitoring.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4132,
+      "total_tokens": 4730,
+      "completion_tokens": 598,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

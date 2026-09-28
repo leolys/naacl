@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ae7019643fad4d6e",
+    "object": "chat.completion",
+    "created": 1790624719,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The legend at the right shows a blue swatch next to 'Station X', a green swatch next to 'Station Y', and an orange swatch next to 'Station Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays a single bar for each date (Tue, Wed, Thu, Mon) composed of three vertically stacked segments: blue at the bottom, green in the middle, and orange at the top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Number of Visitors' and includes a visible tick mark labeled '4,500'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The top edge of the orange segment for the Tue bar is visibly higher than the 4,500 tick line. The top edge of the orange segment for the Wed bar is also visibly higher than the 4,500 tick line.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top edge of the orange segment for the Thu bar is visibly lower than the 4,500 tick line.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The lowest printed tick on the vertical axis is '1,000'. The bars extend downwards to the horizontal axis line, which is positioned below the '1,000' tick mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The bars are additive stacks with a common zero-based quantity scale. 2. The chart does not visibly show a zero baseline (encoding assumption). 3. A stack top above the 4,500 tick indicates combined traffic exceeding 4,500. 4. Under the supplied policy, submit exactly the dates whose combined total exceeds 4,500.\",\n        \"evidence\": \"Condition 1 is not established: the vertical axis begins at a value below 1,000 (likely 0 or 500, but not explicitly labeled '0'), and the bars do not start at a labeled zero baseline. While the segments are stacked, the 'zero-based' nature of the scale is an assumption because the bottom of the axis is not explicitly marked as 0. Condition 2 is established: the axis is truncated or at least does not show a '0' label, with the lowest label being '1,000'. Condition 3 is established for the visible portions: the tops of the Tue and Wed stacks are above the 4,500 line. Condition 4 is established by the policy table: 'Combined visitors... exceed 4,500 for a day'. Because Condition 1 (zero-based scale) is an assumption and not visually confirmed (the axis bottom is not labeled 0), the B condition is not fully supported.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3839,
+      "total_tokens": 4553,
+      "completion_tokens": 714,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

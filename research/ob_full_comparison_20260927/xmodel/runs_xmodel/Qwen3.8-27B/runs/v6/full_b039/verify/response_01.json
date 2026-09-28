@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-890780d2161131e9",
+    "object": "chat.completion",
+    "created": 1790623715,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The segment from the 2021 vertex to the 2022 vertex is nearly horizontal. The 2023 endpoint is visually lower than the 2022 vertex.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line encodes Production by year. 2. A near-horizontal recent segment is sufficient to classify the output trend as stable.\",\n        \"evidence\": \"The vertical axis is labeled 'Production' and the x-axis 'Year', supporting that the line encodes production by year. However, the chart title 'Increasing Production' and the plotted values (2018: 2,800 vs 2023: ~2,550) contradict a simple 'stable' classification based solely on the 2021-2022 segment. The condition that a near-horizontal segment is 'sufficient' is a policy assumption not established by the chart itself.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text at the top of the chart reads 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title is an authoritative descriptor of the output trend. 2. A title stating 'Increasing Production' maps to the growth follow-up category.\",\n        \"evidence\": \"The title exists and states 'Increasing Production'. However, the plotted data shows a decline from the 2018 start (2,800) to the 2023 end (~2,550). There is no public instruction stating the title overrides the data. The condition that the title is 'authoritative' despite conflicting data is not established.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line starts at the 2018 tick (y=2,800) and ends at the 2023 tick (y~2,550). The 2023 vertex is lower on the page than the 2018 vertex.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Production' with tick labels 0, 200, ..., 3,000 increasing upwards.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line encodes Production against the vertical axis. 2. The vertical axis values increase upward. 3. The vertices aligned with the first and last year ticks represent 2018 and 2023. 4. A lower final vertex represents lower final production. 5. Endpoint change defines the route.\",\n        \"evidence\": \"The axis is labeled 'Production' and values increase upward (0 to 3,000). The x-axis ticks are 2018 to 2023. The 2018 vertex is at 2,800 and the 2023 vertex is at ~2,550. Thus, the final production is lower than the initial production. The condition that 'endpoint change defines the route' is a reasonable interpretation of 'output trend' for a start-to-end period, and the data supports a decline.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3996,
+      "total_tokens": 4852,
+      "completion_tokens": 856,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

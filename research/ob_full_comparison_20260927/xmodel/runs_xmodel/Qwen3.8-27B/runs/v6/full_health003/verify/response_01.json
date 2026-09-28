@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf4e7923c973d67e",
+    "object": "chat.completion",
+    "created": 1790624401,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual note at 'The y-axis is inverted, with 0 at the top and 8000 at the bottom' confirms the axis orientation. The note 'The data series starts near the top of the chart (close to 0) on the left and trends downwards to the right, ending near the bottom of the chart (close to 8000) on the right' confirms the line's trajectory.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed fact at 'Y-axis ticks' lists '0, 2000, 4000, 6000, 8000'. The visual note 'The y-axis is inverted, with 0 at the top and 8000 at the bottom' confirms that the numeric values increase as you move down the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The vertical axis follows ordinary upward-increasing quantity encoding (i.e., the printed tick order is not the operative value mapping).\",\n        \"evidence\": \"The visual note 'The y-axis is inverted, with 0 at the top and 8000 at the bottom' and the printed fact 'Y-axis ticks: 0, 2000, 4000, 6000, 8000' establish that the printed tick order (0 at top, 8000 at bottom) is the operative value mapping. The condition that the axis follows ordinary upward-increasing encoding is refuted by the visible inverted axis.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The printed fact at 'Chart title' is 'Month vs. Number of COVID-19 patients hospitalized'. The printed facts at 'Y-axis label' and 'X-axis label' are 'Count' and 'Month' respectively.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed fact at 'X-axis ticks' lists dates starting with 'Feb 24, 2020' and ending with 'Mar 14, 2020'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed fact at 'Y-axis ticks' lists '0, 2000, 4000, 6000, 8000'. The visual note 'The y-axis is inverted, with 0 at the top and 8000 at the bottom' confirms these are at progressively lower positions.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The visual note 'The data series starts near the top of the chart (close to 0) on the left and trends downwards to the right, ending near the bottom of the chart (close to 8000) on the right' supports the descent. The note 'The value for the final data point is visually estimated to be between 8000 and 9000, as it is below the 8000 grid line' confirms the final marker's position. The note 'The trend shows a consistent and accelerating increase... The line is relatively flat at the beginning and becomes steeper towards the end' supports the sharp descent.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The plotted series is the COVID-19 hospitalized-patient count over time. 2. The x-axis progresses from earlier dates at left to later dates at right. 3. The y-axis numeric labels increase downward. 4. The current-period increase is rapid (assessed from the visibly steep recent segment).\",\n        \"evidence\": \"Condition 1 is established by the chart title 'Month vs. Number of COVID-19 patients hospitalized'. Condition 2 is established by the x-axis ticks running from 'Feb 24, 2020' to 'Mar 14, 2020'. Condition 3 is established by the visual note 'The y-axis is inverted, with 0 at the top and 8000 at the bottom'. Condition 4 is established by the visual note 'The trend shows a consistent and accelerating increase... The line is relatively flat at the beginning and becomes steeper towards the end' and the specific values showing a jump from ~5000 (Mar 10) to ~8500 (Mar 14).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3413,
+      "total_tokens": 4490,
+      "completion_tokens": 1077,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

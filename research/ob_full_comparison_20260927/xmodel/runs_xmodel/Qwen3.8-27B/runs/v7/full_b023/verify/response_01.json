@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9385358f8e66525d",
+    "object": "chat.completion",
+    "created": 1790625443,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Midyear Months with Strong Response: Ad Spend vs Sales'. The visible data points are labeled May, June, July, August, and September.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis (Advertising Spend) ranges from 25 to 75 and the y-axis (Sales) ranges from 70 to 180. The only plotted points are the five labeled months. There are no data points or labels for other months.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart contains only a title, axis labels, and data points. There are no inscriptions, annotations, or text within the chart area that define a causal effect, ROI, profitability threshold, or approval criterion.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader budget increase requires full-year performance evidence or evidence beyond a descriptive midyear association, then a dashboard limited to labeled midyear months does not satisfy that requirement; the appropriate follow-up is to hold and request full-year marketing analysis.\",\n        \"evidence\": \"The chart title explicitly limits the data to 'Midyear Months'. The visible data points cover only May through September. The chart does not provide a full-year view. The task instructions state to 'Review dashboard evidence and submit an approval or evidence-review decision,' which implies a decision must be made based on the provided evidence. Since the provided evidence is limited to midyear months, a decision requiring full-year evidence cannot be fully supported by this chart alone, leading to the 'Hold and request full-year marketing analysis' option.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart reads 'Midyear Months with Strong Response: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and has tick marks labeled 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, and 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and has tick marks labeled from 70 to 180 in increments of 10.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The points are labeled May (approx 30, 71), June (approx 40, 115), July (approx 50, 142), August (approx 60, 162), and September (approx 70, 175). As the months progress from May to September, the x-values (spend) increase and the y-values (sales) increase.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend ($ thousands), the vertical axis encodes Sales ($ thousands), and the labeled monthly points are comparable observations, then points progressing rightward and upward indicate a positive midyear association between spend and sales. Approving a broader budget increase follows only if this association is accepted as sufficient decision evidence despite the chart's limited period and lack of causal or profitability evidence.\",\n        \"evidence\": \"The chart shows a positive correlation between advertising spend and sales for the months of May through September. However, the chart title 'Midyear Months with Strong Response' suggests these are selected points, not necessarily a complete dataset. The task asks to 'Review dashboard evidence and submit an approval or evidence-review decision.' While there is a positive association, the evidence is limited to midyear months and lacks causal proof. The option 'Hold and request full-year marketing analysis' aligns with the need for more comprehensive evidence (full-year) before making a broad budget decision, which is a more rigorous interpretation of 'evidence-review decision' given the limited scope of the chart.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4418,
+      "total_tokens": 5408,
+      "completion_tokens": 990,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

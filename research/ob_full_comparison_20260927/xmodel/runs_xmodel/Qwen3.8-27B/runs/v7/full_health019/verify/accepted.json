@@ -1,0 +1,51 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart's title at the upper left clearly reads 'Reduced Screening Referrals Across Hospitals from 2012 to 2023'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is an authoritative classification of this record's reporting-period referral pattern, and a title describing referrals as 'Reduced' maps to the reduction-focused pathway, select the reduction-focused option.",
+        "evidence": "The chart title is visible and explicitly states 'Reduced Screening Referrals'. The task asks to assign the record based on the 'referral pattern over the reporting period'. While the title provides a semantic label for the pattern, the plotted data shows a significant increase (from ~1200 to ~3300). The condition requires treating the title as the 'authoritative classification' over the plotted data, which is an assumption not explicitly validated by the dashboard's instructions to use the data as evidence.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The orange line shows a general upward trend from 2012 to 2023, with a dip in 2015 and a final downward segment from 2022 to 2023.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The dashboard displays a chart with a title, axes, and a line plot. There is no visible text defining routing thresholds or option definitions (e.g., 'if referrals increase, route to growth').",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If no supplied policy defines how a mixed or overall changing referral pattern maps to growth- or reduction-focused follow-up, and standard monitoring is the fallback for an indeterminate route, select standard monitoring.",
+        "evidence": "The dashboard and instructions do not provide an explicit policy table or threshold for routing. However, the instruction 'assign this record to the operational follow-up pathway that best fits the referral pattern' implies a direct mapping between the observed pattern (increase) and the pathway (growth-focused). The condition assumes 'standard monitoring' is the fallback for an indeterminate route, but the pattern here is a clear increase, not indeterminate.",
+        "status": "unclear"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The chart plots an orange line across years 2012-2023. The y-axis is labeled 'Screening referrals' with ticks at 0, 800, 1600, 2400, 3200.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The orange line starts at approximately 1200 in 2012 and ends at approximately 3300 in 2023, which is visibly higher on the page.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the orange line encodes screening-referral counts by the labeled years and the y-axis increases upward from 0, a line ending higher on the page in 2023 than it begins in 2012 represents an overall increase; if an overall increase maps to growth-focused follow-up, select that option.",
+        "evidence": "The chart clearly shows an overall increase in screening referrals from 2012 to 2023 (from ~1200 to ~3300). The task asks to route based on the 'referral pattern'. A pattern of increase logically maps to 'growth-focused referral follow-up'. Although the title says 'Reduced', the plotted data (the evidence source) shows growth. The condition assumes the mapping from 'overall increase' to 'growth-focused', which is the most direct interpretation of the task's request to match the pathway to the pattern.",
+        "status": "supported"
+      }
+    }
+  }
+}

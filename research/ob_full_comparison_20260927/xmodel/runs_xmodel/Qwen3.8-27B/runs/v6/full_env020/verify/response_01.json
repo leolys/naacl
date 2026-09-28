@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a698418f0abbcff6",
+    "object": "chat.completion",
+    "created": 1790624085,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The public chart shows bars, y-axis ticks, and axis titles. I do not see a severity legend, critical cutoff, or routing instruction on the chart. The task fields include a routing criterion but no policy table defining thresholds.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The May bar at the far right is visibly the shortest displayed bar, with its top well below the 10,000 tick while all other bars are above 15,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart establishes that May is low-pumping. 2. No supplied policy defines a critical threshold. 3. The workflow defaults unthresholded low-pumping cases to standard follow-up rather than escalation.\",\n        \"evidence\": \"Condition 1 is supported: the May bar is the lowest, near 8,000 m3, far below all other months. Condition 2 is supported: no policy table or explicit threshold is printed. Condition 3 is not established: no default-to-standard policy is stated or supplied; the condition itself notes this is an assumption. The task offers escalation as an option but does not print a default rule.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The far-right bar is attached to the label 'May' on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the May bar is lower on the page than the tops of every other displayed monthly bar (May ~8,000; next lowest Jun ~17,500).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The May bar top is below the printed '10,000' y-axis tick, while the other bar tops (Apr ~29,500, Jan 40,000, Jun ~17,500, Feb 20,000, Mar ~27,000) are above it.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The vertical axis is inscribed 'Pumping volume (m3)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The vertical axis labeled 'Pumping volume (m3)' encodes pumping volume with higher bar tops representing greater volume. 2. The routing practice treats an isolated month that is visibly far lower than every other displayed month as a critical low-pumping anomaly.\",\n        \"evidence\": \"Condition 1 is supported: the axis is labeled 'Pumping volume (m3)' and higher bars represent greater volume. Condition 2 is not established: no explicit routing practice or severity threshold is printed. The condition itself acknowledges this is an assumption. The visual gap is large (May ~8,000 vs. next lowest ~17,500), but no policy confirms that this gap triggers escalation.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3824,
+      "total_tokens": 4589,
+      "completion_tokens": 765,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

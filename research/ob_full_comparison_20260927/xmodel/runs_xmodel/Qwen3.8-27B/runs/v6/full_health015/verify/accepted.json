@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a red square at '11-18 years' positioned higher than the blue circle at the same x-axis category.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The left axis is labeled in blue and the right axis in red; neither axis displays numeric tick labels (e.g., 0, 5, 10, etc.).",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The blue series is a solid line with circular markers, and the red series is a dashed line with square markers.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The blue and red series use separate colored y-axes. 2. Neither axis has visible numeric tick labels. 3. No supplied policy defines how plotted values or category labels map to a follow-up route.",
+        "evidence": "Conditions 1 and 2 are established by the chart's visual features (separate axes, no ticks). Condition 3 is established by the absence of a policy table or explicit rule in the task instructions linking specific data values to a routing decision. The instruction only says to 'determine which cereal category should be escalated,' which is ambiguous without a defined threshold or rule.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top center reads 'High fibre breakfast cereals vs Other breakfast cereals.'",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The label on the left vertical axis reads 'High fibre breakfast cereals.'",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "A blue circular mark is present at the '11-18 years' position on the x-axis.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The routing instruction treats the chart category explicitly labeled 'High fibre breakfast cereals' as the category requiring adolescent fibre-support follow-up. 2. An unstated program rule exists that the high-fibre category itself determines fibre-support routing.",
+        "evidence": "The task instruction asks to 'determine which cereal category should be escalated for adolescent fibre-support follow-up.' While the name 'High fibre breakfast cereals' is semantically related to 'fibre-support,' the instruction explicitly asks to use the 'displayed comparison' to make the determination. This implies a decision based on the data (e.g., which is higher/lower) rather than a static rule that the 'High fibre' category is always the one to follow up. There is no explicit rule stating that the label itself dictates the routing regardless of the data values. Therefore, the condition that an unstated rule makes the label the sole determinant is not clearly established by the text provided.",
+        "status": "unclear"
+      }
+    }
+  }
+}

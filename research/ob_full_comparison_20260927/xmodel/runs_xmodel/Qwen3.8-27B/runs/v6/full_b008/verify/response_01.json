@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b980d279028c46b2",
+    "object": "chat.completion",
+    "created": 1790623157,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis shows the category label 'Price' directly beneath a blue point, and the text '49%' is positioned above that same point. This confirms the described spatial alignment and label for the Price category.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart's x-axis shows the category label 'Support' directly beneath a blue point, and the text '33%' is positioned above that same point. This confirms the described spatial alignment and label for the Support category.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart's x-axis shows the category label 'Design' directly beneath a blue point, and the text '30%' is positioned above that same point. This confirms the described spatial alignment and label for the Design category.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The chart displays '14%' above the point for Quality, '29%' above the point for Delivery, and '34%' above the point for Other. These match the inscriptions and categories specified in the fact.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Each category label on the x-axis identifies its aligned plotted point. 2. The percentage printed above that point is the category's current labeled rating share. 3. The task is to select the category with the greatest such printed percentage among the available options.\",\n        \"evidence\": \"Condition 1 is supported by the chart layout, where each x-axis label (Quality, Price, Design, Support, Delivery, Other) is directly below its corresponding data point. Condition 2 is supported by the public task instructions, which state to 'Use the dashboard labeled rating-share values as the evidence source.' Condition 3 is tested by comparing the printed percentages: 49% (Price), 33% (Support), and 30% (Design). Price has the greatest value (49%).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3941,
+      "total_tokens": 4442,
+      "completion_tokens": 501,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

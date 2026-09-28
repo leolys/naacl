@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9137843f0287e20c",
+    "object": "chat.completion",
+    "created": 1790624367,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Year vs. Number of doctors per 1,000 inhabitants', the x-axis is 'Year', and the y-axis is 'Count'. This matches the stated content.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost blue marker (year 2000) is at a higher vertical position (approx 1.3) than the rightmost blue marker (year 2017.5, approx 2.4). Thus the rightmost marker is lower on the page.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The provided task state shows three options and empty 'policy_tables' and 'interpretation_rules' arrays.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The supplied task state contains no policy tables or interpretation rules defining the pathway criteria.\",\n        \"evidence\": \"The task state's 'policy_tables' field is an empty list. The instructions do not provide a mapping between the chart values and the specific routing pathways (expansion vs. shortage).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Year vs. Number of doctors per 1,000 inhabitants', the x-axis is 'Year', and the y-axis is 'Count'. This matches the stated content.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis labels are 0.0 at the top and 2.5 at the bottom, confirming the axis is inverted (values increase downwards).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The leftmost marker (2000) is at ~1.3 (higher on page) and the rightmost marker (2017.5) is at ~2.4 (lower on page, near the 2.5 tick).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title and axis labels correctly describe the single blue series. 2. The pathway names are interpreted according to their ordinary capacity meanings.\",\n        \"evidence\": \"Condition 1 is supported by the visual evidence. Condition 2 is an interpretive assumption; while 'expansion' and 'shortage' have ordinary meanings, the task does not provide a rule linking the specific numerical value (approx 2.4) to either pathway. The B text concludes a pathway is 'matching' based on 'ordinary capacity meanings' without a defined threshold, which is an inference rather than a validated fact from the provided evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3009,
+      "total_tokens": 3693,
+      "completion_tokens": 684,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

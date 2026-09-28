@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8442254ba9b51abf",
+    "object": "chat.completion",
+    "created": 1790626649,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"Upper left corner\",\n      \"fact\": \"The chart title reads 'Incidence of Condition A in US States' in large black text.\"\n    },\n    {\n      \"location\": \"Right side, vertical bar\",\n      \"fact\": \"A color scale legend is present, labeled 'High' at the top (value 100) and 'Low' at the bottom (value 0). The scale transitions from pale yellow (high) to dark maroon (low).\"\n    },\n    {\n      \"location\": \"Southeastern US, Florida\",\n      \"fact\": \"The state of Florida (FL) is colored in the darkest maroon shade on the map, corresponding to the lowest end of the provided color scale.\"\n    },\n    {\n      \"location\": \"Northeastern US, New Hampshire\",\n      \"fact\": \"The state of New Hampshire (NH) is colored in a very pale yellow shade, corresponding to the highest end of the provided color scale.\"\n    },\n    {\n      \"location\": \"Mid-Atlantic US, Delaware\",\n      \"fact\": \"The state of Delaware (DE) is colored in a medium orange shade, positioned in the middle of the color scale.\"\n    },\n    {\n      \"location\": \"Western US, Wyoming\",\n      \"fact\": \"The state of Wyoming (WY) is colored in a very dark maroon shade, similar to Florida and Idaho.\"\n    },\n    {\n      \"location\": \"Central US, Iowa\",\n      \"fact\": \"The state of Iowa (IA) is colored in a very dark maroon shade.\"\n    },\n    {\n      \"location\": \"Various states\",\n      \"fact\": \"Several states including California, Arizona, and Alaska are colored in light grey, indicating they are not part of the data visualization or have no data.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Legend\",\n      \"fact\": \"The legend indicates 'High' corresponds to 100 and 'Low' corresponds to 0. Intermediate ticks are visible at 20, 40, 60, and 80.\"\n    },\n    {\n      \"location\": \"Map labels\",\n      \"fact\": \"State abbreviations are printed on the map, including FL, NH, DE, WY, IA, ID, and others.\"\n    },\n    {\n      \"location\": \"Title\",\n      \"fact\": \"The title explicitly states 'Incidence of Condition A in US States'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"The task asks to route into the 'highest-prevalence priority follow-up workflow'.\",\n    \"The options are to open statistics views for New Hampshire (NH), Florida (FL), or Delaware (DE).\"\n  ],\n  \"uncertain\": [\n    \"The chart title says 'Incidence' but the task and legend imply 'Prevalence' or a similar metric where 'High' is the target. The visual encoding (dark = low, light = high) is counter-intuitive for a 'prevalence' map where usually darker = more. However, the legend explicitly maps 'High' to the light color (100) and 'Low' to the dark color (0).\",\n    \"The task asks for 'highest-prevalence'. Based on the legend, 'High' is the pale yellow color (value 100). New Hampshire is pale yellow. Florida is dark maroon (value 0/Low).\",\n    \"There is a semantic conflict: 'Incidence' in title vs 'Prevalence' in task. Assuming the task's 'highest-prevalence' aligns with the chart's 'High' value (100).\",\n    \"If 'highest-prevalence' means the highest value on the scale (100), then NH is the correct choice. If it means the state with the most cases (which might be represented by dark color in a standard map), FL would be the choice. However, the legend explicitly defines the color mapping: Light = High (100), Dark = Low (0). Therefore, 'highest' value corresponds to the lightest color.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2489,
+      "total_tokens": 3425,
+      "completion_tokens": 936,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

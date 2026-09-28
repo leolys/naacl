@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a dark-red bar directly above the x-axis label 'Product A'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis is labeled 'Units Sold' and has a '10,000' tick. The top of the Product A bar is visibly below this tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. The Product A bar encodes approximately 8,000 Units Sold. 2. The policy table is applied with no manual-verification override. 3. The value is >=4,000 and <9,000 units. 4. The value maps to the low-demand review route.",
+        "evidence": "Condition 1 is not established. The chart provides no data label for Product A. While the bar is below the 10,000 tick, its height is very small relative to the scale (e.g., compared to Product E at 80,000), making 8,000 an unsupported assumption rather than a decoding. Because the specific value of 8,000 is not established, the subsequent mapping to the low-demand route is not supported by the evidence.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The vertical axis displays evenly spaced ticks labeled from 10,000 to 80,000.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The Product A bar is very short and its top edge is below the 10,000 tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Bar height is linearly encoded by the vertical Units Sold axis from the plotted baseline. 2. The Product A bar's height decodes to an estimate below 4,000 units. 3. The value is <4,000 units. 4. The estimate is not within 1,000 units of a decision threshold (manual-verification band does not override). 5. The value maps to urgent sales intervention.",
+        "evidence": "Condition 1 is supported by the chart's linear scale. Condition 2 is supported by visual estimation: the bar is very short, appearing to be less than half the distance to the 10,000 tick, which supports an estimate below 4,000. Condition 4 is supported because the estimated value (e.g., ~2,000-3,000) is more than 1,000 units away from the 4,000 threshold. Therefore, the mapping to urgent sales intervention is supported.",
+        "status": "supported"
+      }
+    }
+  }
+}

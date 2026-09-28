@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a9a5be44abe4b10a",
+    "object": "chat.completion",
+    "created": 1790625500,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the page explicitly reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'. No other measure labels are present.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Five distinct blue markers are plotted, each annotated with a label: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading suggests that because the chart is explicitly scoped to 'Top Regions' and only shows sales and advertising spend, it is insufficient for a decision that requires full regional coverage or additional financial evidence (like profitability or risk).\",\n        \"evidence\": \"The chart title 'Top Regions: Ad Spend vs Sales' confirms the scope is limited to a subset of regions (the 'top' ones). The axes confirm only two measures are displayed. However, the provided task instructions ('Review the regional marketing dashboard, then submit the expansion review decision') and the form options do not explicitly state that 'full regional coverage' or 'additional financial evidence' are mandatory prerequisites for the 'Proceed' option. The insufficiency is conditional on requirements not present in the visible task context.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the page explicitly reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis label at the bottom of the chart reads 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis label on the left of the chart reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The point labeled 'Region E' is located at the far right (approx x=70) and highest position (approx y=165) on the plot, clearly to the right of and higher than Regions A, B, C, and D.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The points are arranged in a sequence from bottom-left to top-right: Region A (approx 30, 63), Region B (approx 40, 71), Region C (approx 50, 88), Region D (approx 60, 115), and Region E (approx 70, 165).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading states that the axes encode spend and sales, and the points show the ordering. It concludes that 'Proceeding with an expansion review follows only if high displayed sales among the shown top regions is sufficient evidence for review; no such sufficiency threshold is stated.'\",\n        \"evidence\": \"The visual evidence confirms the axes and the ordering of the points. The chart shows a strong positive correlation, with Region E having the highest spend and sales. However, the chart itself does not contain a legend, threshold line, or text indicating that these specific values constitute 'sufficient evidence' to proceed. The task instructions are generic ('Review... then submit'), and the form options do not provide a rubric for what constitutes a 'pass' or 'fail' on the data. Therefore, the condition that 'high displayed sales... is sufficient evidence' is not supported by the visible references.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4160,
+      "total_tokens": 5064,
+      "completion_tokens": 904,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}
