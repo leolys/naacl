@@ -15,6 +15,7 @@ import json
 import os
 from pathlib import Path
 import time
+import threading
 import requests
 import sys
 
@@ -114,6 +115,9 @@ class Runner:
         self.versions = args.versions
         self.enable_thinking = args.enable_thinking
         self.limit = args.limit
+        self.concurrency = max(1, args.concurrency)
+        self.lock = threading.Lock()
+        self.stop_event = threading.Event()
         self.root = Path(args.out)
         self.http_timeout = args.http_timeout
         self.http = requests.Session()
@@ -127,10 +131,11 @@ class Runner:
         self.prompts = {v: load_prompts(v) for v in self.versions}
 
     def guard(self):
-        if self.ledger.get('blocked'):
-            raise Stop(self.ledger['blocked'])
-        if self.ledger['attempts'] >= MAX_TOTAL_ATTEMPTS:
-            raise Stop('total_attempt_cap')
+        with self.lock:
+            if self.ledger.get('blocked'):
+                raise Stop(self.ledger['blocked'])
+            if self.ledger['attempts'] >= MAX_TOTAL_ATTEMPTS:
+                raise Stop('total_attempt_cap')
 
     def probe(self):
         """One-time detection of structured-output parameter form on this server."""
@@ -217,31 +222,35 @@ class Runner:
         save_new(folder / 'context.json', context)
         if image is not None:
             save_new(folder / 'image_identity.json', {'sha256': sha(image), 'bytes': Path(image).stat().st_size})
-        self.ledger['attempts'] += 1
-        event = {'number': self.ledger['attempts'], 'version': version, 'stage': stage,
-                 'folder': str(folder.relative_to(self.root)), 'start': stamp(), 'state': 'sent_outcome_pending'}
-        self.ledger['events'].append(event)
-        update_json(self.ledger_file, self.ledger)
+        with self.lock:
+            self.ledger['attempts'] += 1
+            event = {'number': self.ledger['attempts'], 'version': version, 'stage': stage,
+                     'folder': str(folder.relative_to(self.root)), 'start': stamp(), 'state': 'sent_outcome_pending'}
+            self.ledger['events'].append(event)
+            update_json(self.ledger_file, self.ledger)
         start = time.monotonic()
         try:
             response = self.http.post(self.endpoint, json=payload, timeout=self.http_timeout, allow_redirects=False)
         except requests.RequestException as exc:
-            event.update(state='unknown_transport', error=type(exc).__name__, elapsed=time.monotonic() - start)
-            self.ledger['blocked'] = 'unknown_transport_no_retry'
-            update_json(self.ledger_file, self.ledger)
+            with self.lock:
+                event.update(state='unknown_transport', error=type(exc).__name__, elapsed=time.monotonic() - start)
+                self.ledger['blocked'] = 'unknown_transport_no_retry'
+                update_json(self.ledger_file, self.ledger)
             raise Stop(self.ledger['blocked']) from exc
         try:
             body = response.json()
         except ValueError:
             body = {'raw_body': response.text}
         save_new(folder / 'response_01.json', {'http_status': response.status_code, 'body': body})
-        event.update(http_status=response.status_code, state='response_saved', elapsed=time.monotonic() - start,
-                     usage=body.get('usage') if isinstance(body, dict) else None,
-                     model=body.get('model') if isinstance(body, dict) else None)
-        update_json(self.ledger_file, self.ledger)
-        if response.status_code != 200:
-            self.ledger['blocked'] = 'http_%s' % response.status_code
+        with self.lock:
+            event.update(http_status=response.status_code, state='response_saved', elapsed=time.monotonic() - start,
+                         usage=body.get('usage') if isinstance(body, dict) else None,
+                         model=body.get('model') if isinstance(body, dict) else None)
             update_json(self.ledger_file, self.ledger)
+        if response.status_code != 200:
+            with self.lock:
+                self.ledger['blocked'] = 'http_%s' % response.status_code
+                update_json(self.ledger_file, self.ledger)
             raise Stop(self.ledger['blocked'])
         return self.accept(folder, body, stage, context, version)
 
@@ -308,49 +317,86 @@ class Runner:
         if getattr(self, 'limit', None):
             unit_keys = unit_keys[:self.limit]
             summary['status'] = 'smoke_finished'
-        for version in self.versions:
-            for key in unit_keys:
-                unit = self.manifest[key]
-                data, dest = PANEL / 'data' / key, self.root / 'runs' / version / key
-                result_file = dest / 'result.json'
-                if result_file.exists():
+        unit_keys = list(self.manifest)
+        if getattr(self, 'limit', None):
+            unit_keys = unit_keys[:self.limit]
+            summary['status'] = 'smoke_finished'
+
+        def run_unit(item):
+            version, key = item
+            if self.stop_event.is_set():
+                raise Stop('stop_event_set')
+            unit = self.manifest[key]
+            data, dest = PANEL / 'data' / key, self.root / 'runs' / version / key
+            result_file = dest / 'result.json'
+            if result_file.exists():
+                with self.lock:
                     summary['units'][version + '/' + key] = read(result_file)
-                    continue
-                if sha(data / 'input.json') != unit['input_sha256'] or sha(data / unit['image']) != unit['image_sha256']:
-                    raise Stop('fixed data changed: ' + key)
-                self.guard()
-                projected = read(data / 'input.json')
-                contexts(projected)
-                result = {'unit': key, 'version': version, 'status': 'running', 'started': stamp()}
-                notes = checks = None
-                stage = 'decide' if version == 'plain' else 'read'
-                try:
-                    if version != 'plain':
-                        print('READ ' + version + '/' + key, flush=True)
-                        notes = self.call(dest / 'read', self.prompts[version].READ, contexts(projected),
-                                          data / unit['image'], 'read', version)
-                        stage = 'verify'
-                        print('VERIFY ' + version + '/' + key, flush=True)
-                        checks = self.call(dest / 'verify', self.prompts[version].VERIFY,
-                                           contexts(projected, notes), data / unit['image'], 'verify', version)
-                    stage = 'decide'
-                    print('DECIDE ' + version + '/' + key, flush=True)
-                    decision = self.call(dest / 'decide', self.prompts[version].DECIDE,
-                                         contexts(projected, notes, checks), data / unit['image'], 'decide', version)
-                    result.update(status='completed', choice=decision, ended=stamp())
-                except Stop:
-                    save_new(dest / ('stop_%d.json' % time.time_ns()),
-                             {**result, 'status': 'stopped', 'stage': stage, 'at': stamp()})
-                    raise
-                except Exception as exc:
-                    result.update(status='interface_failed', failed_stage=stage, ended=stamp(),
-                                  error={'type': type(exc).__name__, 'message': str(exc)[:400]})
-                save_new(result_file, result)
+                return
+            if sha(data / 'input.json') != unit['input_sha256'] or sha(data / unit['image']) != unit['image_sha256']:
+                raise Stop('fixed data changed: ' + key)
+            self.guard()
+            projected = read(data / 'input.json')
+            contexts(projected)
+            result = {'unit': key, 'version': version, 'status': 'running', 'started': stamp()}
+            notes = checks = None
+            stage = 'decide' if version == 'plain' else 'read'
+            try:
+                if version != 'plain':
+                    print('READ ' + version + '/' + key, flush=True)
+                    notes = self.call(dest / 'read', self.prompts[version].READ, contexts(projected),
+                                      data / unit['image'], 'read', version)
+                    stage = 'verify'
+                    print('VERIFY ' + version + '/' + key, flush=True)
+                    checks = self.call(dest / 'verify', self.prompts[version].VERIFY,
+                                       contexts(projected, notes), data / unit['image'], 'verify', version)
+                stage = 'decide'
+                print('DECIDE ' + version + '/' + key, flush=True)
+                decision = self.call(dest / 'decide', self.prompts[version].DECIDE,
+                                     contexts(projected, notes, checks), data / unit['image'], 'decide', version)
+                result.update(status='completed', choice=decision, ended=stamp())
+            except Stop:
+                save_new(dest / ('stop_%d.json' % time.time_ns()),
+                         {**result, 'status': 'stopped', 'stage': stage, 'at': stamp()})
+                raise
+            except Exception as exc:
+                result.update(status='interface_failed', failed_stage=stage, ended=stamp(),
+                              error={'type': type(exc).__name__, 'message': str(exc)[:400]})
+            save_new(result_file, result)
+            with self.lock:
                 summary['units'][version + '/' + key] = result
                 summary.update(attempts=self.ledger['attempts'], updated=stamp())
                 update_json(summary_file, summary)
-                print('DONE %s/%s status=%s attempts=%d' % (version, key, result['status'],
-                                                            self.ledger['attempts']), flush=True)
+            print('DONE %s/%s status=%s attempts=%d' % (version, key, result['status'],
+                                                        self.ledger['attempts']), flush=True)
+
+        tasks = [(v, k) for v in self.versions for k in unit_keys]
+        first_error = None
+        if self.concurrency == 1:
+            for item in tasks:
+                try:
+                    run_unit(item)
+                except Stop as exc:
+                    first_error = exc
+                    self.stop_event.set()
+                    break
+        else:
+            from concurrent.futures import ThreadPoolExecutor, wait
+            with ThreadPoolExecutor(self.concurrency) as pool:
+                futures = [pool.submit(run_unit, item) for item in tasks]
+                wait(futures)
+                for future in futures:
+                    exc = future.exception()
+                    if exc is not None and first_error is None:
+                        first_error = exc
+                        self.stop_event.set()
+        if first_error is not None or self.stop_event.is_set():
+            summary['status'] = 'stopped'
+            if first_error is not None:
+                summary['error'] = {'type': type(first_error).__name__, 'message': str(first_error)[:300]}
+            summary.update(ended=stamp(), attempts=self.ledger['attempts'])
+            update_json(summary_file, summary)
+            raise first_error or Stop('stopped')
         summary['status'] = 'finished'
         summary.update(ended=stamp(), attempts=self.ledger['attempts'])
         update_json(summary_file, summary)
@@ -366,6 +412,7 @@ if __name__ == '__main__':
     parser.add_argument('--out', required=True)
     parser.add_argument('--http-timeout', type=int, default=300)
     parser.add_argument('--limit', type=int, default=None, help='process only the first N units (smoke)')
+    parser.add_argument('--concurrency', type=int, default=1, help='parallel units in flight (per-request decoding unchanged)')
     args = parser.parse_args()
     args.versions = [v for v in args.versions.split(',') if v]
     for v in args.versions:
