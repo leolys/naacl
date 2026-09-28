@@ -23,7 +23,7 @@
 | 任务 | 140 固定单图任务（`manifest.json` units） | 输入投影 `data/<unit>/input.json` 与图片逐字节校验（sha256） |
 | 解码 | temperature 0.7, top_p 0.8, top_k 20, seed 12345, enable_thinking=false（仅 M1） | 与原 `config.json` 一致；同 seed 不保证确定性，如实声明 |
 | 输出上限 | read 1500 / verify 3600 / decide 700 / control 64 token | 同原 |
-| 服务 | vLLM OpenAI server，BF16，TP=1，`--max-model-len 16384`，`--max-num-seqs 1`，`--max-num-batched-tokens 4096`，`--gpu-memory-utilization 0.88`，`--limit-mm-per-prompt {"image":1,"video":0}`，`--mm-processor-kwargs {"max_pixels":1605632}`，`--enforce-eager` | 与原 `service_config.json` 参数一致；端口/路径全新 |
+| 服务 | vLLM OpenAI server，BF16，TP=1，`--max-model-len 16384`，`--max-num-seqs 8`（提速改动；原协议为每副本 1，串行性由调度保持），`--max-num-batched-tokens 4096`，`--gpu-memory-utilization 0.88`，`--limit-mm-per-prompt {"image":1,"video":0}`，`--mm-processor-kwargs {"max_pixels":1605632}`，`--enforce-eager` | 与原 `service_config.json` 参数一致处：dtype/TP/ctx/mm 上限/eager/显存利用率；差异处如实声明 |
 | 每模型预算 | plain 140 + 5×420 = **2240** 次主请求 + 1 次非图表控制 | 与原 2236+控制 同量级 |
 
 执行顺序：先 M2（下载快，先验证全链路），后 M1（复刻）。若 M1 架构（`Qwen3_5ForConditionalGeneration`）不被当前 vLLM 支持，降级方案：改用 `Qwen/Qwen3-VL-30B-A3B-Instruct` 并在报告中如实记录降级。
