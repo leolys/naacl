@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bdbf19805a517c06",
+    "object": "chat.completion",
+    "created": 1790622361,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is printed at the top of the image as 'Monthly Visitors at Museum C in Town Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis label 'July' is located directly beneath the left-most green bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top edge of the green bar above 'July' is visually aligned with the horizontal orange dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The dashed line is positioned at the y-axis tick '200' and is annotated with the word 'Average' on the right side of the plot.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bar above a month encodes that month's visitor count on the labeled vertical scale, and the orange dashed line labeled 'Average' is the average-visitor benchmark, then a bar top aligned with that line represents average-level visitors. If the routing options are intended to map average-level visitors to average-level monitoring, select the average-level option.\",\n        \"evidence\": \"The necessary conditions for the first part of the reading are supported by the chart's standard encoding: the y-axis is labeled 'Number of Visitors' with a linear scale, and the bar heights correspond to these values (July at 200, August at 400, September at 300). The dashed line is explicitly labeled 'Average' and sits at the 200 mark. However, the second part of the reading relies on an unstated task policy that 'average-level visitors require average-level monitoring.' No explicit routing policy or threshold definitions for 'low', 'average', or 'high' are provided in the public task or the chart itself. While the visual evidence confirms July is at the average level, the mapping to a specific routing option is an inference not grounded in explicit text.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3662,
+      "total_tokens": 4152,
+      "completion_tokens": 490,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

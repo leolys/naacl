@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart presents one blue line with monthly points under the title 'Month vs. Number of samples tested'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The public task lists a general laboratory operations review option in addition to specialized rising-volume and declining-volume options.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart establishes a volume pattern but the task provides no explicit operational policy tying that pattern to a specialized team, general laboratory operations review may be used as a fallback rather than inferring a capacity-planning assignment.",
+        "evidence": "The task does not define a policy table or rule that maps volume patterns to specific teams; it only presents three options without specifying which pattern triggers which. The option wording is not treated as sufficient instruction to infer capacity planning for any pattern. The fallback is explicitly allowed by the B condition.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title reads 'Month vs. Number of samples tested'; the horizontal axis is labeled 'Month' and the vertical axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The leftmost visible month tick reads 'Nov 20' and the rightmost visible month tick reads 'Jun 26', with intervening labels progressing through Nov, Oct, Sep, Aug, Jul, and Jun from left to right.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis shows '0.0' near the top and '1.2' near the bottom, with '1e6' printed above the axis; the blue point at Nov 20 is lower on the page than the blue point at Jun 26.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "If the title and axis labels bind the blue series to monthly testing counts, the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen, then the series rises over chronological time. For this routing task, a rising testing-volume pattern maps to rising-volume capacity planning.",
+        "evidence": "The B reading assumes the scale is linear and that lower on screen = higher value. But the y-axis is logarithmic, with '1e6' at the top (highest value) and '1.2' at the bottom (lowest value). The point at Nov 20 is lower on the screen than the point at Jun 26, meaning it has a smaller value (1.2 vs 0.4). The B reading incorrectly infers rising volume because it misreads the y-axis scale. The actual trend is declining: from 1.2 (1,200,000) at Nov 20 to 0.4 (400,000) at Jun 26. The B reading is refuted by the visual evidence.",
+        "status": "refuted"
+      }
+    }
+  }
+}

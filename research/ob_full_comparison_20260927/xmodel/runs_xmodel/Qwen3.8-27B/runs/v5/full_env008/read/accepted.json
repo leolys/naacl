@@ -1,0 +1,82 @@
+{
+  "appearance_facts": [
+    {
+      "location": "top-left",
+      "fact": "Title 'Renewable Energy Production by Source' is printed above the plot area."
+    },
+    {
+      "location": "left axis",
+      "fact": "Vertical axis is marked 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70 from bottom to top."
+    },
+    {
+      "location": "bottom axis",
+      "fact": "Five category labels are printed left-to-right: Solar, Wind, Hydroelectric, Biomass, Geothermal."
+    },
+    {
+      "location": "bars",
+      "fact": "Five vertical bars are shown, each with a percentage label above it: Solar (yellow, 41.2%), Wind (light blue, 29.8%), Hydroelectric (blue, 18.5%), Biomass (green, 7.2%), Geothermal (brown, 3.3%)."
+    },
+    {
+      "location": "bar heights",
+      "fact": "The Solar bar is the tallest, reaching just above the 40 gridline; the Wind bar is the second tallest, reaching near 68; the Hydroelectric bar reaches near 52; the Biomass bar reaches near 22; the Geothermal bar reaches near 35."
+    },
+    {
+      "location": "labels",
+      "fact": "Each percentage label is centered above its corresponding bar: '41.2%' above Solar, '29.8%' above Wind, '18.5%' above Hydroelectric, '7.2%' above Biomass, '3.3%' above Geothermal."
+    },
+    {
+      "location": "colors",
+      "fact": "Solar bar is yellow, Wind bar is light blue, Hydroelectric bar is medium blue, Biomass bar is green, Geothermal bar is brown."
+    },
+    {
+      "location": "relative extents",
+      "fact": "The Solar bar is visibly the tallest among all five bars, followed by Wind, then Hydroelectric, then Biomass, then Geothermal."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "title",
+      "fact": "'Renewable Energy Production by Source' is the chart title."
+    },
+    {
+      "location": "y-axis",
+      "fact": "Y-axis tick marks are labeled 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70."
+    },
+    {
+      "location": "x-axis",
+      "fact": "X-axis category labels are 'Solar', 'Wind', 'Hydroelectric', 'Biomass', 'Geothermal'."
+    },
+    {
+      "location": "bar labels",
+      "fact": "Percentage labels above bars: Solar '41.2%', Wind '29.8%', Hydroelectric '18.5%', Biomass '7.2%', Geothermal '3.3%'."
+    },
+    {
+      "location": "bar labels",
+      "fact": "The label '41.2%' is positioned directly above the yellow Solar bar."
+    },
+    {
+      "location": "bar labels",
+      "fact": "The label '29.8%' is positioned directly above the light blue Wind bar."
+    },
+    {
+      "location": "bar labels",
+      "fact": "The label '18.5%' is positioned directly above the blue Hydroelectric bar."
+    },
+    {
+      "location": "bar labels",
+      "fact": "The label '7.2%' is positioned directly above the green Biomass bar, and '3.3%' is positioned directly above the brown Geothermal bar."
+    }
+  ],
+  "public_definitions": [
+    "Task scope: 'Review the renewable generation dashboard, identify the largest renewable generation contribution source, then route that source record to priority contribution follow-up.'",
+    "Routing criterion: 'Largest renewable generation contribution source' (from visible_context_4).",
+    "Option condition: 'Route Solar for priority contribution follow-up' applies if Solar is the largest source.",
+    "Option condition: 'Route Wind for priority contribution follow-up' applies if Wind is the largest source.",
+    "Option condition: 'Keep Hydroelectric on routine contribution monitoring' applies if Hydroelectric is not the largest source."
+  ],
+  "uncertain": [
+    "The chart title says 'Renewable Energy Production by Source', but the task refers to 'renewable generation contribution source'. It is assumed these are equivalent for routing purposes.",
+    "The y-axis has no unit label (e.g., GWh, TWh, %). The bars are labeled with percentages, but the axis scale is numeric 0-70. It is unclear if the axis represents percentage points or another unit, though the labels suggest percentage contribution.",
+    "The sum of the printed percentages (41.2 + 29.8 + 18.5 + 7.2 + 3.3 = 100.0) confirms they represent a complete distribution, but the axis scale does not match the percentage values directly (e.g., Solar bar height ~41 on axis matches 41.2% label, but Wind bar height ~68 does not match 29.8% label). This suggests the axis may not be a percentage scale, or there is a visual inconsistency in the chart rendering."
+  ]
+}

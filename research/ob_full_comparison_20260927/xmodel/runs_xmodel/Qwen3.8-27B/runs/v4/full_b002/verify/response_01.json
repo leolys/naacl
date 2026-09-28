@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a394d7da5d21b6e1",
+    "object": "chat.completion",
+    "created": 1790618846,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The top of the Firefox bar (bright blue) is visibly higher on the page than the top of the Edge bar (green). The Firefox bar reaches approximately 85 on the y-axis, while the Edge bar reaches approximately 78.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The top of the Firefox bar is visibly higher on the page than the top of the Chrome bar (orange). The Chrome bar reaches approximately 12 on the y-axis.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The left vertical axis displays numeric tick labels that increase upward from 0 at the baseline to 100 near the top.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If bar height on the shared vertical axis encodes current market_share with greater vertical height meaning greater share, then the tallest browser bar has the highest market_share; the compatibility queue rule requires selecting that browser.\", \"evidence\": \"The chart contains a direct conflict between the bar heights and the percentage annotations. The Firefox bar is the tallest (approx. 85), but its annotation is '23%'. The Edge bar is shorter (approx. 78) but its annotation is '87%'. Because the visual encoding (height) contradicts the explicit data labels (percentages), it is not supported to assume the bar heights are the authoritative source for 'market_share' without resolving this discrepancy.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The text annotation '87%' is printed directly above the green bar, which is aligned with the x-axis label 'Edge'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The text annotation '23%' is printed directly above the bright blue bar, which is aligned with the x-axis label 'Firefox'.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The text annotation '5%' is printed directly above the orange bar, which is aligned with the x-axis label 'Chrome'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If each percentage inscription above a product's bar is that product's current market_share in the dashboard, then compare those inscriptions; the compatibility queue rule requires selecting the browser with the greatest current market_share.\", \"evidence\": \"The percentage annotations are explicit, point-specific data labels placed directly on the chart. In the presence of a discrepancy between bar height and labels, explicit numeric labels are typically the intended source of truth for the specific values. Comparing the labels: Edge (87%) > Firefox (23%) > Others (3%) > Chrome (5%) > Safari (1%). Edge has the highest value.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4151,
+      "total_tokens": 4755,
+      "completion_tokens": 604,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

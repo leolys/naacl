@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9f64d4a7b46f9554",
+    "object": "chat.completion",
+    "created": 1790618546,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The IL polygon in the central-eastern map is visibly filled with a light/pale yellow color.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The KS polygon in the central map is visibly filled with a dark maroon color.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The DE polygon on the mid-Atlantic coast is visibly filled with a dark maroon color, not orange. This contradicts the claim.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The vertical legend at the lower right shows a pale yellow top adjacent to 'High' and '100', and a dark maroon bottom adjacent to 'Low' and '0'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that fill color is the risk-index encoding, the legend maps pale-yellow to higher risk (100) and dark-maroon to lower risk (0), and the task requires opening the available option for the highest-risk listed state among Illinois, Kansas, and Delaware.\",\n        \"evidence\": \"The legend explicitly maps pale-yellow to 'High'/'100' and dark-maroon to 'Low'/'0'. The map uses this continuous color scale for state fills. The task criterion is 'Highest risk state in the dashboard', and the options are restricted to IL, KS, and DE.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3627,
+      "total_tokens": 4037,
+      "completion_tokens": 410,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b31aa8895fbfb25f",
+    "object": "chat.completion",
+    "created": 1790615039,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title and axes: 'Year vs. Number of doctors per 1,000 inhabitants'; horizontal axis labeled 'Year'; vertical axis labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost blue marker is lower on the page than the leftmost blue marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The supplied state lists three route options; policy_tables and interpretation_rules are empty.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart alone shows the final plotted level and its change relative to the start, but no policy table, threshold, benchmark, or explicit routing criterion maps a level near the final point to either expansion or shortage. Therefore a definitive pathway selection cannot be validated from the displayed evidence alone.\",\n        \"evidence\": \"The task state explicitly provides no policy tables or interpretation rules. The chart alone does not contain any thresholds, benchmarks, or criteria that map a final value to a specific pathway. The reading correctly states that definitive routing cannot be validated without such rules.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title and axes: 'Year vs. Number of doctors per 1,000 inhabitants'; horizontal axis labeled 'Year'; vertical axis labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible y-axis labels run from 0.0 near the top to 2.5 near the bottom.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The leftmost blue marker near year 2000 is higher on the page than the rightmost blue marker near the 2017.5 tick; the rightmost marker is near the 2.5 y-axis tick.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The x-axis encodes reporting year from left to right, and the plotted line/markers encode the chart's labeled doctors-per-1,000 measure using the y-axis. Because the y-axis labels increase downward, a lower screen position corresponds to a larger plotted measure. If the task routes based on an end-of-period higher capacity pattern, the capacity expansion review pathway is the matching option; no displayed rule defines a shortage threshold or says that a higher final value requires shortage routing.\",\n        \"evidence\": \"The chart's axes and labels are correctly interpreted: the x-axis is time (left to right), the y-axis is doctors per 1,000 (increasing downward). The final point (2017.5) is at ~2.5, which is higher than the initial point (~1.7). This is a higher capacity at the end of the period. The reading correctly identifies that this corresponds to the 'capacity expansion' pathway if routing is based on higher final capacity. It also correctly notes that no shortage threshold or rule is displayed, so the 'shortage' pathway is not triggered by this evidence alone.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2912,
+      "total_tokens": 3631,
+      "completion_tokens": 719,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

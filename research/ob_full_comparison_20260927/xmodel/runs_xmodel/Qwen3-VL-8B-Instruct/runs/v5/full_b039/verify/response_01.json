@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9bbb9b7322c7de91",
+    "object": "chat.completion",
+    "created": 1790614752,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue segment from the 2021 vertex to the 2022 vertex is nearly horizontal, and the 2023 endpoint is only slightly lower than the 2022 vertex.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Production by year and a near-horizontal recent segment is sufficient to classify the output trend as stable, select the stability route.\",\n        \"evidence\": \"The visual data confirms the 2021-2022 segment is nearly horizontal, and the 2023 point is slightly lower than 2022. The y-axis is labeled 'Production' with values increasing upward, and the x-axis is labeled 'Year' with ticks from 2018 to 2023. The 2021 and 2022 vertices are at approximately 2,580, and the 2023 vertex is at approximately 2,560. The condition that the blue line encodes production is met. The condition that a near-horizontal recent segment defines stability is met. The condition that no stability threshold is supplied is met. The reading is applicable and its conditions are supported by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title literally reads “Increasing Production at Factory F from 2018 to 2023.”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative descriptor of the output trend for the reviewed facility and period, and a title stating “Increasing Production” maps to the growth follow-up category, select the growth route.\",\n        \"evidence\": \"The title is visible and literal. The condition that the title is authoritative is not explicitly supported by the visual evidence; the plot shows a decline from 2018 to 2019 and a decline from 2021 to 2023. The condition that the title maps to growth is met. However, the condition that the title is authoritative despite conflicting plotted values is not supported by the visual evidence. The reading is not applicable because its necessary condition (title authority) is not supported by the visual evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the vertex aligned with the 2018 tick and ends at the vertex aligned with the 2023 tick; the 2023 vertex is lower on the page than the 2018 vertex.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled “Production,” with printed tick labels rising from 0 at the bottom through 3,000 higher on the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Production against the vertical axis, whose printed values increase upward, and the vertices aligned with the first and last year ticks represent 2018 and 2023, then a lower final vertex represents lower final production; if endpoint change defines the route, select decline.\",\n        \"evidence\": \"The visual data confirms the blue line encodes production against the vertical axis, with values increasing upward. The 2018 vertex is at 2,800 and the 2023 vertex is at approximately 2,560, which is lower. The condition that the plotted series is authoritative is met. The condition that endpoint change defines the trend is met. The reading is applicable and its conditions are supported by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3938,
+      "total_tokens": 4804,
+      "completion_tokens": 866,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

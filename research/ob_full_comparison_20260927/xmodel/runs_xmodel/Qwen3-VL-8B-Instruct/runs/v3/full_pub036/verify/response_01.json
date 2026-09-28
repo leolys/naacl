@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a84b8c26627aa6b8",
+    "object": "chat.completion",
+    "created": 1790613635,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue circular mark at the printed x-axis label '2013' is lower on the page than the red square mark at '2013'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"“United States” is printed vertically in blue at the left side of the plot, and “Canada” is printed vertically in red at the right side.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the two y-axes use comparable same-direction scales, a mark higher on the page represents a larger volume; the routing instruction then requires opening the country record for the higher 2013 mark.\",\n        \"evidence\": \"The chart uses separate y-axes for each country, with no visible scale calibration or tick labels to confirm they are comparable. The claim about vertical position implying volume is unsupported without this condition.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue circular mark at the printed x-axis label '2013' is lower on the page than the red square mark at '2013'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"“United States” is printed vertically in blue at the left side of the plot, and “Canada” is printed vertically in red at the right side.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If an unshown calibration of the separate United States and Canada axes maps the United States 2013 mark to a larger application volume than the Canada 2013 mark, the routing instruction requires opening the United States follow-up record.\",\n        \"evidence\": \"The chart explicitly labels the 2013 data point for the United States as '1257.35' and for Canada as '434.33'. This visible, printed numerical evidence directly contradicts the need for an unshown calibration. The condition that the United States mark is larger is directly established by the visible data.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The blue circular solid-line marks are associated with the blue left-side label 'United States', and red square dashed-line marks are associated with the red right-side label 'Canada'. The x-axis year labels locate the 2013 marks.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Blue circular solid-line marks are associated with the blue left-side label 'United States', and red square dashed-line marks are associated with the red right-side label 'Canada'. The x-axis year labels locate the 2013 marks. Because the chart shows separate country y-axes but no visible y-axis numeric labels or scale calibration, vertical screen position alone does not establish a cross-country application-volume ordering.\",\n        \"evidence\": \"The chart explicitly labels the 2013 data point for the United States as '1257.35' and for Canada as '434.33'. This visible, printed numerical evidence directly contradicts the claim that vertical position alone does not establish ordering. The chart's data labels provide the necessary calibration, making the statement about vertical position being insufficient false.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3034,
+      "total_tokens": 3970,
+      "completion_tokens": 936,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

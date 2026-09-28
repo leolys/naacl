@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8933b0cc1ca932ca",
+    "object": "chat.completion",
+    "created": 1790613037,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The label 'May' is attached below the rightmost dark-red bar. (Visual: Chart x-axis label position.)\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The May bar is visibly much shorter than each of the Apr, Jan, Jun, Feb, and Mar bars. (Visual: Bar height comparison across the chart.)\"\n      ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"No printed critical threshold, escalation criterion, or routing legend is visible on the chart. (Visual: Chart lacks any such annotations.)\"\n      ,\n        \"status\": \"supported\"\n      }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If low usage requires standard follow-up unless a stated critical threshold or escalation rule is met, then a visibly low May value alone supports standard low-usage follow-up rather than critical escalation.\",\n        \"evidence\": \"The reading's condition is met: the chart provides no printed critical threshold or routing rule. The reading's conclusion is that a low value alone supports standard follow-up. This is consistent with the visual evidence of May being the lowest bar, without any policy marker to override this interpretation.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The label 'May' is attached below the rightmost dark-red bar. (Visual: Chart x-axis label position.)\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The May bar is visibly much shorter than each of the Apr, Jan, Jun, Feb, and Mar bars. (Visual: Bar height comparison across the chart.)\"\n      ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"The vertical axis is labeled 'Grid energy use (kWh)' and its printed tick labels increase upward from 10,000 to 40,000. (Visual: Y-axis label and tick marks.)\"\n      ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 4,\n        \"evidence\": \"A broken-axis mark is visible near the bottom of the y-axis. (Visual: Y-axis break symbol.)\"\n      ,\n        \"status\": \"supported\"\n      }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each bar is bound to its x-axis month label and bar height encodes grid-energy use on the upward y-axis, then May's much shorter bar represents lower use than every other displayed month; if the routing policy treats such an isolated, extreme low value as critical, select critical-anomaly review.\",\n        \"evidence\": \"The reading's conditions are met: the bar is bound to its month label, and height encodes energy use on the y-axis. The reading's conclusion is that an extreme low value qualifies as critical. However, the chart provides no policy or threshold to define 'critical'. The reading's final action ('select critical-anomaly review') is not supported by the visual evidence alone, as the policy for defining 'critical' is absent. The reading's condition that 'an extreme relative low value... qualifies as critical' is an assumption not grounded in the chart's visible content.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3953,
+      "total_tokens": 4722,
+      "completion_tokens": 769,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

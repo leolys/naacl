@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8414568ed5dcc120",
+    "object": "chat.completion",
+    "created": 1790613594,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is inscribed 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is the authoritative trend classification for the routing task, then the literal word 'Decreasing' in that title supports the decline-response route.\",\n        \"evidence\": \"The title is visibly present and legible at the top of the chart. The public task and page instructions explicitly state to use the dashboard as the evidence source for the routing decision, implying the title is part of that evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title includes the word 'Decreasing', while the line's 1891 endpoint is visibly higher on the page than its 1880 endpoint.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If conflicting chart signals or the absence of a supplied routing threshold prevents a reliable growth-versus-decline classification, then the conservative available route is routine monitoring.\",\n        \"evidence\": \"The title and the endpoint position are both visible and supported by the image. The public task does not specify a routing threshold or policy to resolve conflicts, leaving the fallback option as an assumption. The visual evidence supports the endpoint being higher, which contradicts the title's claim of a 'decreasing' trend.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at the 1880 tick near the 1,000 y-axis tick and ends at the 1891 tick below the 3,000 tick but visibly higher on the page than its 1880 endpoint.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is inscribed 'Year' and shows ticks from 1880 through 1891; the vertical axis is inscribed 'Number of Tourists' and shows 0, 500, 1,000, 1,500, 2,000, 2,500, and 3,000.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis labeled 'Year' orders the plotted line from 1880 to 1891 and the vertical axis labeled 'Number of Tourists' uses the visible numeric ticks with larger values higher on the page, then a line endpoint higher at 1891 than at 1880 indicates a higher new-tourist count at the end than at the start. If routing is based on overall endpoint growth, that interpretation supports growth planning.\",\n        \"evidence\": \"The axis labels and tick marks are clearly visible and match the description. The endpoint in 1891 is visibly higher than in 1880. The public task does not specify the routing criterion, but the reading assumes endpoint growth is the criterion. This assumption is not contradicted by the image, but it is also not explicitly supported by the public task or chart.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3876,
+      "total_tokens": 4669,
+      "completion_tokens": 793,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

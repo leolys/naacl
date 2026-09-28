@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87a509e6a0e5b16c",
+    "object": "chat.completion",
+    "created": 1790616296,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark at the 2012 vertical gridline is higher on the page than the red square mark. This is visually evident from the chart's layout, where the blue point is positioned above the red point at the 2012 x-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical label is blue and reads '0-19 years'; the right vertical label is red and reads '20-39 years'. This is explicitly printed on the chart's left and right y-axis labels.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot title reads '0-19 years vs 20-39 years'. This is directly printed at the top of the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to the 2012 marks only — supported by O.1. 2. Requires that the two colored axes/series are on a common or directly comparable population scale — this is not established by any O fact. The chart shows separate y-axes with no printed tick labels to confirm a shared scale.\",\n        \"evidence\": \"Condition 1 is satisfied by O.1. Condition 2 is not addressed by any O fact. The chart's visual design (separate y-axes, no printed scale) does not confirm a shared scale, making this condition open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Separate colored vertical labels appear on the left and right sides of the plot: blue '0-19 years' and red '20-39 years'. This is printed on the chart's y-axes.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No numeric y-axis tick labels are visibly printed on either side of the plot. This is visually confirmed; no numbers are printed along the y-axes.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue circular mark is higher on the page than the red square mark at the 2012 vertical gridline. This is visually evident from the chart's layout.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies because the chart visibly has separate blue and red y-axis labels and no printed y-axis tick values — supported by O.1 and O.2. 2. The condition about independent, unshown, or non-comparable scales is not explicitly stated but is implied by the absence of tick labels — this is plausible but not confirmed by a public fact.\",\n        \"evidence\": \"Condition 1 is satisfied by O.1 and O.2. Condition 2 is not directly tested by any O fact; it is an inference from the absence of tick labels. The B text does not require a public fact to confirm the scale is non-comparable, only that it is not shown. This condition remains open as no fact confirms or refutes it.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3066,
+      "total_tokens": 3791,
+      "completion_tokens": 725,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

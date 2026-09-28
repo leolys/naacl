@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a451ead4b70425d5",
+    "object": "chat.completion",
+    "created": 1790616367,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"O1-B1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar chart titled 'Units Sold by Product (Weekend Pop-up)' displays five vertical bars representing different products.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis is labeled 'Product' and lists 'Product C', 'Product B', 'Product D', 'Product E', and 'Product A' from left to right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Units Sold' with tick marks at 5,000, 10,000, 15,000, 20,000, and 25,000.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The bar for 'Product B' is the second from the left.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top of the 'Product B' bar aligns horizontally with a value slightly above the 5,000 tick mark on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the vertical height of the bar represents the exact quantity of units sold, Product B sold approximately 5,500 units. This value is visually estimated to be just above the 5,000 grid line.\",\n        \"evidence\": \"The bar for Product B is visibly above the 5,000 mark and below the 10,000 mark. The independent visual notes confirm the bar is 'above the 5,000 units mark on the y-axis' and 'visually below the 6,000 units mark on the y-axis'. This supports an estimate of approximately 5,500 units.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"O2-B2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 'Product B' bar is the shortest among the five bars shown in the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 'Product C' bar is visibly taller than the 'Product B' bar, reaching approximately the 8,500 level.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The 'Product D' and 'Product A' bars are significantly taller, extending above the 25,000 line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the chart accurately reflects relative sales volume, Product B represents the lowest sales volume among the displayed products for the weekend pop-up.\",\n        \"evidence\": \"The visual comparison of bar heights confirms Product B is the shortest bar, with Product C, D, E, and A all visibly taller. This is consistent across all observations.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"O3-B3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The y-axis scale is linear, with major intervals of 5,000 units.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 'Product B' bar height is visibly greater than the 5,000 mark but significantly less than the 10,000 mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the chart's scale is linear and standard, the unit count for Product B falls within the range of 5,000 to 10,000 units, specifically in the lower quartile of that interval.\",\n        \"evidence\": \"The bar for Product B is above the 5,000 mark and below the 10,000 mark. The independent visual notes state it is 'above the 5,000 units mark' and 'visually below the 6,000 units mark', placing it firmly in the 5,000-10,000 range and within the lower quartile of that interval.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3927,
+      "total_tokens": 4884,
+      "completion_tokens": 957,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

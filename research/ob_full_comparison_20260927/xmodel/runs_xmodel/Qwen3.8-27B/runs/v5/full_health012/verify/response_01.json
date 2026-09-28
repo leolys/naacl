@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8355c31133438805",
+    "object": "chat.completion",
+    "created": 1790621917,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's main title is 'Selected Sentinel Sites: Testing Volume vs Positive Cases' and the subtitle reads 'Reported sites with the highest case loads shown in dashboard summary.' This confirms the observation that the title includes 'Selected Sentinel Sites' and the subtitle mentions the highest case loads.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If selected-sentinel evidence is not representative of the network and there is no task or policy basis requiring follow-up review, it may be retained as background reference rather than used to advance a network-wide claim.\",\n        \"evidence\": \"The first necessary condition ('not representative') is supported by the subtitle, which indicates the sites are a selected subset of those with 'highest case loads,' implying non-random selection. However, the second necessary condition ('no task or policy basis requiring follow-up review') is refuted by the public task, which explicitly asks to 'choose the next review route' and provides 'Route for broader population review' as an available option. Therefore, the condition that follow-up review is not warranted is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The main title of the chart is clearly visible as 'Selected Sentinel Sites: Testing Volume vs Positive Cases.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The subtitle directly beneath the title is 'Reported sites with the highest case loads shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a chart is explicitly limited to selected sentinel sites and identifies those sites as having the highest case loads, that selection does not by itself establish that the displayed pattern represents the broader network. For a task asking whether to support a network-wide claim, such selected-subset evidence should be routed for broader population review before advancing that claim.\",\n        \"evidence\": \"The necessary conditions are met. The chart is explicitly limited to 'Selected Sentinel Sites' and identifies them as having the 'highest case loads.' The task asks for a decision on a 'network-wide operational claim.' The logic that a non-representative subset (highest case loads) cannot support a network-wide claim without further review is sound and supported by the visible text.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is labeled 'Weekly testing volume (thousands)' and the vertical axis is labeled 'Positive cases detected.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot shows five purple markers labeled Site A through Site E. They are arranged in a diagonal line from the bottom-left (Site A) to the top-right (Site E). Site E is higher and further right than Site D, which is higher and further right than Site C.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes weekly testing volume and the vertical axis encodes positive cases, points positioned progressively farther right and higher indicate an increasing cross-site association between those plotted quantities. That pattern could justify advancing a network-wide claim only if the selected sentinel sites are accepted as sufficiently representative evidence for the network.\",\n        \"evidence\": \"The necessary conditions are met. The axis labels confirm the variables. The visual arrangement of points confirms a positive association. The condition that this only justifies a claim if the sites are representative is a valid logical constraint, and since the sites are a selected subset (as established in r2), the condition for 'advancing a claim' is not met, making the reading's caveat accurate.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3454,
+      "total_tokens": 4344,
+      "completion_tokens": 890,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

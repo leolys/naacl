@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-955714453d34777d",
+    "object": "chat.completion",
+    "created": 1790621427,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays the title, axis labels, and data points. A visual scan of the plot area, axes, and legend confirms the absence of any text defining a numeric threshold (e.g., 'Substantial change > 5°C') or a routing rule.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a substantial-change route requires an explicit displayed policy threshold or other supplied criterion, the chart alone does not establish that the full-period change meets it; under a policy that defaults unverified changes to routine monitoring, routine monitoring would apply.\",\n        \"evidence\": \"The condition 'explicit displayed policy threshold' is tested against the chart and found absent (see O1). The condition 'other supplied criterion' is tested against the form context, which provides a qualitative criterion ('Whether the full-period river temperature change requires substantial-change follow-up') but no numeric boundary. Because the specific numeric threshold required to classify the change is not provided, the chart alone cannot establish that the change meets the 'substantial' criteria. The second part of the assertion is conditional on a 'default policy' which is also not explicitly printed, but the logical structure holds: without a defined threshold, the chart cannot prove the change is 'substantial'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top-left text reads 'River Temperature Monitoring Record'. The vertical axis label reads 'Water temperature (°C)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost data point is positioned above the '2005' tick mark on the x-axis. The text label '23.9°C' is printed directly next to this marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The rightmost data point is positioned above the '2014' tick mark on the x-axis. The text label '10.1°C' is printed directly next to this marker.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted series is the river-temperature record, the x-axis year ticks bind the endpoint markers to 2005 and 2014, and the printed endpoint labels are their temperatures in °C, then the full-period change is 2014 minus 2005. If the routing program classifies a decrease of that magnitude as substantial, substantial-change follow-up is the applicable route.\",\n        \"evidence\": \"The necessary conditions are tested: 1) The series is identified as the river-temperature record by the title 'River Temperature Monitoring Record' and y-axis 'Water temperature (°C)'. 2) The x-axis ticks '2005' and '2014' align with the first and last markers, binding them to those years. 3) The labels '23.9°C' and '10.1°C' are adjacent to these markers. Therefore, the full-period change is calculated as 10.1 - 23.9 = -13.8°C. The assertion's second sentence is conditional: 'If the routing program classifies a decrease of that magnitude as substantial...'. Since the magnitude (13.8°C drop) is derived from the chart, the assertion correctly links the visual data to the routing decision logic.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4082,
+      "total_tokens": 4898,
+      "completion_tokens": 816,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

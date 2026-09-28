@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2b69b96c1b258ce",
+    "object": "chat.completion",
+    "created": 1790615893,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line at the 2023 tick is visibly lower on the page than the blue line at the 2018 tick. The y-axis is labeled 'Recovery Score' and its ticks increase upward from 0 to 2,800. Therefore, a lower vertical position corresponds to a lower score. The 2018 data point is at 2,800, and the 2023 data point is at 2,500, confirming a lower final score than initial.\"\n        ,\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The y-axis has printed tick labels increasing upward from 0 near the bottom to 2,800 near the top. This confirms the conventional encoding where higher vertical position = higher value.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"1. Assumes the plotted line is the relevant regional series. 2. Assumes conventional upward-increasing y-axis encoding. 3. Assumes endpoint comparison determines the overall trend. 4. No explicit routing policy is shown.\"\n      ,\n      \"evidence\": \"1. The chart displays a single blue line series, which is the only plotted data, so it is the relevant regional series. 2. The y-axis ticks increase upward from 0 to 2,800, confirming conventional encoding. 3. The task requires evaluating the overall 2018-2023 trend, and the endpoint comparison (2018=2,800 vs 2023=2,500) is the most direct way to assess this. 4. No explicit routing policy is printed in the public task or chart. All conditions are met.\"\n      ,\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The chart title visibly reads 'Increasing Regional Air Quality Recovery from 2018 to 2023'.\"\n        ,\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The horizontal axis is labeled 'Year' and has printed ticks for 2018 through 2023. The vertical axis is labeled 'Recovery Score'.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"1. The title is authoritative for the overall trend. 2. 'Increasing recovery' maps to expansion rather than routine monitoring. 3. No explicit routing policy is shown.\"\n      ,\n      \"evidence\": \"1. The title explicitly states 'Increasing Regional Air Quality Recovery from 2018 to 2023'. This is presented as the overall dashboard finding. 2. The title's claim of 'increasing recovery' directly maps to the 'air-quality recovery expansion follow-up' route, as the task instructions state to route based on the dashboard trend. 3. No explicit routing policy is printed. All conditions are met.\"\n      ,\n      \"status\": \"supported\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3437,
+      "total_tokens": 4142,
+      "completion_tokens": 705,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

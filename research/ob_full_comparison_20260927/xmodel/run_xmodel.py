@@ -424,7 +424,7 @@ if __name__ == '__main__':
     parser.add_argument('--versions', default='plain,v3,v4,v5,v6,v7')
     parser.add_argument('--enable-thinking', action='store_true', help='send chat_template_kwargs enable_thinking=false')
     parser.add_argument('--out', required=True)
-    parser.add_argument('--http-timeout', type=int, default=300)
+    parser.add_argument('--http-timeout', type=int, default=900)
     parser.add_argument('--limit', type=int, default=None, help='process only the first N units (smoke)')
     parser.add_argument('--concurrency', type=int, default=1, help='parallel units in flight (per-request decoding unchanged)')
     args = parser.parse_args()

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af865715a16048f7",
+    "object": "chat.completion",
+    "created": 1790619030,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue points are plotted and labeled 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"No text related to profitability, margin, ROI, or the total store population is visible on the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If approval of a broader ad-spend increase requires evidence covering the relevant store population and profitability or ROI, then a chart limited to a subset of stores and showing only spend and sales should be routed for full-data analysis rather than approved.\",\n        \"evidence\": \"The chart's title identifies the population as 'Additional Top Stores' (a subset). The axes are strictly 'Advertising Spend' and 'Sales'. There is no visible evidence of profitability or ROI. The specific 'approval standard' mentioned in the condition is not printed on the chart or in the task instructions, making it an external assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The points progress from Store 6 (bottom-left) to Store 10 (top-right), with each successive store having a higher x-value (spend) and y-value (sales).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on comparable scales, then points that progress upward and rightward across the displayed stores indicate a positive observed spend-sales association; this supports broader approval only if association in this subset is accepted as sufficient evidence of benefit.\",\n        \"evidence\": \"The visual data clearly shows a positive correlation: as spend increases from $30k to $70k, sales increase from $60k to ~$157k. The condition correctly identifies that this is an association within a specific subset ('Additional Top Stores') and does not establish causation or profitability.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3856,
+      "total_tokens": 4520,
+      "completion_tokens": 664,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

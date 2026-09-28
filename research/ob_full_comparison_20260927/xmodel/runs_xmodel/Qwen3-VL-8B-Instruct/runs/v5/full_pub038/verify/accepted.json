@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart visibly has separate blue 'Agriculture (%)' and red 'Industry (%)' vertical axis labels.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Neither 2014 mark has a printed percentage label, and no numeric tick labels are visibly printed on either vertical axis.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.",
+        "evidence": "The chart's visual encoding uses separate vertical axes for Agriculture (left) and Industry (right). No tick marks or numerical scale labels are visible on either axis. Therefore, the relative screen-space heights of the 2014 data points cannot be used to infer their percentage values or compare them without assuming equivalent scales or direct decoding, which is not visible. The condition that 'no equivalence of their numeric scales may be assumed' is supported by the absence of any visible scale markings.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The blue circular mark is higher on the page than the red square mark.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The left vertical axis is visibly labeled 'Agriculture (%)' in blue, while the right vertical axis is visibly labeled 'Industry (%)' in red.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the sector with the larger 2014 percentage.",
+        "evidence": "The condition requires that the two series use a 'vertically comparable percentage scale'. However, the chart uses separate, distinct vertical axes for each series, and there is no visual evidence of a shared scale or equivalence between them. The relative screen-space heights are therefore not sufficient to establish a percentage ordering without making an unsupported assumption. The condition 'Applies only if both colored series' 2014 vertical positions are directly comparable despite the separate left and right axis labels' is not met because the axes are not shown to be equivalent. Therefore, the reading does not apply.",
+        "status": "refuted"
+      }
+    }
+  }
+}

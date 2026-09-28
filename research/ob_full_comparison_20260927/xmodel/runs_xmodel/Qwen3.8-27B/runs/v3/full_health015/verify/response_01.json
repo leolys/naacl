@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-902d7f7e70910d8f",
+    "object": "chat.completion",
+    "created": 1790618350,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"At the 11-18 years column, the red square marker is visibly near the top of the chart area, while the blue circular marker is near the bottom. The red mark is physically higher on the page than the blue mark.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left y-axis label is blue and the right y-axis label is red. No numeric tick labels are visible on either vertical axis; the gridlines lack numerical values.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The blue circular markers are connected by a solid blue line, and the red square markers are connected by a dashed red line.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if blue and red series use separate colored y-axes and neither has visible numeric tick labels, screen-space heights cannot establish a comparable cross-category value ordering. It further asserts that without a stated escalation criterion, the comparison should be sent for reference review. The condition is that no supplied policy defines how plotted values map to a follow-up route.\",\n        \"evidence\": \"The chart visually confirms separate colored axes (blue left, red right) and no visible numeric tick labels on either axis. The public task instructions do not provide a specific numerical threshold or policy table defining how to map the plotted values to a specific follow-up route. The visual positions (red high, blue low) are present, but without axis scales, the specific magnitude or 'winning' value cannot be objectively determined from the image alone to satisfy a specific 'escalation' rule that isn't provided.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title at the top center reads 'High fibre breakfast cereals vs Other breakfast cereals'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The label on the left vertical axis (blue text) reads 'High fibre breakfast cereals'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"A blue circular mark is visible at the x-axis position labeled '11-18 years'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the routing instruction treats the chart category explicitly labeled 'High fibre breakfast cereals' as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option. The condition is an unstated program rule that the high-fibre category itself determines routing, rather than a plotted cross-series comparison.\",\n        \"evidence\": \"The chart labels are visible as described. However, the reading relies on an 'unstated program rule' to link the label 'High fibre breakfast cereals' to the specific action 'adolescent fibre-support follow-up'. The public task asks to assign the category based on the 'displayed comparison', which implies looking at the data values, not just the axis labels. While the label exists, the rule connecting it to the specific follow-up route is not present in the public task or policy tables, making the applicability of this specific reading to the final decision an assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2777,
+      "total_tokens": 3607,
+      "completion_tokens": 830,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

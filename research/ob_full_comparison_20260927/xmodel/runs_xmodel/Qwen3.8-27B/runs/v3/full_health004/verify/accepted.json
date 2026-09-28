@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image displays the title 'Year vs. Number of doctors per 1,000 inhabitants' at the top. The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Visually, the blue marker on the far right (Year 2017.5) is positioned lower on the screen than the blue marker on the far left (Year 2000.0).",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The provided task data includes three 'option_labels' for routing. The 'policy_tables' array is empty, and no interpretation rules are provided in the context.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading states that the chart shows the final level and its change, but because no policy table or threshold is provided to map a level to a specific pathway, a definitive selection cannot be validated.",
+        "evidence": "The visual evidence confirms the chart shows a trend and a final point. The public task data confirms the absence of any policy tables or interpretation rules that would define which capacity level triggers which pathway.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image displays the title 'Year vs. Number of doctors per 1,000 inhabitants' at the top. The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The y-axis labels are arranged from 0.0 at the top to 2.5 at the bottom, confirming the axis is inverted.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The leftmost blue marker (Year 2000.0) is positioned higher on the page (around 1.3) than the rightmost blue marker (Year 2017.5), which is positioned lower on the page (near 2.5).",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading states that because the y-axis is inverted (labels increase downward), a lower screen position corresponds to a larger numeric value. It concludes that a higher final value matches the 'physician capacity expansion review pathway'.",
+        "evidence": "The visual evidence confirms the y-axis is inverted (0.0 at top, 2.5 at bottom) and the line moves downward on the screen, meaning the numeric value increases from ~1.3 to ~2.5. However, the task provides no policy table or rule defining which capacity level (high or low) corresponds to 'expansion' versus 'shortage'. While 'expansion' might intuitively imply high capacity, the absence of a defined rule means this mapping is an assumption rather than a fact supported by the provided evidence.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

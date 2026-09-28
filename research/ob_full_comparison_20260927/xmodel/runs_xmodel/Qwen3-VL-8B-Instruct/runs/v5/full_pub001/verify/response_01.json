@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-adc9fe21ad58a2dc",
+    "object": "chat.completion",
+    "created": 1790615136,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The area labeled 'ME' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The area labeled 'OK' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The area labeled 'TX' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The pale-yellow top of the gradient is adjacent to the inscriptions 'High' and '100,' while the dark-burgundy bottom is adjacent to 'Low' and '0.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The map’s state fill colors encode the Hazard H risk index according to the adjacent vertical legend: pale yellow at the top corresponds to the printed High/100 end and dark burgundy at the bottom corresponds to the printed Low/0 end. If the priority hazard review list is intended to select the highest risk-index state among the offered options, select the option for the highest encoded state.\",\n        \"evidence\": \"The legend explicitly maps color to value: pale yellow = High/100, dark burgundy = Low/0. The map visually confirms ME is pale yellow, OK and TX are dark burgundy. The task instruction 'choose the state record that should be added to the priority review list' implies selecting based on the chart’s encoded risk index, and the options are limited to ME, OK, and TX. The condition 'if the priority hazard review list is intended to select the highest risk-index state among the offered options' is satisfied by the task’s context and the chart’s encoding. The reading is directly applicable and its conditions are met by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Risk Index of Hazard H in US States,' and the legend is labeled only with 'High,' 'Low,' and numeric endpoints.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart establishes relative Hazard H risk-index encoding but does not itself state the program rule, threshold, or other criterion for adding a state to priority review. Without that task-to-action criterion, a selection cannot be established from the chart alone.\",\n        \"evidence\": \"The chart provides the risk index encoding, which is sufficient to rank ME, OK, and TX. The task instruction 'choose the state record that should be added to the priority review list' is not ambiguous: it requires selecting based on the dashboard’s evidence. The dashboard’s encoding is the only criterion available. The condition 'if no external or supplied policy defines how the risk index determines priority-review inclusion' is not met, because the task itself defines the selection criterion as choosing the highest risk-index state from the given options. The reading is not applicable because the chart’s encoding is sufficient for selection under the task’s implicit rule.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3441,
+      "total_tokens": 4128,
+      "completion_tokens": 687,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

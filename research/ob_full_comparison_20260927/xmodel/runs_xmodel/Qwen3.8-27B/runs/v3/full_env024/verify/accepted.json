@@ -1,0 +1,64 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Supported. The teal bar labeled 'Groundwater' visually extends to the 68 gridline, which is the highest vertical position among all bars on the chart.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Supported. The chart title is 'Urban Water Supply by Source' and the y-axis is labeled 'Reported supply share (%)'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that if bar geometry is the authoritative encoding, the tallest bar (Groundwater) should be selected.",
+        "evidence": "The condition requires that bar geometry is the authoritative encoding over the conflicting percentage labels. The image shows a direct contradiction: the Groundwater bar is the tallest (approx. 68), but its label (29.8%) is lower than the Surface water label (41.2%). There is no public evidence in the image or task description to establish that bar geometry overrides the explicit data labels. Therefore, the necessary condition for this reading remains an assumption.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Supported. The text '41.2%' is printed directly above the Surface water bar.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Supported. The text '29.8%' is printed directly above the Groundwater bar.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "Supported. The text '18.5%' is printed directly above the Desalination bar.",
+          "status": "supported"
+        },
+        {
+          "index": 4,
+          "evidence": "Supported. The text '7.2%' is printed directly above the Recycled water bar.",
+          "status": "supported"
+        },
+        {
+          "index": 5,
+          "evidence": "Supported. The text '3.3%' is printed directly above the Rain capture bar.",
+          "status": "supported"
+        },
+        {
+          "index": 6,
+          "evidence": "Supported. The y-axis label is 'Reported supply share (%)'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that if the percentage inscriptions are the authoritative values, the source with the greatest printed share (Surface water at 41.2%) should be selected.",
+        "evidence": "The condition requires that the bold percentages are valid source-specific reported supply shares. The image explicitly labels the y-axis as 'Reported supply share (%)' and provides specific percentage values for each bar. While the bar heights are inconsistent with these values, the printed labels are the most specific data provided. The reading's condition is supported by the presence of these specific labels and the axis definition, making it the most plausible interpretation of the 'contribution' metric despite the visual discrepancy.",
+        "status": "supported"
+      }
+    }
+  ]
+}

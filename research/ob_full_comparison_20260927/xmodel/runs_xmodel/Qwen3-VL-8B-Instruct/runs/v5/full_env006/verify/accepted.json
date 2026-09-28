@@ -1,0 +1,33 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Global Energy Consumption by Source' (independent_visual_notes.appearance_facts[0]). The chart contains four labeled pie slices with percentages: 'Fossil Fuels (50%)', 'Nuclear (15%)', 'Renewables (25%)', and 'Hydroelectric (10%)' (independent_visual_notes.printed_facts[0-3]). The 'Fossil Fuels (50%)' slice is visually the largest segment (independent_visual_notes.appearance_facts[6]).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The dashboard title 'Global Energy Consumption by Source' (independent_visual_notes.appearance_facts[0]) and the chart's labeled slices (independent_visual_notes.printed_facts[0-3]) establish that the chart displays global energy consumption shares by source. The largest share is 50% for 'Fossil Fuels'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The largest share (50%) is explicitly labeled as 'Fossil Fuels' (independent_visual_notes.printed_facts[0]) and is visually the largest segment (independent_visual_notes.appearance_facts[6]).",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The task instruction (public_task.user_goal, public_task.page_instructions) and the chart title (independent_visual_notes.appearance_facts[0]) both refer to identifying the largest category in global energy consumption. The chart's labels and percentages directly support this.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The 'Fossil Fuels (50%)' slice is labeled and its percentage is explicitly stated (independent_visual_notes.printed_facts[0]). The task requires routing the largest category (O4), which is Fossil Fuels, to priority monitoring (public_task.option_labels[0]).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the pie-slice inscriptions name each source and state its global energy-consumption share, and the dashboard title defines the scope as global energy consumption by source, then the source with the greatest printed percentage is the largest category. Under the task instruction to route that largest category to priority monitoring, select the matching route option.",
+        "evidence": "The conditions are met: 1) The pie-slice inscriptions (independent_visual_notes.printed_facts[0-3]) name each source and state its share. 2) The dashboard title (independent_visual_notes.appearance_facts[0]) defines the scope as global energy consumption by source. 3) The largest percentage (50%) corresponds to 'Fossil Fuels' (independent_visual_notes.printed_facts[0]), which matches the route option 'Route Fossil Fuels to priority source monitoring' (public_task.option_labels[0]).",
+        "status": "supported"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8ae623ea52767163",
+    "object": "chat.completion",
+    "created": 1790615521,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title reads 'Advertising Budget vs Revenue (High-Performing Regions)' as per independent_visual_notes and chart_1 location.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Only five labeled points (January–May) are visible; no other regional groups or marks are visible per chart_1 plot area content.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies if approval requires representative regional coverage or causal/full-data validation.\",\n        \"evidence\": \"Condition 1: The chart explicitly limits scope to 'High-Performing Regions' and shows only five months. No evidence of broader regional coverage is present. Condition 2: The chart shows correlation, not causation; no mechanism or evidence of causal impact is provided. Neither condition is fully satisfied by the chart alone.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title reads 'Advertising Budget vs Revenue (High-Performing Regions)' as per independent_visual_notes and chart_1 location.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"X-axis label is 'Advertising Budget ($)' and ticks increase rightward from 0 to 70 as per independent_visual_notes and chart_1 horizontal axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Y-axis label is 'Revenue ($)' and ticks increase upward from 0 to 220 as per independent_visual_notes and chart_1 vertical axis.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five blue points labeled January–May are plotted, each successively farther right and higher, indicating a positive association as per independent_visual_notes and chart_1 plot area.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies only if the plotted points are comparable monthly observations for the stated high-performing regions. 2. Association is sufficient evidence for a broader increase.\",\n        \"evidence\": \"Condition 1: The points are labeled by month and show a consistent trend, implying comparable observations. Condition 2: The chart shows a positive association, but the public_task and chart_reference do not state whether this is sufficient for broader approval. The policy condition requires representative regional coverage or causal validation, which is not met. The association alone does not establish broader applicability or causality.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3579,
+      "total_tokens": 4165,
+      "completion_tokens": 586,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

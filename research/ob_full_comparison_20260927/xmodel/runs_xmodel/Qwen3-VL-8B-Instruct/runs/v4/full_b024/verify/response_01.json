@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90a866c312fa5385",
+    "object": "chat.completion",
+    "created": 1790613777,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Plot contains five labeled blue points: Q2, Q3, Q4, Q5, and Q6.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"No visible legend, control-group marks, causal annotation, or full-quarter data table is shown.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a budget approval requires full-quarter coverage or evidence that advertising caused sales changes, a scatterplot limited by its title to selected high-growth quarters and lacking causal controls is insufficient; the evidence-review option is then appropriate.\",\n        \"evidence\": \"The chart is limited to selected high-growth quarters and lacks causal controls or full-quarter data. The public task and page instructions do not specify that full-quarter coverage or causal evidence is required for approval. The dashboard is presented as the sole evidence for the decision. The policy tables are empty, so no external policy mandates causal proof. The reading's condition is not met by the public task or chart context.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"X-axis label: 'Advertising Spend ($ thousands)'; ticks: 30, 40, 50, 60, 70.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Y-axis label: 'Sales ($ thousands)'; ticks: 60 through 170.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Blue points Q2, Q3, Q4, Q5, Q6 progress from lower-left to upper-right; Q6 is right of and above Q5, and Q5 is right of and above Q4.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels state, then points farther right and higher represent quarters with greater plotted spend and sales. If this selected-quarter association is considered sufficient and generalizable evidence for a broader budget change, it supports approving an ad-budget increase; the chart alone does not establish causation or represent all quarters.\",\n        \"evidence\": \"The axes encode spend and sales as labeled. The points show a clear positive trend: Q2 ($30k spend, $62k sales) to Q6 ($70k spend, $170k sales). The independent notes confirm these values. The public task and page instructions state to 'use the dashboard' and 'review dashboard evidence' to submit a decision. The dashboard is the only evidence provided. The reading’s condition assumes the selected sample is relevant to a broader decision, which is not contradicted by the chart or task. The chart does not establish causation, but the reading correctly notes this. The reading's conclusion is that the chart supports approving an increase, which is consistent with the visible trend. The public task does not require causal proof, only that the dashboard be used to complete the form. The reading's conditions are met by the visible evidence and task context.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3855,
+      "total_tokens": 4653,
+      "completion_tokens": 798,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

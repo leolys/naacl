@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image shows the text '41.2%' printed directly above the yellow bar labeled 'Utility solar' on the x-axis.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The image shows the text '29.8%' printed directly above the light-blue bar labeled 'Offshore wind' on the x-axis.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that the bold percentage printed above the bars is the authoritative reported clean-grid share, and the source with the greatest printed percentage is the largest contribution source to be routed to priority review.",
+        "evidence": "The task specifies identifying the source with the 'largest contribution' and the routing criterion is 'Largest clean-generation contribution source.' The y-axis is labeled 'Reported clean-grid share (%)', which aligns with the printed percentages representing the reported share. However, the reading's necessary condition—that the printed percentages are authoritative despite any inconsistency with bar heights—is not established by the public sources. The image shows a clear discrepancy where the 'Utility solar' bar (height ~40) is shorter than the 'Offshore wind' bar (height ~68), yet its printed label (41.2%) is higher than the 'Offshore wind' label (29.8%). Without a rule specifying which encoding (bar height or printed label) takes precedence in the case of a conflict, the condition that the printed label is the authoritative metric remains an assumption.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The light-blue bar above 'Offshore wind' is the tallest bar on the chart, with its top edge positioned between the 65 and 70 tick marks on the y-axis.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The yellow bar above 'Utility solar' has its top edge aligned with the 40 tick mark on the y-axis.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The text '29.8%' is printed above the light-blue bar labeled 'Offshore wind'.",
+          "status": "supported"
+        },
+        {
+          "index": 4,
+          "evidence": "The text '41.2%' is printed above the yellow bar labeled 'Utility solar'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that the vertical bar heights are the dashboard's encoding of reported clean-grid contribution, and the tallest bar represents the largest source to be routed to priority review.",
+        "evidence": "The y-axis is labeled 'Reported clean-grid share (%)', which strongly suggests that the bar heights are the primary visual encoding of the reported share. The 'Offshore wind' bar is visibly the tallest (reaching ~68), while the 'Utility solar' bar is shorter (reaching 40). However, the reading's necessary condition—that bar geometry is authoritative rather than the printed percentages—is not established. The printed percentages (e.g., 41.2% for Utility solar) contradict the bar heights (40 for Utility solar vs. 68 for Offshore wind). Since there is no explicit rule stating that bar height overrides the printed label in the event of a discrepancy, the condition that bar geometry is the authoritative metric remains an assumption.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

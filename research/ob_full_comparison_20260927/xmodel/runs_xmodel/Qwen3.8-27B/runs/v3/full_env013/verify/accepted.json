@@ -1,0 +1,49 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Supported. I scanned the chart title, axis labels, data labels, and the entire plot area. No text, legend, or annotation states a threshold, escalation rule, or routing instruction.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Supported. The leftmost marker aligns with the x-axis tick '2005' and has the adjacent label '24.0°C'. The rightmost marker aligns with the x-axis tick '2015' and has the adjacent label '10.0°C'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.",
+        "evidence": "The condition that the workflow requires an explicit threshold is not supplied in the task or chart. The task simply asks to determine whether the change 'requires substantial-change follow-up.' The condition of a 'routine-by-default policy' is also not supplied. While the absence of a threshold is factually correct, the policy conditions are assumptions.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Supported. The leftmost marker is a black circle aligned with the '2005' tick, and the text '24.0°C' is printed directly above it.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Supported. The rightmost marker is a black circle aligned with the '2015' tick, and the text '10.0°C' is printed directly above it.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "Supported. The large text at the top center reads 'Coastal Water Temperature Trend'. The rotated text along the left vertical axis reads 'Water temperature (°C)'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.",
+        "evidence": "The chart's title, axis labels, and data labels support the decoding that the markers represent temperature readings for the given years. The calculation of the change (10.0 - 24.0 = -14.0°C) is a direct consequence of this decoding. However, the necessary condition for the final action—'meets the unspecified substantial-change criterion'—is not established by any visible or public evidence, as no threshold is defined.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-82784c81db51f9f8",
+    "object": "chat.completion",
+    "created": 1790616649,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Mountain Snowpack Temperature Record', the horizontal axis is labeled 'Year', and the vertical axis is labeled 'Temperature (°C)'. The endpoint inscriptions are clearly visible: '24.0°C' at 2005 and '10.0°C' at 2015.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up requires a stated numeric threshold or other explicit routing criterion, and none is displayed in the chart or supplied task state, then the magnitude alone does not establish eligibility; retain routine monitoring rather than infer the threshold.\",\n        \"evidence\": \"The chart and task state provide no explicit threshold for 'substantial change'. The reading correctly states that without such a threshold, the magnitude alone does not establish eligibility. This is consistent with the task's requirement to use the dashboard to determine routing based on the full-period change, not to infer a threshold.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Mountain Snowpack Temperature Record'. The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Temperature (°C)'. The point at 2005 is labeled '24.0°C' and the point at 2015 is labeled '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2005 data point is aligned with the 2005 tick and labeled '24.0°C'. The 2015 data point is aligned with the 2015 tick and labeled '10.0°C'.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"3\": {\n        \"evidence\": \"The chart shows a single blue line connecting the data points from 2005 to 2015, with each point marked by a solid black circle and annotated with its exact temperature value.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the plotted series is the mountain snowpack temperature record, the horizontal axis binds points to their labeled years, and the printed labels next to points state their temperatures, then the full-period change is the 2015 labeled temperature minus the 2005 labeled temperature. If a 14.0°C full-period decrease is treated as substantial change for this routing task, select substantial-change follow-up.\",\n      \"evidence\": \"The chart's visual structure confirms the reading's conditions: the series is the mountain snowpack temperature record, the axis binds points to years, and the labels state temperatures. The full-period change is 10.0°C - 24.0°C = -14.0°C, a 14.0°C decrease. The reading's condition is that if a 14.0°C decline is treated as substantial, then select substantial-change follow-up. The reading does not state that a 14.0°C decline is *in fact* substantial; it only says that *if* it is treated as substantial, then select the option. This is a conditional reading, not an assertion. The reading does not claim that the 14.0°C decline is substantial; it only provides the action to take *if* it is.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3990,
+      "total_tokens": 4765,
+      "completion_tokens": 775,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

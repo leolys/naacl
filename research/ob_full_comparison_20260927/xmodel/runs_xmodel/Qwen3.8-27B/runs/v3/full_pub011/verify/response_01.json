@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a863607b9b40d259",
+    "object": "chat.completion",
+    "created": 1790618538,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title in the image clearly reads 'Monthly Visitors at Museum C in Town Z.'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The first bar on the x-axis is green and is positioned directly above the label 'July'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The top edge of the green July bar is visually aligned with the orange dashed horizontal line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The orange dashed line intersects the y-axis at the tick mark labeled '200'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The word 'Average' is printed in orange text near the right end of the dashed line.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the green bars represent monthly visitor counts on an upward-increasing y-axis, the bar above each label is that month's count, and the dashed line labeled 'Average' is the benchmark. It concludes that a month whose bar top aligns with the line is 'at the average' and maps this to the 'average-level monitoring' option.\",\n        \"evidence\": \"The chart's y-axis is labeled 'Number of Visitors' and increases upward from 0 to 500, supporting the encoding of counts. The July bar is the only bar whose top aligns with the 'Average' line at 200, while August and September are higher. The mapping of 'at average' to 'average-level monitoring' is a reasonable interpretation of the provided options, though it relies on the assumption that the line is the governing benchmark.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3423,
+      "total_tokens": 3903,
+      "completion_tokens": 480,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

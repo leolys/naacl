@@ -1,0 +1,60 @@
+{
+  "appearance_facts": [
+    {
+      "location": "upper-left",
+      "fact": "Chart title reads 'Product Rating Share by Category'. Y-axis is labeled 'Value' with ticks 0 to 50. X-axis is labeled 'Category'."
+    },
+    {
+      "location": "x-axis left to right",
+      "fact": "Six blue circular markers appear above the categories Quality, Price, Design, Support, Delivery, and Other."
+    },
+    {
+      "location": "above each marker",
+      "fact": "Percentage labels are printed directly above the markers: 14%, 49%, 30%, 33%, 29%, 34%."
+    },
+    {
+      "location": "relative vertical position",
+      "fact": "The Price marker (49%) is the highest of the six, sitting near the 27 value level; the Quality marker (14%) is the lowest, near 13."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "Quality marker",
+      "fact": "Labeled rating share: 14%"
+    },
+    {
+      "location": "Price marker",
+      "fact": "Labeled rating share: 49%"
+    },
+    {
+      "location": "Design marker",
+      "fact": "Labeled rating share: 30%"
+    },
+    {
+      "location": "Support marker",
+      "fact": "Labeled rating share: 33%"
+    },
+    {
+      "location": "Delivery marker",
+      "fact": "Labeled rating share: 29%"
+    },
+    {
+      "location": "Other marker",
+      "fact": "Labeled rating share: 34%"
+    },
+    {
+      "location": "policy table",
+      "fact": "Attribute follow-up rule: 'Select the category with the highest current labeled rating share'."
+    }
+  ],
+  "public_definitions": [
+    "Task: 'Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share.'",
+    "Primary field: 'Product attribute follow-up category' with options 'Select Price', 'Select Support', 'Select Design'.",
+    "Queue rule option: 'Prioritize highest current rating share'.",
+    "Work queue option: 'Product attribute follow-up queue'."
+  ],
+  "uncertain": [
+    "The dashboard includes categories (Quality, Delivery, Other) that are not among the three selectable follow-up options; the rule's 'highest current labeled rating share' must be applied to determine which selectable category is intended.",
+    "Whether the 49% Price label is the intended 'highest current labeled rating share' for the follow-up queue, given that the option set does not include all dashboard categories."
+  ]
+}

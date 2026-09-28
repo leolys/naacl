@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b3c02378abb9c9ab",
+    "object": "chat.completion",
+    "created": 1790619326,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"rec_01\": {\"O\": {\"1\": {\"evidence\": \"The chart title is 'Selected High-Growth Quarters: Ad Spend vs Sales' and the plot consists of discrete points.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis is labeled 'Advertising Spend ($ thousands)' with tick marks starting at 25 and ending at 75.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The y-axis is labeled 'Sales ($ thousands)' with tick marks starting at 60 and ending at 170.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"Five distinct points are plotted and labeled Q2, Q3, Q4, Q5, and Q6.\", \"status\": \"supported\"}, \"5\": {\"evidence\": \"The points are arranged in a linear ascending pattern from the bottom-left (Q2) to the top-right (Q6).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the visual pattern of the five plotted points is interpreted as a positive correlation, then the data suggests that higher advertising spend is associated with higher sales for these specific quarters.\", \"evidence\": \"The chart shows a clear positive linear trend where both x (spend) and y (sales) values increase together across the five quarters.\", \"status\": \"supported\"}}, \"rec_02\": {\"O\": {\"1\": {\"evidence\": \"Point Q2 is located at x=30 and y=68.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"Point Q6 is located at x=70 and y=167 (the assertion says 168, which is a minor estimation difference).\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The gap between Q2 (68) and Q6 (167) is 99. The gap between Q2 and Q3 is 42 (110-68). The gap between Q3 and Q4 is 26 (136-110). The gap between Q4 and Q5 is 19 (155-136). The gap between Q5 and Q6 is 12 (167-155). The total span from Q2 to Q6 is indeed the largest.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"Assuming the axis scales are linear and the points represent the only data available, the transition from Q2 to Q6 represents the largest absolute increase in both advertising spend and sales volume among the displayed quarters.\", \"evidence\": \"The x-value increases from 30 to 70 (a +40 increase) and the y-value increases from 68 to 167 (a +99 increase). These are the maximum values in the dataset.\", \"status\": \"supported\"}}, \"rec_03\": {\"O\": {\"1\": {\"evidence\": \"The title is 'Selected High-Growth Quarters: Ad Spend vs Sales'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis starts at 25, and the first point (Q2) is at 30.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The y-axis starts at 60, and the first point (Q2) is at 68.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"There are no data points plotted in the region where x < 30 and y < 68.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the selection of data points is interpreted as a filter for 'high-growth' performance, then the chart does not provide a baseline for quarters with lower spend or sales, making it impossible to determine the overall average performance from this view alone.\", \"evidence\": \"The title 'Selected High-Growth Quarters' implies a subset of the total data. Without the 'non-selected' quarters, the overall average cannot be calculated.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4156,
+      "total_tokens": 5042,
+      "completion_tokens": 886,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

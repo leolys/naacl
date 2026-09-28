@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b9e6993ddf7c1a38",
+    "object": "chat.completion",
+    "created": 1790615778,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The label 'May' is attached below the rightmost dark-red bar, confirming its identity.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The May bar is visibly much shorter than each of the Apr, Jan, Jun, Feb, and Mar bars, indicating lower energy use.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"No printed critical threshold, escalation criterion, or routing legend is visible on the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The condition requires the chart to supply no printed critical threshold, baseline, or routing rule; this interpretation assumes escalation cannot be inferred solely from relative bar height.\",\n        \"evidence\": \"The chart supplies no printed critical threshold, baseline, or routing rule. The condition remains open: whether a visibly low May value alone supports standard low-usage follow-up rather than critical escalation, under the assumption that escalation cannot be inferred solely from relative bar height.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The label 'May' is attached below the rightmost dark-red bar, confirming its identity.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The May bar is visibly much shorter than each of the Apr, Jan, Jun, Feb, and Mar bars, indicating lower energy use.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Grid energy use (kWh)' and its printed tick labels increase upward from 10,000 to 40,000.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A broken-axis mark is visible near the bottom of the y-axis, indicating a truncated scale.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The condition requires: (1) each bar is bound to its x-axis month label, (2) bar height encodes grid-energy use on the upward y-axis, (3) the truncated y-axis still preserves valid height ordering, and (4) an extreme relative low value, without a displayed policy threshold, qualifies as critical.\",\n        \"evidence\": \"Each bar is bound to its x-axis month label. Bar height encodes grid-energy use on the upward y-axis. The truncated y-axis still preserves valid height ordering (May is visibly below 10,000 kWh). An extreme relative low value (May at ~8,000 kWh, below 10,000 kWh) without a displayed policy threshold qualifies as critical under this condition.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3995,
+      "total_tokens": 4633,
+      "completion_tokens": 638,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

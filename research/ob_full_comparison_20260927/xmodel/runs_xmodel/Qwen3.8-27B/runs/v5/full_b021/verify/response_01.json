@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-83280922ee6f9200",
+    "object": "chat.completion",
+    "created": 1790620983,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis displays tick marks from 25 to 75, and five distinct data points are visible along this axis. Each point is explicitly labeled with text ranging from 'Week 7' to 'Week 11'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The title 'Additional Promotion Weeks: Ad Spend vs Sales' and axis labels 'Advertising Spend' and 'Sales' are visible. A review of the entire image and the provided task text confirms the absence of any text, legend, or policy table defining a causal method, profitability measure, approval threshold, or decision policy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an observed association without full-data, causal, profitability, or policy-threshold evidence is insufficient for a budget recommendation, then the evidence-review option is the corresponding decision. Applies if approval requires evidence beyond this five-point dashboard view; no such requirement is visibly stated in the supplied task or chart.\",\n        \"evidence\": \"The reading's necessary condition is that 'approval requires evidence beyond this five-point dashboard view.' The visible task instructions state to 'Review the promotion-week dashboard, then submit the campaign approval decision.' The page contains no policy table or text that explicitly defines the evidence requirements for approval. Because the specific condition of the reading (that the dashboard is insufficient) is not established by the visible facts, the reading's applicability cannot be confirmed.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart clearly reads 'Additional Promotion Weeks: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue circular points are visible in the plot area. Each is accompanied by a text label: 'Week 7', 'Week 8', 'Week 9', 'Week 10', and 'Week 11'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'. Visually, the points follow a rising diagonal path. Week 7 is at the lowest position (approx. x=30, y=60), and each subsequent week (8, 9, 10, 11) is positioned further to the right and higher than the previous one, ending with Week 11 at the highest position (approx. x=70, y=160).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis labeled 'Advertising Spend ($ thousands)' and vertical axis labeled 'Sales ($ thousands)' encode each point's respective values, then points farther right and higher represent greater advertising spend and greater sales; week labels identify the associated points. Assumes the labeled axes apply uniformly to all plotted points and the nearby week text labels identify those points.\",\n        \"evidence\": \"The necessary conditions for this reading are standard chart-reading conventions: that the axes define the scale for the points and that the labels identify the specific data markers. The chart uses a standard Cartesian coordinate system with a single set of axes for the single series of points. The labels are placed directly next to their corresponding points. These conditions are visibly met in the chart's construction.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4010,
+      "total_tokens": 4828,
+      "completion_tokens": 818,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b64476dab610cef3",
+    "object": "chat.completion",
+    "created": 1790613811,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Advertising Budget vs Revenue (High-Performing Regions)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Only five labeled points (January through May) are visible, and no marks or labels for other regional groups are visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader budget increase requires evidence from regions beyond the displayed high-performing subset or evidence that budget increases caused revenue increases, then a chart limited to that subset and showing only plotted monthly association is insufficient, supporting a request for full-data analysis.\",\n        \"evidence\": \"The chart is explicitly limited to 'High-Performing Regions' and shows only a temporal sequence (January–May) of data points. The public task and form context do not state that the dashboard must represent all regions or establish causality. The decision options include 'Hold and request full-data analysis' as a valid choice, which is consistent with the B reading's conclusion.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Advertising Budget vs Revenue (High-Performing Regions)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal-axis inscription reads 'Advertising Budget ($)' and its printed ticks increase from 0 at the left toward 70 at the right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical-axis inscription reads 'Revenue ($)' and its printed ticks increase from 0 at the bottom toward 220 near the top.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five blue points are labeled January, February, March, April, and May; from January through May, each successive labeled point is farther right and higher on the page than the preceding point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal and vertical axes encode advertising budget and revenue respectively, with values increasing rightward and upward, then the labeled monthly points form a positive budget-revenue association; if the review permits broader approval from this high-performing-region association alone, it supports approval.\",\n        \"evidence\": \"The axes are correctly labeled and oriented. The points show a clear positive trend: as budget increases, revenue increases. The independent visual notes confirm this trend with approximate coordinates (January: ~25,30; May: ~65,220). The public task and form context state that the dashboard is to be used to complete the review, and the review record is 'High-performing region request'. The decision option 'Approve broader budget increase' is available. The B reading's condition is met: the plotted points are comparable monthly observations for the stated high-performing regions, and the positive association is visible. The reading does not claim the association proves causality or represents all regions, only that it supports approval if the review permits it.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3744,
+      "total_tokens": 4446,
+      "completion_tokens": 702,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

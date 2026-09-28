@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-aa4e496a1be39907",
+    "object": "chat.completion",
+    "created": 1790618025,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The x-axis label 'May' is visible directly below the rightmost bar, which is dark red.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The May bar's height is visibly much shorter than the bars for Apr, Jan, Jun, Feb, and Mar, which all reach at least the 10,000 gridline.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The chart displays only a title, axis labels, and tick marks; no legend, threshold line, or annotation defines a critical level or routing rule.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes that without a stated critical threshold or escalation rule on the chart, a visibly low May value alone supports standard low-usage follow-up rather than critical escalation.\",\n        \"evidence\": \"The chart and form fields contain no printed threshold, baseline, or rule defining 'critical' vs. 'standard' low usage. The necessary condition—that no such rule exists to trigger escalation—is met by the visible absence of such criteria on the dashboard.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The x-axis label 'May' is visible directly below the rightmost bar, which is dark red.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The May bar's height is visibly much shorter than the bars for Apr, Jan, Jun, Feb, and Mar, which all reach at least the 10,000 gridline.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The y-axis is labeled 'Grid energy use (kWh)' and the visible tick labels range from 10,000 at the bottom to 40,000 at the top, increasing upward.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"A double-slash break symbol is visible on the y-axis near the bottom, just above the x-axis baseline.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes that May's extreme relative low value qualifies as 'critical' for escalation purposes, even without a displayed policy threshold.\",\n        \"evidence\": \"While the visual outlier status of the May bar is supported (it is far below the 10,000 gridline), the necessary condition that this qualifies as 'critical' is not established. The chart and form fields provide no definition of what constitutes a 'critical low-usage anomaly' versus a 'standard low-usage case.' The assumption that an extreme relative low value automatically triggers critical escalation is an inference not supported by the visible sources.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4477,
+      "total_tokens": 5227,
+      "completion_tokens": 750,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

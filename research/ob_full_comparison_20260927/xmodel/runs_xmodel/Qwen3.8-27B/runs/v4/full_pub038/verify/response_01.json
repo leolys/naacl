@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf54517ff856d36b",
+    "object": "chat.completion",
+    "created": 1790620730,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's left vertical axis is labeled 'Agriculture (%)' in blue and the right vertical axis is labeled 'Industry (%)' in red. This matches the assertion that there are separate colored vertical axis labels.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Looking at the 2014 vertical gridline, there are two data points (one blue circle, one red square). Neither point has a text label (like '16.35%') next to it. Furthermore, the vertical axes themselves have no visible numbers (ticks) indicating the scale.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.\",\n        \"evidence\": \"The chart features dual axes (left and right) with different colors. The 2014 data points lack numeric labels. The axis scales are not visible (no ticks). Therefore, it is impossible to know if the blue point at a certain pixel height represents a higher or lower percentage than the red point at a different pixel height, because the 'ruler' for each color is different and unknown.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the x-axis position for 2014, the blue circular marker is physically higher on the screen (closer to the top) than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis is labeled 'Agriculture (%)' in blue and the right axis is labeled 'Industry (%)' in red. This matches the assertion.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the larger 2014 percentage.\",\n        \"evidence\": \"The reading relies on the condition that the scales are comparable. However, the chart has two distinct vertical axes (left and right). In dual-axis charts, the scales are often independent. Since there are no tick marks to verify if the scales are identical (e.g., both 0-100%), we cannot assume the vertical position directly translates to a comparable percentage value. The condition 'same vertically comparable percentage scale' is not met by the visible evidence (which shows separate axes without scale confirmation).\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3168,
+      "total_tokens": 3829,
+      "completion_tokens": 661,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8d3c55b3279efd76",
+    "object": "chat.completion",
+    "created": 1790617214,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. In the plot area, the red bar (Huawei) extends to a y-level of approximately 63, which is visibly higher than the tops of the orange bar (Apple, ~34), the dark-blue bar (Samsung, ~7), the green bar (Xiaomi, ~48), and the blue bar (Others, ~25).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The y-axis on the left is labeled with numbers starting at 0 at the bottom, increasing by 10 (10, 20, 30, 40, 50, 60, 70, 80, 90) up to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that bar vertical height on the shared y-axis is the authoritative encoding for market_share, and that the tallest bar identifies the leader. It applies only if the y-axis and bar geometry are authoritative despite conflicting percentage inscriptions.\",\n        \"evidence\": \"The visual evidence confirms the bar geometry: Huawei's bar is the tallest. However, the condition that bar height is the *authoritative* source (over the printed labels) is a matter of interpretation, not a visible fact. The dashboard presents both a geometric encoding (height) and a literal encoding (text labels) that contradict each other. Since the source does not explicitly state which encoding takes precedence, the condition remains an assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The x-axis label 'Apple' is centered under the leftmost orange bar, and the text '30%' is printed directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The x-axis label 'Samsung' is centered under the dark-blue bar, and the text '11%' is printed directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The x-axis label 'Xiaomi' is centered under the green bar, and the text '11%' is printed directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The x-axis label 'Huawei' is centered under the red bar, and the text '23%' is printed directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Supported. The x-axis label 'Others' is centered under the rightmost blue bar, and the text '25%' is printed directly above it.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that the percentage inscriptions immediately above each bar are the authoritative market_share values. It applies only if these printed labels, rather than the plotted bar heights, are the authoritative encodings.\",\n        \"evidence\": \"The visual evidence confirms the presence and values of the printed labels (Apple 30%, Samsung 11%, Xiaomi 11%, Huawei 23%, Others 25%). However, similar to r1, the condition that these labels are the *authoritative* source over the bar heights is an interpretation. The dashboard contains a conflict between the two data representations, and no public rule explicitly resolves which is the 'true' market_share value.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4246,
+      "total_tokens": 5145,
+      "completion_tokens": 899,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

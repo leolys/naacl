@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be1dcb5b18aa6ea2",
+    "object": "chat.completion",
+    "created": 1790615950,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays a line graph titled 'Month vs. Number of cases' with a vertical axis labeled 'Count' and horizontal axis labeled with dates from 'Jan 27 to Mar 22, 2020'. No printed policy thresholds, alert cutoffs, or escalation criteria are visible in the chart or task materials.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"Applies only if an unstated escalation policy threshold is required; no such threshold is supplied in the task materials.\",\n      \"evidence\": \"The task materials contain no printed policy thresholds or escalation criteria. The public task instructions and chart reference only require selecting the pathway that best matches the observed trajectory, without invoking any unstated policy requirement.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The blue line and markers generally move lower on the page from left to right.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"Only applies if the printed vertical tick labels are disregarded or treated as nonauthoritative.\",\n      \"evidence\": \"The printed vertical axis labels 'Count' show 0 near the top and 1400 near the bottom. The line's downward movement from left to right corresponds to increasing values (0 to 1400) because the axis is inverted. The condition requires disregarding the printed labels, which is not supported by the task materials; the labels are authoritative and must be respected.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r3\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The chart title is 'Month vs. Number of cases', the vertical axis is labeled 'Count', and the y-axis ticks show 0 near the top, then 200, 400, 600, 800, 1000, 1200, and 1400 at progressively lower positions.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The leftmost blue marker is positioned close to the 0 tick, while the rightmost blue marker is below the 1400 tick.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"The blue line runs from left to right across the dated horizontal labels and its markers generally move lower on the page.\",\n        \"status\": \"supported\"\n      }\n    ,\n    \"4\": {\n      \"evidence\": \"The horizontal labels encode the displayed reporting sequence from left to right (Jan 27 to Mar 22, 2020), and the vertical axis labeled 'Count' uses its printed tick values (0 to 1400, with 0 at top).\",\n      \"status\": \"supported\"\n    }\n  },\n  \"B\": {\n    \"reading_checked\": \"Applies to the plotted blue case-count series and assumes the printed Count ticks, rather than conventional upward chart geometry, define the metric direction.\",\n    \"evidence\": \"The printed Count ticks define the metric direction: 0 is at the top, 1400 at the bottom. The line moves from near 0 (top) to below 1400 (bottom) as time progresses from left to right. This encodes an increase in cases, consistent with the task's instruction to select the pathway that best matches the observed trajectory. The condition is satisfied by the printed axis and the plotted data.\",\n    \"status\": \"supported\"\n  }\n} \n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3344,
+      "total_tokens": 4161,
+      "completion_tokens": 817,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

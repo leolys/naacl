@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4a7b046feaa4063",
+    "object": "chat.completion",
+    "created": 1790612969,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The dark-red May bar is visibly shorter than each of the other five bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The title reads 'Monthly Energy Usage (kWh)' and the vertical axis is labeled 'Energy Usage (kWh)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If critical escalation requires an explicit policy threshold or other stated severity criterion, then a chart-only relative low value does not establish critical status; standard low-output follow-up is the non-critical handling route.\",\n        \"evidence\": \"The task materials provide no explicit policy threshold or default rule for critical escalation. The only visible evidence is the relative position of the May bar.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The dark-red May bar is visibly shorter than each of the other five bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The top of the May bar is below the printed 10,000 tick.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The Jun bar, the next shortest visible bar, has its top between the printed 15,000 and 20,000 ticks.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly energy usage on the shared vertical kWh scale and an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical, then May warrants critical-anomaly escalation.\",\n        \"evidence\": \"The chart's title and axis labels confirm the bars encode energy usage in kWh. The May bar is visibly the shortest, and its top is below the 10,000 tick, while the next shortest bar (Jun) is between 15,000 and 20,000. The task materials do not state whether relative low value alone is sufficient for critical classification, but the reading’s condition is met by the visual evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3908,
+      "total_tokens": 4447,
+      "completion_tokens": 539,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

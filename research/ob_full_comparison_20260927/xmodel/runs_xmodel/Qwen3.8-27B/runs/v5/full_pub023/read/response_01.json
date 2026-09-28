@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8b4e9628100ef4ec",
+    "object": "chat.completion",
+    "created": 1790622256,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"left third of plot\",\n      \"fact\": \"A green bar labeled July reaches the 200 gridline, exactly meeting the dashed orange Average line.\"\n    },\n    {\n      \"location\": \"center of plot\",\n      \"fact\": \"A green bar labeled August reaches the 400 gridline, well above the Average line.\"\n    },\n    {\n      \"location\": \"right third of plot\",\n      \"fact\": \"A green bar labeled September reaches the 300 gridline, above the Average line.\"\n    },\n    {\n      \"location\": \"across plot at y=200\",\n      \"fact\": \"A horizontal dashed orange line spans the chart, labeled Average on the right.\"\n    },\n    {\n      \"location\": \"July bar top\",\n      \"fact\": \"The July bar's top edge is coincident with the Average line; it is not above or below it.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"chart title\",\n      \"fact\": \"Monthly Visitors at Museum C in Town Z\"\n    },\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Number of Visitors, ticks 0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Month, categories July, August, September\"\n    },\n    {\n      \"location\": \"right of plot at y=200\",\n      \"fact\": \"Average (orange dashed reference line)\"\n    },\n    {\n      \"location\": \"July bar\",\n      \"fact\": \"Height aligns with 200\"\n    },\n    {\n      \"location\": \"August bar\",\n      \"fact\": \"Height aligns with 400\"\n    },\n    {\n      \"location\": \"September bar\",\n      \"fact\": \"Height aligns with 300\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: Review the Museum C monthly visitor dashboard, then choose the July route in the monthly visitor operations form.\",\n    \"Evidence source: Museum C monthly visitor dashboard.\",\n    \"Primary field: July visitor operations route.\",\n    \"Options: Route July to low-visitor response; Keep July on average-level visitor monitoring; Route July to high-visitor capacity response.\",\n    \"Review month: July. Visitor record: Monthly visitors.\"\n  ],\n  \"uncertain\": [\n    \"No explicit numeric thresholds are printed for 'low', 'average', or 'high' routing; the only printed reference is the Average line at 200.\",\n    \"July's value equals the Average line (200); whether 'equal to average' maps to 'average-level monitoring' or another route is not defined by printed text.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2428,
+      "total_tokens": 3119,
+      "completion_tokens": 691,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

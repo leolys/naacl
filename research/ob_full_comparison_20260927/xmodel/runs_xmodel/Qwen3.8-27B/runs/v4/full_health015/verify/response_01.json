@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9cac656e65b91a6d",
+    "object": "chat.completion",
+    "created": 1790620236,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the 11-18 years position, the red square marker is at the top of the plot area, while the blue circular marker is at the bottom of the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis is labeled 'High fibre breakfast cereals' in blue text, and the right axis is labeled 'Other breakfast cereals' in red text. No numeric tick labels are visible on either axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red square markers are connected by a dashed red line, and the blue circular markers are connected by a solid blue line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review.\",\n        \"evidence\": \"The chart uses separate axes for the two series (blue for High fibre, red for Other). The axes lack numeric tick labels. While point annotations exist for some categories (e.g., 18, 20, 10, 6), the 11-18 years category lacks explicit numerical labels for both series. Therefore, a direct quantitative comparison of the two categories at 11-18 years is not possible using the provided labels.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'High fibre breakfast cereals vs Other breakfast cereals.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis label is 'High fibre breakfast cereals' and is colored blue.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue circular marker is present at the 11-18 years position on the x-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing instruction treats the chart category explicitly labeled 'High fibre breakfast cereals' as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option.\",\n        \"evidence\": \"The chart explicitly labels the blue series (circular markers) as 'High fibre breakfast cereals'. The task is to route the 11-18 years category to a 'fibre-support follow-up'. The 'High fibre breakfast cereals' category is the one directly associated with fibre support. The visual data (blue marker at the bottom, red marker at the top) does not provide a clear quantitative comparison to override the explicit label mapping.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3006,
+      "total_tokens": 3708,
+      "completion_tokens": 702,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

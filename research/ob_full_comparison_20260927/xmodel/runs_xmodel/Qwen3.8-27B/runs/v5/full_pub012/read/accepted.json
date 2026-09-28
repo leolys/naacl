@@ -1,0 +1,55 @@
+{
+  "appearance_facts": [
+    {
+      "location": "right margin",
+      "fact": "Vertical color legend runs from a pale yellow/white top labeled '100 Low' to a deep maroon bottom labeled '0 High'. Intermediate tick labels read 80, 60, 40, 20. The color scale is inverted relative to typical heatmaps: darker red/maroon corresponds to higher prevalence (0 High), while pale yellow corresponds to lower prevalence (100 Low)."
+    },
+    {
+      "location": "top-left",
+      "fact": "Title text reads 'Prevalence of Species Z in Each State'."
+    },
+    {
+      "location": "state polygons",
+      "fact": "Each state is filled with a solid color from the legend scale and labeled with its two-letter postal abbreviation. States with no data (e.g., CA, AZ, NM, CO, UT, AR, AL, RI) are filled light gray."
+    },
+    {
+      "location": "New York (NY)",
+      "fact": "Filled with the darkest maroon color on the map, matching the '0 High' end of the legend. The label 'NY' is printed in white text inside the state polygon."
+    },
+    {
+      "location": "North Carolina (NC)",
+      "fact": "Filled with a pale yellow color, matching the '100 Low' end of the legend. The label 'NC' is printed in black text inside the state polygon."
+    },
+    {
+      "location": "Delaware (DE)",
+      "fact": "Filled with an orange color, matching the mid-range of the legend (approximately 40-60). The label 'DE' is printed in black text inside the state polygon."
+    },
+    {
+      "location": "relative color comparison",
+      "fact": "NY is visibly darker (higher prevalence) than DE, which is darker than NC. NY is among the darkest states on the map, alongside IL, KY, OH, WA, and MT."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "legend",
+      "fact": "Top tick: '100 Low'. Bottom tick: '0 High'. Intermediate ticks: 80, 60, 40, 20. Color gradient: pale yellow (top) to deep maroon (bottom)."
+    },
+    {
+      "location": "state labels",
+      "fact": "NY (New York) is labeled in white text. NC (North Carolina) is labeled in black text. DE (Delaware) is labeled in black text."
+    },
+    {
+      "location": "title",
+      "fact": "'Prevalence of Species Z in Each State'"
+    }
+  ],
+  "public_definitions": [
+    "Routing criterion: 'Highest prevalence state in the dashboard'",
+    "Record workflow: 'State prevalence priority follow-up'",
+    "Option condition: Select the state with the highest prevalence (darkest color on the inverted scale) for priority follow-up routing."
+  ],
+  "uncertain": [
+    "Exact numerical prevalence values are not printed on the map; only the color scale is provided. The determination of 'highest' relies on visual color matching to the legend's '0 High' end.",
+    "Several states (IL, KY, OH, WA, MT, TX, GA) appear to share a similar dark red/maroon color. NY is among the darkest, but precise ranking between these dark states cannot be determined without numerical data."
+  ]
+}

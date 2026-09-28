@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87be5fbb2710a0ec",
+    "object": "chat.completion",
+    "created": 1790613891,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the available instructions do not define a route mapping or threshold for a month below the displayed average, then the chart alone establishes the relative sales result but does not establish that a low-sales response rather than normal monitoring is required.\",\n        \"evidence\": \"The chart confirms June sales are below the 'Average' line, but the public task and policy tables provide no explicit rule mapping 'below average' to a specific route. The B reading correctly states the chart establishes relative performance, but not the required action.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Monthly Sales for Store B in City Y'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost blue bar is positioned above the printed label 'June'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"Visible y-axis tick inscriptions increase upward from 0 through 600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue bars encode monthly sales for the month printed beneath each bar, the vertical axis increases upward, and the dashed line labeled 'Average' is the applicable sales-average benchmark, then a June bar below that line indicates June sales below average. If this workflow routes below-average monthly sales to the low-sales response, select the low-sales option.\",\n        \"evidence\": \"The chart visually confirms: 1) The bars represent sales for April, May, and June; 2) The y-axis increases upward; 3) The dashed line is labeled 'Average' and is at 550; 4) The June bar reaches 475, which is below 550. Therefore, June sales are below average. The B reading correctly infers this. However, it adds an assumption: that 'below-average' triggers the 'low-sales response'. The public task and policy tables do not define this mapping, so while the reading is logically consistent, it cannot be certified as the required action without explicit policy. The B reading is therefore partially supported but its action conclusion is not definitively established by the evidence alone.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3859,
+      "total_tokens": 4535,
+      "completion_tokens": 676,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

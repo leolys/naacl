@@ -1,0 +1,33 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The title text is clearly visible in the top-left corner of the image.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The legend is visible in the lower right. The color bar transitions from pale yellow at the top to dark burgundy at the bottom. The word 'High' is printed next to the top (100) and 'Low' next to the bottom (0).",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The state labeled 'WV' is filled with a pale yellow color, which corresponds to the top of the legend scale.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The state labeled 'UT' is filled with a dark burgundy color, which corresponds to the bottom of the legend scale.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The state in the position of Alabama (labeled 'AL' in the image) is filled with a pale yellow color. The assertion that it is gray and lacks an inscription is incorrect; the gray color is used for other states like California and Arizona, and the AL label is clearly visible.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "For this choropleth, a state's fill color encodes incidence according to the vertical legend: the pale-yellow end adjacent to the printed 100 and “High” is higher than the dark-burgundy end adjacent to the printed 0 and “Low.” If the gray Alabama-area polygon denotes unmapped/no incidence value rather than a value on that scale, it is not eligible to exceed a mapped state; among the offered eligible state records, route the highest-incidence one.",
+        "evidence": "The necessary condition that the legend governs the fills is supported by the visual evidence (O2). However, the condition regarding the 'gray Alabama-area polygon' is refuted by the visual evidence (O5). Alabama is not gray; it is pale yellow and clearly labeled. Because the premise of the condition (that AL is an unmapped/gray polygon) is false, the logic of the reading (which excludes AL from consideration) is not applicable to the actual chart. The reading relies on a false observation to exclude a state that is actually mapped.",
+        "status": "refuted"
+      }
+    }
+  }
+}

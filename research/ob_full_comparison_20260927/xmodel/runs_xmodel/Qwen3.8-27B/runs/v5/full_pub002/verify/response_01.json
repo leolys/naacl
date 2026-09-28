@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8f6149128f88f67e",
+    "object": "chat.completion",
+    "created": 1790622020,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map region labeled 'TX' is filled with a pale yellow color, which matches the top of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The map region labeled 'WA' is filled with a dark burgundy/maroon color, which matches the bottom of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A vertical color bar is visible at the lower right. The top is labeled 'High' and '100' with a pale yellow fill. The bottom is labeled 'Low' and '0' with a dark burgundy fill.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The region in Colorado's position is filled gray. The state abbreviation 'CO' is clearly visible on the map, contradicting the assertion that it has 'no visible state abbreviation label'.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map's vertical legend encodes incidence from burgundy at the printed low end (0) to pale yellow at the printed high end (100), then a state filled pale yellow has higher displayed incidence than a state filled burgundy. For the stated workflow, select the option for the highest-incidence jurisdiction only where all candidate jurisdictions are comparably encoded; an unlegendized gray fill cannot be ranked without an additional missing-data rule.\",\n        \"evidence\": \"The legend clearly encodes 0 as dark burgundy and 100 as pale yellow. The visual evidence shows TX as pale yellow and WA as dark burgundy. Therefore, TX has a higher displayed incidence than WA. The reading's condition that 'an unlegendized gray fill cannot be ranked' is supported by the fact that the legend contains no gray swatch or label for gray, making it impossible to rank CO against the colored states using the legend alone.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map region labeled 'TX' is filled with a pale yellow color.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The map region labeled 'WA' is filled with a dark burgundy/maroon color.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Colorado's region is filled gray. The visible incidence color bar contains a gradient from pale yellow to dark burgundy and does not include a gray swatch or label.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If gray-filled jurisdictions are excluded from the displayed-incidence comparison because gray denotes unavailable or non-displayed data, then the highest displayed incidence among the remaining candidate states should be routed.\",\n        \"evidence\": \"The chart provides no printed legend entry for gray, supporting the condition that this is an assumption. However, the visual evidence clearly shows TX (pale yellow/High) has a higher displayed incidence than WA (dark burgundy/Low). Therefore, if gray is excluded, TX is the highest among the remaining candidates.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3870,
+      "total_tokens": 4644,
+      "completion_tokens": 774,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

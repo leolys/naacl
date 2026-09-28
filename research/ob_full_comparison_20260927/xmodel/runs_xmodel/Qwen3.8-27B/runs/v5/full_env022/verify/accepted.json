@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The image shows a bold inscription '41.2%' directly above the yellow bar labeled 'Utility solar'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The image shows a bold inscription '29.8%' directly above the light-blue bar labeled 'Offshore wind'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If each bold percentage printed directly above a source bar is the authoritative reported clean-grid share, the source with the greatest printed percentage is the largest contribution source; the task routes that source to priority contribution review. (Applies only if the percentage inscriptions are authoritative despite any inconsistency with bar heights.)",
+        "evidence": "The condition requires that the printed percentages be the authoritative data. However, the chart's y-axis is explicitly labeled 'Reported clean-grid share (%)'. The bar for Utility solar (labeled 41.2%) reaches the y-axis tick for 40, while the bar for Offshore wind (labeled 29.8%) reaches the y-axis tick for approximately 68. The printed percentages are demonstrably inconsistent with the chart's own coordinate system and axis labels. Therefore, the condition that the printed percentages are authoritative is refuted by the visible evidence of the axis scale.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The light-blue bar for 'Offshore wind' is visibly the tallest bar in the chart, reaching a height between the 65 and 70 y-axis ticks.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The yellow bar for 'Utility solar' ends exactly at the y-axis level marked 40.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The bold inscription '29.8%' is printed above the Offshore wind bar.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The bold inscription '41.2%' is printed above the Utility solar bar.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the vertical bar heights are the dashboard's encoding of reported clean-grid contribution on the shared y-axis, the tallest bar represents the largest source; the task routes that largest source to priority contribution review. (Applies only if bar geometry, rather than the printed percentages, is authoritative for contribution.)",
+        "evidence": "The condition requires that bar geometry be the authoritative encoding. The y-axis is labeled 'Reported clean-grid share (%)', which aligns with the task's 'contribution' metric. The bar heights provide a consistent, monotonic scale (0-70) where the Offshore wind bar is the highest (~68), followed by Hydro storage (~52), Utility solar (~40), Geothermal heat (~35), and Bioenergy (~22). This geometric ordering is internally consistent with the axis. In contrast, the printed percentages are inconsistent with the axis (e.g., 29.8% printed on a bar reaching 68). Thus, the bar geometry is the valid encoding of the axis data.",
+        "status": "supported"
+      }
+    }
+  }
+}

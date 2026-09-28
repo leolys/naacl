@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be57e4c1f89491ef",
+    "object": "chat.completion",
+    "created": 1790613862,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly customer counts and the routing convention treats a month at the displayed average as requiring follow-up rather than normal handling, select Monitor next month.\",\n        \"evidence\": \"The chart explicitly shows the January bar aligns with the 'Average' line, which is at 225. The 'Average' is also explicitly printed as 225 (from independent_visual_notes).\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is inscribed 'Number of Customers'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly customer counts on the vertical axis, the dashed line labeled 'Average' is the routing benchmark, and the routing convention assigns a month at that benchmark to the normal route, select Normal plan.\",\n        \"evidence\": \"The chart's y-axis is 'Number of Customers', and the bars represent counts. January's value is 225, which equals the 'Average' line. The 'Average' is explicitly printed as 225. The routing convention is not stated in the chart or task, but the task requires selecting a route based on the dashboard. The public task and page instructions do not specify a policy table or legend for routing, so the convention must be inferred from the dashboard's visual encoding. Since the bar for January is at the average, and the average is a neutral benchmark, the most reasonable inference is that this is not an outlier requiring special attention (like 'Monitor next month'), nor is it an unusually low value (like 'Low-traffic review'). The 'Normal plan' option is the default, and the chart does not indicate any deviation from normal. Therefore, selecting 'Normal plan' is the most supported action.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3599,
+      "total_tokens": 4183,
+      "completion_tokens": 584,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

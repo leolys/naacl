@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90bbfc965eeb8e7e",
+    "object": "chat.completion",
+    "created": 1790616282,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark at the printed x-axis label '2013' is lower on the page than the red square mark at '2013'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"‘United States’ is printed vertically in blue at the left side of the plot, and ‘Canada’ is printed vertically in red at the right side.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires comparable y-axis scales, which are not visibly established.\",\n        \"evidence\": \"The chart displays separate y-axes for each country with no visible tick labels or scale calibration. The vertical alignment of the 2013 marks cannot be used to infer relative volume without assuming comparable scales, which is not established. The condition remains open.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark at the printed x-axis label '2013' is lower on the page than the red square mark at '2013'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"‘United States’ is printed vertically in blue at the left side of the plot, and ‘Canada’ is printed vertically in red at the right side.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires the absent calibration to establish United States as larger; this condition is not verified by the visible chart.\",\n        \"evidence\": \"The visible chart does not provide any calibration or scale information to confirm that the United States 2013 mark corresponds to a larger volume than Canada’s. The condition remains open.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue circular solid-line marks are associated with the blue left-side label 'United States', and red square dashed-line marks are associated with the red right-side label 'Canada'. The x-axis year labels locate the 2013 marks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies to the displayed chart; no hidden or external axis-scale information is assumed.\",\n        \"evidence\": \"The chart uses separate y-axes for each country with no visible numeric labels or scale calibration. Vertical position alone cannot establish a cross-country volume ordering. The condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3005,
+      "total_tokens": 3716,
+      "completion_tokens": 711,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

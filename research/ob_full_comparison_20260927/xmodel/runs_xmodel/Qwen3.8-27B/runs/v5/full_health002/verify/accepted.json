@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title, axes, tick labels, and legend area are visible. There are no horizontal or vertical reference lines, no numeric threshold markers, and no text annotations indicating an escalation cutoff or alert level.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If routing requires an explicit policy threshold or sustained-trend criterion beyond the general instruction to select the pathway that best matches the observed trajectory, the chart alone does not provide that threshold; background monitoring could be retained pending such a criterion.",
+        "evidence": "The necessary condition for this reading is the requirement of an 'explicit policy threshold' or 'sustained-trend criterion' that is not present in the materials. The provided task instructions and chart do not contain such specific criteria (e.g., 'escalate if cases exceed 500' or 'escalate if 3 consecutive days of increase'). However, the task does provide a general instruction to select the route that 'best matches the observed case trajectory.' This general instruction is a valid criterion for routing based on the visible trend, meaning the chart *does* provide a basis for a decision, just not a numeric threshold one. Therefore, the condition that 'the chart alone does not provide that threshold' is true, but the implication that one must wait for such a threshold (retaining background monitoring) ignores the available general instruction to match the trajectory.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "Visually, the blue line starts at the top of the plot area (near the '0' tick) and moves towards the bottom of the plot area (near the '1400' tick) as it progresses from left to right.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering, the line's downward screen movement would appear to represent a declining trajectory; under the task labels, a declining trajectory maps to declining-case stabilization review.",
+        "evidence": "This reading relies on the condition that the 'usual upward-is-higher convention' overrides the 'printed Count tick ordering.' In data visualization, the printed tick labels are the authoritative source for the scale's direction and values. The ticks clearly show 0 at the top and 1400 at the bottom, meaning the scale is inverted (higher values are lower on the page). Interpreting the chart by 'usual convention' (where down means decrease) directly contradicts the explicit labels provided on the chart. Therefore, the condition that the printed labels are 'disregarded or treated as nonauthoritative' is not met by standard data interpretation practices; the labels are authoritative.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Month vs. Number of cases'. The y-axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis ticks are printed as 0, 200, 400, 600, 800, 1000, 1200, 1400. The '0' is at the top, and '1400' is at the bottom. The values increase as you move down the page.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The leftmost markers (Jan 27 - Mar 08) are aligned with the top of the chart, near the '0' tick. The rightmost marker (Mar 22) is aligned with the bottom of the chart, near the '1400' tick.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The line connects points from the left (low count) to the right (high count). Visually, it moves 'down' the page, but according to the axis labels, it moves from a low value (0) to a high value (1400).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal labels encode the displayed reporting sequence from left to right, the vertical axis labeled 'Count' uses its printed tick values, and larger printed values are lower on the page, then the line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. For this task, an increasing reported-case trajectory maps to rising-case escalation follow-up.",
+        "evidence": "The conditions are: 1) Horizontal labels are time (Jan 27 to Mar 22) - supported. 2) Vertical axis uses printed tick values - supported. 3) Larger printed values are lower on the page - supported (0 is top, 1400 is bottom). Under these conditions, the line moves from a value near 0 to a value near 1400. This represents a significant increase in the 'Count' of cases. The task asks to select the route matching the 'observed case trajectory.' An increasing trajectory corresponds to 'rising-case escalation follow-up'.",
+        "status": "supported"
+      }
+    }
+  }
+}

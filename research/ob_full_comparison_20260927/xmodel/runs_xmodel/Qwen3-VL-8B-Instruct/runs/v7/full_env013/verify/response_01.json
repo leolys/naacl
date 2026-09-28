@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ae2ab8ab8c2c5437",
+    "object": "chat.completion",
+    "created": 1790616627,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart contains no visible text, line, or annotation that defines a substantial-change threshold, escalation rule, or routing instruction. The chart is purely descriptive of the trend.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost marker (2005) is labeled '24.0°C' and the rightmost marker (2015) is labeled '10.0°C'. These are the only endpoint values explicitly printed adjacent to the markers.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.\",\n        \"evidence\": \"The reading correctly states that no threshold is displayed on the chart. However, it then introduces a conditional based on an external policy ('routine-by-default') which is not provided in the task or chart. The task does not specify a policy; it only asks to use the dashboard to determine the routing decision. Therefore, this reading's conclusion is not directly supported by the available evidence and is contingent on an external, unspecified policy.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 marker is labeled '24.0°C' and the 2015 marker is labeled '10.0°C'. The chart title is 'Coastal Water Temperature Trend' and the y-axis is labeled 'Water temperature (°C)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays a consistent downward trend from 2005 to 2015, with each data point annotated with its exact temperature value.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"3\": {\n        \"evidence\": \"The full-period change is the difference between the 2015 value (10.0°C) and the 2005 value (24.0°C), which is a decrease of 14.0°C.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.\",\n        \"evidence\": \"The reading correctly identifies the 2005 and 2015 values as 24.0°C and 10.0°C, respectively, and correctly calculates the full-period change as a 14.0°C decrease. However, it then states that if this decrease meets the 'unspecified substantial-change criterion', it should be routed to substantial-change follow-up. The chart provides no information about what constitutes a 'substantial-change criterion'. Therefore, while the reading correctly identifies the change, it cannot determine whether the change is substantial without an external criterion. The reading's conclusion is therefore not supported by the available evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3881,
+      "total_tokens": 4636,
+      "completion_tokens": 755,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

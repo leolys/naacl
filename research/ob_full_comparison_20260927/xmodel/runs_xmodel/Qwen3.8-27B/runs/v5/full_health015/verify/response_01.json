@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-85c1720247d48690",
+    "object": "chat.completion",
+    "created": 1790621933,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the 11-18 years position, the red square mark is located near the top of the plot area, while the blue circular mark is located near the bottom. The red mark is physically higher on the page than the blue mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis is labeled in blue text ('High fibre breakfast cereals') and the right vertical axis is labeled in red text ('Other breakfast cereals'). Neither axis displays any numeric tick marks or values.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue circular marks are connected by a solid blue line. The red square marks are connected by a dashed red line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review. (Conditions: Applies when no supplied policy defines how plotted values or category labels map to a follow-up route.)\",\n        \"evidence\": \"The necessary condition that 'no supplied policy defines how plotted values or category labels map to a follow-up route' is met; the `policy_tables` field is empty and the instructions only ask to 'determine which cereal category should be escalated'. However, the premise that 'screen-space heights cannot by themselves establish a comparable cross-category value ordering' is refuted by the visible data labels. The chart explicitly labels the blue series value as '18' at the 11-18 years mark and the red series value as '10' at the 4-10 years mark. These labels provide a common numeric scale that allows for a direct comparison of values (18 vs. 10), independent of the separate axis colors or lack of tick marks.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart reads 'High fibre breakfast cereals vs Other breakfast cereals'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text running vertically along the left edge of the chart, in blue, reads 'High fibre breakfast cereals'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue circular data point is plotted above the '11-18 years' label on the x-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing instruction treats the chart category explicitly labeled “High fibre breakfast cereals” as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option. (Conditions: Requires an unstated program rule that the high-fibre category itself, rather than a plotted cross-series comparison, determines fibre-support routing.)\",\n        \"evidence\": \"The necessary condition that 'an unstated program rule... determines fibre-support routing' is not met. The visible data labels provide a clear cross-series comparison: the 'Other breakfast cereals' category (blue) has a value of 18 at the 11-18 years mark, while the 'High fibre breakfast cereals' category (red) has a lower value (visually below the '10' mark at 4-10 years, and the '18' mark is clearly higher than the red line at 11-18 years). The task asks to use the 'displayed comparison' to determine which category to escalate. The comparison shows the 'Other' category has the higher value (18) for this age group, which contradicts the premise that the 'High fibre' category is the one to be escalated based on the data.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2723,
+      "total_tokens": 3652,
+      "completion_tokens": 929,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

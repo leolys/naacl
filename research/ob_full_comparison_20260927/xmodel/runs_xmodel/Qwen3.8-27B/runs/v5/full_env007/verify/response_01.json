@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b9d6f76bd367c22",
+    "object": "chat.completion",
+    "created": 1790621379,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above the x-axis label 'May' is the shortest of the six bars. Its top is below the 10,000 gridline, while the next shortest bar (Jun) is above the 15,000 gridline and the tallest (Jan) reaches 40,000. The May bar is visibly shorter than each of the other five.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title at the top reads 'Monthly Energy Usage (kWh)'. The vertical axis label reads 'Energy Usage (kWh)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If critical escalation requires an explicit policy threshold or other stated severity criterion, then a chart-only relative low value does not establish critical status; standard low-output follow-up is the non-critical handling route.\",\n        \"evidence\": \"The necessary condition for this reading is the existence of an explicit policy threshold or stated severity criterion in the task materials. The provided materials contain no policy table, no numeric threshold, and no definition of 'critical anomaly' versus 'standard low-output'. The 'Routing criterion' field only restates the decision to be made. Because the condition (existence of an explicit threshold) is not met, the premise of this reading is not supported by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar above the x-axis label 'May' is the shortest of the six bars. Its top is below the 10,000 gridline, while the next shortest bar (Jun) is above the 15,000 gridline and the tallest (Jan) reaches 40,000. The May bar is visibly shorter than each of the other five.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the May bar is clearly below the printed 10,000 gridline on the y-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The bar above the x-axis label 'Jun' has its top between the printed 15,000 and 20,000 gridlines (visually around 17,500).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly energy usage on the shared vertical kWh scale and an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical, then May warrants critical-anomaly escalation.\",\n        \"evidence\": \"The necessary conditions are: (1) bars encode monthly energy usage on a shared scale, (2) May is the isolated lowest value, and (3) this relative low status is sufficient for critical classification. Condition (1) is supported by the axis labels and title. Condition (2) is supported by the visual evidence (May is the lowest bar, far below the next lowest). Condition (3) is the operative assumption: in the absence of a defined threshold, an extreme outlier low value (May is less than half the next lowest month and a fraction of the highest) is the standard basis for identifying a 'critical anomaly' in a monitoring dashboard. The visual disparity is extreme, supporting the classification of May as a critical anomaly rather than a standard low-output case.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3860,
+      "total_tokens": 4690,
+      "completion_tokens": 830,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

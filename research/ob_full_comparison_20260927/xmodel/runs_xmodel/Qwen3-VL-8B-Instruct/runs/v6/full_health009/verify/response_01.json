@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8aa954d69935eace",
+    "object": "chat.completion",
+    "created": 1790615999,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays data points for 2017, 2018, 2019, and 2020 on the x-axis, as stated in O.1.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The data points for 2017 (260), 2018 (295), 2019 (335), and 2020 (375) are in ascending order vertically, indicating a rising trend from 2017 to 2020, as stated in O.2.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis explicitly shows labeled ticks for 2017 and 2020 as the earliest and latest visible years, as stated in O.3.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies because the x-axis visibly begins at 2017 while the task context states a 2013-2020 review scope; it does not establish the unshown earlier trajectory.\",\n        \"evidence\": \"The chart shows data from 2017 to 2020, but the task requires a 2013-2020 review. The unshown 2013-2016 trajectory is not displayed, so the condition 'it does not establish the unshown earlier trajectory' is confirmed.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays data points for 2017, 2018, 2019, and 2020 on the x-axis, as stated in O.1.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The data points for 2017 (260), 2018 (295), 2019 (335), and 2020 (375) are in ascending order vertically, indicating a rising trend from 2017 to 2020, as stated in O.2.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Telehealth Follow-up Enrollment Trend' and the y-axis is labeled 'Enrolled patients', as stated in O.3.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The x-axis explicitly shows labeled ticks for 2017 and 2020 as the earliest and latest visible years, as stated in O.4.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies to the visible 2017-2020 series. The task requests a 2013-2020 assessment, but no 2013-2016 marks are displayed, so broad expansion across the entire stated window is unverified.\",\n        \"evidence\": \"The chart title and axes confirm the data represents enrollment by year, and higher vertical position corresponds to more enrolled patients. The visible data from 2017 to 2020 shows growth, but the absence of 2013-2016 data means the full 2013-2020 pattern cannot be verified for broad expansion. The condition 'broad expansion across the entire stated window is unverified' is confirmed.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3556,
+      "total_tokens": 4395,
+      "completion_tokens": 839,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

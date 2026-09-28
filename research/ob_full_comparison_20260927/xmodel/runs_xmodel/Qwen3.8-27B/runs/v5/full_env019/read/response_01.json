@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-921b21e4385ee4a1",
+    "object": "chat.completion",
+    "created": 1790621464,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"May bar, rightmost position on the Month axis\",\n      \"fact\": \"The May bar is a dark red rectangle whose top edge sits just above the 10,000 gridline, far below every other bar; it is the shortest bar on the chart.\"\n    },\n    {\n      \"location\": \"Apr, Jan, Jun, Feb, Mar bars (left to right of May)\",\n      \"fact\": \"The other five bars reach roughly 29,500 (Apr), 40,000 (Jan), 17,500 (Jun), 20,000 (Feb), and 27,000 (Mar) MWh, all visibly much taller than May.\"\n    },\n    {\n      \"location\": \"Relative to labeled reference points on its own series\",\n      \"fact\": \"May's bar top lies below the 10,000 tick's next gridline and well below the 15,000 and 20,000 levels, placing it at the bottom of the series.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Chart title, top-left\",\n      \"fact\": \"“Monthly Solar Generation Output”\"\n    },\n    {\n      \"location\": \"Y-axis label\",\n      \"fact\": \"“Solar output (MWh)”\"\n    },\n    {\n      \"location\": \"Y-axis tick labels (bottom to top)\",\n      \"fact\": \"10,000; 15,000; 20,000; 25,000; 30,000; 35,000; 40,000\"\n    },\n    {\n      \"location\": \"X-axis label\",\n      \"fact\": \"“Month”\"\n    },\n    {\n      \"location\": \"X-axis category labels (left to right)\",\n      \"fact\": \"Apr; Jan; Jun; Feb; Mar; May\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task scope: “Review the monthly solar generation dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly for this reporting cycle.”\",\n    \"Option 1: “Route May to standard low-output follow-up”\",\n    \"Option 2: “Escalate May to critical low-output anomaly review”\",\n    \"Option 3: “Send May to background monthly record filing”\"\n  ],\n  \"uncertain\": [\n    \"No explicit numeric threshold or policy table on the page defines the boundary between “standard low-output” and “critical low-output anomaly”; the routing decision must rely on the visual magnitude of May's bar relative to the other months.\",\n    \"The exact MWh value for May is not printed; it is read visually as slightly above 10,000 MWh.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2538,
+      "total_tokens": 3214,
+      "completion_tokens": 676,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

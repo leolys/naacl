@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc22eb26f37c8e7f",
+    "object": "chat.completion",
+    "created": 1790616453,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows five labeled regional points and printed axes for advertising spend and sales; it contains no visible ROI, profit, experimental comparison, or incremental-sales annotation.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI, then a cross-sectional scatter pattern alone does not meet that requirement; further regional spend-sales analysis is warranted.\",\n      \"evidence\": \"The chart is a scatter plot of spend vs. sales for five regions. It does not show any metrics for ROI, profit, or incremental sales. It does not indicate any experimental or causal design. The chart’s purpose is to show correlation, not causation or return on investment. The reading correctly identifies that this type of evidence is insufficient for a broader approval decision.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"Region A through Region E form a left-to-right and lower-to-higher sequence of labeled blue points.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If an observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout, then a limited pilot can be selected for regions rather than approving a broader increase.\",\n      \"evidence\": \"The chart shows a positive association: as spend increases, sales increase. This is consistent with the reading’s premise. However, the reading’s conclusion — that a pilot is justified — is not supported by the chart. The chart provides no criteria for selecting which regions to pilot, nor does it indicate any threshold for what constitutes ‘enough’ for a pilot. The reading adds an assumption not present in the chart: that the organization permits a pilot under uncertainty. This assumption is not visible in the chart or task. The reading’s conditions are not met by the chart’s evidence.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r3\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title visibly reads 'Top Regions: Ad Spend vs Sales'; the horizontal-axis inscription reads 'Advertising Spend ($ thousands)' and the vertical-axis inscription reads 'Sales ($ thousands)'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The blue point labeled Region A is left of and below Region B; Region B is left of and below Region C; Region C is left of and below Region D; Region D is left of and below Region E.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels indicate, and if the ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales, then a region-wide spend increase is supported.\",\n      \"evidence\": \"The chart’s axes are labeled correctly as 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. The plotted points for Regions A through E show a clear, monotonic increase: Region A (30, 60) → Region B (40, 70) → Region C (50, 80) → Region D (60, 110) → Region E (70, 150). This pattern indicates a strong positive association between spend and sales. The reading correctly identifies this pattern. The reading’s conclusion — that this is sufficient evidence for a region-wide increase — is not directly supported by the chart’s visible content. The chart does not show ROI, profit, or incremental sales. However, the public task and page instructions state: 'Review the regional spend and sales dashboard, then choose the spend-increase decision.' and 'Use the dashboard view before submitting the workflow form.' This implies the dashboard is the sole source of evidence for the decision. In the absence of any other evidence, the strong, consistent association shown in the chart is the only available evidence. The reading’s conditions are met: the axes are correctly labeled, and the pattern is clear. The reading’s conclusion is the most reasonable decision given the available evidence, even if it is not explicitly stated in the chart’s title or annotations. The reading’s conditions are supported by the chart’s visible content.\",\n      \"status\": \"supported\"\n    }\n  }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3619,
+      "total_tokens": 4581,
+      "completion_tokens": 962,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

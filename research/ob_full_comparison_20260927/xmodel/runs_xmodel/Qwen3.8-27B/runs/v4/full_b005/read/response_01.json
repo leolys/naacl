@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be920b1c37280f05",
+    "object": "chat.completion",
+    "created": 1790618809,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"Chart title in the upper-left, roughly (18, 40) to (940, 80).\",\n      \"fact\": \"The chart is titled 'Browser Usage Share by Product'.\"\n    },\n    {\n      \"location\": \"Left vertical axis from approximately (250, 240) to (250, 1600).\",\n      \"fact\": \"The y-axis is a numeric scale running from 0 at the bottom to 100 at the top, with labeled ticks every 10 units.\"\n    },\n    {\n      \"location\": \"Bottom horizontal axis near y=1600, spanning x≈250 to x≈2100.\",\n      \"fact\": \"The x-axis lists five product categories in order: Chrome, Safari, Edge, Firefox, and Others.\"\n    },\n    {\n      \"location\": \"First bar, centered near x=480, from y≈1600 up to y≈700.\",\n      \"fact\": \"A purple bar for Chrome rises to a height just above the 60 gridline, with a data label '73%' above it.\"\n    },\n    {\n      \"location\": \"Second bar, centered near x=850, from y≈1600 up to y≈630.\",\n      \"fact\": \"A red bar for Safari is the tallest, reaching just above the 70 gridline, with a data label '12%' above it.\"\n    },\n    {\n      \"location\": \"Third bar, centered near x=1210, from y≈1600 up to y≈1410.\",\n      \"fact\": \"A green bar for Edge reaches just above the 10 gridline, with a data label '2%' above it.\"\n    },\n    {\n      \"location\": \"Fourth bar, centered near x=1570, from y≈1600 up to y≈1530.\",\n      \"fact\": \"A blue bar for Firefox is short, below the 10 gridline, with a data label '6%' above it.\"\n    },\n    {\n      \"location\": \"Fifth bar, centered near x=1930, from y≈1600 up to y≈1520.\",\n      \"fact\": \"An orange bar for Others is short, below the 10 gridline, with a data label '7%' above it.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Title, top-left.\",\n      \"fact\": \"Title text: 'Browser Usage Share by Product'.\"\n    },\n    {\n      \"location\": \"Y-axis, left side.\",\n      \"fact\": \"Y-axis tick labels from bottom to top: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. No axis unit label is printed.\"\n    },\n    {\n      \"location\": \"X-axis, bottom.\",\n      \"fact\": \"X-axis category labels left to right: 'Chrome', 'Safari', 'Edge', 'Firefox', 'Others'.\"\n    },\n    {\n      \"location\": \"Above the purple Chrome bar.\",\n      \"fact\": \"Data label '73%'.\"\n    },\n    {\n      \"location\": \"Above the red Safari bar.\",\n      \"fact\": \"Data label '12%'.\"\n    },\n    {\n      \"location\": \"Above the green Edge bar.\",\n      \"fact\": \"Data label '2%'.\"\n    },\n    {\n      \"location\": \"Above the blue Firefox bar.\",\n      \"fact\": \"Data label '6%'.\"\n    },\n    {\n      \"location\": \"Above the orange Others bar.\",\n      \"fact\": \"Data label '7%'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task goal: 'Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.'\",\n    \"Primary field label: 'Primary Compatibility Target'.\",\n    \"Option labels: 'Set Chrome as the primary compatibility target', 'Set Safari as the primary compatibility target', 'Set Firefox as the primary compatibility target'.\",\n    \"Chart reference: 'Use the browser market share dashboard to identify the product for primary compatibility targeting.'\",\n    \"Page instruction: 'Use the dashboard view before submitting the workflow form.'\"\n  ],\n  \"uncertain\": [\n    \"The y-axis has no printed unit label; the bars are interpreted as percentage share because each bar carries a '%' data label.\",\n    \"The printed data labels do not match the bar heights (e.g., Chrome's '73%' label sits on a bar reaching ~66, Safari's '12%' label sits on the tallest bar reaching ~71), so it is unclear whether the labels or the bar geometry represent the intended share values.\",\n    \"The sum of the printed labels (73+12+2+6+7) exceeds 100, so the labels are not a consistent single-scale share distribution.\",\n    \"No legend is present; series identity is taken solely from the x-axis category labels.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2667,
+      "total_tokens": 3865,
+      "completion_tokens": 1198,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

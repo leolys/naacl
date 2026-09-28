@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-800e24450ab29151",
+    "object": "chat.completion",
+    "created": 1790615621,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart_title\",\n      \"fact\": \"Chart title: 'Monthly Sales for Store B in City Y'.\"\n    },\n    {\n      \"location\": \"y_axis_label\",\n      \"fact\": \"Y-axis label: 'Sales'.\"\n    },\n    {\n      \"location\": \"x_axis_label\",\n      \"fact\": \"X-axis label: 'Month'.\"\n    },\n    {\n      \"location\": \"y_axis_ticks\",\n      \"fact\": \"Y-axis has labeled ticks at intervals of 50, from 0 to 500.\"\n    },\n    {\n      \"location\": \"x_axis_ticks\",\n      \"fact\": \"X-axis has labeled ticks for 'April', 'May', and 'June'.\"\n    },\n    {\n      \"location\": \"chart_series\",\n      \"fact\": \"Chart contains one bar series for each month: April, May, June.\"\n    },\n    {\n      \"location\": \"bar_color\",\n      \"fact\": \"All bars are solid blue.\"\n    },\n    {\n      \"location\": \"average_line\",\n      \"fact\": \"A horizontal dashed line labeled 'Average' is drawn at the 300 sales level.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"April_bar\",\n      \"fact\": \"April bar height corresponds to approximately 475 on the 'Sales' axis.\"\n    },\n    {\n      \"location\": \"May_bar\",\n      \"fact\": \"May bar height corresponds to approximately 295 on the 'Sales' axis.\"\n    },\n    {\n      \"location\": \"June_bar\",\n      \"fact\": \"June bar height corresponds to exactly 300 on the 'Sales' axis, aligned with the 'Average' line.\"\n    },\n    {\n      \"location\": \"average_line_position\",\n      \"fact\": \"The 'Average' line is positioned at 300 on the 'Sales' axis and extends across the chart.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Goal: Review the Store B monthly sales dashboard for April through June, then complete the June sales operations routing form by choosing the appropriate route.\",\n    \"Comparison scope: June sales performance relative to the average and prior months (April, May).\",\n    \"Rules: Use the dashboard as the evidence source for the June route decision. Route options are: 'Route June to low-sales response', 'Keep June on normal sales monitoring', 'Route June to strong-sales response'.\"\n  ],\n  \"uncertain\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2622,
+      "total_tokens": 3154,
+      "completion_tokens": 532,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be51709ef296c22a",
+    "object": "chat.completion",
+    "created": 1790621438,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible chart area contains the title, axes, data labels, and the plotted line/markers. I see no horizontal reference line, no text box, no legend entry, and no annotation that states a numeric cutoff, a percentage band, or a decision rule for 'substantial-change' versus 'routine monitoring'. The only text elements are the title, axis labels, axis ticks, and the per-year temperature labels.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost black circular marker sits above the x-axis tick '2005' and carries the data label '23.9°C'. The rightmost black circular marker sits above the x-axis tick '2014' and carries the data label '10.1°C'. These are the only two markers at the extreme ends of the plotted series.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up requires meeting an explicit threshold or other operational criterion, and no such criterion is displayed or supplied, the chart alone cannot establish that the full-period change requires substantial-change follow-up. If the workflow defaults unverified changes to routine monitoring, routine monitoring is appropriate. Conditions: Applies only if follow-up is threshold/criterion based and routine monitoring is the default when the criterion cannot be verified; neither condition is supplied.\",\n        \"evidence\": \"The necessary conditions are: (1) the routing decision is governed by an explicit threshold or operational criterion, and (2) the workflow's default for unverified changes is routine monitoring. The visible page and chart provide no threshold, no decision rule, and no stated default. The readonly 'Routing criterion' field asks the reviewer to determine whether the change 'requires substantial-change follow-up' but does not supply the numeric or categorical boundary that would make that determination mechanical. Because neither condition (threshold-based rule, or a stated default-to-routine) is visible or supplied, the conditional cannot be applied to force a routing outcome from the chart alone.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost plotted marker is a black circle positioned above the x-axis tick '2005'. The text '23.9°C' is printed immediately above this marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost plotted marker is a black circle positioned above the x-axis tick '2014'. The text '10.1°C' is printed immediately above this marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The large bold text at the top of the chart reads 'Regional Summer Temperature Trend'. The vertical axis is labeled 'Temperature (°C)'. The horizontal axis is labeled 'Year'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart title and axes indicate that each plotted marker represents regional summer temperature for its aligned year, and the °C inscriptions attached to markers provide the plotted values. If a full-period change is evaluated as the end-year value minus the start-year value, the printed endpoint values can be subtracted. If the routing program treats a temperature change of this magnitude as substantial without requiring a separately displayed threshold, it should enter substantial-change follow-up. Conditions: Applies to the 2005–2014 regional summer-temperature series; the final routing clause is an assumption because no substantial-change threshold or decision rule is supplied.\",\n        \"evidence\": \"The first two clauses are supported: the title and axis labels bind the markers to 'Regional Summer Temperature' by 'Year', and the °C labels provide the numeric values (23.9°C for 2005, 10.1°C for 2014). Subtraction yields a change of -13.8°C. However, the final clause—that this magnitude 'should enter substantial-change follow-up'—is not supported by any visible rule. The chart and the form fields do not define what magnitude constitutes 'substantial' versus 'ordinary variation'. The condition explicitly flags this as an assumption. Because the necessary condition (a defined threshold or rule mapping magnitude to routing category) is absent, the routing conclusion cannot be established from the chart alone.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4393,
+      "total_tokens": 5401,
+      "completion_tokens": 1008,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

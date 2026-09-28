@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-93e823cd3c879e77",
+    "object": "chat.completion",
+    "created": 1790617962,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart shows a plotted point at the 2005 x-axis tick with the text label '24.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The chart shows a plotted point at the 2015 x-axis tick with the text label '10.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"A review of the chart and the provided public task text confirms no numeric threshold, percentage limit, or explicit routing instruction is visible.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"This reading requires two conditions: (1) substantial-change follow-up requires meeting an explicit numeric threshold or stated criterion, and (2) the workflow defaults unverified changes to routine monitoring. It concludes that if these are met, the chart alone does not establish eligibility.\",\n        \"evidence\": \"The public task and chart do not contain an explicit numeric threshold or a stated default rule for unverified changes. The 'Routing criterion' field only asks whether the change *requires* follow-up without defining the threshold for 'substantial.'\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart shows a plotted point at the 2005 x-axis tick with the text label '24.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The chart shows a plotted point at the 2015 x-axis tick with the text label '10.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The chart title is 'District Heating Demand Index', the x-axis is labeled 'Year', and the y-axis is labeled 'Demand index'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"This reading requires two conditions: (1) the printed endpoint labels (24.0°C and 10.0°C) are the relevant demand-index values for the full-period change, and (2) an approximately 14.0°C absolute change qualifies as 'substantial' for the routing criterion.\",\n        \"evidence\": \"The endpoint labels are visible and their difference is 14.0. However, the chart does not define what magnitude of change is 'substantial' versus 'ordinary variation.' The unit '°C' is also inconsistent with the 'Demand index' axis label, creating ambiguity about the values' meaning.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4327,
+      "total_tokens": 5034,
+      "completion_tokens": 707,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

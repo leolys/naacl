@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The y-axis baseline is printed at '1,500' and the May 06 blue section starts at this lower boundary.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The chart displays only the title, axis labels, and legend; no threshold lines or status labels are printed.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If a stacked bar is clipped by a y-axis beginning at 1,500, the visible height of a bottom segment measures only the portion above 1,500, not its full magnitude; without supplied routing thresholds, a conservative default may be normal monitoring.",
+        "evidence": "The y-axis is visibly clipped at 1,500, and no policy table or threshold labels are present in the public task.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The legend at the top right shows a blue square labeled 'Station X'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The May 06 bar contains a thin blue strip at the bottom, ending only slightly above the 1,500 axis line.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The lowest labeled tick on the y-axis is '1,500'.",
+          "status": "supported"
+        },
+        {
+          "index": 4,
+          "evidence": "The green and orange sections of the May 06 bar extend much higher than the thin blue section.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the legend binds blue to Station X and the stacked bar encodes visitor counts cumulatively from zero, then the top of the blue segment at May 06 represents Station X's visitor count; if the routing program classifies that count as low, low-demand response is appropriate.",
+        "evidence": "The legend binds blue to Station X, but the y-axis starts at 1,500, meaning the 'cumulative from zero' condition is not met by the visible chart; the 'low-demand' threshold is also not supplied.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-84438cd243b3ac28",
+    "object": "chat.completion",
+    "created": 1790612886,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue segment from the 2021 vertex to the 2022 vertex is nearly horizontal, and the 2023 endpoint is only slightly lower than the 2022 vertex.\"\n        ,\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Production by year and a near-horizontal recent segment is sufficient to classify the output trend as stable, select the stability route.\",\n        \"evidence\": \"The visual appearance of the line from 2021 to 2023 is nearly flat, with a slight downward slope only in 2023. This matches the reading's condition that a near-horizontal recent segment is sufficient for classification.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title literally reads “Increasing Production at Factory F from 2018 to 2023.”\"\n        ,\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative descriptor of the output trend for the reviewed facility and period, and a title stating “Increasing Production” maps to the growth follow-up category, select the growth route.\",\n        \"evidence\": \"The title is visible and literal. However, the reading’s condition requires the title to be authoritative and to govern routing despite any conflicting plotted values. The visual data contradicts the title, showing a decline from 2020 to 2023. The necessary condition of the title being authoritative is not supported by any public or visual evidence; it is an assumption. The gap is that the task does not specify whether the title overrides the plotted data.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at the vertex aligned with the 2018 tick and ends at the vertex aligned with the 2023 tick; the 2023 vertex is lower on the page than the 2018 vertex.\"\n        ,\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is labeled “Production,” with printed tick labels rising from 0 at the bottom through 3,000 higher on the page.\"\n        ,\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Production against the vertical axis, whose printed values increase upward, and the vertices aligned with the first and last year ticks represent 2018 and 2023, then a lower final vertex represents lower final production; if endpoint change defines the route, select decline.\",\n        \"evidence\": \"The visual appearance of the chart confirms the line encodes Production, the axis increases upward, and the 2023 vertex is lower than the 2018 vertex. The reading’s condition that endpoint change defines the route is not contradicted by any visual evidence. The necessary condition is that the plotted series rather than the title is authoritative — this is not explicitly stated in the task or public definitions, but the task instructs to use the dashboard as the evidence source, implying the plotted data is primary. The gap is that the task does not explicitly state that the plotted series overrides the title, but the instruction to use the dashboard as the evidence source supports this interpretation.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4057,
+      "total_tokens": 4875,
+      "completion_tokens": 818,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

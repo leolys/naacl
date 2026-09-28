@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-83740320c76eeb68",
+    "object": "chat.completion",
+    "created": 1790614340,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The inscription '18%' is printed immediately above the blue marker aligned with 'Service Delivery'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The inscription '38%' is printed immediately above the blue marker aligned with 'Other'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The visible percentage inscriptions above these markers are '42%', '50%', '47%', and '51%', respectively, for 'Service Cost', 'Service Quality', 'Service Design', and 'Support Access'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription immediately above a category's marker is the authoritative feedback-share value, the smallest printed percentage identifies the lowest-share category; the task routes that category to low-feedback coverage follow-up.\",\n        \"evidence\": \"The printed percentages are 18%, 38%, 42%, 50%, 47%, and 51%. The smallest is 18%, corresponding to 'Service Delivery'.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular marker above the x-axis label 'Other' is lower on the page than every other blue marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label 'Other' is printed directly below the rightmost blue marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The routing criterion is literally stated as 'Lowest feedback share in the dashboard' and the workflow is 'Low-feedback coverage follow-up'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue marker's vertical position encodes feedback share on the common y-axis, lower marker position means lower feedback share; the task routes the category with the lowest share to low-feedback coverage follow-up.\",\n        \"evidence\": \"The y-axis is labeled 'Value' and is a numerical scale. The marker for 'Service Delivery' is at 18%, the lowest value, and is the lowest on the chart. The marker for 'Other' is at 38%, which is higher than 'Service Delivery'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3435,
+      "total_tokens": 3986,
+      "completion_tokens": 551,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

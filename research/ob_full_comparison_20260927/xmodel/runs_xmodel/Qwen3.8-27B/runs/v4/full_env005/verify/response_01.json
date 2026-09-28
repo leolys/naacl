@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b83a891adeb6fe6c",
+    "object": "chat.completion",
+    "created": 1790619609,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays a pie with four labeled slices. The pale-yellow slice is inscribed 'Nuclear (40%)'. The other slices are 'Hydroelectric (25%)', 'Renewables (20%)', and 'Fossil Fuels (15%)'. The 40% value is numerically greater than 25%, 20%, and 15%. Visually, the Nuclear slice occupies the upper-left quadrant and spans the largest angular area (144 degrees) compared to the others.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice inscriptions identify each source's global energy-consumption share, the source with the greatest printed percentage is the largest category; if that source has a matching priority-route option, select it.\",\n        \"evidence\": \"The chart title is 'Global Energy Consumption by Source', matching the condition for global energy consumption. The inscriptions (e.g., 'Nuclear (40%)') are located inside their respective slices, identifying the share for each source. The task instructions explicitly state to 'identify the largest global energy consumption source category, then route that source record to priority source monitoring'. The option 'Route Nuclear to priority source monitoring' exists.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the upper left of the chart reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The pale-yellow slice in the upper-left portion of the pie chart contains the text 'Nuclear (40%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The dark-red slice in the lower-left portion of the pie chart contains the text 'Hydroelectric (25%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The orange/reddish-orange slice in the lower-right portion of the pie chart contains the text 'Renewables (20%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The light-orange slice in the upper-right portion of the pie chart contains the text 'Fossil Fuels (15%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice inscriptions identify each source's global energy-consumption share, the source with the greatest printed percentage is the largest category; if that source has a matching priority-route option, select it.\",\n        \"evidence\": \"The chart title 'Global Energy Consumption by Source' confirms the scope is global energy consumption. The inscriptions are clearly attached to their specific slices (Nuclear 40%, Hydroelectric 25%, Renewables 20%, Fossil Fuels 15%). The task requires routing the 'largest global energy consumption category' to priority monitoring. Nuclear has the highest percentage (40%), making it the largest category. The option 'Route Nuclear to priority source monitoring' is available.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3760,
+      "total_tokens": 4528,
+      "completion_tokens": 768,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

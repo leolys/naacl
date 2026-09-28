@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b39f5d77028be64a",
+    "object": "chat.completion",
+    "created": 1790614385,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Monthly Visitors at Museum C in Town Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label 'July' is directly beneath the left green bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top edge of the green bar above 'July' aligns with the orange dashed horizontal line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The dashed line is level with the printed y-axis tick '200' and is annotated 'Average' at the right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bar above a month encodes that month's visitor count on the labeled vertical scale, and the orange dashed line labeled 'Average' is the average-visitor benchmark, then a bar top aligned with that line represents average-level visitors. If the routing options are intended to map average-level visitors to average-level monitoring, select the average-level option.\",\n        \"evidence\": \"The bar for July aligns with the 200-mark dashed line labeled 'Average'. The y-axis is labeled 'Number of Visitors' and ranges from 0 to 500, with major ticks at 50. The bar for July reaches exactly 200, matching the 'Average' line. The chart's encoding is conventional: bar height = visitor count. The task instruction is to use the dashboard as evidence for routing. No explicit policy table is provided, but the reading assumes that average-level visitors should be routed to average-level monitoring, which is a plausible operational convention.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3396,
+      "total_tokens": 3795,
+      "completion_tokens": 399,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

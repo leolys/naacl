@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b13d5a01db47cad1",
+    "object": "chat.completion",
+    "created": 1790615562,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title reads 'Additional Top Stores: Ad Spend vs Sales' (independent_visual_notes).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five labeled points are visible: Store 6, Store 7, Store 8, Store 9, Store 10 (independent_visual_notes).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. No supplied policy states that results from additional top stores alone are sufficient for a broader budget increase; 2. The chart title is treated as defining the displayed population.\",\n        \"evidence\": \"1. No policy table is provided (public_task.policy_tables is empty). 2. The chart title explicitly states 'Additional Top Stores' (independent_visual_notes), which defines the scope of the data. The condition is satisfied by the chart's own labeling.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"X-axis label is 'Advertising Spend ($ thousands)' and Y-axis label is 'Sales ($ thousands)' (independent_visual_notes).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Store 6 (30, 67) → Store 7 (40, 92) → Store 8 (50, 120) → Store 9 (60, 148) → Store 10 (70, 175). Each successive point is rightward and upward (independent_visual_notes).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Axis labels apply to the plotted points; 2. No causal, profit, or ROI measure is shown.\",\n        \"evidence\": \"1. The axis labels are explicitly printed and apply to the plotted points (independent_visual_notes). 2. The chart only shows spend and sales, not profit, ROI, or causal relationships (independent_visual_notes).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"X-axis label is 'Advertising Spend ($ thousands)' and Y-axis label is 'Sales ($ thousands)' (independent_visual_notes).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Store 6 (30, 67) → Store 7 (40, 92) → Store 8 (50, 120) → Store 9 (60, 148) → Store 10 (70, 175). Each successive point is rightward and upward (independent_visual_notes).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"This is an alternative decision standard not supplied by the task or chart.\",\n        \"evidence\": \"The public task and chart reference (public_task.chart_reference) state to 'Use the store ad budget dashboard to complete the planning review form.' and 'Review dashboard evidence and submit an approval or evidence-review decision.' There is no policy or instruction provided that permits a decision based solely on a positive spend-sales pattern without requiring full-store, causal, or profitability evidence. The condition is not met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3995,
+      "total_tokens": 4765,
+      "completion_tokens": 770,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

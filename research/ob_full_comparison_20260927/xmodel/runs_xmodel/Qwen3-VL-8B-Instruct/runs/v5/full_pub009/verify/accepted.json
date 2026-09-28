@@ -1,0 +1,37 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The blue swatch is visibly labeled 'Station X', the green swatch 'Station Y', and the orange swatch 'Station Z'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Each of these date positions has vertically contiguous blue, green, and orange rectangular segments.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The axis is visibly labeled 'Number of Visitors' and has a printed tick labeled '4,500'.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The tops of the orange segments above Tue and Wed are visibly higher on the page than the horizontal level of the 4,500 tick.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The top of the orange segment above Thu is visibly lower on the page than the horizontal level of the 4,500 tick.",
+          "status": "supported"
+        },
+        "6": {
+          "evidence": "The lowest printed vertical-axis tick visible is '1,000', while the bars extend to the bottom axis line below that tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If each date's contiguous blue, green, and orange segments are a stacked encoding of Station X, Station Y, and Station Z visitor counts on the shared vertical visitor scale, and the stack top represents their combined daily total despite the displayed axis being truncated below 1,000, then a stack top above the 4,500 tick indicates combined traffic exceeding 4,500. Under the supplied crowding-alert policy, submit exactly the dates whose combined total exceeds 4,500.",
+        "evidence": "The chart is a stacked bar chart. The legend confirms the color-to-station mapping. The vertical axis is labeled 'Number of Visitors' and includes a 4,500 tick. The bars for Tue and Wed extend visibly above the 4,500 line, while the bar for Thu extends below it. The chart's design implies additive stacking, as the segments are contiguous and aligned on a common vertical scale. The axis truncation below 1,000 does not invalidate the relative height comparison against the 4,500 tick, as the scale is consistent and the top of the stack represents the sum. The policy explicitly defines the alert condition as exceeding 4,500. Therefore, the reading's conditions are met and its conclusion is directly supported by the visual evidence.",
+        "status": "supported"
+      }
+    }
+  }
+}

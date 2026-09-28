@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87f45897b351746b",
+    "object": "chat.completion",
+    "created": 1790617053,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Married couple vs Single women'. The left y-axis is labeled 'Married couple', and the right y-axis is labeled 'Single women'. The blue solid-line series with circle markers represents 'Married couple', and the red dashed-line series with square markers represents 'Single women'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the x-axis tick labeled '2020', the red dashed-line square marker for 'Single women' is positioned higher on the chart than the blue solid-line circle marker for 'Married couple'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red series uses square markers connected by a dashed line, while the blue series uses circular markers connected by a solid line. This matches the visual description in O.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart’s horizontal Year axis binds points to their aligned year ticks, the blue solid-circle series is Married couple and the red dashed-square series is Single women as indicated by the visible series labels, and higher vertical placement encodes a larger group count, then the higher 2020 series has the larger 2020 count. Under the task instruction, open that group’s follow-up record.\",\n        \"evidence\": \"The chart’s x-axis clearly binds points to their year ticks. The series labels are visible on the axes. The vertical position encodes group count, as is conventional for line charts with increasing y-values. The red series (Single women) is higher at the 2020 tick than the blue series (Married couple).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2494,
+      "total_tokens": 2897,
+      "completion_tokens": 403,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

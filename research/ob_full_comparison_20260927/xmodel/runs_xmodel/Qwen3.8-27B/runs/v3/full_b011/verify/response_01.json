@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a7c4b6f63e508f2a",
+    "object": "chat.completion",
+    "created": 1790617215,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The chart shows the Q3 blue segment (labeled 7940) is visibly taller than the Q4 blue segment (labeled 5121). The printed values match the visual heights.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If 'No significant change' requires a specified statistical or operational materiality threshold, then an observed quarter-over-quarter difference alone cannot establish that option without that threshold. Conditions: Applies because the task supplies no significance definition or threshold.\",\n        \"evidence\": \"Supported. The public task and dashboard do not provide a definition or numerical threshold for 'No significant change.' The condition that the task supplies no threshold is factually correct based on the provided text.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The legend in the upper left shows a blue square labeled 'Store Visits (Count)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The blue segment above the Q3 label contains the printed text '7940'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The blue segment above the Q4 label contains the printed text '5121'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the legend binds blue bar segments to Store Visits (Count), the printed values inside those segments are their quarterly visit counts, and Q4 traffic status is determined by comparing Q4 with the immediately preceding quarter, then a lower Q4 count than Q3 count maps to 'Decreased'. Conditions: Assumes the printed segment values are valid Store Visits counts and the requested Q4 status is a quarter-over-quarter comparison with Q3; no separate materiality threshold applies.\",\n        \"evidence\": \"Unclear. The legend binding and printed values are supported. However, the condition that 'Q4 traffic status is determined by comparing Q4 with the immediately preceding quarter' is an assumption. The public task does not explicitly define the comparison period (e.g., QoQ vs. YoY vs. Average). While QoQ is conventional, it is not explicitly stated in the source text.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4035,
+      "total_tokens": 4645,
+      "completion_tokens": 610,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

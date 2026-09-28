@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-94772cdfe3ad9a95",
+    "object": "chat.completion",
+    "created": 1790616134,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The legend at right explicitly labels blue as 'Station X', green as 'Station Y', and orange as 'Station Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Bars above Tue, Wed, and Thu labels each contain vertically contiguous blue, green, and orange segments, consistent with stacked encoding.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Number of Visitors' and has a printed tick at '4,500'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The top of the orange segment above Tue is visibly above the 4,500 tick; above Wed, it is at or slightly above 4,500; above Thu, it is below 4,500.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top of the orange segment above Thu is visibly below the 4,500 tick.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The lowest printed vertical-axis tick is '1,000', and bars extend below it, indicating the axis is truncated.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bars are additive stacks with a common zero-based quantity scale (assumed encoding). 2. The chart does not visibly show a zero baseline, so this is an encoding assumption.\",\n        \"evidence\": \"1. The chart uses stacked bars with contiguous segments for each station, implying additive encoding. 2. The axis is truncated below 1,000, but the stack heights are visually consistent with the 4,500 tick as a reference. The policy rule is based on combined total exceeding 4,500, which is consistent with the stack top representing the total. The visual encoding of the stack top relative to the 4,500 tick is sufficient to determine which days exceed the threshold.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3766,
+      "total_tokens": 4254,
+      "completion_tokens": 488,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

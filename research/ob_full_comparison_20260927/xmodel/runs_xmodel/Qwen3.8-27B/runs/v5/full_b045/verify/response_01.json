@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a5f872528d3c5d2f",
+    "object": "chat.completion",
+    "created": 1790621260,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis displays three categories in order: 'April', 'May', 'June'. The leftmost orange bar is positioned directly above the 'April' label.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis has a tick mark labeled '250'. A red dashed horizontal line runs across the chart at this level. The top of the leftmost (April) bar is flush with this line.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red dashed line is annotated with the text 'Average' on the right side of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($K)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the orange bars encode Store B monthly sales on the vertical axis and the red dashed line labeled 'Average' is the comparison benchmark, then an April bar whose top aligns with that line represents April sales at the displayed average level. Routing that level to a low-sales response requires an unstated policy that average-level sales qualify as low sales.\",\n        \"evidence\": \"The chart title confirms the data is for 'Store B'. The visual alignment of the April bar with the 'Average' line is supported by the visual evidence. The B text correctly identifies that the chart shows April sales at the average level. It also correctly notes that routing this to a 'low-sales response' requires a policy rule (average = low) which is not present in the provided task state (policy_tables is empty).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost orange bar is positioned directly above the 'April' label on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the April bar aligns with the red dashed line at the y-axis tick '250'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red dashed line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the operations program has no supplied rule mapping average-level sales to a low, normal, or strong route, the chart alone does not determine the route; selecting normal monitoring would additionally require an unstated default-normal policy for cases without a specified trigger.\",\n        \"evidence\": \"The task state shows an empty 'policy_tables' array. The chart provides data (April = 250, Average = 250) but no operational thresholds for 'low', 'normal', or 'strong' sales. Therefore, the chart alone cannot determine the route. The B text correctly states that a policy rule is missing to make the determination.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4175,
+      "total_tokens": 4898,
+      "completion_tokens": 723,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

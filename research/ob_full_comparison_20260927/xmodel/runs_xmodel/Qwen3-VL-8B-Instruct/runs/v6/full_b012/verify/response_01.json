@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc310d49954563e0",
+    "object": "chat.completion",
+    "created": 1790615464,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar for 'Product E' reaches a height slightly above the 10,000 mark, approximately 12,000 units.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis is labeled 'Units Sold'; visible labeled ticks include 10,000 and 20,000, and the top of the Product E bar lies between them, much closer to 10,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The Product E bar is bound to its x-axis label. 2. The axis scale is linear. 3. 12,500 is a decision threshold. 4. The manual-verification variance band applies when it overlaps other policy ranges.\",\n        \"evidence\": \"1. The bar is positioned directly above 'Product E'. 2. The y-axis has major ticks at 10,000 and 20,000 with equal spacing, indicating a linear scale. 3. The policy table defines 12,500 as a decision threshold. 4. The policy table defines the manual-verification band as applying when sales are '< 2,000 units from a decision threshold', which is a condition that can overlap other ranges (e.g., the 8,000–12,500 range).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4027,
+      "total_tokens": 4383,
+      "completion_tokens": 356,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

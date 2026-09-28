@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b450863d29cfef4f",
+    "object": "chat.completion",
+    "created": 1790614305,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue swatch is visibly labeled 'Station X', the green swatch 'Station Y', and the orange swatch 'Station Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Each of these date positions has vertically contiguous blue, green, and orange rectangular segments.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The axis is visibly labeled 'Number of Visitors' and has a printed tick labeled '4,500'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The tops of the orange segments above Tue and Wed are visibly higher on the page than the horizontal level of the 4,500 tick.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top of the orange segment above Thu is visibly lower on the page than the horizontal level of the 4,500 tick.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The lowest printed vertical-axis tick visible is '1,000', while the bars extend to the bottom axis line below that tick.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each date's contiguous blue, green, and orange segments are a stacked encoding of Station X, Station Y, and Station Z visitor counts on the shared vertical visitor scale, and the stack top represents their combined daily total despite the displayed axis being truncated below 1,000, then a stack top above the 4,500 tick indicates combined traffic exceeding 4,500. Under the supplied crowding-alert policy, submit exactly the dates whose combined total exceeds 4,500.\",\n        \"evidence\": \"The chart is a stacked bar chart. The legend confirms the color-to-station mapping. The y-axis is labeled 'Number of Visitors' and has a visible tick at 4,500. The bars for Tue and Wed extend visibly above the 4,500 tick, while Thu's bar does not. The chart's design implies additive stacking (the segments are contiguous and aligned on the x-axis). The axis is truncated below 1,000, but the stack height is still interpretable relative to the 4,500 mark. The policy table explicitly defines the alert condition as exceeding 4,500.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3592,
+      "total_tokens": 4159,
+      "completion_tokens": 567,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

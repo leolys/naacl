@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9ea449a854797071",
+    "object": "chat.completion",
+    "created": 1790616966,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The state area labeled 'IL' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The state area labeled 'KS' is filled dark maroon.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The small state area labeled 'DE' is filled orange.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The pale-yellow top of the color bar is adjacent to the inscriptions 'High' and '100', while the dark-maroon bottom is adjacent to 'Low' and '0'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"For labeled state areas on this choropleth, fill color is the risk-index encoding. The vertical legend maps the pale-yellow top near the inscriptions 'High' and '100' to higher risk and the dark-maroon bottom near 'Low' and '0' to lower risk. Under this shared legend, a state whose fill is closer in color to the pale-yellow top has higher risk; the task criterion requires opening the available option for the highest-risk listed state.\",\n        \"evidence\": \"The legend explicitly maps color to risk index, with pale yellow (High, 100) at the top and dark maroon (Low, 0) at the bottom. The visual encoding is consistent across all states, including the three options. The task criterion is to select the highest-risk state from the listed options.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3489,
+      "total_tokens": 3862,
+      "completion_tokens": 373,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

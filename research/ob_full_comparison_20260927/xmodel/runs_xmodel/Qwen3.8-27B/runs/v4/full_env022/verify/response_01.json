@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a01cbe146a6dc04b",
+    "object": "chat.completion",
+    "created": 1790619874,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"chart_1, plot area, Utility solar bar top: bold inscription '41.2%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"chart_1, plot area, Offshore wind bar top: bold inscription '29.8%' is printed above the bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each bold percentage printed directly above a source bar is the authoritative reported clean-grid share, the source with the greatest printed percentage is the largest contribution source; the task routes that source to priority contribution review.\",\n        \"evidence\": \"The necessary condition is that the printed percentages are the authoritative metric for contribution. The chart's y-axis is labeled 'Reported clean-grid share (%)', but the bar heights do not match the printed percentages (e.g., Utility solar is 41.2% but the bar is at 40; Offshore wind is 29.8% but the bar is at ~68). This internal inconsistency in the chart makes it unclear which channel is authoritative. Therefore, the condition that the printed percentages are authoritative is not established by the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"chart_1, plot area, Offshore wind bar: The light-blue bar reaches higher than every other bar, ending between the 65 and 70 y-axis ticks (specifically near 68).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"chart_1, plot area, Utility solar bar: The yellow bar ends at the y-axis level marked 40.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"chart_1, plot area, Offshore wind bar top: A bold inscription '29.8%' is printed above the bar.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"chart_1, plot area, Utility solar bar top: A bold inscription '41.2%' is printed above the bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical bar heights are the dashboard's encoding of reported clean-grid contribution on the shared y-axis, the tallest bar represents the largest source; the task routes that largest source to priority contribution review.\",\n        \"evidence\": \"The necessary condition is that bar geometry is the authoritative encoding of contribution. While the y-axis is labeled 'Reported clean-grid share (%)', the bar heights are inconsistent with the explicit percentage annotations (e.g., Offshore wind is 29.8% but the bar is at ~68; Utility solar is 41.2% but the bar is at 40). This inconsistency means it is unclear whether the bar heights or the annotations are the intended authoritative data. Thus, the condition that bar geometry is authoritative is not established.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4263,
+      "total_tokens": 5012,
+      "completion_tokens": 749,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

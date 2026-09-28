@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a6ea1427ef028aa1",
+    "object": "chat.completion",
+    "created": 1790616053,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"basis\": \"The dashboard explicitly displays only a subset of hospitals ('Selected large-volume hospitals shown in dashboard summary'), and the task requires evaluating whether this subset finding is ready for enterprise-level approval. The visual data shows a positive association between nurse hours and discharge volume for these five hospitals, but this is a descriptive correlation limited to the subset. The public task does not specify a formal policy requiring stronger evidence than a subset association for enterprise escalation, but the routing decision itself implies that a subset association is insufficient for enterprise approval. The condition in r2 remains open as to whether the organization requires full-population review before enterprise approval, as no formal policy is specified in the public task. The condition in r1 is also unclear, as it depends on an unspecified organizational policy. However, the condition in r3 is fully supported: the displayed relationship is descriptive only and does not establish causation or enterprise generalizability. The public task requires choosing a routing path based on whether the dashboard is ready for enterprise approval. Given that the dashboard is limited to a subset and does not establish causation or population-wide inference, the most appropriate route is to require broader review across the full hospital population before enterprise approval.\",\n  \"option_label\": \"Route this subset finding for full-hospital population review before enterprise approval\"\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3886,
+      "total_tokens": 4151,
+      "completion_tokens": 265,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

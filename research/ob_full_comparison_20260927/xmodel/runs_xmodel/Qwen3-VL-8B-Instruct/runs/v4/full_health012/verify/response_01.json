@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bd6046bbed7cb889",
+    "object": "chat.completion",
+    "created": 1790614191,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title includes 'Selected Sentinel Sites,' and the subtitle states that reported sites with the highest case loads are shown.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If selected-sentinel evidence is not representative of the network and there is no task or policy basis requiring follow-up review, it may be retained as background reference rather than used to advance a network-wide claim.\",\n        \"evidence\": \"The chart's title and subtitle explicitly define the displayed data as 'Selected Sentinel Sites' and 'Reported sites with the highest case loads shown in dashboard summary'. This confirms the subset is not representative of the network-wide population. The public task requires using the displayed pattern as the basis for routing, and no policy table or task condition mandates follow-up review beyond the routing decision. Therefore, the condition for retaining as background reference is met.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title is inscribed 'Selected Sentinel Sites: Testing Volume vs Positive Cases'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The subtitle is inscribed 'Reported sites with the highest case loads shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a chart is explicitly limited to selected sentinel sites and identifies those sites as having the highest case loads, that selection does not by itself establish that the displayed pattern represents the broader network. For a task asking whether to support a network-wide claim, such selected-subset evidence should be routed for broader population review before advancing that claim.\",\n        \"evidence\": \"The chart's title and subtitle explicitly define the data as 'Selected Sentinel Sites' and 'Reported sites with the highest case loads shown in dashboard summary'. This confirms the subset is not representative of the network-wide population. The public task requires using the displayed pattern as the basis for routing, and the rule's condition is met: the displayed evidence is limited to a high-case-load subset, and no evidence of representative sampling is displayed. Therefore, the condition for routing for broader population review is met.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal-axis inscription reads 'Weekly testing volume (thousands)' and the vertical-axis inscription reads 'Positive cases detected'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The labeled purple marks progress generally from lower-left for Site A to upper-right for Site E; Site E is higher and farther right than Site D, and Site D is higher and farther right than Site C.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes weekly testing volume and the vertical axis encodes positive cases, points positioned progressively farther right and higher indicate an increasing cross-site association between those plotted quantities. That pattern could justify advancing a network-wide claim only if the selected sentinel sites are accepted as sufficiently representative evidence for the network.\",\n        \"evidence\": \"The axis labels are explicitly printed as 'Weekly testing volume (thousands)' and 'Positive cases detected', confirming the encoding. The plotted points show a clear upward and rightward trend from Site A to Site E, indicating a positive association between testing volume and positive cases. However, the condition 'requires an unstated assumption that the selected sentinel subset can support a network-wide inference' is not met. The chart's title and subtitle explicitly state that the sites shown are 'Selected Sentinel Sites' and 'Reported sites with the highest case loads shown in dashboard summary'. This means the subset is not representative of the network-wide population. Therefore, while the pattern is visible, the condition for advancing a network-wide claim is not met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3109,
+      "total_tokens": 3976,
+      "completion_tokens": 867,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

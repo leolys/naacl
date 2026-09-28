@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart's x-axis is labeled 'Year' and has ticks for 2005 through 2015. The data points are positioned directly above these ticks, indicating they represent yearly readings. The y-axis is labeled 'Temperature (°C)' with a scale from 0 to 24. The data point for 2005 is explicitly labeled '$24.0°C', and the data point for 2015 is explicitly labeled '$10.0°C'. The blue line connects these points in descending order, visually confirming the trend.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart's y-axis scale is clearly marked from 0 to 24 in 5-unit increments. The 2005 point is at the 24°C mark, and the 2015 point is at the 10°C mark. The difference is 14.0°C, which is explicitly stated in the O assertion and matches the visual data.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The blue line is drawn connecting all data points in a continuous, descending manner from 2005 to 2015, visually confirming the downward trend.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the plotted points are yearly temperature readings because their horizontal positions align with the year ticks and the adjacent °C inscriptions label those readings, then the 2005-to-2015 change is the 2015 reading minus the 2005 reading. If the substantial-trend workflow permits qualitative judgment of a large multi-year magnitude without a stated numeric cutoff, a 14.0°C decrease warrants follow-up.",
+        "evidence": "The reading's conditions are met: the points align with year ticks, the °C inscriptions are adjacent to the points, and the 2005-to-2015 change is 14.0°C. The reading's conclusion is that a 14.0°C decrease warrants follow-up if the workflow allows qualitative judgment without a numeric cutoff. This is consistent with the chart's visual data and the task's routing criterion of 'Magnitude of change across the review period'.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart's x-axis is labeled 'Year' and has ticks for 2005 through 2015. The data points are positioned directly above these ticks, indicating they represent yearly readings. The y-axis is labeled 'Temperature (°C)' with a scale from 0 to 24. The data point for 2005 is explicitly labeled '$24.0°C', and the data point for 2015 is explicitly labeled '$10.0°C'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart's y-axis scale is clearly marked from 0 to 24 in 5-unit increments. The 2005 point is at the 24°C mark, and the 2015 point is at the 10°C mark. The difference is 14.0°C, which is explicitly stated in the O assertion and matches the visual data.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the substantial-trend workflow requires a specified numeric threshold or other unstated qualification before escalation, then the plotted endpoint change alone cannot establish that the follow-up criterion is met; absent demonstrated qualification, the record may remain on routine monitoring rather than be escalated.",
+        "evidence": "The reading's condition is that the substantial-trend workflow requires a numeric threshold or unstated qualification. The task state and chart do not provide any information about such a threshold or qualification. Therefore, the condition for the reading to apply is not met. The reading is not applicable because its necessary condition (the existence of a required threshold) is not supported by the evidence.",
+        "status": "refuted"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9a23b50c9cd10dda",
+    "object": "chat.completion",
+    "created": 1790618820,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image shows a blue vertical axis label on the left reading 'Agriculture (%)' and a red vertical axis label on the right reading 'Industry (%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The 2014 marks (a blue circle and a red square) have no text labels adjacent to them. The vertical axes have grid lines but no visible numeric tick labels.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.\",\n        \"evidence\": \"The chart visibly has separate left and right axes with different colors and labels. The 2014 data points lack printed numeric values. The vertical axes lack visible numeric tick labels, making it impossible to confirm if the scales are equivalent or to read the specific values.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"At the vertical gridline for 2014, the blue circular marker is positioned vertically higher on the page than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left vertical axis is labeled 'Agriculture (%)' in blue text, and the right vertical axis is labeled 'Industry (%)' in red text.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the larger 2014 percentage.\",\n        \"evidence\": \"The condition requires the series to use the 'same vertically comparable percentage scale.' The chart displays distinct left and right axes with no visible numeric tick labels to verify if these scales are equivalent. Therefore, the necessary condition for this reading (scale equivalence) is not established by the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2747,
+      "total_tokens": 3319,
+      "completion_tokens": 572,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-91e2c0e11db88853",
+    "object": "chat.completion",
+    "created": 1790620044,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy'. The left y-axis is blue with the label 'Hydroelectricity (%)' and the right y-axis is red with the label 'Nuclear energy (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axes contain no numeric tick labels. The 2010 Hydroelectricity point has a visible '35%' label. The 2010 Nuclear energy point has no visible percentage label.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If one source is established to have the higher 2010 generation share, the task directs routing that source to the higher-share follow-up workflow; if no source is established as higher, an archive outcome would require a stated unresolved-comparison fallback.\",\n        \"evidence\": \"The public task explicitly requests routing the source with the higher 2010 generation share. No policy table or instruction provides a fallback for an unresolved comparison.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy'. The left y-axis is blue with the label 'Hydroelectricity (%)' and the right y-axis is red with the label 'Nuclear energy (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2010 x-axis tick, the blue circular marker is positioned vertically lower than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axes have no numeric tick labels. The 2010 Hydroelectricity point has a '35%' label. The 2010 Nuclear energy point has no visible percentage label.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The blue circular series is Hydroelectricity and is read against the left blue y-axis; the red dashed square series is Nuclear energy and is read against the right red y-axis. A higher generation-share comparison requires decodable, comparable 2010 values from those axes or another explicit common-scale statement; screen-space height alone is not comparable across separate y-axes.\",\n        \"evidence\": \"The chart uses a dual-axis layout with distinct left and right y-axes. There are no numeric tick labels on either axis to establish a common scale. The only 2010 value provided is 35% for Hydroelectricity; the Nuclear energy value is not labeled. Therefore, the 2010 comparison cannot be resolved from the visible data.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3439,
+      "total_tokens": 4117,
+      "completion_tokens": 678,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

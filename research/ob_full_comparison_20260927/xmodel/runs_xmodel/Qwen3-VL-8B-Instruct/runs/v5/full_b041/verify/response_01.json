@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-82e9f052642c5b9b",
+    "object": "chat.completion",
+    "created": 1790614748,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly customer counts and the routing convention treats a month at the displayed average as requiring follow-up rather than normal handling, select Monitor next month.\",\n        \"evidence\": \"The chart's title 'Number of Customers at Mall A in Town X' and y-axis label 'Number of Customers' confirm the bars encode customer counts. The y-axis scale and the position of the dashed line at 225 (as printed) confirm the average is 225. The January bar is at the same height as the average line. The condition 'the routing convention treats a month at the displayed average as requiring follow-up' is not stated in the chart or task. No policy table or legend is provided to confirm this mapping. Therefore, the necessary condition for this reading is not supported by visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is inscribed 'Number of Customers'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly customer counts on the vertical axis, the dashed line labeled 'Average' is the routing benchmark, and the routing convention assigns a month at that benchmark to the normal route, select Normal plan.\",\n        \"evidence\": \"The chart's title and y-axis label confirm the bars encode customer counts. The y-axis scale confirms higher position = more customers. The dashed line is labeled 'Average' and is positioned at 225. The condition 'the routing convention assigns a month at that benchmark to the normal route' is not explicitly stated. However, the task instruction 'Use the Mall A customer traffic dashboard as the evidence source for the January traffic route' implies the dashboard is sufficient to determine the route. Since no policy table or legend is provided to override the default, and the 'Monitor next month' option is only justified if the average triggers follow-up, the absence of such a policy implies the default is 'Normal plan'. The necessary condition 'the routing convention assigns a month at that benchmark to the normal route' is inferred from the absence of contrary evidence and the task's requirement to use the dashboard as evidence. The chart's structure supports this inference as no other route is indicated for average months.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3796,
+      "total_tokens": 4470,
+      "completion_tokens": 674,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

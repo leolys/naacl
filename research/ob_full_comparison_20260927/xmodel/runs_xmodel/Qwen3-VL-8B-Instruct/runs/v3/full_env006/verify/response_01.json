@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9684839f9036ed7c",
+    "object": "chat.completion",
+    "created": 1790612939,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title, visible at the top, reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The red segment, located near the upper-left/center, is labeled 'Fossil Fuels (50%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The orange segment, located at the lower-left, is labeled 'Renewables (25%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The light-orange segment, located at the right, is labeled 'Nuclear (15%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The pale-yellow segment, located at the bottom, is labeled 'Hydroelectric (10%)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice inscriptions name each source and state its global energy-consumption share, and the dashboard title defines the scope as global energy consumption by source, then the source with the greatest printed percentage is the largest category. Under the task instruction to route that largest category to priority monitoring, select the matching route option.\",\n        \"evidence\": \"The printed labels on each slice explicitly state the source name and its percentage. The chart title confirms the scope is 'Global Energy Consumption by Source'. The percentages are 50%, 25%, 15%, and 10%, making Fossil Fuels the largest category. The task requires routing the largest category to priority monitoring, and the option 'Route Fossil Fuels to priority source monitoring' directly matches this category.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3439,
+      "total_tokens": 3877,
+      "completion_tokens": 438,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

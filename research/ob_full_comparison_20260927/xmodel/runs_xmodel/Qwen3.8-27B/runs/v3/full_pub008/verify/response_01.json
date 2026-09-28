@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b39b12465f2cfa1",
+    "object": "chat.completion",
+    "created": 1790618480,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The y-axis baseline is printed at '1,500' and the May 06 blue section starts at this lower boundary.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The chart displays only the title, axis labels, and legend; no threshold lines or status labels are printed.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a stacked bar is clipped by a y-axis beginning at 1,500, the visible height of a bottom segment measures only the portion above 1,500, not its full magnitude; without supplied routing thresholds, a conservative default may be normal monitoring.\",\n        \"evidence\": \"The y-axis is visibly clipped at 1,500, and no policy table or threshold labels are present in the public task.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The legend at the top right shows a blue square labeled 'Station X'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The May 06 bar contains a thin blue strip at the bottom, ending only slightly above the 1,500 axis line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The lowest labeled tick on the y-axis is '1,500'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The green and orange sections of the May 06 bar extend much higher than the thin blue section.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the legend binds blue to Station X and the stacked bar encodes visitor counts cumulatively from zero, then the top of the blue segment at May 06 represents Station X's visitor count; if the routing program classifies that count as low, low-demand response is appropriate.\",\n        \"evidence\": \"The legend binds blue to Station X, but the y-axis starts at 1,500, meaning the 'cumulative from zero' condition is not met by the visible chart; the 'low-demand' threshold is also not supplied.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3721,
+      "total_tokens": 4343,
+      "completion_tokens": 622,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

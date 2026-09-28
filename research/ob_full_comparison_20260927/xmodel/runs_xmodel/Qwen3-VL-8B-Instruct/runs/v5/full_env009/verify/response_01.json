@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc1133f6af4b7cfb",
+    "object": "chat.completion",
+    "created": 1790614859,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart does not display any printed substantial-change threshold, routing cutoff, or follow-up decision rule. The chart title and axes are visible and do not contain such criteria.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"2\": {\n        \"evidence\": \"The endpoint markers aligned with 2005 and 2014 have inscriptions '23.9°C' and '10.1°C', respectively. These are visible and directly readable from the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up requires meeting an explicit threshold or other operational criterion, and no such criterion is displayed or supplied, the chart alone cannot establish that the full-period change requires substantial-change follow-up. If the workflow defaults unverified changes to routine monitoring, routine monitoring is appropriate.\",\n        \"evidence\": \"The necessary conditions are: (1) follow-up is threshold/criterion based, and (2) routine monitoring is the default when the criterion cannot be verified. Neither condition is supplied in the chart or task context. The task instructions do not specify a default or threshold. The B reading is therefore not applicable under its own conditions, as the conditions are not met. The B reading does not assert a conclusion about the change itself; it only states what the chart cannot do without a criterion. The chart's visible data (23.9°C to 10.1°C) is not addressed by this B reading.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost plotted marker aligned with the 2005 x-axis tick has the inscription '23.9°C' immediately above it. This is visible on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost plotted marker aligned with the 2014 x-axis tick has the inscription '10.1°C' immediately above it. This is visible on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The title reads 'Regional Summer Temperature Trend' and the vertical-axis label reads 'Temperature (°C)'. These are clearly printed and visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart title and axes indicate that each plotted marker represents regional summer temperature for its aligned year, and the °C inscriptions attached to markers provide the plotted values. If a full-period change is evaluated as the end-year value minus the start-year value, the printed endpoint values can be subtracted. If the routing program treats a temperature change of this magnitude as substantial without requiring a separately displayed threshold, it should enter substantial-change follow-up.\",\n        \"evidence\": \"The necessary conditions are: (1) the chart title and axes indicate the markers represent annual temperatures, (2) the °C inscriptions provide the values, (3) the change is evaluated as end-year minus start-year, and (4) the routing program treats this magnitude as substantial without requiring a separately displayed threshold. The first three conditions are supported by the chart. The fourth condition — that the routing program treats this magnitude as substantial — is not supported by the chart or task. The chart does not specify the routing program's policy or threshold. The B reading makes a causal claim that the routing program should enter substantial-change follow-up if it treats this magnitude as substantial. This claim is not supported by the visible evidence. The B reading does not apply because its final clause is an unsupported assumption.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3950,
+      "total_tokens": 4760,
+      "completion_tokens": 810,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

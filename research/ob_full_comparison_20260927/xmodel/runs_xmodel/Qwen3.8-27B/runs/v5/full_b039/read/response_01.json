@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a9c9c9b8d0bfe6b5",
+    "object": "chat.completion",
+    "created": 1790621125,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"top-left title\",\n      \"fact\": \"Chart title reads 'Increasing Production at Factory F from 2018 to 2023'.\"\n    },\n    {\n      \"location\": \"plot area\",\n      \"fact\": \"A single blue line connects six yearly points; the 2018 point is at ~2,800, the 2019 point is the lowest at ~2,400, the 2020 point is the highest at ~2,850, then 2021 ~2,560, 2022 ~2,570, and 2023 ~2,530.\"\n    },\n    {\n      \"location\": \"2021-2023 segment\",\n      \"fact\": \"The line is nearly flat with a slight downward drift, ending below the 2018 and 2020 levels but above the 2019 level.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Axis label 'Production'; ticks from 0 to 3,000 in steps of 200.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Axis label 'Year'; ticks 2018, 2019, 2020, 2021, 2022, 2023.\"\n    },\n    {\n      \"location\": \"title\",\n      \"fact\": \"'Increasing Production at Factory F from 2018 to 2023'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: 'Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the output trend.'\",\n    \"Options: 'Route to output stability response', 'Route to output growth response', 'Route to output decline response'.\"\n  ],\n  \"uncertain\": [\n    \"The title says 'Increasing' but the line ends below its 2018/2020 peaks; the trend interpretation (growth vs decline vs stability) is not numerically annotated on the chart.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2542,
+      "total_tokens": 3077,
+      "completion_tokens": 535,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

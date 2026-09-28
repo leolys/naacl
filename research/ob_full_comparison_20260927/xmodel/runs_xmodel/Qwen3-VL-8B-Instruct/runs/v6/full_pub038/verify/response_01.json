@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-abc8dc4a92b04c17",
+    "object": "chat.completion",
+    "created": 1790616300,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart visibly has separate blue 'Agriculture (%)' and red 'Industry (%)' vertical axis labels. This is directly visible in the chart's layout, confirming the presence of distinct axis labels for each sector.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Neither 2014 mark has a printed percentage label, and no numeric tick labels are visibly printed on either vertical axis. This is confirmed by visual inspection: the 2014 data points are marked with their values (16.35% and 26.62%), but no axis tick labels are visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Distinct colored vertical axis labels are visibly present. 2. No equivalence of their numeric scales may be assumed.\",\n        \"evidence\": \"1. Supported: The chart clearly shows separate left and right axis labels for 'Agriculture (%)' and 'Industry (%)'. 2. Open: The condition that 'no equivalence of their numeric scales may be assumed' is not testable from the visible facts. The chart does not provide any evidence to refute or confirm scale equivalence, and the absence of tick labels does not establish scale equivalence. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark is higher on the page than the red square mark. This is visually verifiable: at the 2014 gridline, the blue circle (Agriculture) is positioned lower than the red square (Industry) on the chart's vertical axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis is visibly labeled 'Agriculture (%)' in blue, while the right vertical axis is visibly labeled 'Industry (%)' in red. This is directly visible in the chart's layout.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Both colored series' 2014 vertical positions are directly comparable despite the separate left and right axis labels. 2. A mark higher on the page represents a larger percentage.\",\n        \"evidence\": \"1. Open: The condition that 'both colored series' 2014 vertical positions are directly comparable despite the separate left and right axis labels' is not established. The chart uses separate axes, and the absence of tick labels or scale equivalence prevents direct comparison of positions. 2. Supported: The condition that 'a mark higher on the page represents a larger percentage' is logically sound for a chart with a consistent vertical scale, but the first condition is not met. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2623,
+      "total_tokens": 3259,
+      "completion_tokens": 636,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

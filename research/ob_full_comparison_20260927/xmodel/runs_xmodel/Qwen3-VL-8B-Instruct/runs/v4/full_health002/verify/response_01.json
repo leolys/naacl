@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8e64d97c2fa91bd2",
+    "object": "chat.completion",
+    "created": 1790614127,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows a case-count line and axis labels, but no printed routing threshold, alert cutoff, or escalation policy criterion is visible.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If routing requires an explicit policy threshold or sustained-trend criterion beyond the general instruction to select the pathway that best matches the observed trajectory, the chart alone does not provide that threshold; background monitoring could be retained pending such a criterion.\",\n      \"evidence\": \"The task materials do not include any policy table, threshold, or rule that defines when to escalate or stabilize. The only instruction is to route based on the observed trajectory. Therefore, the absence of a threshold is a factual condition, not a missing requirement.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The blue line and markers generally move lower on the page from left to right.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering, the line's downward screen movement would appear to represent a declining trajectory; under the task labels, a declining trajectory maps to declining-case stabilization review.\",\n      \"evidence\": \"The y-axis is labeled 'Count' and its ticks are printed from 0 (top) to 1400 (bottom). This explicitly defines that higher values are lower on the page. The reading's condition — 'despite the printed Count tick ordering' — is false. The chart’s vertical axis is explicitly inverted. Therefore, the reading’s assumption is invalid, and its conclusion does not follow.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r3\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title reads 'Month vs. Number of cases', and the vertical axis is labeled 'Count'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"Printed y-axis ticks show 0 near the top, then 200, 400, 600, 800, 1000, 1200, and 1400 at progressively lower positions.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"The leftmost blue marker is positioned close to the 0 tick, while the rightmost blue marker is below the 1400 tick.\",\n        \"status\": \"supported\"\n      },\n      \"4\": {\n        \"evidence\": \"The blue line runs from left to right across the dated horizontal labels and its markers generally move lower on the page.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the horizontal labels encode the displayed reporting sequence from left to right, the vertical axis labeled 'Count' uses its printed tick values, and larger printed values are lower on the page, then the line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. For this task, an increasing reported-case trajectory maps to rising-case escalation follow-up.\",\n      \"evidence\": \"The horizontal axis labels run from left to right in chronological order (Jan 27 to Mar 22, 2020). The y-axis 'Count' ticks are printed with 0 at the top and 1400 at the bottom, meaning higher counts are lower on the page. The line starts near 0 (top) and ends below 1400 (bottom). This is a monotonic downward movement on the chart. Since higher values are lower, and the line moves from higher to lower, this indicates a decrease in count — not an increase. The reading incorrectly assumes the movement implies an increase. The actual trajectory is a decline.\",\n      \"status\": \"refuted\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3053,
+      "total_tokens": 3942,
+      "completion_tokens": 889,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

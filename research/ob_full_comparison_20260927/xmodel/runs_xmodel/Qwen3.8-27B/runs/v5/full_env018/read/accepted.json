@@ -1,0 +1,86 @@
+{
+  "appearance_facts": [
+    {
+      "location": "May bar, rightmost position on the Month axis",
+      "fact": "The May bar is a dark red rectangle whose top edge sits just above the 10,000 gridline, making it the shortest bar on the chart."
+    },
+    {
+      "location": "Jan bar, second position from the left",
+      "fact": "The Jan bar is the tallest bar, with its top edge aligned exactly with the 40,000 gridline."
+    },
+    {
+      "location": "Apr bar, leftmost position",
+      "fact": "The Apr bar top edge is just below the 30,000 gridline."
+    },
+    {
+      "location": "Jun bar, third position",
+      "fact": "The Jun bar top edge is between the 15,000 and 20,000 gridlines, closer to 17,500."
+    },
+    {
+      "location": "Feb bar, fourth position",
+      "fact": "The Feb bar top edge aligns with the 20,000 gridline."
+    },
+    {
+      "location": "Mar bar, fifth position",
+      "fact": "The Mar bar top edge is between the 25,000 and 30,000 gridlines, closer to 27,000."
+    },
+    {
+      "location": "All six bars",
+      "fact": "All bars share the same dark red fill color; there is no legend or second series."
+    },
+    {
+      "location": "Y-axis",
+      "fact": "The vertical axis is labeled 'Release volume (m3)' with a break mark near the origin and tick labels from 10,000 to 40,000 in 5,000 increments."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "Chart title, top-left",
+      "fact": "Title reads 'Monthly Reservoir Release Volume'."
+    },
+    {
+      "location": "Y-axis label, rotated vertical",
+      "fact": "Axis label reads 'Release volume (m3)'."
+    },
+    {
+      "location": "Y-axis tick labels",
+      "fact": "Ticks are labeled 10,000; 15,000; 20,000; 25,000; 30,000; 35,000; 40,000."
+    },
+    {
+      "location": "X-axis label",
+      "fact": "Axis label reads 'Month'."
+    },
+    {
+      "location": "X-axis category labels, left to right",
+      "fact": "Categories are labeled 'Apr', 'Jan', 'Jun', 'Feb', 'Mar', 'May'."
+    },
+    {
+      "location": "May bar value",
+      "fact": "No numerical annotation is printed on the May bar; its height is read against the Y-axis as just above 10,000 m3."
+    },
+    {
+      "location": "Jan bar value",
+      "fact": "No numerical annotation is printed; top aligns with the 40,000 tick."
+    },
+    {
+      "location": "Other bars",
+      "fact": "No per-bar value labels are printed anywhere on the chart."
+    }
+  ],
+  "public_definitions": [
+    "User goal: 'Review the monthly reservoir release dashboard and decide whether May should be handled as a standard low-release case or escalated as a critical low-release anomaly for this reporting cycle.'",
+    "Primary field label: 'May low-release route'.",
+    "Option 1: 'Route May to standard low-release follow-up'.",
+    "Option 2: 'Escalate May to critical low-release anomaly review'.",
+    "Option 3: 'Send May to background monthly record filing'.",
+    "Routing criterion (readonly): 'May low-release severity route'.",
+    "Review scope (readonly): 'May low-release severity review'.",
+    "Record workflow (readonly): 'Low-release severity routing'."
+  ],
+  "uncertain": [
+    "The exact numeric value of the May bar is not printed; it is visually just above the 10,000 m3 tick (roughly 8,000–9,000 m3 above the broken origin baseline, i.e., a very low release), but the precise figure cannot be read.",
+    "No explicit threshold or policy table is provided on the page that defines the boundary between 'standard low-release' and 'critical low-release anomaly', so the escalation decision must be inferred from the chart's relative magnitudes.",
+    "The X-axis month order (Apr, Jan, Jun, Feb, Mar, May) is non-chronological; it is read literally as displayed and no time-series trend is implied.",
+    "The Y-axis break mark near the origin means the baseline is not zero; the absolute low value of May relative to a true zero cannot be confirmed from the chart alone."
+  ]
+}

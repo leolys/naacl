@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a0398cbea79df75a",
+    "object": "chat.completion",
+    "created": 1790613655,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the Firefox bar is higher on the page than the top of the Edge bar.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the Firefox bar is higher on the page than the top of the Chrome bar.\",\n          \"status\": \"refuted\"\n        },\n        \"3\": {\n          \"evidence\": \"Visible tick labels increase upward from 0 at the baseline through 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the shared vertical axis encodes current market_share with greater vertical height meaning greater share, then the tallest browser bar has the highest market_share; the compatibility queue rule requires selecting that browser.\",\n        \"evidence\": \"The bar heights are not the authoritative encoding; the percentage labels above each bar are explicitly printed and correspond to the vertical axis scale. The bar for Edge is visibly taller than the bar for Firefox, but this is a misreading of the data. The bar height is a visual representation of the percentage value, not an independent encoding. The rule requires selecting the browser with the highest market_share, which is determined by the percentage labels, not bar height. The bar height is consistent with the percentage value, but the percentage labels are the direct, authoritative evidence. The reading is refuted because it incorrectly assumes bar height is the primary encoding, when the percentage labels are explicitly provided and align with the axis. The bar height is a consequence of the percentage value, not an independent source of evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The printed inscription is '87%' above the green bar aligned with the x-axis label Edge.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed inscription is '23%' above the blue bar aligned with the x-axis label Firefox.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed inscription is '5%' above the orange bar aligned with the x-axis label Chrome.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription above a product's bar is that product's current market_share in the dashboard, then compare those inscriptions; the compatibility queue rule requires selecting the browser with the greatest current market_share.\",\n        \"evidence\": \"The percentage inscriptions are explicitly printed above each bar and correspond to the vertical axis scale. The values are 87% for Edge, 23% for Firefox, and 5% for Chrome. The rule requires selecting the browser with the highest market_share, which is Edge at 87%. The reading is supported because the percentage inscriptions are the authoritative source of the market_share values, and the comparison is direct and unambiguous. The bar heights are consistent with these values, but the inscriptions are the primary evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3949,
+      "total_tokens": 4632,
+      "completion_tokens": 683,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

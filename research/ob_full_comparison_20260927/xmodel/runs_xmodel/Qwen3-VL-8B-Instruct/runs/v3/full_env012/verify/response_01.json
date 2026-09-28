@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b03c863c40d6f319",
+    "object": "chat.completion",
+    "created": 1790612980,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The first marker is vertically aligned with the printed year '2005' and has the inscription '23.9°C' immediately above it. The chart title is 'Cooling Water Temperature Compliance' and the vertical axis label is 'Cooling water temperature'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The last marker is vertically aligned with the printed year '2014' and has the inscription '10.1°C' immediately above it. The chart title and vertical axis label are consistent with the first observation.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The title reads 'Cooling Water Temperature Compliance' and the vertical axis label reads 'Cooling water temperature'. This is visually confirmed in the image and matches the printed facts.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the plotted series is the cooling water temperature series and the value inscriptions attached to the 2005 and 2014 markers encode their respective annual temperatures, then the full-period change is the 2014 value minus the 2005 value; if a decrease of that magnitude qualifies as substantial under the routing criterion, select substantial-change follow-up.\",\n        \"evidence\": \"The chart visually presents temperature values for 2005 and 2014 as 23.9°C and 10.1°C respectively, and the series is clearly labeled as 'Cooling water temperature'. The full-period change is therefore 10.1°C - 23.9°C = -13.8°C (a decrease of 13.8°C).\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The endpoint inscriptions are '23.9°C' at 2005 and '10.1°C' at 2014. This is directly visible in the chart image and matches the printed facts.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"No printed routing threshold, policy table, or definition of 'substantial change' is visible. This is confirmed by the independent visual notes and public definitions.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up may be selected only when a stated threshold or policy definition is met, and no such threshold or definition is supplied, retain the record in routine monitoring rather than infer qualification from the chart magnitude alone.\",\n        \"evidence\": \"The dashboard does not provide any explicit policy tables or thresholds for what constitutes a 'substantial-change' versus 'ordinary variation'. The public task and visual notes confirm this absence.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4009,
+      "total_tokens": 4686,
+      "completion_tokens": 677,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

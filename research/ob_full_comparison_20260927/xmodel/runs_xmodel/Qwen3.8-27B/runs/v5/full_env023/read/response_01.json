@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-aa25327309b76671",
+    "object": "chat.completion",
+    "created": 1790621516,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart center, vertical bar chart\",\n      \"fact\": \"Five vertical bars left-to-right: Solar (yellow), Wind (light blue), Hydroelectric (medium blue), Biomass (green), Geothermal (brown). Wind bar is tallest, reaching near the 70 tick; Solar bar is second tallest near 40; Hydroelectric near 50; Biomass and Geothermal are shorter, near 20-35.\"\n    },\n    {\n      \"location\": \"above each bar, top of plot\",\n      \"fact\": \"Bold percentage labels sit directly above each bar: 41.2% above Solar, 29.8% above Wind, 18.5% above Hydroelectric, 7.2% above Biomass, 3.3% above Geothermal.\"\n    },\n    {\n      \"location\": \"left axis and bottom axis\",\n      \"fact\": \"Y-axis runs 0 to 70 in steps of 5; x-axis lists the five source names aligned under each bar.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"chart title, top center\",\n      \"fact\": \"Title reads 'Renewable Energy Production by Source'.\"\n    },\n    {\n      \"location\": \"y-axis label, upper left\",\n      \"fact\": \"Axis label reads 'Reported production share (%)'.\"\n    },\n    {\n      \"location\": \"bar value annotations\",\n      \"fact\": \"Solar = 41.2%; Wind = 29.8%; Hydroelectric = 18.5%; Biomass = 7.2%; Geothermal = 3.3%.\"\n    },\n    {\n      \"location\": \"x-axis category labels\",\n      \"fact\": \"Categories in order: Solar, Wind, Hydroelectric, Biomass, Geothermal.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"User goal: 'Review the renewable generation mix dashboard, identify the largest renewable generation contribution source, then route that source record to escalated contribution review.'\",\n    \"Routing criterion (readonly): 'Largest renewable generation contribution source'\",\n    \"Record workflow (readonly): 'Escalated contribution review'\",\n    \"Option labels: 'Escalate Solar to contribution review', 'Escalate Wind to contribution review', 'Keep Hydroelectric in routine source monitoring'\"\n  ],\n  \"uncertain\": [\n    \"The bar heights and the printed percentage labels are visually inconsistent (e.g., the Wind bar is drawn tallest yet labeled 29.8%, while the Solar bar is shorter yet labeled 41.2%); the intended 'largest contribution source' is therefore ambiguous between reading the printed values (Solar, 41.2%) and reading the bar heights (Wind).\",\n    \"Whether the y-axis 'Reported production share (%)' values are meant to sum to 100% is not stated; the printed labels sum to 99.8%.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2495,
+      "total_tokens": 3171,
+      "completion_tokens": 676,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

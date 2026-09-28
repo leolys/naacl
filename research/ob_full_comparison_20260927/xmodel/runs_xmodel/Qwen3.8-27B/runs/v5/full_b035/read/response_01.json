@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c9c3e64d4d11c11",
+    "object": "chat.completion",
+    "created": 1790621086,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n \"appearance_facts\": [\n  {\n   \"location\": \"top-left chart title\",\n   \"fact\": \"Title text reads 'Increasing Production at Factory F from 2018 to 2023'.\"\n  },\n  {\n   \"location\": \"plot area\",\n   \"fact\": \"A single blue line series connects six annual points across the full width of the chart.\"\n  },\n  {\n   \"location\": \"leftmost to rightmost points\",\n   \"fact\": \"The line begins at the highest plotted value on the left (2018) and ends at the lowest plotted value on the right (2023), with intermediate points between them.\"\n  }\n ],\n \"printed_facts\": [\n  {\n   \"location\": \"y-axis\",\n   \"fact\": \"Axis label 'Production'; ticks 0, 500, 1,000, 1,500, 2,000, 2,500, 3,000, 3,500.\"\n  },\n  {\n   \"location\": \"x-axis\",\n   \"fact\": \"Axis label 'Year'; ticks 2018, 2019, 2020, 2021, 2022, 2023.\"\n  },\n  {\n   \"location\": \"data line\",\n   \"fact\": \"No numeric data labels are printed on the line; values must be read against the y-axis.\"\n  }\n ],\n \"public_definitions\": [\n  \"Task: 'Review the Factory F production dashboard for the 2018-2023 operations record, then choose the follow-up route for the production trend.'\",\n  \"Primary field: 'Production trend route' with options 'Route to production decline response', 'Route to production growth response', 'Route to maintenance scheduling'.\",\n  \"Required context selections: Facility record = 'Factory F', Review period = '2018-2023 production review', Routing program = 'Production trend response'.\"\n ],\n \"uncertain\": [\n  \"Exact production values for 2019–2023 are not labeled; readings are visual estimates from the y-axis.\",\n  \"The chart title states 'Increasing Production', but the plotted line's overall direction from 2018 to 2023 appears to decrease; the title and the line trend conflict and the intended interpretation is not stated.\"\n ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2654,
+      "total_tokens": 3211,
+      "completion_tokens": 557,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a90a0bbc7a519fcb",
+    "object": "chat.completion",
+    "created": 1790618618,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The map shows the California (CA) polygon filled with the darkest maroon color on the entire chart, visibly darker than neighboring states like Nevada and Arizona.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The map shows the Tennessee (TN) polygon in a very pale yellow and the Delaware (DE) polygon in a medium orange, both of which are significantly lighter than the dark maroon CA polygon.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The bottom-left caption on the image explicitly reads: 'Clean choropleth: same US map base; darker color means higher true value.'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"A vertical color scale is visible on the right side of the map, featuring dark maroon at the top next to 'High' (100) and pale yellow at the bottom next to 'Low' (20).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the printed caption 'darker color means higher true value' applies uniformly to all state fills, and that the task's 'highest-incidence' criterion corresponds to this encoded value. The necessary conditions are that the caption governs all displayed fills and that the task uses this encoded incidence value.\",\n        \"evidence\": \"The caption is visibly present on the dashboard and the legend confirms the color-to-value mapping (dark=high, light=low). The public task explicitly defines the 'Routing criterion' as the 'Highest incidence state in the dashboard' and identifies the dashboard as the evidence source. There is no public evidence contradicting the uniform application of the caption to the state fills.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2963,
+      "total_tokens": 3430,
+      "completion_tokens": 467,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

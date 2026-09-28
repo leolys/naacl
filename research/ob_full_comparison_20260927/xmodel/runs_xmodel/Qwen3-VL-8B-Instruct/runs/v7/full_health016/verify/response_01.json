@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b06b28ea7ae8e716",
+    "object": "chat.completion",
+    "created": 1790616850,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red line has visible downward-sloping segments between some adjacent yearly vertices, including after 2014, after 2018, and after 2022.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No policy tables or routing thresholds are supplied in the task state.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If routing requires a stated threshold, sustained-direction criterion, or policy rule not supplied in the task, and the plotted series has both rises and declines, then standard trend monitoring may be appropriate rather than an escalation pathway.\",\n        \"evidence\": \"The chart shows both rises and declines (e.g., 2012-2015 decline, 2018-2022 rise, 2022-2023 decline). The task state confirms no thresholds or rules are provided.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible title reads 'Declining Emergency Department Visits in Region Z from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is an authoritative summary of the utilization pattern, then its literal characterization of visits as declining from 2012 to 2023 supports utilization-decrease follow-up.\",\n        \"evidence\": \"The title claims a decline from 2012 to 2023. However, the plotted data contradicts this, showing a rise from 2012 to 2022 (peaking at 3300) and only a slight decline to 3100 in 2023. The title is therefore misleading or inaccurate relative to the data.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red line's vertex at 2012 is lower on the page than its vertex at 2023.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is visibly labeled 'Emergency department visits' and has printed tick labels 0, 800, 1600, 2400, and 3200, with 0 at the bottom and 3200 higher on the page.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is visibly labeled 'Year' and has printed yearly ticks from 2012 through 2023.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted line encodes emergency department visits by year, with higher vertical position corresponding to larger values as indicated by the ascending y-axis tick labels, then a later endpoint plotted higher than the earlier endpoint indicates overall utilization growth; under the task's overall-pattern routing instruction, this supports utilization-growth follow-up.\",\n        \"evidence\": \"The 2012 data point is at approximately 1200 visits. The 2023 data point is at approximately 3100 visits. This is a clear increase. The task's goal is to assess the overall pattern over the review period, which is defined as 2012-2023. The endpoint comparison is a valid measure of overall pattern under monotonic coding.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3233,
+      "total_tokens": 4059,
+      "completion_tokens": 826,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

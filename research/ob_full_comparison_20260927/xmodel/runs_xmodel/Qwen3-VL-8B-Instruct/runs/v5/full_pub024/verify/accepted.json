@@ -1,0 +1,51 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is an authoritative statement of the tourism trend and the word 'Decreasing' is intended as the routing-relevant classification, then the decline-response route is appropriate.",
+        "evidence": "The chart title is an explicit, visible statement. The chart's plotted line, however, shows a clear increase from ~1100 in 1880 to ~3000 in 1891. The title and the plot are in direct contradiction. The task provides no rule for resolving this conflict, nor does it state that the title overrides the plot. Therefore, the condition that 'the chart title is an authoritative statement... and the word 'Decreasing' is intended as the routing-relevant classification' is not supported by the chart's visual evidence. The title's authority is not established as superior to the plot's data. The condition is not met.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title contains the word 'Decreasing', while the blue line's endpoint at 1891 is higher on the page than its beginning at 1880.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If contradictory chart signals cannot be resolved because neither an authority hierarchy nor a routing threshold is supplied, then the trend cannot be classified reliably for escalation and routine monitoring is the conservative route.",
+        "evidence": "The chart presents a direct contradiction: the title claims a decrease, while the plot shows an increase. The task provides no authority hierarchy (e.g., title > plot, or plot > title) or routing threshold (e.g., a minimum percentage change to trigger growth/decline response). Therefore, the condition 'contradictory chart signals cannot be resolved because neither an authority hierarchy nor a routing threshold is supplied' is supported. The conclusion that 'routine monitoring is the conservative route' is not explicitly stated in the task, but the condition for invoking it is met. The B's condition is supported, but its conclusion is not a direct inference from the task's stated policy. The task does not state that routine monitoring is the default. However, the condition for invoking it is met, so the B is applicable.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The blue line begins at the vertical alignment of the printed x-axis tick '1880' and ends at the vertical alignment of the printed x-axis tick '1891' and is higher on the page than its beginning at 1880.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is visibly labeled 'Year'; the vertical axis is visibly labeled 'Number of New Tourists' and has printed values increasing upward from '0' to '4,000'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The data point for 1880 is located at approximately 1100 on the y-axis; the data point for 1891 is located at approximately 3000 on the y-axis.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the single plotted line is the dashboard's New tourists series, the horizontal axis encodes chronological year left-to-right, and higher vertical position maps to a larger number of new tourists using the upward-increasing y-axis, then a line ending higher than it begins indicates growth over the reviewed period. If the routing labels are intended to map a growth trend to growth planning, select the growth-planning route.",
+        "evidence": "The chart's visual evidence supports all the necessary conditions: the plotted line is the only series, the x-axis is chronological, the y-axis increases upward, and the endpoint (1891, ~3000) is higher than the start (1880, ~1100). Therefore, the condition 'a line ending higher than it begins indicates growth over the reviewed period' is supported. The task's instructions state that the dashboard is the evidence source for routing, and the options include 'Route to tourism growth planning'. The B's final clause 'If the routing labels are intended to map a growth trend to growth planning, select the growth-planning route' is not a direct inference from the task, but it is a plausible, contextually supported interpretation of the available options. The B's condition is met, and its conclusion is a reasonable action given the evidence and the available options.",
+        "status": "supported"
+      }
+    }
+  }
+}

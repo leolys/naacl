@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title and vertical-axis label are visible and match the description: 'Units Sold by Product (Weekend Pop-up)' and 'Units Sold'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Visible tick marks on the vertical axis are at 2,000, 4,000, 6,000, 8,000, and 10,000.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The bar for 'Product A' is visibly positioned above its label and its top is below the 2,000 tick mark and above the baseline.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart’s vertical axis encodes Units Sold on a linear scale and each labeled bar is correctly bound to its product label, Product A’s bar can be interpolated at about 1,700 units. Under the supplied policy, a value less than 500 units from a decision threshold falls in the manual merchandising verification variance band. Selecting the manual-check route requires the additional assumption that this overlapping variance-band rule applies as the operative route rather than being subordinate to the base sales tier.",
+        "evidence": "The chart's y-axis is linear (ticks are equally spaced), and the bar for Product A is correctly bound to its label. The visual interpolation of 1,700 units is consistent with the bar's position between the baseline and the 2,000 tick. The policy states that values < 500 units from a decision threshold trigger the manual verification band. Since 1,700 is not < 500 from any decision threshold (it is 1,700 units from 0, which is not within the 500-unit variance band around any of the thresholds), this reading is invalid. The manual variance band rule does not apply to 1,700 units. The reading's condition about the variance band taking precedence is irrelevant because the rule does not trigger. The reading's conclusion is unsupported.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title and vertical-axis label are visible and match the description: 'Units Sold by Product (Weekend Pop-up)' and 'Units Sold'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Visible tick marks on the vertical axis are at 2,000, 4,000, 6,000, 8,000, and 10,000.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The bar for 'Product A' is visibly positioned above its label and its top is below the 2,000 tick mark and above the baseline.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart’s vertical axis encodes Units Sold on a linear scale and each labeled bar is correctly bound to its product label, Product A’s bar can be interpolated at about 1,700 units. Under the supplied policy, values at least 1,000 and below 2,000 units activate the low-sales review queue. Selecting the low-sales route requires the additional assumption that the base unit-condition tiers govern when policy rules overlap.",
+        "evidence": "The chart's y-axis is linear, and the bar for Product A is correctly bound to its label. The visual interpolation of 1,700 units is consistent with the bar's position between the baseline and the 2,000 tick. The policy states that values >= 1,000 and < 2,000 units trigger the 'Low-sales review queue activation level'. Since 1,700 falls within this range, the reading's conclusion is valid. The condition about base tiers governing overlap is not required for this specific rule, as the rule is unambiguous and directly applies. The reading's conclusion is supported.",
+        "status": "supported"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-99d2d41ab09770f4",
+    "object": "chat.completion",
+    "created": 1790616182,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Prevalence of Species Z in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend at the lower right shows a vertical color ramp labeled 'High' at the top (pale yellow, 100) and 'Low' at the bottom (dark red, 0).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state labeled 'NJ' is filled with a very pale yellow color, matching the 'Low' end of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state labeled 'PA' is filled with a dark red color, matching the 'Low' end of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The state labeled 'DE' is filled with an orange-red color, visibly darker than NJ and lighter than PA.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The map's color legend encodes prevalence with the pale yellow end marked 'High' and '100' and the dark red end marked 'Low' and '0'. 2. States with paler fills have higher prevalence than states with darker fills. 3. The task requires routing the highest-prevalence state among the listed options (NJ, PA, DE).\",\n        \"evidence\": \"1. The legend explicitly marks pale yellow as 'High' (100) and dark red as 'Low' (0). 2. The color gradient is consistent across the map, and the fill colors for NJ (pale yellow), PA (dark red), and DE (orange-red) are visually interpretable. 3. The task requires selecting the highest-prevalence state among the three listed options. The condition is satisfied because the task scope is limited to these three states, and the dashboard is the evidence source.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3694,
+      "total_tokens": 4165,
+      "completion_tokens": 471,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

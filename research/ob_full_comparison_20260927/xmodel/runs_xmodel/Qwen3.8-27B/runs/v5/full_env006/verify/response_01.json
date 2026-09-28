@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ad0a96807b10c9f0",
+    "object": "chat.completion",
+    "created": 1790621375,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text is visible at the top-left of the image and reads exactly 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The red pie slice in the upper-left quadrant contains the text 'Fossil Fuels (50%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The orange pie slice on the left side contains the text 'Renewables (25%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The light-orange pie slice on the right side contains the text 'Nuclear (15%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The pale-yellow pie slice at the bottom contains the text 'Hydroelectric (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice inscriptions name each source and state its global energy-consumption share, and the dashboard title defines the scope as global energy consumption by source, then the source with the greatest printed percentage is the largest category. Under the task instruction to route that largest category to priority monitoring, select the matching route option. Assumes the printed slice labels are the dashboard's intended shares for this reporting cycle and that the route option names the identified category.\",\n        \"evidence\": \"The conditions are met: the title establishes the scope ('Global Energy Consumption by Source'), and the slice labels provide the shares (50%, 25%, 15%, 10%). Fossil Fuels has the greatest percentage (50%). The task instruction and the 'Routing criterion' field ('Largest global energy consumption category') require routing this source. The option 'Route Fossil Fuels to priority source monitoring' names the identified category and matches the required action.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3757,
+      "total_tokens": 4239,
+      "completion_tokens": 482,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

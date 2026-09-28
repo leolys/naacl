@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87559cd430178707",
+    "object": "chat.completion",
+    "created": 1790615352,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red square has the printed inscription '37' nearby and is higher on the page than the blue circle, which has the printed inscription '143' nearby.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue circle has the printed inscription '139' nearby and is higher on the page than the red square, which has the printed inscription '32' nearby.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Neither the red square nor the blue circle has a visible printed numeric inscription nearby.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the printed numbers beside the colored marks are their countries' indicator values, then the 2011 and 2013 annotations show that screen height does not reliably rank the countries' numeric values; consequently, without a printed 2012 value or explicit shared-scale information, the 2012 comparison cannot be established from mark height alone.\",\n        \"evidence\": \"The chart's 2012 vertical gridline has no visible printed numeric inscription nearby, which is consistent with the claim that a 2012 value is not printed. However, the chart does provide printed values for 2011 and 2013, which are used to support the claim that screen height does not reliably rank the values. The claim that the 2012 comparison cannot be established from mark height alone is refuted by the presence of printed 2012 values for both countries (32 for Canada, 139 for United States) visible in the chart. Therefore, the B reading is refuted because the necessary condition that a printed 2012 value is absent is contradicted by the visible 2012 values.\"\n      ,\n      \"status\": \"refuted\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"A red dashed-line square is higher on the page than a blue solid-line circle.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The inscription 'Canada' is printed in red beside the plot.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"The inscription 'United States' is printed in blue beside the plot.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the red dashed-square series is Canada and the blue solid-circle series is United States, and both use one shared vertical scale that increases upward, then a higher 2012 mark represents a larger 2012 indicator value.\",\n      \"evidence\": \"The chart's visual encoding explicitly binds the red dashed-line series (Canada) to the right y-axis and the blue solid-line series (United States) to the left y-axis. The chart does not show a shared vertical scale. The red dashed-line square is higher than the blue solid-line circle, but this does not indicate a larger value for Canada because they are on different axes. The B reading is refuted because the necessary condition that both series use a shared vertical scale is not met. The chart uses two separate vertical scales (left for United States, right for Canada), which means the relative heights of the marks on different axes cannot be directly compared to establish which value is larger without knowing the scale relationship between the axes. The chart does not provide this information.\",\n      \"status\": \"refuted\"\n    }\n  }\n}\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2659,
+      "total_tokens": 3448,
+      "completion_tokens": 789,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

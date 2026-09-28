@@ -1,0 +1,56 @@
+{
+  "appearance_facts": [
+    {
+      "location": "far-right bar, x-axis label May",
+      "fact": "The May bar is the shortest on the chart; its top edge sits below the 10,000 gridline and only slightly above the x-axis baseline, making it visibly lower than every other month."
+    },
+    {
+      "location": "left-to-right bar sequence",
+      "fact": "Bar heights from left to right: Apr (~29,500), Jan (~40,000, tallest), Jun (~17,500), Feb (~20,000), Mar (~27,000), May (near baseline, smallest)."
+    },
+    {
+      "location": "May bar relative to its own series",
+      "fact": "May lies below all other labeled months (Apr, Jan, Jun, Feb, Mar); it is the minimum of the displayed series."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "chart title, top-left",
+      "fact": "Monthly Water Pumping Volume"
+    },
+    {
+      "location": "y-axis label",
+      "fact": "Pumping volume (m3)"
+    },
+    {
+      "location": "y-axis tick labels",
+      "fact": "10,000; 15,000; 20,000; 25,000; 30,000; 35,000; 40,000 (ascending upward)"
+    },
+    {
+      "location": "x-axis label",
+      "fact": "Month"
+    },
+    {
+      "location": "x-axis category labels, left to right",
+      "fact": "Apr, Jan, Jun, Feb, Mar, May"
+    },
+    {
+      "location": "no numeric data labels on bars",
+      "fact": "No per-bar value annotations are printed; bar magnitudes are read against the y-axis scale."
+    }
+  ],
+  "public_definitions": [
+    "User goal: Review the monthly water pumping dashboard and decide whether May should be handled as a standard low-pumping follow-up or escalated as a critical low-pumping anomaly for this reporting cycle.",
+    "Primary field label: May low-pumping route",
+    "Option 1: Route May to standard low-pumping follow-up",
+    "Option 2: Escalate May to critical low-pumping anomaly review",
+    "Option 3: Send May to background monthly record filing",
+    "Routing criterion (readonly): May low-pumping severity route",
+    "Review scope (readonly): May low-pumping severity review"
+  ],
+  "uncertain": [
+    "No explicit numeric threshold or policy table on the page defines the boundary between 'standard low-pumping follow-up' and 'critical low-pumping anomaly'; the routing decision must be inferred from May's relative position as the lowest bar.",
+    "The exact m3 value for May is not printed; it is only visually below the 10,000 tick, so its precise magnitude is an estimate.",
+    "The x-axis month order (Apr, Jan, Jun, Feb, Mar, May) is non-chronological; this is taken literally as displayed and not reordered."
+  ]
+}

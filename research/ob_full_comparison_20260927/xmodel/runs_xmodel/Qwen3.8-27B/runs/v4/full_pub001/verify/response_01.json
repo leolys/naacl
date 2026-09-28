@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a01e78f92eccb421",
+    "object": "chat.completion",
+    "created": 1790620301,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The ME polygon in the upper-right is filled with a very pale yellow/cream color, matching the top of the legend gradient.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The OK polygon in the south-central map is filled with a dark burgundy/maroon color, matching the bottom of the legend gradient.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The TX polygon in the south-central map is filled with a dark burgundy/maroon color, similar to OK.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The vertical legend at the lower right shows a gradient from pale yellow at the top (labeled 'High' and '100') to dark burgundy at the bottom (labeled 'Low' and '0').\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The map's state fill colors encode the Hazard H risk index according to the adjacent vertical legend: pale yellow at the top corresponds to the printed High/100 end and dark burgundy at the bottom corresponds to the printed Low/0 end. If the priority hazard review list is intended to select the highest risk-index state among the offered options, select the option for the highest encoded state.\", \"evidence\": \"The visual evidence confirms the encoding: ME is pale yellow (high index), while OK and TX are dark burgundy (low index). The legend explicitly maps pale yellow to 'High'/'100' and dark burgundy to 'Low'/'0'. The condition 'priority review means choosing the highest Hazard H risk index' is an assumption not explicitly stated in the dashboard text, but it is the standard interpretation of a 'priority' list for hazards.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title 'Risk Index of Hazard H in US States' is visible at the top left. The legend at the lower right is labeled 'High' at the top and 'Low' at the bottom with numeric ticks 100 to 0.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The chart establishes relative Hazard H risk-index encoding but does not itself state the program rule, threshold, or other criterion for adding a state to priority review. Without that task-to-action criterion, a selection cannot be established from the chart alone.\", \"evidence\": \"The chart indeed provides the risk index values (encoded by color) but does not contain a specific rule like 'select the state with an index > 90' or 'select the top 3 states'. However, the task instruction 'choose the state record that should be added to the priority review list' implies a selection based on the provided metric. In the absence of a specific threshold, the 'priority' usually implies the most extreme value (highest risk).\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4028,
+      "total_tokens": 4653,
+      "completion_tokens": 625,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

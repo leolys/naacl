@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a09ccb563bf84982",
+    "object": "chat.completion",
+    "created": 1790622222,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top-left of the image clearly displays the text 'Prevalence of Species Z in Each State.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"In the southeastern region of the map, the polygon labeled 'NC' is filled with a very light, pale yellow color, which corresponds to the top of the color scale.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"In the northeastern region of the map, the polygon labeled 'NY' is filled with a very dark, deep red/maroon color, corresponding to the bottom of the color scale.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"In the mid-Atlantic region, the small polygon labeled 'DE' is filled with an orange color, which is intermediate on the scale.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The vertical legend on the right side of the map shows a gradient from pale yellow at the top to dark maroon at the bottom. The top is labeled '100 Low' and the bottom is labeled '0 High'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If, contrary to the legend’s printed High/Low labels, lighter yellow map fill were treated as encoding higher prevalence, then the lightest available option state would be selected for priority follow-up.\",\n        \"evidence\": \"The necessary condition for this reading is that the 'lighter yellow' fill encodes 'higher prevalence'. However, the visible legend explicitly labels the pale yellow end as '100 Low' and the dark maroon end as '0 High'. This directly contradicts the condition required for this reading to apply. The visible evidence shows the legend's direction is opposite to what this reading requires.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top-left of the image clearly displays the text 'Prevalence of Species Z in Each State.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"In the southeastern region of the map, the polygon labeled 'NC' is filled with a very light, pale yellow color.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"In the northeastern region of the map, the polygon labeled 'NY' is filled with a very dark, deep red/maroon color.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"In the mid-Atlantic region, the small polygon labeled 'DE' is filled with an orange color.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The vertical legend on the right side of the map shows a gradient from pale yellow at the top to dark maroon at the bottom. The top is labeled '100 Low' and the bottom is labeled '0 High'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each labeled state's map fill encodes the prevalence named in the title, and the legend applies to those fills, then darker burgundy toward the printed 0/“High” end represents higher prevalence than lighter yellow toward the printed 100/“Low” end; the state with the highest encoded prevalence among the available state options should be routed to priority follow-up.\",\n        \"evidence\": \"The necessary conditions are: 1) the legend applies to the map fills, and 2) the legend's 'High' label corresponds to higher prevalence. The legend is positioned next to the map and its color gradient matches the fills used for the states, supporting that it applies. The legend explicitly labels the dark burgundy end as 'High' and the pale yellow end as 'Low'. Therefore, the darker burgundy (NY) represents higher prevalence than the lighter yellow (NC). Among the available options (NC, NY, DE), NY has the darkest fill, corresponding to the highest prevalence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4296,
+      "total_tokens": 5288,
+      "completion_tokens": 992,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

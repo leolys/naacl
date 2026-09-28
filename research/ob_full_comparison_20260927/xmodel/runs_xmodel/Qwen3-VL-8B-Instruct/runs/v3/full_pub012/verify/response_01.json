@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8025f5c56342c136",
+    "object": "chat.completion",
+    "created": 1790613513,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title visibly reads 'Prevalence of Species Z in Each State.'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The map region labeled 'NC' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The map region labeled 'NY' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The small map region labeled 'DE' is filled light orange.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The vertical color legend shows pale yellow near '100' and 'Low' at its top, and dark burgundy near '0' and 'High' at its bottom.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If, contrary to the legend’s printed High/Low labels, lighter yellow map fill were treated as encoding higher prevalence, then the lightest available option state would be selected for priority follow-up.\",\n        \"evidence\": \"The reading requires reversing the visible legend direction, which is not supported by any visual or printed fact. The legend’s printed labels and color gradient are consistent and unambiguous. The task’s public definition confirms that dark red indicates 'High' prevalence. Reversing this would contradict the visible evidence and the task’s stated criteria.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title visibly reads 'Prevalence of Species Z in Each State.'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The map region labeled 'NC' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The map region labeled 'NY' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The small map region labeled 'DE' is filled light orange.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The vertical color legend shows pale yellow near '100' and 'Low' at its top, and dark burgundy near '0' and 'High' at its bottom.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each labeled state's map fill encodes the prevalence named in the title, and the legend applies to those fills, then darker burgundy toward the printed 0/“High” end represents higher prevalence than lighter yellow toward the printed 100/“Low” end; the state with the highest encoded prevalence among the available option states should be routed to priority follow-up.\",\n        \"evidence\": \"The reading is fully supported by the visible evidence. The legend explicitly maps pale yellow to '100 Low' and dark burgundy to '0 High'. The task’s public definition confirms that the highest prevalence state must be selected. New York (NY) is colored dark burgundy, matching the 'High' end of the scale. North Carolina (NC) is pale yellow, matching the 'Low' end. Delaware (DE) is light orange, which is intermediate. Therefore, NY is the highest-prevalence state among the available options.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3955,
+      "total_tokens": 4771,
+      "completion_tokens": 816,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

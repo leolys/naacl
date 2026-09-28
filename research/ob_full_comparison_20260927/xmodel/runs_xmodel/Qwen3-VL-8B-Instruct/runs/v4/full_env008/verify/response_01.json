@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-93d9caedc94519e8",
+    "object": "chat.completion",
+    "created": 1790613939,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The Wind bar extends higher on the page than the Solar, Hydroelectric, Biomass, and Geothermal bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A shared vertical axis is visibly drawn beside the bars with ticks labeled from 0 through 70.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The tallest bar is positioned above the label 'Wind'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height against the shared vertical axis encodes renewable-generation contribution, the tallest source bar is the largest contribution source; the task requires routing that source to its matching priority follow-up option.\",\n        \"evidence\": \"The bar heights are visually comparable against a shared vertical axis, and the 'Wind' bar is the tallest. The bar height corresponds to a value on the axis (approximately 68-69), which is higher than the 'Solar' bar (approximately 40).\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The yellow bar above the x-axis label 'Solar' has the printed inscription '41.2%' above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The light-blue bar above 'Wind' has the printed inscription '29.8%' above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue bar above 'Hydroelectric' has the printed inscription '18.5%' above it.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The green bar above 'Biomass' has the printed inscription '7.2%' above it.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The brown bar above 'Geothermal' has the printed inscription '3.3%' above it.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription is attached to its source bar and denotes that source's renewable-generation contribution on a common comparable basis, the source with the greatest printed percentage is the largest contribution source; the task requires routing that source to its matching priority follow-up option.\",\n        \"evidence\": \"The percentage inscriptions are directly above each bar, and the values are 41.2% (Solar), 29.8% (Wind), 18.5% (Hydroelectric), 7.2% (Biomass), and 3.3% (Geothermal). These values are presented on a common scale (percentages), and 41.2% is the highest value.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3696,
+      "total_tokens": 4353,
+      "completion_tokens": 657,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

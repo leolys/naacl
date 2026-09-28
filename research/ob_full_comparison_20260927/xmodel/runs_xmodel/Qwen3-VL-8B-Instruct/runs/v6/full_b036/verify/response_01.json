@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9167c35669e5d933",
+    "object": "chat.completion",
+    "created": 1790615599,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line's Q4 endpoint is at approximately 1450 on the y-axis, while its Q1 endpoint is at approximately 1050. This establishes a vertical increase from Q1 to Q4.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Quarter' with Q1, Q2, Q3, Q4; the vertical axis is labeled 'Revenue' with values increasing upward from 0 to 1600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The visible line is Company C's revenue series. 2. Endpoint increase governs routing. 3. No threshold is supplied.\",\n        \"evidence\": \"1. The chart is explicitly titled 'Stable Revenue of Company C from Q1 to Q4' and the line connects Q1 to Q4, so it is Company C's revenue series. 2. The routing decision is based on the endpoint positions, as stated in B.conditions. 3. No threshold is mentioned in B.conditions. All conditions are supported by the chart and task context.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The title is intended as the routing-relevant classification.\",\n        \"evidence\": \"The public task instruction says 'Use the Company C revenue dashboard as the evidence source for the revenue trend routing decision.' The title is part of the dashboard. However, the task does not state that the title is the authoritative classification. The chart's visual data (Q1: 1050, Q3: 1500, Q4: 1450) shows a clear increase, which contradicts the title's 'Stable' label. The B.conditions require the title to be authoritative for routing, but the visual data is not consistent with the title's claim. The condition 'intended as the routing-relevant classification' is not established by any public fact; it is an assumption. The title may be a description, not a classification rule. Therefore, the condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3678,
+      "total_tokens": 4231,
+      "completion_tokens": 553,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

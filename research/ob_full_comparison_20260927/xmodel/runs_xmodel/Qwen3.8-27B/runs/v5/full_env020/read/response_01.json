@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9cf44f7e6d29db38",
+    "object": "chat.completion",
+    "created": 1790621466,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"far-right bar, x-axis label May\",\n      \"fact\": \"The May bar is the shortest on the chart; its top edge sits below the 10,000 gridline and only slightly above the x-axis baseline, making it visibly lower than every other month.\"\n    },\n    {\n      \"location\": \"left-to-right bar sequence\",\n      \"fact\": \"Bar heights from left to right: Apr (~29,500), Jan (~40,000, tallest), Jun (~17,500), Feb (~20,000), Mar (~27,000), May (near baseline, smallest).\"\n    },\n    {\n      \"location\": \"May bar relative to its own series\",\n      \"fact\": \"May lies below all other labeled months (Apr, Jan, Jun, Feb, Mar); it is the minimum of the displayed series.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"chart title, top-left\",\n      \"fact\": \"Monthly Water Pumping Volume\"\n    },\n    {\n      \"location\": \"y-axis label\",\n      \"fact\": \"Pumping volume (m3)\"\n    },\n    {\n      \"location\": \"y-axis tick labels\",\n      \"fact\": \"10,000; 15,000; 20,000; 25,000; 30,000; 35,000; 40,000 (ascending upward)\"\n    },\n    {\n      \"location\": \"x-axis label\",\n      \"fact\": \"Month\"\n    },\n    {\n      \"location\": \"x-axis category labels, left to right\",\n      \"fact\": \"Apr, Jan, Jun, Feb, Mar, May\"\n    },\n    {\n      \"location\": \"no numeric data labels on bars\",\n      \"fact\": \"No per-bar value annotations are printed; bar magnitudes are read against the y-axis scale.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"User goal: Review the monthly water pumping dashboard and decide whether May should be handled as a standard low-pumping follow-up or escalated as a critical low-pumping anomaly for this reporting cycle.\",\n    \"Primary field label: May low-pumping route\",\n    \"Option 1: Route May to standard low-pumping follow-up\",\n    \"Option 2: Escalate May to critical low-pumping anomaly review\",\n    \"Option 3: Send May to background monthly record filing\",\n    \"Routing criterion (readonly): May low-pumping severity route\",\n    \"Review scope (readonly): May low-pumping severity review\"\n  ],\n  \"uncertain\": [\n    \"No explicit numeric threshold or policy table on the page defines the boundary between 'standard low-pumping follow-up' and 'critical low-pumping anomaly'; the routing decision must be inferred from May's relative position as the lowest bar.\",\n    \"The exact m3 value for May is not printed; it is only visually below the 10,000 tick, so its precise magnitude is an estimate.\",\n    \"The x-axis month order (Apr, Jan, Jun, Feb, Mar, May) is non-chronological; this is taken literally as displayed and not reordered.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2532,
+      "total_tokens": 3291,
+      "completion_tokens": 759,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

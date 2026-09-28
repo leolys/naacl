@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b9e79367cbfc57bb",
+    "object": "chat.completion",
+    "created": 1790619587,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The pie chart shows four slices. The orange-red slice labeled 'Nuclear (45%)' occupies the upper-right quadrant and is visibly the largest angular area. The red slice 'Hydroelectric (30%)' is the second largest. The pale-yellow 'Fossil Fuels (15%)' and light-orange 'Renewables (10%)' are smaller. The assertion that the Nuclear slice spans a larger angular area than the others is supported by the visual layout and the percentage labels.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text at the top left of the image clearly reads 'Global Energy Consumption by Source' in bold black font.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie encodes consumption shares by slice area and slice labels attach to their respective slices, the visibly largest slice identifies the largest category; the routing criterion then requires that category's priority-monitoring option when available.\",\n        \"evidence\": \"The chart is a standard pie chart where slice area corresponds to the value. The labels are placed directly on the slices. The 'Nuclear' slice is the largest. The option 'Escalate Nuclear for priority source monitoring' is available in the list of options.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text is visible at the top of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label on the large orange-red slice in the upper-right reads 'Nuclear (45%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The label on the red slice in the lower-right reads 'Hydroelectric (30%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The label on the pale-yellow slice on the left reads 'Fossil Fuels (15%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The label on the light-orange slice in the upper-left reads 'Renewables (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice labels state each source's share of the global energy consumption measure named in the chart title, the category with the greatest labeled share is the largest consumption category; the routing criterion requires selecting that category's priority-monitoring option when available.\",\n        \"evidence\": \"The labels provide percentages (45%, 30%, 15%, 10%) which sum to 100%, indicating shares of the total. The chart title confirms the metric is 'Global Energy Consumption by Source'. 45% is the greatest value. The option 'Escalate Nuclear for priority source monitoring' corresponds to this category.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3755,
+      "total_tokens": 4487,
+      "completion_tokens": 732,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-857ee0d723371a76",
+    "object": "chat.completion",
+    "created": 1790620422,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"chart_1, central-eastern map: the state polygon labeled 'IL' is filled with a pale yellow color.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"chart_1, central map: the state polygon labeled 'KS' is filled with a dark maroon color.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"chart_1, mid-Atlantic coast: the small state polygon labeled 'DE' is filled with a red/orange color.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"chart_1, lower-right legend: the vertical color bar shows the top (pale yellow) adjacent to 'High' and '100', and the bottom (dark maroon) adjacent to 'Low' and '0'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that fill color encodes the risk index according to the legend (pale yellow = high risk, dark maroon = low risk) and that the task requires selecting the highest-risk state among the available options.\",\n        \"evidence\": \"The legend explicitly maps pale yellow to 'High' (100) and dark maroon to 'Low' (0). The map uses these colors to fill state polygons. The task instructions and routing criterion ('Highest risk state in the dashboard') confirm the goal is to identify the state with the highest risk value.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3563,
+      "total_tokens": 3956,
+      "completion_tokens": 393,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

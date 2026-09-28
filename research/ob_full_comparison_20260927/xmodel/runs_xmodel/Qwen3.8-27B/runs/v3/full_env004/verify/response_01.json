@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9526d29f88515b93",
+    "object": "chat.completion",
+    "created": 1790617747,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The upper-right orange slice is visibly the largest angular sector, clearly spanning more area than the red, pale-yellow, and light-orange slices.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The title text at the top of the image reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the pie encodes consumption shares by slice area and slice labels attach to their respective slices, the visibly largest slice identifies the largest category; the routing criterion then requires that category's priority-monitoring option when available.\",\n        \"evidence\": \"The chart is a pie chart where slice areas are visually proportional to the labeled percentages (45%, 30%, 15%, 10%). The labels are placed inside their corresponding slices. The routing criterion is explicitly stated as 'Largest global energy consumption category'. The option 'Escalate Nuclear for priority source monitoring' is available.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title text at the top of the image reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The label inside the upper-right orange slice reads 'Nuclear (45%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The label inside the lower red slice reads 'Hydroelectric (30%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The label inside the left pale-yellow slice reads 'Fossil Fuels (15%)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The label inside the upper-left light-orange slice reads 'Renewables (10%)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice labels state each source's share of the global energy consumption measure named in the chart title, the category with the greatest labeled share is the largest consumption category; the routing criterion requires selecting that category's priority-monitoring option when available.\",\n        \"evidence\": \"The labels provide explicit percentages (45%, 30%, 15%, 10%) which sum to 100%, confirming they are shares of the total. 'Nuclear' has the highest share (45%). The routing criterion is 'Largest global energy consumption category'. The option 'Escalate Nuclear for priority source monitoring' is available.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3639,
+      "total_tokens": 4349,
+      "completion_tokens": 710,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

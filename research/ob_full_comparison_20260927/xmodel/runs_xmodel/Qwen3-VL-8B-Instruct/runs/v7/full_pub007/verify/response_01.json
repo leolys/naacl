@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-923b0370103d29be",
+    "object": "chat.completion",
+    "created": 1790616920,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical color legend is labeled 'High' at the light-yellow top beside '100' and 'Low' at the dark-red bottom beside '0'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The area carrying the inscription 'NH' is filled very pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The area carrying the inscription 'DE' is filled orange.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The area carrying the inscription 'FL' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map fill is encoded by the adjacent color legend, then lighter yellow corresponds to higher plotted values because the legend places 'High' and '100' at its light-yellow top and 'Low' and '0' at its dark-red bottom; among compared state fills, the lighter fill has the higher plotted value.\",\n        \"evidence\": \"The legend confirms the color-to-value mapping: light yellow = high (100), dark red = low (0). NH is light yellow, DE is orange, FL is dark burgundy. This matches the color gradient: NH (lightest) > DE (medium) > FL (darkest).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title visibly reads 'Incidence of Condition A in US States.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend runs from light-yellow 'High'/'100' to dark-red 'Low'/'0'; NH is pale yellow, DE is orange, and FL is dark burgundy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the dashboard named by the task is intended as the evidence source for the requested prevalence-priority route despite the chart title using 'Incidence,' then the state with the highest plotted map value among the listed options is the state to route for highest-prevalence follow-up.\",\n        \"evidence\": \"The task explicitly directs to use the 'state prevalence dashboard' as the evidence source. The chart's title ('Incidence') is not a disqualifier; the task's goal is to route based on prevalence, and incidence is the measure shown. The visual evidence confirms NH (light yellow) has the highest value, DE (orange) is moderate, and FL (dark burgundy) has the lowest among the three.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3670,
+      "total_tokens": 4282,
+      "completion_tokens": 612,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

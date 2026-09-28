@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a7c4935c9db8b342",
+    "object": "chat.completion",
+    "created": 1790615723,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red May bar is visibly shorter than each of the other five bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The title reads 'Monthly Energy Usage (kWh)' and the vertical axis is labeled 'Energy Usage (kWh)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes standard follow-up is the default for a low-output case not shown to meet critical criteria. 2. No such threshold or default rule is provided in the task materials.\",\n        \"evidence\": \"Condition 1: The task materials do not state a default rule for low-output cases. Condition 2: The task materials do not provide any explicit policy threshold or severity criterion for critical escalation. The only evidence is the chart's visual data. Therefore, condition 1 remains open; the task does not establish that standard follow-up is the default.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red May bar is visibly shorter than each of the other five bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the May bar is below the printed 10,000 tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The Jun bar, the next shortest visible bar, has its top between the printed 15,000 and 20,000 ticks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes the May-labeled bar represents May. 2. Assumes higher bar tops encode greater usage. 3. Assumes the displayed months are comparable. 4. Assumes extreme relative low output is a critical-routing criterion; no explicit threshold is supplied.\",\n        \"evidence\": \"Condition 1: The bar is labeled 'May' on the x-axis. Condition 2: The vertical axis represents energy usage, so higher bars mean higher usage. Condition 3: All bars are from the same chart, using the same scale, so they are comparable. Condition 4: The policy condition is not met because no explicit threshold is supplied. The task materials do not state that relative low output is a criterion for critical escalation. The chart alone does not establish this rule.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4008,
+      "total_tokens": 4573,
+      "completion_tokens": 565,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

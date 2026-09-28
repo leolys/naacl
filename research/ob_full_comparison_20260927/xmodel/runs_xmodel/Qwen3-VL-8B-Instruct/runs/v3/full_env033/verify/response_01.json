@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ba97105485ea7632",
+    "object": "chat.completion",
+    "created": 1790613217,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy'. The left y-axis is labeled 'Hydroelectricity (%)' in blue. The right y-axis is labeled 'Nuclear energy (%)' in red. These are visually confirmed in the chart.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"No numeric tick labels are visibly printed on either y-axis. No percentage inscription is visibly attached to either mark at the printed x-axis tick '2010'. The chart does not display any such labels or inscriptions at the 2010 mark.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If one source is established to have the higher 2010 generation share, the task directs routing that source to the higher-share follow-up workflow; if no source is established as higher, an archive outcome would require a stated unresolved-comparison fallback.\",\n        \"evidence\": \"The public task explicitly requests routing the source with the higher 2010 generation share. No fallback policy for unresolved comparisons is provided in the task or interface. The absence of visible 2010 data labels means the higher-share source cannot be established from the chart alone without external data.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy'. The left y-axis is labeled 'Hydroelectricity (%)' in blue. The right y-axis is labeled 'Nuclear energy (%)' in red. These are visually confirmed in the chart.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"At the printed x-axis tick '2010', a blue circular mark is lower on the page than a red square mark. This is visually confirmed in the chart.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"No numeric tick labels are visibly printed on either y-axis. No percentage inscription is visibly attached to either 2010 mark. The chart does not display any such labels or inscriptions at the 2010 mark.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The blue circular series is Hydroelectricity and is read against the left blue y-axis; the red dashed square series is Nuclear energy and is read against the right red y-axis. A higher generation-share comparison requires decodable, comparable 2010 values from those axes or another explicit common-scale statement; screen-space height alone is not comparable across separate y-axes.\",\n        \"evidence\": \"The blue circular series is Hydroelectricity, plotted against the left y-axis. The red square series is Nuclear energy, plotted against the right y-axis. The chart uses separate y-axes with no common scale. Screen-space height is not comparable across axes. The reading correctly states that decodable, comparable 2010 values are required for a valid comparison. This condition is not met, as no such values are visible.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3044,
+      "total_tokens": 3790,
+      "completion_tokens": 746,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

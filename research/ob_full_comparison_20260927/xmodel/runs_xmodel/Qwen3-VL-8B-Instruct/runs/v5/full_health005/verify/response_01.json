@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b525e2f5bf06583e",
+    "object": "chat.completion",
+    "created": 1790615052,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart presents one blue line with monthly points under the title 'Month vs. Number of samples tested'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The public task lists a general laboratory operations review option in addition to specialized rising-volume and declining-volume options.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart establishes a volume pattern but the task provides no explicit operational policy tying that pattern to a specialized team, general laboratory operations review may be used as a fallback rather than inferring a capacity-planning assignment.\",\n        \"evidence\": \"The task instructions do not specify a policy that maps volume patterns to specialized teams. The options provided are explicitly labeled as 'rising-volume', 'declining-volume', and 'general laboratory operations'. The absence of a stated policy linking patterns to specialized teams means general operations review is a valid fallback option.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Month vs. Number of samples tested'; the horizontal axis is labeled 'Month' and the vertical axis is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost visible month tick reads 'Nov 20' and the rightmost visible month tick reads 'Jun 26', with intervening labels progressing through Nov, Oct, Sep, Aug, Jul, and Jun from left to right.\",\n          \"status\": \"refuted\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis shows '0.0' near the top and '1.2' near the bottom, with '1e6' printed above the axis; the blue point at Nov 20 is lower on the page than the blue point at Jun 26.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the title and axis labels bind the blue series to monthly testing counts, the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen, then the series rises over chronological time. For this routing task, a rising testing-volume pattern maps to rising-volume capacity planning.\",\n        \"evidence\": \"The x-axis tick labels are printed from left to right as 'Nov 20', 'Nov 12', 'Nov 4', 'Oct 20', ..., 'Jun 26'. This sequence is chronological, moving from November 20 to June 26. The y-axis is logarithmic, with '0.0' at the top and '1.2' at the bottom, meaning larger values are lower on the screen. The blue line starts at 'Nov 20' with a value of approximately 1.2 (1.2e6 samples) and ends at 'Jun 26' with a value of approximately 0.4 (0.4e6 samples). This indicates a declining trend over time. The claim that the series 'rises over chronological time' is contradicted by the visual data. Therefore, the condition that 'the series rises over chronological time' is false, and the inference that 'a rising testing-volume pattern maps to rising-volume capacity planning' does not apply.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3010,
+      "total_tokens": 3775,
+      "completion_tokens": 765,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

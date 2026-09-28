@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a7d72b7935194684",
+    "object": "chat.completion",
+    "created": 1790620003,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows the blue line at the 2018 tick starting at approximately 2,800 on the vertical axis. The line at the 2023 tick ends at a position visibly lower on the page, at approximately 2,550. This confirms the 2023 mark is lower than the 2018 mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Recovery Score' and displays tick labels 0, 400, 800, 1,200, 1,600, 2,000, 2,400, and 2,800. The values increase from the bottom of the axis to the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years progress left to right and higher vertical position on the Recovery Score axis represents a higher recovery score, then a final mark lower than the initial mark indicates a lower final recovery score; if a lower overall recovery score warrants deterioration review, select that route.\",\n        \"evidence\": \"The visual evidence confirms the x-axis progresses left to right (2018 to 2023) and the y-axis is increasing upward. The 2023 mark is lower than the 2018 mark. However, the condition that 'a lower overall recovery score warrants deterioration review' is not supported by the chart or task instructions. The chart title explicitly states 'Increasing Regional Air Quality Recovery,' which contradicts the interpretation of the endpoint comparison as a 'deterioration' requiring a specific response route.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart clearly reads 'Increasing Regional Air Quality Recovery from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks from 2018 to 2023. The vertical axis is labeled 'Recovery Score'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is intended to summarize the overall 2018-2023 dashboard finding, and an increasing air-quality recovery finding is routed to recovery expansion follow-up, select the recovery expansion route.\",\n        \"evidence\": \"The chart title explicitly summarizes the finding as 'Increasing Regional Air Quality Recovery.' The task asks to select the route that best matches the overall dashboard trend. 'Air-quality recovery expansion follow-up' is the only option that aligns with an 'increasing recovery' trend. The condition that the title is authoritative for the overall trend is supported by the fact that it is the primary descriptor of the data presented.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3698,
+      "total_tokens": 4419,
+      "completion_tokens": 721,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

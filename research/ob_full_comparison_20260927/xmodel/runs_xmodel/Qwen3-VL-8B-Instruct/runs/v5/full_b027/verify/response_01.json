@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9256de5b7b1a05ee",
+    "object": "chat.completion",
+    "created": 1790614657,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The only visible measure labels are 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Five labeled points are visible: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an expansion decision requires full regional coverage or additional financial evidence beyond sales and advertising spend, then a chart explicitly scoped to 'Top Regions' and showing only those two measures is insufficient, favoring a request for full regional data analysis.\",\n        \"evidence\": \"The chart is explicitly scoped to 'Top Regions' and shows only 'Advertising Spend' and 'Sales'.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Region E is located at approximately (70, 168), which is higher and to the right of the other points.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The points are ordered from Region A (lowest-left) to Region E (highest-right).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, with higher page position representing larger sales values, then the labeled points show the displayed regions' spend-and-sales ordering. Proceeding with an expansion review follows only if high displayed sales among the shown top regions is sufficient evidence for review; no such sufficiency threshold is stated.\",\n        \"evidence\": \"The axes are correctly identified. The vertical axis (Sales) increases upward, and the horizontal axis (Advertising Spend) increases rightward. The points are ordered from Region A to Region E, showing increasing spend and sales. No explicit sufficiency threshold for review is stated in the chart or task instructions.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3731,
+      "total_tokens": 4327,
+      "completion_tokens": 596,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

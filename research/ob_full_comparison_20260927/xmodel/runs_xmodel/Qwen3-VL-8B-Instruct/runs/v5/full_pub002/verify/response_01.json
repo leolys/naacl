@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afb71f4d4a5bc45c",
+    "object": "chat.completion",
+    "created": 1790615143,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The region labeled 'TX' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The region labeled 'WA' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A vertical color bar runs from pale yellow beside the printed 'High' and '100' at its top to dark burgundy beside the printed 'Low' and '0' at its bottom.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The region in Colorado's map position is gray and has no visible state abbreviation label.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map's vertical legend encodes incidence from burgundy at the printed low end (0) to pale yellow at the printed high end (100), then a state filled pale yellow has higher displayed incidence than a state filled burgundy. For the stated workflow, select the option for the highest-incidence jurisdiction only where all candidate jurisdictions are comparably encoded; an unlegendized gray fill cannot be ranked without an additional missing-data rule.\",\n        \"evidence\": \"The legend explicitly maps dark burgundy to 'Low' (0) and pale yellow to 'High' (100). The chart visually confirms TX is pale yellow and WA is dark burgundy. Colorado is gray, and the legend contains no gray swatch or label, so its value cannot be ranked without an external rule. The workflow requires selecting the highest-incidence jurisdiction, which implies comparability among candidates. The gray fill of Colorado violates this comparability condition.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The region labeled 'TX' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The region labeled 'WA' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Colorado's region is gray, while the visible incidence color bar contains pale yellow through burgundy colors and no gray swatch or gray label.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If gray-filled jurisdictions are excluded from the displayed-incidence comparison because gray denotes unavailable or non-displayed data, then the highest displayed incidence among the remaining candidate states should be routed.\",\n        \"evidence\": \"The chart provides no printed gray legend entry or explanation. The gray fill of Colorado is visually distinct from the incidence color scale. The workflow requires selecting the highest-incidence jurisdiction. If gray is interpreted as missing data, then WA (dark burgundy) and TX (pale yellow) are the only candidates. WA is dark burgundy, which the legend maps to 'Low' (0). TX is pale yellow, which maps to 'High' (100). Therefore, TX has the highest displayed incidence among the remaining candidates. This reading is consistent with the visual evidence and the workflow's requirement to select the highest-incidence jurisdiction.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3606,
+      "total_tokens": 4322,
+      "completion_tokens": 716,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

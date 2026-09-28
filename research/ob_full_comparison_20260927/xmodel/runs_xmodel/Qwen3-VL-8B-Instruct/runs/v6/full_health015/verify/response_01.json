@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c2c472087a80fbf",
+    "object": "chat.completion",
+    "created": 1790616040,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red square at 11-18 years is higher on the page than the blue circular mark at the same category. The chart visually shows the red square (high-fibre) at 11-18 years is at value 18, while the blue circle (other) is at 20. The red square is lower on the chart than the blue circle, contradicting the claim that it is higher. The claim is false.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis label is blue and the right axis label is red; no numeric y-axis tick labels are visibly printed. The chart displays numeric values (18, 20, 6) directly on data points, and axis labels are colored to match their respective series. The absence of tick labels does not prevent value comparison via annotated data points. The condition is met.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Blue circular marks are connected by a solid blue line, while red square marks are connected by a dashed red line. The blue series is solid, red is dashed. The condition is met.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies when no supplied policy defines how plotted values or category labels map to a follow-up route.\",\n        \"evidence\": \"The public task and page instructions do not reference any policy table or formal rule. The goal is to route based on the chart comparison. The condition is met.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads “High fibre breakfast cereals vs Other breakfast cereals.” The chart title matches. The condition is met.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis label reads “High fibre breakfast cereals.” The left axis is labeled for high-fibre cereals. The condition is met.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue circular mark is shown at the 11-18 years position. The blue mark is for 'Other breakfast cereals' (right axis). The condition is met.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires an unstated program rule that the high-fibre category itself, rather than a plotted cross-series comparison, determines fibre-support routing.\",\n        \"evidence\": \"The public task and instructions do not specify a rule. The goal is to route based on the chart comparison. The condition is not met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2737,
+      "total_tokens": 3360,
+      "completion_tokens": 623,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

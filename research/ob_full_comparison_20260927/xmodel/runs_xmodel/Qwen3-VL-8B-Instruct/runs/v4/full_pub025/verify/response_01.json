@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-99087ac8b9bf6706",
+    "object": "chat.completion",
+    "created": 1790614411,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is the authoritative characterization of the tourism trend and its word 'Decreasing' is intended as the routing signal, then the trend should be treated as declining. If a declining new-tourist trend is to be routed to decline response, select the decline-response option.\",\n        \"evidence\": \"The title explicitly states 'Decreasing'.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains the word 'Decreasing,' while the blue line's 1891 endpoint is higher on the page than its 1880 endpoint.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If conflicting title and plotted-line signals, together with the absence of an explicit routing threshold or precedence rule, prevent a reliable trend classification, then retain routine monitoring rather than infer a growth or decline route.\",\n        \"evidence\": \"The title says 'Decreasing', but the plotted line shows an increase from 1000 in 1880 to 3200 in 1891.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins near the 1880 tick at a lower screen position and ends near the 1891 tick at a substantially higher screen position.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis is labeled 'Year' and shows ticks from 1880 through 1891 in left-to-right order.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Number of Tourists' and its printed ticks increase upward from 0 to 3,500.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the series encoded by the chart axes, the horizontal axis orders years left-to-right and higher vertical positions correspond to larger values on the upward-labeled tourist-count scale, then a higher endpoint at the later year indicates an increase over the review period. If an increasing new-tourist trend is to be routed to growth planning, select the growth-planning option.\",\n        \"evidence\": \"The line starts at 1000 in 1880 and ends at 3200 in 1891, which is a clear increase. The axes are correctly oriented and labeled.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3935,
+      "total_tokens": 4595,
+      "completion_tokens": 660,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

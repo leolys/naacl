@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a871fbb9b5283a5d",
+    "object": "chat.completion",
+    "created": 1790620916,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top-left of the chart reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot area contains five distinct blue circular markers, each with a text label reading 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A review of the visible chart area, including the title, axes, and plot, shows no text or markers indicating profitability, margin, ROI, or a full-store population.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If approval of a broader ad-spend increase requires evidence covering the relevant store population and profitability or ROI, then a chart limited to a subset of stores and showing only spend and sales should be routed for full-data analysis rather than approved.\",\n        \"evidence\": \"The chart's title explicitly identifies the data as 'Additional Top Stores', which is a subset of a larger population. The axes are labeled only for 'Advertising Spend' and 'Sales', with no data or labels for profitability or ROI. The necessary conditions for the reading (a subset population and lack of profitability/ROI data) are visually confirmed.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Visually, the point for Store 6 is in the lower-left, and the points for Store 7, 8, 9, and 10 are progressively further to the right and higher up the page, forming a diagonal line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on comparable scales, then points that progress upward and rightward across the displayed stores indicate a positive observed spend-sales association; this supports broader approval only if association in this subset is accepted as sufficient evidence of benefit.\",\n        \"evidence\": \"The axis labels confirm that the horizontal axis represents spend and the vertical axis represents sales. The points for Store 6 through Store 10 show a clear positive correlation, moving to higher values on both axes. The reading correctly identifies this as an association and notes that it is based on a subset of stores. The necessary conditions (axis encoding and point progression) are met.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4161,
+      "total_tokens": 4866,
+      "completion_tokens": 705,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

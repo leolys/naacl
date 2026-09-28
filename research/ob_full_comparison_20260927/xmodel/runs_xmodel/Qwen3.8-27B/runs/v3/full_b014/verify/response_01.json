@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-81de3193f241cbf8",
+    "object": "chat.completion",
+    "created": 1790617334,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart's main title at the top-left clearly displays the text 'Units Sold by Product (Weekend Pop-up)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left vertical axis is labeled 'Units Sold', and the visible tick marks include '20,000' and '30,000' (among others).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"A dark red bar is positioned above the 'Product C' label on the x-axis. Its top edge is located between the 20,000 and 30,000 gridlines, visually appearing to be about 40% of the way up from the 20,000 line (approx. 24,000).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the axis is linear and the bar is bound to the label, the height can be interpolated. It claims a value below 25,000 and less than 2,500 units from that threshold meets the manual-verification variance band, and that selecting the manual-check option assumes this band governs when it overlaps the low-demand rule.\",\n        \"evidence\": \"The visual evidence supports the decoding: the Product C bar is below the 25,000 level (approx 24,000), which is less than 2,500 units from the 25,000 threshold. However, the policy table does not explicitly state precedence between the 'Low-demand review queue' (< 25,000) and the 'Manual merchandising verification variance band' (< 2,500 units from a decision threshold). The reading's assumption about precedence is not confirmed by the public task text.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The Product C bar's top edge is between the 20,000 and 30,000 gridlines. It is visually closer to the 20,000 line than to the 30,000 line (approx 24,000 vs 25,000 midpoint).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The label 'Product C' is directly below the relevant dark red bar on the x-axis.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the axis is linear and the bar is bound to the label, the height can be interpolated from the 20,000 and 30,000 ticks. It claims that under the policy, a decoded Product C value below 25,000 activates the low-demand review queue.\",\n        \"evidence\": \"The visual evidence supports the decoding: the Product C bar is below the 25,000 level (approx 24,000). The policy table explicitly states '< 25,000 units' corresponds to 'Low-demand review queue activation level'. The necessary conditions for this specific rule are met by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4285,
+      "total_tokens": 5126,
+      "completion_tokens": 841,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

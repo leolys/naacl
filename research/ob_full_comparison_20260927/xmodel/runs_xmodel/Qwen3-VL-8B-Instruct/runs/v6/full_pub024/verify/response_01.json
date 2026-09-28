@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b461d2ba3dea7917",
+    "object": "chat.completion",
+    "created": 1790616218,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes the literal title overrides the contradictory plotted-line geometry; 2. Assumes the chart supplies no rule resolving this conflict.\",\n        \"evidence\": \"1. The title's claim of 'Decreasing' is contradicted by the plotted line's upward slope from 1880 to 1891. 2. The task and chart provide no policy or rule to resolve this conflict. The condition remains open: whether the title overrides the plot.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains 'Decreasing', while the blue line's endpoint at 1891 is higher on the page than its beginning at 1880.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes routine monitoring is the appropriate default for unresolved evidence; 2. Assumes this default is not stated in the task.\",\n        \"evidence\": \"1. The contradiction between title and plot is unresolved, as no authority hierarchy or routing threshold is supplied. 2. The task does not state that routine monitoring is the default for such conflicts. The condition remains open: whether routine monitoring is the appropriate default.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the vertical alignment of the printed x-axis tick '1880' and ends at the vertical alignment of the printed x-axis tick '1891' and is higher on the page than its beginning at 1880.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Number of New Tourists' with values increasing upward from '0' to '4,000'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The data point for 1880 is at approximately 1100 on the y-axis and the data point for 1885 is at approximately 1800 on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes the plotted line, rather than the title text, is the authoritative encoding of Town Z new-tourist values; 2. Assumes a net increase warrants growth planning; 3. Assumes no explicit routing policy is supplied.\",\n        \"evidence\": \"1. The plotted line's upward trajectory from 1880 to 1891 is the only quantitative evidence of trend. 2. The data point at 1880 (1100) is lower than at 1885 (1800), indicating a net increase. 3. The task provides no explicit routing policy. The condition remains open: whether the plotted line is the authoritative encoding.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4028,
+      "total_tokens": 4779,
+      "completion_tokens": 751,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

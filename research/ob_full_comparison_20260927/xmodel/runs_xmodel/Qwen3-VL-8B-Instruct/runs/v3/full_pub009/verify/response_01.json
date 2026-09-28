@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b78b74323575941d",
+    "object": "chat.completion",
+    "created": 1790613490,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"O1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Legend at right: blue swatch labeled 'Station X', green 'Station Y', orange 'Station Z'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Bars above Tue, Wed, Thu labels: each has contiguous blue, green, orange segments.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Vertical axis labeled 'Number of Visitors' with printed tick at '4,500'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Top of orange segment above Tue and Wed is visibly higher than 4,500 tick.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Top of orange segment above Thu is visibly lower than 4,500 tick.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 6,\n          \"evidence\": \"Lowest visible vertical-axis tick is '1,000'; bars extend below it.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each date's contiguous blue, green, and orange segments are a stacked encoding of Station X, Station Y, and Station Z visitor counts on the shared vertical visitor scale, and the stack top represents their combined daily total despite the displayed axis being truncated below 1,000, then a stack top above the 4,500 tick indicates combined traffic exceeding 4,500. Under the supplied crowding-alert policy, submit exactly the dates whose combined total exceeds 4,500.\",\n        \"evidence\": \"The chart's stacked bar structure, color-coded legend, and axis labels are visible. The policy explicitly defines the alert condition as combined traffic exceeding 4,500. The visual evidence shows the stack tops for Tue and Wed are above the 4,500 mark, while Thu's is below. The chart's truncation below 1,000 is visible, but the encoding assumption that the stack top represents the total is necessary to interpret the 4,500 threshold.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3826,
+      "total_tokens": 4352,
+      "completion_tokens": 526,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

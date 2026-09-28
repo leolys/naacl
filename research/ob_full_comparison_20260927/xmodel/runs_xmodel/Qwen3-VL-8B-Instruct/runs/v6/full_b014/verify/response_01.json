@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90c60e0a565eb06e",
+    "object": "chat.completion",
+    "created": 1790615470,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title visibly reads 'Units Sold by Product (Weekend Pop-up)' as per the independent_visual_notes.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical-axis inscription visibly reads 'Units Sold', with visible tick labels including '20,000' and '30,000' as per the independent_visual_notes.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The independent_visual_notes state the Product C bar reaches approximately 24,000 units. This is below 25,000 and less than 2,500 units from the 25,000 threshold. The bar's position is consistent with being between 20,000 and 30,000, roughly two-fifths up from 20,000, which aligns with 24,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to the weekend pop-up chart and Product C intake. 2. The bar's approximate position must be sufficiently precise to establish both conditions. 3. Policy precedence for overlapping low-demand and manual-band conditions is not explicitly stated.\",\n        \"evidence\": \"1. Supported by the chart title and axis label in independent_visual_notes. 2. Supported by the precise value of 24,000 units from independent_visual_notes, which satisfies both conditions. 3. Not addressed by any public fact; remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The independent_visual_notes state the Product C bar reaches approximately 24,000 units, which is between 20,000 and 30,000 and closer to 20,000 than to 30,000.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The independent_visual_notes confirm the x-axis label 'Product C' is directly below the relevant dark red bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to the weekend pop-up chart and Product C intake. 2. The chart rendering is assumed precise enough to distinguish a value below 25,000.\",\n        \"evidence\": \"1. Supported by the chart context and Product C intake. 2. Supported by the precise value of 24,000 units from independent_visual_notes, which is below 25,000.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4321,
+      "total_tokens": 4948,
+      "completion_tokens": 627,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

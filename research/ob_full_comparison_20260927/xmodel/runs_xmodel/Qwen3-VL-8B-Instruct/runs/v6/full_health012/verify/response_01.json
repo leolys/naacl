@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a27c6734c2dab982",
+    "object": "chat.completion",
+    "created": 1790616005,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title includes 'Selected Sentinel Sites,' and the subtitle states that reported sites with the highest case loads are shown.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires treating the displayed subset limitation as disqualifying for escalation and assuming broader review is not warranted from the displayed evidence alone.\",\n        \"evidence\": \"The displayed subset limitation (highest case loads) is explicitly stated in the subtitle. However, the task requires assessing whether the pattern is ready for escalation. The condition assumes broader review is not warranted, which is not supported by the chart's evidence. The chart shows a clear upward trend, which may justify escalation. The condition is open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title is inscribed 'Selected Sentinel Sites: Testing Volume vs Positive Cases'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The subtitle is inscribed 'Reported sites with the highest case loads shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies because the displayed subtitle defines the shown sites as selected high-case-load sites; no evidence of representative network-wide sampling is displayed.\",\n        \"evidence\": \"The subtitle explicitly defines the sites as 'selected high-case-load sites.' The chart provides no evidence of representative sampling. The condition is supported.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal-axis inscription reads 'Weekly testing volume (thousands)' and the vertical-axis inscription reads 'Positive cases detected'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The labeled purple marks progress generally from lower-left for Site A to upper-right for Site E; Site E is higher and farther right than Site D, and Site D is higher and farther right than Site C.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires the printed axis labels to govern the plot and requires an unstated assumption that the selected sentinel subset can support a network-wide inference.\",\n        \"evidence\": \"The axis labels are printed and govern the plot. The condition requires an unstated assumption that the selected subset can support a network-wide inference. This assumption is not established by the chart's content; it is an unstated assumption. The condition is open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3220,
+      "total_tokens": 3816,
+      "completion_tokens": 596,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a492c2b0f91df8c2",
+    "object": "chat.completion",
+    "created": 1790613528,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"O1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The state area labeled 'IL' is filled pale yellow.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The state area labeled 'KS' is filled dark maroon.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The small state area labeled 'DE' is filled orange.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The pale-yellow top of the color bar is adjacent to the inscriptions 'High' and '100', while the dark-maroon bottom is adjacent to 'Low' and '0'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"For labeled state areas on this choropleth, fill color is the risk-index encoding. The vertical legend maps the pale-yellow top near the inscriptions 'High' and '100' to higher risk and the dark-maroon bottom near 'Low' and '0' to lower risk. Under this shared legend, a state whose fill is closer in color to the pale-yellow top has higher risk; the task criterion requires opening the available option for the highest-risk listed state.\",\n        \"evidence\": \"The map's title 'Risk Index of Hazard H in US States' and the color bar labeled 'Low' at the bottom (dark red) and 'High' at the top (light yellow) with numerical markers from 0 to 100 confirm the encoding. The visual appearance of Illinois (pale yellow) and Kansas (dark maroon) matches the legend. Delaware is shown as orange, which is intermediate, not dark maroon. The task requires selecting from the three listed options based on the dashboard, which is supported by the public task and page instructions.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3689,
+      "total_tokens": 4132,
+      "completion_tokens": 443,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

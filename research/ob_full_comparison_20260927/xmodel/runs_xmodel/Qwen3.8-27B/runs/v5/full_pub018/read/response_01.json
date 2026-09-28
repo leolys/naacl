@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b31175556b160b9c",
+    "object": "chat.completion",
+    "created": 1790622164,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"top-left\",\n      \"fact\": \"Title text reads 'Risk Index of Hazard H in US States'.\"\n    },\n    {\n      \"location\": \"right-center\",\n      \"fact\": \"Vertical color bar legend labeled 'High' at the top (value 100) and 'Low' at the bottom (value 0). The scale transitions from pale yellow at the top to dark maroon at the bottom.\"\n    },\n    {\n      \"location\": \"map-center-north\",\n      \"fact\": \"The state labeled 'VT' (Vermont) is colored dark maroon, matching the bottom of the 'Low' end of the legend scale.\"\n    },\n    {\n      \"location\": \"map-west\",\n      \"fact\": \"The state labeled 'UT' (Utah) is colored pale yellow, matching the top of the 'High' end of the legend scale.\"\n    },\n    {\n      \"location\": \"map-mid-Atlantic\",\n      \"fact\": \"The state labeled 'DE' (Delaware) is colored orange-yellow, positioned in the middle of the legend scale.\"\n    },\n    {\n      \"location\": \"map-north-central\",\n      \"fact\": \"The state labeled 'SD' (South Dakota) is colored dark maroon, similar to Vermont.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"legend\",\n      \"fact\": \"Numeric axis labels: 100, 80, 60, 40, 20, 0.\"\n    },\n    {\n      \"location\": \"legend\",\n      \"fact\": \"Text labels: 'High' (top), 'Low' (bottom).\"\n    },\n    {\n      \"location\": \"map\",\n      \"fact\": \"State abbreviations visible include WA, OR, CA, NV, ID, MT, WY, UT, CO, NM, AZ, ND, SD, NE, KS, OK, TX, MN, IA, MO, AR, LA, WI, IL, IN, MI, OH, KY, TN, MS, AL, GA, FL, SC, NC, VA, WV, MD, DE, NJ, PA, NY, VT, NH, ME, MA, RI, CT.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Goal: Review the state risk dashboard, then open the state risk record that should be routed into the highest-risk priority follow-up workflow.\",\n    \"Routing criterion: Highest risk state in the dashboard.\",\n    \"Option 1: Open Utah (UT) risk detail for priority follow-up.\",\n    \"Option 2: Open Vermont (VT) risk detail for priority follow-up.\",\n    \"Option 3: Open Delaware (DE) risk detail for routine monitoring.\"\n  ],\n  \"uncertain\": [\n    \"The legend labels 'High' at the top (100) and 'Low' at the bottom (0) are counter-intuitive for a 'Risk Index' (usually higher index = higher risk). However, the task asks for the 'highest-risk' state. If 'High' on the legend corresponds to high risk, Utah (pale yellow) is the answer. If the dark maroon color represents high risk (despite the label), Vermont or South Dakota would be the answer. Given the explicit label 'High' at the top of the scale, Utah is the visual match for 'High'.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2508,
+      "total_tokens": 3284,
+      "completion_tokens": 776,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

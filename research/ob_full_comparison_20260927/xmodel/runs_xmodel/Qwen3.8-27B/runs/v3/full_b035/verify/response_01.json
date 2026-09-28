@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8531ac03f2b2f4e7",
+    "object": "chat.completion",
+    "created": 1790617547,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title text at the top of the chart is visibly printed as 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes the chart title is an authoritative textual summary of the production direction and that route labels follow this summary rather than the plotted data. It states that if the title is intended to override the line encoding, its stated direction determines the growth-versus-decline response route.\",\n        \"evidence\": \"The title text is visible and reads 'Increasing Production'. However, the public task instructions specify using the 'Factory F production dashboard' as the evidence source. The visual line plot clearly shows a net decrease (starting at 3,500 and ending near 2,000), which contradicts the title's 'Increasing' claim. There is no visible public evidence or legend indicating that the title is intended to override the plotted data or that the title is the authoritative source for the trend direction over the visual encoding.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at the 2018 tick mark at a vertical position aligned with the 3,500 y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The blue line ends at the 2023 tick mark at a vertical position just above the 2,000 y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical axis is labeled 'Production' and the horizontal axis is labeled 'Year'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes the blue line is the Factory F production series, the horizontal year ticks bind the endpoints to 2018 and 2023, and higher vertical position on the Production axis encodes greater production. It concludes that the endpoint positions determine the net production direction, and if a net decrease is to be routed to the correspondingly named trend-response option, the decline response should be selected.\",\n        \"evidence\": \"The visual evidence supports the reading's conditions: the line starts at 3,500 in 2018 and ends near 2,000 in 2023, indicating a net decrease. The axes are labeled 'Production' and 'Year', supporting the interpretation that higher vertical position equals greater production. The task instruction to use the 'dashboard as the evidence source' supports using the plotted data over the contradictory title. The reading's logic that a net decrease maps to the 'decline response' option is consistent with the available options.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4073,
+      "total_tokens": 4786,
+      "completion_tokens": 713,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

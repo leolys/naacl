@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9135f3cdbf017d95",
+    "object": "chat.completion",
+    "created": 1790616631,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows temperature labels, year ticks, and axis labeling, but no visible text states a substantial-change threshold or routing rule.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If a substantial-change route requires an explicit displayed policy threshold or other supplied criterion, the chart alone does not establish that the full-period change meets it; under a policy that defaults unverified changes to routine monitoring, routine monitoring would apply.\",\n      \"evidence\": \"The chart does not display any threshold, rule, or policy text. The task and public task do not supply a numeric threshold or default-routing policy. The B reading correctly identifies the absence of such criteria and the conditional nature of the routine-monitoring default. The claim that 'routine monitoring would apply' is a reasonable inference under the absence of evidence for substantial change, consistent with the task's requirement to use the dashboard to determine routing. The B reading does not assert a definitive conclusion but correctly frames the uncertainty based on the visible evidence.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title reads 'River Temperature Monitoring Record', and the vertical axis is labeled 'Water temperature (°C)'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"A plotted marker above the 2005 tick has the printed label '23.9°C' next to it.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"A plotted marker above the 2014 tick has the printed label '10.1°C' next to it.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the plotted series is the river-temperature record, the x-axis year ticks bind the endpoint markers to 2005 and 2014, and the printed endpoint labels are their temperatures in °C, then the full-period change is 2014 minus 2005. If the routing program classifies a decrease of that magnitude as substantial, substantial-change follow-up is the applicable route.\",\n      \"evidence\": \"The chart's title, axis labels, and data point labels confirm the plotted series represents river temperature in °C for the years 2005-2014. The endpoint labels '23.9°C' (2005) and '10.1°C' (2014) are explicitly printed next to their respective markers. The full-period change is therefore 10.1°C - 23.9°C = -13.8°C, a decrease of 13.8°C. The B reading correctly states that if the routing program classifies this magnitude as substantial, then substantial-change follow-up is the applicable route. The B reading does not assert that the program *does* classify this as substantial; it only states the conditional logic: if the program's criterion includes this magnitude, then that route applies. This is a valid, evidence-based conditional reading.\",\n      \"status\": \"supported\"\n    }\n  }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3984,
+      "total_tokens": 4690,
+      "completion_tokens": 706,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

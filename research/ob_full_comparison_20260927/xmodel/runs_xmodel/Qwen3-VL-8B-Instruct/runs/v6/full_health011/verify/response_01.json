@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-abb87c356267d20a",
+    "object": "chat.completion",
+    "created": 1790616008,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle reads 'Selected high-referral centers shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five labeled points are visible: Center A, Center B, Center C, Center D, and Center E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies if no additional network-wide sampling, comparison group, or outcome evidence is supplied.\",\n        \"evidence\": \"The chart is explicitly limited to 'Selected high-referral centers' (subtitle). No network-wide sampling, comparison group, or outcome evidence is presented in the chart or task description. The condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Top Screening Centers: Outreach Hours vs Referral Count', and the subtitle reads 'Selected high-referral centers shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Monthly outreach hours' and its printed ticks increase from 30 at the left to 70 at the right; the vertical axis is labeled 'Referral count' and its printed ticks increase from 60 near the bottom to 160 near the top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Center A is the leftmost and lowest labeled point; Center B is to its right and higher; Center C is further right and higher; Center D is further right and higher; Center E is the rightmost and highest labeled point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies only to the displayed highlighted/selected high-referral screening centers and assumes the axis titles describe the plotted coordinates.\",\n        \"evidence\": \"The axis titles ('Monthly outreach hours', 'Referral count') and tick directions are consistent with standard Cartesian plotting conventions. The labeled points (A through E) are displayed as selected high-referral centers. The condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3286,
+      "total_tokens": 3786,
+      "completion_tokens": 500,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bdda87a1aa45d790",
+    "object": "chat.completion",
+    "created": 1790621738,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top center reads 'Coal vs Gas'. On the left vertical axis, the label 'Coal' is printed in blue text. This matches the O content.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"On the right vertical axis, the label 'Gas' is printed in red text. This matches the O content.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Locating the x-axis tick labeled '2010', there is a blue circular marker and a red square marker. The blue circular marker is positioned significantly higher on the y-axis than the red square marker. This matches the O content.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue circular series is Coal and the red square series is Gas, and their vertical positions use a common upward-increasing residential consumption/demand scale, then the series plotted higher at the same year has the larger level. Under the task instruction, route that resource to priority residential supply follow-up.\",\n        \"evidence\": \"The B reading relies on two main conditions: 1) The color-coded axis labels bind to the series (Blue=Coal, Red=Gas). 2) The vertical positions use a common upward-increasing scale. The visual evidence confirms the color binding (Blue label 'Coal' on left, Red label 'Gas' on right; Blue line has circles, Red line has squares). However, the 'common scale' condition is problematic. The chart has two y-axes (left for Coal, right for Gas). The data labels provided (e.g., Blue '2.46' vs Red '7.04' in 2004) show that the red series has much higher values than the blue series, yet the red marker is plotted lower than the blue marker in that year. This indicates the scales are different (the red scale is likely compressed or shifted relative to the blue scale). Therefore, a simple comparison of vertical position (pixel height) does not equate to a comparison of the underlying values (consumption/demand level) because the scales are not common. The B reading's assumption of a 'common upward-increasing residential consumption/demand scale' is refuted by the visible data labels which contradict the visual height ordering.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2724,
+      "total_tokens": 3285,
+      "completion_tokens": 561,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

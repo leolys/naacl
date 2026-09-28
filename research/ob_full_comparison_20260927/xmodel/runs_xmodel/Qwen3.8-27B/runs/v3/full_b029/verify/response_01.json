@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-840552337bc96979",
+    "object": "chat.completion",
+    "created": 1790617555,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart displays exactly five labeled points (A–E) on axes for 'Advertising Spend' and 'Sales'. There are no visible annotations, secondary charts, or text indicating ROI, profit, experiments, or incremental sales.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI, then a cross-sectional scatter pattern alone does not meet that requirement; further regional spend-sales analysis is warranted.\",\n        \"evidence\": \"The visual evidence confirms the chart is a simple scatter plot (association) without causal or ROI data. However, the specific business rule requiring 'causal evidence' or 'ROI' for a 'broader approval' is not stated in the public task or the image; it is an assumption about the decision criteria.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The five blue points are arranged in a clear diagonal line from the lower-left (Region A) to the upper-right (Region E), indicating a sequence where both x and y values increase.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If an observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout, then a limited pilot can be selected for regions rather than approving a broader increase.\",\n        \"evidence\": \"The chart supports the 'positive association' part. However, the condition that this association is 'enough to justify testing' but 'not enough for a region-wide rollout' is a subjective business judgment not defined in the provided materials.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title 'Top Regions: Ad Spend vs Sales' is clearly visible at the top. The x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Visually, Region A is at the bottom-left, and each subsequent region (B, C, D, E) is positioned further to the right and higher up than the previous one, creating a monotonic increasing sequence.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels indicate, and if the ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales, then a region-wide spend increase is supported.\",\n        \"evidence\": \"The axis labels and the positive correlation are visually confirmed. The condition that this pattern is 'sufficient evidence' for a 'region-wide spend increase' is a decision rule not provided in the task instructions or the chart itself.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4161,
+      "total_tokens": 4913,
+      "completion_tokens": 752,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

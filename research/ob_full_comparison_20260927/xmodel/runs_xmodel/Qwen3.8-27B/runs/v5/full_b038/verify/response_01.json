@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bcb92b61da8a0dcf",
+    "object": "chat.completion",
+    "created": 1790621172,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line segment from Q1 to Q2 has a positive slope (Q1 is at ~1,080, Q2 at ~1,360). The segment from Q2 to Q3 is horizontal (both at ~1,360). The segment from Q3 to Q4 has a positive slope (Q3 at ~1,360, Q4 at ~1,620). This matches the assertion.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is explicitly labeled 'Revenue' on the left side of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is explicitly labeled 'Quarter' at the bottom, with tick marks labeled Q1, Q2, Q3, and Q4 in left-to-right order.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis orders Q1 through Q4 chronologically, the vertical axis encodes Revenue with higher page position representing greater revenue, and the workflow routes an overall rise from the first to final quarter to the growth response, then select the growth route.\",\n        \"evidence\": \"1. Chronological order: The x-axis labels Q1, Q2, Q3, Q4 are in standard chronological order. 2. Revenue encoding: The y-axis is labeled 'Revenue' with increasing values (0 to 1,600) moving up the page. 3. Overall rise: The Q1 point is at ~1,080 and the Q4 point is at ~1,620. Since 1,620 > 1,080, there is an overall rise from the first to the final quarter. The condition for the growth route is met by the visual data.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart literally reads 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis displays the labels Q1, Q2, Q3, and Q4.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative summary of the Company C Q1-Q4 revenue record, and the workflow treats a chart explicitly described as 'Stable Revenue' as requiring the stability response, then select the stability route.\",\n        \"evidence\": \"The first condition (title is authoritative) is a policy assumption not visible in the chart itself. However, the visual data (a clear rise from ~1,080 to ~1,620) directly contradicts the semantic meaning of the word 'Stable' in the title. If the title is treated as a factual summary of the data, it is factually incorrect. If the title is treated as a label for the *route*, it conflicts with the visual evidence of growth. Because the visual data shows a significant increase, the condition that the record is 'stable' is refuted by the chart's own data.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3804,
+      "total_tokens": 4587,
+      "completion_tokens": 783,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

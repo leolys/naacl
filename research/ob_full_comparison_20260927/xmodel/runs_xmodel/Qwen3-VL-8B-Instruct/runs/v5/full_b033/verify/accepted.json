@@ -1,0 +1,79 @@
+{
+  "reviews": {
+    "rec_01": {
+      "O": {
+        "1": {
+          "evidence": "The chart displays a scatter plot with the title 'Selected High-Growth Quarters: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis is labeled 'Advertising Spend ($ thousands)' and ranges from 25 to 75.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis is labeled 'Sales ($ thousands)' and ranges from 60 to 170.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "There are five data points labeled Q2, Q3, Q4, Q5, and Q6.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The points are arranged in a pattern that slopes upward from left to right, with Q2 at the lowest position and Q6 at the highest position.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the visual pattern of the five plotted points is interpreted as a positive correlation, then the data suggests that higher advertising spend is associated with higher sales for these specific quarters.",
+        "evidence": "The data points Q2 (30, 70), Q3 (40, 110), Q4 (50, 135), Q5 (60, 155), and Q6 (70, 170) form a clear upward trend. The x-values increase from 30 to 70, and the y-values increase from 70 to 170. This consistent increase in both variables across the labeled quarters supports the interpretation of a positive correlation within this limited dataset.",
+        "status": "supported"
+      }
+    },
+    "rec_02": {
+      "O": {
+        "1": {
+          "evidence": "The data point labeled 'Q2' is located at an x-value of approximately 30 and a y-value of approximately 68.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The data point labeled 'Q6' is located at an x-value of approximately 70 and a y-value of approximately 168.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical distance between the Q2 point and the Q6 point is the largest gap between any two consecutive points in the series.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "Assuming the axis scales are linear and the points represent the only data available, the transition from Q2 to Q6 represents the largest absolute increase in both advertising spend and sales volume among the displayed quarters.",
+        "evidence": "The vertical distance between Q2 and Q6 is 168 - 68 = 100. The vertical distance between Q5 and Q6 is 170 - 155 = 15. The vertical distance between Q4 and Q5 is 155 - 135 = 20. The vertical distance between Q3 and Q4 is 135 - 110 = 25. The vertical distance between Q2 and Q3 is 110 - 70 = 40. The vertical distance between Q2 and Q6 is indeed the largest. However, the claim that it is the largest gap *between any two consecutive points* is false. The gap between Q3 and Q4 (25) is smaller than the gap between Q2 and Q3 (40), and the gap between Q2 and Q3 (40) is smaller than the gap between Q2 and Q6 (100). The largest gap between *consecutive* points is between Q3 and Q4 (25). The claim is therefore refuted because it misstates the largest gap as being between Q2 and Q6, which is not a consecutive pair. The gap between Q2 and Q6 is the largest overall, but not the largest between consecutive points.",
+        "status": "refuted"
+      }
+    },
+    "rec_03": {
+      "O": {
+        "1": {
+          "evidence": "The chart title specifies 'Selected High-Growth Quarters'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis begins at a value of 25, leaving a gap before the first data point at 30.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis begins at a value of 60, leaving a gap below the first data point at approximately 68.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "There are no data points present in the lower-left quadrant of the plot area.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the selection of data points is interpreted as a filter for 'high-growth' performance, then the chart does not provide a baseline for quarters with lower spend or sales, making it impossible to determine the overall average performance from this view alone.",
+        "evidence": "The chart explicitly labels itself as 'Selected High-Growth Quarters'. The data points shown are the ones that meet this selection criterion. The axes start at 25 and 60, respectively, and the first data point is at 30 and 68. This indicates the data is filtered to show only high-growth quarters, which are defined as those with spend and sales above these thresholds. The absence of data points in the lower-left quadrant confirms that no low-growth quarters are included. Therefore, the chart does not provide a baseline for lower-performing quarters. It is impossible to determine the overall average performance from this view alone because the sample is not representative of the entire population. The claim is supported.",
+        "status": "supported"
+      }
+    }
+  }
+}

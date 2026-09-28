@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-827dacba3dbe16c1",
+    "object": "chat.completion",
+    "created": 1790613453,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The map region labeled 'California' is filled orange. (Visual: California is colored orange.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The map region labeled 'Texas' is filled orange. (Visual: Texas is colored orange.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"An orange swatch is inscribed '30+ M' in the legend. (Visual: Legend explicitly states orange = 30+ M.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The map region labeled 'Florida' is filled purple. (Visual: Florida is colored purple.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"A purple swatch is inscribed '20 - 30 M' in the legend. (Visual: Legend explicitly states purple = 20-30 M.)\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.\",\n        \"evidence\": \"The chart title 'US Population by State (in Millions)' and the legend explicitly define the color-to-population mapping. California and Texas are both orange (30+ M), Florida is purple (20-30 M).\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Both the region labeled 'California' and the region labeled 'Texas' are filled orange. (Visual: Both states are colored orange.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The orange swatch is inscribed '30+ M'. (Visual: Legend explicitly states orange = 30+ M.)\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.\",\n        \"evidence\": \"The chart title and legend define the color-to-population mapping. California and Texas are both in the 30+ M bin. The reading's condition requires distinguishing the selected state from others, which is not possible for the orange states.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3685,
+      "total_tokens": 4403,
+      "completion_tokens": 718,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

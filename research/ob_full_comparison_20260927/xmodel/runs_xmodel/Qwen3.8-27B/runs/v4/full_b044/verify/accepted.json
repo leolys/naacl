@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a blue bar above the x-axis label 'June'. The top of this bar is at approximately y=470 on the pixel scale, while the horizontal dashed line is at approximately y=470 as well. However, looking closely, the June bar top is slightly below the dashed line (around 470 vs 455). The independent notes confirm 'June bar is the second tallest, with its top edge positioned below the dashed reference line.'",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart displays a horizontal dashed line. Near the right end of this line, the text 'Average' is printed.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the available instructions do not define a route mapping or threshold for a month below the displayed average, then the chart alone establishes the relative sales result but does not establish that a low-sales response rather than normal monitoring is required.",
+        "evidence": "The public task instructions state: 'Review the Store B monthly sales dashboard for April through June, then choose the June route in the monthly bonus operations form.' and 'Review operational performance and submit the appropriate status or follow-up route.' There are no policy tables provided in the public_task object (policy_tables is an empty list). The instructions do not explicitly define that 'below average' equals 'low-sales response' or 'normal monitoring'.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top left of the chart reads 'Monthly Sales for Store B in City Y'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis has labels 'April', 'May', 'June'. The rightmost bar is positioned above the label 'June'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The top of the June bar is visually lower than the horizontal dashed line. The independent notes estimate the June bar at ~470 and the dashed line at ~455 (pixel coordinates where lower y is higher value, or simply visual position). Wait, looking at the image, the dashed line is at 550 on the y-axis. The June bar is at roughly 470. So the June bar is lower than the dashed line.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The dashed horizontal line has the label 'Average' near its right end.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The y-axis has tick marks labeled 0, 50, 100, ..., 600. These increase upward.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the blue bars encode monthly sales for the month printed beneath each bar, the vertical axis increases upward, and the dashed line labeled 'Average' is the applicable sales-average benchmark, then a June bar below that line indicates June sales below average. If this workflow routes below-average monthly sales to the low-sales response, select the low-sales option.",
+        "evidence": "The chart title and axes support the encoding of bars as monthly sales. The y-axis increases upward. The dashed line is labeled 'Average'. The June bar is below this line. The condition 'If this workflow routes below-average monthly sales to the low-sales response' is an assumption. The public task instructions do not explicitly state this mapping. They just say 'choose the June route'. However, the option labels are 'Route June to above-average sales bonus response', 'Route June to low-sales response', and 'Keep June on normal sales monitoring'. The term 'low-sales response' is an option. The reading checks if the chart supports the *premise* (June is below average) and notes the *conclusion* (select low-sales) depends on a workflow rule. The reading is a conditional statement. The chart supports the antecedent (June is below average). The consequent (select low-sales) depends on the workflow rule which is not explicitly defined in the text, making the final action conditional on that rule.",
+        "status": "supported"
+      }
+    }
+  }
+}

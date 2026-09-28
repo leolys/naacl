@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-913e3dcddda49901",
+    "object": "chat.completion",
+    "created": 1790616028,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Kidney vs Liver Transplants', and the x-axis is labeled 'Year' with a visible tick labeled '2017'. This matches the O's location and content.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2017 tick, a blue solid-line endpoint and a red square marker are drawn at the same visible position. This matches the O's location and content.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left side of the plot is labeled 'Kidney' in blue, and the right side is labeled 'Liver' in red. This matches the O's location and content.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue solid series is the Kidney series and the red dashed square-marked series is the Liver series. 2. Coincident marks at the same year encode equal transplant volume. 3. The routing labels are intended to map matched volumes to matched-volume review.\",\n        \"evidence\": \"1. The blue solid line is labeled 'Kidney' on the left, and the red dashed line is labeled 'Liver' on the right. This supports condition 1. 2. The 2017 marks for both series are at the same visible position, but the printed values are 17,698 for kidney and 3,089 for liver. This refutes condition 2, as the marks are coincident in position but not in value. 3. The chart does not print the routing policy, but the B text states 'the chart does not itself print this routing policy.' This is consistent with the evidence, but condition 3 is not testable from the chart alone. Condition 2 is refuted by the printed values.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2653,
+      "total_tokens": 3094,
+      "completion_tokens": 441,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

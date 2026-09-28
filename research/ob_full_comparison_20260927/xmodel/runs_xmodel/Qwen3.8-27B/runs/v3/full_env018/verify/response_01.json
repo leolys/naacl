@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-92b5fdce750a9f32",
+    "object": "chat.completion",
+    "created": 1790617969,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image shows a dark-red bar at the far right under the 'May' label. Its height is visibly the smallest on the page, significantly shorter than the other five bars (Apr, Jan, Jun, Feb, Mar).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The top of the chart displays the text 'Monthly Reservoir Release Volume'. The vertical axis is labeled 'Release volume (m3)' and the horizontal axis is labeled 'Month'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the bars encode release volume, May is a low-release case. It further states that without a stated critical threshold or anomaly policy, the chart alone does not establish whether standard follow-up or escalation is required.\",\n        \"evidence\": \"The chart's axis label 'Release volume (m3)' confirms the bars encode volume. The visual data confirms May is a low-release case (it is the lowest value). The chart contains no text, legend, or annotation defining a 'critical threshold' or 'anomaly policy'.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The bar at the 'May' position is the shortest of the six bars shown. It sits very low on the y-axis, near the bottom of the plot area (the baseline).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that background filing is appropriate only if May is not a low-release case requiring active routing. It claims a visibly minimal May bar would not support that condition if the chart encodes release volume.\",\n        \"evidence\": \"The chart encodes release volume (per axis label). The May bar is visibly minimal (lowest value). Therefore, May is a low-release case. The logic that a 'visibly minimal' bar contradicts the condition of 'not a low-release case' is consistent with the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The bar at the 'May' position is dark red and is much shorter than the other five bars (Apr, Jan, Jun, Feb, Mar).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is labeled 'Release volume (m3)'. Visible tick marks are present at 10,000, 15,000, 20,000, 25,000, 30,000, 35,000, and 40,000.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The top of the May bar is visibly below the horizontal gridline corresponding to the 10,000 tick mark. It is positioned near the x-axis (baseline).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the bars encode volume and the workflow treats a month 'visibly far below all other displayed months' as a critical low-release anomaly, that month should be escalated. It notes this severity convention is assumed because no explicit threshold is printed.\",\n        \"evidence\": \"The bars encode volume (axis label). May is visibly far below all other months (it is <10,000 while the next lowest is ~17,000). The chart contains no explicit threshold. The reading correctly identifies that the 'critical anomaly' status relies on an assumed convention of relative extremity rather than a printed rule.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4067,
+      "total_tokens": 5016,
+      "completion_tokens": 949,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

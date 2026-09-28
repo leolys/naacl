@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b5a1321007a95a65",
+    "object": "chat.completion",
+    "created": 1790615249,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title visibly reads “Incidence of Condition A in US States.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label “MO” is printed inside a very pale yellow state region.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The label “MS” is printed inside a dark burgundy state region.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The label “DE” is printed inside a dark red state region.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The legend is pale yellow at its top beside the printed “High” and “100,” and dark burgundy at its bottom beside the printed “Low” and “0.”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each labeled state is encoded by its fill color and the vertical legend maps dark burgundy at the bottom near the printed 0/“Low” to low incidence and pale yellow at the top near the printed 100/“High” to high incidence, then a state with a fill closer to the pale-yellow upper end has higher incidence than a state with a fill closer to the dark lower end. If the route must be selected from the listed options, choose the option for the highest-incidence listed state.\",\n        \"evidence\": \"The legend visually maps dark burgundy to 0/Low and pale yellow to 100/High. Missouri (MO) is colored pale yellow, Mississippi (MS) is dark burgundy, and Delaware (DE) is dark red. The task requires selecting from the three listed options. The condition that the legend applies to all colored states is met. The condition that visible state abbreviations identify their regions is met. The condition that selectable candidates are limited to the three public options is met. The image does not print exact state values or establish whether Missouri is uniquely highest among every state on the map, but the task’s scope is limited to the three listed options.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3627,
+      "total_tokens": 4117,
+      "completion_tokens": 490,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

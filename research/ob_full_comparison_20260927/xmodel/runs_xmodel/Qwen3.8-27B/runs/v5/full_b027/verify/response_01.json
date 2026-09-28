@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bfa8b31afa4c3b53",
+    "object": "chat.completion",
+    "created": 1790621064,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title in the top-left corner reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis label is 'Advertising Spend ($ thousands)' and the y-axis label is 'Sales ($ thousands)'. No other measure labels are visible.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"There are five blue circular points labeled 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an expansion decision requires full regional coverage or additional financial evidence beyond sales and advertising spend, then a chart explicitly scoped to 'Top Regions' and showing only those two measures is insufficient, favoring a request for full regional data analysis.\",\n        \"evidence\": \"The chart is explicitly titled 'Top Regions', indicating it is a subset of all regions. It only displays 'Sales' and 'Advertising Spend'. The page instructions state 'Review dashboard evidence and submit an approval or evidence-review decision.' The option 'Hold and request full regional data analysis' is available. The condition 'requires full regional coverage or additional financial evidence' is not explicitly stated in the text, but the title 'Top Regions' confirms the data is partial. The option to 'request full regional data analysis' directly addresses the limitation of the current data.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Region E is at approximately (70, 165). Region D is at (60, 115), Region C at (50, 88), Region B at (40, 71), and Region A at (30, 63). Region E is to the right of and higher than all other points.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The points are arranged in a linear progression from bottom-left (Region A) to top-right (Region E).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, with higher page position representing larger sales values, then the labeled points show the displayed regions' spend-and-sales ordering. Proceeding with an expansion review follows only if high displayed sales among the shown top regions is sufficient evidence for review; no such sufficiency threshold is stated.\",\n        \"evidence\": \"The axes are correctly identified. The points do show a clear positive correlation between spend and sales. However, the condition 'high displayed sales... is sufficient evidence for review' is not supported by the text. The page instructions say to 'submit an approval or evidence-review decision'. The option 'Proceed with expansion review' is an approval. The option 'Hold and request full regional data analysis' is an evidence-review. The chart only shows 'Top Regions', which is a subset. It is unclear if 'top regions' performance is sufficient to approve expansion for the whole or if 'full regional data' is required. The condition in B ('no such sufficiency threshold is stated') is true. The chart shows strong performance, but the scope is limited to 'Top Regions'.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4197,
+      "total_tokens": 5105,
+      "completion_tokens": 908,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

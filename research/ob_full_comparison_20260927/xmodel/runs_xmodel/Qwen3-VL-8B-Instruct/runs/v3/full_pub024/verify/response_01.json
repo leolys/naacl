@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-92eb7823a197408e",
+    "object": "chat.completion",
+    "created": 1790613577,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title visibly reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative statement of the tourism trend and the word 'Decreasing' is intended as the routing-relevant classification, then the decline-response route is appropriate.\",\n        \"evidence\": \"The title is visually present and legible. The chart's plotted line contradicts this title, but the reading's condition assumes the title overrides the plot. No rule in the task or chart resolves this conflict.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title contains the word 'Decreasing', while the blue line's endpoint at 1891 is higher on the page than its beginning at 1880.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If contradictory chart signals cannot be resolved because neither an authority hierarchy nor a routing threshold is supplied, then the trend cannot be classified reliably for escalation and routine monitoring is the conservative route.\",\n        \"evidence\": \"The title and plot are contradictory. The reading's condition assumes routine monitoring is the default for unresolved evidence, but this default is not stated in the task or chart. The task requires a decision based on the dashboard, not a default assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at the vertical alignment of the printed x-axis tick '1880' and ends at the vertical alignment of the printed x-axis tick '1891' and is higher on the page than its beginning at 1880.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is visibly labeled 'Year'; the vertical axis is visibly labeled 'Number of New Tourists' and has printed values increasing upward from '0' to '4,000'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the single plotted line is the dashboard's New tourists series, the horizontal axis encodes chronological year left-to-right, and higher vertical position maps to a larger number of new tourists using the upward-increasing y-axis, then a line ending higher than it begins indicates growth over the reviewed period. If the routing labels are intended to map a growth trend to growth planning, select the growth-planning route.\",\n        \"evidence\": \"The plotted line's endpoint is higher than its start, consistent with the y-axis increasing upward. The line's slope is positive, indicating growth. The reading's condition assumes the plot, not the title, is authoritative and that growth warrants growth planning. The task does not state that the plot is authoritative or that growth warrants growth planning, but the reading's conditions are fully supported by visible facts.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3983,
+      "total_tokens": 4710,
+      "completion_tokens": 727,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

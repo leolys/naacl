@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-906877b1a0b23c5a",
+    "object": "chat.completion",
+    "created": 1790618177,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image shows a title at the top center reading 'Coal vs Gas'. The left vertical axis is labeled 'Coal' in blue text, and the right vertical axis is labeled 'Gas' in red text. This matches the description of the title and the left-side label.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The image shows the right vertical axis labeled 'Gas' in red text, matching the description.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"At the x-axis tick labeled '2010', there is a blue circular marker on the solid line positioned in the upper half of the plot area. There is a red square marker on the dashed line positioned in the lower half of the plot area. The blue marker is visually higher on the page than the red marker.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that the blue circular series is Coal, the red square series is Gas, and that vertical position on the plot encodes a common upward-increasing scale for residential consumption/demand. Under these conditions, the series plotted higher at the 2010 checkpoint represents the larger level.\",\n        \"evidence\": \"The visual evidence supports the identification of the blue series as Coal (left axis) and the red series as Gas (right axis) based on color and label binding. The visual evidence supports that the blue marker is higher than the red marker at 2010. However, the chart is a dual-axis plot (Coal on the left, Gas on the right). The specific numerical scales for the left and right axes are not visible in the image. Without knowing the scale of each axis (e.g., if the left axis is 0-10 and the right is 0-100), the relative vertical position on the page does not necessarily indicate which value is numerically larger. The assumption that 'higher plot position encodes a larger value' across two different axes is a necessary condition for this reading to be valid, but it is not supported by the visible evidence because the scales are unknown.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2727,
+      "total_tokens": 3269,
+      "completion_tokens": 542,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

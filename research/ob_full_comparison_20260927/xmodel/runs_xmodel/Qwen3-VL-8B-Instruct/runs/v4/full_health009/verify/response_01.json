@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a458359acb5837f8",
+    "object": "chat.completion",
+    "created": 1790614159,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart explicitly shows data points for 2017, 2018, 2019, and 2020 on the x-axis. The y-axis is labeled 'Enrolled patients' and the vertical position of each point corresponds to its value: 2017 at 260, 2018 at ~295, 2019 at ~330, and 2020 at ~375. Each successive point is higher than the previous, confirming a clear upward trend over the displayed period.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart's x-axis explicitly begins at 2017 and ends at 2020, with no data shown for 2013-2016. This is a direct visual fact.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"3\": {\n        \"evidence\": \"The chart's title and y-axis label confirm the data represents 'Enrolled patients' over time. The vertical axis scale is consistent: higher position = more patients. The upward slope of the line from 2017 to 2020 confirms growth within the displayed window.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the visible series covers only a recent subset of the requested review window and rises within that subset, then the task's route for an upswing that still warrants observation may be appropriate rather than treating the subset as proof of broad full-window expansion.\",\n      \"evidence\": \"The visible data (2017-2020) shows a clear, continuous upward trend. The task requires a decision based on the 2013-2020 window. However, the chart does not display data for 2013-2016. Therefore, we cannot verify if the trend began in 2013 or if the growth was consistent from the start of the window. The visible data only confirms a recent upswing, not broad multi-year expansion. The reading correctly identifies this limitation.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The chart explicitly shows data points for 2017, 2018, 2019, and 2020 on the x-axis. The y-axis is labeled 'Enrolled patients' and the vertical position of each point corresponds to its value: 2017 at 260, 2018 at ~295, 2019 at ~330, and 2020 at ~375. Each successive point is higher than the previous, confirming a clear upward trend over the displayed period.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The chart's x-axis explicitly begins at 2017 and ends at 2020, with no data shown for 2013-2016. This is a direct visual fact.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"The chart's title and y-axis label confirm the data represents 'Enrolled patients' over time. The vertical axis scale is consistent: higher position = more patients. The upward slope of the line from 2017 to 2020 confirms growth within the displayed window.\",\n        \"status\": \"supported\"\n      }\n    ,\n    \"4\": {\n      \"evidence\": \"The chart's title and axes bind the teal line to telehealth follow-up enrollment by year, and higher vertical position represents more enrolled patients on the labeled y-axis. This is explicitly stated by the axis labels and the chart's visual encoding. The upward slope confirms enrollment growth over the displayed years.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the chart title and axes bind the teal line to telehealth follow-up enrollment by year, and higher vertical position represents more enrolled patients on the labeled y-axis, then successive higher points at later year ticks indicate enrollment growth over the displayed years. This supports sustained-growth planning only if the displayed years adequately establish the requested full review-window pattern.\",\n      \"evidence\": \"The chart title and axes confirm the data represents 'Enrolled patients' over 'Year'. Higher vertical position = more patients. The data points for 2017-2020 show a clear upward trend. However, the task requires a 2013-2020 assessment. The chart does not display data for 2013-2016, so we cannot verify if the growth pattern began in 2013 or if it was consistent throughout the entire window. Therefore, the visible data does not establish a 'broad multi-year expansion' across the full requested window. The reading correctly identifies that sustained-growth planning is not justified based on the visible data alone.\",\n      \"status\": \"supported\"\n    }\n  }\n}\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3306,
+      "total_tokens": 4431,
+      "completion_tokens": 1125,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

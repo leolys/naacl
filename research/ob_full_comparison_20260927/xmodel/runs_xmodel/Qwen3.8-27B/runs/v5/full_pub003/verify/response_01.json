@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bfaeb25efe05e6c5",
+    "object": "chat.completion",
+    "created": 1790622018,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text is clearly visible in the top-left corner of the image.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend is visible in the lower right. The color bar transitions from pale yellow at the top to dark burgundy at the bottom. The word 'High' is printed next to the top (100) and 'Low' next to the bottom (0).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state labeled 'WV' is filled with a pale yellow color, which corresponds to the top of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state labeled 'UT' is filled with a dark burgundy color, which corresponds to the bottom of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The state in the position of Alabama (labeled 'AL' in the image) is filled with a pale yellow color. The assertion that it is gray and lacks an inscription is incorrect; the gray color is used for other states like California and Arizona, and the AL label is clearly visible.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"For this choropleth, a state's fill color encodes incidence according to the vertical legend: the pale-yellow end adjacent to the printed 100 and “High” is higher than the dark-burgundy end adjacent to the printed 0 and “Low.” If the gray Alabama-area polygon denotes unmapped/no incidence value rather than a value on that scale, it is not eligible to exceed a mapped state; among the offered eligible state records, route the highest-incidence one.\",\n        \"evidence\": \"The necessary condition that the legend governs the fills is supported by the visual evidence (O2). However, the condition regarding the 'gray Alabama-area polygon' is refuted by the visual evidence (O5). Alabama is not gray; it is pale yellow and clearly labeled. Because the premise of the condition (that AL is an unmapped/gray polygon) is false, the logic of the reading (which excludes AL from consideration) is not applicable to the actual chart. The reading relies on a false observation to exclude a state that is actually mapped.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3762,
+      "total_tokens": 4339,
+      "completion_tokens": 577,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

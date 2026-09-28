@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97373bec7108a569",
+    "object": "chat.completion",
+    "created": 1790616278,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"rec_01\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays a solid blue line with circular markers corresponding to the left Y-axis labeled 'Urban (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays a dashed red line with square markers corresponding to the right Y-axis labeled 'Rural (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the x-axis value for 1990, the blue circular marker is positioned vertically lower than the red square marker.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Vertical position corresponds to magnitude of percentage for respective axis. 2. The chart's axes are labeled 'Urban (%)' and 'Rural (%)' for left and right respectively.\",\n        \"evidence\": \"Condition 1: The chart's vertical axis scale is shared for both lines, with Urban on left and Rural on right. The blue marker (Urban) is visibly lower than the red marker (Rural) at 1990, indicating a smaller percentage for Urban. Condition 2: The axes are explicitly labeled, confirming the vertical position corresponds to the respective percentage magnitude. Both conditions are established.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_02\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A text label reading '44.20%' is positioned directly above the blue line's data point for the year 1980.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A text label reading '12.12%' is positioned below the red line's data point for the year 1980.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A text label reading '46.32%' is positioned above the blue line's data point for the year 2000.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A text label reading '12.57%' is positioned below the red line's data point for the year 2000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart uses specific data labels to highlight values at certain intervals. 2. The 1990 points are not explicitly labeled with text. 3. Their relative vertical positions suggest the red line (Rural) is higher than the blue line (Urban) at that specific year.\",\n        \"evidence\": \"Condition 1: Data labels are present for 1980 and 2000, confirming the chart uses them. Condition 2: The 1990 data point for Rural is labeled '44.20%' and for Urban '12.12%', so the point is explicitly labeled. Condition 3: The vertical position of the 1990 Rural marker is higher than Urban's, which is consistent with the labeled values. Condition 2 is refuted by the explicit labels.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"rec_03\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line (Urban) shows a general upward trend from 1960 to 2020.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The red line (Rural) shows a peak around 1970, a dip in the 1980s, a plateau in the 1990s, and a sharp decline after 2000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart illustrates a long-term shift in population distribution. 2. In the 1990s, the Rural percentage remains relatively high and stable compared to the Urban percentage, which is still in a phase of gradual increase.\",\n        \"evidence\": \"Condition 1: The chart shows both lines changing over time, indicating a shift in distribution. Condition 2: The Rural line is relatively flat and high in the 1990s (around 44-46%), while the Urban line is rising (around 12-14%) during the same period. Both conditions are established.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2876,
+      "total_tokens": 3870,
+      "completion_tokens": 994,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

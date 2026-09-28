@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8d9608bfb6df047a",
+    "object": "chat.completion",
+    "created": 1790618696,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The top of the image clearly displays the title 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The visual data shows the blue line starting at the 1,000 mark in 1880 and ending at a point significantly higher, between 2,500 and 3,000, in 1891. The assertion that the line 'begins at... 1,000' is supported, but the assertion that it 'ends at the 1891 tick above the y-axis tick labeled 2,500' is supported in terms of position, though the overall trend is increasing, not decreasing.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative textual classification of the tourism trend, then its word 'Decreasing' indicates a decline classification. Without a supplied rule resolving conflict between that classification and the plotted line, routine monitoring is a conservative route.\",\n        \"evidence\": \"The title is visible and contains the word 'Decreasing'. However, the visual data contradicts this classification, showing a net increase. The reading assumes the title is authoritative, which is a necessary condition for the 'decline' classification to hold. Since the visual evidence contradicts the title, the condition that the title is an 'authoritative textual classification' is not supported by the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The visual data shows the blue line starting at the 1,000 mark in 1880 and ending at a point significantly higher, between 2,500 and 3,000, in 1891. The assertion is supported by the visual evidence.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks from 1880 to 1891. The vertical axis is labeled 'Number of Tourists' with increasing values upward (0 to 3,000). This is clearly visible in the image.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the new-tourist series, the horizontal year ticks bind its endpoints to 1880 and 1891, and higher vertical position maps to a larger number of tourists, then the relative endpoint positions indicate net change across the review period. If routing is based on net growth, a positive net change maps to growth planning.\",\n        \"evidence\": \"The blue line is the only data series, so it represents the new-tourist measure. The x-axis binds the years 1880 and 1891. The y-axis shows 'Number of Tourists' increasing upward. The line starts at 1,000 in 1880 and ends near 2,700 in 1891, indicating a positive net change. The reading's conditions are met by the visible evidence: the line is the series, the axes are correctly interpreted, and the net change is positive. The mapping to 'growth planning' is a logical consequence of the positive net change if that is the routing criterion.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3889,
+      "total_tokens": 4743,
+      "completion_tokens": 854,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

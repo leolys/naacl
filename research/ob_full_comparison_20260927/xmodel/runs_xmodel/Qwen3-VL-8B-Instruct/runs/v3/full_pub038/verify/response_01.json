@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8cb72cab969fecc4",
+    "object": "chat.completion",
+    "created": 1790613647,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart visibly has separate blue 'Agriculture (%)' and red 'Industry (%)' vertical axis labels. (O1)\"\n        ,\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Neither 2014 mark has a printed percentage label, and no numeric tick labels are visibly printed on either vertical axis. (O2)\"\n        ,\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.\",\n        \"evidence\": \"The chart explicitly displays data labels for the 2014 points: '16.35%' for Agriculture and '26.62%' for Industry. These are directly decodable values for the 2014 data points, making the reading's condition of 'directly decodable 2014 values' satisfied. The reading's condition that 'equivalent axis scales may not be assumed' is also satisfied, as the chart uses separate axes for each series, but this is irrelevant since the values are explicitly labeled. The reading's applicability is supported because its necessary decoding condition (directly decodable 2014 values) is visibly confirmed by the data labels.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue circular mark is higher on the page than the red square mark at the 2014 gridline. (O1)\"\n        ,\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left vertical axis is visibly labeled 'Agriculture (%)' in blue, while the right vertical axis is visibly labeled 'Industry (%)' in red. (O2)\"\n        ,\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the larger 2014 percentage.\",\n        \"evidence\": \"The reading's condition requires 'same vertically comparable percentage scale'. This is not supported by the visual evidence. The chart uses separate axes for each series, and while the data labels are present, the visual height comparison is not reliable without a shared scale. The reading's applicability is refuted because its necessary condition of 'same vertically comparable percentage scale' is not visible or established; it remains an assumption. The data labels confirm the actual percentages, making this reading unnecessary for the task.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2719,
+      "total_tokens": 3374,
+      "completion_tokens": 655,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

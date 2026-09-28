@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-822d8e03ea14c633",
+    "object": "chat.completion",
+    "created": 1790618443,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The vertical legend at the lower right shows a gradient with the label 'High' at the top next to the number '100' and 'Low' at the bottom next to the number '0'. The top color is light yellow and the bottom is dark red/maroon.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The state labeled 'NH' (New Hampshire) in the northeast region is filled with a light yellow color, matching the top of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The state labeled 'DE' (Delaware) on the mid-Atlantic coast is filled with a light yellow color, similar to NH, not orange as claimed.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The state labeled 'FL' (Florida) in the southeast is filled with a dark burgundy/maroon color, matching the bottom of the legend scale.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the map fill is encoded by the adjacent color legend, where lighter yellow corresponds to higher values (top/High/100) and darker red to lower values (bottom/Low/0). It concludes that among the compared states, the lighter fill indicates the higher plotted value.\",\n        \"evidence\": \"The legend visually confirms the mapping: 'High' and '100' are at the light-yellow top, and 'Low' and '0' are at the dark-red bottom. The map states (NH, DE, FL) have visible fills that can be compared against this scale. NH and DE are light yellow (high), FL is dark maroon (low). The condition that the legend governs the fills is supported by the visual consistency of the choropleth map.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title at the top left of the image clearly reads 'Incidence of Condition A in US States'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The legend runs from light-yellow 'High'/'100' to dark-red 'Low'/'0'. NH is pale yellow, DE is pale yellow (not orange), and FL is dark burgundy.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading proposes that if the dashboard is the evidence source, the state with the highest plotted map value among the options should be routed. It notes a necessary condition: treating the chart's plotted measure (Incidence) as applicable to the task's prevalence criterion, which is not explicitly established by the title.\",\n        \"evidence\": \"The reading correctly identifies the title as 'Incidence of Condition A in US States'. The task asks for 'highest-prevalence'. The reading flags the gap between 'Incidence' (chart title) and 'Prevalence' (task goal) as an assumption. This is a valid logical check. The condition that the chart's measure applies to the task's criterion is an assumption because the title explicitly says 'Incidence', not 'Prevalence'.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3720,
+      "total_tokens": 4554,
+      "completion_tokens": 834,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

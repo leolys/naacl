@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4e4ebc03ad1a68d",
+    "object": "chat.completion",
+    "created": 1790614989,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Coal vs Gas', and the left vertical label reads 'Coal' in blue. The right vertical label reads 'Gas' in red. At the x-axis tick labeled '2010', a blue circular mark is higher on the page than a red square mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2010 Coal data point is marked with the value '3.27'. The 2010 Gas data point is marked with the value '5.48'.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"3\": {\n          \"evidence\": \"The blue circular series is Coal and the red square series is Gas, and their vertical positions use a common upward-increasing residential consumption/demand scale, then the series plotted higher at the same year has the larger level. Under the task instruction, route that resource to priority residential supply follow-up.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue circular series is Coal and the red square series is Gas, and their vertical positions use a common upward-increasing residential consumption/demand scale, then the series plotted higher at the same year has the larger level. Under the task instruction, route that resource to priority residential supply follow-up.\",\n        \"evidence\": \"The chart's title and axis labels explicitly bind 'Coal' to the blue series and 'Gas' to the red series. The 2010 data point for Coal is labeled '3.27' and for Gas is labeled '5.48'. The visual position of the blue mark is higher than the red mark at the 2010 x-axis tick. The task instruction requires routing the resource with the larger 2010 consumption level to priority residential supply follow-up. Since 5.48 > 3.27, Gas has the larger consumption level. The blue mark being higher is consistent with the labeled values, confirming the scale is upward-increasing and the binding is correct.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2249,
+      "total_tokens": 2728,
+      "completion_tokens": 479,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

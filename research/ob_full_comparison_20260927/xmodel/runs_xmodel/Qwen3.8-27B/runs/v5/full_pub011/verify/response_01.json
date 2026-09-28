@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9108a2443d51f6f7",
+    "object": "chat.completion",
+    "created": 1790622181,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top-left of the chart reads exactly 'Monthly Visitors at Museum C in Town Z.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The first green bar on the x-axis is positioned directly above the printed label 'July.'\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top edge of the July green bar aligns perfectly with the orange dashed horizontal line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The orange dashed line crosses the y-axis at the printed tick label '200.'\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The orange text 'Average' is printed near the right end of the dashed line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the green bars encode monthly Museum C visitor counts on the upward-increasing y-axis, the bar above each month label is that month's count, and the dashed line labeled 'Average' is the average benchmark on the same scale, then a month whose bar top aligns with that line is at the average; assuming the routing labels map at-average results to average-level monitoring, select the average-level option.\",\n        \"evidence\": \"The y-axis is labeled 'Number of Visitors' with an upward-increasing scale (0 to 500), and the x-axis is labeled 'Month' with 'July' under the first bar. The dashed line is explicitly labeled 'Average' and is positioned at the 200 tick level. The July bar's top aligns with this line. The option labels include 'Keep July on average-level visitor monitoring,' which corresponds to an 'at-average' result. All necessary conditions for the reading are supported by the chart's labels and visual alignment.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3600,
+      "total_tokens": 4076,
+      "completion_tokens": 476,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

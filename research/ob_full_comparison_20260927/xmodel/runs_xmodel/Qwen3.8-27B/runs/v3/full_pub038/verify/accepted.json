@@ -1,0 +1,44 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image shows a blue vertical axis label on the left reading 'Agriculture (%)' and a red vertical axis label on the right reading 'Industry (%)'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The 2014 marks (a blue circle and a red square) have no text labels adjacent to them. The vertical axes have grid lines but no visible numeric tick labels.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.",
+        "evidence": "The chart visibly has separate left and right axes with different colors and labels. The 2014 data points lack printed numeric values. The vertical axes lack visible numeric tick labels, making it impossible to confirm if the scales are equivalent or to read the specific values.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "At the vertical gridline for 2014, the blue circular marker is positioned vertically higher on the page than the red square marker.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The left vertical axis is labeled 'Agriculture (%)' in blue text, and the right vertical axis is labeled 'Industry (%)' in red text.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the larger 2014 percentage.",
+        "evidence": "The condition requires the series to use the 'same vertically comparable percentage scale.' The chart displays distinct left and right axes with no visible numeric tick labels to verify if these scales are equivalent. Therefore, the necessary condition for this reading (scale equivalence) is not established by the visible evidence.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

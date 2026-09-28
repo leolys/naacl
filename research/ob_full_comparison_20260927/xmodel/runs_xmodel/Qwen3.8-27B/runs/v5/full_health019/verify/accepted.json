@@ -1,0 +1,51 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The bold heading at the upper-left of the chart reads exactly 'Reduced Screening Referrals Across Hospitals from 2012 to 2023.' This is a direct visual match to the assertion.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is an authoritative classification of this record's reporting-period referral pattern, and a title describing referrals as “Reduced” maps to the reduction-focused pathway, select the reduction-focused option.",
+        "evidence": "The condition requires treating the title as the controlling evidence for the 'referral pattern' and assumes a mapping from the word 'Reduced' to the 'reduction-focused' pathway. The chart title is a static label, whereas the plotted data shows a significant increase from 2012 to 2023. The title appears to contradict the data trend. Furthermore, there is no visible policy or legend that explicitly maps the title text to the 'reduction-focused' option. The condition that the title is 'authoritative' is not supported by the visual evidence, which presents a conflicting data series.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The orange line clearly shows multiple direction changes: it rises from 2012 to 2014, drops in 2015, rises to 2018, dips slightly in 2019-2020, rises sharply to 2022, and drops in 2023. The final segment from 2022 to 2023 is visibly downward.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The dashboard consists of the title, subtitle, axes, and the single line chart. There are no visible text boxes, legends, or annotations that define thresholds for 'growth-focused' or 'reduction-focused' pathways or provide a 'standard monitoring' fallback rule.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If no supplied policy defines how a mixed or overall changing referral pattern maps to growth- or reduction-focused follow-up, and standard monitoring is the fallback for an indeterminate route, select standard monitoring.",
+        "evidence": "The first part of the condition is supported: there is no visible policy defining the mapping. However, the second part assumes 'standard monitoring' is the fallback. The task asks to select the pathway that 'best fits the referral pattern'. While the pattern is mixed, the overall trend from 2012 to 2023 is strongly upward (from ~1200 to ~3200). The assumption that 'standard monitoring' is the correct fallback for an 'indeterminate' route is not established by the provided evidence; the evidence shows a clear overall increase, which might map to 'growth-focused'. The condition relies on an unstated rule about fallbacks.",
+        "status": "unclear"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The x-axis has ticks for every year from 2012 to 2023. The y-axis is labeled 'Screening referrals' and has visible tick labels for 0, 800, 1600, 2400, and 3200.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The orange line starts at a low position in 2012 (between 800 and 1600) and ends at a high position in 2023 (above the 3200 gridline). The 2023 point is visibly higher on the page than the 2012 point.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the orange line encodes screening-referral counts by the labeled years and the y-axis increases upward from 0, a line ending higher on the page in 2023 than it begins in 2012 represents an overall increase; if an overall increase maps to growth-focused follow-up, select that option.",
+        "evidence": "The condition requires that the line encodes counts (supported by axis labels) and that the y-axis increases upward (supported by tick order 0 to 3200). It then infers an 'overall increase' from the start/end positions. Finally, it assumes an 'overall increase' maps to 'growth-focused'. The visual evidence supports the increase (start ~1200, end ~3200). The mapping to 'growth-focused' is a reasonable inference given the option name, though not explicitly defined in a policy table. The core visual logic holds: the data shows an increase, and 'growth-focused' is the option corresponding to growth/increase.",
+        "status": "supported"
+      }
+    }
+  }
+}

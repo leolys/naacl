@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a6da3040f4d6b256",
+    "object": "chat.completion",
+    "created": 1790614958,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bold inscription '41.2%' appears above the yellow bar labeled 'Solar'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bold inscription '29.8%' appears above the light-blue bar labeled 'Wind'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The bold inscription '18.5%' appears above the blue bar labeled 'Hydroelectric'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The bold inscriptions '7.2%' and '3.3%' appear above the bars labeled 'Biomass' and 'Geothermal', respectively.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bold percentage annotations attached above each source bar are the operative reported production-share values, the source with the greatest printed percentage is the largest contribution source; the routing criterion requires escalating that source.\",\n        \"evidence\": \"The chart's y-axis is labeled 'Reported production share (%)', and the percentages are explicitly printed above each bar. The values are 41.2% (Solar), 29.8% (Wind), 18.5% (Hydroelectric), 7.2% (Biomass), and 3.3% (Geothermal). The largest value is 41.2% for Solar.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The light-blue bar above the printed label 'Wind' is the tallest bar and reaches between the 65 and 70 y-axis ticks; the bold inscription '29.8%' appears above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The yellow bar above the printed label 'Solar' reaches the 40 y-axis tick; the bold inscription '41.2%' appears above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue bar above the printed label 'Hydroelectric' reaches between the 50 and 55 y-axis ticks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height is the operative encoding of reported production share on the labeled vertical scale, the tallest source bar is the largest contribution source; the routing criterion requires escalating that source.\",\n        \"evidence\": \"The y-axis is labeled 'Reported production share (%)' and has major gridlines at 5-point intervals. The bar for Solar reaches the 40 tick, the bar for Wind reaches between 65 and 70, and the bar for Hydroelectric reaches between 50 and 55. The bar for Wind is visibly the tallest, but its printed value is 29.8%. The bar for Solar is shorter than the Wind bar, but its printed value is 41.2%. This creates a direct contradiction between the visual encoding (bar height) and the explicit textual annotation (printed percentage).\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3735,
+      "total_tokens": 4454,
+      "completion_tokens": 719,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

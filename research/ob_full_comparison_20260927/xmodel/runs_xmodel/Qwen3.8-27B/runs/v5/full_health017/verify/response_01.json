@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9ddaff1b2559aa6a",
+    "object": "chat.completion",
+    "created": 1790621981,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top left of the page literally reads 'Declining Telehealth Follow-up Requests from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative dashboard summary of the record's demand pattern, then its explicit characterization of the requests as declining supports decline-response follow-up. Applies only if the literal title is intended to govern interpretation despite the plotted line's multi-year geometry.\",\n        \"evidence\": \"The necessary condition is that the title be an 'authoritative dashboard summary' that governs interpretation despite the plotted line's geometry. The dashboard presents the title alongside a line graph that visually shows a steep increase from 2012 to 2022, followed by a decrease in 2023. The title's claim of 'Declining' directly contradicts the visual data for the majority of the period (2012-2022). There is no explicit statement in the dashboard instructions or subtitle that the title overrides the visual data. The subtitle 'Program demand record shown in the dashboard summary' is generic. Because the visual data (the line graph) is the primary evidence source for the 'request pattern' and it contradicts the title's 'declining' label for the overall period, the condition that the title is the authoritative summary governing interpretation is not met by the available evidence. The title appears to be a misstatement or a label for a different context not visible here.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line segment from the point above 2022 (approx. 2900) to the endpoint above 2023 (approx. 2600) slopes downward on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed x-axis year labels place 2022 immediately before 2023.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled 'Telehealth follow-up requests'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years order the plotted line chronologically and higher vertical position encodes more telehealth follow-up requests, then a downward final segment indicates a recent decline; if routing is based on the latest year-to-year movement, select decline-response follow-up. Applies only if the task treats the latest interval as decisive rather than the full-period pattern.\",\n        \"evidence\": \"The necessary conditions are: (1) x-axis is chronological (supported by labels 2012-2023), (2) y-axis encodes magnitude (supported by labels 0-3000), (3) the final segment slopes down (supported by visual inspection of 2022 to 2023), and (4) the task treats the latest interval as decisive. The task instruction is to 'select the operational route that best fits the **overall** request pattern'. The word 'overall' suggests a full-period assessment rather than just the latest interval. Therefore, the condition that the task treats the latest interval as decisive is not supported by the task text. The task asks for the 'overall' pattern, which would include the significant growth from 2012 to 2022.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line's 2023 endpoint (approx. 2600) is higher on the page than its 2012 endpoint (approx. 800).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed x-axis year labels run from 2012 at the left to 2023 at the right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled 'Telehealth follow-up requests'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years order the plotted line chronologically and the y-axis labels encode telehealth follow-up request magnitude increasing upward, then a substantially higher final plotted point than initial plotted point indicates overall growth across the displayed period; if the routing labels correspond to that overall pattern, select growth-response follow-up. Applies when the task's 'overall request pattern' is assessed from the displayed period endpoints rather than only the latest interval.\",\n        \"evidence\": \"The necessary conditions are: (1) x-axis is chronological (supported), (2) y-axis encodes magnitude (supported), (3) final point is substantially higher than initial point (supported: ~2600 vs ~800), and (4) the task's 'overall request pattern' is assessed from the displayed period endpoints. The task asks for the 'overall request pattern'. The visual data shows a clear upward trend from 2012 to 2022, with a dip in 2023. The net change from 2012 to 2023 is a significant increase. This fits the description of 'overall growth' across the displayed period. The condition that the task assesses the 'overall' pattern is supported by the task text itself.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3638,
+      "total_tokens": 4957,
+      "completion_tokens": 1319,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

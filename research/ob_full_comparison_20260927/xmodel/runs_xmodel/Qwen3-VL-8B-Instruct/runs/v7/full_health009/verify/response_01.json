@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b7912c6bf06e54b4",
+    "object": "chat.completion",
+    "created": 1790616796,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart explicitly shows data points for 2017, 2018, 2019, and 2020 on the x-axis. The task requires a review of the 2013-2020 window. The visible data does not cover the full requested window, specifically 2013-2016.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The data points for 2017, 2018, 2019, and 2020 are arranged in ascending order vertically, indicating a clear upward trend in enrollment from 2017 to 2020.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis clearly shows the earliest visible tick is 2017 and the latest is 2020, confirming the visible range.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the visible series covers only a recent subset of the requested review window and rises within that subset, then the task's route for an upswing that still warrants observation may be appropriate rather than treating the subset as proof of broad full-window expansion.\",\n        \"evidence\": \"The visible data (2017-2020) shows a clear upward trend. The task's context requires a 2013-2020 review, but the chart does not display data for 2013-2016. Therefore, the visible data cannot confirm a broad multi-year expansion across the entire requested window. The reading correctly identifies that the visible upswing (2017-2020) supports the 'ongoing monitoring for a more recent upswing' route, as it cannot be assumed to represent the full 2013-2020 pattern without the unshown data.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart explicitly shows data points for 2017, 2018, 2019, and 2020 on the x-axis. The task requires a review of the 2013-2020 window. The visible data does not cover the full requested window, specifically 2013-2016.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The data points for 2017, 2018, 2019, and 2020 are arranged in ascending order vertically, indicating a clear upward trend in enrollment from 2017 to 2020.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Telehealth Follow-up Enrollment Trend' and the y-axis is labeled 'Enrolled patients'. The vertical axis scale is increasing upward, so higher position means more enrolled patients.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The x-axis clearly shows the earliest visible tick is 2017 and the latest is 2020, confirming the visible range.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title and axes bind the teal line to telehealth follow-up enrollment by year, and higher vertical position represents more enrolled patients on the labeled y-axis, then successive higher points at later year ticks indicate enrollment growth over the displayed years. This supports sustained-growth planning only if the displayed years adequately establish the requested full review-window pattern.\",\n        \"evidence\": \"The chart title and axes correctly bind the data to telehealth enrollment by year. Higher vertical position corresponds to more patients, and the points show a clear growth trend from 2017 to 2020. However, the task requires a 2013-2020 assessment, and the visible data only covers 2017-2020. Therefore, the visible growth cannot be used to confirm a 'broad multi-year expansion' across the entire 2013-2020 window. The reading correctly states that sustained-growth planning is only supported if the displayed years adequately establish the full window pattern, which they do not. Thus, the reading is correctly applied and supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3306,
+      "total_tokens": 4311,
+      "completion_tokens": 1005,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

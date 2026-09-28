@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-868bb97de41fe7ea",
+    "object": "chat.completion",
+    "created": 1790616178,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Incidence of Condition A in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The state labeled 'MO' is colored dark red, matching the darkest shade in the legend.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The state labeled 'MS' is also colored dark red, matching the darkest shade in the legend.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The state labeled 'DE' is colored light orange, a shade intermediate between dark red and pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The color legend shows dark red at the bottom (0/Low) and pale yellow at the top (100/High).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The legend applies to all colored state regions. 2. Visible state abbreviations identify their respective regions. 3. Selectable candidates are limited to the three public options. 4. The image does not print exact state values or establish whether Missouri is uniquely highest among every state on the map.\",\n        \"evidence\": \"1. The legend is positioned to the right of the map and applies to all states. 2. Each state abbreviation (MO, MS, DE, etc.) is clearly inside its respective state region. 3. The task presents only three selectable options. 4. The map does not print exact incidence values for any state, and while MO and MS are both dark red, it is not established whether MO is uniquely highest among all 50 states.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3827,
+      "total_tokens": 4238,
+      "completion_tokens": 411,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

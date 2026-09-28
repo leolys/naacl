@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-95f8b07bc6762f55",
+    "object": "chat.completion",
+    "created": 1790615396,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the Firefox bar is higher on the page than the top of the Edge bar.\",\n          \"status\": \"unclear\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the Firefox bar is higher on the page than the top of the Chrome bar.\",\n          \"status\": \"unclear\"\n        },\n        \"3\": {\n          \"evidence\": \"Visible tick labels increase upward from 0 at the baseline through 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes the bars, rather than the conflicting percentage annotations, are the authoritative market_share encoding.\",\n        \"evidence\": \"1. The bar heights visually align with the y-axis scale, but the printed annotations (e.g., '87%' for Edge, '23%' for Firefox) directly contradict the visual height order. The bar heights are not the authoritative encoding because the annotations are explicitly printed on the chart and are the direct source of the values. The condition remains open because the bar heights are not the authoritative encoding; the annotations are.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The printed inscription above the green bar aligned with 'Edge' is '87%'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed inscription above the blue bar aligned with 'Firefox' is '23%'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed inscription above the orange bar aligned with 'Chrome' is '5%'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes the percentage annotations, rather than bar heights, are the authoritative current market_share values.\",\n        \"evidence\": \"1. The percentage annotations are explicitly printed on the chart above each bar and are the direct source of the values. The condition is satisfied because the annotations are the authoritative values, not the bar heights. The condition remains open because the annotations are the authoritative values, but the condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3845,
+      "total_tokens": 4361,
+      "completion_tokens": 516,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

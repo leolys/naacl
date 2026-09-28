@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b0c33db057d5fc5b",
+    "object": "chat.completion",
+    "created": 1790615983,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Selected Asthma Regions: PM2.5 Exposure vs ER Visits', and the subtitle reads 'Selected high-burden regions shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The red points labeled Region A through Region E are arranged generally from lower-left to upper-right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires unshown evidence that the selected regions represent the enterprise population and that no broader review is needed.\",\n        \"evidence\": \"The chart's subtitle explicitly limits the data to 'Selected high-burden regions shown in dashboard summary'. No public fact or policy is displayed that establishes these regions as representative of the enterprise population. The condition 'no broader review is needed' is also unestablished. The necessary conditions remain open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle reads 'Selected high-burden regions shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays five labeled regional points: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Requires a policy or review standard favoring non-action for this limited descriptive evidence; none is displayed.\",\n        \"evidence\": \"The public task instructions and the chart's own title and subtitle frame this as an evidence-routing decision requiring action based on the displayed comparison. No policy or standard is printed or implied that would allow retention without further action. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Selected Asthma Regions: PM2.5 Exposure vs ER Visits', and the subtitle reads 'Selected high-burden regions shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal-axis inscription reads 'PM2.5 exposure index' and the vertical-axis inscription reads 'Asthma ER visits'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red points labeled Region A, Region B, Region C, Region D, and Region E progress generally from lower-left to upper-right, with Region E visibly farthest right and highest and Region A visibly farthest left and lowest.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies only if the axis labels bind to the plotted points and the displayed selection is not established as representative of the enterprise population.\",\n        \"evidence\": \"The axis labels are clearly bound to the plotted points. The subtitle 'Selected high-burden regions shown in dashboard summary' explicitly states the selection is not representative of the enterprise population. The condition is fully satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3203,
+      "total_tokens": 3909,
+      "completion_tokens": 706,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

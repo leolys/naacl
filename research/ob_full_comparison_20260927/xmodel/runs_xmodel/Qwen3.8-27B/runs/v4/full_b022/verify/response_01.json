@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bcca16910df2b0a4",
+    "object": "chat.completion",
+    "created": 1790619159,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title in the upper-left reads 'Top Regions: Ad Spend vs Sales', confirming the 'Top Regions' identification. The plot area displays five distinct blue markers, each labeled with a region name (A through E).\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The vertical axis is explicitly labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'. These are the only quantitative axis inscriptions visible on the chart.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If a broader budget approval requires evidence of advertising causal impact, ROI/profitability, or complete regional coverage, then a scatterplot showing only spend and sales for the displayed top regions is insufficient and supports requesting full analysis instead.\", \"evidence\": \"The chart is a simple scatterplot of two variables (spend and sales) for five regions. It contains no data on costs (to calculate ROI), no time-series data (to establish causality or trends), and the title 'Top Regions' implies it is a subset of a larger population. Therefore, the chart does not contain the causal, return, or full-population evidence mentioned in the condition.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart clearly reads 'Top Regions: Ad Spend vs Sales'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)'. The tick marks are labeled 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, and 75, increasing from left to right.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)'. The tick marks are labeled from 50 at the bottom to 180 at the top, increasing upwards.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The five labeled points (Region A through Region E) form a clear upward-sloping line from the bottom-left to the top-right. Region E is the rightmost point (highest x-value) and the highest point (highest y-value).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal axis encodes Advertising Spend and increases left-to-right, the vertical axis encodes Sales and increases upward, and the labeled regional points are comparable observations, then the plotted ordering indicates that higher-spend regions in this displayed set also have higher sales. Approving broader expansion additionally requires the unstated decision assumption that this descriptive association is sufficient support for expansion.\", \"evidence\": \"The axes and point positions are as described in the original observations. The visual evidence supports the descriptive association that higher spend correlates with higher sales for these five regions. The B-reading correctly identifies that this is a descriptive association and that using it to approve expansion would be an unstated assumption, as the chart provides no causal or ROI evidence.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4378,
+      "total_tokens": 5052,
+      "completion_tokens": 674,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

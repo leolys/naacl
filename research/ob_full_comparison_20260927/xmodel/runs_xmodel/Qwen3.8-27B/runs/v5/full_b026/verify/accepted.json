@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The title text at the top of the chart reads exactly 'Selected High-Growth Quarters: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The plot area contains exactly five markers labeled Q2, Q3, Q4, Q5, and Q6. There are no other data points, no lines indicating a full period, no secondary axis for profitability, and no horizontal/vertical lines indicating a threshold.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a chart is explicitly limited to selected high-growth quarters and does not display the full campaign data or a decision threshold, then the chart alone is insufficient to establish that the observed association generalizes to a broader budget increase; request full-data analysis. Conditions: Applies when approval requires evidence beyond a selected subset, such as full-period performance, causal evidence, profitability, or risk review.",
+        "evidence": "The chart is explicitly limited to 'Selected High-Growth Quarters' (title). It does not display full campaign data (only 5 points). It does not display a decision threshold. The task is to 'Approve broader budget increase', which implies generalization beyond the selected subset. Therefore, the condition 'approval requires evidence beyond a selected subset' is met by the nature of the decision (broader vs selected).",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title text at the top of the chart reads exactly 'Selected High-Growth Quarters: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is labeled 'Advertising Spend ($ thousands)' and has tick marks labeled 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis is labeled 'Sales ($ thousands)' and has tick marks labeled 50 through 170 in increments of 10.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The markers Q2 (approx 30, 60), Q3 (approx 40, 85), Q4 (approx 50, 110), Q5 (approx 60, 135), and Q6 (approx 70, 160) show a clear progression to the right (increasing spend) and upward (increasing sales).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, and the labeled quarter markers are the relevant evidence for a broader budget decision, then an upward-right pattern supports approving a broader budget increase; this assumes the selected quarters are representative and the association is sufficient for the decision. Conditions: Applies only if the displayed selected high-growth quarters are representative of the broader campaign context and no additional profitability, causality, or policy threshold is required.",
+        "evidence": "The axes and pattern match the description. However, the condition 'Applies only if the displayed selected high-growth quarters are representative of the broader campaign context' is not met. The chart is explicitly titled 'Selected High-Growth Quarters', implying a subset, not the whole. There is no evidence of representativeness. Furthermore, 'no additional profitability... is required' is not established; the chart only shows Sales vs Spend, not profit. Therefore, the conditions for this reading are not supported by the visible evidence.",
+        "status": "refuted"
+      }
+    }
+  }
+}

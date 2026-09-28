@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-93748983434d5a8b",
+    "object": "chat.completion",
+    "created": 1790619231,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart is a scatter plot titled 'Weeks with Promotional Campaigns: Ad Spend vs Sales'. The axes are 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. The plot contains blue points labeled Week 2 through Week 6 and an unlabeled point at the origin. There are no annotations or visual elements indicating profit, margin, incremental sales, control groups, or causal methods.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If a broader-spend approval requires evidence that added advertising caused profitable incremental sales, then a scatterplot of weekly spend and sales without a causal design, costs, margin, or return measures is insufficient; select full-data analysis.\", \"evidence\": \"The dashboard shows only the association between spend and sales. It does not provide data on costs, margins, or a causal design (e.g., control group) to establish that the increased spend *caused* the increased sales or that the sales were profitable.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The chart title is 'Weeks with Promotional Campaigns: Ad Spend vs Sales'. The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The labeled points for Week 2, Week 3, Week 4, Week 5, and Week 6 show a clear progression from lower-left to upper-right. For example, Week 2 is at approximately (22, 65) and Week 6 is at approximately (62, 190). Each subsequent week has a higher spend value and a higher sales value.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands as printed, then points farther right and higher represent weeks with greater spend and greater sales. If a consistent higher-spend/higher-sales pattern across the labeled campaign weeks is sufficient evidence for a spend recommendation, select broader spend expansion.\", \"evidence\": \"The chart confirms that higher spend is associated with higher sales for the labeled weeks. However, the condition 'If a consistent higher-spend/higher-sales pattern... is sufficient evidence' is not established by the dashboard. The dashboard provides only a descriptive association, not a causal link or profitability analysis, which are typically required for a 'broader spend expansion' decision.\", \"status\": \"unclear\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4125,
+      "total_tokens": 4675,
+      "completion_tokens": 550,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

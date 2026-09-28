@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a0712929cca02356",
+    "object": "chat.completion",
+    "created": 1790620748,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"upper-left\",\n      \"fact\": \"Chart title reads 'Product Rating Share by Category'. Y-axis is labeled 'Value' with ticks 0 to 50. X-axis is labeled 'Category'.\"\n    },\n    {\n      \"location\": \"x-axis left to right\",\n      \"fact\": \"Six blue circular markers appear above the categories Quality, Price, Design, Support, Delivery, and Other.\"\n    },\n    {\n      \"location\": \"above each marker\",\n      \"fact\": \"Percentage labels are printed directly above the markers: 14%, 49%, 30%, 33%, 29%, 34%.\"\n    },\n    {\n      \"location\": \"relative vertical position\",\n      \"fact\": \"The Price marker (49%) is the highest of the six, sitting near the 27 value level; the Quality marker (14%) is the lowest, near 13.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Quality marker\",\n      \"fact\": \"Labeled rating share: 14%\"\n    },\n    {\n      \"location\": \"Price marker\",\n      \"fact\": \"Labeled rating share: 49%\"\n    },\n    {\n      \"location\": \"Design marker\",\n      \"fact\": \"Labeled rating share: 30%\"\n    },\n    {\n      \"location\": \"Support marker\",\n      \"fact\": \"Labeled rating share: 33%\"\n    },\n    {\n      \"location\": \"Delivery marker\",\n      \"fact\": \"Labeled rating share: 29%\"\n    },\n    {\n      \"location\": \"Other marker\",\n      \"fact\": \"Labeled rating share: 34%\"\n    },\n    {\n      \"location\": \"policy table\",\n      \"fact\": \"Attribute follow-up rule: 'Select the category with the highest current labeled rating share'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: 'Review the Product Rating Share dashboard, then open the product attribute follow-up item for the category with the highest current labeled rating share.'\",\n    \"Primary field: 'Product attribute follow-up category' with options 'Select Price', 'Select Support', 'Select Design'.\",\n    \"Queue rule option: 'Prioritize highest current rating share'.\",\n    \"Work queue option: 'Product attribute follow-up queue'.\"\n  ],\n  \"uncertain\": [\n    \"The dashboard includes categories (Quality, Delivery, Other) that are not among the three selectable follow-up options; the rule's 'highest current labeled rating share' must be applied to determine which selectable category is intended.\",\n    \"Whether the 49% Price label is the intended 'highest current labeled rating share' for the follow-up queue, given that the option set does not include all dashboard categories.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2780,
+      "total_tokens": 3439,
+      "completion_tokens": 659,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

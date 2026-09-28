@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4ed10001798034f",
+    "object": "chat.completion",
+    "created": 1790615780,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Monthly Reservoir Release Volume', the x-axis is labeled 'Month', and the y-axis is labeled 'Release volume (m3)'. The May bar is visually shorter than all others.\",\n          \"status\": \"supported\"\n        }\n      ,\n        \"2\": {\n          \"evidence\": \"The May bar is the shortest, lying near the broken baseline, and the y-axis scale shows May's volume is approximately 8,000 m³, far below all other bars (April ~30,000 m³, January ~40,000 m³, etc.).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies when routing requires an explicit threshold or policy beyond relative comparison.\",\n        \"evidence\": \"Condition 1: The chart alone does not establish a threshold or policy; the public task and page instructions do not mention any formal threshold or anomaly policy. The only criterion provided is relative comparison to other months. Therefore, the condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The May bar is the shortest and lies near the broken baseline, visually corresponding to ~8,000 m³, far below all other bars (April ~30,000 m³, January ~40,000 m³, etc.).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies if filing excludes low-release cases needing follow-up.\",\n        \"evidence\": \"Condition 1: The chart clearly shows May is a low-release case (visibly minimal bar). Background filing is inappropriate for low-release cases requiring active routing. Therefore, the condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The May bar is the shortest, visually corresponding to approximately 8,000 m³ on the y-axis, far below all other displayed months (April ~30,000 m³, January ~40,000 m³, etc.).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is inscribed 'Release volume (m3)' and has visible labeled ticks from 10,000 through 40,000. The May bar lies below the 10,000 tick and near the broken baseline.\",\n          \"status\": \"supported\"\n        }\n      ,\n        \"3\": {\n          \"evidence\": \"The chart is a horizontal bar chart with months on the x-axis and release volume on the y-axis. All bars are solid dark red and uniformly spaced. The May bar is the shortest, visually corresponding to approximately 8,000 m³.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to the displayed months and only if relative extremity is an accepted critical-anomaly criterion.\",\n        \"evidence\": \"Condition 1: The chart encodes release volume on a common vertical axis. Condition 2: Relative extremity (May being the lowest) is a criterion. The public task and page instructions do not state a formal threshold, but the chart's visual convention (shortest bar = critical anomaly) is implied by the absence of an explicit policy. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4049,
+      "total_tokens": 4855,
+      "completion_tokens": 806,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

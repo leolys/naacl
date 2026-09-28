@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a case-count line and axis labels, but no printed routing threshold, alert cutoff, or escalation policy criterion is visible.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If routing requires an explicit policy threshold or sustained-trend criterion beyond the general instruction to select the pathway that best matches the observed trajectory, the chart alone does not provide that threshold; background monitoring could be retained pending such a criterion.",
+        "evidence": "The task materials explicitly state: 'Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.' No policy thresholds, alert cutoffs, or escalation criteria are printed on the chart or in the task instructions. The only instruction is to match the observed trajectory to the best pathway. Therefore, the condition 'if routing requires an explicit policy threshold...' is not met, and the reading does not apply.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The blue line and markers generally move lower on the page from left to right.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering, the line's downward screen movement would appear to represent a declining trajectory; under the task labels, a declining trajectory maps to declining-case stabilization review.",
+        "evidence": "The y-axis is labeled 'Count' and its tick values are printed as 0, 200, 400, 600, 800, 1000, 1200, 1400, with 0 at the top and 1400 at the bottom. This explicitly defines the metric direction: higher values are lower on the page. The 'usual upward-is-higher' convention is overridden by the printed tick labels. Therefore, the condition 'if chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering' is false. The reading does not apply.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The title reads 'Month vs. Number of cases', and the vertical axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Printed y-axis ticks show 0 near the top, then 200, 400, 600, 800, 1000, 1200, and 1400 at progressively lower positions.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The leftmost blue marker is positioned close to the 0 tick, while the rightmost blue marker is below the 1400 tick.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The blue line runs from left to right across the dated horizontal labels and its markers generally move lower on the page.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal labels encode the displayed reporting sequence from left to right, the vertical axis labeled 'Count' uses its printed tick values, and larger printed values are lower on the page, then the line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. For this task, an increasing reported-case trajectory maps to rising-case escalation follow-up.",
+        "evidence": "The horizontal axis labels are 'Jan 27, 2020' to 'Mar 22, 2020', in chronological order from left to right. The y-axis is labeled 'Count' and its ticks are 0 (top) to 1400 (bottom), meaning higher values are lower on the page. The line starts near 0 (left) and ends below 1400 (right). Since 0 is the smallest value and 1400 is the largest, moving from 0 to below 1400 means the count is increasing. The task instruction maps an increasing trajectory to 'rising-case escalation follow-up'. All necessary conditions are met. The reading applies.",
+        "status": "supported"
+      }
+    }
+  }
+}

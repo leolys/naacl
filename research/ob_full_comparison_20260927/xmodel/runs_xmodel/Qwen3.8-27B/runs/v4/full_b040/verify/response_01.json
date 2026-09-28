@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bb34d2677e6f8da4",
+    "object": "chat.completion",
+    "created": 1790619424,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line is anchored at the Q1, Q2, Q3, and Q4 x-axis positions. The y-axis is labeled 'Revenue' with tick values increasing upward from 0 to 2,000. The line's vertical position at Q4 (approx. 1,850) is visibly higher than at Q1 (approx. 1,080).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis is labeled 'Revenue'. The tick labels are printed in ascending order from bottom to top: 0, 200, 400, 600, 800, 1,000, 1,200, 1,400, 1,600, 1,800, 2,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Company C revenue by quarter, the horizontal axis orders Q1 through Q4, and higher vertical position represents greater revenue because the labeled Revenue-axis values increase upward, then a line ending higher than it begins indicates revenue growth; the growth classification maps to the revenue growth response.\",\n        \"evidence\": \"The chart title 'Stable Revenue of Company C from Q1 to Q4' and the x-axis label 'Quarter' with ticks Q1-Q4 confirm the line encodes Company C revenue by quarter. The y-axis 'Revenue' with ascending values confirms higher vertical position represents greater revenue. The line ends at a higher vertical position at Q4 than it begins at Q1.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart reads exactly: 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is the authoritative classification for the Company C Q1-Q4 revenue record, then the literal descriptor 'Stable Revenue' maps to the revenue stability response.\",\n        \"evidence\": \"The title contains the literal descriptor 'Stable Revenue'. However, the condition that the title is the 'authoritative classification' that overrides the plotted data is not supported by the visual evidence, as the plotted data clearly shows a significant upward trend (approx. 1,080 to 1,850), which contradicts the 'stable' descriptor. The condition is not met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3788,
+      "total_tokens": 4428,
+      "completion_tokens": 640,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

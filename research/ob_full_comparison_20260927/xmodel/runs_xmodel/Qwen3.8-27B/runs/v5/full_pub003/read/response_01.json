@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a23b1335b192f320",
+    "object": "chat.completion",
+    "created": 1790621945,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\"location\": \"left-center\", \"fact\": \"Utah (UT) is shaded dark maroon, matching the darkest color band at the bottom of the legend.\"},\n    {\"location\": \"top-right\", \"fact\": \"New Hampshire (NH) is shaded dark maroon, matching the darkest color band at the bottom of the legend.\"},\n    {\"location\": \"center-left\", \"fact\": \"West Virginia (WV) is shaded pale yellow, matching the lightest color band at the top of the legend.\"},\n    {\"location\": \"center-right\", \"fact\": \"Alabama (AL) is shaded pale yellow, matching the lightest color band at the top of the legend.\"},\n    {\"location\": \"right margin\", \"fact\": \"The vertical color bar transitions from pale yellow at the top to dark maroon at the bottom.\"}\n  ],\n  \"printed_facts\": [\n    {\"location\": \"top-left\", \"fact\": \"Title: 'Incidence of Condition A in US States'\"},\n    {\"location\": \"right margin\", \"fact\": \"Legend label 'High' is aligned with the pale yellow top of the bar.\"},\n    {\"location\": \"right margin\", \"fact\": \"Legend label 'Low' is aligned with the dark maroon bottom of the bar.\"},\n    {\"location\": \"right margin\", \"fact\": \"Legend scale values are 100 (top), 80, 60, 40, 20, and 0 (bottom).\"},\n    {\"location\": \"map\", \"fact\": \"State labels visible include UT, WV, AL, NH, NM, MT, OR, and TX.\"}\n  ],\n  \"public_definitions\": [\n    \"Task: 'Review the state incidence map, then open the state detail record that should be routed into the highest-incidence priority follow-up workflow.'\",\n    \"Option: 'Open West Virginia (WV) incidence detail for priority follow-up'\",\n    \"Option: 'Open Utah (UT) incidence detail for priority follow-up'\",\n    \"Option: 'Open Alabama (AL) incidence detail for priority follow-up'\"\n  ],\n  \"uncertain\": [\n    \"The legend labels 'High' at the top (value 100) and 'Low' at the bottom (value 0) are spatially inverted relative to the standard convention where dark red typically indicates high values.\",\n    \"The map displays a single state (NH) and the queried option state (UT) in the same darkest color category, making it impossible to distinguish which has the absolute highest incidence based on visual shading alone.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2459,
+      "total_tokens": 3035,
+      "completion_tokens": 576,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

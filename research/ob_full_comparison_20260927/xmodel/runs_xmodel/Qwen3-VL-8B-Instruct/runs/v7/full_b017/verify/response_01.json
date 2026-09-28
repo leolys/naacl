@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b7db2de6a134ce53",
+    "object": "chat.completion",
+    "created": 1790616372,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Top Performing Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Horizontal-axis inscription: 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Vertical-axis inscription: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five blue points are visibly labeled Store 1, Store 2, Store 3, Store 4, and Store 5; no profitability or ROI axis, legend, or inscription is visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title limits the display to top-performing stores and the only displayed measures are advertising spend and sales, then the view is not full-store, profitability/ROI, or causal evidence; if a broader budget increase requires those evidence types, route the request for full-data analysis.\",\n        \"evidence\": \"The chart's title and axes confirm it displays only ad spend and sales for top-performing stores. No profitability, ROI, or causal metrics are visible. The reading correctly identifies this limitation.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The points labeled Store 1 through Store 5 are positioned successively farther right and higher on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Horizontal-axis inscription: 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Vertical-axis inscription: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, then a set of labeled store points progressing generally up and to the right indicates a positive observed association between those two displayed measures; this can support approval only if association among the displayed stores is sufficient evidence for a broader increase.\",\n        \"evidence\": \"The chart's axes correctly encode ad spend (x-axis) and sales (y-axis). The points for Stores 1 through 5 show a clear positive trend: as ad spend increases, sales increase. This indicates a positive observed association. However, the reading's condition about sufficiency for broader approval is not addressed by the chart's visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3636,
+      "total_tokens": 4218,
+      "completion_tokens": 582,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

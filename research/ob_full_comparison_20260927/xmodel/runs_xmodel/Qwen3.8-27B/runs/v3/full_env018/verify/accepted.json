@@ -1,0 +1,64 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image shows a dark-red bar at the far right under the 'May' label. Its height is visibly the smallest on the page, significantly shorter than the other five bars (Apr, Jan, Jun, Feb, Mar).",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The top of the chart displays the text 'Monthly Reservoir Release Volume'. The vertical axis is labeled 'Release volume (m3)' and the horizontal axis is labeled 'Month'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that if the bars encode release volume, May is a low-release case. It further states that without a stated critical threshold or anomaly policy, the chart alone does not establish whether standard follow-up or escalation is required.",
+        "evidence": "The chart's axis label 'Release volume (m3)' confirms the bars encode volume. The visual data confirms May is a low-release case (it is the lowest value). The chart contains no text, legend, or annotation defining a 'critical threshold' or 'anomaly policy'.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The bar at the 'May' position is the shortest of the six bars shown. It sits very low on the y-axis, near the bottom of the plot area (the baseline).",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that background filing is appropriate only if May is not a low-release case requiring active routing. It claims a visibly minimal May bar would not support that condition if the chart encodes release volume.",
+        "evidence": "The chart encodes release volume (per axis label). The May bar is visibly minimal (lowest value). Therefore, May is a low-release case. The logic that a 'visibly minimal' bar contradicts the condition of 'not a low-release case' is consistent with the visual evidence.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The bar at the 'May' position is dark red and is much shorter than the other five bars (Apr, Jan, Jun, Feb, Mar).",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The vertical axis is labeled 'Release volume (m3)'. Visible tick marks are present at 10,000, 15,000, 20,000, 25,000, 30,000, 35,000, and 40,000.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The top of the May bar is visibly below the horizontal gridline corresponding to the 10,000 tick mark. It is positioned near the x-axis (baseline).",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading asserts that if the bars encode volume and the workflow treats a month 'visibly far below all other displayed months' as a critical low-release anomaly, that month should be escalated. It notes this severity convention is assumed because no explicit threshold is printed.",
+        "evidence": "The bars encode volume (axis label). May is visibly far below all other months (it is <10,000 while the next lowest is ~17,000). The chart contains no explicit threshold. The reading correctly identifies that the 'critical anomaly' status relies on an assumed convention of relative extremity rather than a printed rule.",
+        "status": "supported"
+      }
+    }
+  ]
+}

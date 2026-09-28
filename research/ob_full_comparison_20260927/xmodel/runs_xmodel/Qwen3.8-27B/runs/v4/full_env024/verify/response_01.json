@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b883558c6a20695d",
+    "object": "chat.completion",
+    "created": 1790619930,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visual notes and the image confirm that the 'Groundwater' bar is the tallest column, reaching just below the 70 gridline, while the 'Surface water' bar is shorter, reaching just above the 40 gridline.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The image clearly displays the title 'Urban Water Supply by Source' at the top and the y-axis label 'Reported supply share (%)' on the left.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each source’s bar height on the vertical scale encodes its urban reported supply contribution, and the routing criterion requires escalation of the largest contribution source, select the option for the source with the tallest bar.\",\n        \"evidence\": \"The chart's y-axis is explicitly labeled 'Reported supply share (%)' with a linear scale from 0 to 70. In standard data visualization, the geometric height of a bar on a labeled quantitative axis is the primary encoding of the value. Although the data labels (e.g., 41.2% for a bar at ~40, 29.8% for a bar at ~68) are inconsistent with the axis, the axis and bar heights form a coherent, standard representation. The condition 'if bar geometry... is the authoritative contribution encoding' is supported by the presence of the labeled axis.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The image shows the text '41.2%' positioned directly above the 'Surface water' bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The image shows the text '29.8%' positioned directly above the 'Groundwater' bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The image shows the text '18.5%' positioned directly above the 'Desalination' bar.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The image shows the text '7.2%' positioned directly above the 'Recycled water' bar.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The image shows the text '3.3%' positioned directly above the 'Rain capture' bar.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The y-axis label 'Reported supply share (%)' is clearly visible on the left side of the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscription directly above each source bar is the authoritative reported supply-share value, compare those inscriptions; under the stated largest-contribution routing criterion, select the option for the source with the greatest printed share.\",\n        \"evidence\": \"The condition requires the labels to be 'valid source-specific reported supply shares'. However, the labels are demonstrably invalid in the context of the chart's own scale. For example, the 'Surface water' label is 41.2%, but the bar height is ~40. The 'Groundwater' label is 29.8%, but the bar height is ~68. A value of 29.8% cannot correspond to a bar that is visually double the height of a bar representing 41.2% on a linear 0-70 scale. Because the labels contradict the chart's primary quantitative encoding (the axis), they cannot be considered 'valid' shares for the purpose of determining the 'largest contribution'.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4370,
+      "total_tokens": 5254,
+      "completion_tokens": 884,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

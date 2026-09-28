@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8edf87bc68c6a4bd",
+    "object": "chat.completion",
+    "created": 1790618830,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"At the 2012 vertical gridline, the blue circular marker is positioned in the upper-middle section of the chart, while the red square marker is near the bottom. The blue mark is visibly higher on the page than the red mark.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left vertical axis label is printed in blue text and reads '0-19 years'. The right vertical axis label is printed in red text and reads '20-39 years'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The title at the top center of the chart reads '0-19 years vs 20-39 years'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that if the blue circular series is the 0-19 years series and the red square series is the 20-39 years series, and both series use the same vertically comparable population scale, then the series mark higher on the page at the same year encodes the larger population.\",\n        \"evidence\": \"The visual evidence supports the series-to-label mapping (blue circles to '0-19 years', red squares to '20-39 years'). However, the chart displays separate left and right axes with no visible numeric tick labels or scale bridge. The independent visual notes explicitly state that 'the exact scale values on the Y-axes are not visible' and that the comparison 'relies on the relative vertical position'. Because the condition of a 'common or directly comparable population scale' is not established by the visible public evidence (no shared axis, no scale indicators), the decoding logic cannot be confirmed.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Separate colored vertical labels are visible: '0-19 years' in blue on the left and '20-39 years' in red on the right.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"No numeric y-axis tick labels are printed on either the left or right sides of the plot area.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"At the 2012 vertical gridline, the blue circular mark is positioned significantly higher on the page than the red square mark.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that if the differently colored left and right axes can use independent, unshown, or non-comparable scales, then screen-space height alone does not establish which cohort has the larger population, making the comparison unresolved.\",\n        \"evidence\": \"The chart visibly has separate blue and red y-axis labels and no printed y-axis tick values. This structural feature (dual axes without visible scale indicators) supports the condition that the scales may be independent or non-comparable. Without a visible scale bridge or shared axis, the relative vertical position of the markers is not a definitive measure of the underlying population values. The reading's conclusion that the comparison is unresolved based on the available visual evidence is supported by the chart's layout.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3103,
+      "total_tokens": 3929,
+      "completion_tokens": 826,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

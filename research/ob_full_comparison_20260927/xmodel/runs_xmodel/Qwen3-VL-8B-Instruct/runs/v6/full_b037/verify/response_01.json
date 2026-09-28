@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8e348cf97f0da3fa",
+    "object": "chat.completion",
+    "created": 1790615609,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The condition requires treating the chart title as the authoritative summary of the output trend, overriding the plotted line. This is not supported by the visual evidence; the chart's geometry contradicts the title's claim.\",\n        \"evidence\": \"The plotted line clearly shows a downward trend from 3500 in 2018 to ~1800 in 2023, contradicting the title's assertion of 'increasing' production. The condition remains open as it is not established that the title is authoritative.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A single blue line connects positions above the x-axis labels 2018, 2019, 2020, 2021, 2022, and 2023; each successive position is lower on the page than the preceding one.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is inscribed 'Year' and has ticks labeled 2018 through 2023 from left to right; the vertical axis is inscribed 'Production' and its visible numeric tick labels increase upward from 0 to 3,500.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The conditions are: (1) the single plotted line represents Factory F production for the displayed years, and (2) the y-axis uses the conventional upward-increasing numeric scale. Both are supported by the visual evidence: the line is the only data series, and the y-axis scale increases upward.\",\n        \"evidence\": \"The line's position at 3500 in 2018 and ~1800 in 2023 confirms a declining trend. The y-axis labels (0 to 3500) confirm the upward-increasing scale. Both conditions are satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3888,
+      "total_tokens": 4406,
+      "completion_tokens": 518,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

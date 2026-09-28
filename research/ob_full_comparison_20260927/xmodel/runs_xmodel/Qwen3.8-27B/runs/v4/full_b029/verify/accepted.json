@@ -1,0 +1,47 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart is a scatter plot with five labeled points (Region A-E) and axes labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. There are no visible annotations for ROI, profit, experimental controls, or incremental sales. The background is plain white with no gridlines or secondary series.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI, then a cross-sectional scatter pattern alone does not meet that requirement; further regional spend-sales analysis is warranted.",
+        "evidence": "The chart displays a cross-sectional relationship between spend and sales for five regions. It does not provide causal evidence (e.g., A/B testing) or ROI metrics. The condition 'association, five plotted regions, and current spend/sales levels are insufficient substitutes for causal or return analysis' is a logical interpretation of the missing data types (causality/ROI) visible in the chart.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The points are arranged in a sequence: Region A (~30, 58), Region B (~40, 66), Region C (~50, 81), Region D (~60, 106), Region E (~70, 151). Each subsequent region is to the right (higher spend) and higher up (higher sales) than the previous one.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If an observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout, then a limited pilot can be selected for regions rather than approving a broader increase.",
+        "evidence": "The chart shows a positive association (monotonic increase). The condition assumes an organizational policy ('permits a pilot under uncertainty') which is not present in the chart, but the visual evidence of a positive association without causal proof supports the logic that one might choose a pilot (testing) over a full rollout.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The title is 'Top Regions: Ad Spend vs Sales'. The x-axis is 'Advertising Spend ($ thousands)' and the y-axis is 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Region A is at (~30, 58), Region B at (~40, 66), Region C at (~50, 81), Region D at (~60, 106), Region E at (~70, 151). The x-values (30 < 40 < 50 < 60 < 70) and y-values (58 < 66 < 81 < 106 < 151) strictly increase, confirming the 'left of and below' description.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels indicate, and if the ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales, then a region-wide spend increase is supported.",
+        "evidence": "The axes are correctly labeled. The points show a clear positive correlation. The condition 'Association is treated as sufficiently generalizable and decision-sufficient despite no displayed causal, ROI, cost, or incremental-sales evidence' is a specific interpretive stance (treating correlation as sufficient for a broad decision) that is logically consistent with the visual data, even if other interpretations (like r1) might argue for more caution.",
+        "status": "supported"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-95219cee73753570",
+    "object": "chat.completion",
+    "created": 1790619098,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Supported. The plot displays exactly five labeled points: Week 7, Week 8, Week 9, Week 10, and Week 11. No other data points are visible.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Supported. The title is 'Additional Promotion Weeks: Ad Spend vs Sales'. The axes are 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. There are no visible inscriptions regarding causal methods, profitability, thresholds, or decision policies.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an observed association without full-data, causal, profitability, or policy-threshold evidence is insufficient for a budget recommendation, then the evidence-review option is the corresponding decision.\",\n        \"evidence\": \"The reading relies on a condition ('approval requires evidence beyond this five-point dashboard view') that is not present in the chart or the task instructions. The task simply asks to 'Review the promotion-week dashboard, then submit the campaign approval decision.' Without a stated policy requiring more than the visible data, the condition is not met by the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Supported. The title at the top of the chart reads 'Additional Promotion Weeks: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Supported. Five blue circular points are visible, each labeled 'Week 7' through 'Week 11'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Supported. The axes are labeled as stated. The points are arranged such that Week 7 is at (30, 60), Week 8 at (40, 85), Week 9 at (50, 110), Week 10 at (60, 135), and Week 11 at (70, 160). Each successive point is indeed farther right (higher x) and higher (higher y) than the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis labeled 'Advertising Spend ($ thousands)' and vertical axis labeled 'Sales ($ thousands)' encode each point's respective values, then points farther right and higher represent greater advertising spend and greater sales; week labels identify the associated points.\",\n        \"evidence\": \"The reading is supported by the visible chart structure. The axes define the variables, and the position of the points relative to the axes confirms that higher x corresponds to higher spend and higher y corresponds to higher sales. The labels clearly identify the weeks.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3907,
+      "total_tokens": 4586,
+      "completion_tokens": 679,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

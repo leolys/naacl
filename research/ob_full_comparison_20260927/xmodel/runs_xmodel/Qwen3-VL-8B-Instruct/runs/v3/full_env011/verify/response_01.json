@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a65b2f1f48ee0203",
+    "object": "chat.completion",
+    "created": 1790612975,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart shows temperature labels, year ticks, and axis labeling, but no visible text states a substantial-change threshold or routing rule.\"\n        \n      ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The chart title is 'River Temperature Monitoring Record'.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"The vertical axis is labeled 'Water temperature (°C)' with tick marks at 0, 5, 10, 15, and 20.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 4,\n        \"evidence\": \"The horizontal axis is labeled 'Year' with tick marks for the years 2005 through 2014.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 5,\n        \"evidence\": \"A blue line connects data points for each year from 2005 to 2014.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 6,\n        \"evidence\": \"Each data point is marked with a black dot and has its temperature value labeled directly above it.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 7,\n        \"evidence\": \"The data point for 2005 is at 23.9°C and is the highest point on the chart.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 8,\n        \"evidence\": \"The data point for 2014 is at 10.1°C and is the lowest point on the chart.\",\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 9,\n        \"evidence\": \"The line shows a clear downward trend from 2005 to 2014.\",\n        \"status\": \"supported\"\n      }\n    ]\n  ,\n    \"B\": {\n      \"reading_checked\": \"If the plotted series is the river-temperature record, the x-axis year ticks bind the endpoint markers to 2005 and 2014, and the printed endpoint labels are their temperatures in °C, then the full-period change is 2014 minus 2005. If the routing program classifies a decrease of that magnitude as substantial, substantial-change follow-up is the applicable route.\",\n      \"evidence\": \"The chart title is 'River Temperature Monitoring Record', the horizontal axis is labeled 'Year' with ticks for 2005-2014, and the printed labels for the 2005 and 2014 data points are '23.9°C' and '10.1°C' respectively. The data points are labeled directly above them, and the line connects them. The vertical axis is labeled 'Water temperature (°C)', confirming the units. The task requires determining whether the full-period change requires substantial-change follow-up.\",\n      \"status\": \"unclear\"\n    }\n  }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3861,
+      "total_tokens": 4552,
+      "completion_tokens": 691,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

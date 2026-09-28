@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8fd4dae2a4b14212",
+    "object": "chat.completion",
+    "created": 1790614605,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five labeled blue points: 18–24, 25–34, 35–44, 45–54, 55–64.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Horizontal axis: 'Advertising Spend ($ thousands)'; Vertical axis: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Point 55–64 is at (x≈70, y≈165); point 45–54 is at (x≈60, y≈140); point 35–44 is at (x≈50, y≈75); point 25–34 is at (x≈40, y≈95); point 18–24 is at (x≈30, y≈75).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the title defines the plotted population as “High-Response Age Groups,” then the chart alone is scoped to that named subset; if broader-targeting approval requires evidence for audiences beyond that subset or requires ROI/comparison evidence, the displayed chart is insufficient and the review should be held for full-data analysis.\",\n        \"evidence\": \"The title explicitly limits the scope to 'High-Response Age Groups'. The dashboard is presented as the only evidence for the recommendation. The review task requires choosing between holding for full-data analysis, approving broader targeting, or rejecting. The reading's condition is met: the chart is scoped to the named subset, and the decision requires evaluating whether the evidence is sufficient for broader targeting. The reading does not claim the chart is sufficient; it only states that if broader targeting requires evidence beyond this view, the review should be held. The evidence confirms the chart's scope and the decision context. The reading is applicable.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Horizontal axis: 'Advertising Spend ($ thousands)'; Vertical axis: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Point 55–64 is at (x≈70, y≈165); point 45–54 is at (x≈60, y≈140); point 25–34 is at (x≈40, y≈95).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and the vertical axis encodes Sales on common increasing scales, then points farther right and higher represent greater plotted spend and sales respectively; this can support a positive descriptive association among the displayed groups, but does not by itself establish causal return or justify broader targeting.\",\n        \"evidence\": \"The axes are labeled correctly and use increasing scales. The position of points (55–64 > 45–54 > 25–34) supports a positive association: higher spend correlates with higher sales. The reading explicitly states this does not establish causal return or justify broader targeting. The reading's conditions are met: axis labels bind to plotted points, scales are increasing, and no causal inference is made. The reading is applicable.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Point 55–64 is at (x≈70, y≈165), the highest and rightmost point.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Axes labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the displayed high-response groups are the only population relevant to the recommendation and higher plotted sales at higher plotted spend is accepted as sufficient decision evidence, then the chart can be treated as support for approving broader targeting.\",\n        \"evidence\": \"The reading's condition requires that the displayed groups are the only relevant population and that higher sales at higher spend is accepted as sufficient evidence. The chart is scoped to 'High-Response Age Groups', but the dashboard does not confirm if these are the only relevant groups. The review task requires choosing whether to approve broader targeting, which implies the recommendation might extend beyond the displayed groups. The reading assumes the displayed groups are the only relevant population, which is not confirmed by the evidence. The reading's condition is not met. The reading is not applicable.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4107,
+      "total_tokens": 5228,
+      "completion_tokens": 1121,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

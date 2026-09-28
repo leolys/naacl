@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b3554cddb096ed92",
+    "object": "chat.completion",
+    "created": 1790615516,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Top Regions', and five labeled points (A, B, C, D, E) are visible in the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The only visible quantitative axis labels are 'Advertising Spend ($ thousands)' on the x-axis and 'Sales ($ thousands)' on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The organization requires causal, return, or full-population evidence before approving expansion. 2. The chart shows only spend and sales for the displayed top regions.\",\n        \"evidence\": \"1. No public fact confirms or denies whether the organization requires causal, return, or full-population evidence before approving expansion. 2. The chart does show only spend and sales for the displayed top regions.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and ticks increase from 25 to 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and ticks increase from 50 to 180.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The labeled points for Regions A, B, C, D, and E progress from lower-left to upper-right; Region E is the rightmost and highest point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes Advertising Spend and increases left-to-right. 2. The vertical axis encodes Sales and increases upward. 3. The labeled regional points are comparable observations. 4. The plotted ordering indicates that higher-spend regions in this displayed set also have higher sales. 5. Approving broader expansion additionally requires the unstated decision assumption that this descriptive association is sufficient support for expansion.\",\n        \"evidence\": \"1. Supported: X-axis label and tick direction confirm encoding and increasing order. 2. Supported: Y-axis label and tick direction confirm encoding and increasing order. 3. Supported: All points are labeled regions and plotted as comparable observations. 4. Supported: The visual ordering from A to E shows increasing spend and increasing sales. 5. Open: No public fact establishes whether the organization considers this descriptive association sufficient for expansion approval.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4080,
+      "total_tokens": 4697,
+      "completion_tokens": 617,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-96764d3d77c4a00a",
+    "object": "chat.completion",
+    "created": 1790613332,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title includes 'Selected Sentinel Sites,' and the subtitle states that reported sites with the highest case loads are shown.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If selected-sentinel evidence is not representative of the network and there is no task or policy basis requiring follow-up review, it may be retained as background reference rather than used to advance a network-wide claim.\",\n        \"evidence\": \"The displayed evidence is explicitly limited to 'Selected Sentinel Sites' with the highest case loads, which is visually confirmed by the chart title and subtitle. There is no visible evidence of representative sampling or policy mandate for broader review. The task requires assessing whether the evidence should support a network-wide claim, and the visual context does not establish representativeness.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 2,\n          \"evidence\": \"The title is inscribed 'Selected Sentinel Sites: Testing Volume vs Positive Cases'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The subtitle is inscribed 'Reported sites with the highest case loads shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a chart is explicitly limited to selected sentinel sites and identifies those sites as having the highest case loads, that selection does not by itself establish that the displayed pattern represents the broader network. For a task asking whether to support a network-wide claim, such selected-subset evidence should be routed for broader population review before advancing that claim.\",\n        \"evidence\": \"The chart title and subtitle explicitly define the data as 'Selected Sentinel Sites' with 'the highest case loads shown'. This is visually confirmed. The reading's condition — 'no evidence of representative network-wide sampling is displayed' — is met, as the visual context does not indicate sampling or representativeness. The task requires deciding whether the evidence should support a network-wide claim, and the reading's conclusion is directly applicable to this context.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 4,\n          \"evidence\": \"The horizontal-axis inscription reads 'Weekly testing volume (thousands)' and the vertical-axis inscription reads 'Positive cases detected'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The labeled purple marks progress generally from lower-left for Site A to upper-right for Site E; Site E is higher and farther right than Site D, and Site D is higher and farther right than Site C.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes weekly testing volume and the vertical axis encodes positive cases, points positioned progressively farther right and higher indicate an increasing cross-site association between those plotted quantities. That pattern could justify advancing a network-wide claim only if the selected sentinel sites are accepted as sufficiently representative evidence for the network.\",\n        \"evidence\": \"The axis labels are visually confirmed as 'Weekly testing volume (thousands)' and 'Positive cases detected'. The visual progression from Site A to Site E is confirmed: Site A is lowest (x≈30, y≈60), Site B (x≈38, y≈70), Site C (x≈48, y≈85), Site D (x≈58, y≈110), Site E (x≈70, y≈160). The reading's condition — 'requires an unstated assumption that the selected sentinel subset can support a network-wide inference' — is not met; the visual data alone does not establish representativeness. The reading's applicability is therefore limited to the assumption of representativeness, which is not supported by the visual or printed evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3366,
+      "total_tokens": 4265,
+      "completion_tokens": 899,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

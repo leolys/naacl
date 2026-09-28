@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4d8ece895425c7c",
+    "object": "chat.completion",
+    "created": 1790621718,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart\",\n      \"fact\": \"A single blue line with circular markers descends from the left (year 2000) to the right (year 2017/2018). The line starts at a y-value near 1.3 and ends at a y-value near 2.4. The area between the line and the top of the plot is filled with a light purple color.\"\n    },\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"The vertical axis is labeled 'Count' and has an inverted scale, with 0.0 at the top and 2.5 at the bottom. The tick values increase downwards: 0.0, 0.5, 1.0, 1.5, 2.0, 2.5.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"The horizontal axis is labeled 'Year' and ranges from 2000.0 to 2017.5, with ticks at 5-year intervals.\"\n    },\n    {\n      \"location\": \"data_trend\",\n      \"fact\": \"The plotted line shows a consistent downward trajectory on the page from left to right. Because the y-axis is inverted, this downward movement on the page corresponds to an increase in the numerical value of 'doctors per 1,000 inhabitants' over time (from ~1.3 to ~2.4).\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"title\",\n      \"fact\": \"Chart title reads: 'Year vs. Number of doctors per 1,000 inhabitants'.\"\n    },\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Y-axis label is 'Count'. Tick labels are 0.0, 0.5, 1.0, 1.5, 2.0, 2.5 (top to bottom).\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"X-axis label is 'Year'. Tick labels are 2000.0, 2002.5, 2005.0, 2007.5, 2010.0, 2012.5, 2015.0, 2017.5.\"\n    },\n    {\n      \"location\": \"form_context\",\n      \"fact\": \"Form fields indicate 'Program area: Health workforce planning' and 'Monitoring focus: Physician capacity relative to population'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: 'Review the dashboard trend for physicians per 1,000 residents over the reporting period and route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern.'\",\n    \"Option 1: 'Route to the physician capacity expansion review pathway'\",\n    \"Option 2: 'Route to the physician shortage response review pathway'\",\n    \"Option 3: 'Route to the general health system statistics page'\"\n  ],\n  \"uncertain\": [\n    \"The y-axis is inverted (0.0 at top, 2.5 at bottom). While the line visually goes down, the numerical value of 'doctors per 1,000 inhabitants' is increasing over time. The interpretation of 'capacity pattern' depends on whether one reads the visual slope or the numerical trend. Given the label 'doctors per 1,000 inhabitants', an increase in this number typically signifies increased capacity.\",\n    \"The exact endpoint value is not explicitly labeled, but appears to be slightly above 2.4 on the inverted scale.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 1526,
+      "total_tokens": 2364,
+      "completion_tokens": 838,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

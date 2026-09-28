@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8dbcb7346def289e",
+    "object": "chat.completion",
+    "created": 1790622452,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart\",\n      \"fact\": \"Two series: a solid blue line with circular markers (left y-axis, 'United States') and a dashed red line with square markers (right y-axis, 'Canada'). Both series descend from 2010 to 2014.\"\n    },\n    {\n      \"location\": \"2012.0 x-position\",\n      \"fact\": \"The blue United States marker sits at a lower vertical position than the red Canada marker at the same 2012.0 x-position; the blue line is below the red line there.\"\n    },\n    {\n      \"location\": \"2013.0 x-position\",\n      \"fact\": \"The blue United States marker (labeled 139) is slightly above the red Canada marker (labeled 32) at 2013.0.\"\n    },\n    {\n      \"location\": \"2011.0 x-position\",\n      \"fact\": \"The blue United States marker (labeled 143) is below the red Canada marker (labeled 37) at 2011.0.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"title\",\n      \"fact\": \"United States vs Canada\"\n    },\n    {\n      \"location\": \"left y-axis label\",\n      \"fact\": \"United States (blue text)\"\n    },\n    {\n      \"location\": \"right y-axis label\",\n      \"fact\": \"Canada (red text)\"\n    },\n    {\n      \"location\": \"x-axis label\",\n      \"fact\": \"Characteristic\"\n    },\n    {\n      \"location\": \"x-axis ticks\",\n      \"fact\": \"2010.0, 2010.5, 2011.0, 2011.5, 2012.0, 2012.5, 2013.0, 2013.5, 2014.0\"\n    },\n    {\n      \"location\": \"data labels (blue/United States)\",\n      \"fact\": \"143 at 2011.0; 139 at 2013.0\"\n    },\n    {\n      \"location\": \"data labels (red/Canada)\",\n      \"fact\": \"37 at 2011.0; 32 at 2013.0\"\n    },\n    {\n      \"location\": \"2012.0 markers\",\n      \"fact\": \"No numerical data label is printed on either the blue United States marker or the red Canada marker at 2012.0.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"User goal: compare the 2012 reported indicator value for United States and Canada, then open the country indicator follow-up record for the country with the larger 2012 value.\",\n    \"Routing criterion (readonly): 'Larger 2012 country indicator value shown in the dashboard'.\",\n    \"Options: 'Open 2012 United States indicator follow-up record', 'Open 2012 Canada indicator follow-up record', 'Send 2012 country comparison to routine archive'.\"\n  ],\n  \"uncertain\": [\n    \"The exact 2012 numeric values for both series are not printed as data labels, so the comparison must rely on relative marker height.\",\n    \"The chart uses two separate y-axes (left for United States, right for Canada) with no visible tick values, so the absolute scales of the two axes are unknown and cannot be directly compared numerically.\",\n    \"Whether the visual vertical position on the page corresponds to a like-for-like numerical comparison across the two different axes is not stated.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 1499,
+      "total_tokens": 2377,
+      "completion_tokens": 878,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

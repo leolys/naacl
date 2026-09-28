@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-846e750b59170036",
+    "object": "chat.completion",
+    "created": 1790613817,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Additional Promotion Weeks: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No visible legend, control group, profitability measure, cost threshold, causal annotation, or full-data analysis is shown in the chart area.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If approving broader spend requires evidence that spend itself, rather than other promotion-week factors, drove sales or that the increase is financially justified, then a five-point observational scatterplot without controls, costs, margins, or causal analysis is insufficient and the appropriate action is to request full-data analysis.\",\n        \"evidence\": \"The chart provides no evidence of causal mechanisms, profitability, or cost thresholds. The chart is purely observational and does not control for confounding factors.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Horizontal axis labeled 'Advertising Spend ($ thousands)' and vertical axis labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Blue points labeled Week 7, Week 8, Week 9, Week 10, and Week 11 progress from lower-left to upper-right on the page.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Week 7 is plotted near x-axis tick 30 and between y-axis ticks 60 and 70, while Week 11 is plotted near x-axis tick 70 and y-axis tick 160.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, then points farther right and higher represent weeks with greater plotted spend and greater plotted sales; if this five-week pattern is accepted as sufficient evidence for budget expansion despite no causal-validation requirement, approve broader ad spend increase.\",\n        \"evidence\": \"The chart shows a clear positive association between spend and sales across the five weeks. The data points are ordered by increasing spend and increasing sales, and the printed facts confirm this trend. The chart does not provide causal evidence, but the public task does not require it for this decision.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3657,
+      "total_tokens": 4202,
+      "completion_tokens": 545,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

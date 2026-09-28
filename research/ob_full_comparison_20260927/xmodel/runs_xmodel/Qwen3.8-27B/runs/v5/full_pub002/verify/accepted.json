@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The map region labeled 'TX' is filled with a pale yellow color, which matches the top of the legend scale.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The map region labeled 'WA' is filled with a dark burgundy/maroon color, which matches the bottom of the legend scale.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "A vertical color bar is visible at the lower right. The top is labeled 'High' and '100' with a pale yellow fill. The bottom is labeled 'Low' and '0' with a dark burgundy fill.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The region in Colorado's position is filled gray. The state abbreviation 'CO' is clearly visible on the map, contradicting the assertion that it has 'no visible state abbreviation label'.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "If the map's vertical legend encodes incidence from burgundy at the printed low end (0) to pale yellow at the printed high end (100), then a state filled pale yellow has higher displayed incidence than a state filled burgundy. For the stated workflow, select the option for the highest-incidence jurisdiction only where all candidate jurisdictions are comparably encoded; an unlegendized gray fill cannot be ranked without an additional missing-data rule.",
+        "evidence": "The legend clearly encodes 0 as dark burgundy and 100 as pale yellow. The visual evidence shows TX as pale yellow and WA as dark burgundy. Therefore, TX has a higher displayed incidence than WA. The reading's condition that 'an unlegendized gray fill cannot be ranked' is supported by the fact that the legend contains no gray swatch or label for gray, making it impossible to rank CO against the colored states using the legend alone.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The map region labeled 'TX' is filled with a pale yellow color.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The map region labeled 'WA' is filled with a dark burgundy/maroon color.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "Colorado's region is filled gray. The visible incidence color bar contains a gradient from pale yellow to dark burgundy and does not include a gray swatch or label.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If gray-filled jurisdictions are excluded from the displayed-incidence comparison because gray denotes unavailable or non-displayed data, then the highest displayed incidence among the remaining candidate states should be routed.",
+        "evidence": "The chart provides no printed legend entry for gray, supporting the condition that this is an assumption. However, the visual evidence clearly shows TX (pale yellow/High) has a higher displayed incidence than WA (dark burgundy/Low). Therefore, if gray is excluded, TX is the highest among the remaining candidates.",
+        "status": "supported"
+      }
+    }
+  }
+}

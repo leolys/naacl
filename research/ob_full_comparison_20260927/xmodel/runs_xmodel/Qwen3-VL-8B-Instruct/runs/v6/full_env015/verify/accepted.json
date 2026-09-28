@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart's title, axes, and plotted endpoints are visible. The title is 'Mountain Snowpack Temperature Record'. The horizontal axis is labeled 'Year', and the vertical axis is labeled 'Temperature (°C)'. The plotted endpoints are explicitly labeled: '24.0°C' at 2005 and '10.0°C' at 2015.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Applies if routing must be based only on an explicit displayed or supplied threshold.",
+        "evidence": "Condition 1: The task instructions and chart do not display or supply any explicit numeric threshold for substantial-change follow-up. The chart shows only the temperature values and their trend. No threshold is printed or mentioned in the task state. The condition is open: The task does not require a threshold to be displayed or supplied, but the B.text assumes a threshold is required. The condition remains unestablished.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Mountain Snowpack Temperature Record'. The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Temperature (°C)'. The point at 2005 is aligned with the year tick and labeled '24.0°C'. The point at 2015 is aligned with the year tick and labeled '10.0°C'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The plotted series is the mountain snowpack temperature record, as confirmed by the chart title. The horizontal axis binds points to their labeled years, and the printed labels next to points state their temperatures, as confirmed by the explicit labels on each data point.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The full-period change is calculated as 2015 temperature minus 2005 temperature: 10.0°C - 24.0°C = -14.0°C. The magnitude is 14.0°C. The B.text states: 'If a 14.0°C full-period decrease is treated as substantial change for this routing task, select substantial-change follow-up.'",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Assumes the line is the relevant mountain snowpack temperature series. 2. Assumes the task permits classifying a 14.0°C decline as substantial despite no explicit threshold being displayed.",
+        "evidence": "Condition 1: The chart title and the data point labels confirm the plotted series is the mountain snowpack temperature record. Condition 2: The task instructions do not specify a threshold. The B.text explicitly states 'despite no explicit threshold being displayed', meaning the task permits using a 14.0°C decline as substantial. The condition is open: The task does not require a threshold to be displayed, so the assumption is not a condition to be proven, but a statement of the B.text's assumption. The condition is not a requirement of the task, so it is not established by evidence.",
+        "status": "unclear"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b840d3f24b62f43e",
+    "object": "chat.completion",
+    "created": 1790615473,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title reads 'Top Performing Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"X-axis label reads 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Y-axis label reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five labeled points are visible: Store 1, Store 2, Store 3, Store 4, and Store 5; no profitability or ROI axis, legend, or inscription is visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes broader ad-budget approval requires evidence beyond a selected-store spend-sales association; 2. No such approval threshold is supplied.\",\n        \"evidence\": \"1. The chart shows only spend and sales for selected top-performing stores, with no profitability or ROI data. 2. The public task and page instructions do not specify a formal rule requiring profitability/ROI evidence for broader approval. The condition 'no such approval threshold is supplied' is supported by the absence of any policy table or instruction requiring such evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Points for Store 1 through Store 5 are positioned successively farther right and higher on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"X-axis label reads 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Y-axis label reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Assumes the axis labels correctly bind the coordinates; 2. Assumes selected-store association is adequate for a broader budget decision.\",\n        \"evidence\": \"1. Axis labels are clearly visible and correctly bind the coordinates. 2. The public task does not specify a formal requirement that selected-store association must be sufficient for a broader decision. The condition 'selected-store association is adequate' is not tested against any external benchmark or policy; it is an assumption not established by the evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3892,
+      "total_tokens": 4441,
+      "completion_tokens": 549,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bfdc64092d7cf284",
+    "object": "chat.completion",
+    "created": 1790612875,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue bar aligned with the printed label 'June' ends slightly lower on the page than the horizontal black dashed line.\"\n        ,\n        \"status\": \"refuted\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The bold printed inscription 'Average' is positioned immediately above the dashed line.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If no stated routing threshold or policy maps a small below-average difference to a response route, then the chart alone does not establish that June requires low-sales escalation; normal monitoring remains a possible route.\",\n        \"evidence\": \"The chart visually shows the June bar is aligned with the 'Average' line, not below it. The public task and policy tables provide no explicit mapping from sales level to a route. The reading correctly notes the absence of such a policy.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue bar aligned with the printed label 'June' ends slightly lower on the page than the horizontal black dashed line.\"\n        ,\n        \"status\": \"refuted\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The bold printed inscription 'Average' is positioned immediately above the dashed line.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The title reads 'Monthly Sales for Store B in City Y'.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the vertical bar height encodes Store B monthly sales with larger values higher on the shared y-axis, and the dashed line labeled 'Average' is the applicable sales benchmark, then a month whose bar top is below that line has below-average sales. If the operations program routes below-average June sales to the low-sales response, select that option.\",\n        \"evidence\": \"The chart's bar height encodes sales, with higher bars indicating higher sales. The 'Average' line is at 200. The June bar's top is visually aligned with the 200 mark, not below it. The reading's condition 'bar top is below that line' is not met. The task provides no explicit policy stating that below-average sales require the low-sales response. The reading's second conditional clause is unsupported by visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3973,
+      "total_tokens": 4549,
+      "completion_tokens": 576,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

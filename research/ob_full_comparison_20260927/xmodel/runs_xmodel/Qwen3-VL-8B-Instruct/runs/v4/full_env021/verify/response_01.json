@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-93d186f0040f4afd",
+    "object": "chat.completion",
+    "created": 1790614005,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bold inscription '41.2%' is directly above the bar labeled 'Building retrofits'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bold inscription '29.8%' is directly above the bar labeled 'Transit electrification'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The bold inscription '18.5%' is directly above the bar labeled 'Industrial efficiency'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The chart inscription reads 'Reported reduction share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each printed percentage immediately above a program bar is the authoritative reported reduction share for that program, the largest printed percentage identifies the largest contribution; the task directs that program to accelerated review.\",\n        \"evidence\": \"The printed percentages are 41.2%, 29.8%, and 18.5%. 41.2% is the largest. The task directs that program to accelerated review.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The light-blue bar above the inscription 'Transit electrification' is the tallest bar, reaching between the printed 65 and 70 ticks; the bold inscription '29.8%' is directly above it.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The green bar above 'Building retrofits' reaches the printed 40 tick; the bold inscription '41.2%' is directly above it.\",\n          \"status\": \"refuted\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart inscription reads 'Reported reduction share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the vertical scale encodes the reported reduction share for each program, the tallest bar identifies the largest contribution; the task directs that program to accelerated review.\",\n        \"evidence\": \"The bar heights are 41.2%, 29.8%, 18.5%, 7.2%, and 3.3%. The tallest bar is for 'Building retrofits' at 41.2%. The task directs that program to accelerated review.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3696,
+      "total_tokens": 4269,
+      "completion_tokens": 573,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

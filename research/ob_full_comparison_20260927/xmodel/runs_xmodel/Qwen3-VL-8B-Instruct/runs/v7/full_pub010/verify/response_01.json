@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-893821b8fa6d6981",
+    "object": "chat.completion",
+    "created": 1790616952,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the chart title is treated as an authoritative textual summary of the same Town Z 1880-1891 series, then its stated decreasing trend maps to the decline-response option for this routing task.\",\n      \"evidence\": \"The chart title explicitly states the trend is 'Decreasing'.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"A blue connected line begins at the 1880 tick near the horizontal level of the printed y-axis tick '1,000' and ends at the 1891 tick below the printed '3,000' tick but higher on the page than its 1880 start.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The vertical axis is inscribed 'Number of Tourists,' and its printed tick values rise upward from '0' through '3,500'.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"The horizontal axis is inscribed 'Year' and shows printed year ticks from '1880' through '1891'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis binds the connected line's endpoints to years and the vertical axis labeled 'Number of Tourists' increases upward as indicated by its ticks, then a later endpoint higher on the page than an earlier endpoint represents a higher tourist count. For this routing task, an overall increase across 1880-1891 maps to the growth-planning option.\",\n      \"evidence\": \"The 1880 data point is at 1,000 tourists. The 1891 data point is at approximately 2,900 tourists, which is higher on the page than the 1880 point. The y-axis scale confirms upward direction means higher values. The 1890 point is at approximately 3,250, which is higher than 1891, but the overall trend from 1880 to 1891 is an increase from 1,000 to 2,900.\",\n      \"status\": \"supported\"\n    }\n  }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3729,
+      "total_tokens": 4320,
+      "completion_tokens": 591,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

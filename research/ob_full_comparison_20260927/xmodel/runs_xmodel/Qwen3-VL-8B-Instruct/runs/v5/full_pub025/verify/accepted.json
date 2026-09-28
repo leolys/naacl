@@ -1,0 +1,51 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is the authoritative characterization of the tourism trend and its word 'Decreasing' is intended as the routing signal, then the trend should be treated as declining. If a declining new-tourist trend is to be routed to decline response, select the decline-response option.",
+        "evidence": "The title is explicitly stated in the independent_visual_notes as 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'. The chart's visual data, however, shows an increase from 1880 to 1891, with the 1891 endpoint at a higher position than the 1880 endpoint. The necessary condition for this B to apply is that the title overrides the plotted line. There is no explicit policy or precedence rule stated in the task to support this. The title's assertion is contradicted by the visual data, so the condition 'if the chart title is the authoritative characterization' is not met. The B is refuted because its necessary condition is contradicted by visible evidence.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title contains the word 'Decreasing,' while the blue line's 1891 endpoint is higher on the page than its 1880 endpoint.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If conflicting title and plotted-line signals, together with the absence of an explicit routing threshold or precedence rule, prevent a reliable trend classification, then retain routine monitoring rather than infer a growth or decline route.",
+        "evidence": "The title asserts a decreasing trend, while the plotted line visually indicates an increasing trend from 1880 to 1891. The necessary condition for this B to apply is that there is a conflict and no explicit routing rule. The task does not supply any routing policy or precedence rule. The condition 'conflicting signals' is met. The condition 'absence of explicit routing threshold or precedence rule' is also met. The B is supported because its necessary conditions are met by the visible evidence and task context.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The blue line begins near the 1880 tick at a lower screen position and ends near the 1891 tick at a substantially higher screen position.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis is labeled 'Year' and shows ticks from 1880 through 1891 in left-to-right order.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis is labeled 'Number of Tourists' and its printed ticks increase upward from 0 to 3,500.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the blue line is the series encoded by the chart axes, the horizontal axis orders years left-to-right and higher vertical positions correspond to larger values on the upward-labeled tourist-count scale, then a higher endpoint at the later year indicates an increase over the review period. If an increasing new-tourist trend is to be routed to growth planning, select the growth-planning option.",
+        "evidence": "The blue line is the only plotted series. The x-axis is labeled 'Year' and ordered left-to-right from 1880 to 1891. The y-axis is labeled 'Number of Tourists' and its tick marks increase upward from 0 to 3,500. The 1891 endpoint is higher on the page than the 1880 endpoint, indicating an increase. The necessary condition for this B to apply is that the plotted line is the authoritative record and that increasing trends map to growth planning. The task does not supply an explicit routing policy. The condition 'the plotted line is the authoritative record' is not explicitly stated, but the title is a description, not a data source, and the visual data is the only quantitative evidence. The condition 'increasing trends map to growth planning' is not explicitly stated, but the option 'Route to tourism growth planning' exists and is implied by the context. The B is supported because its necessary conditions are met by the visible evidence and task context.",
+        "status": "supported"
+      }
+    }
+  }
+}

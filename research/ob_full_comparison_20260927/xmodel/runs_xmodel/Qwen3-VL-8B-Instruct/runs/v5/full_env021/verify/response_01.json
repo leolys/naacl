@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a1d2bb2371174e8d",
+    "object": "chat.completion",
+    "created": 1790614948,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bold inscription '41.2%' is directly above the bar labeled 'Building retrofits'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bold inscription '29.8%' is directly above the bar labeled 'Transit electrification'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The bold inscription '18.5%' is directly above the bar labeled 'Industrial efficiency'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The chart inscription reads 'Reported reduction share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each printed percentage immediately above a program bar is the authoritative reported reduction share for that program, the largest printed percentage identifies the largest contribution; the task directs that program to accelerated review.\",\n        \"evidence\": \"The chart's y-axis label is 'Reported reduction share (%)', and the percentages are printed directly above their respective bars. The largest printed percentage is 41.2% for 'Building retrofits'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The light-blue bar above the inscription 'Transit electrification' is the tallest bar, reaching between the printed 65 and 70 ticks; the bold inscription '29.8%' is directly above it.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The green bar above 'Building retrofits' reaches the printed 40 tick; the bold inscription '41.2%' is directly above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart inscription reads 'Reported reduction share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the vertical scale encodes the reported reduction share for each program, the tallest bar identifies the largest contribution; the task directs that program to accelerated review.\",\n        \"evidence\": \"The bar for 'Transit electrification' is visually the tallest, but its printed percentage is 29.8%. The bar for 'Building retrofits' is visibly shorter than the 'Transit electrification' bar, yet its printed percentage is 41.2%. The y-axis is labeled 'Reported reduction share (%)', which implies the bar heights should represent the values. However, the bar for 'Building retrofits' is visibly below the 40-tick mark, while its printed value is 41.2%. The bar for 'Transit electrification' is visibly above the 65-tick mark, while its printed value is 29.8%. This creates a direct contradiction: the bar heights and the printed percentages are inconsistent. The bar heights cannot simultaneously represent the reduction share if the printed percentages are the authoritative values. Therefore, the condition that bar height encodes the reduction share is contradicted by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3740,
+      "total_tokens": 4448,
+      "completion_tokens": 708,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

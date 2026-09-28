@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af8ddd88dc5c44b6",
+    "object": "chat.completion",
+    "created": 1790616484,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line's Q4 endpoint is higher on the page than its Q1 endpoint.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Quarter' with Q1, Q2, Q3, and Q4; the vertical axis is labeled 'Revenue' and has printed values increasing upward from 0 to 1,600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted line encodes Revenue by the left vertical axis and Q1-Q4 by the horizontal quarter labels, with larger revenue higher on the page, then a Q4 endpoint higher than the Q1 endpoint indicates an overall increase; treating any overall increase as growth maps it to the revenue growth response.\",\n        \"evidence\": \"The chart's vertical axis is labeled 'Revenue' with values increasing upward from 0 to 1,600, confirming that higher position = higher revenue. The blue line starts at Q1 (≈1050) and ends at Q4 (≈1450), which is higher on the page. This confirms the endpoint increase.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title literally reads 'Stable Revenue of Company C from Q1 to Q4.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative qualitative classification for the displayed Company C Q1-Q4 revenue record, then the word 'Stable' maps the record to the revenue stability response option.\",\n        \"evidence\": \"The title explicitly states 'Stable Revenue'. The public task and chart_reference instruct to use the dashboard as the evidence source for routing. The title is a direct, visible, and unambiguous label for the entire displayed record.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3556,
+      "total_tokens": 4011,
+      "completion_tokens": 455,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

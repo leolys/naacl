@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc7b21eba8206459",
+    "object": "chat.completion",
+    "created": 1790618197,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The provided image shows a line chart with a title, axes, and a data series. A visual inspection of the chart area, axis labels, and surrounding space confirms that no text, line, or symbol indicating a specific routing threshold, alert cutoff, or policy criterion is present.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that if a specific policy threshold or sustained-trend criterion is required for routing, the chart alone does not provide it. The necessary condition for this reading is that such an unstated threshold is required by the task, and the condition for its conclusion is that the chart lacks this information.\",\n        \"evidence\": \"The task instructions state to select the pathway that 'best matches the observed case trajectory' without defining a specific numerical threshold. The visual evidence confirms the chart contains no such threshold. Therefore, the condition that the chart lacks a threshold is supported, but the condition that a threshold is 'required' is an assumption about the task's hidden requirements.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The visual evidence shows a blue line with markers that starts near the top-left of the plot area and ends near the bottom-right. The vertical position of the markers decreases (moves down the page) as the x-axis values increase from left to right.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading suggests that if the chart is interpreted by the usual 'upward-is-higher' convention (disregarding the printed tick labels), the downward movement of the line would represent a declining trajectory. The necessary condition is that the printed vertical tick labels are disregarded or treated as non-authoritative.\",\n        \"evidence\": \"The visual appearance of the line moving downward is supported. However, the necessary condition for this reading is that the printed tick labels (which show 0 at the top and 1400 at the bottom) are disregarded. Since the task provides a chart with explicit labels, treating them as non-authoritative is a specific assumption not supported by the public task materials, which generally imply that provided data should be used as is.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The text at the top center of the image clearly reads 'Month vs. Number of cases'. The vertical axis on the left is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis on the left displays numerical labels. The top-most label is '0', and the labels increase as they move down the page: 200, 400, 600, 800, 1000, 1200, and 1400 at the bottom.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The first blue marker on the far left is positioned horizontally aligned with the '0' tick mark. The final blue marker on the far right is positioned horizontally aligned with a value below the '1400' tick mark.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The blue line spans the horizontal axis from left to right, crossing the date labels. The markers along the line move from a high position on the page (near the top) to a low position on the page (near the bottom).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if the horizontal labels encode the reporting sequence and the vertical axis uses its printed tick values (where larger values are lower on the page), the line's movement from near 0 to below 1400 encodes an increase in cases. The necessary conditions are: 1) horizontal labels represent time/sequence, 2) vertical axis uses printed tick values, 3) larger printed values are lower on the page.\",\n        \"evidence\": \"The visual evidence supports all necessary conditions. The x-axis shows dates from Jan 27 to Mar 22, 2020, indicating a time sequence. The y-axis is labeled 'Count' with ticks increasing downwards (0 at top, 1400 at bottom). The data line starts near the 0 tick and ends near the 1400 tick. Therefore, the count is increasing over time. The mapping of an increasing trajectory to 'rising-case escalation follow-up' is a logical inference based on the option labels provided in the task.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3155,
+      "total_tokens": 4297,
+      "completion_tokens": 1142,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

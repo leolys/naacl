@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-91232bc697dc69a4",
+    "object": "chat.completion",
+    "created": 1790618777,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The image title is 'Married couple vs Single women'. The left vertical axis label is 'Married couple' in blue, and the right vertical axis label is 'Single women' in red.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. At the x-axis tick '2020', the red square marker is positioned near the top of the chart area, while the blue circle marker is positioned near the bottom.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The red series uses square markers and a dashed line; the blue series uses circular markers and a solid line.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading requires that the horizontal axis binds points to year ticks, the visible labels correctly map the blue solid-circle series to 'Married couple' and the red dashed-square series to 'Single women', and that higher vertical placement encodes a larger group count. It then concludes that the higher 2020 series has the larger 2020 count and that the task requires opening that group's follow-up record.\",\n        \"evidence\": \"The visual evidence supports the series-to-label mapping (blue circles/solid line = Married couple; red squares/dashed line = Single women) and the relative vertical positions at 2020 (red square is higher than blue circle). However, the chart uses dual y-axes (left for Married couple, right for Single women) with no visible scale values or gridline alignment to confirm that 'higher vertical placement' directly corresponds to a larger absolute count. The reading's necessary condition that 'higher vertical placement encodes a larger group count' remains an assumption because the independent scales are not quantified in the image.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2749,
+      "total_tokens": 3221,
+      "completion_tokens": 472,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

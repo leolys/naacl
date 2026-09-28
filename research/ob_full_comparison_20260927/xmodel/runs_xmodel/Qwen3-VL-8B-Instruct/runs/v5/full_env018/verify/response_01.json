@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a12f6946fc9a115d",
+    "object": "chat.completion",
+    "created": 1790614937,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red bar attached to 'May' is much shorter on the page than every other displayed bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The title reads 'Monthly Reservoir Release Volume'; the horizontal axis is inscribed 'Month' and the vertical axis is inscribed 'Release volume (m3)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly release volume, May is a low-release case relative to the displayed months; absent a stated critical threshold or anomaly policy, the chart alone does not establish whether standard follow-up rather than escalation is required.\",\n        \"evidence\": \"The chart's title, axes, and bar encoding confirm that release volume is the metric. The May bar is visibly the shortest, establishing it as a low-release case relative to the other months shown. However, the chart does not display any policy thresholds or anomaly definitions. Therefore, the condition 'absent a stated critical threshold or anomaly policy' is met, and the claim that 'the chart alone does not establish whether standard follow-up rather than escalation is required' is supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar attached to 'May' is the shortest displayed bar and lies near the broken baseline.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Background filing is appropriate only when May is not a low-release case requiring active routing; a visibly minimal May bar would not support that condition if the chart encodes release volume.\",\n        \"evidence\": \"The chart encodes release volume, and the May bar is visibly the shortest, indicating it is a low-release case. Background filing is explicitly reserved for months that are not low-release cases requiring active routing. Since May is a low-release case, background filing is not appropriate. The condition 'a visibly minimal May bar would not support that condition if the chart encodes release volume' is met, and the reading is supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red bar attached to the x-axis label 'May' is much shorter on the page than every other displayed bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is inscribed 'Release volume (m3)' and has visible labeled ticks from '10,000' through '40,000'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the May bar lies below the visible 10,000 tick and near the broken baseline.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly reservoir release volume on the common vertical axis, and the reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly, then that month should be escalated. This severity convention is assumed because no explicit routing threshold is printed.\",\n        \"evidence\": \"The bars encode release volume on a common vertical axis. May is visibly far below all other displayed months, below the 10,000 m3 mark. The reading asserts that if the workflow treats such relative extremity as a critical-anomaly criterion, then escalation is required. The condition 'if the reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly' is not directly verifiable from the chart alone. However, the reading explicitly states that 'This severity convention is assumed because no explicit routing threshold is printed.' The chart does not print any explicit threshold. The condition 'no explicit routing threshold is printed' is met. The reading is therefore supported by the visible evidence and the stated assumption.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3932,
+      "total_tokens": 4820,
+      "completion_tokens": 888,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

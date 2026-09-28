@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a9a0d4aed667724a",
+    "object": "chat.completion",
+    "created": 1790618042,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The teal bar labeled 'Groundwater' visually extends to the 68 gridline, which is the highest vertical position among all bars on the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The chart title is 'Urban Water Supply by Source' and the y-axis is labeled 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if bar geometry is the authoritative encoding, the tallest bar (Groundwater) should be selected.\",\n        \"evidence\": \"The condition requires that bar geometry is the authoritative encoding over the conflicting percentage labels. The image shows a direct contradiction: the Groundwater bar is the tallest (approx. 68), but its label (29.8%) is lower than the Surface water label (41.2%). There is no public evidence in the image or task description to establish that bar geometry overrides the explicit data labels. Therefore, the necessary condition for this reading remains an assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The text '41.2%' is printed directly above the Surface water bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The text '29.8%' is printed directly above the Groundwater bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The text '18.5%' is printed directly above the Desalination bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The text '7.2%' is printed directly above the Recycled water bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Supported. The text '3.3%' is printed directly above the Rain capture bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 6,\n          \"evidence\": \"Supported. The y-axis label is 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the percentage inscriptions are the authoritative values, the source with the greatest printed share (Surface water at 41.2%) should be selected.\",\n        \"evidence\": \"The condition requires that the bold percentages are valid source-specific reported supply shares. The image explicitly labels the y-axis as 'Reported supply share (%)' and provides specific percentage values for each bar. While the bar heights are inconsistent with these values, the printed labels are the most specific data provided. The reading's condition is supported by the presence of these specific labels and the axis definition, making it the most plausible interpretation of the 'contribution' metric despite the visual discrepancy.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4074,
+      "total_tokens": 4848,
+      "completion_tokens": 774,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

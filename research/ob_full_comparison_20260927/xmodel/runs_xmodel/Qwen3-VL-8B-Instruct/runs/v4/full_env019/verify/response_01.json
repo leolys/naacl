@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-92551e69ac8e7bf2",
+    "object": "chat.completion",
+    "created": 1790614008,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar aligned above the printed x-axis label 'May' is the shortest visible bar and its top is below the printed '10,000' y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical-axis inscription reads 'Solar output (MWh)' and the bottom-axis inscription reads 'Month'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"No policy table, interpretation rule, or printed numerical criterion for distinguishing standard from critical routing is supplied.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the same bar encoding applies, May is a low-output month. If critical routing requires a stated numerical threshold or other documented anomaly criterion that is not provided, the chart alone cannot establish critical severity; under a policy of routing unthresholded low-output cases to ordinary follow-up, May should receive standard follow-up.\",\n        \"evidence\": \"The chart visually confirms May is the lowest output month. The absence of a stated numerical threshold for critical escalation is confirmed by the public task and records. The reading correctly identifies that without a documented criterion, critical escalation cannot be justified solely by the chart.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar aligned above the printed x-axis label 'May' is the shortest visible bar and its top is below the printed '10,000' y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bars aligned with 'Apr', 'Jan', 'Jun', 'Feb', and 'Mar' each extend above the printed '15,000' y-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical-axis inscription reads 'Solar output (MWh)' and the bottom-axis inscription reads 'Month'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis labeled 'Solar output (MWh)' encodes bar height on a common increasing scale and each month label identifies its aligned bar, then May's much shorter bar represents substantially lower output than the other displayed months. If this degree of relative isolation is treated by the routing workflow as a critical anomaly, May should be escalated.\",\n        \"evidence\": \"The chart visually confirms May is the lowest output month, and all other bars are above the 15,000 MWh mark. The reading correctly identifies the relative isolation of May. However, the reading assumes that this relative isolation constitutes a critical anomaly, which is not supported by the provided evidence. The public task and records explicitly state that no policy table or numerical criterion for critical escalation is supplied. The reading introduces a policy assumption not present in the evidence, making its conclusion unsupported.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3960,
+      "total_tokens": 4629,
+      "completion_tokens": 669,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

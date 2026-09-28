@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9ac2dd2d8f15ad8e",
+    "object": "chat.completion",
+    "created": 1790616754,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark for 'Service' in 2011 is positioned lower on the chart than the red square mark for 'Service' in 2030. The left vertical axis is labeled '2011' and the right vertical axis is labeled '2030'. The x-axis label is 'Characteristic'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart does not display any y-axis metric name or numeric tick labels. The only visible vertical labels are the year labels '2011' and '2030'.\",\n          \"status\": \"refuted\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart does not display any y-axis metric name or numeric tick labels. The only visible vertical labels are the year labels '2011' and '2030'.\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue 2011 series and red 2030 series are bound by the matching colored year labels, and vertical position encodes comparable Service support cost with higher marks meaning higher cost, then the higher Service mark identifies the entry for the higher-cost follow-up queue.\",\n        \"evidence\": \"The reading is not supported because the chart lacks a visible y-axis metric label or tick values to confirm that vertical position encodes support cost. The year labels on the axes are not cost measures; they are categorical identifiers for the data series. The reading assumes a mapping between vertical position and cost that is not visible or established in the chart.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart does not display any y-axis metric name or numeric tick labels. The only visible vertical labels are the year labels '2011' and '2030'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue circular mark for 'Service' in 2011 is positioned lower on the chart than the red square mark for 'Service' in 2030.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart does not establish that its vertical positions encode the relevant support-cost measure or the direction of that measure, then it does not provide sufficient evidence to identify either year as higher cost; routine archive review remains the non-escalation alternative.\",\n        \"evidence\": \"The reading is supported. The chart does not display a y-axis metric label, tick values, or a legend that maps vertical position to support cost. Without this explicit mapping, the vertical position cannot be interpreted as a measure of cost. Therefore, the chart does not provide sufficient evidence to identify either year as higher cost, and the non-escalation alternative (routine archive review) is the only safe choice.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2845,
+      "total_tokens": 3524,
+      "completion_tokens": 679,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

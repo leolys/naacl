@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a5fe9586f332c988",
+    "object": "chat.completion",
+    "created": 1790621003,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top-left of the image reads 'Top Regions: Ad Spend vs Sales'. The plot area contains five distinct blue points, each with a text label: 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'. These are the only quantitative axis labels visible on the chart. There are no other axes or legends providing different quantitative scales.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader budget approval requires evidence of advertising causal impact, ROI/profitability, or complete regional coverage, then a scatterplot showing only spend and sales for the displayed top regions is insufficient and supports requesting full analysis instead. (Conditions: Applies when the organization requires causal, return, or full-population evidence before approving expansion.)\",\n        \"evidence\": \"The chart displays a scatterplot of 'Advertising Spend' vs 'Sales' for five specific regions labeled A through E. The title 'Top Regions' implies this is a subset of a larger population. The chart does not display cost data (necessary for ROI/profitability), nor does it provide experimental controls or time-series data to establish causality. Therefore, if the decision criteria require causal proof, ROI, or full population data, the visible evidence is insufficient to support an 'Approve' decision, making the 'Hold and request full regional data analysis' option the logical choice based on the evidence gap.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart clearly reads 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)'. The tick marks are visible at the bottom, starting at 25 on the left and ending at 75 on the right, increasing in increments of 5.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)'. The tick marks are visible on the left, starting at 50 near the bottom and ending at 180 near the top, increasing in increments of 10.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The points are arranged in a positive correlation. Region A is at approx (30, 58). Region B is at approx (35, 65). Region C is at approx (42, 81). Region D is at approx (48, 92). Region E is at approx (70, 173). Region E is indeed the rightmost (highest spend) and highest (highest sales) point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and increases left-to-right, the vertical axis encodes Sales and increases upward, and the labeled regional points are comparable observations, then the plotted ordering indicates that higher-spend regions in this displayed set also have higher sales. Approving broader expansion additionally requires the unstated decision assumption that this descriptive association is sufficient support for expansion. (Conditions: Applies only to the five displayed labeled regions; it does not establish causality, incremental return, or profitability.)\",\n        \"evidence\": \"The axes are correctly identified as Spend (x) and Sales (y) with increasing scales. The five labeled points (A-E) show a monotonic increase in both spend and sales. This confirms a descriptive association (correlation) within the displayed subset. The reading correctly notes that this is only a descriptive association and does not prove causality or profitability, which are necessary for a robust 'Approve broader expansion' decision without further assumptions.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4264,
+      "total_tokens": 5211,
+      "completion_tokens": 947,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

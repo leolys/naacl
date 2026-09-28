@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-900b7d28d754132a",
+    "object": "chat.completion",
+    "created": 1790614082,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar labeled 'Groundwater' is higher on the page than the bars labeled 'Surface water', 'Desalination', 'Recycled water', and 'Rain capture'.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title reads 'Urban Water Supply by Source' and the y-axis label reads 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each source’s bar height on the vertical scale encodes its urban reported supply contribution, and the routing criterion requires escalation of the largest contribution source, select the option for the source with the tallest bar.\",\n        \"evidence\": \"The bar heights visually encode the values 41.2%, 29.8%, 18.5%, 7.2%, and 3.3%. The bar for 'Surface water' (41.2%) is visibly the tallest, not 'Groundwater' (29.8%).\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A bold inscription '41.2%' appears above the bar labeled 'Surface water'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A bold inscription '29.8%' appears above the bar labeled 'Groundwater'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A bold inscription '18.5%' appears above the bar labeled 'Desalination'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A bold inscription '7.2%' appears above the bar labeled 'Recycled water'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"A bold inscription '3.3%' appears above the bar labeled 'Rain capture'.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The y-axis label reads 'Reported supply share (%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscription directly above each source bar is the authoritative reported supply-share value, compare those inscriptions; under the stated largest-contribution routing criterion, select the option for the source with the greatest printed share.\",\n        \"evidence\": \"The percentages are explicitly printed above each bar: Surface water 41.2%, Groundwater 29.8%, Desalination 18.5%, Recycled water 7.2%, Rain capture 3.3%. Surface water has the highest value.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3895,
+      "total_tokens": 4527,
+      "completion_tokens": 632,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

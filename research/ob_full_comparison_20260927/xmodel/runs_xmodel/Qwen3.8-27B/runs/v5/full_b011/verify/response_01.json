@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b21f9a1c20765129",
+    "object": "chat.completion",
+    "created": 1790620868,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis labels Q1 through Q4 in left-to-right order. The blue segment above Q3 is visibly taller than the blue segment above Q4. The white text printed inside the Q3 blue segment reads '7940' and the text inside the Q4 blue segment reads '5121'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If 'No significant change' requires a specified statistical or operational materiality threshold, then an observed quarter-over-quarter difference alone cannot establish that option without that threshold.\",\n        \"evidence\": \"The necessary condition for this reading is that the task or dashboard supplies a materiality threshold. The public task instructions and the chart itself contain no numeric threshold, percentage band, or statistical definition for 'significant change'. The form options are simply 'Decreased', 'Increased', and 'No significant change'. Without a defined threshold, one cannot determine if a drop from 7940 to 5121 (a ~35% decrease) falls into the 'No significant change' category. The condition that 'the task supplies no significance definition' is verified by the absence of such a definition in the provided text and image.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The legend at the top of the chart shows a blue square swatch followed by the text 'Store Visits (Count)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue segment of the bar labeled 'Q3' on the x-axis contains the printed number '7940'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue segment of the bar labeled 'Q4' on the x-axis contains the printed number '5121'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the legend binds blue bar segments to Store Visits (Count), the printed values inside those segments are their quarterly visit counts, and Q4 traffic status is determined by comparing Q4 with the immediately preceding quarter, then a lower Q4 count than Q3 count maps to 'Decreased'.\",\n        \"evidence\": \"The necessary conditions are: (1) Legend binding, (2) values are counts, (3) comparison is Q4 vs Q3, (4) lower count = 'Decreased'. (1) is supported by the legend. (2) is supported by the label 'Store Visits (Count)'. (3) is the standard interpretation of a quarterly status update (comparing the current quarter to the previous one). (4) is the standard semantic mapping for 'Decreased'. The data shows Q4 (5121) is lower than Q3 (7940). Therefore, under these conditions, the status is 'Decreased'. The condition 'no separate materiality threshold applies' is the operative assumption here; while r1 notes the threshold is missing, r2 posits a direct mapping. Given the magnitude of the drop (7940 to 5121), it is highly unlikely to be 'No significant change' in any reasonable operational context, making 'Decreased' the robust choice.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4134,
+      "total_tokens": 4924,
+      "completion_tokens": 790,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

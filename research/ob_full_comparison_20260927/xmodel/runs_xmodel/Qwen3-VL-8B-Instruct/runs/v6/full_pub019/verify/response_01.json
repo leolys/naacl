@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90e02e4ddd97c7ba",
+    "object": "chat.completion",
+    "created": 1790616198,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'CA' is filled with a very dark maroon color, matching the top of the color scale labeled 'High' (100) in the legend. This is a direct visual fact from the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The polygons labeled 'TN' and 'DE' are visibly much lighter than the CA polygon. TN is light yellow (matching 'Low' 0), DE is orange (intermediate). This is a direct visual fact from the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The bottom caption reads: 'Clean choropleth: same US map base; darker color means higher true value.' This is a direct textual fact from the chart.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The right-side color legend shows dark maroon at the top beside 'High' and pale yellow at the bottom beside 'Low'. This is a direct visual fact from the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The caption 'darker color means higher true value' governs all displayed state fills. 2. The task’s highest-incidence criterion uses that encoded incidence value.\",\n        \"evidence\": \"1. The caption is printed at the bottom of the map and applies to the entire choropleth. All states, including CA, TN, and DE, are shaded according to this rule. 2. The task’s goal and companion field 'Routing criterion' explicitly state 'Highest incidence state in the dashboard', which is defined by the encoded value from the map’s color scheme. Both conditions are supported by the chart’s visual and textual evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3190,
+      "total_tokens": 3611,
+      "completion_tokens": 421,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

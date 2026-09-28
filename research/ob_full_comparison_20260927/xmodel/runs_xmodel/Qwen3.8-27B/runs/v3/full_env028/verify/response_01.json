@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8366e9bb1d729a13",
+    "object": "chat.completion",
+    "created": 1790618095,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The visual shows the blue bar above the x-axis label 'January' with its top edge exactly aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The dashed horizontal line has the text 'Average' inscribed near its right end within the plot area.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The dashed line is positioned at the height of the y-axis tick mark labeled '150'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If bar height encodes monthly inflow volume on the labeled vertical scale, the dashed horizontal line labeled 'Average' is the period baseline, and a month whose bar top aligns with that line is in the baseline band, then route it to baseline-band inflow monitoring.\",\n        \"evidence\": \"The conditions are partially supported. The visual confirms the bar height encodes volume on the 'Inflow volume (Mm3)' scale, and the dashed line is labeled 'Average'. The alignment of the January bar with the line is also visually confirmed. However, the condition that the 'Average' line *is* the 'period baseline' is an assumption; the chart does not explicitly define 'Average' as the operational baseline, nor does it define a 'baseline band' (as noted in the uncertain facts). Therefore, the necessary decoding that 'Average' equals 'baseline' remains unestablished.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3456,
+      "total_tokens": 3864,
+      "completion_tokens": 408,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

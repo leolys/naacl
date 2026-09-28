@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b8ad708ab02e8ed2",
+    "object": "chat.completion",
+    "created": 1790614632,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Only five labeled markers (Q2 through Q6) are visible; no full-period comparison, profitability measure, or decision threshold is visibly printed.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a chart is explicitly limited to selected high-growth quarters and does not display the full campaign data or a decision threshold, then the chart alone is insufficient to establish that the observed association generalizes to a broader budget increase; request full-data analysis.\",\n        \"evidence\": \"The chart title explicitly limits the scope to 'Selected High-Growth Quarters'. The visible data (Q2-Q6) is a subset. No profitability measure, full-period comparison, or decision threshold is visible on the chart. The condition 'requires evidence beyond a selected subset' is met because the decision involves a broader budget increase, and the chart does not provide the necessary context to justify generalization.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal-axis inscription reads 'Advertising Spend ($ thousands)' and shows ticks from 25 through 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical-axis inscription reads 'Sales ($ thousands)' and shows ticks from 50 through 170.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The blue markers labeled Q2, Q3, Q4, Q5, and Q6 progress upward and to the right on the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, and the labeled quarter markers are the relevant evidence for a broader budget decision, then an upward-right pattern supports approving a broader budget increase; this assumes the selected quarters are representative and the association is sufficient for the decision.\",\n        \"evidence\": \"The axes encode advertising spend (X) and sales (Y) in $ thousands. The labeled quarters (Q2-Q6) are the only data points shown, and their positions form an upward-right pattern. The condition 'the selected quarters are representative' is not visibly supported by the chart, as there is no information about the full campaign or whether these quarters are representative. The condition 'no additional profitability, causality, or policy threshold is required' is not visibly supported, as the chart does not show profitability or a decision threshold. Therefore, the condition for applying B is not fully met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3513,
+      "total_tokens": 4182,
+      "completion_tokens": 669,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

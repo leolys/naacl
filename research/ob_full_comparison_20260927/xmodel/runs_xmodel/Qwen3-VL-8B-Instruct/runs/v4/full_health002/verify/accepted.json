@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a case-count line and axis labels, but no printed routing threshold, alert cutoff, or escalation policy criterion is visible.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If routing requires an explicit policy threshold or sustained-trend criterion beyond the general instruction to select the pathway that best matches the observed trajectory, the chart alone does not provide that threshold; background monitoring could be retained pending such a criterion.",
+        "evidence": "The task materials do not include any policy table, threshold, or rule that defines when to escalate or stabilize. The only instruction is to route based on the observed trajectory. Therefore, the absence of a threshold is a factual condition, not a missing requirement.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The blue line and markers generally move lower on the page from left to right.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If chart geometry is interpreted by the usual upward-is-higher convention despite the printed Count tick ordering, the line's downward screen movement would appear to represent a declining trajectory; under the task labels, a declining trajectory maps to declining-case stabilization review.",
+        "evidence": "The y-axis is labeled 'Count' and its ticks are printed from 0 (top) to 1400 (bottom). This explicitly defines that higher values are lower on the page. The reading's condition — 'despite the printed Count tick ordering' — is false. The chart’s vertical axis is explicitly inverted. Therefore, the reading’s assumption is invalid, and its conclusion does not follow.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The title reads 'Month vs. Number of cases', and the vertical axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Printed y-axis ticks show 0 near the top, then 200, 400, 600, 800, 1000, 1200, and 1400 at progressively lower positions.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The leftmost blue marker is positioned close to the 0 tick, while the rightmost blue marker is below the 1400 tick.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The blue line runs from left to right across the dated horizontal labels and its markers generally move lower on the page.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal labels encode the displayed reporting sequence from left to right, the vertical axis labeled 'Count' uses its printed tick values, and larger printed values are lower on the page, then the line's movement from near the 0 tick at the left toward below the 1400 tick at the right encodes an increase in reported cases. For this task, an increasing reported-case trajectory maps to rising-case escalation follow-up.",
+        "evidence": "The horizontal axis labels run from left to right in chronological order (Jan 27 to Mar 22, 2020). The y-axis 'Count' ticks are printed with 0 at the top and 1400 at the bottom, meaning higher counts are lower on the page. The line starts near 0 (top) and ends below 1400 (bottom). This is a monotonic downward movement on the chart. Since higher values are lower, and the line moves from higher to lower, this indicates a decrease in count — not an increase. The reading incorrectly assumes the movement implies an increase. The actual trajectory is a decline.",
+        "status": "refuted"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b2dc9b3a22b5211",
+    "object": "chat.completion",
+    "created": 1790615495,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart plot visually contains five labeled points: 'Week 7', 'Week 8', 'Week 9', 'Week 10', and 'Week 11'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title and axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. No text on the chart, axes, or title mentions causal methods, profitability measures, approval thresholds, or decision policies.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Approval requires evidence beyond this five-point dashboard view. 2. No such requirement is visibly stated in the supplied task or chart.\",\n        \"evidence\": \"1. The public task and chart reference state: 'Use the promotion-week dashboard to complete the campaign approval form.' and 'Review the promotion-week dashboard, then submit the campaign approval decision.' — these imply the dashboard is the basis for the decision. 2. No text in the chart, axes, or task instructions mentions requiring additional data, profitability metrics, or policy thresholds. The dashboard is presented as the complete evidence set.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title reads: 'Additional Promotion Weeks: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue points are labeled 'Week 7', 'Week 8', 'Week 9', 'Week 10', and 'Week 11'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"X-axis is labeled 'Advertising Spend ($ thousands)' and Y-axis is labeled 'Sales ($ thousands)'. Points progress rightward and upward from Week 7 to Week 11.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The labeled axes apply uniformly to all plotted points. 2. The nearby week text labels identify those points.\",\n        \"evidence\": \"1. The axes are labeled consistently and apply to all points. 2. Each point is explicitly labeled with its corresponding week number, matching the visual position. The chart's appearance facts confirm this alignment.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3745,
+      "total_tokens": 4287,
+      "completion_tokens": 542,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

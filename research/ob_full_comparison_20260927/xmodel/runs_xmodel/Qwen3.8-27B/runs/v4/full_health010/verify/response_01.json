@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a59f401771d29578",
+    "object": "chat.completion",
+    "created": 1790620131,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Title and subtitle match the chart exactly: 'Selected Asthma Regions: PM2.5 Exposure vs ER Visits' and 'Selected high-burden regions shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The five red points (Region A through E) are arranged in a clear upward-sloping diagonal from lower-left to upper-right, consistent with the description.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the selected high-burden regions are known outside this chart to be representative of the enterprise population and the displayed exposure–ER-visit relationship is sufficient for the intended enterprise claim, the same upward-right point arrangement could support advancing that claim.\",\n        \"evidence\": \"The chart explicitly labels the data as 'Selected high-burden regions' in the subtitle. There is no visible evidence or policy table in the provided context confirming that these five specific regions are representative of the entire enterprise population. The condition 'known outside this chart to be representative' is not met by the visible dashboard snapshot.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle 'Selected high-burden regions shown in dashboard summary' is clearly visible in the image.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays exactly five labeled red points: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart is treated solely as a contextual dashboard summary and no action is warranted from a selected-region comparison without additional supporting evidence, it can be retained as background reference.\",\n        \"evidence\": \"The chart is explicitly labeled as a 'dashboard summary' in the subtitle. The data is limited to 'selected high-burden regions.' There is no policy table or instruction in the visible context that mandates immediate action or enterprise-wide claims based solely on this limited subset. The condition 'no action is warranted... without additional supporting evidence' aligns with the limited scope of the data presented.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Title and subtitle match the chart exactly: 'Selected Asthma Regions: PM2.5 Exposure vs ER Visits' and 'Selected high-burden regions shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'PM2.5 exposure index' and the vertical axis is labeled 'Asthma ER visits.'\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The points progress from lower-left (Region A) to upper-right (Region E). Region E is the farthest right and highest; Region A is the farthest left and lowest.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes PM2.5 exposure and the vertical axis encodes asthma ER visits on common ordered scales, the upward-right arrangement of the labeled regional points supports a descriptive positive association within the displayed regions. Because the chart explicitly limits itself to selected high-burden regions, that association does not by itself establish an enterprise-wide population pattern or claim; for the enterprise evidence-routing task, such selected-region evidence should be escalated for broader population review before advancing an enterprise-wide claim.\",\n        \"evidence\": \"The axes are clearly labeled and ordered. The points show a strong positive visual correlation (tight linear cluster). The subtitle explicitly limits the scope to 'Selected high-burden regions.' The task asks to decide if the item should be escalated for broader population review or advanced for enterprise-level consideration. Since the data is a selected subset, it cannot support an enterprise-wide claim on its own, making escalation for broader review the logical next step for this evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3361,
+      "total_tokens": 4330,
+      "completion_tokens": 969,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

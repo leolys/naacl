@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a53b868b65d67425",
+    "object": "chat.completion",
+    "created": 1790613951,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red May bar is visibly shorter than each of the other five bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The title reads 'Monthly Energy Usage (kWh)' and the vertical axis is labeled 'Energy Usage (kWh)'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If critical escalation requires an explicit policy threshold or other stated severity criterion, then a chart-only relative low value does not establish critical status; standard low-output follow-up is the non-critical handling route.\",\n        \"evidence\": \"The task materials do not provide any policy threshold, default rule, or severity criterion for critical escalation. The public task, chart reference, and independent visual notes all state that the dashboard record for May is the evidence source for deciding whether to escalate or not. There is no mention of a threshold or policy table.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red May bar is visibly shorter than each of the other five bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the May bar is below the printed 10,000 tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The Jun bar, the next shortest visible bar, has its top between the printed 15,000 and 20,000 ticks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly energy usage on the shared vertical kWh scale and an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical, then May warrants critical-anomaly escalation.\",\n        \"evidence\": \"The chart's title and axes confirm the bars encode energy usage in kWh on a shared vertical scale. The May bar is the shortest, positioned at the rightmost end of the x-axis, and is visibly below the 10,000 kWh tick mark. The Jun bar, the next shortest, is between 15,000 and 20,000 kWh, which confirms May is the lowest. The independent visual notes explicitly state 'The bar for May is approximately 8,000 kWh in height'. The public task and chart reference state that the dashboard record for May is the evidence source for deciding whether to escalate or not, implying that relative position is the basis for judgment. There is no explicit threshold, but the task does not require one for the decision. The condition 'an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical' is not contradicted by any evidence and is supported by the visual data.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3919,
+      "total_tokens": 4573,
+      "completion_tokens": 654,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bb653e03a63e3e88",
+    "object": "chat.completion",
+    "created": 1790613860,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart title\",\n      \"fact\": \"Chart title is 'Monthly Sales for Store B in City Y'.\"\n    },\n    {\n      \"location\": \"y-axis label\",\n      \"fact\": \"Y-axis is labeled 'Sales ($K)' with a scale from 0 to 500 in increments of 50.\"\n    },\n    {\n      \"location\": \"x-axis label\",\n      \"fact\": \"X-axis is labeled 'Month' with tick marks for 'April', 'May', and 'June'.\"\n    },\n    {\n      \"location\": \"data bars\",\n      \"fact\": \"Three orange bars represent sales for April, May, and June.\"\n    },\n    {\n      \"location\": \"reference line\",\n      \"fact\": \"A red dotted horizontal line labeled 'Average' is drawn at the 250 ($K) level.\"\n    },\n    {\n      \"location\": \"April bar\",\n      \"fact\": \"The bar for April reaches exactly the 250 ($K) level, aligning with the 'Average' line.\"\n    },\n    {\n      \"location\": \"May bar\",\n      \"fact\": \"The bar for May reaches 450 ($K), above the 'Average' line.\"\n    },\n    {\n      \"location\": \"June bar\",\n      \"fact\": \"The bar for June reaches 350 ($K), above the 'Average' line.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Tick values are 0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Tick labels are 'April', 'May', 'June'.\"\n    },\n    {\n      \"location\": \"reference line\",\n      \"fact\": \"The 'Average' line is at 250 ($K).\"\n    },\n    {\n      \"location\": \"April bar\",\n      \"fact\": \"April sales are 250 ($K).\"\n    },\n    {\n      \"location\": \"May bar\",\n      \"fact\": \"May sales are 450 ($K).\"\n    },\n    {\n      \"location\": \"June bar\",\n      \"fact\": \"June sales are 350 ($K).\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Use the Store B sales dashboard as the evidence source for the April sales route.\",\n    \"Review the Store B monthly sales dashboard for April through June, then choose the April route in the monthly sales operations form.\"\n  ],\n  \"uncertain\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2610,
+      "total_tokens": 3206,
+      "completion_tokens": 596,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

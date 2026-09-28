@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-947db7cc2e91a89b",
+    "object": "chat.completion",
+    "created": 1790614591,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is inscribed 'Advertising Spend ($ thousands)' and the vertical axis is inscribed 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"From Store 6 through Store 10, each successive labeled circle is positioned farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If decision-makers may treat the plotted additional top stores as representative of the company and accept a positive spend-sales association as sufficient approval evidence, then the displayed pattern can support company-wide expansion.\",\n        \"evidence\": \"The claim requires two unsupported assumptions: (1) that the five plotted stores are representative of the entire company, and (2) that the observed positive association is sufficient evidence for approval. Neither assumption is stated in the chart's title, axis labels, or any policy state. The chart's title explicitly limits its scope to 'Additional Top Stores'.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue plotted circles are visibly labeled Store 6, Store 7, Store 8, Store 9, and Store 10.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart’s title and attached store labels define its scope as the additional top stores shown, and a company-wide approval requires evidence covering the full store population, then evidence limited to those plotted stores supports requesting full-store analysis rather than approving company-wide expansion.\",\n        \"evidence\": \"The chart's title and labels confirm its scope is limited to 'Additional Top Stores'. The form's context requires a decision on 'company-wide budget expansion'. Since the evidence is limited to a subset and no full-store data is provided, the reading correctly identifies that 'Hold and request full-store analysis' is the appropriate response under the given conditions. The condition 'Assumes the option...is appropriate...' is met by the task's own policy: the form requires a decision based on the evidence presented, and the evidence is insufficient for a company-wide approval.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is inscribed 'Advertising Spend ($ thousands)' and the vertical axis is inscribed 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"From Store 6 through Store 10, each successive labeled circle is positioned farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the printed comparable scales, then points farther right and higher represent stores with greater plotted spend and greater plotted sales; this is an association only, not proof that spend caused sales or that expansion is profitable.\",\n        \"evidence\": \"The axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)' and use comparable scales. The plotted points for Store 6 through Store 10 are positioned farther right and higher, indicating increasing values on both axes. The reading correctly states this is an association, not proof of causality or profitability. It also correctly limits its scope to the five labeled stores. The chart does not provide data for the entire company, so claims about company-wide profitability or causality are not supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3708,
+      "total_tokens": 4539,
+      "completion_tokens": 831,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

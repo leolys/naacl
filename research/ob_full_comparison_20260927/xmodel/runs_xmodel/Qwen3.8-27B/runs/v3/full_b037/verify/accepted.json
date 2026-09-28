@@ -1,0 +1,39 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The chart title at the top of the image clearly reads 'Increasing Production at Factory F from 2018 to 2023'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the chart title is treated as the authoritative summary of the output trend rather than the plotted line, then the literal title wording indicates increasing production and would map to the output growth response.",
+        "evidence": "The title text 'Increasing Production' is visible and matches the condition's literal reading. However, the condition requires treating the title as authoritative over the plotted line. The image shows a line that clearly trends downward, which contradicts the title. There is no public evidence in the image or task instructions that designates the title as the authoritative source over the visual data.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "A blue line is visible in the plot area connecting the years 2018-2023. The line starts high on the left (2018) and ends low on the right (2023), with each successive point lower than the previous.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The horizontal axis is labeled 'Year' with ticks 2018-2023. The vertical axis is labeled 'Production' with numeric labels increasing from 0 at the bottom to 3,500 at the top.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the blue line is the Factory F production series, the x-axis orders years from 2018 to 2023, and higher screen position corresponds to greater production on the upward-increasing y-axis, then a line that moves lower at each successive year indicates declining production; for this task, a declining output trend maps to the output decline response.",
+        "evidence": "The visual evidence supports all conditions: the line is the only data series, the x-axis is chronological, and the y-axis is a standard increasing scale. The line's downward trajectory visually confirms declining production. The mapping to 'output decline response' is supported by the task's goal to route based on the trend.",
+        "status": "supported"
+      }
+    }
+  ]
+}

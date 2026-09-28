@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart's top-left title is visibly printed as 'Additional Top Stores: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The plot area contains exactly five blue markers, each labeled 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'. No other points or labels are present.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a broader ad-budget increase requires evidence representative of the full store population, then a chart explicitly scoped to additional top stores cannot by itself establish support for that broader action. (Conditions: No supplied policy states that results from additional top stores alone are sufficient for a broader budget increase; the chart title is treated as defining the displayed population.)",
+        "evidence": "The chart title explicitly defines the population as 'Additional Top Stores'. The displayed data points (Stores 6-10) are a subset of the total store population (which would include Stores 1-5 and potentially others). Because the chart is explicitly scoped to a subset, it does not provide evidence for the 'full store population' required by the condition. The form option 'Hold and request full-store analysis' directly corresponds to this limitation.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Visually, Store 6 is at the bottom-left, and each subsequent store (7, 8, 9, 10) is positioned higher and further to the right on the page.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the displayed scales, then points farther right and higher represent stores with higher plotted spend and higher plotted sales, respectively; this visual association alone does not establish incremental sales, profitability, or causal return from spending. (Conditions: Axis labels apply to the plotted points; no causal, profit, or ROI measure is shown.)",
+        "evidence": "The axis labels confirm the encoding of spend and sales. The visual arrangement confirms the positive correlation in plotted values. However, the chart is a simple scatter plot; it contains no data on profit, cost, or causal mechanisms. Therefore, the visual association is confirmed, but the limitation (no proof of profitability/causality) is also factually present.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis is labeled 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Visually, Store 6 is at the bottom-left, and each subsequent store (7, 8, 9, 10) is positioned higher and further to the right on the page.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a decision may be made from an observed positive spend-sales pattern among the displayed stores without requiring full-store, causal, or profitability evidence, then that pattern can support a broader ad-budget increase. (Conditions: This is an alternative decision standard not supplied by the task or chart.)",
+        "evidence": "The condition for this reading is that the decision standard allows for a 'broader' increase based *only* on a subset pattern without full-store or causal evidence. The task provides an option 'Approve broader ad budget increase'. However, the chart is explicitly titled 'Additional Top Stores'. Inferring a 'broader' (i.e., all-store) budget increase from a chart explicitly limited to 'Additional Top Stores' is a logical leap not supported by the visual evidence alone, especially when a 'Hold' option exists specifically for 'full-store analysis'. The condition 'This is an alternative decision standard not supplied by the task or chart' is true, but the application of that standard to justify a 'broader' increase from a 'subset' chart is not supported by the chart's own scope.",
+        "status": "refuted"
+      }
+    }
+  }
+}

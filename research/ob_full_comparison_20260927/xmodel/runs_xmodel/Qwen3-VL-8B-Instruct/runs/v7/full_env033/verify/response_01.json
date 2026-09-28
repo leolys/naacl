@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b805fdb15f305714",
+    "object": "chat.completion",
+    "created": 1790616739,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy', and the left y-axis is labeled 'Hydroelectricity (%)' (blue), while the right y-axis is labeled 'Nuclear energy (%)' (red). This matches the description in O[1].\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart does not show any numeric tick labels on either y-axis. The 2010 vertical gridline has no percentage inscription attached to the data points. This matches the description in O[2].\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If one source is established to have the higher 2010 generation share, the task directs routing that source to the higher-share follow-up workflow; if no source is established as higher, an archive outcome would require a stated unresolved-comparison fallback.\",\n        \"evidence\": \"The public task requires routing the source with the higher 2010 generation share. However, no archive fallback policy is supplied. The chart's visual data (35% for Hydro, 23% for Nuclear) is not visible in O[2], which states no numeric labels or inscriptions are visible. Therefore, the condition for routing is not met under the O[2] constraint.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy', and the left y-axis is labeled 'Hydroelectricity (%)' (blue), while the right y-axis is labeled 'Nuclear energy (%)' (red). This matches the description in O[1].\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2010 x-axis tick, the blue circular mark (Hydroelectricity) is lower on the page than the red square mark (Nuclear energy). This matches the description in O[2].\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"No numeric tick labels are visibly printed on either y-axis, and no percentage inscription is visibly attached to either 2010 mark. This matches the description in O[3].\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The blue circular series is Hydroelectricity and is read against the left blue y-axis; the red dashed square series is Nuclear energy and is read against the right red y-axis. A higher generation-share comparison requires decodable, comparable 2010 values from those axes or another explicit common-scale statement; screen-space height alone is not comparable across separate y-axes.\",\n        \"evidence\": \"The reading correctly identifies the series and their respective axes. It correctly states that screen-space height alone is not comparable across separate y-axes. However, the independent visual notes explicitly state that the 2010 Hydroelectricity data point is labeled '35%' and the Nuclear energy data point is labeled '23%'. These are explicit, decodable, and comparable values. Therefore, the condition for a higher-share comparison is met, and the reading is not fully applicable to the chart's actual data.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2754,
+      "total_tokens": 3502,
+      "completion_tokens": 748,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

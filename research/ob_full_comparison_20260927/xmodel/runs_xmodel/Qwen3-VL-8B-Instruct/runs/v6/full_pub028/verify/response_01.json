@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-acdbbb894a640716",
+    "object": "chat.completion",
+    "created": 1790616263,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads 'Shrinking Population of City A from 2010 to 2015'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The title is intended to override or correct the plotted line; 2. Neither authority nor conflict-resolution policy is supplied.\",\n        \"evidence\": \"1. The title's claim of 'shrinking' contradicts the visual data (2010=2000, 2015=3000), but the B condition requires the title to be 'intended to override or correct' the plot — this intent is not stated or implied in the public facts. 2. No policy on authority or conflict resolution is provided. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains 'Shrinking Population', while the blue line's endpoint at 2015 is higher on the page than its endpoint at 2010.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Contradictory chart signals cannot be resolved; 2. No supplied policy specifies a route for conflicting or insufficient evidence; 3. Workflow permits routine monitoring for unresolved trends.\",\n        \"evidence\": \"1. The contradiction exists (title vs. plot). 2. No policy is supplied. 3. The condition requires a workflow rule allowing routine monitoring for unresolved evidence — no such rule is provided. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at 2010 aligned with y=2000 and ends at 2015 aligned with y=3000.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks 2010–2015; the vertical axis is labeled 'Population' with values increasing upward from 0 to 3500.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The blue line is the dashboard's total-population series; 2. Horizontal axis maps left-to-right to printed years; 3. Vertical axis increases upward as labeled; 4. Line endpoint at higher y-tick at later year represents growth; 5. Workflow maps observed growth to growth planning.\",\n        \"evidence\": \"1. The companion fields confirm 'Population record: Total population'. 2. The axes are labeled 'Year' and 'Population' with increasing values upward. 3. The 2015 endpoint (y=3000) is higher than the 2010 endpoint (y=2000). 4. The workflow rule mapping growth to growth planning is not supplied, but the B text assumes it. The condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4104,
+      "total_tokens": 4820,
+      "completion_tokens": 716,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

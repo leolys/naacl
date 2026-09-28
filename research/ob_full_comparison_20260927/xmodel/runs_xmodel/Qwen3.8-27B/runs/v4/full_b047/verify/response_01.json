@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97b82bfec774757e",
+    "object": "chat.completion",
+    "created": 1790619552,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title in the top-left reads exactly “Monthly Sales for Store B in City Y.”\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The bottom axis is labeled “Month” with categories “April,” “May,” and “June,” and there are three blue bars positioned above these labels.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The top edge of the blue bar above “June” is horizontally aligned with the black dashed line, sitting at approximately 310 on the vertical axis.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The word “Average” is printed on the right side of the chart next to the dashed horizontal line.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the bar heights encode monthly sales for the labeled months, the dashed line labeled “Average” is the relevant sales baseline, and the routing convention treats a June result at that baseline as normal monitoring, then June maps to the normal-sales route.\", \"evidence\": \"The chart title and axis labels confirm the data is for Store B monthly sales. The dashed line is explicitly labeled “Average” and serves as a visible baseline. The June bar's top edge aligns with this baseline. The final condition—that the routing convention treats a result at the baseline as normal monitoring—is an unstated operational convention not provided in the task's policy tables or instructions.\", \"status\": \"unclear\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3990,
+      "total_tokens": 4314,
+      "completion_tokens": 324,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

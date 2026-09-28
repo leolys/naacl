@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-865f1cac9a3b42ae",
+    "object": "chat.completion",
+    "created": 1790621489,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible chart area (title, axes, data labels, plot) contains no text or mark stating a numerical threshold, percentage, or rule for 'substantial-change' or routing. The only text present is the title 'Coastal Water Temperature Trend', axis labels, and data point values.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost data point is aligned with the x-axis tick '2005' and has the label '24.0°C' printed above it. The rightmost data point is aligned with the x-axis tick '2015' and has the label '10.0°C' printed above it.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.\",\n        \"evidence\": \"The condition 'workflow requires an explicit displayed or supplied substantial-change threshold' is not met by the visible evidence. The chart displays no threshold. The task instructions (visible_context_4) ask to determine 'Whether the full-period coastal water temperature change requires substantial-change follow-up' but do not provide a definition or value for 'substantial-change'. The condition 'routine-by-default policy' is not explicitly stated in the task or chart, though it is a common default in such workflows when no specific rule is given. However, the first part of the condition (no explicit threshold) is supported by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The data point aligned with the x-axis tick '2005' is a black circle with the label '24.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The data point aligned with the x-axis tick '2015' is a black circle with the label '10.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text at the top of the chart reads 'Coastal Water Temperature Trend'. The text rotated 90 degrees on the left side reads 'Water temperature (°C)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.\",\n        \"evidence\": \"The condition that markers are readings for aligned ticks is supported by the chart's structure (x-axis is 'Year', y-axis is 'Water temperature (°C)'). The calculation 10.0 - 24.0 = -14.0°C is supported by the labels. The condition 'If a decrease of that magnitude meets the unspecified substantial-change criterion' is a conditional statement. The visual evidence supports the magnitude (14.0°C drop), but the 'substantial-change criterion' is indeed unspecified in the visible text, making the final routing decision dependent on an external or implicit rule not present in the chart.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4269,
+      "total_tokens": 5100,
+      "completion_tokens": 831,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

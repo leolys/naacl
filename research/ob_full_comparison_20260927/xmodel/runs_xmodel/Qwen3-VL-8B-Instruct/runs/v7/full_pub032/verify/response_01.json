@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ad3aacb7083ba5e7",
+    "object": "chat.completion",
+    "created": 1790617058,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"rec_01\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays a solid blue line with circular markers corresponding to the left Y-axis labeled 'Urban (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays a dashed red line with square markers corresponding to the right Y-axis labeled 'Rural (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the x-axis value for 1990, the blue circular marker is positioned vertically lower than the red square marker.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the vertical position on the graph corresponds to the magnitude of the percentage for each respective axis, the Rural percentage is larger than the Urban percentage in 1990.\",\n        \"evidence\": \"The vertical position of the markers is consistent with the axis labels: blue (Urban) is on the left Y-axis, red (Rural) is on the right Y-axis. The blue marker for 1990 is visibly lower than the red marker for 1990.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_02\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A text label reading '44.20%' is positioned directly above the blue line's data point for the year 1980.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A text label reading '12.12%' is positioned below the red line's data point for the year 1980.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A text label reading '46.32%' is positioned above the blue line's data point for the year 2000.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A text label reading '12.57%' is positioned below the red line's data point for the year 2000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart uses specific data labels to highlight values at certain intervals. While the 1990 points are not explicitly labeled with text, their relative vertical positions suggest the red line (Rural) is higher than the blue line (Urban) at that specific year.\",\n        \"evidence\": \"The 1990 data points are not labeled, but their relative vertical position is consistent with the 1980 and 2000 points. The blue line (Urban) is consistently lower than the red line (Rural) at all labeled points, including 1980 and 2000. The 1990 point for Rural (44.20%) is visibly higher than the 1990 point for Urban (12.12%).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_03\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line (Urban) shows a general upward trend from 1960 to 2020.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The red line (Rural) shows a peak around 1970, a dip in the 1980s, a plateau in the 1990s, and a sharp decline after 2000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart illustrates a long-term shift in population distribution. In the 1990s, the Rural percentage remains relatively high and stable compared to the Urban percentage, which is still in a phase of gradual increase.\",\n        \"evidence\": \"The blue line (Urban) is rising steadily throughout the period, while the red line (Rural) is relatively flat in the 1990s, indicating a stable rural percentage. The 1990s plateau for Rural is consistent with the data point for 1990 (44.20%) being significantly higher than the Urban point (12.12%).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2685,
+      "total_tokens": 3652,
+      "completion_tokens": 967,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

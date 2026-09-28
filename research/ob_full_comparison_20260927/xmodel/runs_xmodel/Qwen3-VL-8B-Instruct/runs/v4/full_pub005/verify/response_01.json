@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9db0e28f3056e37d",
+    "object": "chat.completion",
+    "created": 1790614246,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map region labeled 'California' is filled orange.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The map region labeled 'Texas' is filled orange.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"An orange swatch is inscribed '30+ M' in the legend.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The map region labeled 'Florida' is filled purple.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"A purple swatch is inscribed '20 - 30 M' in the legend.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.\",\n        \"evidence\": \"The chart's legend explicitly maps orange to '30+ M' and purple to '20-30 M'. California and Texas are both orange, placing them in the same top bin. Florida is purple, placing it in a lower bin. The reading correctly states that being in the same top bin does not establish an ordering between those states.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Both the region labeled 'California' and the region labeled 'Texas' are filled orange.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The orange swatch is inscribed '30+ M'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.\",\n        \"evidence\": \"The chart's legend maps orange to '30+ M'. Both California and Texas are orange, meaning they are in the same top bin. The reading correctly states that the chart does not distinguish between them, so neither can be uniquely identified as the 'highest-population' state based on this visualization alone.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3475,
+      "total_tokens": 4111,
+      "completion_tokens": 636,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

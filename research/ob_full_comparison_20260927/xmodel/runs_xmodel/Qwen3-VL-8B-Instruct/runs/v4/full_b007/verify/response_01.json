@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a6b466468ab3f76f",
+    "object": "chat.completion",
+    "created": 1790613690,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The Safari bar extends higher on the page than the Chrome, Edge, Firefox, and Others bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis has printed ticks increasing upward from 0 at the bottom to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the shared vertical axis encodes current market_share and higher bars represent larger shares, the tallest browser bar is the highest-share browser; under the task rule, select that browser.\",\n        \"evidence\": \"The bar for Safari is visually the tallest, extending to approximately 62% on the vertical axis, while Chrome is at 38% and Edge is at 44%. The vertical axis is a standard increasing scale from 0 to 100. The bar heights are consistent with the percentage labels above them: Safari's bar is taller than Chrome's and Edge's, and its label is '4%'. However, the bar height for Safari does not correspond to 4% on the vertical axis; it is much higher. This indicates a visual encoding conflict: the bar height is not the correct representation of market share, as it does not match the percentage labels. The percentage labels are the authoritative data source, not the bar heights. Therefore, this reading is refuted by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The inscription '38%' is immediately above the bar aligned with the x-axis label 'Chrome'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The inscription '4%' is immediately above the bar aligned with the x-axis label 'Safari'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The inscription '44%' is immediately above the bar aligned with the x-axis label 'Edge'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The inscription '4%' is immediately above the bar aligned with the x-axis label 'Firefox'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The inscription '10%' is immediately above the bar aligned with the x-axis label 'Others'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription immediately above a browser's bar is that browser's current market_share, and the task rule is to assign added support capacity to the browser with the highest current market_share, select the option for the largest such inscription.\",\n        \"evidence\": \"The percentage inscriptions are clearly printed above each bar and directly correspond to the browser names on the x-axis. The values are: Chrome (38%), Safari (4%), Edge (44%), Firefox (4%), Others (10%). The highest value is 44%, which corresponds to the Edge browser. The task rule explicitly states to assign additional support capacity to the browser with the highest current market_share. Therefore, this reading is supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3975,
+      "total_tokens": 4703,
+      "completion_tokens": 728,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

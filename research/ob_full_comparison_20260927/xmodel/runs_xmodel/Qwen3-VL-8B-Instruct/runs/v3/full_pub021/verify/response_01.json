@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8d5ae46da3f34c1a",
+    "object": "chat.completion",
+    "created": 1790613555,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The marker aligned with 'Other' is lower on the page than every other category marker.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is visibly labeled 'Value', with tick labels increasing upward from 0 to 65.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The chart title reads 'Public Service Feedback Share by Category'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If marker height on the vertical axis labeled 'Value' encodes feedback share with larger values higher on the axis, then the lowest marker represents the lowest-share category; the task routes that category to low-feedback coverage follow-up.\",\n        \"evidence\": \"The chart's vertical axis is labeled 'Value' and increases upward, and the marker for 'Other' is visually the lowest. The 'Other' marker's position is lower than all others, including 'Service Design' (12%), which is visually higher. The 'Other' marker is the lowest, consistent with the reading's condition that lower position = lower share. The reading's condition is met visually: the axis is labeled 'Value' and increases upward, and the marker positions are used to encode share. The reading is applicable.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The inscription '52%' appears above the marker aligned with 'Service Quality'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The inscription '51%' appears above the marker aligned with 'Service Cost'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The inscription '12%' appears above the marker aligned with 'Service Design'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The inscription '17%' appears above the marker aligned with 'Support Access'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The inscription '42%' appears above the marker aligned with 'Service Delivery'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 6,\n          \"evidence\": \"The inscription '41%' appears above the marker aligned with 'Other'.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each percent inscription above a category's marker states that category's feedback share, then the category with the smallest printed percentage is the lowest-share category; the task routes that category to low-feedback coverage follow-up.\",\n        \"evidence\": \"The printed percentages for 'Service Design' (12%), 'Support Access' (17%), and 'Other' (41%) are visible and consistent. 'Service Design' has the smallest percentage. However, the reading's condition requires that the percentage inscriptions are the authoritative values. The reading's condition is met for 'Service Design', 'Support Access', and 'Other'. The reading is applicable for these categories. The reading is not applicable for 'Other' because its percentage (41%) is not visible in the image; the text provides it, but the image does not. The reading's condition is not fully met for 'Other' because its value is not visible. The reading is not fully applicable.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3924,
+      "total_tokens": 4739,
+      "completion_tokens": 815,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a3535b77abb02c9e",
+    "object": "chat.completion",
+    "created": 1790615575,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title is 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Plot contains five labeled markers: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies if the organization requires causal validation, controls for confounding, or full regional data before authorizing a broader spend increase.\",\n        \"evidence\": \"Condition 1: No public fact states the organization requires causal validation or full regional data. The task only requires using the dashboard to inform a decision. The policy tables are empty, and no formal rule is printed. This condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"X-axis label is 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Y-axis label is 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Five blue circular markers are labeled Region A, Region B, Region C, Region D, and Region E next to their respective marks.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"From Region A through Region E, each successive labeled marker is farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies only if the axes accurately encode comparable regional values, labels attach to their adjacent markers, the displayed top regions are sufficiently representative of regions beyond A–E, and association is accepted as sufficient decision evidence rather than proof of advertising causality.\",\n        \"evidence\": \"Condition 1: Axes accurately encode comparable regional values (x: spend, y: sales). Labels attach to adjacent markers. Condition 2: The dashboard explicitly displays only Regions A–E. No public fact confirms these regions are representative of all regions. Condition 3: The public task and policy tables do not specify whether association is sufficient. The task only requires using the dashboard to inform a decision. This condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3877,
+      "total_tokens": 4414,
+      "completion_tokens": 537,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-83461e0b32cce512",
+    "object": "chat.completion",
+    "created": 1790620073,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart's y-axis tick labels are printed with 0 at the top and 8000 at the bottom, confirming the axis is inverted relative to standard conventions.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The blue line visually descends from the top-left (near the 0 tick) to the bottom-right (below the 8000 tick).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading assumes that despite the printed tick order (0 at top), the axis follows a standard upward-increasing quantity encoding. This would mean the line moving downward represents a decrease in value (easing demand).\", \"evidence\": \"The chart explicitly prints '0' at the top and '8000' at the bottom. In a standard chart, values increase upwards. Here, the labels indicate values increase downwards. The reading's condition ('if the printed y-axis labels are not the operative value mapping') is not met by the visible evidence, as the printed labels are the only available mapping.\", \"status\": \"refuted\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title 'Month vs. Number of COVID-19 patients hospitalized' and axis labels 'Month' and 'Count' are clearly visible.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis labels run chronologically from 'Feb 24, 2020' on the left to 'Mar 14, 2020' on the right.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The y-axis ticks are printed as 0, 2000, 4000, 6000, 8000 from top to bottom.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The blue line descends sharply towards the right. The final marker is positioned below the 8000 tick mark. The preceding markers (e.g., Mar 7, Mar 10) are between the 2000/4000 and 4000/6000 tick levels respectively.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The reading interprets the downward movement of the line on an inverted y-axis (0 at top, 8000 at bottom) as an increase in the number of hospitalized patients. It concludes that the steep recent segment indicates rapidly increasing demand, supporting surge-capacity planning.\", \"evidence\": \"The y-axis is inverted (0 at top, 8000 at bottom). The line moves from near 0 (top) to below 8000 (bottom). Therefore, the value of the series is increasing over time. The slope becomes steeper in the later dates (Mar 7 to Mar 14), indicating a rapid increase. This supports the conclusion of rapidly increasing demand.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3308,
+      "total_tokens": 3966,
+      "completion_tokens": 658,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b3e76977f3e57682",
+    "object": "chat.completion",
+    "created": 1790615466,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title and vertical axis: 'Units Sold by Product (Weekend Pop-up)' and 'Units Sold' are visibly labeled as stated.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Vertical axis tick marks at 2,000, 4,000, 6,000, 8,000, and 10,000 are visibly inscribed.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Product A bar is positioned above its label and its top is visibly below the 2,000 tick and above the baseline.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. y-axis is linear — supported by printed fact 'y-axis scale is linear'. 2. Product A bar bound to its label — supported by visual layout. 3. Visual interpolation is sufficiently accurate — supported by independent_visual_notes stating 'Product A reaches approximately 1,800 units'. 4. Manual variance band takes precedence — not established; no public fact or policy rule confirms this precedence over base tiers.\",\n        \"evidence\": \"Condition 4 remains open. No evidence confirms the manual variance band takes precedence over base tiers. The policy table defines base tiers as primary conditions, with no mention of precedence rules for overlapping bands. Thus, the assumption required by B is not supported.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title and vertical axis: 'Units Sold by Product (Weekend Pop-up)' and 'Units Sold' are visibly labeled as stated.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Vertical axis tick marks at 2,000, 4,000, 6,000, 8,000, and 10,000 are visibly inscribed.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Product A bar is positioned above its label and its top is visibly below the 2,000 tick and above the baseline.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. y-axis is linear — supported by printed fact 'y-axis scale is linear'. 2. Product A bar bound to its label — supported by visual layout. 3. Visual interpolation is sufficiently accurate — supported by independent_visual_notes stating 'Product A reaches approximately 1,800 units'. 4. Base unit-condition tiers govern when policy rules overlap — supported by policy table structure, which defines tiers as mutually exclusive thresholds without mentioning subordinate rules.\",\n        \"evidence\": \"All four conditions are supported by located facts. The policy table defines tiers as distinct thresholds (e.g., <1,000, >=1,000 and <2,000, etc.), implying a base-tier system without explicit precedence rules. Since Product A’s 1,800 units fall in the 1,000–2,000 range, the 'low-sales review' route is the only applicable base-tier rule. No evidence contradicts this interpretation.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4308,
+      "total_tokens": 5060,
+      "completion_tokens": 752,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-80c9471487cf6cfc",
+    "object": "chat.completion",
+    "created": 1790614415,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads 'Shrinking Population of City A from 2010 to 2015'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative statement of the City A population trend for 2010-2015 and the workflow maps a stated shrinking trend to decline response, select the decline-response route.\",\n        \"evidence\": \"The title claims a shrinking population, but the plotted data shows a clear increase from 2000 to 3000. The title's claim is contradicted by the visual data. The B condition requires the title to be authoritative and override the plot, but no authority or conflict-resolution policy is provided. The title is not an authoritative correction; it is a misstatement. Therefore, this reading does not apply.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title literally contains 'Shrinking Population', while the blue line's endpoint at 2015 is higher on the page than its endpoint at 2010.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If contradictory chart signals cannot be resolved and no supplied policy specifies a route for conflicting or insufficient evidence, routine monitoring is a possible conservative route only if the workflow permits it for unresolved trends.\",\n        \"evidence\": \"The contradiction is between the title and the plot. The plot is the primary visual evidence and is unambiguous: population increased from 2000 to 3000. The title is a misstatement. The B condition requires a workflow rule allowing routine monitoring for unresolved evidence, but no such rule is supplied. However, the contradiction is resolvable by trusting the plot, which is the standard visual encoding. The condition for routine monitoring is not met because the evidence is not unresolved—it is contradictory, and the plot is the authoritative visual data. Therefore, this reading does not apply.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A single blue line begins at the 2010 tick aligned with the y-axis tick labeled '2,000' and ends at the 2015 tick aligned with the y-axis tick labeled '3,000'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is visibly labeled 'Year' and has printed ticks from '2010' through '2015'; the vertical axis is visibly labeled 'Population' and its printed values increase upward from '0' to '3,500'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the dashboard's total-population series, the horizontal axis maps left-to-right positions to the printed years, and the vertical axis increases upward as labeled, then a line endpoint aligned with a higher y-axis tick at the later year represents population growth; if the routing workflow maps observed growth to growth planning, select the growth-planning route.\",\n        \"evidence\": \"The blue line is the total-population series for City A from 2010 to 2015. The horizontal axis maps left-to-right to years, and the vertical axis increases upward as labeled. The endpoint at 2015 (3000) is higher than the endpoint at 2010 (2000), indicating population growth. The B condition requires that the workflow maps observed growth to growth planning. While no explicit routing policy is supplied, the public task and chart reference instruct to use the dashboard as the evidence source for the routing decision. The chart's visual data (growth) is the evidence. The action 'select the growth-planning route' is the only one that is consistent with the visual evidence. The condition 'if the routing workflow maps observed growth to growth planning' is met by default, as the workflow's purpose is to route based on the observed trend. Therefore, this reading applies and its conclusion is supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3715,
+      "total_tokens": 4661,
+      "completion_tokens": 946,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

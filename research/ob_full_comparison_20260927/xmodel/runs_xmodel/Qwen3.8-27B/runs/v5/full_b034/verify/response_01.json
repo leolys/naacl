@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b88ea1b2f27dcc94",
+    "object": "chat.completion",
+    "created": 1790621134,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text at the top of the chart reads exactly 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot area contains five distinct blue circular markers. Each marker has a text label adjacent to it: 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E'. No other markers are visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If approval requires evidence of a causal effect or complete regional coverage, a five-marker chart titled as covering 'Top Regions' is insufficient unless it supplies such evidence or states that it is complete. In that case, select the evidence-review option rather than approve.\",\n        \"evidence\": \"The B condition is 'Applies if the organization requires causal validation, controls for confounding, or full regional data before authorizing a broader spend increase.' The chart is explicitly titled 'Top Regions', implying a subset rather than a complete census of all regions. The chart displays a scatter plot of five points, which shows correlation but provides no controls, experimental design, or causal mechanism. The form instructions state to 'Review dashboard evidence and submit an approval or evidence-review decision.' The option 'Hold and request full regional data analysis' corresponds to the 'evidence-review' path. Because the chart does not state it is complete (it says 'Top') and does not prove causality, the necessary conditions for this reading (need for full data/causality) are met by the task context of a 'broader' decision based on 'Top' data.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bottom axis is labeled 'Advertising Spend ($ thousands)'. The ticks are printed in increasing order from left to right: 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis is labeled 'Sales ($ thousands)'. The ticks are printed in increasing order from bottom to top: 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Five blue circular markers are visible. The text labels 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E' are placed immediately adjacent to their respective markers.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Region A is at x=30, y=71. Region B is at x=40, y=115. Region C is at x=50, y=142. Region D is at x=60, y=162. Region E is at x=70, y=175. Each successive region (A to E) has a higher x-value (right) and higher y-value (up) than the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis inscription identifies left-to-right position as Advertising Spend ($ thousands) and the vertical axis inscription identifies bottom-to-top position as Sales ($ thousands), with both printed tick sequences increasing in those directions, then labeled marker positions can be decoded as a cross-sectional association between regional ad spend and sales. If this five-region association is representative enough for a broader decision and causal proof is not required, a consistent positive association supports approving a broader ad spend increase.\",\n        \"evidence\": \"The axis labels and tick directions are verified in O1 and O2. The markers show a strong positive association (as spend goes up, sales go up). The B condition requires that 'the displayed top regions are sufficiently representative of regions beyond A–E' and 'association is accepted as sufficient decision evidence rather than proof of advertising causality.' The chart is titled 'Top Regions', suggesting these are the highest performers. If the goal is to increase spend based on the success of top performers, this association is the relevant evidence. The form option 'Approve broader ad spend increase' aligns with this reading. The condition is met if one accepts that the 'Top Regions' data is sufficient for a 'broader' decision (i.e., extrapolating from the top to the whole or similar regions).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3923,
+      "total_tokens": 5018,
+      "completion_tokens": 1095,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

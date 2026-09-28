@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "A dark-red bar is directly above the printed x-axis label 'Product A'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis is inscribed 'Units Sold' and has a printed '10,000' tick above the horizontal baseline; the top of the Product A bar is below that tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the Product A bar encodes approximately 8,000 Units Sold, and the policy table is applied with no manual-verification override, a value >=4,000 and <9,000 maps to the low-demand review route.",
+        "evidence": "The bar is visibly below the 10,000 tick and appears to be below the 5,000 mark. It is not possible to confirm the value is 8,000 units. The claim that it encodes 8,000 units is unsupported and contradicts the visual evidence that it is below 10,000 and likely below 5,000. The policy table condition for 8,000 units (>=4,000 and <9,000) is not triggered by the visual evidence.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The vertical axis has visibly evenly spaced printed ticks labeled '10,000', '20,000', '30,000', '40,000', '50,000', '60,000', '70,000', and '80,000'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The bar attached to 'Product A' rises only a short distance above the common horizontal baseline and remains below the printed '10,000' tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If bar height is linearly encoded by the vertical Units Sold axis from the plotted baseline, the Product A bar's small height below the 10,000 tick decodes to an estimate below 4,000 units. Under the policy table, a value <4,000 maps to urgent sales intervention; this also assumes the estimate is not within 1,000 units of a decision threshold, so the manual-verification band does not override.",
+        "evidence": "The bar is below the 10,000 tick. The ticks are evenly spaced, so the scale is linear. The bar is visibly below the 5,000 mark, and appears to be between 5,000 and 10,000. It is not possible to confirm it is below 4,000. The claim that it decodes to an estimate below 4,000 units is unsupported and contradicts the visual evidence that it is above 5,000. The policy table condition for <4,000 units (urgent sales intervention) is not triggered by the visual evidence. The claim that the estimate is not within 1,000 units of a decision threshold is also unsupported, as the bar is above 5,000, which is within 1,000 units of the 4,000 threshold. The manual-verification band condition is not triggered by the visual evidence.",
+        "status": "refuted"
+      }
+    }
+  }
+}

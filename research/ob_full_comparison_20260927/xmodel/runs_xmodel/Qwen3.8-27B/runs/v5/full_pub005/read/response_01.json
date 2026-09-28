@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be154854fd8a4603",
+    "object": "chat.completion",
+    "created": 1790621980,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"US Population by State (in Millions) map\",\n      \"fact\": \"California and Texas are filled with the darkest orange color (30+ M band). Florida is filled with purple (20-30 M band). Other labeled states like New York, Pennsylvania, Illinois, Ohio, Michigan, Georgia, and North Carolina are filled with green (10-20 M band).\"\n    },\n    {\n      \"location\": \"Map layout\",\n      \"fact\": \"California is located on the West Coast. Texas is located in the South-Central region. Florida is located in the Southeast. The legend is positioned on the right side of the map.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Title\",\n      \"fact\": \"US Population by State (in Millions)\"\n    },\n    {\n      \"location\": \"Legend\",\n      \"fact\": \"Color scale: Red = 0-5 M, Blue = 5-10 M, Green = 10-20 M, Purple = 20-30 M, Orange = 30+ M.\"\n    },\n    {\n      \"location\": \"State Labels\",\n      \"fact\": \"California, Texas, Florida, New York, Pennsylvania, Ohio, Michigan, Illinois, Georgia, North Carolina.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: Review the population dashboard, then open the state detail record that should be routed into the highest-population public statistics follow-up workflow.\",\n    \"Primary Field: Highest-population state detail route\",\n    \"Options: Open California population detail for priority follow-up, Open Texas population detail for priority follow-up, Open Florida population detail for priority follow-up\"\n  ],\n  \"uncertain\": [\n    \"The map shows California and Texas in the same highest population category (30+ M). Without specific numerical values, it is visually ambiguous which of the two is strictly higher, though California is traditionally the most populous.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2433,
+      "total_tokens": 2890,
+      "completion_tokens": 457,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

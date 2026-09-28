@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bddd8aa2e280c6f1",
+    "object": "chat.completion",
+    "created": 1790616114,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Risk Index of Hazard H in US States'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The Idaho region is filled pale yellow, matching the 'High' end of the color scale.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The South Carolina region is filled dark burgundy, matching the 'Low' end of the color scale.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The Arizona region is filled orange and has the 'AZ' inscription visible.\",\n          \"status\": \"refuted\"\n        },\n        \"5\": {\n          \"evidence\": \"The color scale is vertical, with 'High' (100) at the top (pale yellow) and 'Low' (0) at the bottom (dark burgundy).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Each labeled state region uses the displayed Risk Index scale. 2. Gray denotes no displayed scale value.\",\n        \"evidence\": \"1. Idaho (pale yellow), South Carolina (dark burgundy), and Arizona (orange) all use the displayed scale. 2. Gray is not used for any of the three options; Idaho is pale yellow, South Carolina is dark burgundy, and Arizona is orange. Gray is used for states like Colorado and Wyoming, but none of the three options are gray. The condition 'gray denotes no displayed scale value' is not violated, but it is not necessary for the task since none of the options are gray. The condition is satisfied as written.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3690,
+      "total_tokens": 4088,
+      "completion_tokens": 398,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

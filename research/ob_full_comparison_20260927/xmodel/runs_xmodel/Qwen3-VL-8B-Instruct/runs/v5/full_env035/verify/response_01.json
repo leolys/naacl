@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b8d630bdb80b8954",
+    "object": "chat.completion",
+    "created": 1790615035,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Year vs. Price in U.S. dollars per barrel'. Y-axis label: 'Count'. Y-axis ticks: 0 (top), 5, 10, 15, 20, 25, 30, 35 (bottom).\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"2\": {\n        \"evidence\": \"Chart title: 'Year vs. Price in U.S. dollars per barrel'. Y-axis label: 'Count'. Y-axis ticks: 0 (top), 5, 10, 15, 20, 25, 30, 35 (bottom).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the y-axis label 'Count' is authoritative or the chart does not explicitly establish that its vertical values are U.S. dollars per barrel, the plotted vertical positions cannot be validated as the requested cost metric; the title alone leaves an encoding conflict.\",\n      \"evidence\": \"The chart title explicitly states 'Year vs. Price in U.S. dollars per barrel', which defines the metric. The y-axis label 'Count' is a mislabeling or a proxy, as the vertical scale is presented with tick marks from 0 to 35, and the data points are plotted against this scale. The task requires routing for the highest per-barrel cost, which is defined by the title. Therefore, the vertical positions can be validated as the requested cost metric, despite the mislabeling. The necessary condition for B is that the chart title/task description governs the metric, which is supported. The condition 'the chart does not explicitly establish that its vertical values are U.S. dollars per barrel' is not met because the title does establish it. Thus, B is refuted.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"Chart title: 'Year vs. Price in U.S. dollars per barrel'. X-axis: years 1976–1995. Blue circular markers at each year. Y-axis: 'Count', ticks 0–35.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"Chart title: 'Year vs. Price in U.S. dollars per barrel'. X-axis: years 1976–1995. Blue circular markers at each year. Y-axis: 'Count', ticks 0–35.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"Marker at 1980 is lower on the page than every other visible blue marker. Y-axis ticks: 0 (top), 5, 10, 15, 20, 25, 30, 35 (bottom).\",\n        \"status\": \"supported\"\n      },\n      \"4\": {\n        \"evidence\": \"Y-axis ticks: 0 (top), 5, 10, 15, 20, 25, 30, 35 (bottom).\",\n        \"status\": \"supported\"\n      },\n      \"5\": {\n        \"evidence\": \"Y-axis label: 'Count'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the x-axis year labels bind each blue marker to its year, and the vertical tick scale is the plotted per-barrel price scale described by the chart title/task, then larger printed vertical-axis values represent higher per-barrel costs. This applies despite the conflicting y-axis label 'Count' and therefore depends on treating that label as a labeling error rather than the metric definition.\",\n      \"evidence\": \"The chart title explicitly defines the metric as 'Price in U.S. dollars per barrel'. The x-axis binds each marker to its year. The vertical scale is presented with tick marks from 0 to 35, and the data points are plotted against this scale. The task requires routing for the highest per-barrel cost, which is defined by the title. Therefore, the vertical positions can be validated as the requested cost metric, despite the mislabeling. The necessary condition for B is that the chart title/task description governs the metric, which is supported. The condition 'the vertical tick scale is the plotted per-barrel price scale' is supported by the title. The condition 'treating that label as a labeling error' is necessary for B to apply. Since the title defines the metric, the label 'Count' is a mislabeling, and B is supported.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3021,
+      "total_tokens": 4055,
+      "completion_tokens": 1034,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

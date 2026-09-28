@@ -1,0 +1,49 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The area labeled 'ME' is filled pale yellow.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The area labeled 'OK' is filled dark burgundy.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The area labeled 'TX' is filled dark burgundy.",
+          "status": "supported"
+        },
+        {
+          "index": 4,
+          "evidence": "The pale-yellow top of the gradient is adjacent to the inscriptions 'High' and '100,' while the dark-burgundy bottom is adjacent to 'Low' and '0.'",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The map’s state fill colors encode the Hazard H risk index according to the adjacent vertical legend: pale yellow at the top corresponds to the printed High/100 end and dark burgundy at the bottom corresponds to the printed Low/0 end. If the priority hazard review list is intended to select the highest risk-index state among the offered options, select the option for the highest encoded state.",
+        "evidence": "The map visually encodes risk index via color, with the legend explicitly mapping color to index (dark burgundy = 0, pale yellow = 100). The visual appearance of ME (pale yellow), OK (dark burgundy), and TX (dark burgundy) is consistent with this encoding. The task requires selecting one state from ME, OK, or TX based on the dashboard. The reading’s condition — that priority review means choosing the highest risk-index state — is a reasonable interpretation of the task goal and is not contradicted by visible evidence.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The title reads 'Risk Index of Hazard H in US States', and the legend is labeled only with 'High', 'Low', and numeric endpoints.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The chart establishes relative Hazard H risk-index encoding but does not itself state the program rule, threshold, or other criterion for adding a state to priority review. Without that task-to-action criterion, a selection cannot be established from the chart alone.",
+        "evidence": "The chart does not contain any text or policy defining what constitutes a 'priority' state or a selection threshold. The task instructions ('Review the state hazard dashboard, then choose the state record...') imply that the dashboard is sufficient for selection, and the public task explicitly states 'Use the state hazard dashboard as the evidence source for this priority review selection.' The reading correctly identifies the absence of a stated rule, but this absence does not prevent a selection based on the implied goal of choosing the highest risk state.",
+        "status": "refuted"
+      }
+    }
+  ]
+}

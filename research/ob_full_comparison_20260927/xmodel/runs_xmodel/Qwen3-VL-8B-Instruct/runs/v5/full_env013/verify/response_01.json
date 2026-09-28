@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afa5f32402f960b0",
+    "object": "chat.completion",
+    "created": 1790614895,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart contains no visible text, legend, or annotation that defines a substantial-change threshold, escalation rule, or routing instruction. The only inscriptions are the temperature values at each data point.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"2\": {\n        \"evidence\": \"The leftmost and rightmost plotted markers are aligned with the 2005 and 2015 x-axis ticks, and each has a printed inscription: '24.0°C' for 2005 and '10.0°C' for 2015.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.\",\n        \"evidence\": \"The workflow instruction in the task requires determining whether the full-period change requires substantial-change follow-up. The B reading’s condition is that a routine-by-default policy is in effect. The task does not state or imply this policy. The chart provides no threshold or escalation rule. Therefore, the condition 'under a routine-by-default policy' is not met. The B reading is not applicable because its condition is not supported by the task or chart.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The black marker aligned with the 2005 x-axis tick has the printed inscription '24.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The black marker aligned with the 2015 x-axis tick has the printed inscription '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Coastal Water Temperature Trend' and the y-axis is labeled 'Water temperature (°C)', confirming the plotted values represent temperature.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.\",\n        \"evidence\": \"The B reading’s conditions are met: the markers are aligned with year ticks, and the inscriptions are temperature values. The full-period change is 10.0°C - 24.0°C = -14.0°C. The reading asserts that if this decrease meets the substantial-change criterion, then route to follow-up. However, the substantial-change criterion is not defined anywhere in the task or chart. The B reading does not state that the criterion is met; it only states the consequence if it were. Therefore, the B reading does not assert a routing decision; it only provides a conditional path. The B reading is not applicable because it is conditional on an unspecified criterion, and the task requires a decision.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4000,
+      "total_tokens": 4731,
+      "completion_tokens": 731,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

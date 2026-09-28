@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8d26337547824ccb",
+    "object": "chat.completion",
+    "created": 1790616557,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The orange slice labeled 'Nuclear' is visibly the largest segment in the pie chart, spanning a larger angular area than the red 'Hydroelectric', pale-yellow 'Fossil Fuels', and light-orange 'Renewables' slices.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie encodes consumption shares by slice area and slice labels attach to their respective slices, the visibly largest slice identifies the largest category; the routing criterion then requires that category's priority-monitoring option when available.\",\n        \"evidence\": \"The visual evidence of slice area and the chart title confirms the pie encodes consumption shares by slice area. The labels are attached to their respective slices. The largest slice is Nuclear. The routing criterion requires selecting the largest category's priority-monitoring option.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The upper-right orange slice is labeled 'Nuclear (45%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The lower red slice is labeled 'Hydroelectric (30%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The left pale-yellow slice is labeled 'Fossil Fuels (15%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The upper-left light-orange slice is labeled 'Renewables (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice labels state each source's share of the global energy consumption measure named in the chart title, the category with the greatest labeled share is the largest consumption category; the routing criterion requires selecting that category's priority-monitoring option when available.\",\n        \"evidence\": \"The chart title 'Global Energy Consumption by Source' defines the measure. The printed percentages (45%, 30%, 15%, 10%) are explicitly stated on the slices and represent the share of that measure. The largest share is Nuclear (45%). The routing criterion requires selecting that category's priority-monitoring option.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3477,
+      "total_tokens": 4066,
+      "completion_tokens": 589,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

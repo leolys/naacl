@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af244b7a4b00d3ad",
+    "object": "chat.completion",
+    "created": 1790618695,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The text at the top of the chart clearly reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is the authoritative trend classification for the routing task, then the literal word 'Decreasing' in that title supports the decline-response route.\",\n        \"evidence\": \"The word 'Decreasing' is present in the title. However, the condition that the title is the 'authoritative trend classification' is an assumption; the public task does not specify that the title overrides the plotted data, and the plotted data shows an overall increase.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title contains 'Decreasing', and the 1891 data point is visually higher on the y-axis than the 1880 data point.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If conflicting chart signals or the absence of a supplied routing threshold prevents a reliable growth-versus-decline classification, then the conservative available route is routine monitoring.\",\n        \"evidence\": \"There is a conflict between the title and the data. However, the condition that 'routine monitoring is the designated fallback' is an assumption not stated in the public task or visible on the page.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line starts at the 1,000 tick in 1880 and ends at a point near the 3,000 tick in 1891, which is visibly higher on the page than the start.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis is labeled 'Year' with ticks 1880-1891, and the y-axis is labeled 'Number of Tourists' with ticks 0-3,000.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis labeled 'Year' orders the plotted line from 1880 to 1891 and the vertical axis labeled 'Number of Tourists' uses the visible numeric ticks with larger values higher on the page, then a line endpoint higher at 1891 than at 1880 indicates a higher new-tourist count at the end than at the start. If routing is based on overall endpoint growth, that interpretation supports growth planning.\",\n        \"evidence\": \"The axes and line positions are as described. The condition that 'routing is based on overall endpoint growth' is an assumption, but the visual evidence of growth from start to end is clear.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3936,
+      "total_tokens": 4688,
+      "completion_tokens": 752,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

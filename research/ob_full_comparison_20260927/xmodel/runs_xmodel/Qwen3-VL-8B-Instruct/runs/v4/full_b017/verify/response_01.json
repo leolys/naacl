@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9285fab3ca0ee757",
+    "object": "chat.completion",
+    "created": 1790613724,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Top Performing Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Horizontal axis: 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Vertical axis: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five blue points labeled Store 1–5; no profitability or ROI axis, legend, or inscription visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title limits the display to top-performing stores and the only displayed measures are advertising spend and sales, then the view is not full-store, profitability/ROI, or causal evidence; if a broader budget increase requires those evidence types, route the request for full-data analysis.\",\n        \"evidence\": \"The chart's title and axes confirm it displays only ad spend and sales for top-performing stores. The visual does not include profitability, ROI, or causal indicators. However, the reading's conclusion about routing depends on an unprovided assumption: that a broader budget increase requires evidence beyond this association. This assumption is not supported by the chart or public task. The public task does not define a threshold for 'broader' approval or specify required evidence types. Therefore, the reading's action conclusion (route for full-data analysis) is not supported by the visible evidence alone.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Points for Store 1–5 are positioned successively farther right and higher on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Horizontal axis: 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Vertical axis: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, then a set of labeled store points progressing generally up and to the right indicates a positive observed association between those two displayed measures; this can support approval only if association among the displayed stores is sufficient evidence for a broader increase.\",\n        \"evidence\": \"The axis labels correctly bind the coordinates. The points show a clear positive association: as ad spend increases, sales increase. The visual evidence supports a positive correlation. However, the reading's conclusion that this association 'can support approval' is conditional on an unprovided assumption: that this association is sufficient evidence for a broader budget increase. The public task and chart do not define what 'sufficient' means or what evidence is required for a broader increase. Therefore, while the observed association is visible, the reading's action conclusion (approval) is not supported by the visible evidence alone.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3579,
+      "total_tokens": 4260,
+      "completion_tokens": 681,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

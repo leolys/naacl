@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b9455af2b661a563",
+    "object": "chat.completion",
+    "created": 1790615953,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Year vs. Number of doctors per 1,000 inhabitants', and axes are labeled 'Year' and 'Count'. This matches the O content.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost blue marker (2017.5) is lower on the page than the leftmost blue marker (2000). This is visually confirmed by the chart's inverted y-axis: higher values are at the bottom, so a lower screen position means a higher value.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The task state lists three route options, and no policy tables or interpretation rules are supplied. This matches the O content.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The supplied task state contains no policy tables or interpretation rules defining the pathway criteria.\",\n        \"evidence\": \"The policy_tables array is empty in the public_task. No interpretation rules are provided. Therefore, the condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Year vs. Number of doctors per 1,000 inhabitants', and axes are labeled 'Year' and 'Count'. This matches the O content.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis labels run from 0.0 (top) to 2.5 (bottom). This matches the O content.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The leftmost marker (2000) is higher on the page than the rightmost marker (2017.5). The rightmost marker is near the 2.5 y-axis tick. This matches the O content.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title and axis labels correctly describe the single blue series and the pathway names are interpreted according to their ordinary capacity meanings.\",\n        \"evidence\": \"The chart title and axes correctly describe the data. The pathway names are interpreted according to their ordinary meanings: 'expansion' for increasing capacity, 'shortage' for decreasing capacity. The condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3105,
+      "total_tokens": 3664,
+      "completion_tokens": 559,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

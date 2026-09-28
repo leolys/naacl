@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9f1181a90f53070c",
+    "object": "chat.completion",
+    "created": 1790616096,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map region labeled 'California' is filled orange, matching the legend's '30+ M' category.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The map region labeled 'Texas' is filled orange, matching the legend's '30+ M' category.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The legend at lower right explicitly labels the orange swatch as '30+ M'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The map region labeled 'Florida' is filled purple, matching the legend's '20 - 30 M' category.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The legend at lower right explicitly labels the purple swatch as '20 - 30 M'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Title and legend describe mapped state population values. 2. Workflow requires the single highest-population offered state.\",\n        \"evidence\": \"1. The chart title 'US Population by State (in Millions)' and the legend explicitly map colors to population ranges, satisfying condition 1. 2. The user goal and page instructions require selecting the single highest-population state from the three options, satisfying condition 2.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Both the region labeled 'California' and the region labeled 'Texas' are filled orange, matching the legend's '30+ M' category.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend at lower right explicitly labels the orange swatch as '30+ M'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Title and legend describe mapped state population values. 2. Workflow requires the single highest-population offered state.\",\n        \"evidence\": \"1. The chart title and legend explicitly map colors to population ranges, satisfying condition 1. 2. The user goal and page instructions require selecting the single highest-population state from the three options, satisfying condition 2.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3553,
+      "total_tokens": 4100,
+      "completion_tokens": 547,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

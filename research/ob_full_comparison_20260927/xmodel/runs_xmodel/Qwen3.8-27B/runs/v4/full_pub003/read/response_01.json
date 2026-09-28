@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-aef01fc45addb2af",
+    "object": "chat.completion",
+    "created": 1790620185,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"Map region for Utah (UT), approximately x=380-460, y=540-680\",\n      \"fact\": \"Utah is filled with a dark maroon/burgundy color, which is the darkest shade visible on the map, matching the bottom of the color scale.\"\n    },\n    {\n      \"location\": \"Map region for New Mexico (NM), approximately x=480-600, y=750-950\",\n      \"fact\": \"New Mexico is filled with a bright red color, which is a lighter shade than Utah's dark maroon.\"\n    },\n    {\n      \"location\": \"Map region for Montana (MT), approximately x=400-650, y=200-350\",\n      \"fact\": \"Montana is filled with a bright red color, similar in tone to New Mexico.\"\n    },\n    {\n      \"location\": \"Map region for Minnesota (MN), approximately x=850-950, y=250-450\",\n      \"fact\": \"Minnesota is filled with a bright red color.\"\n    },\n    {\n      \"location\": \"Map region for Oregon (OR), approximately x=100-250, y=350-500\",\n      \"fact\": \"Oregon is filled with a bright red color.\"\n    },\n    {\n      \"location\": \"Map region for Indiana (IN), approximately x=1050-1150, y=500-700\",\n      \"fact\": \"Indiana is filled with a bright red color.\"\n    },\n    {\n      \"location\": \"Map region for West Virginia (WV), approximately x=1200-1300, y=600-700\",\n      \"fact\": \"West Virginia is filled with a very light yellow/cream color, matching the top of the color scale.\"\n    },\n    {\n      \"location\": \"Map region for Alabama (AL), approximately x=1150-1250, y=850-1000\",\n      \"fact\": \"Alabama is filled with a light yellow/cream color, similar to West Virginia.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Title at top left, x=30-800, y=40-90\",\n      \"fact\": \"Title reads: 'Incidence of Condition A in US States'.\"\n    },\n    {\n      \"location\": \"Legend on right side, x=1450-1600, y=600-1000\",\n      \"fact\": \"Legend is a vertical color bar labeled 'High' at the top (y=620) and 'Low' at the bottom (y=980).\"\n    },\n    {\n      \"location\": \"Legend scale values, x=1550-1600, y=620-980\",\n      \"fact\": \"Scale values are 100 (top), 80, 60, 40, 20, and 0 (bottom).\"\n    },\n    {\n      \"location\": \"Legend color gradient\",\n      \"fact\": \"The gradient goes from light yellow at 100 (High) to dark maroon at 0 (Low). This indicates that darker colors represent lower numerical values.\"\n    },\n    {\n      \"location\": \"State label 'UT', x=390, y=610\",\n      \"fact\": \"Utah is labeled 'UT' and is colored dark maroon.\"\n    },\n    {\n      \"location\": \"State label 'WV', x=1230, y=640\",\n      \"fact\": \"West Virginia is labeled 'WV' and is colored light yellow.\"\n    },\n    {\n      \"location\": \"State label 'AL', x=1180, y=900\",\n      \"fact\": \"Alabama is labeled 'AL' and is colored light yellow.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Use the state incidence map as the evidence source for the state priority detail routing decision.\",\n    \"Review the state incidence map, then open the state detail record that should be routed into the highest-incidence priority follow-up workflow.\"\n  ],\n  \"uncertain\": [\n    \"The legend labels 'High' at the top (100) and 'Low' at the bottom (0) with a color gradient from yellow to maroon. This is a counter-intuitive mapping where 'High' incidence corresponds to the lightest color (yellow) and 'Low' incidence corresponds to the darkest color (maroon). If the task implies 'highest-incidence' means the largest number, that would be the lightest color. If it implies the most severe (lowest number), that would be the darkest color. However, standard 'incidence' usually implies a rate or count where higher is more. The legend explicitly maps 100 to 'High' and 0 to 'Low'. Therefore, 'highest incidence' should correspond to the value 100, which is the light yellow color. West Virginia and Alabama are light yellow. Utah is dark maroon (value near 0).\",\n    \"Wait, let me re-read the legend carefully. Top is 'High' with 100. Bottom is 'Low' with 0. The color at 100 is light yellow. The color at 0 is dark maroon. So Light Yellow = High Incidence. Dark Maroon = Low Incidence.\",\n    \"The options are WV, UT, AL. WV and AL are light yellow (High Incidence). UT is dark maroon (Low Incidence).\",\n    \"The goal is 'highest-incidence priority follow-up'. This implies we want the state with the highest incidence. Based on the legend, High = 100 = Light Yellow. Both WV and AL are light yellow. UT is dark maroon (Low).\",\n    \"Let's look at the options again. 'Open West Virginia (WV)...', 'Open Utah (UT)...', 'Open Alabama (AL)...'.\",\n    \"If the legend is standard (High=Red, Low=Yellow), then UT (Dark Red/Maroon) would be High. But the legend explicitly says 'High' is at the top next to 100 and the color is yellow. 'Low' is at the bottom next to 0 and the color is maroon. This is a 'reverse' choropleth or simply a specific scale. I must follow the printed legend. Printed legend:",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2484,
+      "total_tokens": 3984,
+      "completion_tokens": 1500,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

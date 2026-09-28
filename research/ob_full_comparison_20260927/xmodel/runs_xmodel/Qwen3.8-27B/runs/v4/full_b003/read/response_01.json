@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c698316af74ff56",
+    "object": "chat.completion",
+    "created": 1790618797,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"top-left\",\n      \"fact\": \"Chart title reads 'Product Rating Share by Category'. Plot area spans roughly x=270-1860, y=300-1560.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Six category markers left-to-right: Quality, Price, Design, Support, Delivery, Other.\"\n    },\n    {\n      \"location\": \"marker positions\",\n      \"fact\": \"Quality marker near (450,840); Price near (690,735); Design near (935,410); Support near (1180,930); Delivery near (1425,625); Other near (1670,690).\"\n    },\n    {\n      \"location\": \"marker geometry\",\n      \"fact\": \"All six markers are identical blue filled circles with dark outlines; vertical position encodes the Value axis, not the printed % label.\"\n    },\n    {\n      \"location\": \"vertical extremes\",\n      \"fact\": \"Design circle sits highest on the Value axis (~54); Support circle sits lowest (~30).\"\n    },\n    {\n      \"location\": \"label vs geometry\",\n      \"fact\": \"Printed % labels do not match marker height: Design's label (34%) is on the highest marker, while Other's label (53%) is on a mid-height marker.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Axis label 'Value'; ticks 0,5,10,15,20,25,30,35,40,45,50,55.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Axis label 'Category'; tick labels Quality, Price, Design, Support, Delivery, Other.\"\n    },\n    {\n      \"location\": \"point annotations\",\n      \"fact\": \"Quality = 36%; Price = 38%; Design = 34%; Support = 45%; Delivery = 43%; Other = 53%.\"\n    },\n    {\n      \"location\": \"task routing\",\n      \"fact\": \"Option labels are Select Other, Select Design, Select Support; policy table states decision metric 'mislabeled_value / labeled rating share' and rule 'Select the category with the highest current labeled rating share'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Promotion budget rule: Select the category with the highest current labeled rating share\",\n    \"Decision metric: mislabeled_value / labeled rating share\",\n    \"chart_reference: Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal.\"\n  ],\n  \"uncertain\": [\n    \"The printed % labels conflict with the marker heights on the Value axis (e.g., Design label 34% on the tallest marker; Other label 53% on a mid marker), so 'labeled rating share' is taken from the printed % text, not the y-position.\",\n    \"Among the three selectable options (Other, Design, Support), the printed labels are Other 53%, Design 34%, Support 45%; the full-chart maximum printed label is Other 53%.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2772,
+      "total_tokens": 3554,
+      "completion_tokens": 782,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

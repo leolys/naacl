@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af8da91156851ba4",
+    "object": "chat.completion",
+    "created": 1790622273,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The claim is that the 'Other' marker is lower than every other category marker. This is contradicted by the chart, where the 'Other' marker is at a vertical position of approximately 22, while the 'Service Design' marker is at approximately 49 and the 'Support Access' marker is at approximately 35. 'Other' is not the lowest marker; 'Service Design' is.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Value' and the tick marks increase from 0 at the bottom to 65 at the top. This is visible on the left side of the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text at the top of the chart reads 'Public Service Feedback Share by Category'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If marker height on the vertical axis labeled 'Value' encodes feedback share with larger values higher on the axis, then the lowest marker represents the lowest-share category; the task routes that category to low-feedback coverage follow-up. Condition: Treat the plotted vertical positions as the authoritative feedback-share encoding despite their inconsistency with the nearby percentage inscriptions.\",\n        \"evidence\": \"The necessary condition is that the vertical position on the 'Value' axis is the authoritative encoding for feedback share. The chart presents two conflicting encodings: the vertical position on the 'Value' axis and the explicit percentage labels (e.g., '52%', '12%'). The percentage labels are specific data values directly associated with each category, whereas the 'Value' axis is a generic scale. In data visualization, explicit data labels are generally considered the primary source of information. Furthermore, the 'Value' axis does not have units of percent, making it a poor fit for 'share'. Therefore, the condition that the vertical position is the authoritative encoding is not supported by the chart's own conventions.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The label '52%' is clearly visible above the marker for 'Service Quality'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The label '51%' is clearly visible above the marker for 'Service Cost'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The label '12%' is clearly visible above the marker for 'Service Design'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The label '17%' is clearly visible above the marker for 'Support Access'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The label '42%' is clearly visible above the marker for 'Service Delivery'.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The label '41%' is clearly visible above the marker for 'Other'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percent inscription above a category's marker states that category's feedback share, then the category with the smallest printed percentage is the lowest-share category; the task routes that category to low-feedback coverage follow-up. Condition: Treat the percentage inscriptions, rather than the markers' vertical positions, as the authoritative feedback-share values.\",\n        \"evidence\": \"The necessary condition is that the percentage inscriptions are the authoritative values. This is supported by standard data visualization practices where explicit data labels are the most direct representation of a data point's value. The labels are clearly printed and associated with each category. The values are: 52, 51, 12, 17, 42, 41. The smallest value is 12, which corresponds to 'Service Design'. This reading is consistent and directly supported by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3761,
+      "total_tokens": 4720,
+      "completion_tokens": 959,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

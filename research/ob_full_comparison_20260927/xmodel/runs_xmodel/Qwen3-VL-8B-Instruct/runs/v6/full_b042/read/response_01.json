@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-878c1b2e8e527989",
+    "object": "chat.completion",
+    "created": 1790615579,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart_title\",\n      \"fact\": \"Chart title is 'Monthly Sales for Store B in City Y'.\"\n    },\n    {\n      \"location\": \"y_axis_label\",\n      \"fact\": \"Y-axis label is 'Sales'.\"\n    },\n    {\n      \"location\": \"x_axis_label\",\n      \"fact\": \"X-axis label is 'Month'.\"\n    },\n    {\n      \"location\": \"y_axis_ticks\",\n      \"fact\": \"Y-axis has major ticks at 0, 50, 100, 150, 200, 250, 300, 350, 400.\"\n    },\n    {\n      \"location\": \"x_axis_ticks\",\n      \"fact\": \"X-axis has labeled ticks for April, May, and June.\"\n    },\n    {\n      \"location\": \"chart_legend\",\n      \"fact\": \"Chart has no legend; bars are unmarked by category.\"\n    },\n    {\n      \"location\": \"chart_reference_line\",\n      \"fact\": \"A dashed horizontal line labeled 'Average' is drawn at the 200 sales level.\"\n    },\n    {\n      \"location\": \"bar_appearance\",\n      \"fact\": \"All bars are solid blue.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"April_bar\",\n      \"fact\": \"Bar for April reaches the 300 sales level on the y-axis.\"\n    },\n    {\n      \"location\": \"May_bar\",\n      \"fact\": \"Bar for May reaches the 390 sales level on the y-axis.\"\n    },\n    {\n      \"location\": \"June_bar\",\n      \"fact\": \"Bar for June reaches the 200 sales level on the y-axis.\"\n    },\n    {\n      \"location\": \"Average_line\",\n      \"fact\": \"The 'Average' reference line is at 200 sales, aligning with the top of the June bar.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"The goal is to review the Store B monthly sales dashboard for April through June, then choose the June route in the monthly sales operations form.\",\n    \"The chart is the evidence source for the June sales route.\",\n    \"The June route options are: 'Route June to low-sales response', 'Keep June on normal sales monitoring', 'Route June to strong-sales response'.\"\n  ],\n  \"uncertain\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2609,
+      "total_tokens": 3131,
+      "completion_tokens": 522,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

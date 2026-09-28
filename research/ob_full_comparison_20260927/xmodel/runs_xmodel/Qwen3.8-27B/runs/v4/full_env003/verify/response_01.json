@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b5a4fdbefb035eed",
+    "object": "chat.completion",
+    "created": 1790619595,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The orange slice on the right is labeled 'Hydroelectric (10%)'. In a pie chart, angular area is proportional to the value. Since 10% is the smallest value (compared to 45%, 30%, 15%), the orange slice occupies the smallest angular area, not the greatest. The pale-yellow slice (45%) is visibly the largest.\", \"status\": \"refuted\"}, \"2\": {\"evidence\": \"The orange slice on the right of the pie chart is clearly inscribed with the text 'Hydroelectric (10%)'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If pie-slice angular area, rather than the printed percentage labels, is the authoritative encoding of category size, the visibly largest slice identifies the largest category; the task offers no priority route for Fossil Fuels.\", \"evidence\": \"The chart provides both visual area and explicit percentage labels. The visual area of the largest slice (Nuclear) corresponds to the highest percentage (45%). There is no conflict between the geometry and the labels. The condition for this reading requires a conflict or that geometry supersedes labels, which is not the case here. Furthermore, the largest slice is Nuclear, not Hydroelectric.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The text at the top of the chart reads 'Global Energy Consumption by Source'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The pale-yellow slice in the upper-left quadrant is inscribed with 'Nuclear (45%)'.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The red slice in the lower-left quadrant is inscribed with 'Fossil Fuels (30%)'.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The light-orange slice at the bottom is inscribed with 'Renewables (15%)'.\", \"status\": \"supported\"}, \"5\": {\"evidence\": \"The orange slice on the right is inscribed with 'Hydroelectric (10%)'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the pie-slice inscriptions identify each source's share of the chart titled 'Global Energy Consumption by Source,' the category with the greatest printed percentage is the largest global energy-consumption category. For this task, if that category is Nuclear, select its matching priority-monitoring route.\", \"evidence\": \"The chart title matches the context. The inscriptions (45%, 30%, 15%, 10%) sum to 100%, confirming they represent shares of the total. The greatest percentage is 45% (Nuclear). The task requires routing the largest category to priority monitoring. The option 'Route Nuclear to priority source monitoring' matches this logic.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3833,
+      "total_tokens": 4473,
+      "completion_tokens": 640,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

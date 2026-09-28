@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8d63a5ab4f0f6c61",
+    "object": "chat.completion",
+    "created": 1790620575,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The blue line starts at the 1880 tick aligned with the 1,000 y-axis tick. It ends at the 1891 tick at a vertical position clearly above the 2,500 y-axis tick (approximately 2,650).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is an authoritative textual classification of the tourism trend, then its word 'Decreasing' indicates a decline classification. Without a supplied rule resolving conflict between that classification and the plotted line, routine monitoring is a conservative route.\", \"evidence\": \"The title contains the word 'Decreasing', but the plotted data shows a net increase from 1,000 to ~2,650. The condition that the title is an 'authoritative textual classification' is contradicted by the visible data trend. The condition that there is no rule to resolve the conflict is met (no policy table provided), but the premise of the reading (that the title is the valid label) fails against the data.\", \"status\": \"refuted\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The blue line starts at the 1880 tick aligned with the 1,000 y-axis tick. It ends at the 1891 tick at a vertical position clearly above the 2,500 y-axis tick (approximately 2,650).\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The horizontal axis is labeled 'Year' with ticks from 1880 to 1891. The vertical axis is labeled 'Number of Tourists' with ticks increasing from 0 to 3,000.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the blue line is the new-tourist series, the horizontal year ticks bind its endpoints to 1880 and 1891, and higher vertical position maps to a larger number of tourists, then the relative endpoint positions indicate net change across the review period. If routing is based on net growth, a positive net change maps to growth planning.\", \"evidence\": \"The chart title identifies the series as 'New Tourists'. The x-axis binds the start to 1880 and end to 1891. The y-axis maps vertical position to tourist count. The start is at 1,000 and the end is at ~2,650, indicating a positive net change. The condition for 'net growth' is met by the data.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3933,
+      "total_tokens": 4558,
+      "completion_tokens": 625,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

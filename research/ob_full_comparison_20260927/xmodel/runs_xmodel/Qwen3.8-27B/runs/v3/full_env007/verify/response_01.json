@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a24b4b3e57b97e36",
+    "object": "chat.completion",
+    "created": 1790617775,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The bar above the 'May' label is visibly the shortest of the six bars, with a height of roughly 8,000 kWh, making it shorter than Apr, Jan, Jun, Feb, and Mar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The chart title at the top left reads 'Monthly Energy Usage (kWh)' and the vertical axis is labeled 'Energy Usage (kWh)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that without an explicit policy threshold or stated severity criterion, a chart-only relative low value does not establish critical status, making standard low-output follow-up the non-critical handling route. It notes that no such threshold or default rule is provided in the task materials.\",\n        \"evidence\": \"The task materials and the dashboard record do not contain any explicit policy table, numerical threshold, or stated severity criterion for 'critical' versus 'standard' routing. The visual evidence confirms a low value, but the specific condition that defines 'critical' is absent from the provided sources.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The May bar is the shortest mark on the page, with a height extending only slightly above the x-axis baseline, making it shorter than all other five bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The top of the May bar is visually positioned below the lowest printed tick mark on the y-axis, which is 10,000.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The Jun bar, which is the second shortest, has its top positioned between the 15,000 and 20,000 tick marks on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading suggests that if an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical, then May warrants escalation. It explicitly lists as conditions the assumption that extreme relative low output is a critical-routing criterion and that no explicit threshold is supplied.\",\n        \"evidence\": \"The visual evidence supports the premise that May is an isolated lowest value (approx. 8,000 kWh) compared to the next lowest (Jun, approx. 17,500 kWh). However, the specific condition that this relative low output constitutes a 'critical-routing criterion' is not found in the public task or dashboard record; it remains an assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3655,
+      "total_tokens": 4348,
+      "completion_tokens": 693,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

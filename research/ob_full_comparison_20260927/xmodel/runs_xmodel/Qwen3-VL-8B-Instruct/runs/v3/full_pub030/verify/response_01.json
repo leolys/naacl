@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-82752ad9c962af3b",
+    "object": "chat.completion",
+    "created": 1790613585,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is visibly printed as 'Preferred Mode of Transport in Region R'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The legend in the top-right corner clearly shows a red swatch labeled 'Car' and a light-gray swatch labeled 'Public Transit'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The light-gray pie slice contains the printed text '58%'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The red pie slice contains the printed text '42%'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The routing criterion 'Majority-share transport mode' is stated in the visible context fields, and the option 'Route Public Transit to majority-preference policy follow-up' is available.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the legend binds the light-gray slice to Public Transit and the slice inscriptions are percentage shares, then the light-gray slice's printed 58% is Public Transit's share. A share above 50% is a majority share; for this task, the majority-share mode is routed to its matching majority-preference policy-follow-up option.\",\n        \"evidence\": \"The chart's legend explicitly links the light-gray color to 'Public Transit' and the red color to 'Car'. The printed text '58%' is located within the light-gray slice, and '42%' is within the red slice. The task's routing criterion is 'Majority-share transport mode', defined as the mode with the largest percentage share. The public task defines the options for routing based on this criterion.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3406,
+      "total_tokens": 3848,
+      "completion_tokens": 442,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

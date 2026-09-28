@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b8400d5c30a52bf",
+    "object": "chat.completion",
+    "created": 1790616136,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis line aligns with the printed '1,500' tick, and the May 06 blue section meets that lower chart boundary.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No routing threshold, demand-status label, or response instruction is visibly printed on the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies because the chart has no visible routing criteria and the supplied task has no policy table or interpretation rule establishing a low-demand cutoff.\",\n        \"evidence\": \"The chart has no visible routing criteria (condition 1). The task has no policy table or interpretation rule (condition 2).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A blue swatch is visibly labeled 'Station X' in the legend.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A thin blue section is visible at the bottom of the May 06 stacked bar, ending only slightly above the horizontal axis line.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The lowest visible labeled y-axis tick is '1,500'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The green and orange sections above the blue section are visibly much taller than the visible blue section.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assumes the clipped lower axis does not alter the cumulative stack meaning and that the low-demand threshold includes the May 06 Station X value; no threshold is supplied.\",\n        \"evidence\": \"The clipped lower axis does not alter the cumulative stack meaning (condition 1). The low-demand threshold includes the May 06 Station X value (condition 2). No threshold is supplied (condition 3).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3799,
+      "total_tokens": 4277,
+      "completion_tokens": 478,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

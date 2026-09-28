@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-963993b7ee3bf544",
+    "object": "chat.completion",
+    "created": 1790620925,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top left reads 'Units Sold by Product (Weekend Pop-up)'. The vertical axis on the left is labeled 'Units Sold'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis displays tick marks with the inscriptions '2,000', '4,000', '6,000', '8,000', and '10,000' arranged from bottom to top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A dark-red bar is located above the x-axis label 'Product A'. The top of this bar is visually positioned below the '2,000' tick mark and above the horizontal baseline (0).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart’s vertical axis encodes Units Sold on a linear scale and each labeled bar is bound to its product label, Product A’s bar can be interpolated at about 1,700 units. Under the supplied policy, a value less than 500 units from a decision threshold falls in the manual merchandising verification variance band. Selecting the manual-check route requires the additional assumption that this overlapping variance-band rule applies as the operative route rather than being subordinate to the base sales tier.\",\n        \"evidence\": \"The y-axis is linear with uniform spacing (2,000 to 4,000 is the same distance as 4,000 to 6,000). The Product A bar is correctly bound to its label. Visually, the bar is just below the 2,000 line, supporting the ~1,700-1,800 estimate. However, the policy table defines the manual check condition as '< 500 units from a decision threshold'. The 'decision threshold' is not defined in the chart or the visible policy table (which only lists unit ranges). Without a defined threshold (e.g., a target of 2,200), it is impossible to verify if Product A is within 500 units of it. Furthermore, the base tier (1,000-2,000) clearly applies. The reading's applicability to the manual route is unclear because the necessary condition (the specific decision threshold value) is not public/visible.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top left reads 'Units Sold by Product (Weekend Pop-up)'. The vertical axis on the left is labeled 'Units Sold'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis displays tick marks with the inscriptions '2,000', '4,000', '6,000', '8,000', and '10,000' arranged from bottom to top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A dark-red bar is located above the x-axis label 'Product A'. The top of this bar is visually positioned below the '2,000' tick mark and above the horizontal baseline (0).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart’s vertical axis encodes Units Sold on a linear scale and each labeled bar is bound to its product label, Product A’s bar can be interpolated at about 1,700 units. Under the supplied policy, values at least 1,000 and below 2,000 units activate the low-sales review queue. Selecting the low-sales route requires the additional assumption that the base unit-condition tier takes precedence over the overlapping manual variance band.\",\n        \"evidence\": \"The y-axis is linear. The Product A bar is bound to its label. The bar's height is clearly above the midpoint between 0 and 2,000 (which would be 1,000) and below the 2,000 line. This places the value firmly in the [1,000, 2,000) range. The policy table explicitly maps '>= 1,000 and < 2,000 units' to 'Low-sales review queue activation level'. The necessary conditions for this reading (linear scale, correct binding, value in range) are all supported by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4641,
+      "total_tokens": 5709,
+      "completion_tokens": 1068,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

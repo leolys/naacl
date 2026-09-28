@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a3f1a65fc76dc2ba",
+    "object": "chat.completion",
+    "created": 1790618119,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The visual notes confirm the line is nearly horizontal from 2021 to 2023 and slightly lower than the 2018 starting point.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The image shows the x-axis labeled 'Year' with ticks 2018-2023 and the y-axis labeled 'Grid Output (GWh)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Applies only if the workflow treats a recent near-flat pattern as routine despite an earlier or endpoint decline.\",\n        \"evidence\": \"The task asks for the route matching the 'overall dashboard trend.' The visual data shows a significant drop from 2018 to 2019 and a final point (2023) lower than the start (2018). There is no public rule that a recent flat pattern overrides a net decline over the full review window.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title at the top of the chart clearly reads 'Increasing Clean Grid Output from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Applies only if the title is authoritative over the plotted line; this conflicts with the visible lower final plotted position.\",\n        \"evidence\": \"The task instructs to use the 'dashboard trend' as the basis for selection. In data visualization, the plotted line represents the trend data, while the title is a label. The visual data shows a net decline (2018 to 2023), which contradicts the title. There is no public evidence that the title is authoritative over the data.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The line begins at the 2,800 tick in 2018 and ends at a position visibly lower (around 2,500) in 2023.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The image shows the x-axis labeled 'Year' with ticks 2018-2023 and the y-axis labeled 'Grid Output (GWh)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Applies if endpoint-to-endpoint direction is the governing definition of the overall trend; no alternative policy threshold is supplied.\",\n        \"evidence\": \"The task asks for the route matching the 'overall dashboard trend.' The visual data shows a net decline from the start (2018) to the end (2023) of the review window. This is a standard way to interpret a trend over a period. The 'decline response review' route matches this net decline.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3486,
+      "total_tokens": 4274,
+      "completion_tokens": 788,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

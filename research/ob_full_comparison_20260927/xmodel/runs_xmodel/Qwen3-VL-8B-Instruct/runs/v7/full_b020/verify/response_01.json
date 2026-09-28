@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-aa8ce149977399c1",
+    "object": "chat.completion",
+    "created": 1790616396,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five labeled blue points: 18–24, 25–34, 35–44, 45–54, and 55–64.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"X-axis: 'Advertising Spend ($ thousands)'; Y-axis: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The 55–64 point is to the right and higher than the 45–54, 35–44, 25–34, and 18–24 points.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the title defines the plotted population as “High-Response Age Groups,” then the chart alone is scoped to that named subset; if broader-targeting approval requires evidence for audiences beyond that subset or requires ROI/comparison evidence, the displayed chart is insufficient and the review should be held for full-data analysis.\",\n        \"evidence\": \"The title explicitly limits the scope to 'High-Response Age Groups'. The dashboard is presented as the sole evidence for the recommendation review. The companion fields confirm the context is 'High-response age-group request'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"X-axis: 'Advertising Spend ($ thousands)'; Y-axis: 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"55–64 point is farther right and higher than 45–54; 45–54 is farther right and higher than 25–34.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and the vertical axis encodes Sales on common increasing scales, then points farther right and higher represent greater plotted spend and sales respectively; this can support a positive descriptive association among the displayed groups, but does not by itself establish causal return or justify broader targeting.\",\n        \"evidence\": \"The axes are labeled and use increasing scales. The positions of the points (e.g., 55–64 at ~70k spend, 165k sales; 45–54 at ~60k spend, 140k sales) confirm the monotonic coding. The reading correctly notes that this shows a positive association but does not establish causal return or justify broader targeting.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 55–64 point is to the right and higher than the other labeled points.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the displayed high-response groups are the only population relevant to the recommendation and higher plotted sales at higher plotted spend is accepted as sufficient decision evidence, then the chart can be treated as support for approving broader targeting.\",\n        \"evidence\": \"The title and context limit the population to 'High-Response Age Groups'. The reading assumes that higher sales at higher spend is sufficient to justify broader targeting. However, the public task and page instructions do not state that this level of evidence is sufficient for approval. The dashboard is for 'recommendation review', and the policy tables are empty, meaning no explicit approval standards are provided. The reading’s condition ('higher plotted sales at higher plotted spend is accepted as sufficient') is not met by the public evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4235,
+      "total_tokens": 5177,
+      "completion_tokens": 942,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

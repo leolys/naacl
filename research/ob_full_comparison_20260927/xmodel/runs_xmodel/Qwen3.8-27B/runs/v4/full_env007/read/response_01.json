@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a690527a290546b7",
+    "object": "chat.completion",
+    "created": 1790619504,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"bar for May, right side of the plot\",\n      \"fact\": \"May is a dark-red vertical bar whose top is just below the 10,000 kWh gridline; it is the shortest bar on the chart.\"\n    },\n    {\n      \"location\": \"bars for Jan, Apr, Mar, Feb, Jun across the plot\",\n      \"fact\": \"The other five bars are all much taller, ranging from roughly 17,500 kWh (Jun) up to 40,000 kWh (Jan), so May stands out as an extreme low value.\"\n    },\n    {\n      \"location\": \"x-axis order, left to right\",\n      \"fact\": \"Month labels appear in the order Apr, Jan, Jun, Feb, Mar, May; May is the rightmost category.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"chart title, top-left\",\n      \"fact\": \"Title reads 'Monthly Energy Usage (kWh)'; y-axis label is 'Energy Usage (kWh)'.\"\n    },\n    {\n      \"location\": \"y-axis ticks\",\n      \"fact\": \"Tick values are 10,000, 15,000, 20,000, 25,000, 30,000, 35,000, 40,000 kWh.\"\n    },\n    {\n      \"location\": \"May bar vs y-axis\",\n      \"fact\": \"May's bar top sits slightly below the 10,000 kWh tick (approximately 8,000 kWh), the lowest value among all months.\"\n    },\n    {\n      \"location\": \"reference bars for comparison\",\n      \"fact\": \"Jan ≈ 40,000 kWh; Apr ≈ 29,500 kWh; Mar ≈ 27,000 kWh; Feb ≈ 20,000 kWh; Jun ≈ 17,500 kWh. May is far below even the next-lowest month (Jun).\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Routing criterion: 'Whether May should be handled as a standard low-output case or as a critical anomaly'\",\n    \"Option: 'Route May to standard low-output follow-up'\",\n    \"Option: 'Escalate May to critical low-output anomaly review'\",\n    \"Option: 'Send May to background monthly record filing'\"\n  ],\n  \"uncertain\": [\n    \"No explicit numeric threshold on the chart defines 'standard low-output' vs 'critical anomaly'; the distinction must be inferred from May being an extreme outlier relative to all other months.\",\n    \"Exact May value is not labeled; read visually as just under 10,000 kWh.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2542,
+      "total_tokens": 3189,
+      "completion_tokens": 647,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

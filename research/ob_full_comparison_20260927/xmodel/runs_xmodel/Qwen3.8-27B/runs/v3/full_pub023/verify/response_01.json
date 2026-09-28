@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9205d1d08b3c956c",
+    "object": "chat.completion",
+    "created": 1790618638,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title at the top of the image clearly reads 'Monthly Visitors at Museum C in Town Z'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis label 'July' is positioned directly below the first (leftmost) green bar in the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Visually, the top edge of the green bar for July is horizontally aligned with the dashed orange line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The dashed orange line is level with the '200' tick mark on the y-axis and has the text 'Average' printed in orange to its right.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the bar's height on the vertical scale encodes the visitor count and that the dashed line labeled 'Average' is the benchmark for average-level visitors. It then applies a mapping where a bar aligned with this line indicates 'average-level visitors', which corresponds to the 'average-level visitor monitoring' option.\",\n        \"evidence\": \"The chart's visual encoding (bar height vs. y-axis) and the 'Average' label are supported by the image. However, the task provides no explicit policy table or rule defining how visitor levels map to the specific operational routes (low, average, or high).\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3473,
+      "total_tokens": 3877,
+      "completion_tokens": 404,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

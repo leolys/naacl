@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9413d8c3ab864d07",
+    "object": "chat.completion",
+    "created": 1790613353,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The red line has visible downward-sloping segments between some adjacent yearly vertices, including after 2014, after 2018, and after 2022.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"No policy tables or routing thresholds are supplied in the task state.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If routing requires a stated threshold, sustained-direction criterion, or policy rule not supplied in the task, and the plotted series has both rises and declines, then standard trend monitoring may be appropriate rather than an escalation pathway.\",\n        \"evidence\": \"The task state explicitly confirms no policy tables or routing thresholds are supplied.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The visible title reads 'Declining Emergency Department Visits in Region Z from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is an authoritative summary of the utilization pattern, then its literal characterization of visits as declining from 2012 to 2023 supports utilization-decrease follow-up.\",\n        \"evidence\": \"The title is visually present and reads as stated. However, the visual data (line graph) contradicts this by showing a clear increase from 2012 to 2022, followed by a slight decrease in 2023. The task directs to use the dashboard as the evidence source, which implies the chart is the primary evidence, making the title potentially misleading or incorrect.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The red line's vertex at 2012 is lower on the page than its vertex at 2023.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is visibly labeled 'Emergency department visits' and has printed tick labels 0, 800, 1600, 2400, and 3200, with 0 at the bottom and 3200 higher on the page.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The horizontal axis is visibly labeled 'Year' and has printed yearly ticks from 2012 through 2023.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the plotted line encodes emergency department visits by year, with higher vertical position corresponding to larger values as indicated by the ascending y-axis tick labels, then a later endpoint plotted higher than the earlier endpoint indicates overall utilization growth; under the task's overall-pattern routing instruction, this supports utilization-growth follow-up.\",\n        \"evidence\": \"The line graph clearly shows the endpoint in 2023 is higher than the starting point in 2012, consistent with the y-axis scale. The task requires assessing the overall utilization pattern over the review period, which is best captured by the start-to-end comparison of the single red line. No other data series or policy rules are provided to override this interpretation.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3459,
+      "total_tokens": 4262,
+      "completion_tokens": 803,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

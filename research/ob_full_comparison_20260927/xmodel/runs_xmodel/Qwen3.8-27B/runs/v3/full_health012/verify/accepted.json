@@ -1,0 +1,59 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The chart title is visible at the top of the image as 'Selected Sentinel Sites: Testing Volume vs Positive Cases' and the subtitle below it reads 'Reported sites with the highest case loads shown in dashboard summary'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading posits that because the evidence is from a 'selected' subset (specifically the highest case loads) and is not necessarily representative of the network, it may be retained as background reference rather than used to advance a network-wide claim.",
+        "evidence": "The visual evidence confirms the data is a 'selected' subset of sites with the 'highest case loads' (subtitle). However, the task explicitly asks to decide if the pattern is 'ready for system-level escalation' or should 'move to broader review'. The reading's condition assumes that 'broader review is not warranted', which is an assumption not supported by the visual evidence or the task instructions. The visual evidence of a non-random selection (highest case loads) makes the data insufficient for a network-wide claim, but it does not establish that broader review is unnecessary.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The main title at the top of the chart is inscribed 'Selected Sentinel Sites: Testing Volume vs Positive Cases'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The subtitle directly beneath the title is inscribed 'Reported sites with the highest case loads shown in dashboard summary'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading argues that because the chart is explicitly limited to 'selected sentinel sites' with the 'highest case loads', this selection does not establish that the pattern represents the broader network. Therefore, for a task asking about a network-wide claim, this evidence should be routed for broader population review.",
+        "evidence": "The visual evidence fully supports the necessary conditions: the title and subtitle explicitly define the subset as 'Selected' and 'highest case loads'. The absence of any other sampling information on the chart supports the conclusion that the displayed pattern cannot be assumed to be representative of the entire network. The task asks for a decision on a network-wide claim, making the non-representative nature of the 'selected' subset a critical factor.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The horizontal axis label at the bottom reads 'Weekly testing volume (thousands)' and the vertical axis label on the left reads 'Positive cases detected'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The five purple data points (Site A through Site E) are arranged in a clear diagonal line from the lower-left (Site A) to the upper-right (Site E). Site E is the highest and rightmost, and the other points follow a consistent upward-sloping progression.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading states that the axis labels define the quantities, and the progressive positioning of the points indicates an increasing cross-site association. It concludes that this pattern could justify a network-wide claim only if the selected sites are accepted as representative.",
+        "evidence": "The visual evidence supports the axis labels and the clear positive correlation (progressive positioning) between the two variables. The reading correctly identifies that the visual pattern alone is insufficient for a network-wide claim without the assumption of representativeness, which is a necessary condition that is not met by the 'selected' subset shown in the chart.",
+        "status": "supported"
+      }
+    }
+  ]
+}

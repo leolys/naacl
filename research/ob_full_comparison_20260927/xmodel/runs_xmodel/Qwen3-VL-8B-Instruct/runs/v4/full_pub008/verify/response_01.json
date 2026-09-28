@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8fb743fc1a29d66f",
+    "object": "chat.completion",
+    "created": 1790614306,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis line aligns with the printed '1,500' tick, and the May 06 blue section meets that lower chart boundary.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No routing threshold, demand-status label, or response instruction is visibly printed on the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a stacked bar is clipped by a y-axis beginning at 1,500, the visible height of a bottom segment measures only the portion above 1,500, not its full magnitude; without supplied routing thresholds, a conservative default may be normal monitoring.\",\n        \"evidence\": \"The chart's y-axis begins at 1,500, and the blue segment for Station X on May 06 is visually clipped at that level. The chart provides no routing thresholds or labels. The reading correctly notes the absence of thresholds and the clipping effect. However, it concludes that 'normal monitoring' is the default, which is not a direct inference from the visual evidence alone — the chart shows the blue segment is very small (less than 500), which may warrant a low-demand response, not merely a conservative default. The reading is logically consistent but does not fully address the quantitative evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A blue swatch is visibly labeled 'Station X'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A thin blue section is visible at the bottom of the May 06 stacked bar, ending only slightly above the horizontal axis line.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The lowest visible labeled y-axis tick is '1,500'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The green and orange sections above the blue section are visibly much taller than the visible blue section.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the legend binds blue to Station X and the stacked bar encodes visitor counts cumulatively from zero, then the top of the blue segment at May 06 represents Station X's visitor count; if the routing program classifies that count as low, low-demand response is appropriate.\",\n        \"evidence\": \"The blue segment for Station X on May 06 is visually very small, estimated to be less than 500 visitors (below the 1,500 baseline). The chart does not provide a low-demand threshold, but the reading assumes that a value below the 1,500 baseline is 'low' and therefore warrants a 'low-demand response'. This is a reasonable inference given the visual evidence — the blue segment is the smallest and clearly below the 1,500 mark — but it relies on an unstated assumption that the routing program classifies values below 1,500 as low demand. The reading is plausible but not definitively supported by the chart's visible data alone, as no threshold is printed.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3840,
+      "total_tokens": 4571,
+      "completion_tokens": 731,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

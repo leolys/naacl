@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ba61c9f94cf34d56",
+    "object": "chat.completion",
+    "created": 1790614623,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales', and the plot contains five labeled points: Region A, B, C, D, and E. The only visible quantitative axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"2\": {\n        \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales', and the plot contains five labeled points: Region A, B, C, D, and E. The only visible quantitative axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If a broader budget approval requires evidence of advertising causal impact, ROI/profitability, or complete regional coverage, then a scatterplot showing only spend and sales for the displayed top regions is insufficient and supports requesting full analysis instead.\",\n      \"evidence\": \"The condition requires that the organization mandates causal, return, or full-population evidence before approving expansion. This is a policy condition, not a visual fact. The chart does not contain such evidence. The reading is therefore conditional on organizational policy, which is not visible in the chart or task description. The visual evidence alone does not refute or confirm this condition. The reading's applicability depends on an external policy rule that is not specified or visible in the provided materials.\",\n      \"status\": \"unclear\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' with ticks increasing from 25 to 75.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' with ticks increasing from 50 to 180.\",\n        \"status\": \"supported\"\n      },\n      \"4\": {\n        \"evidence\": \"The labeled points are Region A, B, C, D, and E, plotted from lower-left to upper-right, with Region E being the rightmost and highest point.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and increases left-to-right, the vertical axis encodes Sales and increases upward, and the labeled regional points are comparable observations, then the plotted ordering indicates that higher-spend regions in this displayed set also have higher sales. Approving broader expansion additionally requires the unstated decision assumption that this descriptive association is sufficient support for expansion.\",\n      \"evidence\": \"The horizontal axis encodes Advertising Spend, increasing left-to-right. The vertical axis encodes Sales, increasing upward. The labeled points are comparable observations (all are regions, no other variables). The points are ordered from lower-left to upper-right, indicating that as spend increases, sales also increase for the displayed regions. The reading explicitly states that this descriptive association does not establish causality, incremental return, or profitability — which is consistent with the visual evidence. The condition 'only to the five displayed labeled regions' is met. The reading does not claim to establish causality or profitability, which is correct. The final clause about the 'unstated decision assumption' is a policy or decision condition, not a visual fact. The visual evidence alone does not prove whether this assumption is valid or invalid. However, the reading does not assert that the assumption is true; it merely states that approving expansion requires it. The reading is therefore conditionally applicable based on the visual evidence, and its conditions are met. The reading is not invalidated by the lack of proof of causality or profitability, as it explicitly disclaims that.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3785,
+      "total_tokens": 4639,
+      "completion_tokens": 854,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

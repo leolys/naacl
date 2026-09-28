@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8914258fca255704",
+    "object": "chat.completion",
+    "created": 1790617072,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Refugees vs IDPs'. The left vertical axis is labeled 'Refugees' and the right vertical axis is labeled 'IDPs'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2017.5 x-axis position, the blue circular mark (Refugees) is positioned higher on the page than the red square mark (IDPs).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue series uses circular markers and the red series uses square markers.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue circular series is the Refugees series and the red square series is the IDPs series, and both series use the same vertically increasing count scale despite the separate colored axis labels, then the series whose 2017 mark is higher on the page has the larger 2017 people count; the task requires opening that category's follow-up record.\",\n        \"evidence\": \"The chart uses separate y-axes for each series. The blue series (Refugees) is plotted against the left y-axis, and the red series (IDPs) is plotted against the right y-axis. There are no visible numeric y-axis ticks or gridlines to confirm that the two scales are identical or comparable. The visual height of the 2017.5 marks does not establish a numerical comparison because the scales are not confirmed to be aligned. The reading B incorrectly assumes scale comparability without evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2567,
+      "total_tokens": 2948,
+      "completion_tokens": 381,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

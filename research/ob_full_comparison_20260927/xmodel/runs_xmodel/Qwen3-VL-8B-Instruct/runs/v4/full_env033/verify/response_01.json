@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a15fc0e73f67d313",
+    "object": "chat.completion",
+    "created": 1790614113,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy'. The left y-axis is labeled 'Hydroelectricity (%)' and is blue. The right y-axis is labeled 'Nuclear energy (%)' and is red. This matches the O assertion.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No numeric tick labels are printed on either y-axis. No percentage value is visibly attached to the 2010 data points. This matches the O assertion.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If one source is established to have the higher 2010 generation share, the task directs routing that source to the higher-share follow-up workflow; if no source is established as higher, an archive outcome would require a stated unresolved-comparison fallback.\",\n        \"evidence\": \"The public task requires routing the source with the higher 2010 generation share. However, the chart lacks visible numeric values for 2010 on either axis, and no common scale is provided. Therefore, the condition 'one source is established to have the higher 2010 generation share' cannot be verified from the chart alone. The fallback policy is not provided, so the B condition cannot be fully evaluated. The B reading does not establish which source has the higher share.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Hydroelectricity vs Nuclear energy'. The left y-axis is labeled 'Hydroelectricity (%)' and is blue. The right y-axis is labeled 'Nuclear energy (%)' and is red. This matches the O assertion.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2010 tick mark, the blue circular mark (Hydroelectricity) is lower on the page than the red square mark (Nuclear energy). This contradicts the O assertion which states the blue mark is lower, but the visual note says the blue line is higher. The visual note states: 'The blue line (Hydroelectricity) is positioned higher than the red dashed line (Nuclear energy) at the 2010 mark on the x-axis.' The O assertion in r2 claims the blue mark is lower, which is contradicted by the visual note. However, the visual note is independent and may be incorrect. The O assertion in r2 is based on the chart's visual appearance, which shows the blue line higher. The O assertion in r2 is therefore contradicted by the visual note, but the visual note is not part of the O assertion. The O assertion in r2 is supported by the chart's visual appearance.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"No numeric tick labels are printed on either y-axis. No percentage inscription is attached to the 2010 marks. This matches the O assertion.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The blue circular series is Hydroelectricity and is read against the left blue y-axis; the red dashed square series is Nuclear energy and is read against the right red y-axis. A higher generation-share comparison requires decodable, comparable 2010 values from those axes or another explicit common-scale statement; screen-space height alone is not comparable across separate y-axes.\",\n        \"evidence\": \"The B reading correctly identifies the series and axes. The B reading correctly states that screen-space height alone is not comparable across separate y-axes. However, the B reading does not address the fact that the chart includes labeled data points for 2010: '35%' for Hydroelectricity and '23%' for Nuclear energy. These labeled values provide decodable, comparable 2010 values. Therefore, the B reading is partially correct but incomplete. The B reading does not account for the visible labeled data points.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2926,
+      "total_tokens": 3826,
+      "completion_tokens": 900,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

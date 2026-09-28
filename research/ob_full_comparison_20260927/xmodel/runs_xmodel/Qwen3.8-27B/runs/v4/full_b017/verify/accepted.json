@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads 'Top Performing Stores: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis label at the bottom of the chart reads 'Advertising Spend ($ thousands)'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis label on the left of the chart reads 'Sales ($ thousands)'.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The plot area contains points labeled Store 1, Store 2, Store 3, Store 4, and Store 5. There are no other axes, legends, or text indicating profitability or ROI.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title limits the display to top-performing stores and the only displayed measures are advertising spend and sales, then the view is not full-store, profitability/ROI, or causal evidence; if a broader budget increase requires those evidence types, route the request for full-data analysis.",
+        "evidence": "The title 'Top Performing Stores' indicates a filtered subset. The axes confirm only spend and sales are plotted. No evidence of profitability or causality is present. The task is to 'choose how the budget recommendation should be routed'.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The labeled points (Store 1 to Store 5) are positioned with increasing x-values (spend) and increasing y-values (sales), moving from the bottom-left to the top-right of the plot area.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis label is 'Advertising Spend ($ thousands)'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis label is 'Sales ($ thousands)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes advertising spend and the vertical axis encodes sales, then a set of labeled store points progressing generally up and to the right indicates a positive observed association between those two displayed measures; this can support approval only if association among the displayed stores is sufficient evidence for a broader increase.",
+        "evidence": "The visual data shows a clear positive correlation (up and to the right) between the two labeled axes. The condition 'only if association... is sufficient evidence' is met because the dashboard only provides this association, not the full causal or profitability evidence typically required for a 'broader' increase.",
+        "status": "supported"
+      }
+    }
+  }
+}

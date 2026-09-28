@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "In the chart, the blue bar labeled 'Firefox' extends to approximately 85 on the vertical axis, while the green bar labeled 'Edge' extends to approximately 78. The top of the Firefox bar is visibly higher on the page than the top of the Edge bar.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "In the chart, the blue bar labeled 'Firefox' extends to approximately 85 on the vertical axis, while the orange bar labeled 'Chrome' extends to approximately 12. The top of the Firefox bar is visibly higher on the page than the top of the Chrome bar.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis on the left side of the chart displays tick labels starting at 0 at the bottom and increasing by 10s up to 100 at the top.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If bar height on the shared vertical axis encodes current market_share with greater vertical height meaning greater share, then the tallest browser bar has the highest market_share; the compatibility queue rule requires selecting that browser.",
+        "evidence": "The reading assumes that bar height is the authoritative encoding for market_share. However, the chart contains explicit percentage annotations above each bar (e.g., '87%' for Edge, '23%' for Firefox). These annotations directly contradict the values suggested by the bar heights (Edge bar is ~78, Firefox bar is ~85). In data visualization, explicit numeric labels are typically the authoritative source of value over the visual representation of the bar, especially when they conflict. Therefore, the condition that 'bar height... encodes current market_share' is refuted by the presence of conflicting, explicit percentage labels.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "Above the green bar, which is aligned with the x-axis label 'Edge', the text '87%' is printed in bold black font.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "Above the blue bar, which is aligned with the x-axis label 'Firefox', the text '23%' is printed in bold black font.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "Above the orange bar, which is aligned with the x-axis label 'Chrome', the text '5%' is printed in bold black font.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If each percentage inscription above a product's bar is that product's current market_share in the dashboard, then compare those inscriptions; the compatibility queue rule requires selecting the browser with the greatest current market_share.",
+        "evidence": "The reading assumes the percentage inscriptions are the authoritative market_share values. This is a standard convention for bar charts where labels provide the precise value. Comparing the inscriptions: Edge (87%) > Firefox (23%) > Others (3%) > Chrome (5%) > Safari (1%). Edge has the highest value. The compatibility queue rule requires selecting the browser with the highest current market_share. Thus, the reading leads to selecting Edge.",
+        "status": "supported"
+      }
+    }
+  }
+}

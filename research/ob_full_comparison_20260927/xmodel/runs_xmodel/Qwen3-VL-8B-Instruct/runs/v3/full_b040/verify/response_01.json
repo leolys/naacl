@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9cb8d2e2d15951bc",
+    "object": "chat.completion",
+    "created": 1790612869,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at Q1 at a revenue value just above 1,000 and ends at Q4 at a revenue value just below 1,900, indicating a clear upward trend.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is labeled 'Revenue' and its tick labels increase upward from 0 to 2,000, confirming that higher vertical position represents greater revenue.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Company C revenue by quarter, the horizontal axis orders Q1 through Q4, and higher vertical position represents greater revenue because the labeled Revenue-axis values increase upward, then a line ending higher than it begins indicates revenue growth; the growth classification maps to the revenue growth response.\",\n        \"evidence\": \"The visual data confirms the line encodes revenue over quarters, the axis orders Q1-Q4, and higher vertical position = higher revenue. The line ends higher than it begins (Q4 ~1,900 vs Q1 ~1,000), so revenue growth is visually supported.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title literally reads 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is the authoritative classification for the Company C Q1-Q4 revenue record, then the literal descriptor 'Stable Revenue' maps to the revenue stability response.\",\n        \"evidence\": \"The title is visually present and literal. However, the visual data (line) contradicts 'stable' by showing a clear upward trend. The public task does not specify that the title overrides the visual data. The assumption that the title is authoritative for routing is not supported by visual evidence or task instructions.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3596,
+      "total_tokens": 4084,
+      "completion_tokens": 488,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

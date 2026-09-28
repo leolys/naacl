@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-845444f7018447ad",
+    "object": "chat.completion",
+    "created": 1790621009,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the page reads 'Midyear Months with Strong Response: Ad Spend vs Sales'. The five data points are explicitly labeled 'May', 'June', 'July', 'August', and 'September'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible plot area contains only the five labeled points (May–September). There are no other data points, markers, or labels visible for months outside this range (e.g., January–April or October–December).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart contains only a title, axis labels ('Sales ($ thousands)', 'Advertising Spend ($ thousands)'), and point labels. There is no text, annotation, or legend entry stating a causal effect, ROI, profitability threshold, or specific approval criterion.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader budget increase requires full-year performance evidence or evidence beyond a descriptive midyear association, then a dashboard limited to labeled midyear months does not satisfy that requirement; the appropriate follow-up is to hold and request full-year marketing analysis. (Conditions: Applies only if the budget decision standard requires full-year analysis or causal, profitability, or other unshown validation; no such standard is supplied in the task.)\",\n        \"evidence\": \"The necessary condition for this reading is that the 'budget decision standard' requires full-year analysis or causal validation. The task instructions state: 'Review the midyear marketing dashboard, then choose the follow-up decision for the budget request.' and 'Review dashboard evidence and submit an approval or evidence-review decision.' The provided text does not explicitly state a policy requiring full-year data or causal proof as a prerequisite for approval. However, the chart is explicitly titled 'Midyear Months' and only shows May–September. The option 'Hold and request full-year marketing analysis' is a specific choice available. The reading is conditional on a standard that is not explicitly provided in the text, but the condition 'no such standard is supplied' is factually true regarding the text. The reading argues that *if* such a standard exists (or is implied by the need for 'full-year' analysis which is an option), the dashboard is insufficient. Since the dashboard is explicitly 'Midyear', it does not provide full-year evidence. The reading is logically consistent with the visible evidence (midyear only) and the available options.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart clearly reads 'Midyear Months with Strong Response: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bottom axis is labeled 'Advertising Spend ($ thousands)'. The tick marks are labeled 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left axis is labeled 'Sales ($ thousands)'. The tick marks are labeled 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The point labeled 'May' is at approx (30, 71). 'June' is at approx (40, 115). 'July' is at approx (50, 142). 'August' is at approx (60, 162). 'September' is at approx (70, 175). Each subsequent point is to the right (higher x) and higher (higher y) than the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend ($ thousands), the vertical axis encodes Sales ($ thousands), and the labeled monthly points are comparable observations, then points progressing rightward and upward indicate a positive midyear association between spend and sales. Approving a broader budget increase follows only if this association is accepted as sufficient decision evidence despite the chart's limited period and lack of causal or profitability evidence. (Conditions: Assumes the displayed May–September observations are comparable, the axis labels correctly describe the measures, and a midyear association is sufficient for approval.)\",\n        \"evidence\": \"The axis labels and point positions are verified in the O evidence. The points do progress rightward and upward, indicating a positive association in the midyear period. The reading correctly identifies that this is an association, not necessarily causation, and notes the limited period. It conditions the approval on whether this association is 'accepted as sufficient decision evidence'. This is a valid logical structure: the chart shows X, approval requires X to be sufficient. The reading does not claim approval *must* happen, but that it *follows* if the evidence is deemed sufficient. This is a fair interpretation of the data's potential use.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4266,
+      "total_tokens": 5487,
+      "completion_tokens": 1221,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

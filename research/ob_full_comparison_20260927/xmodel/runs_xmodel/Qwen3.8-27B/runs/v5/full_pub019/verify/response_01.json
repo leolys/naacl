@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-885b33a02c737824",
+    "object": "chat.completion",
+    "created": 1790622256,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The map clearly shows the polygon labeled 'CA' (California) filled with a very dark maroon color. This is visually the darkest shade on the map, corresponding to the top of the legend scale.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The polygons labeled 'TN' (Tennessee) and 'DE' (Delaware) are filled with much lighter colors (pale yellow/cream and light orange, respectively) compared to the dark maroon of the CA polygon.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The caption at the bottom left of the image explicitly reads: 'Clean choropleth: same US map base; darker color means higher true value.'\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A vertical color legend is present on the right side. It shows a gradient from pale yellow at the bottom (labeled 'Low') to dark maroon at the top (labeled 'High'), with numerical ticks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"For this choropleth, if the printed caption applies uniformly to all state fills, darker state color encodes a higher true incidence value; therefore the darkest state on the shared map has the highest incidence and should be routed to the highest-incidence priority follow-up workflow.\",\n        \"evidence\": \"The necessary conditions are met: 1) The caption 'darker color means higher true value' is visible and applies to the map base. 2) The task requires selecting the 'highest-incidence state'. 3) The visual evidence confirms CA is the darkest state, which corresponds to the highest value on the legend. Therefore, CA is the state with the highest incidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2883,
+      "total_tokens": 3338,
+      "completion_tokens": 455,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

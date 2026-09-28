@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The x-axis displays three categories in order: 'April', 'May', 'June'. The leftmost orange bar is positioned directly above the 'April' label.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis has a tick mark labeled '250'. A red dashed horizontal line runs across the chart at this level. The top of the leftmost (April) bar is flush with this line.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The red dashed line is annotated with the text 'Average' on the right side of the chart.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The vertical axis is labeled 'Sales ($K)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the orange bars encode Store B monthly sales on the vertical axis and the red dashed line labeled 'Average' is the comparison benchmark, then an April bar whose top aligns with that line represents April sales at the displayed average level. Routing that level to a low-sales response requires an unstated policy that average-level sales qualify as low sales.",
+        "evidence": "The chart title confirms the data is for 'Store B'. The visual alignment of the April bar with the 'Average' line is supported by the visual evidence. The B text correctly identifies that the chart shows April sales at the average level. It also correctly notes that routing this to a 'low-sales response' requires a policy rule (average = low) which is not present in the provided task state (policy_tables is empty).",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The leftmost orange bar is positioned directly above the 'April' label on the x-axis.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The top of the April bar aligns with the red dashed line at the y-axis tick '250'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The red dashed line is labeled 'Average'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the operations program has no supplied rule mapping average-level sales to a low, normal, or strong route, the chart alone does not determine the route; selecting normal monitoring would additionally require an unstated default-normal policy for cases without a specified trigger.",
+        "evidence": "The task state shows an empty 'policy_tables' array. The chart provides data (April = 250, Average = 250) but no operational thresholds for 'low', 'normal', or 'strong' sales. Therefore, the chart alone cannot determine the route. The B text correctly states that a policy rule is missing to make the determination.",
+        "status": "supported"
+      }
+    }
+  }
+}

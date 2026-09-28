@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97ff8442a9cb0997",
+    "object": "chat.completion",
+    "created": 1790615419,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title at upper left reads 'Smartphone Market Share in Europe'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Label inside the light-orange pie slice reads 'Apple (60%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Label inside the orange pie slice reads 'Samsung (12%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Label inside the red pie slice reads 'Xiaomi (10%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"Label inside the pale-yellow pie slice reads 'Others (18%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The displayed dashboard is the task's current Europe market_share source. 2. 'Others' is an aggregate category rather than a selectable brand.\",\n        \"evidence\": \"1. The public_task's chart_reference states: 'Use the dashboard market_share values as the evidence source'. The chart is titled 'Smartphone Market Share in Europe' and is presented as the dashboard. 2. The 'Others (18%)' category is not listed as a selectable brand in the 'option_labels' or 'companion_fields'. The 'options' list only includes Apple, Xiaomi, and Samsung. 'Others' is a summary category, not a brand under consideration for selection.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3499,
+      "total_tokens": 3863,
+      "completion_tokens": 364,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

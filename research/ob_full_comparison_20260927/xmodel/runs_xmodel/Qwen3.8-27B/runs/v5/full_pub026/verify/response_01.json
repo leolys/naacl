@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-801b8a7e007a6191",
+    "object": "chat.completion",
+    "created": 1790622440,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bold title at the top of the chart literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line starts at the 1880 tick aligned with the 1,000 gridline and ends at the 1891 tick between the 2,500 and 3,000 gridlines.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative textual classification of the tourism trend, then its word 'Decreasing' indicates a decline classification. Without a supplied rule resolving conflict between that classification and the plotted line, routine monitoring is a conservative route.\",\n        \"evidence\": \"The necessary condition is that the title is the authoritative source for the trend classification. This is refuted by the visible data: the line clearly rises from 1,000 (1880) to over 3,000 (1890) before dropping to ~2,700 (1891). The overall trajectory is a significant increase, not a decrease. The title is factually incorrect regarding the plotted data. Therefore, the condition that the title is authoritative is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line starts at the 1880 tick aligned with the 1,000 gridline and ends at the 1891 tick between the 2,500 and 3,000 gridlines.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks 1880-1891. The vertical axis is labeled 'Number of Tourists' with ascending values.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the new-tourist series, the horizontal year ticks bind its endpoints to 1880 and 1891, and higher vertical position maps to a larger number of tourists, then the relative endpoint positions indicate net change across the review period. If routing is based on net growth, a positive net change maps to growth planning.\",\n        \"evidence\": \"The necessary conditions are that the line represents the data and the axes are standard. These are supported by the visual evidence. The line starts at 1,000 and ends at ~2,700, indicating a positive net change (growth) over the 1880-1891 period. This directly supports the 'Route to tourism growth planning' option.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4151,
+      "total_tokens": 4844,
+      "completion_tokens": 693,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

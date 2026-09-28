@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c690cf8b8161065",
+    "object": "chat.completion",
+    "created": 1790616275,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Refugees vs IDPs', and the left y-axis is labeled 'Refugees' (blue), while the right y-axis is labeled 'IDPs' (red).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2017.5 x-axis position, the blue circular mark (Refugees) is positioned higher than the red square mark (IDPs) on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue series uses circular markers and the red series uses square markers, as per the chart legend and visual style.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The color/axis-label association identifies the series: blue = Refugees (left axis), red = IDPs (right axis). 2. The two vertical positions are numerically comparable: the chart displays explicit numeric values at the 2017.5 mark for both series.\",\n        \"evidence\": \"1. The color/axis-label association is confirmed by the chart's title, axis labels, and marker styles. 2. The vertical positions are numerically comparable because the chart explicitly prints '13,925,955' for both Refugees (blue) and IDPs (red) at the 2017.5 x-axis position. The visual height difference is consistent with this equality, not a scale difference.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2641,
+      "total_tokens": 3008,
+      "completion_tokens": 367,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

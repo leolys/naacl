@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b34f0519e6d0110f",
+    "object": "chat.completion",
+    "created": 1790614811,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart title\",\n      \"fact\": \"Chart title is 'Monthly Energy Usage (kWh)'\"\n    },\n    {\n      \"location\": \"y-axis label\",\n      \"fact\": \"Y-axis is labeled 'Energy Usage (kWh)'\"\n    },\n    {\n      \"location\": \"y-axis scale\",\n      \"fact\": \"Y-axis scale ranges from 0 to 40,000 kWh, with labeled increments of 5,000\"\n    },\n    {\n      \"location\": \"x-axis label\",\n      \"fact\": \"X-axis is labeled 'Month'\"\n    },\n    {\n      \"location\": \"x-axis tick labels\",\n      \"fact\": \"X-axis shows months: Apr, Jan, Jun, Feb, Mar, May\"\n    },\n    {\n      \"location\": \"bar for May\",\n      \"fact\": \"The bar for May is the shortest, reaching approximately 8,000 kWh\"\n    },\n    {\n      \"location\": \"bar for Mar\",\n      \"fact\": \"The bar for Mar is approximately 27,000 kWh\"\n    },\n    {\n      \"location\": \"bar for Apr\",\n      \"fact\": \"The bar for Apr is approximately 30,000 kWh\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"Labeled values: 0, 5,000, 10,000, 15,000, 20,000, 25,000, 30,000, 35,000, 40,000\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"Labeled months: Apr, Jan, Jun, Feb, Mar, May\"\n    },\n    {\n      \"location\": \"bar for May\",\n      \"fact\": \"Bar height corresponds to approximately 8,000 kWh\"\n    },\n    {\n      \"location\": \"bar for Mar\",\n      \"fact\": \"Bar height corresponds to approximately 27,000 kWh\"\n    },\n    {\n      \"location\": \"bar for Apr\",\n      \"fact\": \"Bar height corresponds to approximately 30,000 kWh\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Review the monthly energy dashboard and decide whether May should be handled as a standard low-output case or escalated as a critical low-output anomaly.\",\n    \"Use the dashboard record for May as the evidence source for deciding whether its low output should remain on standard follow-up or be escalated as a critical anomaly.\",\n    \"The decision is between: Route May to standard low-output follow-up, Escalate May to critical low-output anomaly review, or Send May to background monthly record filing.\"\n  ],\n  \"uncertain\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2428,
+      "total_tokens": 3043,
+      "completion_tokens": 615,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9fd3614df0607398",
+    "object": "chat.completion",
+    "created": 1790620993,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is visible at the top of the image and reads exactly 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"There are five blue circular markers in the plot area. Each is labeled Q2, Q3, Q4, Q5, and Q6 respectively.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The image contains only the title, axes, and the five data points. There is no legend, no second data series (control group), no text annotations explaining causality, and no data table.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a budget approval requires full-quarter coverage or evidence that advertising caused sales changes, a scatterplot limited by its title to selected high-growth quarters and lacking causal controls is insufficient; the evidence-review option is then appropriate.\",\n        \"evidence\": \"The condition is a logical dependency: 'If standards require X, then Y is appropriate.' The chart evidence confirms the premise of the condition: the data is limited to 'Selected High-Growth Quarters' (title) and lacks causal controls (O3). Therefore, the reading correctly identifies that if the decision standard is strict (requiring full coverage/causality), the chart is insufficient. This is a valid applicability test based on the visible limitations of the data.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is visible at the top of the image and reads exactly 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis label is 'Advertising Spend ($ thousands)'. The visible ticks include 30, 40, 50, 60, and 70 (as well as others like 25, 35, etc.).\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis label is 'Sales ($ thousands)'. The visible ticks range from 60 to 170 in increments of 10.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The points Q2, Q3, Q4, Q5, Q6 form a line rising from the bottom-left (approx 30, 63) to the top-right (approx 70, 168). Q6 is to the right and above Q5. Q5 is to the right and above Q4.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels state, then points farther right and higher represent quarters with greater plotted spend and sales. If this selected-quarter association is considered sufficient and generalizable evidence for a broader budget change, it supports approving an ad-budget increase; the chart alone does not establish causation or represent all quarters.\",\n        \"evidence\": \"The reading correctly interprets the axes (O2, O3) and the visual trend (O4). It correctly identifies the logical condition: if the association is deemed sufficient, it supports the 'Approve' option. It also correctly notes the limitation that the chart alone does not prove causation or represent all quarters (consistent with O1 and O3). This is a valid applicability test.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4114,
+      "total_tokens": 4975,
+      "completion_tokens": 861,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

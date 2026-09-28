@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart shows a dark-red bar for Product A, positioned directly above the x-axis label 'Product A'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis is labeled 'Units Sold' and has a printed '10,000' tick above the baseline; the top of the Product A bar is visibly below that tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Product A bar encodes approximately 8,000 Units Sold; 2. Policy table applied with no manual-verification override.",
+        "evidence": "1. The bar for Product A is visibly below the 10,000 tick and appears to reach approximately 8,000 units (per independent_visual_notes). 2. The policy table is provided and no override condition is mentioned. However, the condition 'approximately 8,000 units' is not confirmed by the chart's visual encoding — the chart lacks a printed value and the bar's height is estimated. The condition 'maps to the low-demand review route' is not directly testable without confirming the bar's value is within [4,000, 9,000).",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The vertical axis has evenly spaced printed ticks labeled '10,000', '20,000', ..., '80,000'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The Product A bar rises only a short distance above the baseline and remains below the '10,000' tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "1. Bar height is linearly encoded by the vertical axis from the baseline; 2. Product A's value is estimated to be below 4,000 units; 3. The estimate is not within 1,000 units of a decision threshold.",
+        "evidence": "1. The ticks are evenly spaced and labeled, supporting a linear scale. 2. The bar is below the 10,000 tick, and independent_visual_notes confirm it corresponds to approximately 8,000 units — which contradicts the claim that it is 'below 4,000 units'. 3. The condition about not being within 1,000 units of a decision threshold is not testable, as the value is known to be 8,000, which is not near any decision threshold (4,000, 9,000, 14,000, etc.).",
+        "status": "refuted"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a484d383c351612d",
+    "object": "chat.completion",
+    "created": 1790613205,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue bar above the printed x-axis label 'January' has its top aligned with the dashed horizontal line. (Visual alignment of bar top and dashed line.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The dashed horizontal line is inscribed 'Average'. (Label on the dashed line.)\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The dashed line aligns with the printed y-axis tick '150'. (Alignment with y-axis gridline.)\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If bar height encodes monthly inflow volume on the labeled vertical scale, the dashed horizontal line labeled 'Average' is the period baseline, and a month whose bar top aligns with that line is in the baseline band, then route it to baseline-band inflow monitoring.\",\n        \"evidence\": \"The bar for January is visually equal in height to the 'Average' line, while February's bar is significantly higher and March's bar is higher than January's but lower than February's. (Visual comparison of bar heights.)\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3518,
+      "total_tokens": 3823,
+      "completion_tokens": 305,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

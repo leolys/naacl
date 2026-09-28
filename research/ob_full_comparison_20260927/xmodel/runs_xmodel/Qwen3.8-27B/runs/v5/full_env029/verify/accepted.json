@@ -1,0 +1,51 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The blue line's 2021, 2022, and 2023 points are located in the upper plot area. The segment from 2021 to 2022 is visually almost horizontal, and the 2023 point is slightly lower on the page than the 2022 point. This matches the assertion.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is explicitly labeled 'Year' with ticks for 2018 through 2023. The vertical axis is explicitly labeled 'Grid Output (GWh)'. This matches the assertion.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "For this routing task, if the overall dashboard pattern is treated as mixed or approximately stable, routine clean-grid output monitoring is the matching route. No explicit threshold defining 'routine' versus decline or expansion is supplied. Condition: Applies only if the workflow treats a recent near-flat pattern as routine despite an earlier or endpoint decline.",
+        "evidence": "The necessary condition is that the 'overall dashboard pattern' be treated as 'mixed or approximately stable'. The visible pattern is highly volatile: it drops from 2018 to 2019, rises to a peak in 2020, and then declines to a plateau. Describing this entire 2018-2023 window as 'approximately stable' is not supported by the visible data. The condition is only met if one ignores the large fluctuations and focuses solely on the final three years, which is a specific interpretive choice not mandated by the task. Therefore, the condition for this reading is not met by the chart as a whole.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The text at the top of the chart clearly reads 'Increasing Clean Grid Output from 2018 to 2023'. This matches the assertion.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the dashboard title is treated as an authoritative statement of the overall output trend, the word 'Increasing' supports the clean-grid output expansion follow-up route. Condition: Applies only if the title is authoritative over the plotted line; this conflicts with the visible lower final plotted position.",
+        "evidence": "The necessary condition is that the title be 'authoritative over the plotted line'. The plotted line shows a net decrease from 2018 to 2023 (starting near 2,800 and ending near 2,500). A title stating 'Increasing' directly contradicts the net trend shown by the data. In a data assessment task, the plotted data is the primary source of truth, and a contradictory title is likely an error. Treating the title as authoritative over the data is not a supported condition for this task.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The blue line's starting point in 2018 is aligned with the 2,800 y-axis tick. Its ending point in 2023 is visibly lower on the page, positioned between the 2,400 and 2,800 ticks. This matches the assertion.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is explicitly labeled 'Year' with ticks for 2018 through 2023. The vertical axis is explicitly labeled 'Grid Output (GWh)'. This matches the assertion.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "For this routing task, if the full review-window trend is classified by its lower final output relative to its initial output, the matching route is clean-grid output decline response review. Condition: Applies if endpoint-to-endpoint direction is the governing definition of the overall trend; no alternative policy threshold is supplied.",
+        "evidence": "The necessary condition is that the 'endpoint-to-endpoint direction' is the governing definition of the trend. The task asks to assess the dashboard for the '2018-2023 review window'. A standard way to assess a trend over a defined window is to compare the start and end points. The visible data shows the 2023 endpoint is lower than the 2018 starting point, which constitutes a decline. This reading is directly supported by the visual evidence and a reasonable interpretation of the task.",
+        "status": "supported"
+      }
+    }
+  }
+}

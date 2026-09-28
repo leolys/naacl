@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-98e820c617a00b6a",
+    "object": "chat.completion",
+    "created": 1790613744,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A dark-red bar is directly above the printed x-axis label 'Product A'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is inscribed 'Units Sold' and has a printed '10,000' tick above the horizontal baseline; the top of the Product A bar is below that tick.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the Product A bar encodes approximately 8,000 Units Sold, and the policy table is applied with no manual-verification override, a value >=4,000 and <9,000 maps to the low-demand review route.\",\n        \"evidence\": \"The chart shows no printed Product A value, and the bar is visually below the 10,000 tick. The reading assumes 8,000 units, which is not directly visible or labeled on the chart.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical axis has visibly evenly spaced printed ticks labeled '10,000', '20,000', '30,000', '40,000', '50,000', '60,000', '70,000', and '80,000'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The bar attached to 'Product A' rises only a short distance above the common horizontal baseline and remains below the printed '10,000' tick.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height is linearly encoded by the vertical Units Sold axis from the plotted baseline, the Product A bar's small height below the 10,000 tick decodes to an estimate below 4,000 units. Under the policy table, a value <4,000 maps to urgent sales intervention; this also assumes the estimate is not within 1,000 units of a decision threshold, so the manual-verification band does not override.\",\n        \"evidence\": \"The bar is visually below the 10,000 tick, and the scale is linear. However, the independent visual notes state the bar for Product A is approximately 8,000 units tall. This contradicts the reading's estimate of 'below 4,000 units'.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4026,
+      "total_tokens": 4630,
+      "completion_tokens": 604,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

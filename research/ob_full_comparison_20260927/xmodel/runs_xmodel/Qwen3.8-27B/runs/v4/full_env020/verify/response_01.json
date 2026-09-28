@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9a61a5cb99ce03e8",
+    "object": "chat.completion",
+    "created": 1790619826,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart displays a title, y-axis label, y-axis ticks, x-axis label, and six bars. No legend, threshold line, or text annotation defining severity levels or routing rules is present in the plot area or margins.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The bar labeled 'May' on the x-axis has a height that is visibly the smallest among all six bars displayed in the chart.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart establishes that May is low-pumping but no supplied policy defines a critical threshold, and the workflow defaults unthresholded low-pumping cases to standard follow-up rather than escalation, then May should receive standard follow-up.\", \"evidence\": \"The first condition (May is low-pumping, no visible policy) is supported by the chart. However, the second condition (workflow defaults to standard follow-up) is not supported by any visible text, policy table, or instruction on the page. The page instructions only ask to 'determine the appropriate low-pumping severity route' without specifying a default.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The bar on the far right of the x-axis is labeled 'May' and is filled with a dark red color.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The top of the 'May' bar is positioned significantly lower on the y-axis than the tops of the bars for Apr, Jan, Jun, Feb, and Mar.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The top of the 'May' bar is below the horizontal gridline corresponding to the '10,000' tick mark. The tops of the other five bars are all above the '10,000' tick mark.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The vertical axis on the left is labeled 'Pumping volume (m3)'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the vertical axis labeled 'Pumping volume (m3)' encodes pumping volume with higher bar tops representing greater volume, and the routing practice treats an isolated month that is visibly far lower than every other displayed month as a critical low-pumping anomaly, then that month should be escalated.\", \"evidence\": \"The first condition (axis encoding) is supported by the chart. The second condition (routing practice for isolated low months) is not explicitly stated in the provided text or policy tables. However, the visual evidence of an extreme outlier (May ~800 vs others >17,500) strongly supports the premise of an 'isolated month that is visibly far lower'. The reading is logically consistent with the visual data, though the specific 'routing practice' is an inference from the task context rather than a printed rule.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3906,
+      "total_tokens": 4540,
+      "completion_tokens": 634,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

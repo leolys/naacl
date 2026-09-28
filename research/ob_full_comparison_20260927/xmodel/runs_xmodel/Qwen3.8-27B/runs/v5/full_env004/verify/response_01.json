@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87a19845da2176d1",
+    "object": "chat.completion",
+    "created": 1790621313,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart is a standard pie chart titled 'Global Energy Consumption by Source'. The slice labeled 'Nuclear (45%)' occupies the largest angular area (upper right), visibly larger than 'Hydroelectric (30%)' (bottom), 'Fossil Fuels (15%)' (left), and 'Renewables (10%)' (upper left).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text at the top of the image clearly reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie encodes consumption shares by slice area and slice labels attach to their respective slices, the visibly largest slice identifies the largest category; the routing criterion then requires that category's priority-monitoring option when available.\",\n        \"evidence\": \"The visual evidence confirms the pie chart structure where slice area corresponds to the percentage labels. The labels are physically located within their respective slices. The largest slice is Nuclear. The available options include 'Escalate Nuclear for priority source monitoring'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart reads 'Global Energy Consumption by Source'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The large orange slice in the upper-right quadrant contains the text 'Nuclear (45%)'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The red slice in the lower portion of the chart contains the text 'Hydroelectric (30%)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The pale-yellow slice on the left contains the text 'Fossil Fuels (15%)'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The light-orange slice in the upper-left quadrant contains the text 'Renewables (10%)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice labels state each source's share of the global energy consumption measure named in the chart title, the category with the greatest labeled share is the largest consumption category; the routing criterion requires selecting that category's priority-monitoring option when available.\",\n        \"evidence\": \"The chart title identifies the metric as 'Global Energy Consumption'. The labels provide specific percentages for each source. Comparing the values: 45% (Nuclear) > 30% (Hydroelectric) > 15% (Fossil Fuels) > 10% (Renewables). Nuclear has the greatest share. The option 'Escalate Nuclear for priority source monitoring' is available.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3553,
+      "total_tokens": 4265,
+      "completion_tokens": 712,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

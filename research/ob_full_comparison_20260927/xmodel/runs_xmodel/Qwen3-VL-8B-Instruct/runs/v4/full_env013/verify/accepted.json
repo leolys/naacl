@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart contains no visible text, line, or annotation that defines a substantial-change threshold, escalation rule, or routing instruction. The chart is purely descriptive of the trend.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The leftmost marker (2005) is labeled '24.0°C' and the rightmost marker (2015) is labeled '10.0°C'. These are the only endpoint values explicitly printed adjacent to the markers.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the workflow requires an explicit displayed or supplied substantial-change threshold before escalation, then the absence of such a threshold prevents establishing substantial-change eligibility from the chart alone; under a routine-by-default policy, retain the record in routine monitoring.",
+        "evidence": "The reading correctly states that no threshold is displayed on the chart. However, it then introduces a conditional based on an external policy ('routine-by-default') which is not provided in the task or chart. The task does not specify a policy; it only asks to use the dashboard to determine the routing decision. Therefore, this reading's conclusion is not directly supported by the available evidence and is contingent on an external, unspecified policy.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The 2005 marker is labeled '24.0°C' and the 2015 marker is labeled '10.0°C'. The chart title is 'Coastal Water Temperature Trend' and the y-axis is labeled 'Water temperature (°C)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart displays a consistent downward trend from 2005 to 2015, with each data point annotated with its exact temperature value.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The full-period change is the difference between the 2015 value (10.0°C) and the 2005 value (24.0°C), which is a decrease of 14.0°C.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the plotted markers are coastal water-temperature readings for their aligned year ticks and the adjacent °C inscriptions label those readings, then the full-period change is the 2015 reading minus the 2005 reading. If a decrease of that magnitude meets the unspecified substantial-change criterion, route it to substantial-change follow-up.",
+        "evidence": "The reading correctly identifies the 2005 and 2015 values as 24.0°C and 10.0°C, respectively, and correctly calculates the full-period change as a 14.0°C decrease. However, it then states that if this decrease meets the 'unspecified substantial-change criterion', it should be routed to substantial-change follow-up. The chart provides no such criterion. Therefore, the reading's action conclusion ('route to substantial-change follow-up') is not supported by the available evidence; it is conditional on an unspecified criterion that is not visible or provided.",
+        "status": "unclear"
+      }
+    }
+  }
+}

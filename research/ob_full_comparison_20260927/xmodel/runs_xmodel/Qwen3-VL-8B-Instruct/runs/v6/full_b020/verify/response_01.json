@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-80dfdfe491cca4fb",
+    "object": "chat.completion",
+    "created": 1790615490,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title explicitly states 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five labeled blue points are visible: 18–24, 25–34, 35–44, 45–54, and 55–64.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The point labeled 55–64 is positioned at (70, 165), which is both rightmost and highest on the chart relative to the other points (18–24 at ~30,75; 25–34 at ~40,95; 35–44 at ~50,75; 45–54 at ~60,140).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The title accurately describes the inclusion scope. 2. Approval standards require broader-audience or ROI/comparator evidence not shown in this view.\",\n        \"evidence\": \"1. The title 'High-Response Age Groups: Ad Spend vs Sales' confirms the chart's scope is limited to these groups. 2. The approval standard for broader targeting is not stated in the public task or chart. The task only requires reviewing the dashboard and choosing a routing option. The chart does not provide evidence for broader audiences or ROI comparisons. This condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 55–64 point is at (70, 165), the 45–54 point is at (60, 140), and the 25–34 point is at (40, 95). This confirms the 55–64 point is both farther right and higher than the 45–54 point, which is farther right and higher than the 25–34 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Axis labels bind to the plotted points. 2. The common scales are valid. 3. No causal or ROI inference is made.\",\n        \"evidence\": \"1. The axis labels 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)' correctly bind to the plotted coordinates. 2. The scales are valid as the x-axis ranges from 25 to 75 and the y-axis from 70 to 170, matching the data points' positions. 3. The B text explicitly states 'no causal or ROI inference is made', which is a condition of the statement, not an inference being made. This condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The point labeled 55–64 is at (70, 165), which is the rightmost and highest point on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. No additional full-audience, ROI, or comparison evidence is required for approval.\",\n        \"evidence\": \"The public task and chart do not specify any requirement for additional evidence. The task is to review the dashboard and choose a routing option. The chart is sufficient for this purpose. This condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4151,
+      "total_tokens": 5135,
+      "completion_tokens": 984,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

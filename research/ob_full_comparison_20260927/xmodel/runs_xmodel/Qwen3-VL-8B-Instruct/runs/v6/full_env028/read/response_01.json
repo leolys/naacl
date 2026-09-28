@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b9248c717aa77362",
+    "object": "chat.completion",
+    "created": 1790615815,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart\",\n      \"fact\": \"The chart title is 'Monthly Reservoir Inflow Volume'.\"\n    },\n    {\n      \"location\": \"y-axis\",\n      \"fact\": \"The y-axis is labeled 'Inflow volume (Mm3)' and ranges from 0 to 350 with major gridlines at 50, 100, 150, 200, 250, 300, and 350.\"\n    },\n    {\n      \"location\": \"x-axis\",\n      \"fact\": \"The x-axis is labeled 'Month' and displays three labeled bars: 'January', 'February', and 'March'.\"\n    },\n    {\n      \"location\": \"bar_January\",\n      \"fact\": \"The bar for January is blue and its top aligns with the 150 Mm3 level on the y-axis.\"\n    },\n    {\n      \"location\": \"bar_February\",\n      \"fact\": \"The bar for February is blue and its top aligns with the 300 Mm3 level on the y-axis.\"\n    },\n    {\n      \"location\": \"bar_March\",\n      \"fact\": \"The bar for March is blue and its top aligns with the 250 Mm3 level on the y-axis.\"\n    },\n    {\n      \"location\": \"dashed_line\",\n      \"fact\": \"A dashed horizontal line labeled 'Average' is drawn at the 150 Mm3 level, intersecting the top of the January bar.\"\n    },\n    {\n      \"location\": \"chart_legend\",\n      \"fact\": \"There is no explicit legend in the chart, but the bars represent monthly inflow volume.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"y-axis_label\",\n      \"fact\": \"The y-axis is labeled 'Inflow volume (Mm3)'.\"\n    },\n    {\n      \"location\": \"x-axis_label\",\n      \"fact\": \"The x-axis is labeled 'Month'.\"\n    },\n    {\n      \"location\": \"bar_January_label\",\n      \"fact\": \"The bar for January is labeled 'January' beneath it.\"\n    },\n    {\n      \"location\": \"bar_February_label\",\n      \"fact\": \"The bar for February is labeled 'February' beneath it.\"\n    },\n    {\n      \"location\": \"bar_March_label\",\n      \"fact\": \"The bar for March is labeled 'March' beneath it.\"\n    },\n    {\n      \"location\": \"dashed_line_label\",\n      \"fact\": \"The dashed line is labeled 'Average'.\"\n    },\n    {\n      \"location\": \"chart_title\",\n      \"fact\": \"The chart title is 'Monthly Reservoir Inflow Volume'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"goal: Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown.\",\n    \"chart_reference: Use the monthly inflow amounts shown in the dashboard as the basis for the routing decision for January within the period summary.\",\n    \"primary_field_label: January inflow handling path\",\n    \"option_labels: ['Route January to below-baseline inflow buffer review', 'Route January to baseline-band inflow monitoring', 'Route January to above-baseline inflow release planning']\",\n    \"companion_fields: [{'field': 'note', 'label': 'Routing note'}, {'field': 'visible_context_1', 'label': 'Program area', 'value': 'Reservoir inflow balancing'}, {'field': 'visible_context_2', 'label': 'Review scope', 'value': 'January inflow against the period baseline'}, {'field': 'visible_context_3', 'label': 'Record workflow', 'value': 'Monthly inflow routing assessment'}]\",\n    \"completion_label: Submit Form\",\n    \"policy_tables: []\",\n    \"page_instructions: [home: 'Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown.', dashboard: 'Use the monthly inflow amounts shown in the dashboard as the basis for the routing decision for January within the period summary.', form: 'Use the monthly inflow amounts shown in the dashboard as the basis for the routing decision for January within the period summary.', form: 'Review the monthly reservoir inflow dashboard and assign January to the operational handling path that fits its position relative to the overall monthly inflow baseline for the period shown.']\"\n  ],\n  \"uncertain\": [\n    \"The exact inflow volume for January is not explicitly labeled, but its top aligns with the 150 Mm3 mark on the y-axis.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2431,
+      "total_tokens": 3448,
+      "completion_tokens": 1017,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

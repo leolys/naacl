@@ -1,0 +1,39 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The blue line's Q4 endpoint is visibly higher on the page than its Q1 endpoint (Q4 is near 1,450; Q1 is near 1,050).",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The horizontal axis is labeled 'Quarter' with Q1–Q4; the vertical axis is labeled 'Revenue' with values increasing from 0 to 1,600.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the plotted line encodes Revenue by the left vertical axis and Q1-Q4 by the horizontal quarter labels, with larger revenue higher on the page, then a Q4 endpoint higher than the Q1 endpoint indicates an overall increase; treating any overall increase as growth maps it to the revenue growth response.",
+        "evidence": "The visual conditions are met: the line is the only series, the axes are as described, and the Q4 point is higher than Q1. However, the mapping condition 'treating any overall increase as growth' is an assumption; the task provides no policy table defining the threshold for 'growth' versus 'stability.'",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The title at the top of the chart literally reads 'Stable Revenue of Company C from Q1 to Q4.'",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the chart title is an authoritative qualitative classification for the displayed Company C Q1-Q4 revenue record, then the word 'Stable' maps the record to the revenue stability response option.",
+        "evidence": "The title is visible and contains the word 'Stable.' The condition that the title is the 'authoritative qualitative classification' is an assumption; the task instructions say to 'review the dashboard' but do not explicitly state that the title overrides the plotted data for routing purposes.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b0c3322a2ee385e",
+    "object": "chat.completion",
+    "created": 1790615247,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'TX' is filled pale yellow, visually similar to the high end of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The pale-yellow top of the gradient is printed beside 'High' and '100'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The polygon labeled 'DE' is filled orange-red.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing criterion literally requires the highest-risk state across the entire dashboard rather than only among offered eligible records, an offered record can be selected only if the chart establishes that it exceeds every other mapped state.\",\n        \"evidence\": \"The chart shows that Texas (TX) is pale yellow, indicating high risk (near 100), while Delaware (DE) is orange-red (mid-range). However, the chart does not show all states. Other states like Ohio (OH), Illinois (IL), and Kansas (KS) are colored orange or red, indicating higher risk than DE but lower than TX. The chart does not show states like California (CA) or Florida (FL), which are also pale yellow, indicating high risk. Therefore, the chart does not establish that TX exceeds every other mapped state. The condition 'an offered record can be selected only if the chart establishes that it exceeds every other mapped state' is not met for TX, as other states are also mapped and appear to have similar or higher risk. The condition is not supported because the chart does not show all states, and the highest-risk state cannot be determined from the visible subset. The condition is not met for any offered record, as the chart does not establish that any offered record exceeds every other mapped state. The condition is not supported.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'RI' is gray.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible legend is a pale-yellow-to-dark-red gradient labeled from 'High'/'100' to 'Low'/'0'; no gray swatch or gray label is shown.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a state's fill color is encoded by the displayed vertical Risk Index legend, the pale-yellow end at the printed 'High'/'100' end represents higher risk than the dark-red end at the printed 'Low'/'0' end; fills not represented by the gradient, such as gray, have no stated risk-index value.\",\n        \"evidence\": \"The legend clearly shows that pale-yellow corresponds to 'High'/'100' and dark-red to 'Low'/'0'. Gray is not part of the gradient and is not labeled in the legend. The chart shows RI as gray, which is not represented by the gradient. Therefore, the gray fill has no stated risk-index value. The condition is supported by the visible legend and the color coding of RI.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical color gradient has printed 'High' at its pale-yellow top beside '100' and printed 'Low' at its dark-red bottom beside '0'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The polygon labeled 'DE' is filled orange-red.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The polygon labeled 'NM' is filled dark burgundy-red.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The polygon labeled 'RI' is filled gray.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If routing is restricted to the offered state-record options and gray/unmapped states are not eligible for a risk comparison, the offered state with the highest legend-decoded risk is the available choice most consistent with the stated highest-risk routing criterion.\",\n        \"evidence\": \"The offered options are RI, NM, and DE. RI is gray, which has no stated risk-index value according to the legend. NM is dark burgundy-red, which corresponds to a low risk value (near 0). DE is orange-red, which corresponds to a medium risk value (between 20 and 40). Therefore, DE has the highest legend-decoded risk among the offered options. The condition 'routing is restricted to the offered state-record options and gray/unmapped states are not eligible for a risk comparison' is met, as RI is gray and not eligible for comparison. The condition 'the offered state with the highest legend-decoded risk is the available choice most consistent with the stated highest-risk routing criterion' is met, as DE has the highest risk among the offered options. The condition is supported by the visible legend and the color coding of the offered states.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3970,
+      "total_tokens": 5092,
+      "completion_tokens": 1122,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Supported. The image shows a dark-red vertical bar positioned directly above the x-axis label 'Product A'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Supported. The vertical axis is labeled 'Units Sold' and has a printed '10,000' tick. The top of the Product A bar is visibly below this tick line.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading assumes Product A's bar decodes to approximately 8,000 units, which maps to the low-demand review route (>=4,000 and <9,000 units).",
+        "evidence": "The visual evidence confirms the bar is below the 10,000 tick, but there is no printed data label or specific visual marker to confirm the value is approximately 8,000. The bar's height is very low relative to the scale, making 8,000 a specific assumption rather than a confirmed decoding. The reading relies on an unsupported numerical estimate.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Supported. The vertical axis displays evenly spaced printed ticks labeled from 10,000 up to 80,000.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "Supported. The Product A bar is a short rectangle that rises only a small distance above the baseline and remains well below the 10,000 tick.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading assumes the bar height is linearly encoded, decodes the small height below the 10,000 tick to an estimate below 4,000 units, and maps this to the urgent sales intervention route (<4,000 units), assuming it is not within 1,000 units of a decision threshold.",
+        "evidence": "The visual evidence supports the linear scale and the bar's position well below the 10,000 tick. However, the specific decoding to 'below 4,000 units' is an estimate based on visual proportion. While the bar appears very short (likely under 5,000), the exact value is not printed. The condition regarding the 'manual-verification band' (within 1,000 units of a threshold) is also an assumption because the specific 'decision threshold' is not defined in the policy table. The reading relies on visual estimation for the specific numerical range.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

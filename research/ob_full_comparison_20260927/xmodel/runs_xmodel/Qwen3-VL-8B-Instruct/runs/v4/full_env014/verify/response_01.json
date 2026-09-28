@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-92f51601d8b9d6a6",
+    "object": "chat.completion",
+    "created": 1790613990,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 data point is annotated '24.0°C' on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2015 data point is annotated '10.0°C' on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"No printed substantial-change threshold or routing instruction is visible on the chart or in the provided materials.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up requires meeting an explicit numeric threshold or other stated criterion, and none is supplied in the chart or task materials, the chart alone does not establish eligibility; if the workflow defaults unverified changes to routine monitoring, select routine monitoring.\",\n        \"evidence\": \"The reading correctly identifies the absence of a stated threshold in the visible materials. It also correctly notes the lack of a workflow default policy. The reading's conclusion is logically consistent with the evidence but does not prescribe a specific action without additional context. The chart alone cannot establish eligibility for substantial-change follow-up under this interpretation.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 data point is annotated '24.0°C' on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2015 data point is annotated '10.0°C' on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'District Heating Demand Index', the x-axis is 'Year', and the y-axis is 'Demand index'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted series titled 'District Heating Demand Index' binds each year tick to its adjacent printed point label, the 2005-to-2015 full-period change is the 2015 labeled value minus the 2005 labeled value. If an approximately 14.0°C absolute change is treated as substantial for the routing criterion, select substantial-change follow-up.\",\n        \"evidence\": \"The reading correctly identifies the chart's title and axis labels. It correctly infers the full-period change as the difference between the 2015 and 2005 values (10.0°C - 24.0°C = -14.0°C). The reading then proposes a decision based on an assumed threshold of 14.0°C. However, the reading does not state whether the 14.0°C change is considered substantial. The reading's conclusion is not directly supported by the visible materials, as no threshold is provided. The reading introduces an assumption not present in the evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4074,
+      "total_tokens": 4742,
+      "completion_tokens": 668,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

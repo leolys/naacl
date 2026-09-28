@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b5245c20838e547c",
+    "object": "chat.completion",
+    "created": 1790618986,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"chart_1, plot area: the red bar above the x-axis label 'Huawei' reaches the highest vertical position on the page, visibly above the tops of the orange Apple, dark-blue Samsung, green Xiaomi, and blue Others bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"chart_1, y-axis: the vertical axis is marked from 0 at the bottom with 10-point increments up to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode market_share by vertical height on the shared y-axis, with higher bar tops meaning larger values, then the tallest bar identifies the current market-share leader; under the stated promotion policy, select that leader.\",\n        \"evidence\": \"The visible y-axis is a linear 0–100 scale with 10-point ticks, and the Huawei bar is the tallest on the chart, so the geometric condition 'tallest bar = largest value on the shared axis' is met by the plotted geometry. However, the chart also carries explicit percentage inscriptions directly above each bar (Apple 30%, Samsung 11%, Xiaomi 11%, Huawei 23%, Others 25%), and these inscriptions do not match the bar heights (e.g., Huawei's bar reaches ~63 on the axis but is labeled 23%; Apple's bar reaches ~34 but is labeled 30%; Xiaomi's bar reaches ~48 but is labeled 11%). This creates a conflict between the bar-height encoding and the printed labels, so the condition 'the y-axis and bar geometry are authoritative despite conflicting percentage inscriptions' cannot be confirmed from the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"chart_1, Apple bar: the x-axis label 'Apple' is centered below the leftmost orange bar, and the inscription '30%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"chart_1, Samsung bar: the x-axis label 'Samsung' is centered below the dark-blue bar, and the inscription '11%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"chart_1, Xiaomi bar: the x-axis label 'Xiaomi' is centered below the green bar, and the inscription '11%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"chart_1, Huawei bar: the x-axis label 'Huawei' is centered below the red bar, and the inscription '23%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"chart_1, Others bar: the x-axis label 'Others' is centered below the rightmost blue bar, and the inscription '25%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription placed immediately above a brand's bar is the dashboard's authoritative market_share value for that x-axis brand, then those inscriptions can be compared to identify the current market-share leader; under the stated promotion policy, select that leader.\",\n        \"evidence\": \"All five percentage inscriptions are visible and placed directly above their corresponding brand bars (Apple 30%, Samsung 11%, Xiaomi 11%, Huawei 23%, Others 25%). However, the condition requires that these printed labels, rather than the plotted bar heights, are the authoritative market_share encodings. The bar heights on the 0–100 y-axis do not match these labels (e.g., Huawei's bar reaches ~63 but is labeled 23%; Xiaomi's bar reaches ~48 but is labeled 11%), creating a visible conflict. No additional public evidence (legend note, axis unit label, or dashboard annotation) resolves which encoding is authoritative, so the condition 'the printed percentage labels are authoritative' cannot be confirmed.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4343,
+      "total_tokens": 5339,
+      "completion_tokens": 996,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

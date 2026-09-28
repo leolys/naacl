@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9074369196f6579b",
+    "object": "chat.completion",
+    "created": 1790618706,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The title at the top of the chart clearly reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'. The blue line's rightmost endpoint (at year 1891) is positioned vertically higher on the page than its leftmost endpoint (at year 1880), which corresponds to a value of approximately 3,200 versus 1,100 respectively.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, the appropriate route is routine monitoring. The necessary condition is that a conflict exists and that this conflict prevents reliable classification. The conflict is visually supported (title says decreasing, line shows increasing). However, the condition that this conflict 'prevents a reliable classification' is an assumption; the visual data provides a clear upward trend, which could be considered a reliable classification of growth despite the contradictory title. The policy that routine monitoring is the fallback for such conflicts is explicitly noted as not supplied.\",\n        \"evidence\": \"The visual conflict is supported by the image. However, the applicability of the rule is unclear because it depends on the assumption that the conflict prevents reliable classification, which is not definitively established by the visual evidence alone (the line clearly trends up). The fallback policy is also not explicitly provided in the public task.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The title at the top of the chart literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if the chart title is an authoritative literal summary of the trend, then the word 'Decreasing' supports classifying the trend as decline, requiring the decline-response option. The necessary conditions are that the title is authoritative and that the trend is classified as decline based on the title. The title's text is supported. However, the condition that the title is 'authoritative' is an assumption, especially given the direct conflict with the plotted line. The routing policy is also noted as not explicitly supplied.\",\n        \"evidence\": \"The title's text is supported by the image. The applicability of the reading is unclear because it relies on the assumption that the title is the authoritative source over the plotted data, which is not established by the public task or visual evidence. The conflict with the visual data makes the title's authority questionable.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The x-axis has year ticks from 1880 at the left to 1891 at the right. The y-axis is labeled 'Number of Tourists' with tick marks at 0, 500, 1,000, 1,500, 2,000, 2,500, 3,000, and 3,500, with larger values higher on the page.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The blue line at the 1891 tick (rightmost point) is positioned higher on the page (approx. 3,200) than the blue line at the 1880 tick (leftmost point, approx. 1,100).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if the horizontal axis orders years left to right, the vertical axis encodes number increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher than the earlier endpoint indicates an overall increase, requiring the growth-planning option. The necessary conditions are the standard axis directions and that the blue line represents the new-tourist record. The axis directions are supported by the image. The assumption that the blue line represents the new-tourist record is reasonable given the title mentions 'New Tourists' and there is only one line, but it is not explicitly stated in a legend. The routing policy is noted as not explicitly supplied.\",\n        \"evidence\": \"The axis directions and the relative positions of the line endpoints are supported by the image. The applicability of the reading is unclear because it relies on the assumption that the unlegendized blue line represents the specific 'new-tourist' record mentioned in the title, and the routing policy is not explicitly provided.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3872,
+      "total_tokens": 5010,
+      "completion_tokens": 1138,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b8031bf8c241aa84",
+    "object": "chat.completion",
+    "created": 1790620716,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"At the 2012 vertical gridline, the blue circular mark is visibly higher on the y-axis than the red square mark.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical label is blue and reads '0-19 years'; the right vertical label is red and reads '20-39 years'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot title reads '0-19 years vs 20-39 years'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue circular series is the 0-19 years series and the red square series is the 20-39 years series, and both series use the same vertically comparable population scale, then the series mark higher on the page at the same year encodes the larger population.\",\n        \"evidence\": \"The chart displays two distinct series with different colors and markers (blue circles, red squares). The left axis is labeled '0-19 years' and the right axis is labeled '20-39 years'. Crucially, there are no numeric tick labels on either the left or right y-axes. The presence of separate left and right axes without shared numeric scales indicates that the vertical position of a point on the left axis is not directly comparable to the vertical position of a point on the right axis. Therefore, the condition that 'both series use the same vertically comparable population scale' is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Separate colored vertical labels appear on the left and right sides of the plot: blue '0-19 years' and red '20-39 years'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No numeric y-axis tick labels are visibly printed on either side of the plot.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"At the 2012 vertical gridline, the blue circular mark is higher on the page than the red square mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the differently colored left and right axes can use independent, unshown, or non-comparable scales, then screen-space height of the blue and red 2012 marks alone does not establish which cohort has the larger population. Without another public dashboard value or scale bridge, the comparison is unresolved.\",\n        \"evidence\": \"The chart features a dual-axis layout (left axis for blue series, right axis for red series) with no visible numeric tick marks on either axis. This configuration allows for independent scaling of the two series. Since there are no printed values for the 2012 data points and no scale bridge (like shared ticks or a common zero) to equate the vertical positions, the relative height of the markers cannot determine which population is larger. The comparison is indeed unresolved based on the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3298,
+      "total_tokens": 4062,
+      "completion_tokens": 764,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

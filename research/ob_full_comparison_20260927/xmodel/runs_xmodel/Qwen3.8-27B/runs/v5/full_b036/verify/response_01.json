@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-85c5256aa89dce82",
+    "object": "chat.completion",
+    "created": 1790621187,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line's Q1 endpoint is located just above the 1,000 grid line. Its Q4 endpoint is located just above the 1,400 grid line. Because the vertical axis is labeled 'Revenue' and values increase upward, the Q4 point is physically higher on the page than the Q1 point.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is explicitly labeled 'Quarter' with tick marks for Q1, Q2, Q3, and Q4. The vertical axis is labeled 'Revenue' with printed numeric values ranging from 0 at the bottom to 1,600 at the top, increasing upward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted line encodes Revenue by the left vertical axis and Q1-Q4 by the horizontal quarter labels, with larger revenue higher on the page, then a Q4 endpoint higher than the Q1 endpoint indicates an overall increase; treating any overall increase as growth maps it to the revenue growth response.\",\n        \"evidence\": \"The chart's axes (Revenue vs. Quarter) and the line's endpoints (Q1 at ~1,040, Q4 at ~1,440) support the condition that the line encodes revenue by the vertical axis and shows an overall increase from the first to the last quarter. However, the condition that 'treating any overall increase as growth maps it to the revenue growth response' is not supported by the visible evidence. The chart's title explicitly classifies this exact record as 'Stable Revenue,' which directly contradicts the proposed mapping of this specific trend to a 'growth' response.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart clearly reads 'Stable Revenue of Company C from Q1 to Q4.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative qualitative classification for the displayed Company C Q1-Q4 revenue record, then the word 'Stable' maps the record to the revenue stability response option.\",\n        \"evidence\": \"The chart title 'Stable Revenue of Company C from Q1 to Q4' provides an explicit, authoritative qualitative classification for the specific record being reviewed. The task requires choosing a follow-up route based on this dashboard, and the title's classification of the trend as 'Stable' directly supports mapping the record to the 'Route to revenue stability response' option.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3920,
+      "total_tokens": 4558,
+      "completion_tokens": 638,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

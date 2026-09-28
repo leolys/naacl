@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8dcce4b842b056aa",
+    "object": "chat.completion",
+    "created": 1790616565,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A black point is aligned with the 2005 tick and has the visible annotation '$23.9°C' above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A black point is aligned with the 2014 tick and has the visible annotation '$10.1°C' above it.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If targeted follow-up requires meeting a defined substantial-change threshold, and no threshold or other criterion establishes that the calculated endpoint change meets it, the record can be kept on routine monitoring rather than classified as substantial.\",\n        \"evidence\": \"The reading's condition is that a substantial-change threshold must be defined and met. The chart and task provide no such threshold. The calculated change is 13.8°C, but without a defined threshold, the reading cannot be applied to conclude the change is not substantial. The reading does not address whether the change is large enough to require follow-up; it only addresses the *absence* of a threshold. The reading is not sufficient to determine the handling route.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"A black point is aligned with the 2005 tick and has the visible annotation '$23.9°C' above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"A black point is aligned with the 2014 tick and has the visible annotation '$10.1°C' above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical-axis inscription reads 'Temperature (°C).'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis year ticks bind the left endpoint to 2005 and the right endpoint to 2014, and the point annotations are the temperature values in the y-axis unit, their difference is the period-wide temperature change. If a decrease of that calculated magnitude is treated as substantial for this routing task, select substantial-change follow-up.\",\n        \"evidence\": \"The x-axis ticks are 2005 and 2014. The point annotations are temperature values in °C. The calculated period-wide change is 23.9°C - 10.1°C = 13.8°C. The reading states that if a decrease of this magnitude is treated as substantial, select substantial-change follow-up. The task requires choosing a route based on whether the change is large enough to warrant targeted follow-up. The reading does not state that 13.8°C is *not* substantial; it states that if it *is* substantial, choose the substantial-change route. The reading's condition is met, and its action is to select substantial-change follow-up if the change is substantial. The task does not provide a definition of 'substantial,' so the reading's action is conditional on an unstated assumption. The reading is applicable and its action is to select the substantial-change follow-up route if the change is deemed substantial. The reading's condition is satisfied, and its action is the only one that is supported by the evidence. The reading is the only one that provides a clear, actionable conclusion based on the evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3774,
+      "total_tokens": 4540,
+      "completion_tokens": 766,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

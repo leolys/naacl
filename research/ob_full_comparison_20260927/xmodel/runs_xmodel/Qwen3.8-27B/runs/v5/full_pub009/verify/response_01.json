@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afb8f5621f8b7a9b",
+    "object": "chat.completion",
+    "created": 1790622166,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The legend at the upper right of the chart shows a blue square next to the text 'Station X', a green square next to 'Station Y', and an orange square next to 'Station Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart displays four vertical bars corresponding to the x-axis labels Tue, Wed, Thu, and Mon. Each bar is composed of three vertically contiguous rectangular segments: a blue segment at the bottom, a green segment in the middle, and an orange segment at the top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis on the left is labeled 'Number of Visitors'. The axis includes printed tick marks with labels: 1,000; 1,500; 2,000; 2,500; 3,000; 3,500; 4,000; and 4,500.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The top edge of the orange segment for the 'Tue' bar is visibly above the horizontal gridline corresponding to the 4,500 tick. The top edge of the orange segment for the 'Wed' bar is also visibly above the horizontal gridline corresponding to the 4,500 tick.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top edge of the orange segment for the 'Thu' bar is visibly below the horizontal gridline corresponding to the 4,500 tick (it appears to be between 4,000 and 4,500).\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The lowest printed tick label on the vertical axis is '1,000'. The bars extend downwards to the x-axis line, which is positioned below the 1,000 tick mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each date's contiguous blue, green, and orange segments are a stacked encoding of Station X, Station Y, and Station Z visitor counts on the shared vertical visitor scale, and the stack top represents their combined daily total despite the displayed axis being truncated below 1,000, then a stack top above the 4,500 tick indicates combined traffic exceeding 4,500. Under the supplied crowding-alert policy, submit exactly the dates whose combined total exceeds 4,500.\",\n        \"evidence\": \"The reading assumes the bars are additive stacks on a common scale. The visual evidence supports the additive nature: the segments are contiguous and the top of the stack aligns with the total value on the y-axis (e.g., the blue segment for Tue ends at ~1,300, the green segment ends at ~3,300, and the orange segment ends at ~4,700, which is the sum of the individual parts). The y-axis is a linear scale of 'Number of Visitors'. The policy table explicitly states the rule: 'Combined visitors across Station X, Station Y, and Station Z exceed 4,500 for a day'. The visual comparison shows the stack tops for Tue and Wed are above the 4,500 mark, while Thu and Mon are below. Therefore, the condition 'combined total exceeds 4,500' is met for Tue and Wed.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3967,
+      "total_tokens": 4798,
+      "completion_tokens": 831,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

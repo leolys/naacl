@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-946d13c0b85fd208",
+    "object": "chat.completion",
+    "created": 1790616078,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The area labeled 'ME' is filled pale yellow, matching the top of the color scale which is labeled 'High' and '100'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The area labeled 'OK' is filled dark burgundy, matching the bottom of the color scale which is labeled 'Low' and '0'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The area labeled 'TX' is filled dark burgundy, matching the bottom of the color scale which is labeled 'Low' and '0'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The vertical color legend explicitly states that pale yellow corresponds to 'High'/'100' and dark burgundy corresponds to 'Low'/'0'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The state labels identify their filled map areas. 2. The legend governs those fills. 3. Priority review means choosing the highest Hazard H risk index among ME, OK, and TX.\",\n        \"evidence\": \"1. The map clearly labels ME, OK, and TX with their respective colored regions. 2. The legend explicitly maps color to risk index values. 3. The task instruction 'choose the state record that should be added to the priority review list' combined with the dashboard as the evidence source implies selecting the highest risk state among the options. This is consistent with the public task definition and the chart's purpose.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart is titled 'Risk Index of Hazard H in US States' and the legend is labeled 'High'/'Low' with numeric endpoints. This establishes relative encoding.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Applies if no external or supplied policy defines how the risk index determines priority-review inclusion.\",\n        \"evidence\": \"The public task explicitly states: 'Use the state hazard dashboard as the evidence source for this priority review selection.' The dashboard's visual encoding (color → risk index) is the only evidence provided. The task goal is to choose the highest risk state among the three options. No external policy is referenced or required. The dashboard's encoding is sufficient to determine the selection.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3519,
+      "total_tokens": 4093,
+      "completion_tokens": 574,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

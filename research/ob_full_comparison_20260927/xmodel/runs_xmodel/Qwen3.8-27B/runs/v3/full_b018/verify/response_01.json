@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ab3482c089e08b0c",
+    "object": "chat.completion",
+    "created": 1790617304,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart's title text is clearly visible at the top and reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The plot area contains five distinct blue circular markers, each with a text label next to it identifying them as 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"A visual scan of the chart area confirms the absence of any text or markers related to 'profitability', 'margin', 'ROI', or a 'full-store-population' indicator.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes that approval requires evidence covering the full store population and profitability/ROI, and that the current chart (limited to a subset showing only spend/sales) is insufficient for approval.\",\n        \"evidence\": \"The 'full-population' and 'profitability/ROI' requirements are not visible in the chart or provided public text; they are stated in the reading's own conditions as assumptions rather than established facts. The visible evidence (subset of stores, spend/sales only) matches the reading's description of the chart's limitations, but the necessary condition (the specific approval standard) remains an unestablished assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The markers are positioned in a sequence from bottom-left to top-right: Store 6 (approx. 30, 60), Store 7 (approx. 40, 68), Store 8 (approx. 50, 84), Store 9 (approx. 60, 110), and Store 10 (approx. 70, 157). Each subsequent store is farther right and higher than the previous.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that the upward-rightward progression indicates a positive observed spend-sales association, and that this supports approval only if this association in the subset is accepted as sufficient evidence of benefit.\",\n        \"evidence\": \"The visual progression (upward and rightward) is supported by the image. The interpretation as a 'positive observed spend-sales association' is a valid logical consequence of the axis labels and point positions. The necessary condition—that this association is 'accepted as sufficient evidence of benefit'—is not defined in the provided text or visible on the chart, remaining an unestablished assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3943,
+      "total_tokens": 4735,
+      "completion_tokens": 792,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

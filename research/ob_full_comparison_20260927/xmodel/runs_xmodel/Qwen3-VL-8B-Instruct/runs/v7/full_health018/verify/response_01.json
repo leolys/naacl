@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ace0275f98d0e3d1",
+    "object": "chat.completion",
+    "created": 1790616889,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The purple line endpoint aligned with 2023 is higher on the page than the line point aligned with 2012.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and 'overall case pattern' is evaluated by comparing the 2012 and 2023 endpoints, then a higher 2023 endpoint indicates an increase over that span; if such an overall increase maps to increasing-activity follow-up, that route is supported. The task supplies no rule choosing endpoint comparison over recent change.\",\n        \"evidence\": \"The chart's y-axis is labeled 'Respiratory infection cases' with a scale from 0 to 2800, and the line's position corresponds to case count. The 2012 point is at approximately 1000 cases, while the 2023 point is at approximately 2800 cases. This confirms the 2023 endpoint is higher, indicating a net increase from 2012 to 2023.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title visibly reads 'Falling Respiratory Infection Cases in Sentinel Sites from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The purple line vertex aligned with 2023 is lower on the page than the preceding vertex aligned with 2022.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and the routing convention treats a decline in the most recent year-to-year segment (or the chart's stated falling pattern) as easing activity, then a 2022-to-2023 downward segment supports easing-activity follow-up. This task-to-route convention is not explicitly supplied.\",\n        \"evidence\": \"The chart title explicitly states 'Falling Respiratory Infection Cases'. The visual data confirms a decline from 2022 (peak at ~2900) to 2023 (~2800). The y-axis scale confirms that a lower position means fewer cases. This directly supports the 'easing-activity' route based on the chart's own stated trend and the visual evidence of the most recent decline.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3161,
+      "total_tokens": 3762,
+      "completion_tokens": 601,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

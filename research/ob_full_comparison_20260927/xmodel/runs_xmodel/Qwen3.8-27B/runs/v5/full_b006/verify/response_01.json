@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc4f290323c5cd0c",
+    "object": "chat.completion",
+    "created": 1790620840,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The image shows a scatter plot titled 'Product Rating Share by Category'. Above the data point aligned with the x-axis label 'Design', the text '52%' is clearly visible.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The image shows a scatter plot. Above the data point aligned with the x-axis label 'Support', the text '45%' is clearly visible.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The image shows a scatter plot. Above the data point aligned with the x-axis label 'Quality', the text '24%' is clearly visible.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The image shows a scatter plot. Above the data point aligned with 'Price', the text '10%' is visible. Above 'Delivery', the text '39%' is visible. Above 'Other', the text '32%' is visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscription positioned directly above each category's plotted mark is that category's current labeled rating share, and the task's stated follow-up rule is to select the category with the highest such labeled share, select the corresponding available category option. (Applies to the displayed dashboard categories; comparison uses the printed percentage labels rather than the plotted vertical positions.)\",\n        \"evidence\": \"The chart is titled 'Product Rating Share by Category', and the inscriptions are formatted as percentages (e.g., '52%', '45%'). The task instructions explicitly state to 'Use the dashboard labeled rating-share values as the evidence source' and the policy table defines the decision metric as 'labeled rating share'. This confirms that the printed percentage labels represent the 'current labeled rating share' and that the vertical position on the 'Value' axis is not the metric for comparison. Comparing the labeled values: Design (52%) > Support (45%) > Delivery (39%) > Other (32%) > Quality (24%) > Price (10%). Design has the highest labeled share.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4268,
+      "total_tokens": 4794,
+      "completion_tokens": 526,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

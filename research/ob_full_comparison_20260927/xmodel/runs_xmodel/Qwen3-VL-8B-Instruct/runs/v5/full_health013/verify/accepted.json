@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The subtitle beneath the title explicitly states: 'Selected large-volume hospitals shown in dashboard summary'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The scatter plot visually contains five labeled points: Hospital A, Hospital B, Hospital C, Hospital D, and Hospital E.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a chart is only a descriptive comparison and lacks evidence establishing a causal, policy, or population-wide conclusion, it may be retained as contextual material rather than used as support for enterprise approval.",
+        "evidence": "The chart is a descriptive scatter plot showing a subset of hospitals. It does not contain any evidence of causation, policy, or generalizability to a larger population. The subtitle confirms it is a subset. Therefore, the condition that it lacks evidence for enterprise-level conclusions is met.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The subtitle beneath the title explicitly states: 'Selected large-volume hospitals shown in dashboard summary'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart title is 'Top Hospitals: Nurse Hours vs Discharge Count'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a dashboard explicitly displays only a selected hospital subset, its plotted relationship is not evidence for the full hospital population; for an enterprise-level statement, the task's routing choices require full-population review before enterprise approval.",
+        "evidence": "The subtitle explicitly states the chart shows 'Selected large-volume hospitals'. The chart title refers to 'Top Hospitals', which implies a subset, not the full population. The task requires a decision for an enterprise-level statement. Therefore, the condition that the chart does not show the full hospital population is met, and the inference that full-population review is required for enterprise approval is valid.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The scatter plot points for Hospital A, B, C, D, and E appear successively farther right and higher on the page from A through E. Hospital A is at approximately (30, 64), Hospital B at (40, 72), Hospital C at (50, 90), Hospital D at (60, 118), and Hospital E at (70, 160).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal-axis label is 'Weekly nurse hours (thousands)' and the vertical-axis label is 'Monthly discharge count (thousands)'. Both axes increase rightward and upward, respectively.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes weekly nurse hours and the vertical axis encodes monthly discharge count, with both scales increasing rightward/upward, points positioned successively farther right and higher indicate a positive displayed association for the plotted hospitals; this is descriptive only and does not establish causation or enterprise generalizability.",
+        "evidence": "The axes are correctly labeled and oriented. The positions of the points show a clear positive trend: as nurse hours increase, discharge count increases. This is a descriptive observation of the subset data. It does not establish causation or generalizability to the full hospital population. The condition that no causal or population-wide inference is assumed is met.",
+        "status": "supported"
+      }
+    }
+  }
+}

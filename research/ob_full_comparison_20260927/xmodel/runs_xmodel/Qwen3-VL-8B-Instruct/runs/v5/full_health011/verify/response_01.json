@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b938845a462519a7",
+    "object": "chat.completion",
+    "created": 1790615081,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle reads 'Selected high-referral centers shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five labeled points are visible: Center A, Center B, Center C, Center D, and Center E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart is explicitly limited to selected high-referral centers, then its pattern may be affected by selection and does not by itself characterize all centers in the network; such evidence can be retained as contextual information pending broader comparison.\",\n        \"evidence\": \"The subtitle explicitly states 'Selected high-referral centers shown in dashboard summary.' This confirms the chart's scope is limited to a subset of centers, not the entire network. The presence of five labeled points (A through E) is visually confirmed. The reading's condition — 'Applies if no additional network-wide sampling, comparison group, or outcome evidence is supplied.' — is met, as no such evidence is provided. The reading correctly concludes that such evidence should be retained as contextual information pending broader comparison.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Top Screening Centers: Outreach Hours vs Referral Count,' and the subtitle reads 'Selected high-referral centers shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Monthly outreach hours' and its printed ticks increase from 30 at the left to 70 at the right; the vertical axis is labeled 'Referral count' and its printed ticks increase from 60 near the bottom to 160 near the top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Center A is the leftmost and lowest labeled point; Center B is to its right and higher; Center C is further right and higher; Center D is further right and higher; Center E is the rightmost and highest labeled point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes monthly outreach hours increasing left-to-right and the vertical axis encodes referral count increasing upward, then the labeled center points can be compared as an observed association. A consistent higher-hours/higher-referrals pattern among the displayed selected centers is suitable for broader network review, but this cross-sectional selected-center chart alone does not establish causality, network-wide representativeness, or grounds for immediate network-level advancement.\",\n        \"evidence\": \"The axis labels and tick values confirm the coordinate system: 'Monthly outreach hours' increases left-to-right (30 to 70) and 'Referral count' increases upward (60 to 160). The positions of the labeled points (A to E) show a clear monotonic trend: as outreach hours increase from ~32 to ~71, referral count increases from ~61 to ~162. This establishes a positive association among the selected centers. The reading's condition — 'Applies only to the displayed highlighted/selected high-referral screening centers and assumes the axis titles describe the plotted coordinates.' — is met. The reading correctly states that this pattern is suitable for broader network review but does not establish causality or network-wide representativeness, which is accurate given the chart's scope. The reading does not claim the pattern is causal or representative of the entire network, which is a correct limitation.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3803,
+      "completion_tokens": 791,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

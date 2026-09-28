@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b4340aa33e20f5e6",
+    "object": "chat.completion",
+    "created": 1790615133,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads: 'Declining Telehealth Follow-up Requests from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative dashboard summary of the record's demand pattern, then its explicit characterization of the requests as declining supports decline-response follow-up.\",\n        \"evidence\": \"The chart title is a literal, unambiguous statement. It is positioned as the primary summary of the data. The chart's visual content, however, shows a clear upward trend from 2012 to 2022, followed by a decline in 2023. The title's claim of 'declining' from 2012 to 2023 contradicts the visual data, which shows a net increase over the full period (2012 endpoint is below 2023 endpoint). Therefore, the title cannot be an authoritative summary of the overall pattern if it conflicts with the visual data. The condition 'Applies only if the literal title is intended to govern interpretation despite the plotted line's multi-year geometry' is not met, because the title's claim is contradicted by the visual evidence. The B reading is refuted by the visual data.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line segment from the point above 2022 to the endpoint above 2023 slopes downward on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed x-axis year labels place 2022 immediately before 2023.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled 'Telehealth follow-up requests'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years order the plotted line chronologically and higher vertical position encodes more telehealth follow-up requests, then a downward final segment indicates a recent decline; if routing is based on the latest year-to-year movement, select decline-response follow-up.\",\n        \"evidence\": \"The x-axis is chronological, and the y-axis encodes magnitude upward. The segment from 2022 to 2023 does slope downward, indicating a decrease in requests from 2022 to 2023. This supports the 'decline-response follow-up' option if the task prioritizes the most recent interval. The condition 'Applies only if the task treats the latest interval as decisive rather than the full-period pattern' is satisfied by the task's instruction to select the route that 'best fits the overall request pattern'. The phrase 'overall request pattern' does not exclusively refer to the full period; it can reasonably encompass the most recent trend. The visual evidence supports the B reading's condition and conclusion. The B reading is supported.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line's 2023 endpoint is higher on the page than its 2012 endpoint.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed x-axis year labels run from 2012 at the left to 2023 at the right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis labels show 0 near the bottom and 3000 near the top, and the axis is labeled 'Telehealth follow-up requests'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years order the plotted line chronologically and the y-axis labels encode telehealth follow-up request magnitude increasing upward, then a substantially higher final plotted point than initial plotted point indicates overall growth across the displayed period; if the routing labels correspond to that overall pattern, select growth-response follow-up.\",\n        \"evidence\": \"The x-axis is chronological, and the y-axis encodes magnitude upward. The 2023 endpoint is higher than the 2012 endpoint, indicating a net increase over the full period. This supports the 'growth-response follow-up' option if the task assesses the overall pattern from the endpoints. The condition 'Applies when the task's 'overall request pattern' is assessed from the displayed period endpoints rather than only the latest interval' is satisfied by the task's instruction to select the route that 'best fits the overall request pattern'. The visual evidence supports the B reading's condition and conclusion. The B reading is supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3383,
+      "total_tokens": 4466,
+      "completion_tokens": 1083,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

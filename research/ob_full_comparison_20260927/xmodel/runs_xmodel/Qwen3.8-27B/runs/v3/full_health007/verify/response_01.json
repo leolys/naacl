@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afd20cce2ada5234",
+    "object": "chat.completion",
+    "created": 1790618223,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The x-axis tick labels are 2017, 2018, 2019, and 2020, ordered left to right.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The purple markers are positioned successively higher on the page (from ~5.5% to ~8.0%) and are connected by an upward-slanting purple line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The text below the title reads 'Reported window shown in the dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The 'Review timeframe' field in the form context displays '2013-2020 positive test rate trend assessment'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the x-axis is chronological and the y-axis increases upward, the rising markers encode an increase in the rate. It further distinguishes that a consistent increase across the displayed years supports 'sustained-growth' only if those years represent the full period; if they are a later subset of the 2013-2020 period, it supports a 'recent-upswing' interpretation but does not establish the full pattern.\",\n        \"evidence\": \"The chart visually confirms the x-axis is chronological (2017-2020) and the y-axis increases upward (5.5%-8.0%), with markers rising accordingly. The task context explicitly defines the review period as 2013-2020, which is broader than the displayed 2017-2020 window. Therefore, the condition that the displayed window is a 'later subset' of the stated period is met by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The x-axis shows only 2017-2020; no tick labels or markers are visible for 2013-2016.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The purple markers rise successively from the 2017 position to the 2020 position.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The 'Review timeframe' field in the form context displays '2013-2020 positive test rate trend assessment'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that because the chart displays only 2017-2020 while the task requires a full 2013-2020 assessment, the unshown 2013-2016 pattern is unavailable. It concludes that a rising late-period segment justifies 'continued monitoring for a more recent upward shift' while 'sustained growth across the full stated period remains unverified'.\",\n        \"evidence\": \"The visual evidence confirms the absence of 2013-2016 data points on the chart, while the form context confirms the required 2013-2020 timeframe. This supports the logical deduction that the full period cannot be verified from the image, making the 'recent-upswing' (continued monitoring) interpretation the only one fully supported by the visible data.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3608,
+      "total_tokens": 4505,
+      "completion_tokens": 897,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

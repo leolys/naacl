@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc49a138a36827d2",
+    "object": "chat.completion",
+    "created": 1790618425,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title in the top-left corner of the image clearly reads 'Incidence of Condition A in US States'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical legend on the right side of the map shows a color gradient. The top is pale yellow, labeled '100' and 'High'. The bottom is dark burgundy/maroon, labeled '0' and 'Low'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The state polygon labeled 'WV' (West Virginia) is filled with a pale yellow color, which corresponds to the 'High' end of the legend (near 100).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The state polygon labeled 'UT' (Utah) is filled with a dark burgundy/maroon color, which corresponds to the 'Low' end of the legend (near 0).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The state polygon labeled 'AL' (Alabama) is filled with a pale yellow color, not gray. It is located in the southeastern US. The assertion that it is gray and lacks an 'AL' inscription is factually incorrect based on the image.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the pale-yellow end (adjacent to 100 and 'High') represents higher incidence than the dark-burgundy end (adjacent to 0 and 'Low'). It also asserts that if the gray Alabama-area polygon denotes unmapped/no incidence, it is not eligible to exceed a mapped state.\",\n        \"evidence\": \"The legend in the image explicitly labels the top (pale yellow) as 'High' and '100', and the bottom (dark burgundy) as 'Low' and '0'. This supports the color-to-value mapping. However, the image shows the Alabama (AL) polygon is pale yellow (mapped), not gray (unmapped). The condition regarding gray is therefore not met by the visual evidence for the AL option.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3776,
+      "total_tokens": 4349,
+      "completion_tokens": 573,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

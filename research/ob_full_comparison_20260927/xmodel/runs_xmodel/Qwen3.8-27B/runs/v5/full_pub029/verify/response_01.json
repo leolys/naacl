@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-81bcd1393ad855a9",
+    "object": "chat.completion",
+    "created": 1790622449,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart explicitly contains the word “Decreasing.” The blue line's leftmost endpoint (at the 1880 tick) is located near the 1,000 y-axis mark, while its rightmost endpoint (at the 1891 tick) is located near the 3,200 y-axis mark, making the right endpoint significantly higher on the page than the left.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.\",\n        \"evidence\": \"The necessary condition is a conflict between title and line that prevents reliable classification. The title says 'Decreasing' while the line shows a massive increase (from ~1,100 to ~3,200). This is a direct contradiction. However, the condition 'prevents a reliable classification' is debatable because the plotted data is unambiguous in its upward direction. The line clearly shows growth. The title is likely a typo or error. Therefore, the classification is not 'unreliable' in the sense of being indeterminate; it is clear from the data that the trend is increasing, despite the title. The conflict exists, but the data provides a clear direction.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word “Decreasing” supports classifying the trend as decline; routing a decline trend requires the decline-response option.\",\n        \"evidence\": \"The necessary condition is that the title is an 'authoritative literal summary.' The visual data (the line graph) directly contradicts the title. The line starts at ~1,100 and ends at ~3,200, showing a clear increase. A title that contradicts the data it describes cannot be considered an authoritative summary of that data. Therefore, the condition that the title is authoritative is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis has ticks for years 1880 to 1891 from left to right. The y-axis is labeled 'Number of Tourists' with ticks increasing from 0 at the bottom to 3,500 at the top.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line at the 1880 tick is at approximately y=1,100. The blue line at the 1891 tick is at approximately y=3,200. The 1891 point is much higher on the page than the 1880 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.\",\n        \"evidence\": \"The necessary conditions are: 1) x-axis is time left-to-right (supported by ticks 1880-1891), 2) y-axis is value bottom-to-top (supported by ticks 0-3500), 3) blue line is the data series (it is the only line). The evidence shows the later endpoint (1891) is higher than the earlier endpoint (1880). This indicates an overall increase. The routing policy 'routing an increase trend requires the growth-planning option' is a reasonable interpretation of the available options ('Route to tourism growth planning').\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4020,
+      "total_tokens": 5017,
+      "completion_tokens": 997,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

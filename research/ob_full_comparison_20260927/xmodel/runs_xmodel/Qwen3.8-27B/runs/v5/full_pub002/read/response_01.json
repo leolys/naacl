@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a91ba331e06836e8",
+    "object": "chat.completion",
+    "created": 1790621942,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"top-left\",\n      \"fact\": \"Title 'Incidence of Condition A in US States'.\"\n    },\n    {\n      \"location\": \"right margin\",\n      \"fact\": \"Vertical color legend. Top label 'High' aligned with 100 (pale yellow). Bottom label 'Low' aligned with 0 (dark maroon). Intermediate ticks at 80, 60, 40, 20.\"\n    },\n    {\n      \"location\": \"Pacific Northwest\",\n      \"fact\": \"WA is filled dark maroon (Low end of scale). Label 'WA' visible.\"\n    },\n    {\n      \"location\": \"South-central\",\n      \"fact\": \"TX is filled pale yellow (High end of scale). Label 'TX' visible.\"\n    },\n    {\n      \"location\": \"Mountain West\",\n      \"fact\": \"CO is filled light gray (no data). Label 'CO' visible.\"\n    },\n    {\n      \"location\": \"various\",\n      \"fact\": \"Other dark maroon states include MN, NY, GA, OK, NE, FL. Other pale yellow states include MT, ND, SD, WY, UT, IL, OH, WV, VA, NC, SC, MA, RI.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"legend\",\n      \"fact\": \"Scale runs from 0 (Low, dark red) to 100 (High, pale yellow). Ticks: 0, 20, 40, 60, 80, 100.\"\n    },\n    {\n      \"location\": \"map\",\n      \"fact\": \"State abbreviations printed on each state polygon.\"\n    },\n    {\n      \"location\": \"WA\",\n      \"fact\": \"Dark maroon fill.\"\n    },\n    {\n      \"location\": \"TX\",\n      \"fact\": \"Pale yellow fill.\"\n    },\n    {\n      \"location\": \"CO\",\n      \"fact\": \"Light gray fill (no data).\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: open the state incidence profile that should be routed into the highest-incidence follow-up workflow.\",\n    \"Evidence source: state incidence dashboard.\",\n    \"Options: TX, WA, CO.\"\n  ],\n  \"uncertain\": [\n    \"CO is gray, indicating no data; it cannot be the highest-incidence state.\",\n    \"WA is dark maroon (Low); it cannot be the highest-incidence state.\",\n    \"TX is pale yellow (High); among the three options, it is the only one in the high-incidence color band.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2448,
+      "total_tokens": 3071,
+      "completion_tokens": 623,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

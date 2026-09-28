@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c77405ae84c83c6",
+    "object": "chat.completion",
+    "created": 1790617061,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark at the printed x-axis label “2013” is lower on the page than the red square mark at “2013”.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"“United States” is printed vertically in blue at the left side of the plot, and “Canada” is printed vertically in red at the right side.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the two y-axes use comparable same-direction scales, a mark higher on the page represents a larger volume; the routing instruction then requires opening the country record for the higher 2013 mark.\",\n        \"evidence\": \"The chart displays separate y-axes for each country, with no visible tick labels or scale calibration to confirm they use comparable scales. The vertical position of the marks alone cannot be used to infer volume ordering without scale verification.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark at the printed x-axis label “2013” is lower on the page than the red square mark at “2013”.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"“United States” is printed vertically in blue at the left side of the plot, and “Canada” is printed vertically in red at the right side.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an unshown calibration of the separate United States and Canada axes maps the United States 2013 mark to a larger application volume than the Canada 2013 mark, the routing instruction requires opening the United States follow-up record.\",\n        \"evidence\": \"The visible chart includes explicit numeric labels for the 2013 data points: 1257.35 for the United States and 434.33 for Canada. These values directly establish that the United States volume is larger, without requiring any hidden calibration or assumption.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The plot shows horizontal gridlines but no visible numeric y-axis tick labels on either side.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue circular solid-line marks are associated with the blue left-side label “United States,” and red square dashed-line marks are associated with the red right-side label “Canada.” The x-axis year labels locate the 2013 marks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Blue circular solid-line marks are associated with the blue left-side label “United States,” and red square dashed-line marks are associated with the red right-side label “Canada.” The x-axis year labels locate the 2013 marks. Because the chart shows separate country y-axes but no visible y-axis numeric labels or scale calibration, vertical screen position alone does not establish a cross-country application-volume ordering.\",\n        \"evidence\": \"The chart explicitly displays the 2013 application volumes as 1257.35 for the United States and 434.33 for Canada. These values are printed directly on the chart at their respective data points, making the volume comparison direct and unambiguous. The claim that vertical position alone cannot establish ordering is correct in the absence of labels, but the labels are present and resolve the ambiguity.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2758,
+      "total_tokens": 3655,
+      "completion_tokens": 897,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf10b83d340d7a0b",
+    "object": "chat.completion",
+    "created": 1790615261,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'CA' is filled with a very dark maroon color.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The polygons labeled 'TN' and 'DE' are visibly much lighter than the CA polygon.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The visible caption reads: 'Clean choropleth: same US map base; darker color means higher true value.'\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A vertical color scale is shown with dark maroon at the top beside 'High' and pale yellow at the bottom beside 'Low.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"For this choropleth, if the printed caption applies uniformly to all state fills, darker state color encodes a higher true incidence value; therefore the darkest state on the shared map has the highest incidence and should be routed to the highest-incidence priority follow-up workflow.\",\n        \"evidence\": \"The caption 'darker color means higher true value' is explicitly printed and applies to the entire map. The visual evidence confirms CA is the darkest state, TN is the lightest, and DE is intermediate. The color scale confirms the mapping from dark maroon (High) to pale yellow (Low). The task criterion is to route the state with the highest incidence. Therefore, CA is the only state that satisfies the condition of being the darkest, and thus the highest incidence state. The reading is logically and visually supported by the chart's encoding and the task's requirement.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2764,
+      "total_tokens": 3152,
+      "completion_tokens": 388,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

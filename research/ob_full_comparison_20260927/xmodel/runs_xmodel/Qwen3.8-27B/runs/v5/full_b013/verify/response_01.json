@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-971b6c5d0f2954bd",
+    "object": "chat.completion",
+    "created": 1790620911,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"O1-B1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title 'Units Sold by Product (Weekend Pop-up)' is visible at the top. There are five vertical bars in the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis is labeled 'Product'. The labels from left to right are 'Product C', 'Product B', 'Product D', 'Product E', and 'Product A'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Units Sold'. The tick marks are visible at 5,000, 10,000, 15,000, 20,000, and 25,000.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The bar labeled 'Product B' is the second from the left.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top of the 'Product B' bar is positioned vertically just above the horizontal gridline corresponding to the 5,000 tick mark.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the vertical height of the bar represents the exact quantity of units sold, Product B sold approximately 5,500 units. This value is visually estimated to be just above the 5,000 grid line.\",\n        \"evidence\": \"The necessary condition is that the bar height maps linearly to the y-axis scale. The y-axis is linear with 5,000 unit intervals. The bar for Product B is visually slightly above the 5,000 line. The visual gap between the 5,000 line and the top of the bar is small relative to the 5,000-10,000 interval, supporting an estimate of approximately 5,500 units.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"O2-B2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 'Product B' bar is visibly the shortest of the five bars. Its top is near the 5,000 line, while the next shortest ('Product C') is near 8,500.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 'Product C' bar is taller than 'Product B'. Its top is below the 10,000 line but well above the 5,000 line, consistent with an approximate value of 8,500.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The 'Product D' bar reaches the 25,000 line. The 'Product A' bar extends above the 25,000 line. Both are significantly taller than the 5,000 line of Product B.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the chart accurately reflects relative sales volume, Product B represents the lowest sales volume among the displayed products for the weekend pop-up.\",\n        \"evidence\": \"The necessary condition is that bar height corresponds to sales volume. Since the 'Product B' bar is the shortest on the chart, it represents the lowest value among the displayed products.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"O3-B3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The y-axis has evenly spaced tick marks at 5,000, 10,000, 15,000, 20,000, and 25,000, indicating a linear scale with 5,000 unit intervals.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the 'Product B' bar is clearly above the 5,000 gridline and clearly below the 10,000 gridline.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the chart's scale is linear and standard, the unit count for Product B falls within the range of 5,000 to 10,000 units, specifically in the lower quartile of that interval.\",\n        \"evidence\": \"The scale is linear. The bar height is between the 5,000 and 10,000 marks. Visually, the bar is much closer to the 5,000 mark than the 10,000 mark (it appears to be about 1/5th of the way up the interval), which places it in the lower quartile of the 5,000-10,000 range.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4314,
+      "total_tokens": 5492,
+      "completion_tokens": 1178,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

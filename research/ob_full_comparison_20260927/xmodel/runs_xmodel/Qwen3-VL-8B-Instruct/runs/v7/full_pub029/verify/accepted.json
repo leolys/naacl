@@ -1,0 +1,47 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The title contains the word “Decreasing,” while the blue line’s rightmost endpoint is higher on the page than its leftmost endpoint.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.",
+        "evidence": "The title explicitly states 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'. The blue line’s rightmost endpoint (1891) is at approximately 3200 tourists, while the leftmost endpoint (1880) is at approximately 1100 tourists. This is a clear visual increase, contradicting the title's claim of 'Decreasing'. The conflict is not about ambiguity but a factual contradiction: the title is false. Therefore, the condition for 'conflicting evidence' is not met. The title is not merely conflicting; it is demonstrably incorrect based on the plotted data. The fallback policy for unresolved conflict does not apply here because the conflict is resolved by the data: the data shows a net increase, so the title is wrong, not ambiguous. The fallback route is not triggered.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title literally reads “Decreasing Number of New Tourists in Town Z from 1880 to 1891.”",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word “Decreasing” supports classifying the trend as decline; routing a decline trend requires the decline-response option.",
+        "evidence": "The title is not an authoritative literal summary. The plotted data clearly shows an increase from 1880 (≈1100) to 1891 (≈3200). The title’s claim of 'Decreasing' is factually incorrect. Therefore, the condition 'if the chart title is an authoritative literal summary' is false. The title is not authoritative because it is demonstrably false. The rule’s premise is not satisfied, so the conclusion does not follow. The title’s word 'Decreasing' does not support classifying the trend as decline; it contradicts the data. The decline-response option is not required because the trend is not declining.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The x-axis has year ticks from 1880 at the left to 1891 at the right, and the y-axis is labeled “Number of Tourists” with larger printed ticks higher on the page.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The blue line at the 1891 tick is higher on the page than the blue line at the 1880 tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.",
+        "evidence": "The x-axis orders years left to right (1880 to 1891). The y-axis encodes 'Number of Tourists' with larger values higher on the page (0 at bottom, 3500 at top). The blue line is the only plotted series, and the public task confirms it represents 'new tourists'. The 1891 endpoint is at approximately 3200 tourists, while the 1880 endpoint is at approximately 1100 tourists. The later endpoint is higher on the page, indicating an overall increase. The condition is fully satisfied. Therefore, the conclusion that the trend indicates an overall increase is supported. Routing an increase trend requires the growth-planning option. The condition for selecting the growth-planning option is met.",
+        "status": "supported"
+      }
+    }
+  }
+}

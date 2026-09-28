@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-91e5a36bd0829398",
+    "object": "chat.completion",
+    "created": 1790615830,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar labeled 'Groundwater' is visually higher than the bars for 'Surface water', 'Desalination', 'Recycled water', and 'Rain capture'. However, the y-axis scale is in percentages, and the percentage labels above the bars are 41.2% for Surface water, 29.8% for Groundwater, 18.5% for Desalination, 7.2% for Recycled water, and 3.3% for Rain capture. The bar height for Groundwater (29.8%) is visually lower than the bar for Surface water (41.2%), contradicting the observation that Groundwater's bar is higher. The observation is factually incorrect.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title is 'Urban Water Supply by Source' and the y-axis label is 'Reported supply share (%)', as stated. This is confirmed by the visual.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bar geometry encodes contribution. 2. Bar geometry is authoritative over conflicting percentage annotations.\",\n        \"evidence\": \"1. The bar heights visually correspond to the percentage values printed above them (e.g., Groundwater bar height aligns with 29.8% on the y-axis scale). 2. The percentages are explicitly printed above each bar, and the y-axis label confirms these are 'Reported supply share (%)'. There is no visual indication that bar geometry is authoritative over these explicit annotations. The condition is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The value '41.2%' is printed above the 'Surface water' bar, as stated.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The value '29.8%' is printed above the 'Groundwater' bar, as stated.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The value '18.5%' is printed above the 'Desalination' bar, as stated.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The value '7.2%' is printed above the 'Recycled water' bar, as stated.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The value '3.3%' is printed above the 'Rain capture' bar, as stated.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The y-axis label is 'Reported supply share (%)', as stated.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Bold percentages are valid source-specific reported supply shares. 2. This conflicts with bar heights.\",\n        \"evidence\": \"1. The percentages are printed directly above each bar, and the y-axis label confirms they represent 'Reported supply share (%)'. There is no visual indication these values are invalid. 2. The bar heights visually correspond to these percentages (e.g., Groundwater bar height aligns with 29.8% on the y-axis). The condition 'this conflicts with the bar heights' is false; the bar heights and percentage labels are consistent. The condition is not met.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3846,
+      "total_tokens": 4629,
+      "completion_tokens": 783,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

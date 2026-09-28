@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b10e7c6a91cabb6f",
+    "object": "chat.completion",
+    "created": 1790615738,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows temperature labels, year ticks, and axis labeling, but no visible text states a substantial-change threshold or routing rule.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"The supplied task names the criterion but provides no numeric threshold or default-routing policy; the routine-monitoring implication is conditional on such a default policy.\",\n      \"evidence\": \"The public task and page instructions do not specify a numeric threshold or default-routing policy for substantial-change follow-up. The condition about a default policy is not established by any public fact.\",\n      \"status\": \"unclear\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title reads 'River Temperature Monitoring Record', and the vertical axis is labeled 'Water temperature (°C)'\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"A plotted marker above the 2005 tick has the printed label '23.9°C' next to it.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"A plotted marker above the 2014 tick has the printed label '10.1°C' next to it.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"Applies only if the endpoint labels accurately annotate the plotted river-temperature series and if the program's unstated substantial-change criterion includes the derived magnitude.\",\n      \"evidence\": \"The endpoint labels '23.9°C' and '10.1°C' are printed directly above their respective data points, which are connected by a line representing the river-temperature series. The derived magnitude is 23.9°C - 10.1°C = 13.8°C. However, the condition that the program's unstated substantial-change criterion includes this magnitude is not established by any public fact.\",\n      \"status\": \"unclear\"\n    }\n  }\n}  }",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4005,
+      "total_tokens": 4474,
+      "completion_tokens": 469,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

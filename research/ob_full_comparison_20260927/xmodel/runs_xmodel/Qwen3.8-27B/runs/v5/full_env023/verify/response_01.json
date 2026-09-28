@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b47be71691aea11b",
+    "object": "chat.completion",
+    "created": 1790621608,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The yellow bar above the x-axis label 'Solar' has the bold text '41.2%' positioned directly above it in the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The light-blue bar above the x-axis label 'Wind' has the bold text '29.8%' positioned directly above it in the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue bar above the x-axis label 'Hydroelectric' has the bold text '18.5%' positioned directly above it in the plot area.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The green bar above 'Biomass' has '7.2%' above it, and the brown bar above 'Geothermal' has '3.3%' above it.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bold percentage annotations attached above each source bar are the operative reported production-share values, the source with the greatest printed percentage is the largest contribution source; the routing criterion requires escalating that source.\",\n        \"evidence\": \"The necessary condition for this reading is that the printed percentage annotations are the authoritative representation of 'production share' on the dashboard. The chart's y-axis is explicitly labeled 'Reported production share (%)'. In standard data visualization, the geometry of the bars (their height relative to the y-axis) is the primary encoding of the variable being measured. Here, the visual encoding contradicts the printed annotations: the bar for Wind is the tallest (reaching ~68 on the y-axis), yet it is labeled 29.8%. The bar for Solar is shorter (reaching ~41 on the y-axis), yet it is labeled 41.2%. Because the bar heights are the standard mechanism for reading values on a vertical axis, the condition that the *printed annotations* are the operative values is not supported by the chart's structure. The annotations appear to be erroneous or disconnected from the scale.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The light-blue bar above 'Wind' is the tallest bar in the chart. Its top edge aligns horizontally with a point on the y-axis between the 65 and 70 tick marks (approx 68). The bold text '29.8%' is visible above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The yellow bar above 'Solar' reaches the 40 tick mark on the y-axis. The bold text '41.2%' is visible above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The blue bar above 'Hydroelectric' reaches a point on the y-axis between the 50 and 55 tick marks (approx 52).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height is the operative encoding of reported production share on the labeled vertical scale, the tallest source bar is the largest contribution source; the routing criterion requires escalating that source.\",\n        \"evidence\": \"The necessary condition is that the vertical bar geometry is the authoritative encoding for the 'Reported production share (%)' variable. The y-axis is labeled 'Reported production share (%)' and provides a scale from 0 to 70. The bars are drawn against this scale. The Wind bar is the tallest, reaching a value of approximately 68 on this scale. The Solar bar reaches approximately 41. The Hydroelectric bar reaches approximately 52. Based on the visual encoding against the labeled axis, Wind has the greatest value. The printed annotations (29.8% for Wind) conflict with the bar height (approx 68), but the bar height is the standard, structural method for reading a bar chart's values. Therefore, the condition that bar height is the operative encoding is supported by the chart's design.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3994,
+      "total_tokens": 4962,
+      "completion_tokens": 968,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

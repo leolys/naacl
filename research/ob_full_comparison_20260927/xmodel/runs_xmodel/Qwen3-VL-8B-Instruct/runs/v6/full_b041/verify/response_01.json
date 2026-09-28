@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b5ef75c076d41f1a",
+    "object": "chat.completion",
+    "created": 1790615618,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line. (located in plot area at January)\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'. (located at right end of dashed horizontal line)\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The displayed dashed line is the relevant benchmark; 2. an at-average-to-monitor mapping applies; 3. this mapping is not printed or otherwise supplied.\",\n        \"evidence\": \"1. The dashed line is labeled 'Average' and is the only benchmark shown, so it is the relevant benchmark. 2. The bar for January is at the average level, so the condition 'a month at the displayed average' holds. 3. The policy tables are empty, and no routing legend or policy is printed. The condition 'this mapping is not printed or otherwise supplied' is open; no external source confirms or denies the 'at-average-to-monitor' rule.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line. (located in plot area at January)\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'. (located at right end of dashed horizontal line)\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is inscribed 'Number of Customers'. (located at left side of plot)\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title and vertical-axis label apply to the bars; 2. higher vertical position represents more customers; 3. the dashed line is a valid benchmark; 4. the at-average-to-Normal-plan mapping is inferred because no route legend or policy table is supplied.\",\n        \"evidence\": \"1. The chart title 'Number of Customers at Mall A in Town X' and vertical-axis label 'Number of Customers' apply to the bars. 2. The vertical axis increases upward, and the bars are proportional to their height, so higher position = more customers. 3. The dashed line is labeled 'Average' and is a horizontal reference, so it is a valid benchmark. 4. The policy tables are empty, and no routing legend is printed. The condition 'the at-average-to-Normal-plan mapping is inferred because no route legend or policy table is supplied' is plausible but not established; the task does not require inferring a policy from absence of a printed rule. The condition 'the at-average-to-Normal-plan mapping is inferred' is not confirmed by any public fact.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3943,
+      "total_tokens": 4617,
+      "completion_tokens": 674,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

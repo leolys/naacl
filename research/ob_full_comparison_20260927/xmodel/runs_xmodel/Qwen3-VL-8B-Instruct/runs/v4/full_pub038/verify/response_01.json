@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-afc05582270fc431",
+    "object": "chat.completion",
+    "created": 1790614443,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart visibly has separate blue 'Agriculture (%)' and red 'Industry (%)' vertical axis labels.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Neither 2014 mark has a printed percentage label, and no numeric tick labels are visibly printed on either vertical axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If blue Agriculture is encoded against the left axis and red Industry against the right axis, screen-space heights cannot establish their percentage ordering unless the chart displays equivalent axis scales or directly decodable 2014 values.\",\n        \"evidence\": \"The chart uses two separate vertical axes with distinct labels and colors. There are no visible tick marks or numeric labels on either axis to establish scale equivalence or to allow direct decoding of the 2014 values. Therefore, visual height comparison alone is insufficient to determine which percentage is larger.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue circular mark is higher on the page than the red square mark at the 2014 gridline.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis is visibly labeled 'Agriculture (%)' in blue, while the right vertical axis is visibly labeled 'Industry (%)' in red.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue Agriculture series and red Industry series use the same vertically comparable percentage scale, a mark higher on the page represents a larger percentage; the task routes to the follow-up record for the sector with the larger 2014 percentage.\",\n        \"evidence\": \"The reading assumes a common, comparable scale for both axes. However, the chart explicitly uses two separate vertical axes for Agriculture and Industry, which are not guaranteed to have the same scale or range. The visual height comparison is therefore not reliable without confirmation of scale equivalence. The reading does not hold under the visible conditions.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2326,
+      "total_tokens": 2818,
+      "completion_tokens": 492,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

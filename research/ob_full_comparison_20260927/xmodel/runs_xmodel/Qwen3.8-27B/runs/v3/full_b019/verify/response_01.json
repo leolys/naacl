@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8a6cebc14f8528b2",
+    "object": "chat.completion",
+    "created": 1790617293,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis is visibly labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)' as printed on the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The five labeled points (Store 6 through Store 10) are positioned in a diagonal line ascending from the bottom-left to the top-right, with each successive store positioned further right and higher than the previous.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If decision-makers may treat the plotted additional top stores as representative of the company and accept a positive spend-sales association as sufficient approval evidence, then the displayed pattern can support company-wide expansion.\",\n        \"evidence\": \"The chart title 'Additional Top Stores' and the specific labels (Store 6-10) indicate a limited subset of the population. No policy table or public instruction defines this subset as representative of the whole company or an association as sufficient for approval. The representativeness and sufficiency conditions remain unestablished assumptions.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title at the top of the chart reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five blue circles are plotted and labeled 'Store 6', 'Store 7', 'Store 8', 'Store 9', and 'Store 10'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart’s title and attached store labels define its scope as the additional top stores shown, and a company-wide approval requires evidence covering the full store population, then evidence limited to those plotted stores supports requesting full-store analysis rather than approving company-wide expansion.\",\n        \"evidence\": \"The title and labels support the scope being limited to 'additional top stores'. However, the condition that 'a company-wide approval requires evidence covering the full store population' is an assumption; no policy table or public instruction specifies this requirement.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The five labeled points (Store 6 through Store 10) show a clear positive correlation, with each successive store positioned further right and higher than the previous.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the printed comparable scales, then points farther right and higher represent stores with greater plotted spend and greater plotted sales; this is an association only, not proof that spend caused sales or that expansion is profitable.\",\n        \"evidence\": \"The axis labels and the plotted points' positions directly support the decoding that higher points represent greater spend and sales. The conclusion that this is an association only is a standard statistical interpretation of the visible data.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4034,
+      "total_tokens": 4870,
+      "completion_tokens": 836,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

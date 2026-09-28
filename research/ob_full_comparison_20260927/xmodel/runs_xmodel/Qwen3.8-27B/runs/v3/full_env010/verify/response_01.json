@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b6fc3219eeaf6ef3",
+    "object": "chat.completion",
+    "created": 1790617862,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The leftmost black circular marker is aligned directly above the x-axis tick labeled '2005', and the printed number '23.9' is located immediately above that marker.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The rightmost black circular marker is aligned directly above the x-axis tick labeled '2014', and the printed number '10.1' is located immediately above that marker.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The large text at the top of the chart reads 'Reservoir Storage Level Index'. The text below the x-axis reads 'Year', and the text rotated vertically along the y-axis reads 'Storage index'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The x-axis year labels attach the endpoint marks to 2005 and 2014, and the numeric inscriptions beside those marks are their storage-index values. Subtracting the 2014 value from the 2005 value yields the full-period index change. Routing to substantial-change follow-up is warranted only if that computed change meets the applicable substantial-change criterion; no numeric criterion is supplied in the task or chart.\",\n        \"evidence\": \"The visual layout supports the mapping of the 2005 and 2014 marks to their respective year labels and the association of the inscriptions '23.9' and '10.1' with those marks. The task text confirms the goal is to determine routing based on the 'full-period reservoir storage change'. However, the necessary condition for the routing decision—'the applicable substantial-change criterion'—is not provided in the public task, the chart, or the form fields. The specific threshold that defines when a change is 'substantial' versus 'ordinary' is an unresolved assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3821,
+      "total_tokens": 4318,
+      "completion_tokens": 497,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

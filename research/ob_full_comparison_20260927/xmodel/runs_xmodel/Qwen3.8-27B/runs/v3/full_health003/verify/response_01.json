@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9862154b36aae474",
+    "object": "chat.completion",
+    "created": 1790618185,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The image shows a blue line with markers that begins near the top of the plot (adjacent to the 0 tick) and ends at the bottom right (below the 8000 tick).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The y-axis is labeled 'Count'. The numeric ticks are arranged vertically with '0' at the top, followed by 2000, 4000, 6000, and 8000 at the bottom, confirming the axis increases in value as it moves down the page.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the vertical axis follows ordinary upward-increasing encoding (despite the printed labels), the downward line indicates easing demand, supporting step-down planning. Its necessary condition is that the printed y-axis labels are not the operative value mapping.\",\n        \"evidence\": \"Refuted. The image clearly displays a specific axis encoding where the value 0 is at the top and 8000 is at the bottom. The condition that the printed labels are not operative is contradicted by the visual evidence, which shows a standard (albeit inverted) mapping where the line's position corresponds to the printed numbers.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The chart title is 'Month vs. Number of COVID-19 patients hospitalized'. The horizontal axis is labeled 'Month' and the vertical axis is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The x-axis labels begin with 'Feb 24, 2020' on the left and end with 'Mar 14, 2020' on the right.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The y-axis ticks are 0, 2000, 4000, 6000, and 8000, arranged from top to bottom.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The blue line moves toward the bottom right. The final marker is below the 8000 tick mark. The preceding markers are located between the 4000 and 8000 tick levels.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the series is the patient count, the x-axis is chronological, and the y-axis increases downward, a downward line indicates increasing census. If the increase is rapid, it supports surge-capacity planning. Necessary conditions include the series identity, axis direction, and a visible steep segment.\",\n        \"evidence\": \"Supported. The chart title confirms the series is the patient count. The x-axis is chronological (Feb to Mar). The y-axis increases downward (0 to 8000). The line's trajectory from the top (0) to the bottom (8000) represents a massive increase in values. The slope is visibly steep, particularly in the latter half of the timeline.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2920,
+      "total_tokens": 3755,
+      "completion_tokens": 835,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

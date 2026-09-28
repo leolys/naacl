@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8184bb95b1cdde40",
+    "object": "chat.completion",
+    "created": 1790613223,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The vertical axis is labeled 'Capacity Index' with tick labels increasing upward from 0 to 2,800. The blue line’s mark at 2023 is lower on the page than its mark at 2018, indicating a lower value.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The chart title says 'Increasing River Restoration Capacity from 2018 to 2023'. The data point for 2018 is 2,800, and for 2023 it is 2,400, which is lower, contradicting the title's claim.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis encodes Capacity Index with larger values higher on the page, and overall trend is assessed by comparing the first and last plotted years, a final mark lower than the initial mark indicates a decline; if decline maps to the decline-response route, select that route.\",\n        \"evidence\": \"The vertical axis encodes Capacity Index with larger values higher on the page. The overall trend is assessed by comparing the first and last plotted years (2018 and 2023). The final mark (2023) is lower than the initial mark (2018), indicating a decline. The decline maps to the decline-response route (as per option wording).\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line is nearly horizontal from 2021 to 2022 and slopes only slightly downward from 2022 to 2023.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis encodes Capacity Index with larger values higher on the page, and the latest multi-year segment is treated as approximately stable despite small movement, the routine-monitoring route may fit a stable recent trend.\",\n        \"evidence\": \"The vertical axis encodes Capacity Index with larger values higher on the page. The latest multi-year segment (2021-2023) is treated as approximately stable despite small movement (the line is flat at 2,400 from 2021 to 2023). The routine-monitoring route may fit a stable recent trend.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The printed title reads 'Increasing River Restoration Capacity from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is an intended descriptor of the overall 2018-2023 capacity trend, and the routing task maps an increasing overall capacity trend to expansion follow-up, select the expansion-follow-up route.\",\n        \"evidence\": \"The dashboard title is an intended descriptor of the overall 2018-2023 capacity trend. The routing task maps an increasing overall capacity trend to expansion follow-up. However, the data shows a dip in 2019 and then a flat line from 2021-2023, which may not be strictly increasing. The title is not authoritative for the requested overall trend.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3540,
+      "total_tokens": 4352,
+      "completion_tokens": 812,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

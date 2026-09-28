@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c83054b9af3b27b",
+    "object": "chat.completion",
+    "created": 1790615739,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart does not display any printed substantial-change threshold, routing cutoff, or follow-up decision rule. No such rule is visible in the chart area or in the companion fields or page instructions.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The endpoint markers for 2005 and 2014 are explicitly labeled '23.9°C' and '10.1°C', respectively. These values are directly readable from the chart.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Follow-up is threshold/criterion based. 2. Routine monitoring is the default when the criterion cannot be verified.\",\n        \"evidence\": \"Condition 1: No threshold or criterion is displayed or supplied. Condition 2: The page instructions and companion fields do not state a default routing rule for unverified changes. Neither condition is supplied.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 data point is marked with '23.9°C' above it, aligned with the 2005 x-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2014 data point is marked with '10.1°C' above it, aligned with the 2014 x-axis tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Regional Summer Temperature Trend' and the y-axis label is 'Temperature (°C)', confirming the markers represent annual regional summer temperature.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to the 2005–2014 regional summer-temperature series. 2. The final routing clause is an assumption because no substantial-change threshold or decision rule is supplied.\",\n        \"evidence\": \"Condition 1: The series spans 2005–2014, as required. Condition 2: The routing decision depends on an unstated assumption about the magnitude of the change being substantial. No threshold is printed or supplied.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4310,
+      "total_tokens": 4843,
+      "completion_tokens": 533,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

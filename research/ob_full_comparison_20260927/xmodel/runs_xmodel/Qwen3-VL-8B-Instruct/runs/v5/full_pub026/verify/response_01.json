@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-99d17e62e169c3b9",
+    "object": "chat.completion",
+    "created": 1790615314,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line begins at the 1880 tick aligned with the y-axis tick labeled '1,000' and ends at the 1891 tick above the y-axis tick labeled '2,500'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative textual classification of the tourism trend, then its word 'Decreasing' indicates a decline classification. Without a supplied rule resolving conflict between that classification and the plotted line, routine monitoring is a conservative route.\",\n        \"evidence\": \"The title's assertion of 'Decreasing' is a literal textual claim. The plotted line, however, visually shows an increase from 1880 (1,000) to 1890 (approx. 3,100) before declining to 1891 (approx. 2,600). The endpoint at 1891 (2,600) is higher than the starting point (1,000), indicating a net positive change over the full period. The condition 'without a supplied rule resolving conflict' is met because no such rule is provided in the task or chart. Therefore, the B reading's conclusion that 'routine monitoring is a conservative route' is the only option that does not require resolving a contradiction. The condition is supported by the absence of a policy rule to override the title's classification. The reading is therefore applicable.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the 1880 tick aligned with the y-axis tick labeled '1,000' and ends at the 1891 tick above the y-axis tick labeled '2,500'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is inscribed 'Year' and has ticks from 1880 through 1891; the vertical axis is inscribed 'Number of Tourists' with increasing labeled ticks upward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the new-tourist series, the horizontal year ticks bind its endpoints to 1880 and 1891, and higher vertical position maps to a larger number of tourists, then the relative endpoint positions indicate net change across the review period. If routing is based on net growth, a positive net change maps to growth planning.\",\n        \"evidence\": \"The blue line is the plotted series for 'Number of Tourists'. The x-axis ticks bind the endpoints to 1880 and 1891. The y-axis is labeled 'Number of Tourists' with increasing ticks upward. The endpoint at 1891 is at approximately 2,600, which is higher than the endpoint at 1880 (1,000), indicating a net positive change. The condition 'routing is based on net growth' is not explicitly stated, but the B reading's logic applies to the task's goal of choosing a follow-up route based on the trend. The reading's conclusion that 'a positive net change maps to growth planning' is therefore applicable. The condition is supported by the visual evidence and the task's context. The reading is therefore applicable.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3805,
+      "total_tokens": 4628,
+      "completion_tokens": 823,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

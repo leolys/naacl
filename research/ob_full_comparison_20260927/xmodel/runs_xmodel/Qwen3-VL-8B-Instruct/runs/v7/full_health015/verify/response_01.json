@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b851cc4962557abf",
+    "object": "chat.completion",
+    "created": 1790616849,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red square at 11-18 years is higher on the page than the blue circular mark at the same category.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis label is blue and the right axis label is red; no numeric y-axis tick labels are visibly printed.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Blue circular marks are connected by a solid blue line, while red square marks are connected by a dashed red line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review.\",\n        \"evidence\": \"The chart has two separate y-axes (blue for 'High fibre breakfast cereals', red for 'Other breakfast cereals'), and no numeric tick labels are visible on either axis. The red square is higher on the page than the blue circle at the 11-18 years category, but this is a visual artifact of screen-space positioning, not a value comparison. The B reading correctly identifies that without visible numeric values or a stated policy, screen-space height cannot be used to determine which category should be escalated. The chart title and axis labels do not provide a clear escalation criterion. Therefore, the B reading is supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads “High fibre breakfast cereals vs Other breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis label reads “High fibre breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue circular mark is shown at the 11-18 years position.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing instruction treats the chart category explicitly labeled “High fibre breakfast cereals” as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option.\",\n        \"evidence\": \"The B reading requires an unstated program rule that the high-fibre category itself, rather than a plotted cross-series comparison, determines fibre-support routing. The chart title and axis labels clearly label the blue series as 'High fibre breakfast cereals'. However, the chart also explicitly labels the red series as 'Other breakfast cereals'. The B reading is contingent on an unstated rule that the category label (high-fibre) determines the follow-up route, not the plotted value. Since no such rule is provided in the public task or chart, this reading is not supported by visible evidence. The chart does not state that the 'High fibre breakfast cereals' category should be escalated; it merely compares the two categories. The B reading is therefore not supported by the evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2820,
+      "total_tokens": 3534,
+      "completion_tokens": 714,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

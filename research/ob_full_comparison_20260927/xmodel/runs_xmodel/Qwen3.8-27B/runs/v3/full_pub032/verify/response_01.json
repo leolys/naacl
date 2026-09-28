@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4731210a22c0f78",
+    "object": "chat.completion",
+    "created": 1790618768,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"rec_01\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image shows a solid blue line with circular markers. The left Y-axis is labeled 'Urban (%)' in blue text. The blue line's values (e.g., 44.20% at 1980) align with the left axis scale, supporting the correspondence.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The image shows a dashed red line with square markers. The right Y-axis is labeled 'Rural (%)' in red text. The red line's values (e.g., 12.12% at 1980) align with the right axis scale, supporting the correspondence.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"At the 1990 x-axis position, the blue circular marker is visibly located in the lower-middle section of the plot area, while the red square marker is located near the top. The blue marker is vertically lower than the red marker.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes that vertical position on the graph corresponds to the magnitude of the percentage for each respective axis. It concludes that the Rural percentage is larger than the Urban percentage in 1990.\",\n        \"evidence\": \"The visual evidence confirms that the red marker (Rural) is significantly higher than the blue marker (Urban) at the 1990 position. Given the axis labels and the general trend (Rural high, Urban low in 1990), the inference that the Rural percentage is larger is supported by the chart's layout and relative positions.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"rec_02\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The text '44.20%' is visible in the chart, positioned above the blue line's data point corresponding to the year 1980.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The text '12.12%' is visible in the chart, positioned below the red line's data point corresponding to the year 1980.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The text '46.32%' is visible in the chart, positioned above the blue line's data point corresponding to the year 2000.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The text '12.57%' is visible in the chart, positioned below the red line's data point corresponding to the year 2000.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that the chart uses specific data labels at certain intervals. It notes that 1990 points are not explicitly labeled. It concludes that the relative vertical positions suggest the red line (Rural) is higher than the blue line (Urban) at 1990.\",\n        \"evidence\": \"The visual evidence confirms the presence of the cited labels at 1980 and 2000 and the absence of labels at 1990. The visual evidence also confirms that the red line is positioned higher than the blue line at the 1990 mark. The reading accurately reflects the visual data.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"rec_03\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line starts low in 1960 and generally trends upward, reaching its highest point in 2020. This supports the assertion of a general upward trend.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The red line peaks in 1970, drops significantly by 1980 (dip), remains relatively flat/high through the 1990s (plateau), and drops sharply after 2000. This matches the described trend.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading interprets the chart as illustrating a long-term shift in population distribution. It specifically states that in the 1990s, the Rural percentage remains relatively high and stable compared to the Urban percentage, which is in a phase of gradual increase.\",\n        \"evidence\": \"The visual evidence supports this interpretation. In the 1990s (between 1990 and 2000), the red line is high and relatively flat, while the blue line is lower and rising. The comparison holds true for that specific decade.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2803,
+      "total_tokens": 3988,
+      "completion_tokens": 1185,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

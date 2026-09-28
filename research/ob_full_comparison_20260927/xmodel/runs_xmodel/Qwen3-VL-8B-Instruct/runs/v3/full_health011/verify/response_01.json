@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-be5580162eb385b0",
+    "object": "chat.completion",
+    "created": 1790613312,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The subtitle reads 'Selected high-referral centers shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five labeled points are visible: Center A, Center B, Center C, Center D, and Center E.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart is explicitly limited to selected high-referral centers, then its pattern may be affected by selection and does not by itself characterize all centers in the network; such evidence can be retained as contextual information pending broader comparison.\",\n        \"evidence\": \"The subtitle explicitly states the chart shows 'Selected high-referral centers'. The chart displays only five centers, and the task's context confirms the review is limited to these highlighted centers. No other network-wide data or comparison group is visible or mentioned.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title reads 'Top Screening Centers: Outreach Hours vs Referral Count', and the subtitle reads 'Selected high-referral centers shown in dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is labeled 'Monthly outreach hours' and its printed ticks increase from 30 at the left to 70 at the right; the vertical axis is labeled 'Referral count' and its printed ticks increase from 60 near the bottom to 160 near the top.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Center A is the leftmost and lowest labeled point; Center B is to its right and higher; Center C is further right and higher; Center D is further right and higher; Center E is the rightmost and highest labeled point.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes monthly outreach hours increasing left-to-right and the vertical axis encodes referral count increasing upward, then the labeled center points can be compared as an observed association. A consistent higher-hours/higher-referrals pattern among the displayed selected centers is suitable for broader network review, but this cross-sectional selected-center chart alone does not establish causality, network-wide representativeness, or grounds for immediate network-level advancement.\",\n        \"evidence\": \"The axis labels and tick directions are visually confirmed. The relative positions of the five centers show a clear trend: as outreach hours increase from Center A to Center E, referral count also increases. This establishes an observed association among the selected centers. However, the chart does not show any other centers, and no data on network-wide patterns or causality is presented.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3158,
+      "total_tokens": 3807,
+      "completion_tokens": 649,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

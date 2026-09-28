@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a74cc75c9039f0cd",
+    "object": "chat.completion",
+    "created": 1790614959,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bar labeled 'Groundwater' is visually higher than the bars for 'Surface water', 'Desalination', 'Recycled water', and 'Rain capture'. The y-axis is labeled 'Reported supply share (%)' and has ticks from 0 to 70. The bar for 'Groundwater' reaches approximately 29.8% on the scale, while the bar for 'Surface water' reaches 41.2%. The bar for 'Groundwater' is not the tallest.\",\n          \"status\": \"refuted\"\n        }\n      ,\n      \"2\": {\n        \"evidence\": \"The chart title is 'Urban Water Supply by Source' and the y-axis label is 'Reported supply share (%)'. These are visible and consistent with the chart's content.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If each source’s bar height on the vertical scale encodes its urban reported supply contribution, and the routing criterion requires escalation of the largest contribution source, select the option for the source with the tallest bar.\",\n      \"evidence\": \"The bar heights visually encode the reported supply share (%). The bar for 'Surface water' is visibly taller than the bar for 'Groundwater', which is taller than the bar for 'Desalination', etc. The y-axis is labeled 'Reported supply share (%)' and has numerical ticks from 0 to 70. The bar for 'Surface water' reaches 41.2%, the bar for 'Groundwater' reaches 29.8%, and so on. The bar heights are consistent with the percentage values printed above each bar. The tallest bar corresponds to 'Surface water'.\",\n      \"status\": \"refuted\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"A bold inscription '41.2%' appears above the bar labeled 'Surface water'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"A bold inscription '29.8%' appears above the bar labeled 'Groundwater'.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"A bold inscription '18.5%' appears above the bar labeled 'Desalination'.\",\n        \"status\": \"supported\"\n      },\n      \"4\": {\n        \"evidence\": \"A bold inscription '7.2%' appears above the bar labeled 'Recycled water'.\",\n        \"status\": \"supported\"\n      },\n      \"5\": {\n        \"evidence\": \"A bold inscription '3.3%' appears above the bar labeled 'Rain capture'.\",\n        \"status\": \"supported\"\n      },\n      \"6\": {\n        \"evidence\": \"The y-axis label reads 'Reported supply share (%)'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the percentage inscription directly above each source bar is the authoritative reported supply-share value, compare those inscriptions; under the stated largest-contribution routing criterion, select the option for the source with the greatest printed share.\",\n      \"evidence\": \"The percentage inscriptions directly above each bar are '41.2%', '29.8%', '18.5%', '7.2%', and '3.3%'. The y-axis label is 'Reported supply share (%)'. The public definition states that the largest urban water-supply contribution source is defined as the source with the highest reported supply share (%). The highest value is 41.2%, which corresponds to 'Surface water'. The bar heights are consistent with these percentage values. The tallest bar corresponds to 'Surface water'.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3747,
+      "total_tokens": 4574,
+      "completion_tokens": 827,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

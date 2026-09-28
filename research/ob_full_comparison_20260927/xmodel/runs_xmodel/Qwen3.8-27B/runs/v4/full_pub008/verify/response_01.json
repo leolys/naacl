@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-862ab9ddf85b6894",
+    "object": "chat.completion",
+    "created": 1790620415,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The y-axis baseline is printed at 1,500, and the May 06 blue segment sits at the very bottom of the bar, starting from this baseline.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The chart contains only the title, axis labels, and legend; there are no annotations indicating specific demand thresholds or routing rules.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The B text posits that because the chart is clipped at 1,500 and lacks explicit thresholds, the visible height of the blue segment is an incomplete measure, making 'normal monitoring' a conservative default.\", \"evidence\": \"The chart does start at 1,500, meaning any value below 1,500 for Station X would be clipped and invisible. The absence of a policy table or threshold labels on the chart is a fact. However, the B text's conclusion that 'normal monitoring' is the only valid default is a policy interpretation not supported by the visual evidence alone; the visual evidence only confirms the data is present and the thresholds are missing.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The legend at the top right clearly shows a blue swatch next to the text 'Station X'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"In the column for May 06, there is a very thin blue section at the bottom of the stacked bar, extending just slightly above the 1,500 baseline.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The lowest numerical label on the y-axis is '1,500'.\", \"status\": \"supported\"}, \"4\": {\"evidence\": \"The green (Station Y) and orange (Station Z) segments above the blue sliver are significantly taller than the blue sliver itself.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The B text suggests that if the blue segment represents Station X's count and that count is low, then 'low-demand response' is the appropriate route.\", \"evidence\": \"The visual evidence supports that Station X (blue) has a very small value on May 06 compared to the other stations. However, the B text's conclusion depends on an external definition of 'low-demand' that is not present in the chart or the task instructions. While the data suggests a low value, the mapping to a specific 'response' is not explicitly defined by the provided evidence.\", \"status\": \"unclear\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4060,
+      "total_tokens": 4622,
+      "completion_tokens": 562,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

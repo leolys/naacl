@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-831b73b1fbfbea7a",
+    "object": "chat.completion",
+    "created": 1790615557,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays five labeled regional points and axes for advertising spend and sales. No annotations for ROI, profit, experimental comparison, or incremental-sales are visible.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"Applies when association, five plotted regions, and current spend/sales levels are insufficient substitutes for causal or return analysis.\",\n      \"evidence\": \"The chart shows a positive association between spend and sales across five regions. However, it lacks any indication of causal mechanisms, ROI, cost-benefit, or incremental sales metrics. The condition that 'association, five plotted regions, and current spend/sales levels are insufficient substitutes' is met. The condition 'for causal or return analysis' remains open, as no such analysis is displayed.\",\n      \"status\": \"unclear\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"Region A through E form a left-to-right and lower-to-higher sequence of labeled blue points.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"Assumes the organization permits a pilot under uncertainty; the chart itself supplies no pilot-selection criteria or outcome threshold.\",\n      \"evidence\": \"The chart shows a positive trend, but no criteria for selecting which regions to pilot are provided. The condition 'the chart itself supplies no pilot-selection criteria' is met. The condition 'organization permits a pilot under uncertainty' is not established by the chart or task context.\",\n      \"status\": \"unclear\"\n    }\n  },\n  \"r3\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"Chart title is 'Top Regions: Ad Spend vs Sales'. X-axis label is 'Advertising Spend ($ thousands)'. Y-axis label is 'Sales ($ thousands)'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"Region A is left of and below Region B; Region B is left of and below Region C; Region C is left of and below Region D; Region D is left of and below Region E.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"Association is treated as sufficiently generalizable and decision-sufficient despite no displayed causal, ROI, cost, or incremental-sales evidence.\",\n      \"evidence\": \"The chart displays a clear positive association. The condition 'association is treated as sufficiently generalizable' is plausible but not established by the chart alone. The condition 'decision-sufficient despite no displayed causal, ROI, cost, or incremental-sales evidence' is met, as no such evidence is displayed. However, the task requires choosing a decision, and the condition 'treated as sufficiently generalizable' is not confirmed by the chart's visual data.\",\n      \"status\": \"unclear\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3880,
+      "total_tokens": 4523,
+      "completion_tokens": 643,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

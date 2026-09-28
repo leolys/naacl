@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8f64a705d3f03020",
+    "object": "chat.completion",
+    "created": 1790619837,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The bar above the x-axis label 'May' is the shortest bar on the chart, and its top edge is visibly below the 10,000 MWh tick mark.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The vertical axis is labeled 'Solar output (MWh)' and the horizontal axis is labeled 'Month'.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The dashboard contains only a bar chart with axes and a title. There are no policy tables, legends, or annotations defining specific thresholds for 'standard' vs. 'critical' routing.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the same bar encoding applies, May is a low-output month. If critical routing requires a stated numerical threshold or other documented anomaly criterion that is not provided, the chart alone cannot establish critical severity; under a policy of routing unthresholded low-output cases to ordinary follow-up, May should receive standard follow-up.\", \"evidence\": \"The chart uses a single consistent bar encoding for all months. May is visually the lowest output. Because no explicit threshold is provided on the dashboard to define 'critical' severity, the condition that 'critical routing requires a stated numerical threshold' is met. The inference that the chart alone cannot establish critical severity is supported by the absence of such criteria.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The bar above the x-axis label 'May' is the shortest bar on the chart, and its top edge is visibly below the 10,000 MWh tick mark.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The bars for Apr, Jan, Jun, Feb, and Mar all extend significantly higher than the May bar. Apr, Jan, and Mar are above the 30,000 MWh line, and Jun and Feb are above the 15,000 MWh line.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The vertical axis is labeled 'Solar output (MWh)' and the horizontal axis is labeled 'Month'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the vertical axis labeled 'Solar output (MWh)' encodes bar height on a common increasing scale and each month label identifies its aligned bar, then May's much shorter bar represents substantially lower output than the other displayed months. If this degree of relative isolation is treated by the routing workflow as a critical anomaly, May should be escalated.\", \"evidence\": \"The chart uses a single common scale for all bars. May's bar is approximately 8,000-9,000 MWh, while the lowest other month (Jun) is approximately 17,500 MWh. May is less than half the output of the next lowest month, representing a substantial relative isolation. The condition that 'the workflow permits critical escalation based on an exceptionally low relative monthly value' is the necessary condition for this reading to apply.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4219,
+      "total_tokens": 4884,
+      "completion_tokens": 665,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

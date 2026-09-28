@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bb33703c32f9eed9",
+    "object": "chat.completion",
+    "created": 1790614573,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title visibly reads 'Units Sold by Product (Weekend Pop-up)' as per the chart's top label.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical-axis inscription visibly reads 'Units Sold', with visible tick labels including '20,000' and '30,000' as per the y-axis labels.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A dark red bar is positioned above the visible x-axis label 'Product C'; its top lies between the 20,000 and 30,000 tick heights, roughly two-fifths of the way upward from the 20,000 tick as per the bar's position relative to the y-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis labeled 'Units Sold' is a linear upward scale and the Product C bar is bound to its x-axis label, its height can be interpolated from the 20,000 and 30,000 ticks. A value below 25,000 and less than 2,500 units from that threshold meets the stated manual-verification variance band; selecting the manual-check option assumes that this band governs when it overlaps the low-demand rule.\",\n        \"evidence\": \"The bar's position is consistent with the chart's y-axis scale and the bar's binding to its x-axis label. The interpolation from 20,000 to 30,000 is valid under the assumption of a linear scale. The condition for the manual-verification variance band is a policy rule, not a visual fact, and its applicability to the low-demand rule is not defined in the policy table.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The Product C bar top lies between the visible 20,000 and 30,000 tick heights and is closer on the page to the 20,000 tick height than to the 30,000 tick height as per the bar's position relative to the y-axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible label 'Product C' is directly below the relevant dark red bar as per the x-axis labels.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis is a linear upward Units Sold scale and the Product C bar is bound to its label, its height can be interpolated from the 20,000 and 30,000 ticks. Under the policy, a decoded Product C value below 25,000 activates the low-demand review queue.\",\n        \"evidence\": \"The bar's position is consistent with the chart's y-axis scale and the bar's binding to its x-axis label. The interpolation from 20,000 to 30,000 is valid under the assumption of a linear scale. The policy rule for activating the low-demand review queue at < 25,000 units is explicitly stated in the policy table.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4152,
+      "total_tokens": 4908,
+      "completion_tokens": 756,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

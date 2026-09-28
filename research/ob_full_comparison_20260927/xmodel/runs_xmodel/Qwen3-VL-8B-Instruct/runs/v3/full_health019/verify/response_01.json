@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b957b2fc5d535f9f",
+    "object": "chat.completion",
+    "created": 1790613428,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title visibly reads 'Reduced Screening Referrals Across Hospitals from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative classification of this record's reporting-period referral pattern, and a title describing referrals as 'Reduced' maps to the reduction-focused pathway, select the reduction-focused option.\",\n        \"evidence\": \"The chart title is visible and reads 'Reduced Screening Referrals Across Hospitals from 2012 to 2023'.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The orange line has both upward and downward segments across the labeled years, including a downward final segment from 2022 to 2023.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The visible dashboard contains a chart title, axis labels, and plotted line, but no visible routing threshold or option-definition text.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If no supplied policy defines how a mixed or overall changing referral pattern maps to growth- or reduction-focused follow-up, and standard monitoring is the fallback for an indeterminate route, select standard monitoring.\",\n        \"evidence\": \"The dashboard and instructions provide no visible threshold, comparison period, or fallback policy; this fallback assumption is not established by the supplied evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"An orange line is plotted across x-axis year ticks from 2012 through 2023; the y-axis is labeled 'Screening referrals', with printed tick labels 0 near the bottom and 3200 higher up.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The orange line at 2023 is higher on the page than the orange line at 2012.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the orange line encodes screening-referral counts by the labeled years and the y-axis increases upward from 0, a line ending higher on the page in 2023 than it begins in 2012 represents an overall increase; if an overall increase maps to growth-focused follow-up, select that option.\",\n        \"evidence\": \"The y-axis is labeled 'Screening referrals' with 0 at the bottom and 3200 at the top, and the orange line starts near 1200 in 2012 and ends near 3100 in 2023, which is higher on the page.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3204,
+      "total_tokens": 3900,
+      "completion_tokens": 696,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

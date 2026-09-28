@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c807bcf541f1ada",
+    "object": "chat.completion",
+    "created": 1790619087,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\":\n{\n\"r1\": {\n\"O\": {\n\"1\": {\"evidence\": \"The chart title at the top-left of the image clearly reads 'Units Sold by Product (Weekend Pop-up)'.\", \"status\": \"supported\"},\n\"2\": {\"evidence\": \"The vertical axis is labeled 'Units Sold'. The tick labels visible on the axis include '20,000' and '30,000' (as well as 40,000 through 90,000).\", \"status\": \"supported\"},\n\"3\": {\"evidence\": \"A dark red bar is positioned above the x-axis label 'Product C'. Its top edge is located between the 20,000 and 30,000 gridlines. Visually, it is closer to the 20,000 line than the 30,000 line, which is consistent with being 'roughly two-fifths of the way upward' (approx. 24,000).\", \"status\": \"supported\"}\n},\n\"B\": {\n\"reading_checked\": \"The reading asserts that Product C's value is below 25,000 and within 2,500 units of that threshold (i.e., between 22,500 and 25,000). It further asserts that this places the product in the 'manual-verification variance band' and that this band governs the routing decision over the low-demand rule.\",\n\"evidence\": \"The chart shows the Product C bar is just below the 25,000 level (midpoint between 20k and 30k). It is definitely above 20,000. Whether it is specifically above 22,500 (the lower bound of the 2,500-unit variance band) is a fine-grained visual estimation. The bar appears to be around 24,000, which would satisfy the variance band condition. However, the policy table lists 'Manual merchandising verification variance band' as a condition, but the form options include both 'Open Product C low-demand review' and 'Flag Product C for manual merchandising check'. The reading assumes the manual band 'governs' when overlapping. The policy table does not explicitly state precedence between the 'Low-demand review queue' (<25,000) and the 'Manual merchandising verification variance band' (<2,500 from threshold).\",\n\"status\": \"unclear\"\n}\n},\n\"r2\": {\n\"O\": {\n\"1\": {\"evidence\": \"The Product C bar top is visibly between the 20,000 and 30,000 tick heights. It is closer to the 20,000 tick than the 30,000 tick (it is below the 25,000 midpoint).\", \"status\": \"supported\"},\n\"2\": {\"evidence\": \"The label 'Product C' is directly below the relevant dark red bar on the x-axis.\", \"status\": \"supported\"}\n},\n\"B\": {\n\"reading_checked\": \"The reading asserts that the Product C value is below 25,000, which activates the 'Low-demand review queue' according to the policy.\",\n\"evidence\": \"The bar for Product C is clearly below the 25,000 level (which would be halfway between the 20,000 and 30,000 ticks). The policy table states: '< 25,000 units -> Low-demand review queue activation level'. The visual evidence supports the value being in the low 20,000s (e.g., ~24,000), which is < 25,000. This condition is met.\",\n\"status\": \"supported\"\n}\n}\n}\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4553,
+      "total_tokens": 5414,
+      "completion_tokens": 861,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

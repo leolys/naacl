@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-84c399b08822e7ab",
+    "object": "chat.completion",
+    "created": 1790618167,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart shows a blue line starting at the 2018 tick at a vertical position aligned with the 2,800 grid line. At the 2023 tick, the line is at a vertical position between the 2,400 and 2,800 grid lines (approx. 2,500). The 2023 position is visibly lower on the page than the 2018 position.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is labeled 'Recovery Score'. The numeric tick labels are 0, 400, 800, 1,200, 1,600, 2,000, 2,400, and 2,800. These values increase from the bottom of the axis (0) to the top (2,800).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years progress left to right and higher vertical position on the Recovery Score axis represents a higher recovery score, then a final mark lower than the initial mark indicates a lower final recovery score; if a lower overall recovery score warrants deterioration review, select that route.\",\n        \"evidence\": \"The x-axis years (2018-2023) progress left to right, and the y-axis values increase upward, supporting the first part of the decoding. The final mark (2023) is visually lower than the initial mark (2018), supporting the observation of a lower final score. However, the condition that a 'lower overall recovery score warrants deterioration review' is an assumption; the provided text does not contain an explicit routing policy linking a score decrease to this specific route.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The text at the top of the image clearly reads 'Increasing Regional Air Quality Recovery from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is labeled 'Year' with tick marks for 2018 through 2023. The vertical axis is labeled 'Recovery Score'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is intended to summarize the overall 2018-2023 dashboard finding, and an increasing air-quality recovery finding is routed to recovery expansion follow-up, select the recovery expansion route.\",\n        \"evidence\": \"The title 'Increasing Regional Air Quality Recovery from 2018 to 2023' is visible. However, the condition that this title is 'intended to summarize the overall... finding' is an assumption, especially given that the visual data shows the score decreasing from 2018 to 2023. Furthermore, the mapping of an 'increasing recovery finding' to 'recovery expansion follow-up' is not defined in the provided text.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3636,
+      "total_tokens": 4427,
+      "completion_tokens": 791,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

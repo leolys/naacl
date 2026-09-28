@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf7510ddd160eab4",
+    "object": "chat.completion",
+    "created": 1790616004,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis labels are 2017, 2018, 2019, and 2020. The red marker at 2017 is at ~130, at 2018 is at ~145, at 2019 is at ~158, and at 2020 is at ~171. Each successive marker is higher on the page than the preceding one, confirming a rising trend from 2017 to 2020.\",\n          \"status\": \"supported\"\n        }\n      ,\n        \"2\": {\n          \"evidence\": \"The chart is titled 'Respiratory Clinic Visits' and the y-axis is labeled 'Clinic visits (thousands)', confirming the red line represents respiratory clinic visits.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Requires treating the unshown 2013-2016 data as consistent with the displayed rise; 2. No supplied chart evidence establishes that assumption.\",\n        \"evidence\": \"1. The displayed 2017-2020 data shows a clear, continuous upward trend. 2. The chart explicitly states 'Reported window shown in the dashboard summary' and shows no data for 2013-2016. No evidence is provided to support assuming the 2013-2016 period was also rising. The assumption is unverified.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Respiratory Clinic Visits' and the subtitle is 'Reported window shown in the dashboard summary'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis labels are 2017, 2018, 2019, and 2020. The red marker at 2017 is at ~130, at 2018 is at ~145, at 2019 is at ~158, and at 2020 is at ~171. Each successive marker is higher on the page than the preceding one, confirming a rising trend from 2017 to 2020.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Clinic visits (thousands)' and ranges from 130 to 170. The red line connects the data points, showing a continuous upward trend.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The chart is titled 'Respiratory Clinic Visits' and the subtitle is 'Reported window shown in the dashboard summary'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies only if the plotted series is the respiratory clinic visit series and the omitted 2013-2016 period is not available elsewhere in the supplied evidence.\",\n        \"evidence\": \"1. The plotted series is confirmed to be respiratory clinic visits by the chart title and y-axis label. 2. The chart explicitly states 'Reported window shown in the dashboard summary' and shows no data for 2013-2016. No other evidence is provided to suggest the 2013-2016 period is available. The condition is satisfied.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3610,
+      "total_tokens": 4432,
+      "completion_tokens": 822,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

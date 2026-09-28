@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-91f5076f39955650",
+    "object": "chat.completion",
+    "created": 1790618313,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The subtitle text 'Selected high-referral centers shown in dashboard summary' is visible directly below the main title.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five distinct orange data points are visible in the plot area, each labeled with 'Center A', 'Center B', 'Center C', 'Center D', and 'Center E'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading applies if the chart is limited to selected high-referral centers (verified by subtitle) and if no additional network-wide sampling or outcome evidence is supplied (verified by the absence of other data groups or context in the image).\",\n        \"evidence\": \"The subtitle confirms the selection limitation, and the chart contains only the five labeled points with no other comparison groups or network-wide data. The conditions are met by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title 'Top Screening Centers: Outreach Hours vs Referral Count' and subtitle 'Selected high-referral centers shown in dashboard summary' are clearly printed at the top of the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is labeled 'Monthly outreach hours' with visible ticks at 30, 40, 50, 60, and 70. The vertical axis is labeled 'Referral count' with visible ticks at 60, 80, 100, 120, 140, and 160.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The points are arranged in a diagonal line from bottom-left to top-right. Center A is the lowest/leftmost, followed by B, C, and D, with Center E being the highest/rightmost.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading applies if the axes encode the stated variables (verified by labels) and if the pattern is consistent among the displayed centers (verified by the diagonal arrangement). It assumes the axis titles describe the plotted coordinates.\",\n        \"evidence\": \"The axis labels match the variables in the reading, and the visual arrangement of points A through E shows a consistent positive trend (higher hours associated with higher referrals). The conditions are met by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3441,
+      "total_tokens": 4091,
+      "completion_tokens": 650,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

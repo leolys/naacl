@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c677e5c43b04bb0",
+    "object": "chat.completion",
+    "created": 1790613368,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The red square at 11-18 years is higher on the page than the blue circular mark at the same category.\",\n          \"status\": \"unclear\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left axis label is blue and the right axis label is red; no numeric y-axis tick labels are visibly printed.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Blue circular marks are connected by a solid blue line, while red square marks are connected by a dashed red line.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review.\",\n        \"evidence\": \"The chart uses separate y-axes (blue for 'High fibre breakfast cereals', red for 'Other breakfast cereals') with no visible tick labels. The screen-space height of the red square (11-18 years) is higher than the blue circle at the same category, but this cannot be used to compare values without a scale. The task does not provide a policy or criterion for routing based on visual positioning.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title reads “High fibre breakfast cereals vs Other breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The blue axis label reads “High fibre breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"A blue circular mark is shown at the 11-18 years position.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the routing instruction treats the chart category explicitly labeled “High fibre breakfast cereals” as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option.\",\n        \"evidence\": \"The chart's left y-axis is labeled 'High fibre breakfast cereals' and the blue line (with blue circular marks) represents this category. The blue data point at '11-18 years' has a value of '18'. The task requires routing the '11-18 years' category, and the chart explicitly labels the 'High fibre breakfast cereals' category. However, the reading assumes a program rule that the category label (not the plotted data point) determines the routing. This rule is not stated in the task or public definitions. The task does not specify whether the '11-18 years' category should be routed based on its own data point or based on a comparison with other age groups. The reading's applicability depends on an unstated assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3016,
+      "total_tokens": 3722,
+      "completion_tokens": 706,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

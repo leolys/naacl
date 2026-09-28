@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-864a9c00f49e177d",
+    "object": "chat.completion",
+    "created": 1790615440,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the red bar above 'Huawei' is higher on the page than the tops of the orange Apple, dark-blue Samsung, green Xiaomi, and blue Others bars.\",\n          \"status\": \"unclear\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible y-axis is labeled from 0 at the bottom upward through 10-point ticks to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies only if the y-axis and bar geometry are authoritative despite conflicting percentage inscriptions.\",\n        \"evidence\": \"1. The bar heights visually align with the y-axis scale (e.g., Apple's bar top is at 30, Huawei's at 23). 2. The percentage inscriptions ('30%', '23%', etc.) are printed directly above the bars, conflicting with the bar heights. 3. The y-axis scale is authoritative (supported), but the bar heights are not the authoritative source since the printed percentages are explicitly shown and conflict with the visual heights (e.g., Huawei's bar top is higher than Xiaomi's, but its printed value is 23% vs. 11%).\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis label 'Apple' is centered below the leftmost orange bar, and the inscription '30%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis label 'Samsung' is centered below the dark-blue bar, and the inscription '11%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis label 'Xiaomi' is centered below the green bar, and the inscription '11%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The x-axis label 'Huawei' is centered below the red bar, and the inscription '23%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The x-axis label 'Others' is centered below the rightmost blue bar, and the inscription '25%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies only if the printed percentage labels, rather than the plotted bar heights against the y-axis, are authoritative market_share encodings.\",\n        \"evidence\": \"1. The printed percentage labels are explicitly shown above each bar (supported). 2. The bar heights visually align with the y-axis scale, but the printed percentages conflict with the visual heights (e.g., Huawei's bar top is higher than Xiaomi's, but its printed value is 23% vs. 11%). 3. The dashboard's authoritative source is the printed percentages (supported).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4082,
+      "total_tokens": 4783,
+      "completion_tokens": 701,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

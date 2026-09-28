@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a1202e8f86b67f99",
+    "object": "chat.completion",
+    "created": 1790613829,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot contains five labeled markers: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If approval requires evidence of a causal effect or complete regional coverage, a five-marker chart titled as covering 'Top Regions' is insufficient unless it supplies such evidence or states that it is complete. In that case, select the evidence-review option rather than approve.\",\n        \"evidence\": \"The chart is titled 'Top Regions: Ad Spend vs Sales' and displays five regions. The public task and independent notes do not state that causal validation or complete regional coverage is required. The policy tables are empty, and no organizational policy is cited to mandate this. The reading's condition is not met by visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bottom axis is labeled 'Advertising Spend ($ thousands)' with ticks from 25 to 75.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis is labeled 'Sales ($ thousands)' with ticks from 70 to 180.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Five blue circular markers are labeled Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"From Region A through Region E, each successive marker is farther right and higher on the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis inscription identifies left-to-right position as Advertising Spend ($ thousands) and the vertical axis inscription identifies bottom-to-top position as Sales ($ thousands), with both printed tick sequences increasing in those directions, then labeled marker positions can be decoded as a cross-sectional association between regional ad spend and sales. If this five-region association is representative enough for a broader decision and causal proof is not required, a consistent positive association supports approving a broader ad spend increase.\",\n        \"evidence\": \"The axes are correctly labeled and oriented. The positions of the markers are consistent with a positive association: as advertising spend increases, sales increase. The independent notes confirm the coordinates: Region A (30, 70), Region B (40, 115), Region C (50, 140), Region D (60, 160), Region E (70, 175). This is a clear, monotonic positive association. The public task and chart reference do not require causal proof, only a decision based on the dashboard. The reading's conditions are fully met by visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3765,
+      "total_tokens": 4439,
+      "completion_tokens": 674,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

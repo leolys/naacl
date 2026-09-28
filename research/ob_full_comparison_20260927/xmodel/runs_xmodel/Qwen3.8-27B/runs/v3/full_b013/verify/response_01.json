@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b6a9801c5e297874",
+    "object": "chat.completion",
+    "created": 1790617321,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"O1-B1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The image shows a bar chart with the title 'Units Sold by Product (Weekend Pop-up)' and five vertical red bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The x-axis is labeled 'Product' and the categories are listed from left to right as Product C, Product B, Product D, Product E, and Product A.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The y-axis is labeled 'Units Sold' and displays tick marks at 5,000, 10,000, 15,000, 20,000, and 25,000.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The bar for 'Product B' is the second bar from the left on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Supported. The top of the 'Product B' bar is positioned horizontally just above the 5,000 tick mark on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes the vertical height of the bar represents the exact quantity of units sold and estimates Product B at approximately 5,500 units based on its position just above the 5,000 grid line.\",\n        \"evidence\": \"The visual support confirms the bar is just above the 5,000 line, which is consistent with a value in the 5,000–6,000 range. However, the specific value of 5,500 is an estimate and not explicitly printed on the chart. The assumption that the bar height represents exact quantity is a standard convention for bar charts but is not explicitly stated in the public task.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"O2-B2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The 'Product B' bar is visibly the shortest among the five bars in the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The 'Product C' bar is taller than 'Product B' and reaches a level roughly halfway between the 5,000 and 10,000 marks, which is approximately 8,500.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Refuted. The 'Product D' bar aligns with the 25,000 line, and the 'Product A' bar is taller, extending above the 25,000 line. The statement that both are 'significantly taller, extending above the 25,000 line' is incorrect for Product D.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes the chart accurately reflects relative sales volume and concludes Product B has the lowest sales volume among the displayed products.\",\n        \"evidence\": \"The visual evidence supports that Product B is the shortest bar, which implies the lowest sales volume if the chart is accurate. The assumption of accuracy is a standard convention but not explicitly stated. The relative comparison is visually supported.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"O3-B3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The y-axis scale is linear with major intervals of 5,000 units (5,000, 10,000, 15,000, 20,000, 25,000).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The 'Product B' bar height is visibly greater than the 5,000 mark and significantly less than the 10,000 mark.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes the chart's scale is linear and standard, and concludes the unit count for Product B falls within the range of 5,000 to 10,000 units, specifically in the lower quartile of that interval.\",\n        \"evidence\": \"The visual evidence supports that the bar is between 5,000 and 10,000 and closer to the 5,000 mark (lower quartile). The assumption of a linear and standard scale is a convention but not explicitly stated. The range and relative position are visually supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4095,
+      "total_tokens": 5294,
+      "completion_tokens": 1199,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

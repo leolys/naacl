@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9ade99dceb5b8ee6",
+    "object": "chat.completion",
+    "created": 1790614889,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows temperature labels, year ticks, and axis labeling, but no visible text states a substantial-change threshold or routing rule.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If a substantial-change route requires an explicit displayed policy threshold or other supplied criterion, the chart alone does not establish that the full-period change meets it; under a policy that defaults unverified changes to routine monitoring, routine monitoring would apply.\",\n      \"evidence\": \"The chart does not display any policy threshold, rule, or default-routing policy. The task's own instructions do not supply a numeric threshold or default policy. The conditional 'routine monitoring would apply' is a logical consequence of the absence of a stated threshold under a default policy. This is a public fact: the dashboard does not contain the necessary conditions for triggering substantial-change follow-up. The reading’s conditions are met by the absence of any displayed policy threshold or default-routing policy in the chart or task description.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title reads 'River Temperature Monitoring Record', and the vertical axis is labeled 'Water temperature (°C).'\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"A plotted marker above the 2005 tick has the printed label '23.9°C' next to it.\",\n        \"status\": \"supported\"\n      },\n      \"3\": {\n        \"evidence\": \"A plotted marker above the 2014 tick has the printed label '10.1°C' next to it.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the plotted series is the river-temperature record, the x-axis year ticks bind the endpoint markers to 2005 and 2014, and the printed endpoint labels are their temperatures in °C, then the full-period change is 2014 minus 2005. If the routing program classifies a decrease of that magnitude as substantial, substantial-change follow-up is the applicable route.\",\n      \"evidence\": \"The chart’s title, axis labels, and data point annotations confirm the plotted series is the river-temperature record. The x-axis ticks for 2005 and 2014 are clearly labeled, and the printed labels '23.9°C' and '10.1°C' are positioned directly above their respective year markers. The full-period change is therefore 10.1°C minus 23.9°C, which equals a decrease of 13.8°C. The reading’s conditions are met: the endpoint labels accurately annotate the plotted series, and the program’s unstated substantial-change criterion must include a magnitude of 13.8°C or greater for the route to apply. The reading’s conclusion is contingent on the unstated program criterion, which is not refuted by the evidence.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n\n  }",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3861,
+      "total_tokens": 4541,
+      "completion_tokens": 680,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

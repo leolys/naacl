@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b60a0fc86de9e903",
+    "object": "chat.completion",
+    "created": 1790614897,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 point is labeled '24.0°C' and the 2015 point is labeled '10.0°C'. The chart title is 'District Heating Demand Index' and the axes are labeled 'Year' and 'Demand index'. No substantial-change threshold or routing instruction is visible.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title and axes are clearly visible and labeled as described. No substantial-change threshold or routing instruction is printed on the chart or in the task materials.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart contains no printed text specifying a threshold, policy, or routing instruction. The task materials do not supply one either.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up requires meeting an explicit numeric threshold or other stated criterion, and none is supplied in the chart or task materials, the chart alone does not establish eligibility; if the workflow defaults unverified changes to routine monitoring, select routine monitoring.\",\n        \"evidence\": \"The necessary condition is that a numeric threshold or stated criterion is required for substantial-change follow-up. This is not present in the chart or task materials. The second necessary condition is that the workflow defaults unverified changes to routine monitoring. This is not explicitly stated in the materials but is a common default in absence of policy. The B reading does not claim this is the actual workflow, only that it applies if it were. The reading is not contradicted by the evidence. The condition 'neither is explicitly supplied' is supported by the visible chart and task materials.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 point is labeled '24.0°C' and the 2015 point is labeled '10.0°C'. The chart title is 'District Heating Demand Index' and the axes are labeled 'Year' and 'Demand index'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title and axes are clearly visible and labeled as described.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title and axes are clearly visible and labeled as described. The 2005-to-2015 full-period change is the difference between the 2015 and 2005 labeled values: 10.0°C - 24.0°C = -14.0°C. The absolute change is 14.0°C.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted series titled 'District Heating Demand Index' binds each year tick to its adjacent printed point label, the 2005-to-2015 full-period change is the 2015 labeled value minus the 2005 labeled value. If an approximately 14.0°C absolute change is treated as substantial for the routing criterion, select substantial-change follow-up.\",\n        \"evidence\": \"The necessary condition is that the plotted series binds each year tick to its adjacent printed point label. This is supported by the visual evidence: the data points are positioned directly above the year ticks, and the labels are placed adjacent to the points. The second necessary condition is that a 14.0°C absolute change qualifies as substantial. This is not stated in the materials. The B reading does not claim this is the actual policy; it only states what would happen if it were. The condition 'no numeric substantial-change threshold is displayed' is supported by the visible chart and task materials. The reading is not contradicted by the evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3986,
+      "total_tokens": 4843,
+      "completion_tokens": 857,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

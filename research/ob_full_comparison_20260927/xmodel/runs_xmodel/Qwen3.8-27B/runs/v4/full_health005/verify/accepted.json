@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title reads 'Month vs. Number of samples tested' and a single blue line with circular markers is plotted across the x-axis.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The public task options explicitly include 'Route the testing-volume record to general laboratory operations review' alongside the specialized rising and declining options.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading suggests that if the task provides no explicit operational policy tying the pattern to a specialized team, the 'general laboratory operations review' option may be used as a fallback.",
+        "evidence": "The chart clearly shows a strong trend (the line moves from a high count of ~1.2e6 to a lower count of ~0.4e6). The option labels themselves ('rising-volume capacity planning', 'declining-volume outreach review') provide a direct semantic mapping between a volume pattern and a specific operational team. The visual evidence of a clear trend combined with the specific nature of the options suggests the specialized routing is the intended match rather than a generic fallback.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Month vs. Number of samples tested'. The x-axis is labeled 'Month' and the y-axis is labeled 'Count'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis tick labels progress from 'Nov 20' on the left to 'Jun 26' on the right. The visible labels include Nov 20, Nov 12, Nov 4, Oct 20, Oct 12, Sep 7, Aug 31, Aug 24, Aug 14, Aug 10, Aug 3, Jul 27, Jul 20, Jul 13, Jul 10, Jul 3, Jul 1, Jun 30, Jun 29, Jun 26.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The y-axis has an inverted scale with '0.0' at the top and '1.2' at the bottom, with a '1e6' multiplier. The blue point at 'Nov 20' is positioned near the bottom of the chart (corresponding to the 1.2 value), while the point at 'Jun 26' is positioned near the top (corresponding to a value near 0.4).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "The reading argues that because the y-axis is inverted, the visual rise of the line corresponds to a decrease in the numeric Count value (from ~1.2e6 to ~0.4e6), which constitutes a declining volume pattern.",
+        "evidence": "The y-axis is indeed inverted (0.0 at top, 1.2 at bottom). The data point at the start of the series (Nov 20) is at the bottom of the chart, aligning with the 1.2 mark. The data point at the end of the series (Jun 26) is near the top, aligning with the 0.4 mark. Since 0.4 is less than 1.2, the number of samples tested has decreased over the reporting window.",
+        "status": "supported"
+      }
+    }
+  }
+}

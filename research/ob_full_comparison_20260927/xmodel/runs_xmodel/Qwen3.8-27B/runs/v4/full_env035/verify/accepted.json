@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title reads 'Year vs. Price in U.S. dollars per barrel' and the y-axis is labeled 'Count', creating a visible conflict between the stated metric and the axis label.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis ticks are visibly numbered 0 at the top, increasing downwards to 35, confirming the axis is inverted relative to standard charts.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the y-axis label 'Count' is authoritative, the vertical positions cannot be validated as the requested cost metric.",
+        "evidence": "The chart title and task instructions explicitly define the vertical axis as 'Price in U.S. dollars per barrel', which provides a specific metric definition that overrides the generic 'Count' label. The task's requirement to find the 'highest per-barrel cost' implies the vertical axis represents price.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title 'Year vs. Price in U.S. dollars per barrel' is clearly visible at the top of the chart.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The x-axis lists years from 1976 to 1995, and there is a blue circular marker for each year.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The marker for 1980 is positioned at the bottom of the chart, which corresponds to the highest numerical value on the inverted y-axis (approx 38).",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The y-axis ticks are 0 (top), 5, 10, 15, 20, 25, 30, 35 (bottom).",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The y-axis label is 'Count'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the x-axis year labels bind markers to years and the vertical scale is the price scale, then larger printed vertical-axis values represent higher per-barrel costs.",
+        "evidence": "The chart title and task instructions establish the vertical axis as 'Price in U.S. dollars per barrel'. The y-axis is inverted (0 at top, 35 at bottom). Therefore, the point with the largest numerical value on the y-axis (furthest down) represents the highest price. The 1980 marker is at the lowest position (highest value, approx 38), making it the highest cost.",
+        "status": "supported"
+      }
+    }
+  }
+}

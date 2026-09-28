@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b111d1de6a5db999",
+    "object": "chat.completion",
+    "created": 1790617728,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"In the plot area at the 'Week 1' x-axis label, the top of the blue bar is clearly below the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal dashed line is located at the 550 y-axis tick and has the text 'Average' inscribed at its right end.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if no supplied policy defines a below-average result as requiring follow-up, a below-average visual comparison alone may be insufficient to distinguish low-revenue response from normal tracking, leaving normal tracking as a possible conservative route. The necessary condition is that the task state contains route labels but no policy table or explicit threshold.\",\n        \"evidence\": \"The public task includes route options ('Route Week 1 to above-average revenue follow-up', 'Route Week 1 to low-revenue response', 'Keep Week 1 on normal revenue tracking') but provides no policy table or explicit threshold defining which visual condition maps to which route.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"In the plot area at the 'Week 1' x-axis label, the top of the blue bar is clearly below the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal dashed line is located at the 550 y-axis tick and has the text 'Average' inscribed at its right end.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The left vertical axis is labeled 'Revenue' and shows printed ticks including 450, 500, 550, and 600.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if the bars encode weekly revenue (higher = greater), the Week 1 bar is bound to the Week 1 label, and the dashed 'Average' line is the applicable benchmark, then a Week 1 bar below that line indicates below-average revenue. It further states that if the routing form uses below-average revenue as the criterion for low-revenue response, the low-revenue option should be selected. The necessary conditions are the visual encoding, the binding of the bar to the label, the applicability of the average line as a benchmark, and the assumption that below-average maps to low-revenue response.\",\n        \"evidence\": \"The chart visually supports that the Week 1 bar is below the 'Average' line and that the axis represents revenue. However, the task provides no explicit policy or threshold defining that 'below-average' revenue triggers a 'low-revenue response' route. The mapping from the visual state (below average) to the specific action (low-revenue response) is an assumption not confirmed by the public task instructions.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4088,
+      "total_tokens": 4840,
+      "completion_tokens": 752,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

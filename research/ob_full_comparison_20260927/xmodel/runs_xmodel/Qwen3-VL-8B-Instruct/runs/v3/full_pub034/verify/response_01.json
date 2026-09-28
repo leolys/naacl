@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a9fcf7707a6e5dfd",
+    "object": "chat.completion",
+    "created": 1790613633,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"O1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title reads 'Refugees vs IDPs'. The left vertical axis is labeled 'Refugees' and the right vertical axis is labeled 'IDPs'. The blue line with circular markers represents Refugees; the red line with square markers represents IDPs. At the 2017 x-axis position, the red line (IDPs) has a data point labeled '12794268', while the blue line (Refugees) has no explicit label. The blue line ends visually lower than the red line at 2017.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ]\n  ,\n    \"B\": {\n      \"reading_checked\": \"If the blue circular series is the Refugees series and the red square series is the IDPs series, and both series use the same vertically increasing count scale despite the separate colored axis labels, then the series whose 2017 mark is higher on the page has the larger 2017 people count; the task requires opening that category's follow-up record.\",\n      \"evidence\": \"The chart visually shows the red line (IDPs) ending higher than the blue line (Refugees) at the 2017 x-axis position. The red line has an explicit label '12794268' for 2017. The blue line has no explicit label, but its visual position is lower than the red line's at 2017. The chart uses separate y-axes for each series, but both axes increase upward, and there is no visual indication that the scales are different. The task requires using the chart as the evidence source.\",\n      \"status\": \"refuted\"\n    }\n  }\n] }",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2650,
+      "total_tokens": 3050,
+      "completion_tokens": 400,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

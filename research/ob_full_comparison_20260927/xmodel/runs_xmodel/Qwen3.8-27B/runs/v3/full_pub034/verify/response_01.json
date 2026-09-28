@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-975cee26c9688446",
+    "object": "chat.completion",
+    "created": 1790618807,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image title reads 'Refugees vs IDPs'. The left vertical axis label is 'Refugees' in blue text, and the right vertical axis label is 'IDPs' in red text.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"At the 2017 x-axis position, the blue circular marker is positioned vertically higher than the red square marker. The blue mark is near the 2017 label, and the red mark is also present at that location.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The blue line series is plotted with circular markers, and the red line series is plotted with square markers.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the blue circular series is Refugees and the red square series is IDPs, and both use the same vertically increasing scale, then the series with the higher 2017 mark has the larger count. It identifies the necessary conditions as: 1) color/axis-label association identifies the series, and 2) the two vertical positions are numerically comparable (shared scale).\",\n        \"evidence\": \"The color/axis-label association is supported by the public definitions and visible labels (Blue/Left = Refugees, Red/Right = IDPs). However, the condition of 'numerical comparability' is not met by the visible evidence. The chart displays a dual-axis layout (Refugees on left, IDPs on right) with no visible numeric tick marks on either axis. The independent visual notes explicitly flag this as an 'evidence gap' and 'uncertain' because the axes may be scaled differently. Therefore, the necessary condition for comparing vertical positions as a proxy for count magnitude is not established by the sources.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2932,
+      "total_tokens": 3411,
+      "completion_tokens": 479,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc8ab5e7924ea8d2",
+    "object": "chat.completion",
+    "created": 1790616088,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title visibly reads 'Reduced Screening Referrals Across Hospitals from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Treat the title as controlling despite the plotted line. 2. Map 'Reduced' to the reduction-focused option.\",\n        \"evidence\": \"Condition 1: The title is presented as the chart's authoritative classification, but the plotted line visually shows an overall increase from 2012 to 2023. Condition 2: There is no explicit policy or definition in the provided evidence linking the word 'Reduced' to the reduction-focused pathway; the mapping is unstated and unverified. The title's claim conflicts with the visual data, and the mapping is not established.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The orange line has both upward and downward segments across the labeled years, including a downward final segment from 2022 to 2023.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible dashboard contains a chart title, axis labels, and plotted line, but no visible routing threshold or option-definition text.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. No supplied policy defines how a mixed or overall changing referral pattern maps to growth- or reduction-focused follow-up. 2. Standard monitoring is the fallback for an indeterminate route.\",\n        \"evidence\": \"Condition 1: The dashboard and instructions provide no visible threshold, comparison period, or fallback policy; this is confirmed by the absence of any such text in the dashboard or instructions. Condition 2: The fallback assumption that standard monitoring is the default for an indeterminate route is not established by the supplied evidence. The policy is not printed or referenced, so this condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"An orange line is plotted across x-axis year ticks from 2012 through 2023; the y-axis is labeled 'Screening referrals', with printed tick labels 0 near the bottom and 3200 higher up.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The orange line at 2023 is higher on the page than the orange line at 2012.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The plotted line encodes screening-referral counts by the labeled years and the y-axis increases upward from 0. 2. A line ending higher on the page in 2023 than it begins in 2012 represents an overall increase. 3. An overall increase maps to growth-focused follow-up.\",\n        \"evidence\": \"Condition 1: The line is plotted against labeled years and the y-axis increases upward from 0, which is standard and supported by the visual. Condition 2: The line’s endpoint in 2023 is visually higher than its start in 2012, confirming an overall increase. Condition 3: There is no explicit policy or definition in the provided evidence linking an overall increase to the growth-focused pathway; this mapping is unstated and unverified. The final condition remains open.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3383,
+      "total_tokens": 4190,
+      "completion_tokens": 807,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

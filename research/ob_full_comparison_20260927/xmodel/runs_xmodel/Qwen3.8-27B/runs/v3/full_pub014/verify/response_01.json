@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-92c752de110c1e0d",
+    "object": "chat.completion",
+    "created": 1790618563,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The map shows a polygon labeled 'TX' filled with a pale yellow color. The legend on the right shows pale yellow at the top, labeled 'High' and '100'. The color of TX matches the top of this legend.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The legend at the lower right of the map is a vertical bar. The top of the bar is pale yellow, and the text 'High' and '100' are printed next to it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The map shows a polygon labeled 'DE' filled with an orange color. This color corresponds to the middle of the legend's gradient, not the 'orange-red' or dark red at the bottom.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"This reading states that if the routing criterion requires the highest-risk state across the entire dashboard (not just the options), a specific record can only be selected if the chart shows it exceeds every other mapped state.\",\n        \"evidence\": \"The task's 'Routing criterion' is 'Highest risk state in the dashboard'. The dashboard shows multiple states with dark maroon colors (e.g., WA, ID, WY, KS, NM, OK) which correspond to the 'Low' end of the legend (0-20). The options provided are RI, NM, and DE. The chart does not show any of the options (RI, NM, DE) exceeding every other state; in fact, NM is at the 'Low' end while others are at the 'High' end.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The map shows a polygon labeled 'RI' filled with a pale yellow color. It is not gray. The gray color is used for states like CA, AZ, UT, CO, AR, MS, and AK, which appear to be 'no data' or unmapped.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The legend is a vertical gradient from pale yellow (top, 'High'/'100') to dark maroon (bottom, 'Low'/'0'). There is no gray swatch or label in the legend itself, although gray is used on the map for certain states.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"This reading posits that if a state's fill is encoded by the legend, the pale-yellow end represents higher risk than the dark-red end, and that fills not in the gradient (like gray) have no stated risk value.\",\n        \"evidence\": \"The legend explicitly labels pale yellow as 'High' (100) and dark red/maroon as 'Low' (0). The map uses gray for states like CA and AZ, which are not part of the color gradient, implying they have no data or are not part of the risk index scale.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The legend clearly shows 'High' at the top with the value '100' and 'Low' at the bottom with the value '0'. The top color is pale yellow and the bottom is dark maroon.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The polygon labeled 'DE' is filled with an orange color, which is in the middle of the gradient (around 40-60). It is not 'orange-red' which would be closer to the bottom.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The polygon labeled 'NM' is filled with a dark maroon color, which matches the 'Low' end of the legend.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The polygon labeled 'RI' is filled with a pale yellow color, matching the 'High' end of the legend. It is not gray.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"This reading suggests that if selection is restricted to the offered options and gray/unmapped states are excluded, the offered state with the highest legend-decoded risk is the most consistent choice.\",\n        \"evidence\": \"The offered options are RI, NM, and DE. Based on the legend (pale yellow = High, dark maroon = Low): RI is pale yellow (High), DE is orange (Medium), and NM is dark maroon (Low). Therefore, RI has the highest risk among the options.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4059,
+      "total_tokens": 5253,
+      "completion_tokens": 1194,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The O asserts that the small area labeled 'RI' is gray. Looking at the map, the state of Rhode Island (RI) is indeed filled with a gray color, which is distinct from the yellow-to-red gradient used for other states. This is a direct visual observation.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The O asserts that the prevalence gradient runs from pale yellow to dark burgundy with no visible gray swatch. The legend on the right side of the chart clearly shows a vertical bar with a gradient from pale yellow at the top (labeled 'High' and '100') to dark burgundy at the bottom (labeled 'Low' and '0'). There is no gray section in this legend. This is a direct visual observation.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "A gray state fill cannot be assigned a prevalence rank from this chart unless gray is defined by the displayed prevalence legend; absent such a definition, it may indicate missing or otherwise unencoded data.",
+        "evidence": "The necessary condition is that the legend defines the gray color. The visual evidence from the chart shows a legend that only covers a yellow-to-red spectrum. Gray is not part of this spectrum. Therefore, the condition is met, and the inference that the gray fill for RI represents unencoded or missing data is supported by the visual facts.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The O asserts the vertical gradient is inscribed 'High' at the pale-yellow top beside '100' and 'Low' at the dark-burgundy bottom beside '0'. The legend on the right of the chart clearly shows 'High' and '100' at the top of the pale yellow section, and 'Low' and '0' at the bottom of the dark burgundy section. This is a direct visual observation.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The O asserts the polygon labeled 'DE' is pale yellow. On the map, the state of Delaware (DE) is filled with a very light, pale yellow color, which corresponds to the top of the prevalence scale. This is a direct visual observation.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The O asserts the polygon labeled 'GA' is dark burgundy. On the map, the state of Georgia (GA) is filled with a dark burgundy color, which corresponds to the bottom of the prevalence scale. This is a direct visual observation.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The O asserts the small area labeled 'RI' is gray. As established in r1, the state of Rhode Island (RI) is filled with gray. This is a direct visual observation.",
+          "status": "supported"
+        },
+        "5": {
+          "evidence": "The O asserts the routing criterion is 'Highest prevalence state in the dashboard' and the Delaware option is for 'routine monitoring'. This information is present in the `public_task` section of the provided data. The `visible_context_4` field states the routing criterion, and the `option_labels` list includes the text for the Delaware option. This is a direct observation from the task description.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If each labeled state polygon is encoded by the adjacent vertical prevalence color scale, then colors nearer the pale-yellow top labeled 'High' and '100' represent higher prevalence than colors nearer the dark-red bottom labeled 'Low' and '0'; this comparison applies only to states with colors represented by that scale.",
+        "evidence": "The necessary condition is that the state polygons are encoded by the adjacent vertical scale. The chart is a choropleth map, a standard visualization where the fill color of a geographic region corresponds to a value on a scale. The legend is placed directly next to the map, strongly implying this relationship. The condition that the comparison applies only to states with colors on the scale is a logical limitation. The visual evidence supports this interpretation. The colors of DE (pale yellow) and GA (dark burgundy) are both on the scale, so they are comparable under this rule.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The O asserts the polygon labeled 'GA' is dark burgundy. This has been verified in r2. The state of Georgia (GA) is filled with a dark burgundy color.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The O asserts the polygon labeled 'DE' is pale yellow. This has been verified in r2. The state of Delaware (DE) is filled with a pale yellow color.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The O asserts the dark-burgundy end is inscribed 'Low' and '0', and the pale-yellow end is inscribed 'High' and '100'. This has been verified in r2. The legend clearly shows these labels and values at the respective ends of the gradient.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If each labeled state polygon is encoded by the adjacent vertical prevalence color scale, then colors nearer the pale-yellow top labeled 'High' and '100' represent higher prevalence than colors nearer the dark-red bottom labeled 'Low' and '0'; this comparison applies only to states with colors represented by that scale.",
+        "evidence": "This is the same reading as in r2. The necessary conditions are that the map is a choropleth and the legend applies to the map. Both are supported by the visual evidence of the chart. The comparison between GA (dark burgundy, low end) and DE (pale yellow, high end) is valid under this reading.",
+        "status": "supported"
+      }
+    }
+  }
+}

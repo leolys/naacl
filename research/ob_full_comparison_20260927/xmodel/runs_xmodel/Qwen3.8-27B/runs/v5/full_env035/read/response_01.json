@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b70f89ac1461c963",
+    "object": "chat.completion",
+    "created": 1790621688,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"center\",\n      \"fact\": \"Single blue line with circular markers connects 20 annual points from 1976 (left) to 1995 (right); a light purple fill spans from the line up to the top of the plot area.\"\n    },\n    {\n      \"location\": \"lower-left region\",\n      \"fact\": \"The line reaches its lowest vertical position (largest downward extent) at the 1980 marker, which sits visibly below all other markers on the chart.\"\n    },\n    {\n      \"location\": \"left side\",\n      \"fact\": \"The 1976, 1977, and 1978 markers are near the top of the plot, above the 1980 marker.\"\n    },\n    {\n      \"location\": \"center-right\",\n      \"fact\": \"The 1986 marker is a local high (relatively near the top) but remains above the 1980 marker in vertical position.\"\n    },\n    {\n      \"location\": \"right side\",\n      \"fact\": \"Markers from 1987 through 1995 oscillate in the upper-middle band, all positioned above the 1980 marker.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"top center\",\n      \"fact\": \"Chart title: 'Year vs. Price in U.S. dollars per barrel'.\"\n    },\n    {\n      \"location\": \"left axis\",\n      \"fact\": \"Y-axis label 'Count' with tick values 0, 5, 10, 15, 20, 25, 30, 35 arranged top-to-bottom (0 at top, 35 near bottom).\"\n    },\n    {\n      \"location\": \"bottom axis\",\n      \"fact\": \"X-axis label 'Year' with ticks 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995.\"\n    },\n    {\n      \"location\": \"form context\",\n      \"fact\": \"Primary field 'Route escalation year' with options: 'Route 1980 escalation review', 'Route 1976 escalation review', 'Route 1986 mid-period review'.\"\n    },\n    {\n      \"location\": \"form context\",\n      \"fact\": \"Readonly fields: 'Program area' = 'Energy markets'; 'Review scope' = 'Historical petroleum price spike screening'; 'Record workflow' = 'Analyst escalation routing'.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: 'Review the historical petroleum price dashboard and route the year that should receive escalation follow-up for the highest per-barrel cost observed in this screening cycle.'\",\n    \"Chart reference: 'Historical petroleum price dashboard: Year and price in U.S. dollars per barrel'.\",\n    \"Applicable option condition: select the year corresponding to the highest per-barrel cost among the listed options (1980, 1976, 1986).\"\n  ],\n  \"uncertain\": [\n    \"The y-axis is labeled 'Count' and runs 0 (top) to 35 (bottom), which is inverted relative to a conventional price scale; the mapping of vertical position to 'highest per-barrel cost' is therefore ambiguous (the 1980 point is the lowest on the page but the largest tick value ~38, while 1976/1977/1978 are near the top with small tick values ~12–15).\",\n    \"No explicit dollar-per-barrel numeric annotations are printed on the markers, so exact price values cannot be read; only relative vertical positions and the inverted tick scale are available.\",\n    \"Whether 'highest per-barrel cost' should be interpreted as the maximum tick value (favoring 1980) or the highest visual position (favoring 1976/1977/1978) is unresolved.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 1500,
+      "total_tokens": 2515,
+      "completion_tokens": 1015,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

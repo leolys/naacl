@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8e3e5a0d6b6b5aae",
+    "object": "chat.completion",
+    "created": 1790615553,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Additional Promotion Weeks: Ad Spend vs Sales' and the plot contains five labeled weekly points (Week 7 to Week 11).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart area contains no legend, control group, profitability measure, cost threshold, causal annotation, or full-data analysis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Approval requires causal, profitability, or broader-data validation. 2. None of those requirements or results is visibly supplied.\",\n        \"evidence\": \"Condition 1: The public task and page instructions do not state that causal, profitability, or broader-data validation is required for approval. Condition 2: The chart does not show any such validation. Both conditions are met. The text of B states the action if the conditions are met: 'the appropriate action is to request full-data analysis'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue points for Week 7, Week 8, Week 9, Week 10, and Week 11 progress from lower-left to upper-right on the page.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Week 7 is plotted near x-axis tick 30 and between y-axis ticks 60 and 70; Week 11 is plotted near x-axis tick 70 and y-axis tick 160.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands. 2. The observed positive association is considered sufficient for approval.\",\n        \"evidence\": \"Condition 1: Axis labels match the plotted data. Condition 2: The public task and page instructions do not specify a requirement for causal validation or profitability measures, implying that a positive correlation may be sufficient. The B text states that if these conditions are met, the action is to 'approve broader ad spend increase'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3681,
+      "total_tokens": 4237,
+      "completion_tokens": 556,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

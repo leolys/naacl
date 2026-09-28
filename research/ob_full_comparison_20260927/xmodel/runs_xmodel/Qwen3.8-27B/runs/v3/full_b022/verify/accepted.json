@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image displays a chart with the title 'Top Regions: Ad Spend vs Sales' at the top. The plot area contains exactly five labeled points (Region A through Region E).",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The vertical axis is labeled 'Sales ($ thousands)' and the horizontal axis is labeled 'Advertising Spend ($ thousands)'. No other quantitative axis labels are visible.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If a broader budget approval requires evidence of advertising causal impact, ROI/profitability, or complete regional coverage, then a scatterplot showing only spend and sales for the displayed top regions is insufficient and supports requesting full analysis instead.",
+        "evidence": "The chart visually confirms it is a scatterplot of 'Advertising Spend' vs 'Sales' for 'Top Regions' (5 points). It does not visually contain data on causal impact, ROI, or profitability. However, the condition that the organization 'requires' such evidence for approval is an external policy assumption not visible in the image or public task text.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The title text at the top of the chart reads 'Top Regions: Ad Spend vs Sales'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The horizontal axis is labeled 'Advertising Spend ($ thousands)'. The tick marks are visible from 25 to 75 in increments of 5.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The vertical axis is labeled 'Sales ($ thousands)'. The tick marks are visible from 50 to 180 in increments of 10.",
+          "status": "supported"
+        },
+        {
+          "index": 4,
+          "evidence": "The points are arranged diagonally from bottom-left to top-right. Region A is at the lowest/leftmost position (~30, ~58). Region E is at the highest/rightmost position (~70, ~173). The other points (B, C, D) follow this progression.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the horizontal axis encodes Advertising Spend and increases left-to-right, the vertical axis encodes Sales and increases upward, and the labeled regional points are comparable observations, then the plotted ordering indicates that higher-spend regions in this displayed set also have higher sales. Approving broader expansion additionally requires the unstated decision assumption that this descriptive association is sufficient support for expansion.",
+        "evidence": "The axes are clearly labeled and oriented as stated (Spend on x-axis, Sales on y-axis). The visual arrangement of points A through E confirms a positive association where higher spend correlates with higher sales within this specific set. The condition that this association is 'sufficient support' for expansion is a decision-making assumption not provided in the visual evidence.",
+        "status": "supported"
+      }
+    }
+  ]
+}

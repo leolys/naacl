@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-927170ffdd916144",
+    "object": "chat.completion",
+    "created": 1790613234,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue circular mark is higher on the page than the red square mark in the 'Service' category. (Visual: chart_1, Service category)\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The left vertical label reads '2011' in blue, and the right vertical label reads '2030' in red. (Visual: chart_1, left and right vertical axis labels)\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The x-axis category label 'Service' is printed beneath the compared marks. (Visual: chart_1, x-axis category labels)\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue 2011 series and red 2030 series are bound by the matching colored year labels, and vertical position encodes comparable Service support cost with higher marks meaning higher cost, then the higher Service mark identifies the entry for the higher-cost follow-up queue.\",\n        \"evidence\": \"The blue mark is higher than the red mark in the 'Service' category. The labels '2011' (blue) and '2030' (red) are visible and correspond to the respective series. The chart title '2011 vs 2030' and axis labels confirm the comparison context.\",\n        \"status\": \"refuted\"\n        }\n      }\n    ,\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"No y-axis metric name or numeric tick labels are visibly printed. (Visual: chart_1, plot axes)\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The blue circular mark and red square mark are at different vertical positions in the 'Service' category. (Visual: chart_1, Service category)\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart does not establish that its vertical positions encode the relevant support-cost measure or the direction of that measure, then it does not provide sufficient evidence to identify either year as higher cost; routine archive review remains the non-escalation alternative.\",\n        \"evidence\": \"The chart lacks a y-axis label or tick values, so the vertical position does not inherently encode cost. The public task and chart title imply cost comparison, but no metric is defined. The 'Service' category lacks printed numbers, and no legend or definition confirms vertical position = cost.\",\n        \"status\": \"supported\"\n        }\n      }\n    ]\n  }",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3107,
+      "total_tokens": 3729,
+      "completion_tokens": 622,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

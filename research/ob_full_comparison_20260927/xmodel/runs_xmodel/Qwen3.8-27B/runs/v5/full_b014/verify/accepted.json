@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads 'Units Sold by Product (Weekend Pop-up)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The vertical axis is labeled 'Units Sold'. The visible tick labels include '20,000' and '30,000'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "There is a dark red bar above the x-axis label 'Product C'. Its top is between the 20,000 and 30,000 gridlines. Visually, it is slightly below the midpoint (25,000), consistent with 'roughly two-fifths of the way upward from the 20,000 tick' (which would be 24,000).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the vertical axis labeled 'Units Sold' is a linear upward scale and the Product C bar is bound to its x-axis label, its height can be interpolated from the 20,000 and 30,000 ticks. A value below 25,000 and less than 2,500 units from that threshold meets the stated manual-verification variance band; selecting the manual-check option assumes that this band governs when it overlaps the low-demand rule.",
+        "evidence": "The vertical axis is linear with uniform spacing between ticks (20k, 30k, etc.). The bar is bound to the 'Product C' label. The bar height is visually estimated at ~24,000. This is below 25,000. The distance from the 25,000 threshold is ~1,000, which is less than 2,500. Thus, the conditions for the 'Manual merchandising verification variance band' (< 2,500 units from a decision threshold) are met. The conditions for 'Low-demand review queue' (< 25,000) are also met. The B text correctly identifies the overlap and the assumption required to select the manual-check option.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The Product C bar top is between the 20,000 and 30,000 ticks. It is visually closer to the 20,000 line than the 30,000 line (approx 24,000 vs 25,000 midpoint).",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The label 'Product C' is directly below the third bar from the left.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the vertical axis is a linear upward Units Sold scale and the Product C bar is bound to its label, its height can be interpolated from the 20,000 and 30,000 ticks. Under the policy, a decoded Product C value below 25,000 activates the low-demand review queue.",
+        "evidence": "The axis is linear. The bar is bound to the label. The interpolated value (~24,000) is below 25,000. The policy states '< 25,000 units → Low-demand review queue activation level'. Therefore, the condition for activating the low-demand review queue is met.",
+        "status": "supported"
+      }
+    }
+  }
+}

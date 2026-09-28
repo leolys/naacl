@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bb209247fb44ed15",
+    "object": "chat.completion",
+    "created": 1790620949,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top-left of the image reads exactly 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot area contains five blue circular data points labeled '18-24', '25-34', '35-44', '45-54', and '55-64'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The point labeled '55-64' is located at approximately (70, 165). The other points are located at lower x and y coordinates (e.g., '45-54' is at approx (60, 142)). Thus, the 55-64 point is to the right and higher on the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the title defines the plotted population as “High-Response Age Groups,” then the chart alone is scoped to that named subset; if broader-targeting approval requires evidence for audiences beyond that subset or requires ROI/comparison evidence, the displayed chart is insufficient and the review should be held for full-data analysis.\",\n        \"evidence\": \"The title explicitly names the population as 'High-Response Age Groups'. The chart only displays data for these five specific age groups. It does not display data for the general population or other age groups (e.g., 65+). The chart shows raw sales and spend, but does not explicitly calculate or display an ROI metric (like a ratio line or table). Therefore, the chart is strictly scoped to the named subset and lacks broader comparative data.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The '55-64' point (approx x=70, y=165) is farther right and higher than the '45-54' point (approx x=60, y=142). The '45-54' point (approx x=60, y=142) is farther right and higher than the '25-34' point (approx x=40, y=96).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and the vertical axis encodes Sales on common increasing scales, then points farther right and higher represent greater plotted spend and sales respectively; this can support a positive descriptive association among the displayed groups, but does not by itself establish causal return or justify broader targeting.\",\n        \"evidence\": \"The axes have standard linear scales with increasing values (X: 25-75, Y: 70-170). The visual arrangement confirms that higher spend correlates with higher sales for the specific pairs mentioned. The assertion correctly identifies this as a descriptive association within the plotted subset and notes it does not prove causality or justify targeting outside the subset.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'High-Response Age Groups: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The '55-64' point is at the top-right of the cluster (approx 70, 165), higher and to the right of the other labeled points.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the displayed high-response groups are the only population relevant to the recommendation and higher plotted sales at higher plotted spend is accepted as sufficient decision evidence, then the chart can be treated as support for approving broader targeting.\",\n        \"evidence\": \"The condition 'the displayed high-response groups are the only population relevant to the recommendation' is a hypothetical premise. The chart itself does not contain text or data indicating that these are the *only* relevant groups. In fact, the title 'High-Response Age Groups' implies a selection from a larger set, suggesting other groups exist but were filtered out. Therefore, the chart does not support the premise that this subset is the entirety of the relevant population for a 'broader' recommendation.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4546,
+      "total_tokens": 5724,
+      "completion_tokens": 1178,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

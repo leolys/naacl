@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-96fbc60fe1acda85",
+    "object": "chat.completion",
+    "created": 1790621745,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top reads 'Hydroelectricity vs Nuclear energy'. The left vertical axis label is blue and reads 'Hydroelectricity (%)', and the right vertical axis label is red and reads 'Nuclear energy (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Examining the vertical axes, there are no numeric tick labels printed on either the left or right y-axes. At the x-axis tick '2010', there are no percentage inscriptions or data labels attached to the blue or red marks.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If one source is established to have the higher 2010 generation share, the task directs routing that source to the higher-share follow-up workflow; if no source is established as higher, an archive outcome would require a stated unresolved-comparison fallback.\",\n        \"evidence\": \"The task instructions explicitly state to 'route the source record that should receive priority follow-up for the higher generation-share case.' The provided 'policy_tables' array is empty, and no 'page_instructions' mention an 'archive' fallback for unresolved comparisons. The 'visible_context_3' field specifies the workflow is 'Higher generation-share follow-up'.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top reads 'Hydroelectricity vs Nuclear energy'. The left vertical axis label is blue and reads 'Hydroelectricity (%)', and the right vertical axis label is red and reads 'Nuclear energy (%)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the x-axis tick '2010', the blue circular marker is located lower on the vertical axis than the red square marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"There are no numeric tick labels on the y-axes, and no percentage inscriptions are attached to the 2010 data points.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The blue circular series is Hydroelectricity and is read against the left blue y-axis; the red dashed square series is Nuclear energy and is read against the right red y-axis. A higher generation-share comparison requires decodable, comparable 2010 values from those axes or another explicit common-scale statement; screen-space height alone is not comparable across separate y-axes.\",\n        \"evidence\": \"The chart is a dual-axis plot. The left axis is labeled 'Hydroelectricity (%)' and the right axis is labeled 'Nuclear energy (%)'. There are no visible numeric tick marks on either axis to establish a scale. While the red marker is physically higher on the page in 2010, without a common scale or specific values, the screen-space height does not prove a higher generation share.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3131,
+      "total_tokens": 3852,
+      "completion_tokens": 721,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

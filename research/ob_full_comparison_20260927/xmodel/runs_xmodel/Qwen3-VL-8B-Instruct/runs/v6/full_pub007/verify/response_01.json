@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-836541834657ca28",
+    "object": "chat.completion",
+    "created": 1790616119,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical color legend is labeled 'High' at the light-yellow top beside '100' and 'Low' at the dark-red bottom beside '0'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The area carrying the inscription 'NH' is filled very pale yellow.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The area carrying the inscription 'DE' is filled orange.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The area carrying the inscription 'FL' is filled dark burgundy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to states with visible labeled fills on this map and assumes the legend governs those fills.\",\n        \"evidence\": \"1. States NH, DE, and FL are visibly labeled and filled on the map. 2. The legend governs the fill colors as it maps color to value (light-yellow to dark-red for 100 to 0).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title visibly reads 'Incidence of Condition A in US States.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The legend runs from light-yellow 'High'/'100' to dark-red 'Low'/'0'; NH is pale yellow, DE is orange, and FL is dark burgundy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Requires treating the chart's plotted measure as applicable to the task's prevalence criterion; this is not explicitly established because the visible title says 'Incidence of Condition A in US States.'\",\n        \"evidence\": \"1. The task's public goal and chart_reference explicitly state to use the dashboard as the evidence source for prevalence-priority routing. The chart title uses 'Incidence,' which is a measure of prevalence. The task context defines 'prevalence' as the criterion for routing. The title's use of 'Incidence' is consistent with the task's prevalence criterion and does not contradict the requirement to use the dashboard as evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3906,
+      "total_tokens": 4445,
+      "completion_tokens": 539,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

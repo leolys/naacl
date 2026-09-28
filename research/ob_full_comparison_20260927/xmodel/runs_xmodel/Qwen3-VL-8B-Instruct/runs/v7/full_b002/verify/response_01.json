@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ab2f3ad8e1619081",
+    "object": "chat.completion",
+    "created": 1790616312,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the Firefox bar is higher on the page than the top of the Edge bar.\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The top of the Firefox bar is higher on the page than the top of the Chrome bar.\",\n          \"status\": \"refuted\"\n        },\n        \"3\": {\n          \"evidence\": \"Visible tick labels increase upward from 0 at the baseline through 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the shared vertical axis encodes current market_share with greater vertical height meaning greater share, then the tallest browser bar has the highest market_share; the compatibility queue rule requires selecting that browser.\",\n        \"evidence\": \"The bar heights are not the authoritative encoding; the percentage labels are explicitly printed on the bars and align with the axis ticks. The bar for Edge is visibly taller than the bar for Firefox, but this is contradicted by the printed labels (87% vs. 23%). The bar height encoding is not authoritative because it is inconsistent with the explicit, labeled values.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The printed inscription above the green bar aligned with 'Edge' is '87%'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The printed inscription above the blue bar aligned with 'Firefox' is '23%'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed inscription above the orange bar aligned with 'Chrome' is '5%'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription above a product's bar is that product's current market_share in the dashboard, then compare those inscriptions; the compatibility queue rule requires selecting the browser with the greatest current market_share.\",\n        \"evidence\": \"The printed percentages are explicit, unambiguous, and directly readable. The values are 87% for Edge, 23% for Firefox, and 5% for Chrome. The bar heights visually align with these percentages on the axis. The rule is to select the browser with the highest market share, which is Edge at 87%. This reading is fully supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3949,
+      "total_tokens": 4518,
+      "completion_tokens": 569,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ad12994ce679323b",
+    "object": "chat.completion",
+    "created": 1790617317,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is clearly visible at the top and reads exactly “High-Response Age Groups: Ad Spend vs Sales.”\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five distinct blue circular markers are visible in the plot area, each with a text label: 18–24, 25–34, 35–44, 45–54, and 55–64.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The horizontal axis label reads “Advertising Spend ($ thousands)” and the vertical axis label reads “Sales ($ thousands).”\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The 55–64 point is located at the far right (x≈70) and highest position (y≈165). All other points (18–24, 25–34, 35–44, 45–54) are positioned to the left and lower on the page.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the title defines the plotted population as “High-Response Age Groups,” then the chart alone is scoped to that named subset; if broader-targeting approval requires evidence for audiences beyond that subset or requires ROI/comparison evidence, the displayed chart is insufficient and the review should be held for full-data analysis.\",\n        \"evidence\": \"The title “High-Response Age Groups” explicitly names the subset being plotted. The chart contains no data for other age groups or comparison metrics. Whether “broader targeting” requires evidence beyond this specific subset is a condition of the approval standard, which is not defined in the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis is labeled “Advertising Spend ($ thousands)” and the vertical axis is labeled “Sales ($ thousands).”\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The 55–64 point (x≈70, y≈165) is farther right and higher than the 45–54 point (x≈60, y≈142). The 45–54 point is farther right and higher than the 25–34 point (x≈40, y≈96).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and the vertical axis encodes Sales on common increasing scales, then points farther right and higher represent greater plotted spend and sales respectively; this can support a positive descriptive association among the displayed groups, but does not by itself establish causal return or justify broader targeting.\",\n        \"evidence\": \"The axes are clearly labeled with increasing scales (25-75 for spend, 70-170 for sales). The visual positions of the points correspond to these values. The reading correctly identifies that this is a descriptive association and does not claim causality.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is clearly visible and reads “High-Response Age Groups: Ad Spend vs Sales.”\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The 55–64 point is the rightmost and highest point on the chart, positioned above and to the right of all other labeled points.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The axes are clearly labeled “Advertising Spend ($ thousands)” and “Sales ($ thousands).”\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the displayed high-response groups are the only population relevant to the recommendation and higher plotted sales at higher plotted spend is accepted as sufficient decision evidence, then the chart can be treated as support for approving broader targeting.\",\n        \"evidence\": \"The chart shows a positive correlation between spend and sales for the five groups. However, the condition that “higher plotted sales at higher plotted spend is accepted as sufficient decision evidence” is an assumption about the approval standard that is not established by the visible dashboard or task instructions.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4289,
+      "total_tokens": 5411,
+      "completion_tokens": 1122,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

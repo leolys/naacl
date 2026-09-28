@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-809342c8b98d5211",
+    "object": "chat.completion",
+    "created": 1790613232,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line is visually almost horizontal from 2021 to 2023, ending slightly lower than the 2021 level.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis is labeled 'Year' with ticks 2018 through 2023; the y-axis is labeled 'Grid Output (GWh)' with visible tick marks.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"For this routing task, if the overall dashboard pattern is treated as mixed or approximately stable, routine clean-grid output monitoring is the matching route. No explicit threshold defining 'routine' versus decline or expansion is supplied.\",\n        \"evidence\": \"The reading's condition — treating a recent near-flat pattern as routine — is not contradicted by the visual. The visual shows a flat period from 2021-2023, which is a stable segment. However, the reading's applicability requires assuming that this stability overrides the earlier decline and the title's claim of 'increasing'.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is visibly and clearly printed as 'Increasing Clean Grid Output from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is treated as an authoritative statement of the overall output trend, the word 'Increasing' supports the clean-grid output expansion follow-up route.\",\n        \"evidence\": \"The reading's condition — treating the title as authoritative — is not contradicted by the visual. The title is clearly visible. However, the visual data contradicts the title's claim: the line ends lower than its starting point (2018: 2,800 GWh; 2023: just below 2,800 GWh, but visually lower than 2021). The reading's applicability requires accepting the title as authoritative over the plotted line, which is not supported by the visual evidence showing a decline from 2018 to 2023.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line begins at 2018 aligned with 2,800 GWh and ends at 2023 at a value visually lower than 2,800 GWh.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis is labeled 'Year' with ticks 2018 through 2023; the y-axis is labeled 'Grid Output (GWh)' with visible tick marks.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"For this routing task, if the full review-window trend is classified by its lower final output relative to its initial output, the matching route is clean-grid output decline response review.\",\n        \"evidence\": \"The reading's condition — classifying the trend by endpoint-to-endpoint direction — is supported by the visual. The line starts at 2,800 GWh in 2018 and ends at a value just below 2,800 GWh in 2023. This is a net decline. The reading's applicability requires accepting this endpoint comparison as the governing definition, which is visually supported and not contradicted by any other visual element.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3758,
+      "total_tokens": 4614,
+      "completion_tokens": 856,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

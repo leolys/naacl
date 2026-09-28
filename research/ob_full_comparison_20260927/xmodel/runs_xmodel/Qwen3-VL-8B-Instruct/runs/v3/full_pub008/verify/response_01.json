@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b04b53bc1e4eb797",
+    "object": "chat.completion",
+    "created": 1790613488,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis line aligns with the printed '1,500' tick, and the May 06 blue section meets that lower chart boundary.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"No routing threshold, demand-status label, or response instruction is visibly printed on the chart.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a stacked bar is clipped by a y-axis beginning at 1,500, the visible height of a bottom segment measures only the portion above 1,500, not its full magnitude; without supplied routing thresholds, a conservative default may be normal monitoring.\",\n        \"evidence\": \"The chart's y-axis begins at 1,500, and the blue segment for May 06 is visibly clipped at that level. However, the blue segment is not merely 'measuring only the portion above 1,500'; it is the *entire* visible segment, and its height is the *full* magnitude of Station X's visitors on May 06. The chart's stacked structure implies cumulative values from the axis baseline (1,500), not from zero. The reading incorrectly assumes the segment's height is measured from 1,500, when in fact, the chart's design and the visible blue segment's position indicate it is measured from the baseline (1,500) as the starting point for the stack, not from zero. The reading's condition that 'the supplied task has no policy table or interpretation rule establishing a low-demand cutoff' is supported, but the reading's decoding of the chart's encoding is flawed. The reading is therefore refuted because its necessary decoding ('clipped segment measures only portion above 1,500') is contradicted by the visual evidence: the blue segment's height is its full magnitude, not a partial one, and its position relative to the axis confirms it is the full value from the baseline, not a clipped portion. The reading's applicability is refuted due to a specific visible contradiction in its necessary decoding: the blue segment's height is not 'only the portion above 1,500' but its full magnitude from the baseline.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"A blue swatch is visibly labeled 'Station X'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"A thin blue section is visible at the bottom of the May 06 stacked bar, ending only slightly above the horizontal axis line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The lowest visible labeled y-axis tick is '1,500'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The green and orange sections above the blue section are visibly much taller than the visible blue section.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the legend binds blue to Station X and the stacked bar encodes visitor counts cumulatively from zero, then the top of the blue segment at May 06 represents Station X's visitor count; if the routing program classifies that count as low, low-demand response is appropriate.\",\n        \"evidence\": \"The reading assumes the stacked bar encodes visitor counts cumulatively from zero. This is contradicted by the chart's y-axis, which begins at 1,500, not zero. The blue segment's height is measured from the 1,500 baseline, not from zero. Therefore, the top of the blue segment does not represent Station X's visitor count; it represents the total visitors for Station X on May 06 *plus* the 1,500 baseline. The reading's necessary condition that 'the stacked bar encodes visitor counts cumulatively from zero' is refuted by the visible y-axis starting at 1,500. The reading is therefore refuted because its necessary decoding ('cumulative from zero') is contradicted by the visible chart structure: the y-axis baseline is 1,500, not zero, meaning the stacked segments are cumulative from that baseline, not from zero. The reading's applicability is refuted due to a specific visible contradiction in its necessary decoding: the chart's y-axis begins at 1,500, not zero, making the assumption of 'cumulative from zero' invalid.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3902,
+      "total_tokens": 4948,
+      "completion_tokens": 1046,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

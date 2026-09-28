@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-81fdfbe04321602d",
+    "object": "chat.completion",
+    "created": 1790621142,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"rec_01\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title 'Selected High-Growth Quarters: Ad Spend vs Sales' is visible at the top of the chart, and the layout is a scatter plot with labeled points.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis is labeled 'Advertising Spend ($ thousands)' and the tick marks range from 25 to 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Sales ($ thousands)' and the tick marks range from 60 to 170.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five distinct points are visible, each labeled Q2, Q3, Q4, Q5, and Q6.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The points are arranged in an ascending diagonal; Q2 is at the bottom-left and Q6 is at the top-right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the visual pattern of the five plotted points is interpreted as a positive correlation, then the data suggests that higher advertising spend is associated with higher sales for these specific quarters.\",\n        \"evidence\": \"The necessary condition is that the points exhibit a positive correlation. The visual evidence shows a clear upward trend where each increase in the x-value (spend) corresponds to an increase in the y-value (sales). The labels Q2 through Q6 follow this monotonic path.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_02\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The point labeled Q2 aligns with the 30 tick on the x-axis and sits just below the 70 tick on the y-axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The point labeled Q6 aligns with the 70 tick on the x-axis and sits just below the 170 tick on the y-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical distance between Q2 (~68) and Q6 (~167) is approximately 99 units. The distances between consecutive points are much smaller (e.g., Q2 to Q3 is ~42 units).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Assuming the axis scales are linear and the points represent the only data available, the transition from Q2 to Q6 represents the largest absolute increase in both advertising spend and sales volume among the displayed quarters.\",\n        \"evidence\": \"The axis scales are linear as indicated by evenly spaced ticks. The transition from Q2 (30, 68) to Q6 (70, 167) involves an increase of 40 in spend and 99 in sales. No other single transition between two points shows a larger absolute increase in both dimensions.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"rec_03\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title explicitly includes the phrase 'Selected High-Growth Quarters'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis starts at 25, while the first data point (Q2) is at 30, leaving a visible gap.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis starts at 60, while the first data point (Q2) is at approximately 68, leaving a visible gap.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The area of the plot corresponding to lower spend (x < 30) and lower sales (y < 68) is empty.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the selection of data points is interpreted as a filter for 'high-growth' performance, then the chart does not provide a baseline for quarters with lower spend or sales, making it impossible to determine the overall average performance from this view alone.\",\n        \"evidence\": \"The title 'Selected High-Growth Quarters' implies a subset of data. Since only five specific points are shown and there is no data for the lower-left region or other quarters, the overall average for the entire period cannot be calculated from this view.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3933,
+      "total_tokens": 5039,
+      "completion_tokens": 1106,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

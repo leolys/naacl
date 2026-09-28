@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b4bbc9e0f7818045",
+    "object": "chat.completion",
+    "created": 1790614205,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red square at 11-18 years is higher on the page than the blue circular mark at the same category.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis label is blue and the right axis label is red; no numeric y-axis tick labels are visibly printed.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Blue circular marks are connected by a solid blue line, while red square marks are connected by a dashed red line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review.\",\n        \"evidence\": \"The chart explicitly labels the axes: left y-axis = 'High fibre breakfast cereals', right y-axis = 'Other breakfast cereals'. The data point for 'High fibre breakfast cereals' at '11-18 years' is labeled '10', and the data point for 'Other breakfast cereals' at '11-18 years' is labeled '6'. These are comparable values on their respective scales. The reading's condition that 'no numeric y-axis tick labels are visibly printed' is supported, but this does not prevent the use of the printed data point values to establish a cross-category comparison. The reading's conclusion that 'without a stated escalation criterion, the comparison should be sent for reference review' is not applicable because the chart's title and axis labels provide sufficient context to interpret the values. The visible data point labels (10 and 6) allow for a direct, quantitative comparison. Therefore, the condition for sending to reference review is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads “High fibre breakfast cereals vs Other breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left vertical axis label reads “High fibre breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue circular mark is shown at the 11-18 years position.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing instruction treats the chart category explicitly labeled “High fibre breakfast cereals” as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option.\",\n        \"evidence\": \"The chart title and left y-axis label both refer to 'High fibre breakfast cereals'. The blue circular mark at '11-18 years' corresponds to this category, and its value is 6. The red square mark at '11-18 years' corresponds to 'Other breakfast cereals', and its value is 10. The reading's condition is that the 'High fibre breakfast cereals' category itself determines the routing. This is consistent with the chart's labeling. The reading's conclusion that this category maps to the high-fibre follow-up option is directly supported by the chart's explicit labeling and the task's instruction to use the displayed comparison for the 11-18 years age group. The value of 6 for 'High fibre breakfast cereals' at '11-18 years' is lower than the value of 10 for 'Other breakfast cereals', but the routing decision is based on the category, not the value. The reading correctly identifies that the category labeled 'High fibre breakfast cereals' should be routed to adolescent fibre-support follow-up, regardless of its specific value. The reading's condition is met, and its conclusion is supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2537,
+      "total_tokens": 3409,
+      "completion_tokens": 872,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

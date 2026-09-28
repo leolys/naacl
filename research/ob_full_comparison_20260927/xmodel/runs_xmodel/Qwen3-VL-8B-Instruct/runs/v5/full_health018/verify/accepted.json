@@ -1,0 +1,34 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The purple line endpoint aligned with 2023 is higher on the page than the line point aligned with 2012.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and 'overall case pattern' is evaluated by comparing the 2012 and 2023 endpoints, then a higher 2023 endpoint indicates an increase over that span; if such an overall increase maps to increasing-activity follow-up, that route is supported. The task supplies no rule choosing endpoint comparison over recent change.",
+        "evidence": "The chart's y-axis is labeled 'Respiratory infection cases', and the gridlines are at 700, 1400, 2100, and 2800. The 2012 data point is below the 1400 line, while the 2023 data point is above the 2100 line. This confirms the 2023 endpoint is higher on the page, meaning more cases. The chart title states 'Falling Respiratory Infection Cases', which contradicts the endpoint comparison. Therefore, the endpoint comparison is not the intended definition of overall pattern.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title visibly reads “Falling Respiratory Infection Cases in Sentinel Sites from 2012 to 2023.”",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The purple line vertex aligned with 2023 is lower on the page than the preceding vertex aligned with 2022.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and the routing convention treats a decline in the most recent year-to-year segment (or the chart's stated falling pattern) as easing activity, then a 2022-to-2023 downward segment supports easing-activity follow-up. This task-to-route convention is not explicitly supplied.",
+        "evidence": "The chart's y-axis is labeled 'Respiratory infection cases', and the gridlines are at 700, 1400, 2100, and 2800. The 2022 data point is above the 2800 line, while the 2023 data point is below the 2800 line and above the 2100 line. This confirms the 2023 endpoint is lower on the page, meaning fewer cases. The chart title explicitly states 'Falling Respiratory Infection Cases', which supports the interpretation that the overall pattern is a decline. The task does not supply a rule choosing endpoint comparison over recent change, but the title and the 2022-to-2023 segment both indicate a decline. Therefore, the condition that the title and plotted series describe this record, the years align with the line vertices, and recent change is the relevant meaning of the overall pattern is supported.",
+        "status": "supported"
+      }
+    }
+  }
+}

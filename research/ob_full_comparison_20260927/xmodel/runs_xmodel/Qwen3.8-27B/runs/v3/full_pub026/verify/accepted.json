@@ -1,0 +1,44 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The top of the image clearly displays the title 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The visual data shows the blue line starting at the 1,000 mark in 1880 and ending at a point significantly higher, between 2,500 and 3,000, in 1891. The assertion that the line 'begins at... 1,000' is supported, but the assertion that it 'ends at the 1891 tick above the y-axis tick labeled 2,500' is supported in terms of position, though the overall trend is increasing, not decreasing.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the chart title is an authoritative textual classification of the tourism trend, then its word 'Decreasing' indicates a decline classification. Without a supplied rule resolving conflict between that classification and the plotted line, routine monitoring is a conservative route.",
+        "evidence": "The title is visible and contains the word 'Decreasing'. However, the visual data contradicts this classification, showing a net increase. The reading assumes the title is authoritative, which is a necessary condition for the 'decline' classification to hold. Since the visual evidence contradicts the title, the condition that the title is an 'authoritative textual classification' is not supported by the visible evidence.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The visual data shows the blue line starting at the 1,000 mark in 1880 and ending at a point significantly higher, between 2,500 and 3,000, in 1891. The assertion is supported by the visual evidence.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The horizontal axis is labeled 'Year' with ticks from 1880 to 1891. The vertical axis is labeled 'Number of Tourists' with increasing values upward (0 to 3,000). This is clearly visible in the image.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the blue line is the new-tourist series, the horizontal year ticks bind its endpoints to 1880 and 1891, and higher vertical position maps to a larger number of tourists, then the relative endpoint positions indicate net change across the review period. If routing is based on net growth, a positive net change maps to growth planning.",
+        "evidence": "The blue line is the only data series, so it represents the new-tourist measure. The x-axis binds the years 1880 and 1891. The y-axis shows 'Number of Tourists' increasing upward. The line starts at 1,000 in 1880 and ends near 2,700 in 1891, indicating a positive net change. The reading's conditions are met by the visible evidence: the line is the series, the axes are correctly interpreted, and the net change is positive. The mapping to 'growth planning' is a logical consequence of the positive net change if that is the routing criterion.",
+        "status": "supported"
+      }
+    }
+  ]
+}

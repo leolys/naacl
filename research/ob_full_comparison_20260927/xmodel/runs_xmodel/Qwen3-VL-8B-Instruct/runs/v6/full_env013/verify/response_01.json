@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c1aabb72c8bc296",
+    "object": "chat.completion",
+    "created": 1790615747,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart contains no text, label, or annotation defining a substantial-change threshold, escalation rule, or routing instruction. The chart's visible content is limited to the plotted trend line and labeled data points.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost marker is explicitly labeled '24.0°C' and aligned with the 2005 tick. The rightmost marker is explicitly labeled '10.0°C' and aligned with the 2015 tick. These are the only endpoints visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Routine-by-default policy: The task description and chart do not state or imply a policy requiring an explicit displayed or supplied substantial-change threshold before escalation. 2. Absence of threshold: The chart does not display a numerical or qualitative threshold defining substantial change.\",\n        \"evidence\": \"1. No policy text or chart annotation indicates a required threshold. 2. The chart's visible content lacks any threshold definition. The condition 'routine-by-default policy' remains open as it is not established by the chart or task.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2005 marker is black, aligned with the 2005 x-axis tick, and labeled '24.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The 2015 marker is black, aligned with the 2015 x-axis tick, and labeled '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title is 'Coastal Water Temperature Trend' and the y-axis is labeled 'Water temperature (°C)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The plotted markers are coastal water-temperature readings for their aligned year ticks. 2. The adjacent °C inscriptions label those readings. 3. The full-period change is the 2015 reading minus the 2005 reading. 4. A decrease of that magnitude meets the unspecified substantial-change criterion.\",\n        \"evidence\": \"1. Supported: Markers are aligned with year ticks and labeled with °C values. 2. Supported: Labels are adjacent to markers and use °C. 3. Supported: Full-period change is 10.0°C - 24.0°C = -14.0°C. 4. Open: The substantial-change criterion is unspecified. The condition 'meets the unspecified substantial-change criterion' cannot be tested as the criterion is not provided.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4064,
+      "total_tokens": 4714,
+      "completion_tokens": 650,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

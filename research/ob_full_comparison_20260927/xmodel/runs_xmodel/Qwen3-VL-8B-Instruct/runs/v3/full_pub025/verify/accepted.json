@@ -1,0 +1,59 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The chart title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the chart title is the authoritative characterization of the tourism trend and its word 'Decreasing' is intended as the routing signal, then the trend should be treated as declining. If a declining new-tourist trend is to be routed to decline response, select the decline-response option.",
+        "evidence": "The title is visible and literal, and the word 'Decreasing' is present. The reading assumes the title is authoritative and that 'Decreasing' maps to 'decline response'.",
+        "status": "refuted"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The title contains the word 'Decreasing', while the blue line's 1891 endpoint is higher on the page than its 1880 endpoint.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If conflicting title and plotted-line signals, together with the absence of an explicit routing threshold or precedence rule, prevent a reliable trend classification, then retain routine monitoring rather than infer a growth or decline route.",
+        "evidence": "The title and the plotted line are in conflict: the title says 'Decreasing', but the line ends higher than it starts. The reading assumes a conservative default of routine monitoring under unresolved conflict. The task does not state this default.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The blue line begins near the 1880 tick at a lower screen position and ends near the 1891 tick at a substantially higher screen position.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The x-axis is labeled 'Year' and shows ticks from 1880 through 1891 in left-to-right order.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The vertical axis is labeled 'Number of Tourists' and its printed ticks increase upward from 0 to 3,500.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the blue line is the series encoded by the chart axes, the horizontal axis orders years left-to-right and higher vertical positions correspond to larger values on the upward-labeled tourist-count scale, then a higher endpoint at the later year indicates an increase over the review period. If an increasing new-tourist trend is to be routed to growth planning, select the growth-planning option.",
+        "evidence": "The line's endpoint is higher than its start, the x-axis is ordered left-to-right, and the y-axis increases upward. This confirms an overall increase. The reading assumes the line is authoritative and that increasing trends map to growth planning. The task does not supply a routing policy.",
+        "status": "unclear"
+      }
+    }
+  ]
+}

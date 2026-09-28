@@ -1,0 +1,38 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title is 'Mountain Snowpack Temperature Record'. The x-axis is labeled 'Year' with ticks 2005 and 2015. The y-axis is labeled 'Temperature (°C)'. A point at the 2005 tick is labeled '24.0°C'. A point at the 2015 tick is labeled '10.0°C'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If substantial-change follow-up requires a stated numeric threshold or other explicit routing criterion, and none is displayed in the chart or supplied task state, then the magnitude alone does not establish eligibility; retain routine monitoring rather than infer the threshold.",
+        "evidence": "The necessary condition is that routing must be based *only* on an explicit displayed or supplied threshold. The provided task state includes a 'Routing criterion' field which states: 'Whether the full-period mountain snowpack temperature change requires substantial-change follow-up'. This is a qualitative criterion, not a specific numeric threshold (e.g., '> 5°C'). The task instructions explicitly ask to 'determine whether the full-period change requires substantial-change follow-up'. This implies the determination is to be made based on the data presented, not strictly limited to a pre-defined numeric cutoff that is absent. Therefore, the condition 'routing must be based only on an explicit displayed or supplied threshold' is not met by the task instructions, which invite a determination based on the record.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "Chart title is 'Mountain Snowpack Temperature Record'. X-axis label is 'Year'. Y-axis label is 'Temperature (°C)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "A black point is aligned with the '2005' tick. The adjacent text label is '24.0°C'.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "A black point is aligned with the '2015' tick. The adjacent text label is '10.0°C'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the plotted series is the mountain snowpack temperature record, the horizontal axis binds points to their labeled years, and the printed labels next to points state their temperatures, then the full-period change is the 2015 labeled temperature minus the 2005 labeled temperature. If a 14.0°C full-period decrease is treated as substantial change for this routing task, select substantial-change follow-up.",
+        "evidence": "The series is identified as the 'Mountain Snowpack Temperature Record'. The axis binding is clear (2005 to 24.0°C, 2015 to 10.0°C). The calculated change is 10.0 - 24.0 = -14.0°C. The condition 'If a 14.0°C full-period decrease is treated as substantial change' is a premise. In the context of temperature monitoring, a 14-degree drop over a decade is a significant magnitude of change, fitting the description of 'substantial' rather than 'ordinary variation' or 'archive'. The task asks to route to 'substantial-change follow-up' or 'routine monitoring'. A 14°C drop is a strong candidate for substantial change.",
+        "status": "supported"
+      }
+    }
+  }
+}

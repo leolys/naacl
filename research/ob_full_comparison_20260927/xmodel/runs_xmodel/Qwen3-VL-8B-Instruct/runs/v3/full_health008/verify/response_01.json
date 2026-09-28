@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-affcf7bc343a14d2",
+    "object": "chat.completion",
+    "created": 1790613302,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart's x-axis explicitly labels 2017, 2018, 2019, and 2020. The data points for these years are plotted and visible.\"\n        ,\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The red line connecting the data points shows a clear upward trend: the point for 2017 is at ~130, 2018 at ~145, 2019 at ~158, and 2020 at ~171. Each subsequent point is higher than the previous one on the y-axis, confirming a rising pattern from 2017 to 2020.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the displayed 2017-2020 rising segment is assumed to be representative of the unshown 2013-2016 portion, then the visible multi-year rise may be treated as evidence for sustained growth follow-up. This conclusion depends on the unverified representativeness assumption.\",\n        \"evidence\": \"The reading requires assuming that the 2017-2020 data is representative of the unshown 2013-2016 period. This assumption is not supported by any visual or printed evidence. The chart explicitly states 'Reported window shown in the dashboard summary' and the public task confirms the dashboard only shows 2017-2020. No data for 2013-2016 is visible or provided.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title 'Respiratory Clinic Visits' is visible at the top.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis labels 2017, 2018, 2019, and 2020 are visible.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The red line shows a clear upward trend from 2017 to 2020, with each data point higher than the previous one.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The subtitle 'Reported window shown in the dashboard summary' is visible below the title.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the line series represents yearly respiratory clinic visits in the displayed years and higher vertical position encodes more visits, successive higher points from 2017 through 2020 indicate a recent upward pattern. If the task requires an end-to-end 2013-2020 determination but the chart displays only 2017-2020, sustained growth over the full window cannot be verified; under that limitation, the recent-upward-shift monitoring option is the non-overclaiming fit.\",\n        \"evidence\": \"The reading correctly identifies the visible data (2017-2020) and its trend (upward). It correctly notes the task requires a 2013-2020 determination, but the chart only shows 2017-2020. The reading then correctly concludes that 'sustained growth over the full window cannot be verified' and that 'the recent-upward-shift monitoring option is the non-overclaiming fit' under this limitation. This conclusion is fully supported by the visible chart and the public task definition.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3452,
+      "total_tokens": 4322,
+      "completion_tokens": 870,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8ac3e4bb2ef423c1",
+    "object": "chat.completion",
+    "created": 1790621958,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red line shows local declines (e.g., 2014→2015, 2018→2019, 2022→2023) but also significant rises (2017→2018, 2020→2021, 2021→2022).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The task state contains no policy tables or routing thresholds.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If routing requires a stated threshold, sustained-direction criterion, or policy rule not supplied in the task, and the plotted series has both rises and declines, then standard trend monitoring may be appropriate rather than an escalation pathway.\",\n        \"evidence\": \"The condition 'routing requires a stated threshold... not supplied' is met (no policy tables). The condition 'series has both rises and declines' is met (visible local dips).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible title reads 'Declining Emergency Department Visits in Region Z from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is an authoritative summary of the utilization pattern, then its literal characterization of visits as declining from 2012 to 2023 supports utilization-decrease follow-up.\",\n        \"evidence\": \"The condition 'title is an authoritative summary' is not supported. The title's claim of 'Declining' directly contradicts the visible plotted data (which shows a net increase from 2012 to 2023). A title that contradicts the primary data series is not an authoritative summary of the pattern.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The 2012 vertex is at ~1200 (lowest point). The 2023 vertex is at ~3200 (highest point). 2023 is higher on the page than 2012.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Y-axis is labeled 'Emergency department visits' with ticks 0, 800, 1600, 2400, 3200 ascending upwards.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"X-axis is labeled 'Year' with ticks 2012-2023.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted line encodes emergency department visits by year, with higher vertical position corresponding to larger values as indicated by the ascending y-axis tick labels, then a later endpoint plotted higher than the earlier endpoint indicates overall utilization growth; under the task's overall-pattern routing instruction, this supports utilization-growth follow-up.\",\n        \"evidence\": \"The line encodes visits (y-axis label). Higher position = larger value (ascending ticks). The 2023 endpoint is higher than the 2012 endpoint. This indicates overall growth over the review period.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3478,
+      "total_tokens": 4314,
+      "completion_tokens": 836,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

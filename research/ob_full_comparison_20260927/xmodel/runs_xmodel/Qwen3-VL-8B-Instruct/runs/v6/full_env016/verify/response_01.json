@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf367bbf5d28fd9b",
+    "object": "chat.completion",
+    "created": 1790615770,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows a labeled point at 2005 with '24.0°C' and a labeled point at 2015 with '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart shows a labeled point at 2005 with '24.0°C' and a labeled point at 2015 with '10.0°C'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. No threshold, definition of substantial change, or documented default-routing rule is present in the supplied task state or chart.\",\n        \"evidence\": \"The task state and chart do not contain any policy criterion, threshold, definition of 'substantial change', or documented default-routing rule. The only information is the temperature values at the endpoints.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows a labeled point at 2005 with '24.0°C' and a labeled point at 2015 with '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart shows a labeled point at 2005 with '24.0°C' and a labeled point at 2015 with '10.0°C'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Surface temperature (°C)', confirming the units for the plotted values.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The labels annotate the respective plotted points; 2. The review endpoints are 2005 and 2015; 3. No explicit substantial-change threshold is supplied, so qualification is an assumption.\",\n        \"evidence\": \"1. The temperature labels are printed directly adjacent to their respective data points. 2. The review scope is explicitly defined as 2005-2015. 3. No threshold is provided in the task state or chart. The full-period change is 10.0°C - 24.0°C = -14.0°C. The magnitude is 14.0°C, but whether this is 'substantial' is undefined.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4086,
+      "total_tokens": 4665,
+      "completion_tokens": 579,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c40077e166f09b5",
+    "object": "chat.completion",
+    "created": 1790620726,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"In the chart, the blue bar labeled 'Firefox' extends to approximately 85 on the vertical axis, while the green bar labeled 'Edge' extends to approximately 78. The top of the Firefox bar is visibly higher on the page than the top of the Edge bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"In the chart, the blue bar labeled 'Firefox' extends to approximately 85 on the vertical axis, while the orange bar labeled 'Chrome' extends to approximately 12. The top of the Firefox bar is visibly higher on the page than the top of the Chrome bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis on the left side of the chart displays tick labels starting at 0 at the bottom and increasing by 10s up to 100 at the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height on the shared vertical axis encodes current market_share with greater vertical height meaning greater share, then the tallest browser bar has the highest market_share; the compatibility queue rule requires selecting that browser.\",\n        \"evidence\": \"The reading assumes that bar height is the authoritative encoding for market_share. However, the chart contains explicit percentage annotations above each bar (e.g., '87%' for Edge, '23%' for Firefox). These annotations directly contradict the values suggested by the bar heights (Edge bar is ~78, Firefox bar is ~85). In data visualization, explicit numeric labels are typically the authoritative source of value over the visual representation of the bar, especially when they conflict. Therefore, the condition that 'bar height... encodes current market_share' is refuted by the presence of conflicting, explicit percentage labels.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Above the green bar, which is aligned with the x-axis label 'Edge', the text '87%' is printed in bold black font.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Above the blue bar, which is aligned with the x-axis label 'Firefox', the text '23%' is printed in bold black font.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Above the orange bar, which is aligned with the x-axis label 'Chrome', the text '5%' is printed in bold black font.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription above a product's bar is that product's current market_share in the dashboard, then compare those inscriptions; the compatibility queue rule requires selecting the browser with the greatest current market_share.\",\n        \"evidence\": \"The reading assumes the percentage inscriptions are the authoritative market_share values. This is a standard convention for bar charts where labels provide the precise value. Comparing the inscriptions: Edge (87%) > Firefox (23%) > Others (3%) > Chrome (5%) > Safari (1%). Edge has the highest value. The compatibility queue rule requires selecting the browser with the highest current market_share. Thus, the reading leads to selecting Edge.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4169,
+      "total_tokens": 4963,
+      "completion_tokens": 794,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

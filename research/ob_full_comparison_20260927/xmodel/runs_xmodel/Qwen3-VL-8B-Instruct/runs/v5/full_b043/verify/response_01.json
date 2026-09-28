@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af7a0e15293cab04",
+    "object": "chat.completion",
+    "created": 1790614775,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed label 'Week 1' has its top below the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If no explicit policy establishes that a below-average chart result must receive the low-revenue route, then the dashboard alone supports the comparison but does not determine a non-normal workflow route; normal tracking remains a possible conservative selection.\",\n        \"evidence\": \"The chart shows Week 1 revenue is below the 'Average' line. The task instructions do not specify a policy for routing below-average weeks. The reading correctly states that the dashboard supports the comparison (Week 1 < Average) but does not determine a non-normal route. The option 'Keep Week 1 on normal revenue tracking' is therefore a valid, conservative selection under this reading.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed label 'Week 1' has its top below the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Revenue' and shows printed ticks including 400, 450, 500, 550, and 600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode the Revenue axis with greater values higher on the page, each bar is bound to its x-axis week label, and the dashed line labeled 'Average' is the applicable revenue-average benchmark, then a bar top below that line represents revenue below average. If the route labels use below-average revenue to mean low-revenue response, select the low-revenue option.\",\n        \"evidence\": \"The chart's vertical axis is labeled 'Revenue' with values increasing upward (0 to 600). Each bar is positioned directly under its corresponding week label. The dashed line labeled 'Average' is at 550, and Week 1's bar is visibly below it. The chart's independent visual notes confirm Week 1 revenue is 440, which is below 550. The reading correctly infers that Week 1 is below average. It then links this to the option 'Route Week 1 to low-revenue response' by assuming the option's wording defines 'below-average revenue' as requiring the 'low-revenue response' route. This is a valid inference based on the option labels and the chart's data, as no other policy is specified. The reading's conditions are fully met by the chart's visible structure and labels.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3865,
+      "total_tokens": 4534,
+      "completion_tokens": 669,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

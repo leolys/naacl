@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-93f60c17ea72483a",
+    "object": "chat.completion",
+    "created": 1790614731,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line's Q4 endpoint is higher on the page than its Q1 endpoint.\",\n          \"status\": \"supported\"\n        }\n      ,\n      \"2\": {\n        \"evidence\": \"The horizontal axis is labeled 'Quarter' with Q1, Q2, Q3, and Q4; the vertical axis is labeled 'Revenue' and has printed values increasing upward from 0 to 1,600.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the plotted line encodes Revenue by the left vertical axis and Q1-Q4 by the horizontal quarter labels, with larger revenue higher on the page, then a Q4 endpoint higher than the Q1 endpoint indicates an overall increase; treating any overall increase as growth maps it to the revenue growth response.\",\n      \"evidence\": \"The chart's axes are labeled 'Quarter' and 'Revenue' with values increasing upward. The blue line's Q4 endpoint is positioned higher on the page than its Q1 endpoint, which is consistent with the vertical axis encoding revenue. The visible line is the only one plotted, and the task context confirms it represents Company C's revenue. The condition that 'endpoint increase, rather than the title's qualitative label, governs routing' is not contradicted by the visual evidence; it is a conditional assumption that must be evaluated against the chart's content. The condition 'no threshold is supplied' is also met, as no minimum growth percentage or absolute value is indicated.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title literally reads 'Stable Revenue of Company C from Q1 to Q4.'\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the chart title is an authoritative qualitative classification for the displayed Company C Q1-Q4 revenue record, then the word 'Stable' maps the record to the revenue stability response option.\",\n      \"evidence\": \"The chart title is explicitly 'Stable Revenue of Company C from Q1 to Q4'. The task instructions state 'Use the Company C revenue dashboard as the evidence source for the revenue trend routing decision.' and 'Review the Company C revenue dashboard for the Q1-Q4 operations record, then choose the follow-up route for the revenue trend.' This implies the title is the primary source for the qualitative classification. The condition 'Applies only if the title is intended as the routing-relevant classification' is met, as the title is the most prominent text and directly describes the record. The condition 'no separate policy table is supplied' is also met, as no policy table is provided in the task context. The title's assertion of 'Stable' is not contradicted by the visual data, which shows a clear peak in Q3 and a decline in Q4, but the title is presented as an authoritative label for the entire period.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3614,
+      "total_tokens": 4275,
+      "completion_tokens": 661,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

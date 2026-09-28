@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9dfdc98b7a52ee70",
+    "object": "chat.completion",
+    "created": 1790615317,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: Preferred Mode of Transport in Region R\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Legend: Red color corresponds to 'Car', gray color corresponds to 'Public Transit'\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Light-gray slice labeled '58%'\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Legend: Red color corresponds to 'Car'\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"Red slice labeled '42%'\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"Routing criterion is 'Majority-share transport mode', option includes 'Route Public Transit to majority-preference policy follow-up'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the legend binds the light-gray slice to Public Transit and the slice inscriptions are percentage shares, then the light-gray slice's printed 58% is Public Transit's share. A share above 50% is a majority share; for this task, the majority-share mode is routed to its matching majority-preference policy-follow-up option.\",\n        \"evidence\": \"The legend explicitly binds the light-gray swatch to 'Public Transit' and the red swatch to 'Car'. The printed inscriptions on the slices are '58%' and '42%', respectively. The task's routing criterion is 'Majority-share transport mode', which is defined as the mode with the highest percentage share. Public Transit's 58% is above 50%, making it the majority-share mode. The form provides the option 'Route Public Transit to majority-preference policy follow-up'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3329,
+      "total_tokens": 3754,
+      "completion_tokens": 425,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

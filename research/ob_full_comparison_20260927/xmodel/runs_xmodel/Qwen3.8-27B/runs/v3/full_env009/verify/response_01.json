@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bf59903a22e3138e",
+    "object": "chat.completion",
+    "created": 1790617830,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The visible chart area contains only the title, axes, grid lines, data line, and data labels. No text, legend, or annotation defines a threshold, cutoff, or decision rule for routing.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The leftmost marker (2005) has the label '23.9°C' above it. The rightmost marker (2014) has the label '10.1°C' above it. Both are clearly visible in the image.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if follow-up requires an explicit threshold and none is displayed, the chart cannot establish the need for follow-up, and if the workflow defaults to routine monitoring in such cases, routine monitoring is appropriate. The conditions state this applies only if follow-up is threshold-based and routine monitoring is the default, noting neither is supplied.\",\n        \"evidence\": \"The absence of a visible threshold is supported by the chart. However, the necessary condition that 'the workflow defaults unverified changes to routine monitoring' is not supported by any visible text, policy table, or instruction on the page. The page instructions only ask to determine whether the change requires follow-up, without specifying a default for when criteria are missing.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The leftmost black circular marker is aligned with the '2005' tick on the x-axis, and the text '23.9°C' is printed immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The rightmost black circular marker is aligned with the '2014' tick on the x-axis, and the text '10.1°C' is printed immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The large text at the top of the chart reads 'Regional Summer Temperature Trend'. The vertical axis on the left is labeled 'Temperature (°C)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that the chart indicates markers represent regional summer temperature for their aligned year, and endpoint values can be subtracted to find the full-period change. It concludes that if the program treats this magnitude as substantial without a displayed threshold, it should enter follow-up. The conditions note the final routing clause is an assumption because no threshold is supplied.\",\n        \"evidence\": \"The interpretation of the chart's title, axes, and data labels is supported by the visual evidence. The calculation of the change (23.9 - 10.1 = 13.8) is a valid mathematical operation on the visible data. However, the necessary condition that 'the routing program treats a temperature change of this magnitude as substantial' is not established by any visible text or policy. The page does not define what constitutes a 'substantial' change.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4202,
+      "total_tokens": 4980,
+      "completion_tokens": 778,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

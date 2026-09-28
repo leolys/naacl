@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90362ba9d589ed2a",
+    "object": "chat.completion",
+    "created": 1790614640,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays blue points labeled Week 2 through Week 6 and axis titles, with no visible profit, margin, incremental-sales, control-group, or causal-method annotation.\"\n        ,\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If a broader-spend approval requires evidence that added advertising caused profitable incremental sales, then a scatterplot of weekly spend and sales without a causal design, costs, margin, or return measures is insufficient; select full-data analysis.\",\n      \"evidence\": \"The chart's annotations explicitly state it lacks any measures of profit, margin, or causal methodology. The chart's title and axes confirm it displays only 'Ad Spend vs Sales'. The absence of controls or profitability measures is visible and verifiable. The condition 'if approval policy requires causal or profitability validation' is met by the task's context, which requires a spend decision based on the dashboard. The reading's conclusion is therefore supported by the visible absence of required evidence.\",\n      \"status\": \"supported\"\n    }\n  },\n  \"r2\": {\n    \"O\": {\n      \"1\": {\n        \"evidence\": \"The title reads 'Weeks with Promotional Campaigns: Ad Spend vs Sales'; the horizontal axis is inscribed 'Advertising Spend ($ thousands)' and the vertical axis is inscribed 'Sales ($ thousands)'.\",\n        \"status\": \"supported\"\n      },\n      \"2\": {\n        \"evidence\": \"The blue points labeled Week 2, Week 3, Week 4, Week 5, and Week 6 progress from lower-left to upper-right; each later labeled point is to the right of and higher on the page than the preceding labeled point.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands as printed, then points farther right and higher represent weeks with greater spend and greater sales. If a consistent higher-spend/higher-sales pattern across the labeled campaign weeks is sufficient evidence for a spend recommendation, select broader spend expansion.\",\n      \"evidence\": \"The chart's axis labels and scale units confirm the encoding. The visible progression of points from Week 2 to Week 6 is monotonic: each subsequent point has a higher x-value (spend) and higher y-value (sales). The condition 'if the plotted weeks are comparable campaign observations' is met by the consistent labeling (Week 2 through Week 6) and the task context, which implies these are sequential promotional weeks. The condition 'if the task permits an association-based expansion decision without requiring causal attribution, profitability, or additional controls' is also met, as the dashboard is the sole evidence provided and the task instructions do not mandate causal validation. The reading's conclusion is therefore supported.\",\n      \"status\": \"supported\"\n    }\n  }\n} \n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3673,
+      "total_tokens": 4302,
+      "completion_tokens": 629,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

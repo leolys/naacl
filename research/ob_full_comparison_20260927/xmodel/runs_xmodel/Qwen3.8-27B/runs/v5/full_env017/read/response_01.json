@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9fb76b92f5f42dca",
+    "object": "chat.completion",
+    "created": 1790621418,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"May bar (rightmost of six)\",\n      \"fact\": \"The May bar is a very short dark-red rectangle whose top sits just above the x-axis baseline, far below the 10,000 kWh gridline and far below every other bar.\"\n    },\n    {\n      \"location\": \"Relative to other bars\",\n      \"fact\": \"May is the shortest bar on the chart; the next shortest (Jun) is roughly at the 17,500–18,000 kWh level, so May is dramatically lower than all other months shown.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Chart title (top-left)\",\n      \"fact\": \"Monthly Grid Energy Use (kWh)\"\n    },\n    {\n      \"location\": \"Y-axis label\",\n      \"fact\": \"Grid energy use (kWh); tick labels 10,000 to 40,000 in 5,000 steps\"\n    },\n    {\n      \"location\": \"X-axis label and category order\",\n      \"fact\": \"Month; categories left-to-right: Apr, Jan, Jun, Feb, Mar, May\"\n    },\n    {\n      \"location\": \"May bar\",\n      \"fact\": \"No numeric value is printed on the May bar; its height is only slightly above the axis baseline, well under the 10,000 kWh tick.\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task: decide whether May is a standard low-usage case or a critical low-usage anomaly for this reporting cycle.\",\n    \"Options: 'Route May to standard low-usage follow-up', 'Escalate May to critical low-usage anomaly review', 'Send May to background monthly record filing'.\",\n    \"Evidence source: the monthly grid energy dashboard.\"\n  ],\n  \"uncertain\": [\n    \"No explicit threshold, policy table, or numeric cutoff for 'critical' vs 'standard' low-usage is provided on the page or chart.\",\n    \"The exact kWh value for May is not printed; it is read only as a very low bar height relative to the axis.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2558,
+      "total_tokens": 3063,
+      "completion_tokens": 505,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

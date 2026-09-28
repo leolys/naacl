@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2a014342973d69f",
+    "object": "chat.completion",
+    "created": 1790617300,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The plot shows blue points labeled Week 2 through Week 6 plus an unlabeled point near the origin. The only visible text is the title, axis labels, and week labels; there are no annotations for profit, margin, incremental sales, control groups, or causal methods.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Applies only if the approval policy requires causal or profitability validation rather than a descriptive association.\",\n        \"evidence\": \"The chart visibly lacks costs, margin, control-group, or causal-method annotations, so the evidence-side condition is met. However, the public task and form provide no policy text stating that approval requires causal or profitability validation; that requirement remains an assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title reads 'Weeks with Promotional Campaigns: Ad Spend vs Sales'; the x-axis is labeled 'Advertising Spend ($ thousands)' and the y-axis 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The labeled points Week 2 (~22, 65), Week 3 (~32, 90), Week 4 (~42, 120), Week 5 (~52, 150), and Week 6 (~62, 190) each step to the right and upward relative to the preceding label, confirming a consistent higher-spend/higher-sales progression.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Applies only if the plotted weeks are comparable campaign observations and the task permits an association-based expansion decision without requiring causal attribution, profitability, or additional controls.\",\n        \"evidence\": \"The title identifies the points as 'Weeks with Promotional Campaigns,' supporting comparability. However, the public task and form do not state that an association-based pattern is sufficient for a spend recommendation, nor do they waive causal/profitability requirements; that permission remains an assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3776,
+      "total_tokens": 4326,
+      "completion_tokens": 550,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

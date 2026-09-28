@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b0a0c2e4286fa7ca",
+    "object": "chat.completion",
+    "created": 1790621927,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle beneath the chart title reads exactly 'Selected large-volume hospitals shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The scatter plot contains exactly five teal points, each labeled 'Hospital A' through 'Hospital E.' No other data points are visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a chart is only a descriptive comparison and lacks evidence establishing a causal, policy, or population-wide conclusion, it may be retained as contextual material rather than used as support for enterprise approval. Condition: Applies if the organization requires stronger evidence than a subset descriptive association for operational escalation.\",\n        \"evidence\": \"The chart displays a descriptive scatter plot of five hospitals. The visual notes confirm no policy table, explicit threshold, or causal mechanism is provided. The subtitle explicitly limits the scope to 'Selected large-volume hospitals.' Therefore, the chart is a descriptive comparison of a subset and lacks the evidence required for a population-wide or causal conclusion. The condition is met because the task involves an 'Enterprise escalation assessment' where a subset association is insufficient.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The subtitle beneath the chart title reads exactly 'Selected large-volume hospitals shown in dashboard summary.'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title at the top reads exactly 'Top Hospitals: Nurse Hours vs Discharge Count.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a dashboard explicitly displays only a selected hospital subset, its plotted relationship is not evidence for the full hospital population; for an enterprise-level statement, the task's routing choices require full-population review before enterprise approval. Condition: Applies because the proposed statement is enterprise-level and the chart does not show the full hospital population.\",\n        \"evidence\": \"The subtitle explicitly states the dashboard shows 'Selected large-volume hospitals,' which is a subset, not the full population. The task instructions define the goal as handling a 'proposed enterprise-level statement' and provide an option to 'Route this subset finding for full-hospital population review.' Since the chart is a subset and the statement is enterprise-level, the condition that the chart does not show the full population is met.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Visually, Hospital A is at the lower-left (approx x=30, y=65). Hospital B is to the right and higher (approx x=40, y=75). Hospital C is further right and higher (approx x=50, y=90). Hospital D is further right and higher (approx x=60, y=118). Hospital E is the rightmost and highest (approx x=70, y=165). The points appear successively farther right and higher from A through E.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis label reads 'Weekly nurse hours (thousands)' and the vertical axis label reads 'Monthly discharge count (thousands).'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes weekly nurse hours and the vertical axis encodes monthly discharge count, with both scales increasing rightward/upward, points positioned successively farther right and higher indicate a positive displayed association for the plotted hospitals; this is descriptive only and does not establish causation or enterprise generalizability. Condition: Applies to the labeled hospital points in this scatter plot; no causal or population-wide inference is assumed.\",\n        \"evidence\": \"The axes are labeled as asserted (nurse hours on x, discharge count on y). The points A through E are positioned successively farther right and higher, indicating a positive association in the display. The visual arrangement confirms the descriptive nature of the plot. The condition that this applies to the labeled points without assuming causation is met by the visual evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3439,
+      "total_tokens": 4421,
+      "completion_tokens": 982,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

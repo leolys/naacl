@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2f3fba939a69a20",
+    "object": "chat.completion",
+    "created": 1790615001,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"basis\": \"The chart's y-axis is explicitly labeled 'Reported production share (%)', and the chart presents both bar heights and explicit percentage annotations. The largest percentage value printed above the bars is 41.2% for Solar. The bar height for Solar (reaching the 40% tick) is visually shorter than the bar for Wind (which reaches between 65% and 70%). This creates a direct contradiction: the visual encoding (bar height) and the explicit textual annotation (printed percentage) conflict. The task's routing criterion is to identify the largest contribution source based on the dashboard. The public definitions and the chart's explicit labeling support that the printed percentages are the authoritative reported values. The bar height for Wind is taller than for Solar, but this contradicts the explicit percentage value. The task requires routing the source with the highest reported production share. The highest reported value is 41.2% for Solar. Therefore, the largest contribution source is Solar.\",\n  \"option_label\": \"Escalate Solar to contribution review\"\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4358,
+      "total_tokens": 4579,
+      "completion_tokens": 221,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

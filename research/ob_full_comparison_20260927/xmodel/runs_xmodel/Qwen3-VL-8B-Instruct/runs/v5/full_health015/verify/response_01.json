@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ae08099909463ac3",
+    "object": "chat.completion",
+    "created": 1790615111,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red square at 11-18 years is higher on the page than the blue circular mark at the same category.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis label is blue and the right axis label is red; no numeric y-axis tick labels are visibly printed.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Blue circular marks are connected by a solid blue line, while red square marks are connected by a dashed red line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue and red series use separate colored y-axes and neither axis has visible numeric tick labels, their screen-space heights cannot by themselves establish a comparable cross-category value ordering; without a stated escalation criterion, the comparison should be sent for reference review.\",\n        \"evidence\": \"The chart uses separate y-axes (blue for 'High fibre breakfast cereals', red for 'Other breakfast cereals') with no visible tick labels. The screen-space height of the red square (11-18 years) is visibly greater than the blue circle at the same category position. However, the chart's title and axis labels explicitly define the series: the blue line represents 'High fibre breakfast cereals' and the red line represents 'Other breakfast cereals'. The printed values at 11-18 years are 18 for the blue line and 6 for the red line. Therefore, the screen-space height comparison is not a valid basis for comparison without a stated escalation criterion, and the chart does not lack a stated criterion. The condition 'without a stated escalation criterion' is not met because the chart's labels and values provide a clear mapping to the options.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads “High fibre breakfast cereals vs Other breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue axis label reads “High fibre breakfast cereals.”\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"A blue circular mark is shown at the 11-18 years position.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing instruction treats the chart category explicitly labeled “High fibre breakfast cereals” as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option.\",\n        \"evidence\": \"The chart title and left y-axis label explicitly define the blue series as 'High fibre breakfast cereals'. The blue circular mark at the 11-18 years position is part of this series and has a value of 18. The routing instruction requires assigning the 11-18 years category to the most appropriate follow-up route. The blue series represents the 'High fibre breakfast cereals' category. Therefore, if the routing instruction treats the chart category explicitly labeled 'High fibre breakfast cereals' as the category requiring adolescent fibre-support follow-up, then that labeled category maps to the high-fibre follow-up option. The condition 'Requires an unstated program rule that the high-fibre category itself, rather than a plotted cross-series comparison, determines fibre-support routing' is not a necessary condition for this reading to apply. The reading is supported by the explicit labeling of the blue series as 'High fibre breakfast cereals' and the presence of the blue circular mark at the 11-18 years position.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2564,
+      "total_tokens": 3377,
+      "completion_tokens": 813,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

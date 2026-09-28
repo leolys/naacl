@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-83b727c47d4aee92",
+    "object": "chat.completion",
+    "created": 1790614341,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The marker aligned with 'Other' is lower on the page than every other category marker.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is visibly labeled 'Value', with tick labels increasing upward from 0 to 65.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The chart title reads 'Public Service Feedback Share by Category'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If marker height on the vertical axis labeled 'Value' encodes feedback share with larger values higher on the axis, then the lowest marker represents the lowest-share category; the task routes that category to low-feedback coverage follow-up.\",\n        \"evidence\": \"The marker for 'Other' is the lowest on the chart, and the y-axis increases upward. This would imply 'Other' has the lowest share.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The inscription '52%' appears above the marker aligned with 'Service Quality'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The inscription '51%' appears above the marker aligned with 'Service Cost'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The inscription '12%' appears above the marker aligned with 'Service Design'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The inscription '17%' appears above the marker aligned with 'Support Access'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The inscription '42%' appears above the marker aligned with 'Service Delivery'.\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The inscription '41%' appears above the marker aligned with 'Other'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percent inscription above a category's marker states that category's feedback share, then the category with the smallest printed percentage is the lowest-share category; the task routes that category to low-feedback coverage follow-up.\",\n        \"evidence\": \"The printed percentages are: Service Quality (52%), Service Cost (51%), Service Design (12%), Support Access (17%), Service Delivery (42%), Other (41%). The smallest is 12%, which corresponds to 'Service Design'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3583,
+      "total_tokens": 4186,
+      "completion_tokens": 603,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

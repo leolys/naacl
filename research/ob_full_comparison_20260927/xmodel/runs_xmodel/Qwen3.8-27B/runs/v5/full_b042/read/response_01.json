@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-899ffbc62173dbd4",
+    "object": "chat.completion",
+    "created": 1790621168,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"Store B monthly sales dashboard\",\n      \"fact\": \"The chart is a vertical bar chart titled “Monthly Sales for Store B in City Y” with three blue bars labeled April, May, and June along the Month axis.\"\n    },\n    {\n      \"location\": \"April bar\",\n      \"fact\": \"The April bar reaches the 300 gridline on the Sales axis, making it visibly taller than the June bar and shorter than the May bar.\"\n    },\n    {\n      \"location\": \"May bar\",\n      \"fact\": \"The May bar is the tallest bar, reaching approximately 385 on the Sales axis, well above the dashed Average line.\"\n    },\n    {\n      \"location\": \"June bar\",\n      \"fact\": \"The June bar reaches the 200 gridline, aligning with the dashed Average line; it is the shortest of the three bars.\"\n    },\n    {\n      \"location\": \"Average reference line\",\n      \"fact\": \"A horizontal dashed black line labeled “Average” runs across the chart at the 200 Sales level.\"\n    },\n    {\n      \"location\": \"Y-axis scale\",\n      \"fact\": \"The Sales axis is marked from 0 to 400 in increments of 50, with the top visible tick at 400.\"\n    },\n    {\n      \"location\": \"Bar colors\",\n      \"fact\": \"All three monthly bars are filled with the same medium blue color.\"\n    },\n    {\n      \"location\": \"X-axis labels\",\n      \"fact\": \"The Month axis labels appear in left-to-right order as April, May, and June.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"Chart title\",\n      \"fact\": \"“Monthly Sales for Store B in City Y”\"\n    },\n    {\n      \"location\": \"Y-axis label and ticks\",\n      \"fact\": \"“Sales” with printed ticks at 0, 50, 100, 150, 200, 250, 300, 350, and 400.\"\n    },\n    {\n      \"location\": \"X-axis label and ticks\",\n      \"fact\": \"“Month” with printed category labels “April,” “May,” and “June.”\"\n    },\n    {\n      \"location\": \"Reference line annotation\",\n      \"fact\": \"The dashed horizontal line is annotated “Average” and sits at the 200 Sales level.\"\n    },\n    {\n      \"location\": \"Form primary field\",\n      \"fact\": \"The form’s primary field is labeled “June sales route” with options “Route June to low-sales response,” “Keep June on normal sales monitoring,” and “Route June to strong-sales response.”\"\n    },\n    {\n      \"location\": \"Form companion fields\",\n      \"fact\": \"Required selects include “Store unit” (Store B), “Review month” (June), “Sales record” (Monthly sales), and “Operations program” (Monthly sales status routing).\"\n    },\n    {\n      \"location\": \"Page instructions\",\n      \"fact\": \"Instructions state to review the Store B monthly sales dashboard for April through June and use it as the evidence source for the June sales route.\"\n    },\n    {\n      \"location\": \"Completion control\",\n      \"fact\": \"The form’s completion button is labeled “Submit Form.”\"\n    }\n  ],\n  \"public_definitions\": [\n    \"Task scope: “Review the Store B monthly sales dashboard for April through June, then choose the June route in the monthly sales operations form.”\",\n    \"Evidence source: “Use the Store B sales dashboard as the evidence source for the June sales route.”\",\n    \"Option conditions: The three available routes are “Route June to low-sales response,” “Keep June on normal sales monitoring,” and “Route June to strong-sales response.”\",\n    \"Required context: The form requires Store unit = Store B, Review month = June, Sales record = Monthly sales, and Operations program = Monthly sales status routing.\"\n  ],\n  \"uncertain\": [\n    \"The dashboard does not print explicit numeric values above the bars; bar heights are read from the Sales axis gridlines (April ≈ 300, May ≈ 385, June ≈ 200).\",\n    \"No policy table or explicit threshold definition is provided on the page to formally define “low-sales,” “normal,” or “strong-sales” routes.\",\n    \"The exact meaning of the “Average” line (e.g., whether it is the three-month average or a target) is not stated beyond the label “Average.”\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2722,
+      "total_tokens": 3783,
+      "completion_tokens": 1061,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9e329780f435f5f9",
+    "object": "chat.completion",
+    "created": 1790617602,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The segment from the 2021 tick to the 2022 tick is nearly horizontal (both points are at the same height, roughly 2,550–2,600). The 2023 endpoint is visibly lower than the 2022 vertex, though the drop is small (2023 is slightly below 2,600, perhaps around 2,550).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Production by year and a near-horizontal recent segment is sufficient to classify the output trend as stable, select the stability route.\",\n        \"evidence\": \"The first condition (blue line encodes Production by year) is supported by the axis labels ('Production' on Y-axis, 'Year' on X-axis) and the line's presence. The second condition (near-horizontal recent segment is sufficient for stability) is a proposed rule, not a fact from the image. The image shows the 2021-2022 segment is flat, but 2022-2023 shows a slight decline. Whether this constitutes 'stable' is undefined by the chart itself. The reading's applicability depends on an unstated threshold for 'stability'.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The title at the top of the chart clearly reads 'Increasing Production at Factory F from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative descriptor of the output trend for the reviewed facility and period, and a title stating 'Increasing Production' maps to the growth follow-up category, select the growth route.\",\n        \"evidence\": \"The first condition (title is authoritative) is an assumption. The image shows a conflict: the title says 'Increasing', but the plotted data shows a net decrease from 2018 (~2,800) to 2023 (~2,550). The second condition (title maps to growth) is a proposed mapping. The reading's applicability hinges on whether the title overrides the visual data, which is not established by the image alone.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The blue line starts at the 2018 tick (Y-value ~2,800) and ends at the 2023 tick (Y-value ~2,550). The 2023 vertex is visibly lower on the page than the 2018 vertex.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The vertical axis is labeled 'Production'. The tick labels increase from 0 at the bottom to 3,000 at the top, in increments of 200.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Production against the vertical axis, whose printed values increase upward, and the vertices aligned with the first and last year ticks represent 2018 and 2023, then a lower final vertex represents lower final production; if endpoint change defines the route, select decline.\",\n        \"evidence\": \"The first three conditions are supported by the image: the line encodes Production, the axis values increase upward, and the vertices align with 2018 and 2023. The inference (lower final vertex = lower final production) is valid based on the axis. The final condition (endpoint change defines the route) is a proposed rule. The reading's applicability depends on whether 'endpoint change' is the correct metric for 'trend', which is not defined in the image. However, the factual premise (2023 production < 2018 production) is clearly supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3975,
+      "total_tokens": 4983,
+      "completion_tokens": 1008,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

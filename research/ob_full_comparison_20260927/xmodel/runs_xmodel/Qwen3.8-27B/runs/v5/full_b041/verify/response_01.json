@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-916d659b2cb0f160",
+    "object": "chat.completion",
+    "created": 1790621214,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart shows a bar chart with the x-axis labeled 'Month' and categories 'January', 'February', 'March'. The blue bar corresponding to 'January' has its top edge exactly aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal dashed line extends across the plot area. On the right side of the plot, the text 'Average' is printed near the end of the line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly customer counts and the routing convention treats a month at the displayed average as requiring follow-up rather than normal handling, select Monitor next month.\",\n        \"evidence\": \"The condition requires a routing convention that maps 'at average' to 'Monitor next month'. The provided chart and task context do not contain a policy table, legend, or instruction defining this mapping. The task instructions only state to 'Review the Mall A customer traffic dashboard... then choose the January route'. Without an explicit rule defining how the visual data maps to the specific text options, this specific routing convention is not supported by the visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar aligned with the printed x-axis label 'January' has its top edge aligned with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average' on the right side of the plot.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis on the left side of the plot is inscribed with the text 'Number of Customers'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly customer counts on the vertical axis, the dashed line labeled 'Average' is the routing benchmark, and the routing convention assigns a month at that benchmark to the normal route, select Normal plan.\",\n        \"evidence\": \"The condition requires a routing convention that maps 'at average' to 'Normal plan'. Similar to r1, the provided chart and task context do not contain a policy table or legend defining this mapping. The 'uncertain' note in the visual notes explicitly states: 'The exact mapping between the visual position of the January bar (at the average line) and the specific text options... is not defined by any visible policy table or legend on the chart.' Therefore, the specific mapping to 'Normal plan' is not supported by visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4033,
+      "total_tokens": 4681,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

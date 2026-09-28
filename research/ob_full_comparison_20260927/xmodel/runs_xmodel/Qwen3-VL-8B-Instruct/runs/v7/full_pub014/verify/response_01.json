@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a5fea42f83585a83",
+    "object": "chat.completion",
+    "created": 1790616973,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'TX' is filled pale yellow, visually similar to the high end of the legend.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The pale-yellow top of the gradient is printed beside 'High' and '100'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The polygon labeled 'DE' is filled orange-red.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the routing criterion literally requires the highest-risk state across the entire dashboard rather than only among offered eligible records, an offered record can be selected only if the chart establishes that it exceeds every other mapped state.\",\n        \"evidence\": \"The chart shows TX as pale yellow (high risk) and DE as orange-red (moderate risk). TX is visually higher risk than DE. However, the chart also shows other states like MT, OR, NV, UT, FL, and WA that are also pale yellow or light yellow, indicating they are at or near the same high-risk level as TX. The routing criterion is 'Highest risk state in the dashboard', which is not restricted to the offered options. Therefore, TX is not necessarily the only or the highest-risk state; multiple states are at the highest level. The B reading correctly states that selection is only valid if the offered state exceeds every other mapped state, which is not the case for TX or DE. RI is gray and has no assigned risk value, so it is ineligible for comparison under this B condition. Therefore, the B reading is not satisfied for any of the offered states under this interpretation.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'RI' is gray.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible legend is a pale-yellow-to-dark-red gradient labeled from 'High'/'100' to 'Low'/'0'; no gray swatch or gray label is shown.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a state's fill color is encoded by the displayed vertical Risk Index legend, the pale-yellow end at the printed 'High'/'100' end represents higher risk than the dark-red end at the printed 'Low'/'0' end; fills not represented by the gradient, such as gray, have no stated risk-index value.\",\n        \"evidence\": \"The legend clearly maps pale yellow to 'High'/'100' and dark red to 'Low'/'0'. RI is gray, which is not part of the gradient. The B reading correctly states that gray fills have no stated risk-index value. Therefore, RI cannot be compared to other states using the legend's scale. This B reading is supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The vertical color gradient has printed 'High' at its pale-yellow top beside '100' and printed 'Low' at its dark-red bottom beside '0'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The polygon labeled 'DE' is filled orange-red.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The polygon labeled 'NM' is filled dark burgundy-red.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The polygon labeled 'RI' is filled gray.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If routing is restricted to the offered state-record options and gray/unmapped states are not eligible for a risk comparison, the offered state with the highest legend-decoded risk is the available choice most consistent with the stated highest-risk routing criterion.\",\n        \"evidence\": \"The offered options are RI, NM, and DE. RI is gray and has no assigned risk value, so it is ineligible for comparison. NM is dark burgundy-red, which is the lowest risk color shown (near 0). DE is orange-red, which is moderate risk. The chart shows that NM is at the lowest risk level, while DE is at a moderate level. Therefore, under this B reading, DE is the highest-risk among the offered options. The B reading correctly states that the offered state with the highest legend-decoded risk is the most consistent choice, and DE is that state. The B reading is supported by the visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3981,
+      "total_tokens": 5018,
+      "completion_tokens": 1037,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

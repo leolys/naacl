@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bbfaa0f64a60b4e3",
+    "object": "chat.completion",
+    "created": 1790614067,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue January bar's top is horizontally aligned with the dashed horizontal line labeled 'Average'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line is labeled 'Average'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left blue bar is labeled 'January'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly reported alert totals by their vertical extent and the dashed line labeled 'Average' encodes the monthly average alert load, then a month whose bar top coincides with that line is at the average and maps to average-range monitoring.\",\n        \"evidence\": \"The bar for January is visually aligned with the 'Average' line. The y-axis is labeled 'Alert Days', and the scale is linear with clear tick marks. The 'Average' line is explicitly labeled and positioned at approximately 450. The January bar's top is visually aligned with this line, and the printed fact confirms January reaches 450. The February bar is at 380, and March is at 250, confirming the 'Average' line is above both. The task requires routing based on January's position relative to the average, and the alignment directly supports the reading's condition.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2788,
+      "total_tokens": 3117,
+      "completion_tokens": 329,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

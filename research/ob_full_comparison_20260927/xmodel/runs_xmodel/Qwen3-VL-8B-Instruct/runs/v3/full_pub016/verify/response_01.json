@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a1ff559925e25cb7",
+    "object": "chat.completion",
+    "created": 1790613532,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"O1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title visibly reads 'Prevalence of Species Z in US States'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"A vertical color ramp is visibly labeled 'High' at its pale yellow top beside '100' and 'Low' at its dark red bottom beside '0'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The small state area labeled 'NJ' is filled a very pale yellow.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The state area labeled 'PA' is filled dark red.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The small state area labeled 'DE' is filled orange-red, visibly darker than NJ and lighter than PA.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the map's color legend encodes prevalence with the pale yellow end marked 'High' and '100' and the dark red end marked 'Low' and '0', then states with paler fills have higher prevalence than states with darker fills. If the task requires routing the highest-prevalence state among the listed options, select that state's priority-follow-up detail option.\",\n        \"evidence\": \"The color legend is visible and explicitly labeled 'High' (pale yellow, 100) at the top and 'Low' (dark red, 0) at the bottom. The states NJ (pale yellow), PA (dark red), and DE (orange-red) are visibly colored according to this scale. NJ is the palest, PA is the darkest, and DE is intermediate. The task explicitly requires selecting the highest-prevalence state from the listed options for routing into the priority follow-up workflow.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3725,
+      "total_tokens": 4185,
+      "completion_tokens": 460,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

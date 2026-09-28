@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The subtitle beneath the title explicitly states: 'Selected large-volume hospitals shown in dashboard summary'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The scatter plot visually contains five labeled points: Hospital A, Hospital B, Hospital C, Hospital D, and Hospital E.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a chart is only a descriptive comparison and lacks evidence establishing a causal, policy, or population-wide conclusion, it may be retained as contextual material rather than used as support for enterprise approval.",
+        "evidence": "The chart is descriptive, showing a positive association between nurse hours and discharge count for a subset of hospitals. It does not establish causation or generalizability to the full hospital population.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The subtitle beneath the title explicitly states: 'Selected large-volume hospitals shown in dashboard summary'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The chart title is: 'Top Hospitals: Nurse Hours vs Discharge Count'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a dashboard explicitly displays only a selected hospital subset, its plotted relationship is not evidence for the full hospital population; for an enterprise-level statement, the task's routing choices require full-population review before enterprise approval.",
+        "evidence": "The chart explicitly states it shows 'Selected large-volume hospitals'. The task requires evaluating whether the finding is ready for enterprise routing. Since the chart does not represent the full hospital population, it cannot be used to support an enterprise-level statement without broader review.",
+        "status": "supported"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The scatter plot points are visually arranged such that Hospital A is at the bottom-left, Hospital B is to its right and slightly higher, Hospital C further right and higher, Hospital D further right and higher, and Hospital E at the top-right. This indicates a clear positive trend across the plotted hospitals.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is labeled 'Weekly nurse hours (thousands)' and the vertical axis is labeled 'Monthly discharge count (thousands)'. Both axes increase from left to right and bottom to top, respectively.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis encodes weekly nurse hours and the vertical axis encodes monthly discharge count, with both scales increasing rightward/upward, points positioned successively farther right and higher indicate a positive displayed association for the plotted hospitals; this is descriptive only and does not establish causation or enterprise generalizability.",
+        "evidence": "The visual arrangement of the points (A→B→C→D→E) shows a clear positive correlation. However, this is a descriptive relationship for the subset of hospitals shown. The reading correctly identifies that this does not establish causation or generalizability to the full hospital population.",
+        "status": "supported"
+      }
+    }
+  }
+}

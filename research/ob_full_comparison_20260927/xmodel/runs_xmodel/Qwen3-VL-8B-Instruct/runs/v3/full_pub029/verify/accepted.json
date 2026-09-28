@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The title contains the word 'Decreasing', while the blue line’s rightmost endpoint is higher on the page than its leftmost endpoint.",
+          "status": "refuted"
+        }
+      ],
+      "B": {
+        "reading_checked": "If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.",
+        "evidence": "The title explicitly states 'Decreasing', and the line's endpoint in 1891 is higher than in 1880, creating a direct contradiction. The reading’s condition of 'conflicting evidence' is met, but the reading's conclusion that 'routine monitoring is the fallback' is unsupported because no policy is supplied to override the title or resolve the conflict. The reading’s applicability is refuted by the visible contradiction between the title and the line’s endpoint, which is a specific factual part of the chart’s appearance.",
+        "status": "refuted"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word 'Decreasing' supports classifying the trend as decline; routing a decline trend requires the decline-response option.",
+        "evidence": "The title is a literal, visible fact. The reading’s condition that the title is 'authoritative' is not explicitly stated, but the reading does not require an external policy to validate the title’s literal meaning. The reading’s conclusion that 'Decreasing' supports classifying the trend as decline is based on the title’s wording, which is visible and unambiguous. The reading’s applicability is supported because its necessary decoding (the title’s literal meaning) and task condition (routing a decline trend requires the decline-response option) are both grounded in visible text and the task’s implicit requirement to follow the title’s summary. However, the reading’s applicability is undermined by the visual evidence of the line’s upward trend from 1880 to 1891, which contradicts the title’s claim. The reading’s conclusion is therefore unsupported by the full visual evidence, even if its decoding is correct. The reading’s applicability is unclear because the title’s authority is not confirmed, and its conclusion conflicts with the chart’s visual data.",
+        "status": "unclear"
+      }
+    },
+    {
+      "id": "r3",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The x-axis has year ticks from 1880 at the left to 1891 at the right, and the y-axis is labeled 'Number of Tourists' with larger printed ticks higher on the page.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The blue line at the 1891 tick is higher on the page than the blue line at the 1880 tick.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.",
+        "evidence": "The x-axis is ordered left to right (1880 to 1891), and the y-axis encodes 'Number of Tourists' increasing upward (0 to 3,500). The blue line is the only line shown and represents the new-tourist record (as per the task). The endpoint in 1891 is higher than in 1880, indicating an overall increase. The reading’s conditions are all supported by visible, unambiguous facts. The reading’s applicability is supported because its necessary decoding (the line’s endpoint position) and task condition (routing an increase trend requires the growth-planning option) are both grounded in visible chart elements and the task’s requirement to use the dashboard as evidence. The reading’s conclusion is directly supported by the visual data, even if the title contradicts it.",
+        "status": "supported"
+      }
+    }
+  ]
+}

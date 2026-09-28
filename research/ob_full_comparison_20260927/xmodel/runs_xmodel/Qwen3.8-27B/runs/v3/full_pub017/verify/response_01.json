@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9a7006e9f4cec8c7",
+    "object": "chat.completion",
+    "created": 1790618587,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The small area labeled 'RI' in the New England region is filled with a medium-dark red color, which is visibly lighter than Georgia's dark maroon but not gray.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The vertical legend on the right displays a continuous gradient from pale yellow at the top to dark burgundy at the bottom. There is no gray swatch or gray label present in the legend.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"A gray state fill cannot be assigned a prevalence rank from this chart unless gray is defined by the displayed prevalence legend; absent such a definition, it may indicate missing or otherwise unencoded data.\",\n        \"evidence\": \"The reading's logic is supported by the visual evidence: the legend contains only a yellow-to-red gradient with no gray category. However, the premise that RI is gray is refuted by the image, which shows RI in red. The reading's condition ('Applies because the displayed legend shows a yellow-to-red gradient but no visible gray category') is factually supported, but the application to a 'gray state' is based on a false observation of RI's color.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The vertical legend is clearly inscribed with 'High' and '100' at the pale-yellow top and 'Low' and '0' at the dark-burgundy bottom.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The polygon labeled 'DE' is filled with a light orange/peach color, which is consistent with the description of 'pale yellow' relative to the darker reds.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The polygon labeled 'GA' is filled with a very dark, deep maroon color, matching the 'dark burgundy' description.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Refuted. The area labeled 'RI' is filled with a medium-dark red color, not gray.\",\n          \"status\": \"refuted\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Supported. The public task and option labels explicitly state the routing criterion as 'Highest prevalence state in the dashboard' and label the Delaware option for 'routine monitoring'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each labeled state polygon is encoded by the adjacent vertical prevalence color scale, then colors nearer the pale-yellow top labeled 'High' and '100' represent higher prevalence than colors nearer the dark-red bottom labeled 'Low' and '0'; this comparison applies only to states with colors represented by that scale.\",\n        \"evidence\": \"The reading's conditions are supported by the visual evidence. The vertical color bar is the only legend provided, and the state fills (like DE's pale yellow and GA's dark burgundy) correspond to positions on this scale. The assumption that the scale encodes prevalence is supported by the 'High'/'Low' and '100'/'0' labels.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The polygon labeled 'GA' is dark burgundy.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The polygon labeled 'DE' is pale yellow.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The legend shows 'Low' and '0' at the dark-burgundy end and 'High' and '100' at the pale-yellow end.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each labeled state polygon is encoded by the adjacent vertical prevalence color scale, then colors nearer the pale-yellow top labeled 'High' and '100' represent higher prevalence than colors nearer the dark-red bottom labeled 'Low' and '0'; this comparison applies only to states with colors represented by that scale.\",\n        \"evidence\": \"The reading's conditions are supported. The visual evidence confirms the color scale's orientation (pale yellow = High, dark burgundy = Low) and that the state fills (GA, DE) are encoded by this scale.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3998,
+      "total_tokens": 5145,
+      "completion_tokens": 1147,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

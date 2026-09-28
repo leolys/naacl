@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a7858616a25424f6",
+    "object": "chat.completion",
+    "created": 1790620840,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The red bar above the x-axis label 'Huawei' has a top edge that is visibly higher on the page than the top edges of the orange bar (Apple), the dark-blue bar (Samsung), the green bar (Xiaomi), and the blue bar (Others).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis on the left side of the chart displays numeric labels from 0 at the bottom, increasing by 10 at each tick mark, up to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode market_share by vertical height on the shared y-axis, with higher bar tops meaning larger values, then the tallest bar identifies the current market-share leader; under the stated promotion policy, select that leader. (Applies only if the y-axis and bar geometry are authoritative despite conflicting percentage inscriptions.)\",\n        \"evidence\": \"The necessary condition is that the y-axis and bar geometry are the authoritative encoding for 'market_share'. The chart presents a direct contradiction to this condition: the percentage inscriptions printed above the bars (e.g., '30%' for Apple, '23%' for Huawei) do not correspond to the bar heights (e.g., Apple's bar reaches ~34, Huawei's reaches ~63). In standard data visualization, printed data labels are the explicit, authoritative values for a series, while the bar geometry in this chart is inconsistent with those labels (likely a plotting error). Because the chart's own explicit labels conflict with the geometry, the condition that 'bar geometry is authoritative' is not met.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis label 'Apple' is centered below the leftmost orange bar, and the text '30%' is positioned directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis label 'Samsung' is centered below the dark-blue bar, and the text '11%' is positioned directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The x-axis label 'Xiaomi' is centered below the green bar, and the text '11%' is positioned directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The x-axis label 'Huawei' is centered below the red bar, and the text '23%' is positioned directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The x-axis label 'Others' is centered below the rightmost blue bar, and the text '25%' is positioned directly above that bar.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription placed immediately above a brand's bar is the dashboard's authoritative market_share value for that x-axis brand, then those inscriptions can be compared to identify the current market-share leader; under the stated promotion policy, select that leader. (Applies only if the printed percentage labels, rather than the plotted bar heights against the y-axis, are authoritative market_share encodings.)\",\n        \"evidence\": \"The necessary condition is that the printed percentage labels are the authoritative encoding for 'market_share'. In the context of the chart, these labels are the only explicit values provided for the data series. The bar heights are inconsistent with these labels (e.g., the '11%' label for Xiaomi is above a bar reaching ~48, and the '23%' label for Huawei is above a bar reaching ~63), indicating the geometry is erroneous or misleading. Therefore, the explicit printed labels are the valid source of truth for the 'market_share' metric. Comparing the values: Apple (30%) > Others (25%) > Huawei (23%) > Samsung (11%) = Xiaomi (11%). Apple has the highest value.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4305,
+      "total_tokens": 5273,
+      "completion_tokens": 968,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

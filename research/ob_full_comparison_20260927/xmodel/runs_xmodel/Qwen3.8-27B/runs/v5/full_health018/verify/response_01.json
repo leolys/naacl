@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8b7bd2c8f5456f82",
+    "object": "chat.completion",
+    "created": 1790622040,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The purple line's leftmost point is aligned with the x-axis tick '2012' and sits at a low vertical position (between the 700 and 1400 gridlines). The rightmost point is aligned with the x-axis tick '2023' and sits at a high vertical position (just above the 2800 gridline). The 2023 point is visibly higher on the page than the 2012 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and 'overall case pattern' is evaluated by comparing the 2012 and 2023 endpoints, then a higher 2023 endpoint indicates an increase over that span; if such an overall increase maps to increasing-activity follow-up, that route is supported. The task supplies no rule choosing endpoint comparison over recent change.\",\n        \"evidence\": \"The necessary conditions for this reading are: (1) the line encodes case levels (supported by the y-axis label 'Respiratory infection cases'), (2) higher page position means more cases (supported by the ascending y-axis), (3) 'overall case pattern' is defined by comparing the 2012 and 2023 endpoints (this is a specific interpretation not explicitly stated in the task instructions, which only say 'overall case pattern'), and (4) an increase maps to 'increasing-activity follow-up' (this mapping is not explicitly stated in the task instructions). While the visual fact of a higher 2023 endpoint is supported, the specific definition of 'overall case pattern' as an endpoint comparison and the mapping to a specific route are assumptions not provided by the dashboard text.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The large bold text at the top left of the chart reads 'Falling Respiratory Infection Cases in Sentinel Sites from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The purple line has a peak at the x-axis tick '2022'. The subsequent point at the x-axis tick '2023' is lower on the page than the 2022 point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the purple line encodes respiratory infection case levels by year with higher page position meaning more cases, and the routing convention treats a decline in the most recent year-to-year segment (or the chart's stated falling pattern) as easing activity, then a 2022-to-2023 downward segment supports easing-activity follow-up. This task-to-route convention is not explicitly supplied.\",\n        \"evidence\": \"The necessary conditions are: (1) the line encodes case levels (supported), (2) higher page position means more cases (supported), (3) the routing convention treats a recent decline or the stated 'falling' pattern as 'easing activity' (this is a plausible interpretation of the word 'easing' but is not explicitly defined in the task instructions), and (4) the chart's title and plotted series describe the record (the subtitle 'Sentinel surveillance record shown in the dashboard summary' supports this). The visual fact of a 2022-to-2023 decline is supported, and the title explicitly states 'Falling', which aligns with the concept of 'easing'. However, the specific mapping of these observations to the 'easing-activity follow-up' route is an inference not explicitly stated in the provided text.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3629,
+      "total_tokens": 4516,
+      "completion_tokens": 887,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

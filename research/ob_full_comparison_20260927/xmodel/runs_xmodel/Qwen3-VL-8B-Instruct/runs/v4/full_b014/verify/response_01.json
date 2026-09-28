@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9c9d5a9c92c7926e",
+    "object": "chat.completion",
+    "created": 1790613734,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Units Sold by Product (Weekend Pop-up)'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Vertical-axis inscription: 'Units Sold', with visible tick labels including '20,000' and '30,000'\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Product C bar top lies between 20,000 and 30,000 ticks, roughly two-fifths of the way upward from 20,000\",\n          \"status\": \"refuted\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis labeled 'Units Sold' is a linear upward scale and the Product C bar is bound to its x-axis label, its height can be interpolated from the 20,000 and 30,000 ticks. A value below 25,000 and less than 2,500 units from that threshold meets the stated manual-verification variance band; selecting the manual-check option assumes that this band governs when it overlaps the low-demand rule.\",\n        \"evidence\": \"The bar for Product C is visually lower than the bars for Product B, Product E, Product A, and Product D. The bar for Product C is approximately at the 25,000 mark on the y-axis. The bar for Product C is below the 30,000 mark on the y-axis. The bar for Product C is the shortest bar, positioned between Product E and Product A. The bar for Product C is visually lower than the bars for Product B, Product E, Product A, and Product D. The bar for Product C is approximately at the 25,000 mark on the y-axis.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Product C bar top lies between 20,000 and 30,000 ticks and is closer to the 20,000 tick height than to the 30,000 tick height\",\n          \"status\": \"refuted\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible label 'Product C' is directly below the relevant dark red bar\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis is a linear upward Units Sold scale and the Product C bar is bound to its label, its height can be interpolated from the 20,000 and 30,000 ticks. Under the policy, a decoded Product C value below 25,000 activates the low-demand review queue.\",\n        \"evidence\": \"The bar for Product C is visually lower than the bars for Product B, Product E, Product A, and Product D. The bar for Product C is approximately at the 25,000 mark on the y-axis. The bar for Product C is below the 30,000 mark on the y-axis. The bar for Product C is the shortest bar, positioned between Product E and Product A. The bar for Product C is visually lower than the bars for Product B, Product E, Product A, and Product D. The bar for Product C is approximately at the 25,000 mark on the y-axis.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4028,
+      "total_tokens": 4816,
+      "completion_tokens": 788,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-824f9cdd5e57bf86",
+    "object": "chat.completion",
+    "created": 1790621025,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text at the top of the chart reads exactly 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot area contains exactly five markers labeled Q2, Q3, Q4, Q5, and Q6. There are no other data points, no lines indicating a full period, no secondary axis for profitability, and no horizontal/vertical lines indicating a threshold.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a chart is explicitly limited to selected high-growth quarters and does not display the full campaign data or a decision threshold, then the chart alone is insufficient to establish that the observed association generalizes to a broader budget increase; request full-data analysis. Conditions: Applies when approval requires evidence beyond a selected subset, such as full-period performance, causal evidence, profitability, or risk review.\",\n        \"evidence\": \"The chart is explicitly limited to 'Selected High-Growth Quarters' (title). It does not display full campaign data (only 5 points). It does not display a decision threshold. The task is to 'Approve broader budget increase', which implies generalization beyond the selected subset. Therefore, the condition 'approval requires evidence beyond a selected subset' is met by the nature of the decision (broader vs selected).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title text at the top of the chart reads exactly 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and has tick marks labeled 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and has tick marks labeled 50 through 170 in increments of 10.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The markers Q2 (approx 30, 60), Q3 (approx 40, 85), Q4 (approx 50, 110), Q5 (approx 60, 135), and Q6 (approx 70, 160) show a clear progression to the right (increasing spend) and upward (increasing sales).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, and the labeled quarter markers are the relevant evidence for a broader budget decision, then an upward-right pattern supports approving a broader budget increase; this assumes the selected quarters are representative and the association is sufficient for the decision. Conditions: Applies only if the displayed selected high-growth quarters are representative of the broader campaign context and no additional profitability, causality, or policy threshold is required.\",\n        \"evidence\": \"The axes and pattern match the description. However, the condition 'Applies only if the displayed selected high-growth quarters are representative of the broader campaign context' is not met. The chart is explicitly titled 'Selected High-Growth Quarters', implying a subset, not the whole. There is no evidence of representativeness. Furthermore, 'no additional profitability... is required' is not established; the chart only shows Sales vs Spend, not profit. Therefore, the conditions for this reading are not supported by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3951,
+      "total_tokens": 4857,
+      "completion_tokens": 906,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

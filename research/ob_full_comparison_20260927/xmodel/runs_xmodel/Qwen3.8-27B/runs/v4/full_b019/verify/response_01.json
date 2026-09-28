@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b333f5a873afa595",
+    "object": "chat.completion",
+    "created": 1790619059,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The x-axis label is 'Advertising Spend ($ thousands)' and the y-axis label is 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plotted points for Store 6, 7, 8, 9, and 10 show a clear upward trend, with each successive store positioned to the right and above the previous one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If decision-makers may treat the plotted additional top stores as representative of the company and accept a positive spend-sales association as sufficient approval evidence, then the displayed pattern can support company-wide expansion.\",\n        \"evidence\": \"The chart title is 'Additional Top Stores: Ad Spend vs Sales', indicating a specific subset. The B reading requires assuming these stores are representative of the whole company and that correlation is sufficient for approval, neither of which is supported by the chart or provided in the task context.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is clearly visible at the top of the image.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"There are five blue data points, each labeled with a store number from 6 to 10.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart’s title and attached store labels define its scope as the additional top stores shown, and a company-wide approval requires evidence covering the full store population, then evidence limited to those plotted stores supports requesting full-store analysis rather than approving company-wide expansion.\",\n        \"evidence\": \"The chart is explicitly limited to 'Additional Top Stores'. A 'company-wide' decision logically requires company-wide data. The option 'Hold and request full-store analysis' directly addresses the gap between the limited evidence and the required scope.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The axis labels are 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visual arrangement of the points from Store 6 to Store 10 confirms a monotonic increase in both x and y values.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the printed comparable scales, then points farther right and higher represent stores with greater plotted spend and greater plotted sales; this is an association only, not proof that spend caused sales or that expansion is profitable.\",\n        \"evidence\": \"The axes are clearly labeled with units. The relative positions of the points on the grid confirm the higher spend and sales values. The distinction between association and causation is a standard analytical principle.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3969,
+      "total_tokens": 4712,
+      "completion_tokens": 743,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

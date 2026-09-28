@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-902f338dce89c46c",
+    "object": "chat.completion",
+    "created": 1790618697,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The text at the top of the image clearly reads 'Shrinking Population of City A from 2010 to 2015'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative statement of the City A population trend for 2010-2015 and the workflow maps a stated shrinking trend to decline response, select the decline-response route.\",\n        \"evidence\": \"The title text is visible, but the condition that it is an 'authoritative statement' is not established. Furthermore, the visual evidence of the line (which ascends from 2,000 to 3,000) directly contradicts the 'shrinking' claim in the title, making its authority ambiguous.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title contains the phrase 'Shrinking Population', and the blue line's endpoint at 2015 is visibly higher on the y-axis (at 3,000) than its starting point at 2010 (at 2,000).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If contradictory chart signals cannot be resolved and no supplied policy specifies a route for conflicting or insufficient evidence, routine monitoring is a possible conservative route only if the workflow permits it for unresolved trends.\",\n        \"evidence\": \"The contradiction between the title and the line is visible. However, the condition that 'the workflow permits it for unresolved trends' is not provided in the public task or image. The task only lists the options without defining the conditions for their selection.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue line starts at the 2010 tick, which aligns with the '2,000' tick on the vertical axis, and ends at the 2015 tick, which aligns with the '3,000' tick.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is labeled 'Year' with ticks from 2010 to 2015. The vertical axis is labeled 'Population' with values increasing from 0 to 3,500.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the blue line is the dashboard's total-population series, the horizontal axis maps left-to-right positions to the printed years, and the vertical axis increases upward as labeled, then a line endpoint aligned with a higher y-axis tick at the later year represents population growth; if the routing workflow maps observed growth to growth planning, select the growth-planning route.\",\n        \"evidence\": \"The visual encoding (line going up from 2,000 to 3,000 over the years 2010-2015) clearly represents growth. The condition that the line is the 'total-population series' is supported by the y-axis label 'Population' and the public task's 'Population record' field. The mapping of growth to the 'growth planning' route is a direct match with the option labels provided.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3934,
+      "total_tokens": 4786,
+      "completion_tokens": 852,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads exactly 'Advertising Budget vs Revenue (High-Performing Regions)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The plot area contains exactly five data points labeled January, February, March, April, and May. There are no other data points, lines, or labels visible in the plot area representing other regional groups.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If a broader budget increase requires evidence from regions beyond the displayed high-performing subset or evidence that budget increases caused revenue increases, then a chart limited to that subset and showing only plotted monthly association is insufficient, supporting a request for full-data analysis.",
+        "evidence": "The necessary condition is whether the task requires representative regional coverage or causal validation. The chart title explicitly limits the data to 'High-Performing Regions', meaning it does not show the full regional population. The chart displays a scatter plot of monthly data, which shows correlation but not causation. The task asks to 'Approve broader budget increase', which implies a decision affecting more than just the high-performing subset. Therefore, the condition that the chart is limited to a subset is met, and the condition that it shows only association is met.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image reads exactly 'Advertising Budget vs Revenue (High-Performing Regions)'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The horizontal axis is labeled 'Advertising Budget ($)'. The ticks are labeled 0, 10, 20, 30, 40, 50, 60, 70, increasing from left to right.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The vertical axis is labeled 'Revenue ($)'. The ticks are labeled 0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, increasing from bottom to top.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "There are five blue points labeled January through May. January is at approx (25, 30). February is at approx (35, 50). March is at approx (45, 85). April is at approx (55, 140). May is at approx (65, 220). Each successive point is further right (higher budget) and higher (higher revenue) than the previous one.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal and vertical axes encode advertising budget and revenue respectively, with values increasing rightward and upward, then the labeled monthly points form a positive budget-revenue association; if the review permits broader approval from this high-performing-region association alone, it supports approval.",
+        "evidence": "The necessary conditions are: 1) Axes encode budget and revenue (supported by labels). 2) Values increase rightward/upward (supported by tick marks). 3) Points form a positive association (supported by the monotonic increase in both x and y coordinates). 4) The review permits approval based *solely* on this high-performing-region association. The chart is explicitly titled 'High-Performing Regions', indicating it is a subset. Approving a 'broader budget increase' based *only* on a subset of high performers without data on other regions or causality is a logical leap not supported by the visible evidence. The condition 'if the review permits...' is a hypothetical that contradicts standard data review practices for a 'broader' decision.",
+        "status": "refuted"
+      }
+    }
+  }
+}

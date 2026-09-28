@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-97dacd5388b514f9",
+    "object": "chat.completion",
+    "created": 1790615672,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis is labeled 'Year' and spans 2005 to 2015. The data point at the 2005 tick is labeled '$24.0°C', and the data point at the 2015 tick is labeled '$10.0°C'. The blue line connects these points, showing a clear downward trend. The y-axis is labeled 'Temperature (°C)' and the values are decreasing, consistent with temperature readings.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart is titled 'Global Temperature Change'. The y-axis is labeled 'Temperature (°C)' and ranges from 0 to 24.0°C. The data points are explicitly labeled with their temperature values in °C, formatted as '$X.X°C'. The temperature values are decreasing from 2005 to 2015.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The charted yearly temperature readings are the basis for the routing decision, as stated in the public task. The chart displays a clear decline from 24.0°C in 2005 to 10.0°C in 2015, which is the multi-year change under review.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The adjacent °C inscriptions apply to their points despite the visible leading '$' character. The chart's y-axis is labeled 'Temperature (°C)', and the values are decreasing, which is consistent with temperature readings. 2. No unstated numeric threshold is required. The public task and page instructions do not mention any numeric cutoff for escalation.\",\n        \"evidence\": \"The chart's y-axis is labeled 'Temperature (°C)', and the values are decreasing, which is consistent with temperature readings. The public task and page instructions do not mention any numeric cutoff for escalation.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart's x-axis is labeled 'Year' and spans 2005 to 2015. The data point at the 2005 tick is labeled '$24.0°C', and the data point at the 2015 tick is labeled '$10.0°C'. The blue line connects these points, showing a clear downward trend. The y-axis is labeled 'Temperature (°C)' and the values are decreasing, consistent with temperature readings.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart is titled 'Global Temperature Change'. The y-axis is labeled 'Temperature (°C)' and ranges from 0 to 24.0°C. The data points are explicitly labeled with their temperature values in °C, formatted as '$X.X°C'. The temperature values are decreasing from 2005 to 2015.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The substantial-trend workflow requires a specified numeric threshold or other unstated qualification before escalation. 2. None is supplied in the task state or chart.\",\n        \"evidence\": \"The public task and page instructions do not mention any numeric threshold or qualification requirement for escalation. The chart and task state provide no such requirement.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3906,
+      "total_tokens": 4683,
+      "completion_tokens": 777,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

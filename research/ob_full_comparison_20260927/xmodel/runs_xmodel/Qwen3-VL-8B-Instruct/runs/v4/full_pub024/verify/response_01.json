@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-940328db75967e4d",
+    "object": "chat.completion",
+    "created": 1790614416,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads: 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative statement of the tourism trend and the word 'Decreasing' is intended as the routing-relevant classification, then the decline-response route is appropriate.\",\n        \"evidence\": \"The title is a literal, visible statement. The plotted line, however, shows a clear increase from ~1100 in 1880 to ~3000 in 1891. The chart provides no rule to resolve this conflict. The B condition assumes the title overrides the plot, which is not supported by the visual evidence. The visual data contradicts the title's assertion. Therefore, the B reading is refuted by the visual evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title contains the word 'Decreasing', while the blue line's endpoint at 1891 is higher on the page than its beginning at 1880.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If contradictory chart signals cannot be resolved because neither an authority hierarchy nor a routing threshold is supplied, then the trend cannot be classified reliably for escalation and routine monitoring is the conservative route.\",\n        \"evidence\": \"The visual evidence confirms the contradiction: the title claims a decrease, but the plot shows an increase. The B reading correctly identifies this conflict and proposes routine monitoring as the conservative default. However, the B condition states this default is 'not stated in the task.' The task's public instructions and context do not explicitly forbid routine monitoring as a default. The B reading is logically consistent with the evidence and the task's lack of a specified policy. Therefore, the B reading is supported, though it is not the only possible reading.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the vertical alignment of the printed x-axis tick '1880' with a value of approximately 1100 new tourists.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line ends at the vertical alignment of the printed x-axis tick '1891' and is higher on the page than its beginning at 1880.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Number of New Tourists' with values increasing upward from 0 to 4000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the single plotted line is the dashboard's New tourists series, the horizontal axis encodes chronological year left-to-right, and higher vertical position maps to a larger number of new tourists using the upward-increasing y-axis, then a line ending higher than it begins indicates growth over the reviewed period. If the routing labels are intended to map a growth trend to growth planning, select the growth-planning route.\",\n        \"evidence\": \"The visual evidence confirms that the line is the plotted series, the axes are correctly labeled and oriented, and the line ends higher than it begins, indicating a net increase from ~1100 to ~3000. The B reading correctly infers a growth trend and maps it to the growth-planning route. The B condition assumes the plotted line is authoritative and that growth warrants growth planning. The public task does not provide a policy table, but the task's goal is to route based on the dashboard's evidence. The B reading is the most direct and evidence-based interpretation. Therefore, the B reading is supported.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4023,
+      "total_tokens": 4911,
+      "completion_tokens": 888,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

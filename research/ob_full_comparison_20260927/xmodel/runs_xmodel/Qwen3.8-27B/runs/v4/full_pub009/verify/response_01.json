@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8a2908037639d76c",
+    "object": "chat.completion",
+    "created": 1790620462,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Legend at the right of the chart displays a blue square labeled 'Station X', a green square labeled 'Station Y', and an orange square labeled 'Station Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart shows four vertical bars. The bars for 'Tue', 'Wed', and 'Thu' are composed of contiguous vertical segments: a blue base, a green middle, and an orange top.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis on the left is labeled 'Number of Visitors' and includes a horizontal tick mark labeled '4,500'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Visually comparing the top of the orange segment on the 'Tue' bar and the 'Wed' bar to the '4,500' tick mark, both tops are positioned higher on the page than the tick line.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The top of the orange segment on the 'Thu' bar is positioned lower on the page than the '4,500' tick line (it aligns roughly with the 4,100-4,200 level).\",\n          \"status\": \"supported\"\n        },\n        \"6\": {\n          \"evidence\": \"The lowest visible numerical label on the vertical axis is '1,000'. The bars extend downwards past this label to the x-axis baseline, which is not explicitly labeled with a number.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the stacked bars represent the sum of the three stations and that the top of the stack corresponds to the combined total on the vertical scale. It notes that the axis appears truncated (starting at 1,000) and that this interpretation relies on the assumption that the segments are additive.\",\n        \"evidence\": \"The chart is a standard stacked bar chart where the vertical position of the top of the stack indicates the cumulative total of the components. The y-axis is linear. Although the axis starts at 1,000, the visual height of the stack top relative to the 4,500 tick is the correct method for determining if the total exceeds that value. The 'truncation' mentioned in the reading does not invalidate the comparison of the stack top to the 4,500 threshold; it only means the bottom part of the bar is not scaled from zero, but the top value is still readable against the scale.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4246,
+      "total_tokens": 4885,
+      "completion_tokens": 639,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

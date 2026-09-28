@@ -1,0 +1,42 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The dark-red May bar is visibly shorter than each of the other five bars.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The title reads 'Monthly Energy Usage (kWh)' and the vertical axis is labeled 'Energy Usage (kWh)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If critical escalation requires an explicit policy threshold or other stated severity criterion, then a chart-only relative low value does not establish critical status; standard low-output follow-up is the non-critical handling route.",
+        "evidence": "The task materials provide no policy thresholds, default rules, or severity criteria for critical escalation. The public task and chart reference explicitly state to use the dashboard record for May as the evidence source for deciding whether its low output should remain on standard follow-up or be escalated as a critical anomaly. The absence of any stated threshold or default rule means the condition for B is not met. The task does not require a policy table, and no such rule is provided in the materials.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The dark-red May bar is visibly shorter than each of the other five bars.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The top of the May bar is below the printed 10,000 tick.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The Jun bar, the next shortest visible bar, has its top between the printed 15,000 and 20,000 ticks.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the bars encode monthly energy usage on the shared vertical kWh scale and an isolated lowest monthly value relative to all other displayed months is sufficient to classify a low-output case as critical, then May warrants critical-anomaly escalation.",
+        "evidence": "The chart encodes monthly energy usage on a shared vertical kWh scale. The May bar is the shortest, indicating the lowest value among all displayed months. The May bar is below the 10,000 kWh tick, while the next lowest bar (Jun) is above 15,000 kWh. The task's routing criterion is 'Whether May should be handled as a standard low-output case or as a critical anomaly'. The public task and chart reference explicitly state to use the dashboard record for May as the evidence source for deciding the handling route. The materials provide no policy thresholds or rules, but the routing criterion is defined by the comparison of May's output relative to other months. The task does not require a policy table, and the materials do not provide one. The condition for B is met: the bars encode usage on a shared scale, May is the lowest value, and the routing criterion is defined by relative severity. The absence of a stated threshold does not negate the possibility that relative low output is sufficient for critical routing, as the task is to use the dashboard as the evidence source.",
+        "status": "supported"
+      }
+    }
+  }
+}

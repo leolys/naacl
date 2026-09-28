@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-93cd26540fe16c67",
+    "object": "chat.completion",
+    "created": 1790621062,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible chart is a scatter plot with five labeled blue points (Region A–E) on axes titled “Advertising Spend ($ thousands)” and “Sales ($ thousands)”. No ROI, profit, experimental comparison, or incremental-sales annotation is present.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader spend approval requires evidence that additional advertising causes adequate incremental sales or ROI, then a cross-sectional scatter pattern alone does not meet that requirement; further regional spend-sales analysis is warranted.\",\n        \"evidence\": \"The chart’s visible evidence is a cross-sectional scatter of five regions with no causal, ROI, or incremental-sales markers. The condition’s necessary elements (association only, five plotted regions, current spend/sales levels) are present in the visible chart, and the chart lacks the causal/ROI evidence the condition says would be required for a broader approval.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The labeled points appear in a left-to-right and lower-to-higher sequence: Region A is leftmost/lowest, followed by B, C, D, and E as rightmost/highest.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an observed positive spend-sales association is enough to justify testing but not enough for a region-wide rollout, then a limited pilot can be selected for regions rather than approving a broader increase.\",\n        \"evidence\": \"The visible chart shows a positive cross-regional association (higher spend regions have higher sales), which matches the “observed positive spend-sales association” part. However, the condition also requires that the organization permits a pilot under uncertainty and that the chart supplies no pilot-selection criteria or outcome threshold. The chart indeed supplies no pilot criteria or threshold, but the organizational permission to run a pilot is not visible in the chart or task text, so that part remains open.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads “Top Regions: Ad Spend vs Sales”; the horizontal axis is labeled “Advertising Spend ($ thousands)” and the vertical axis is labeled “Sales ($ thousands)”.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The labeled points are ordered such that Region A is left of and below Region B, B is left of and below C, C is left of and below D, and D is left of and below E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels indicate, and if the ordered cross-regional pattern is considered sufficient evidence that higher spend is broadly associated with higher sales, then a region-wide spend increase is supported.\",\n        \"evidence\": \"The axis labels and the ordered cross-regional pattern are visible and support the association claim. However, the condition treats association as “sufficiently generalizable and decision-sufficient” despite the absence of causal, ROI, cost, or incremental-sales evidence. The chart itself does not establish that association is decision-sufficient for a region-wide rollout; that is an interpretive/policy assumption not grounded in visible evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3948,
+      "total_tokens": 4751,
+      "completion_tokens": 803,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

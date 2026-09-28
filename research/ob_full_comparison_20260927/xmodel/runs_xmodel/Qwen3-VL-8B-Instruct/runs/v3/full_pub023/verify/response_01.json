@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9f35e123604d033a",
+    "object": "chat.completion",
+    "created": 1790613570,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title 'Monthly Visitors at Museum C in Town Z' is visible at the top-left.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Label 'July' is positioned directly beneath the left green bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The top edge of the green bar for July aligns with the orange dashed horizontal line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The orange dashed line is annotated 'Average' and is at the 200 mark on the y-axis.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the bar above a month encodes that month's visitor count on the labeled vertical scale, and the orange dashed line labeled 'Average' is the average-visitor benchmark, then a bar top aligned with that line represents average-level visitors. If the routing options are intended to map average-level visitors to average-level monitoring, select the average-level option.\",\n        \"evidence\": \"The bar for July is visually aligned with the 'Average' line at 200, and the y-axis is labeled 'Number of Visitors' with a scale from 0 to 500. The chart's encoding is conventional and the 'Average' line is explicitly labeled and positioned.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3612,
+      "total_tokens": 3967,
+      "completion_tokens": 355,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

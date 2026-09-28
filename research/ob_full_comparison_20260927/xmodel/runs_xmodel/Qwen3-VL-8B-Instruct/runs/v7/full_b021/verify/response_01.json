@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ba28d46589e4a06f",
+    "object": "chat.completion",
+    "created": 1790616381,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The visible plot contains five labeled weekly points, Week 7 through Week 11.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title and axes identify advertising spend and sales, but no visible inscription gives a causal method, profitability measure, approval threshold, or decision policy.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If an observed association without full-data, causal, profitability, or policy-threshold evidence is insufficient for a budget recommendation, then the evidence-review option is the corresponding decision.\",\n        \"evidence\": \"The public task and chart reference state that the dashboard is to be used to complete the campaign approval form. No policy table or decision rule is provided that requires additional data, causal analysis, or profitability thresholds. The dashboard view is the only evidence available. Therefore, the condition 'approval requires evidence beyond this five-point dashboard view' is not visibly stated or implied. The reading's condition is not met, so the action 'Hold and request full-data analysis' is not necessarily required by the visible evidence. The reading is not refuted, but its condition is not supported by visible evidence, making its action conclusion unsupported.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Additional Promotion Weeks: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue points are visibly labeled Week 7, Week 8, Week 9, Week 10, and Week 11.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is inscribed 'Advertising Spend ($ thousands)' and the vertical axis is inscribed 'Sales ($ thousands)'; from Week 7 through Week 11, each successive labeled point is positioned farther right and higher than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis labeled 'Advertising Spend ($ thousands)' and vertical axis labeled 'Sales ($ thousands)' encode each point's respective values, then points farther right and higher represent greater advertising spend and greater sales; week labels identify the associated points.\",\n        \"evidence\": \"The axes labels are visible and consistent with the plotted points. The positions of the points are monotonic: Week 7 is at (30, 60), Week 8 at (40, 85), Week 9 at (50, 110), Week 10 at (60, 135), and Week 11 at (70, 160). The independent visual notes confirm these exact coordinates. This confirms the reading's condition: the axes encode values, and points farther right and higher represent greater spend and sales. The week labels identify the points. The reading is fully supported by visible evidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3587,
+      "total_tokens": 4266,
+      "completion_tokens": 679,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

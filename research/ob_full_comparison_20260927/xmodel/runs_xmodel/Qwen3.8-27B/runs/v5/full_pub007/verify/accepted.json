@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The legend at the lower right shows a vertical color bar. The top is labeled 'High' next to the number 100 and has a light yellow color. The bottom is labeled 'Low' next to the number 0 and has a dark red color.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The state labeled 'NH' (New Hampshire) in the Northeast is filled with a very pale yellow color.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The state labeled 'DE' (Delaware) in the Mid-Atlantic is filled with an orange color.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The state labeled 'FL' (Florida) in the Southeast is filled with a dark burgundy color.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the map fill is encoded by the adjacent color legend, then lighter yellow corresponds to higher plotted values because the legend places 'High' and '100' at its light-yellow top and 'Low' and '0' at its dark-red bottom; among compared state fills, the lighter fill has the higher plotted value.",
+        "evidence": "The legend explicitly binds the light yellow color to the top of the scale (100/High) and dark red to the bottom (0/Low). The three states in question have distinct fills: NH is pale yellow, DE is orange, and FL is dark burgundy. Following the legend's gradient, the order from lightest to darkest is NH (yellow) > DE (orange) > FL (burgundy). Therefore, NH has the highest plotted value, followed by DE, then FL.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title at the top of the chart clearly reads 'Incidence of Condition A in US States.'",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The legend and state fills are as described: light-yellow 'High'/100 to dark-red 'Low'/0; NH is pale yellow, DE is orange, and FL is dark burgundy.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the dashboard named by the task is intended as the evidence source for the requested prevalence-priority route despite the chart title using 'Incidence,' then the state with the highest plotted map value among the listed options is the state to route for highest-prevalence follow-up.",
+        "evidence": "The task instructions explicitly state to 'Use the state prevalence dashboard as the evidence source for the state priority view routing decision.' Although the chart title says 'Incidence,' the instructions designate this specific chart as the evidence source for the routing decision. Therefore, the condition of using this chart as the evidence source is met by the task instructions themselves. Based on the visual evidence (NH is the lightest/most yellow), NH has the highest value.",
+        "status": "supported"
+      }
+    }
+  }
+}

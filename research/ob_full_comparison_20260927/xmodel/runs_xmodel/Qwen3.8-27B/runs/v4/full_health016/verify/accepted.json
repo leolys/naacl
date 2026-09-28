@@ -1,0 +1,55 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The red line visibly drops between 2014 and 2015, between 2018 and 2020, and between 2022 and 2023. These are the only downward-sloping segments in the series.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The task state contains no policy tables, thresholds, or routing rules. The only instructions are to use the dashboard as the evidence source and select the pathway that best fits the overall utilization pattern.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If routing requires a stated threshold, sustained-direction criterion, or policy rule not supplied in the task, and the plotted series has both rises and declines, then standard trend monitoring may be appropriate rather than an escalation pathway.",
+        "evidence": "The series does have both rises and declines, and no explicit policy rule is supplied. However, the task explicitly asks for the pathway that 'best fits the overall utilization pattern.' The overall pattern is a substantial net increase (from ~1200 in 2012 to ~3200 in 2023). The presence of minor dips does not negate the dominant upward trend. The 'standard trend monitoring' pathway is typically for flat or ambiguous trends, whereas 'utilization-growth' is for clear increases.",
+        "status": "unclear"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The chart title at the top of the image clearly reads 'Declining Emergency Department Visits in Region Z from 2012 to 2023'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the dashboard title is an authoritative summary of the utilization pattern, then its literal characterization of visits as declining from 2012 to 2023 supports utilization-decrease follow-up.",
+        "evidence": "The title says 'Declining', but the plotted data shows a massive increase (starting near 1200 and ending near 3200). In data interpretation tasks, the plotted data (the evidence) generally overrides a potentially erroneous or misleading title (the label). The title contradicts the visual evidence of the line chart.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The vertex for 2012 is located vertically between the 800 and 1600 gridlines (approx 1200). The vertex for 2023 is located vertically just above the 3200 gridline (approx 3200). The 2023 point is significantly higher on the page than the 2012 point.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The y-axis is labeled 'Emergency department visits'. The tick labels are 0, 800, 1600, 2400, 3200, arranged from bottom to top, confirming that higher vertical position corresponds to a larger number of visits.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The x-axis is labeled 'Year' with ticks for every year from 2012 to 2023.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the plotted line encodes emergency department visits by year, with higher vertical position corresponding to larger values as indicated by the ascending y-axis tick labels, then a later endpoint plotted higher than the earlier endpoint indicates overall utilization growth; under the task's overall-pattern routing instruction, this supports utilization-growth follow-up.",
+        "evidence": "The line encodes visits by year. The y-axis is ascending. The 2023 endpoint is much higher than the 2012 endpoint. The overall pattern is clearly one of growth (more than doubling). This fits the 'utilization-growth follow-up' pathway.",
+        "status": "supported"
+      }
+    }
+  }
+}

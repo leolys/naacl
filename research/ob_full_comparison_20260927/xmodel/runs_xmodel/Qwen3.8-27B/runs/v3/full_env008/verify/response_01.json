@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bd4d04ab524fce23",
+    "object": "chat.completion",
+    "created": 1790617793,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The light-blue Wind bar reaches the highest point on the page (approx. 68 on the vertical axis), extending visibly higher than the Solar (approx. 40), Hydroelectric (approx. 52), Biomass (approx. 22), and Geothermal (approx. 35) bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. A shared vertical axis is drawn to the left of the bars with tick labels ranging from 0 to 70 in increments of 5.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The tallest bar (the light-blue one reaching approx. 68) is positioned directly above the x-axis label 'Wind'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If bar height against the shared vertical axis encodes renewable-generation contribution, the tallest source bar is the largest contribution source; the task requires routing that source to its matching priority follow-up option. Applies if the bar geometry is authoritative despite the conflicting percentage inscriptions.\",\n        \"evidence\": \"The visual condition that the bar geometry encodes contribution is an assumption. The chart contains a direct conflict: the bar heights (Wind is highest) contradict the printed percentage labels (Solar is highest at 41.2%). The task does not provide a public rule to resolve which encoding is authoritative. Therefore, the necessary condition that 'bar geometry is authoritative' remains an unresolved assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The yellow bar above the 'Solar' label has the printed inscription '41.2%' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The light-blue bar above the 'Wind' label has the printed inscription '29.8%' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The medium-blue bar above the 'Hydroelectric' label has the printed inscription '18.5%' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The green bar above the 'Biomass' label has the printed inscription '7.2%' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Supported. The brown bar above the 'Geothermal' label has the printed inscription '3.3%' directly above it.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription is attached to its source bar and denotes that source's renewable-generation contribution on a common comparable basis, the source with the greatest printed percentage is the largest contribution source; the task requires routing that source to its matching priority follow-up option. Applies if the printed percentages, rather than bar heights, are the authoritative contribution encoding.\",\n        \"evidence\": \"The visual condition that the printed percentages are the authoritative encoding is an assumption. The chart presents a conflict where the percentage labels (Solar highest) do not match the bar heights (Wind highest). Without a public rule specifying that the labels override the geometry, the necessary condition that 'printed percentages are the authoritative encoding' remains an unresolved assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3845,
+      "total_tokens": 4727,
+      "completion_tokens": 882,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

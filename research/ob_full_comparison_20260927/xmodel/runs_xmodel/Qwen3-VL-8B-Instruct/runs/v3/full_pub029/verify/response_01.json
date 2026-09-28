@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2469abb8dfc317c",
+    "object": "chat.completion",
+    "created": 1790613624,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title contains the word 'Decreasing', while the blue line’s rightmost endpoint is higher on the page than its leftmost endpoint.\"\n        \n      ,\n        \"status\": \"refuted\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.\",\n      \"evidence\": \"The title explicitly states 'Decreasing', and the line's endpoint in 1891 is higher than in 1880, creating a direct contradiction. The reading’s condition of 'conflicting evidence' is met, but the reading's conclusion that 'routine monitoring is the fallback' is unsupported because no policy is supplied to override the title or resolve the conflict. The reading’s applicability is refuted by the visible contradiction between the title and the line’s endpoint, which is a specific factual part of the chart’s appearance.\",\n      \"status\": \"refuted\"\n    }\n  },\n  {\n    \"id\": \"r2\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"The title literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\"\n      ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word 'Decreasing' supports classifying the trend as decline; routing a decline trend requires the decline-response option.\",\n      \"evidence\": \"The title is a literal, visible fact. The reading’s condition that the title is 'authoritative' is not explicitly stated, but the reading does not require an external policy to validate the title’s literal meaning. The reading’s conclusion that 'Decreasing' supports classifying the trend as decline is based on the title’s wording, which is visible and unambiguous. The reading’s applicability is supported because its necessary decoding (the title’s literal meaning) and task condition (routing a decline trend requires the decline-response option) are both grounded in visible text and the task’s implicit requirement to follow the title’s summary. However, the reading’s applicability is undermined by the visual evidence of the line’s upward trend from 1880 to 1891, which contradicts the title’s claim. The reading’s conclusion is therefore unsupported by the full visual evidence, even if its decoding is correct. The reading’s applicability is unclear because the title’s authority is not confirmed, and its conclusion conflicts with the chart’s visual data.\",\n      \"status\": \"unclear\"\n    }\n  },\n  {\n    \"id\": \"r3\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"The x-axis has year ticks from 1880 at the left to 1891 at the right, and the y-axis is labeled 'Number of Tourists' with larger printed ticks higher on the page.\"\n      ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The blue line at the 1891 tick is higher on the page than the blue line at the 1880 tick.\"\n      ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.\",\n      \"evidence\": \"The x-axis is ordered left to right (1880 to 1891), and the y-axis encodes 'Number of Tourists' increasing upward (0 to 3,500). The blue line is the only line shown and represents the new-tourist record (as per the task). The endpoint in 1891 is higher than in 1880, indicating an overall increase. The reading’s conditions are all supported by visible, unambiguous facts. The reading’s applicability is supported because its necessary decoding (the line’s endpoint position) and task condition (routing an increase trend requires the growth-planning option) are both grounded in visible chart elements and the task’s requirement to use the dashboard as evidence. The reading’s conclusion is directly supported by the visual data, even if the title contradicts it.\",\n      \"status\": \"supported\"\n    }\n  }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 4259,
+      "total_tokens": 5278,
+      "completion_tokens": 1019,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

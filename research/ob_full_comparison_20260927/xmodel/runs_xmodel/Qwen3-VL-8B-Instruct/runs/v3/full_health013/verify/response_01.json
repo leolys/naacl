@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8c6057475a822c74",
+    "object": "chat.completion",
+    "created": 1790613327,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The subtitle beneath the title reads 'Selected large-volume hospitals shown in dashboard summary' — visible text matching the observation.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The scatter plot contains five labeled points: 'Hospital A', 'Hospital B', 'Hospital C', 'Hospital D', and 'Hospital E' — visually confirmed by direct inspection of the chart.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If a chart is only a descriptive comparison and lacks evidence establishing a causal, policy, or population-wide conclusion, it may be retained as contextual material rather than used as support for enterprise approval.\",\n      \"evidence\": \"The chart is explicitly described as a subset comparison ('Selected large-volume hospitals...') and shows no causal or population-wide inference. The public task requires routing based on the dashboard relationship, not external evidence. The reading's condition (lack of stronger evidence) is met by the visual context.\",\n      \"status\": \"supported\"\n    }\n  },\n  {\n    \"id\": \"r2\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"The subtitle beneath the title reads 'Selected large-volume hospitals shown in dashboard summary' — visible text matching the observation.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The chart title reads 'Top Hospitals: Nurse Hours vs Discharge Count' — visible text matching the observation.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If a dashboard explicitly displays only a selected hospital subset, its plotted relationship is not evidence for the full hospital population; for an enterprise-level statement, the task's routing choices require full-population review before enterprise approval.\",\n      \"evidence\": \"The subtitle explicitly states 'Selected large-volume hospitals...', which confirms the chart is a subset view. The public task requires routing decisions based on the dashboard relationship, and the enterprise-level statement necessitates full-population evidence. The reading's condition (subset display + enterprise-level statement) is fully met by visible text and task context.\",\n      \"status\": \"supported\"\n    }\n  },\n  {\n    \"id\": \"r3\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"Hospital points appear successively farther right and higher from A through E — visually confirmed by their positions on the chart: A (lowest left), B (middle left), C (middle), D (upper middle), E (upper right).\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"Horizontal axis is labeled 'Weekly nurse hours (thousands)' and vertical axis is labeled 'Monthly discharge count (thousands)' — visible text matching the observation.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis encodes weekly nurse hours and the vertical axis encodes monthly discharge count, with both scales increasing rightward/upward, points positioned successively farther right and higher indicate a positive displayed association for the plotted hospitals; this is descriptive only and does not establish causation or enterprise generalizability.\",\n      \"evidence\": \"The axis labels and point positions confirm a positive correlation (A to E) is displayed. The reading's condition (axis encoding + point positioning) is fully supported by visual inspection. The reading’s conclusion (descriptive only, no causation or generalizability) is consistent with the chart’s nature and the public task’s instruction to base routing on the dashboard relationship.\",\n      \"status\": \"supported\"\n    }\n  }\n,\n  {\n    \"id\": \"r4\",\n    \"O\": [],\n    \"B\": {\n      \"reading_checked\": \"The dashboard view is for a subset of hospitals, not the full hospital population.\",\n      \"evidence\": \"The subtitle 'Selected large-volume hospitals shown in dashboard summary' explicitly states the chart is a subset view — visible text matching the observation.\",\n      \"status\": \"supported\"\n    }\n  },\n  {\n    \"id\": \"r5\",\n    \"O\": [],\n    \"B\": {\n      \"reading_checked\": \"The decision must be based on the relationship shown in the displayed dashboard.\",\n      \"evidence\": \"The public task explicitly states: 'Use the displayed dashboard relationship as the basis for deciding...'. This is a direct instruction visible in the task description.\",\n      \"status\": \"supported\"\n    }\n  },\n  {\n    \"id\": \"r6\",\n    \"O\": [],\n    \"B\": {\n      \"reading_checked\": \"The three options are: Route for full-hospital review, Advance for enterprise approval, or File as background reference.\",\n      \"evidence\": \"The public task defines the three options explicitly: 'Route this subset finding...', 'Advance this dashboard finding...', 'File this dashboard comparison...'. This is a direct instruction visible in the task description.\",\n      \"status\": \"supported\"\n    }\n  },\n  {\n    \"id\": \"r7\",\n    \"O\": [],\n    \"B\": {\n      \"reading_checked\": \"The task is to assess the dashboard view and choose the next operational route for handling a proposed enterprise-level statement about nursing hours and discharge volume.\",\n      \"evidence\": \"The public task explicitly states: 'Assess the dashboard view for this hospital subset and choose the next operational route for handling a proposed enterprise-level statement about nursing hours and discharge volume.' This is a direct instruction visible in the task description.\",\n      \"status\": \"supported\"\n    }\n  }\n] }",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3237,
+      "total_tokens": 4464,
+      "completion_tokens": 1227,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

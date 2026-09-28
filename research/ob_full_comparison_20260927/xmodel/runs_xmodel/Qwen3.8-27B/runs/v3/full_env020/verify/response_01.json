@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-91ccdf5f61938dea",
+    "object": "chat.completion",
+    "created": 1790617980,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The chart displays a bar plot with a y-axis (labeled 'Pumping volume (m3)') and an x-axis (labeled 'Month'), but there are no visible legend boxes, threshold lines, or text annotations defining severity levels.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The bar corresponding to 'May' on the far right of the x-axis is visibly the shortest bar in the chart, with its top edge barely above the baseline.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits a conditional rule: if May is low-pumping but no policy defines a critical threshold, and the workflow defaults unthresholded cases to standard follow-up, then May should receive standard follow-up. The necessary conditions are: 1) May is low-pumping, 2) no critical threshold is supplied, 3) the workflow defaults unthresholded cases to standard follow-up.\",\n        \"evidence\": \"The chart confirms May is the lowest volume (condition 1) and that no explicit threshold is visible on the chart itself (condition 2). However, condition 3—that the workflow defaults to standard follow-up—is not established by any visible policy table or instruction. The form options include 'Escalate May to critical low-pumping anomaly review', but no text confirms that this is the default for unthresholded cases versus standard follow-up.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The bar on the far right of the x-axis is labeled 'May' and is filled with the same dark red color as the other bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The top of the May bar is visually lower than the tops of the Apr, Jan, Jun, Feb, and Mar bars.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The top of the May bar is below the '10,000' tick mark on the y-axis. The tops of the Apr, Jan, Jun, Feb, and Mar bars are all above the '10,000' tick mark.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The vertical axis on the left is labeled 'Pumping volume (m3)'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits a conditional rule: if the axis encodes volume (higher = greater) and the routing practice treats an isolated month that is visibly far lower than every other month as a critical anomaly, then that month should be escalated. The necessary conditions are: 1) The axis encodes volume with higher bars = greater volume, 2) The routing practice treats a month visibly far lower than all others as a critical anomaly.\",\n        \"evidence\": \"Condition 1 is supported by the standard interpretation of a bar chart with a labeled y-axis. Condition 2 is an assumption; while May is visibly far lower than the others, there is no visible 'routing practice' or policy text that explicitly defines this visual gap as the trigger for 'critical' escalation versus 'standard' follow-up.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3875,
+      "total_tokens": 4724,
+      "completion_tokens": 849,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

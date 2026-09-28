@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-89553fb000a5bb12",
+    "object": "chat.completion",
+    "created": 1790621253,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue bar positioned above the x-axis label 'June' has a top edge that is visually lower on the page than the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal dashed line has the text 'Average' printed near its right end.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the available instructions do not define a route mapping or threshold for a month below the displayed average, then the chart alone establishes the relative sales result but does not establish that a low-sales response rather than normal monitoring is required.\",\n        \"evidence\": \"The public task instructions and policy tables do not contain an explicit routing criterion (e.g., 'if below average, select low-sales response'). The instructions only state to 'Review the Store B monthly sales dashboard... then choose the June route'. Because the mapping from a 'below average' chart state to a specific form option is not explicitly defined in the provided text, the chart alone cannot definitively establish which specific option is required.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title at the top of the chart reads 'Monthly Sales for Store B in City Y'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost blue bar is positioned directly above the x-axis label 'June'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The y-axis tick inscriptions increase upward from 0 to 600 (0, 50, 100, etc.).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue bars encode monthly sales for the month printed beneath each bar, the vertical axis increases upward, and the dashed line labeled 'Average' is the applicable sales-average benchmark, then a June bar below that line indicates June sales below average. If this workflow routes below-average monthly sales to the low-sales response, select the low-sales option.\",\n        \"evidence\": \"The chart title identifies Store B and the y-axis is labeled 'Sales' with values increasing upward, supporting the encoding of bars as sales. The June bar is below the 'Average' line, indicating sales below the benchmark. However, the condition 'If this workflow routes below-average monthly sales to the low-sales response' is not explicitly stated in the provided instructions or policy tables. The instructions only say to 'choose the June route' based on the dashboard. While the chart shows a below-average result, the specific mapping to the 'low-sales response' option is an assumption not explicitly defined in the text.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4191,
+      "total_tokens": 4947,
+      "completion_tokens": 756,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

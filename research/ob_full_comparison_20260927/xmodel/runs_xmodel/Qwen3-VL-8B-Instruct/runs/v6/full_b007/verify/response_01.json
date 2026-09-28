@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9b550da79cdd232d",
+    "object": "chat.completion",
+    "created": 1790615419,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The Safari bar extends higher on the page than the Chrome, Edge, Firefox, and Others bars.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis has printed ticks increasing upward from 0 at the bottom to 100 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The vertical bar geometry is authoritative despite the conflicting percentage inscriptions.\",\n        \"evidence\": \"The bar heights visually align with the y-axis scale: Safari's bar reaches ~62%, Edge's ~44%, Chrome's ~55%, Firefox's ~8%, and Others' ~10%. This confirms the bar heights encode market_share, and Safari's bar is tallest. However, the printed percentages contradict this (Safari: 4%, Edge: 44%).\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The inscription '38%' is immediately above the bar aligned with the x-axis label 'Chrome'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The inscription '4%' is immediately above the bar aligned with the x-axis label 'Safari'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The inscription '44%' is immediately above the bar aligned with the x-axis label 'Edge'.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The inscription '4%' is immediately above the bar aligned with the x-axis label 'Firefox'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The inscription '10%' is immediately above the bar aligned with the x-axis label 'Others'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Each percentage inscription immediately above a browser's bar is that browser's current market_share.\",\n        \"evidence\": \"The printed values directly above each bar are '38%', '4%', '44%', '4%', and '10%'. This is confirmed by the independent_visual_notes and printed_facts.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3948,
+      "total_tokens": 4486,
+      "completion_tokens": 538,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

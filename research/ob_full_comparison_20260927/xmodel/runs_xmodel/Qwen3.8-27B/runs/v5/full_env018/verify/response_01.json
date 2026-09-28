@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bd4765889f9e05e8",
+    "object": "chat.completion",
+    "created": 1790621626,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The May bar (far right) is visibly the shortest mark on the chart, with its top edge positioned just above the 10,000 gridline. All other displayed bars (Apr, Jan, Jun, Feb, Mar) are significantly taller, reaching values between 17,500 and 40,000.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The chart title at the top-left reads 'Monthly Reservoir Release Volume'. The horizontal axis is labeled 'Month' and the vertical axis is labeled 'Release volume (m3)'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly release volume, May is a low-release case relative to the displayed months; absent a stated critical threshold or anomaly policy, the chart alone does not establish whether standard follow-up rather than escalation is required.\",\n        \"evidence\": \"The chart labels confirm the bars encode 'Release volume (m3)'. The May bar is visually the lowest, supporting the 'low-release case' observation. The page contains no policy tables or explicit text defining a numerical threshold (e.g., 'escalate if < 15,000') or a specific anomaly policy. The 'Routing criterion' field only repeats the goal ('May low-release severity route'). Therefore, the condition that 'routing requires an explicit threshold or policy beyond relative comparison' is met by the absence of such a policy on the page.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The May bar is the shortest displayed bar. It is positioned near the bottom of the plot area, close to the broken baseline (the axis break mark is visible near the origin).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"Background filing is appropriate only when May is not a low-release case requiring active routing; a visibly minimal May bar would not support that condition if the chart encodes release volume.\",\n        \"evidence\": \"The chart encodes release volume (Y-axis label). The May bar is visibly minimal (shortest bar). Therefore, May *is* a low-release case. The condition 'May is not a low-release case' is false. The reading correctly identifies that the visual evidence (minimal bar) contradicts the prerequisite for background filing (not being a low-release case).\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The dark-red bar attached to the x-axis label 'May' is much shorter on the page than every other displayed bar (May ~10,000 vs. others ~17,500 to 40,000).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is inscribed 'Release volume (m3)'. Visible labeled ticks are present at 10,000, 15,000, 20,000, 25,000, 30,000, 35,000, and 40,000.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the May bar lies just above the visible 10,000 tick and near the broken baseline (the axis break is visible below the 10,000 mark).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the bars encode monthly reservoir release volume on the common vertical axis, and the reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly, then that month should be escalated. This severity convention is assumed because no explicit routing threshold is printed.\",\n        \"evidence\": \"The bars encode volume on a common axis (supported). The May bar is visibly far below all others (supported). The condition 'the reporting workflow treats a month visibly far below all other displayed months as a critical low-release anomaly' is an assumption made by the reading because 'no explicit routing threshold is printed' (supported by the empty policy_tables and lack of text). The reading correctly identifies that this specific convention is an assumption required to bridge the gap between the visual data and the routing decision.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4596,
+      "total_tokens": 5648,
+      "completion_tokens": 1052,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

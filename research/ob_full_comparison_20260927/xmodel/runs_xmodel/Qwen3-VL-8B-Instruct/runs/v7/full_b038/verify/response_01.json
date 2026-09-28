@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9507bea42a7b436e",
+    "object": "chat.completion",
+    "created": 1790616486,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line rises from Q1 to Q2, is horizontal from Q2 to Q3, and rises again from Q3 to Q4.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled 'Revenue'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The horizontal axis is labeled 'Quarter', with Q1 at the left and Q4 at the right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis orders Q1 through Q4 chronologically, the vertical axis encodes Revenue with higher page position representing greater revenue, and the workflow routes an overall rise from the first to final quarter to the growth response, then select the growth route.\",\n        \"evidence\": \"The visual data shows Q1 revenue ≈1100, Q2=1400, Q3=1400, Q4≈1600. This is an overall increase from Q1 to Q4 (1100 → 1600).\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title literally reads 'Stable Revenue of Company C from Q1 to Q4'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The visible x-axis labels are Q1, Q2, Q3, and Q4.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative summary of the Company C Q1-Q4 revenue record, and the workflow treats a chart explicitly described as 'Stable Revenue' as requiring the stability response, then select the stability route.\",\n        \"evidence\": \"The title explicitly states 'Stable Revenue'. The visual data shows a rise from Q1 to Q2, a plateau from Q2 to Q3, and a rise from Q3 to Q4. This contradicts the title's claim of stability. The title is not an authoritative summary of the data.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3697,
+      "total_tokens": 4212,
+      "completion_tokens": 515,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

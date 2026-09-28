@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9fd7cb653a950509",
+    "object": "chat.completion",
+    "created": 1790616946,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Monthly Visitors at Museum C in Town Z'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The first green bar is positioned above the printed label 'July'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top edge of the July green bar aligns with the orange dashed horizontal line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The orange dashed line crosses the y-axis at the printed tick label '200'.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"The orange text 'Average' is printed next to the dashed line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the green bars encode monthly Museum C visitor counts on the upward-increasing y-axis, the bar above each month label is that month's count, and the dashed line labeled 'Average' is the average benchmark on the same scale, then a month whose bar top aligns with that line is at the average; assuming the routing labels map at-average results to average-level monitoring, select the average-level option.\",\n        \"evidence\": \"The July bar's top aligns with the 'Average' line at 200 visitors. The y-axis is linear and increasing upward. The chart's printed facts confirm July is at 200 visitors, exactly on the 'Average' reference line. The routing options include 'Keep July on average-level visitor monitoring'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3336,
+      "total_tokens": 3717,
+      "completion_tokens": 381,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

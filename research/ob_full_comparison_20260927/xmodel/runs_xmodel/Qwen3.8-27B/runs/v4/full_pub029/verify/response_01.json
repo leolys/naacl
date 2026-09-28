@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-acd11dd2af062edc",
+    "object": "chat.completion",
+    "created": 1790620684,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart is 'Decreasing Number of New Tourists in Town Z from 1880 to 1891', which contains the word 'Decreasing'. The blue line's leftmost point (at 1880) is at approximately 1,000 on the y-axis, and its rightmost point (at 1891) is at approximately 3,200, making the right endpoint higher on the page than the left endpoint.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.\", \"evidence\": \"The chart provides a title stating 'Decreasing' but the plotted line shows a clear increase from ~1,000 to ~3,200 over the period. This constitutes a direct conflict between the text label and the visual data. The condition for the rule is met.\", \"status\": \"supported\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title at the top of the chart literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word 'Decreasing' supports classifying the trend as decline; routing a decline trend requires the decline-response option.\", \"evidence\": \"The title does read 'Decreasing'. However, the plotted data contradicts this by showing a strong upward trend. The condition 'If the chart title is an authoritative literal summary' is not met because the visual evidence (the line) refutes the title's claim.\", \"status\": \"refuted\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The x-axis has year ticks from 1880 on the left to 1891 on the right. The y-axis is labeled 'Number of Tourists' with ticks increasing from 0 at the bottom to 3,500 at the top.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The blue line at the 1891 tick is at approximately 3,200 on the y-axis, while the blue line at the 1880 tick is at approximately 1,000. The 1891 endpoint is higher on the page than the 1880 endpoint.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.\", \"evidence\": \"The x-axis orders years left to right (1880-1891). The y-axis encodes number increasing upward (0-3,500). The blue line represents the series. The endpoint at 1891 (~3,200) is higher than the start at 1880 (~1,000), indicating an overall increase. All conditions are met.\", \"status\": \"supported\"}}}\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4499,
+      "total_tokens": 5257,
+      "completion_tokens": 758,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

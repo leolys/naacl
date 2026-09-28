@@ -1,0 +1,46 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The chart displays monthly bars, y-axis ticks (10,000, 20,000, 30,000, 40,000), and axis titles ('Pumping volume (m3)', 'Month'). No severity legend, critical threshold line, or routing instruction is visible.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The bar labeled 'May' is visibly the shortest bar in the chart, positioned at the bottom.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart establishes that May is low-pumping but no supplied policy defines a critical threshold, and the workflow defaults unthresholded low-pumping cases to standard follow-up rather than escalation, then May should receive standard follow-up.",
+        "evidence": "The condition 'no supplied policy defines a critical threshold' is supported by the visual evidence: no such policy, threshold, or legend is present. The condition 'workflow defaults unthresholded low-pumping cases to standard follow-up' is an assumption not visible in the chart or task description. The conclusion 'May should receive standard follow-up' is not a direct inference from the visual data alone.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The far-right red bar is labeled 'May'.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The top of the May bar is lower on the page than the tops of every other displayed monthly bar.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The May bar top is below the printed '10,000' y-axis tick, while the other bar tops are above it.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The left axis title is 'Pumping volume (m3)'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the vertical axis labeled 'Pumping volume (m3)' encodes pumping volume with higher bar tops representing greater volume, and the routing practice treats an isolated month that is visibly far lower than every other displayed month as a critical low-pumping anomaly, then that month should be escalated.",
+        "evidence": "The condition 'vertical axis encodes pumping volume with higher bar tops representing greater volume' is supported by the y-axis label and the visual order of the bars (Jan > Apr > Mar > Feb > Jun > May). The condition 'routing practice treats an isolated month... as a critical low-pumping anomaly' is an assumption not visible in the chart or task description. The conclusion 'that month should be escalated' is not a direct inference from the visual data alone.",
+        "status": "refuted"
+      }
+    }
+  }
+}

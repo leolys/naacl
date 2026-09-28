@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-94033fcd72f6601a",
+    "object": "chat.completion",
+    "created": 1790621467,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The first marker is vertically aligned with the printed year '2005' and has the inscription '23.9°C' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The last marker is vertically aligned with the printed year '2014' and has the inscription '10.1°C' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The title reads 'Cooling Water Temperature Compliance' and the vertical axis label reads 'Cooling water temperature'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the plotted series is the cooling water temperature series and the value inscriptions attached to the 2005 and 2014 markers encode their respective annual temperatures, then the full-period change is the 2014 value minus the 2005 value; if a decrease of that magnitude qualifies as substantial under the routing criterion, select substantial-change follow-up.\",\n        \"evidence\": \"The chart title and y-axis label identify the plotted series as 'Cooling water temperature'. The x-axis ticks '2005' and '2014' align with the first and last markers, which are labeled '23.9°C' and '10.1°C' respectively. These inscriptions encode the temperatures for the review period endpoints. The full-period change is 10.1°C - 23.9°C = -13.8°C. The second condition of the reading requires determining if this magnitude 'qualifies as substantial under the routing criterion'. The page instructions define the routing criterion as 'Whether the full-period cooling water temperature change requires substantial-change follow-up', but no numerical threshold or policy table defining 'substantial' is provided in the public task or visible on the chart. Therefore, the condition regarding the routing criterion is not verified by the supplied evidence.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The endpoint inscriptions are '23.9°C' at 2005 and '10.1°C' at 2014.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"No printed routing threshold, policy table, or definition of 'substantial change' is visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If substantial-change follow-up may be selected only when a stated threshold or policy definition is met, and no such threshold or definition is supplied, retain the record in routine monitoring rather than infer qualification from the chart magnitude alone.\",\n        \"evidence\": \"The first part of the condition ('substantial-change follow-up may be selected only when a stated threshold or policy definition is met') is a procedural assumption not explicitly stated in the provided task instructions. The instructions simply ask to 'determine whether the full-period change requires substantial-change follow-up'. The second part ('no such threshold or definition is supplied') is supported by the visible evidence, as the chart and form fields do not contain a definition or threshold. Because the first condition is an assumption about the workflow rather than a fact from the record, the applicability of the reading is not fully established.\",\n        \"status\": \"unclear\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4235,
+      "total_tokens": 5036,
+      "completion_tokens": 801,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

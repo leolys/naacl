@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a7b28eb3c9855324",
+    "object": "chat.completion",
+    "created": 1790616538,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the available instructions do not define a route mapping or threshold for a month below the displayed average, then the chart alone establishes the relative sales result but does not establish that a low-sales response rather than normal monitoring is required.\",\n        \"evidence\": \"The chart shows June sales are below the average line. However, the task instructions and policy tables do not specify which route to assign for sales below average. The reading correctly states that the chart shows relative performance but does not mandate a specific action without an explicit policy.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Monthly Sales for Store B in City Y'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost blue bar is positioned above the printed label 'June'.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"Visible y-axis tick inscriptions increase upward from 0 through 600.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue bars encode monthly sales for the month printed beneath each bar, the vertical axis increases upward, and the dashed line labeled 'Average' is the applicable sales-average benchmark, then a June bar below that line indicates June sales below average. If this workflow routes below-average monthly sales to the low-sales response, select the low-sales option.\",\n        \"evidence\": \"The chart title confirms Store B. The June bar is below the 'Average' line. The y-axis increases upward, and the bar's height corresponds to 475 (as per independent notes). The 'Average' line is at 550. Therefore, June sales (475) are below average. However, the reading assumes that below-average sales trigger the 'low-sales response'. The task instructions and policy tables do not define this mapping. The reading's conclusion is an assumption, not a supported action.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3852,
+      "total_tokens": 4482,
+      "completion_tokens": 630,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ba50e0ff5f6dbd95",
+    "object": "chat.completion",
+    "created": 1790617922,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image displays the title 'Mountain Snowpack Temperature Record' and the x-axis is labeled 'Year' with a tick for 2005. A black marker is plotted at the 2005 position with the text '24.0°C' directly above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis shows a tick for 2015. A black marker is plotted at the 2015 position with the text '10.0°C' directly above it.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if routing requires a stated numeric threshold or explicit criterion and none is displayed, the magnitude alone is insufficient to establish eligibility for substantial-change follow-up, necessitating routine monitoring.\",\n        \"evidence\": \"The chart and the provided task text do not contain a specific numeric threshold or a definition of 'substantial change'. The routing criterion is phrased generally as 'Whether the full-period mountain snowpack temperature change requires substantial-change follow-up'. Because the necessary condition of an explicit threshold is absent from the visible evidence, the reading's logic that magnitude alone is insufficient remains unestablished.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is clearly printed as 'Mountain Snowpack Temperature Record'. The y-axis label is 'Temperature (°C)' and the x-axis label is 'Year'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"A black circular marker is visible at the far left of the chart, aligned with the '2005' tick mark. The text '24.0°C' is printed adjacent to this point.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"A black circular marker is visible at the far right of the chart, aligned with the '2015' tick mark. The text '10.0°C' is printed adjacent to this point.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the plotted series is the relevant record, the full-period change is the 2015 temperature minus the 2005 temperature (10.0°C - 24.0°C = -14.0°C). It further asserts that if a 14.0°C decrease is treated as substantial change, substantial-change follow-up should be selected.\",\n        \"evidence\": \"The visual evidence confirms the 2005 value is 24.0°C and the 2015 value is 10.0°C, making the calculated change -14.0°C. However, the reading's conclusion depends on the condition that a 14.0°C decline is 'treated as substantial change'. The provided sources do not contain a definition or threshold that confirms a 14.0°C decline qualifies as 'substantial'.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4010,
+      "total_tokens": 4794,
+      "completion_tokens": 784,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

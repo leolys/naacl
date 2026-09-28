@@ -1,0 +1,34 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The visual notes confirm a single solid blue line connecting four data points, one per quarter, rising continuously from left to right. The Q1 point is just above the 1,000 gridline, and the Q4 point is near the 1,850 mark (between 1,800 and 2,000). Therefore, the line ends higher on the page at Q4 than it begins at Q1.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The visual notes confirm the vertical axis is labeled 'Revenue' and the numeric ticks increase upward from 0 at the bottom to 2,000 at the top.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the blue line encodes Company C revenue by quarter, the horizontal axis orders Q1 through Q4, and higher vertical position represents greater revenue because the labeled Revenue-axis values increase upward, then a line ending higher than it begins indicates revenue growth; the growth classification maps to the revenue growth response.",
+        "evidence": "The task instructions explicitly state to 'Use the Company C revenue dashboard as the evidence source for the revenue trend routing decision.' The dashboard's primary data visualization is the line chart. The x-axis is labeled 'Quarter' with categories Q1, Q2, Q3, Q4 in order. The y-axis is labeled 'Revenue' with increasing values upward. The line shows a clear upward trajectory from Q1 to Q4. While the title says 'Stable', the visual data (the 'evidence source' per instructions) shows growth. The condition that the plotted line is authoritative is supported by the instruction to use the dashboard as the evidence source for the *trend*.",
+        "status": "supported"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The visual notes confirm the title text at the top reads 'Stable Revenue of Company C from Q1 to Q4'.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the dashboard title is the authoritative classification for the Company C Q1-Q4 revenue record, then the literal descriptor “Stable Revenue” maps to the revenue stability response.",
+        "evidence": "The condition is that the title is the 'authoritative classification' and 'overrides or qualifies the plotted trajectory.' However, the task instructions specify using the dashboard as the 'evidence source for the revenue trend routing decision.' The plotted trajectory (rising line) is the primary evidence of a trend. The title 'Stable' is factually contradictory to the visual data of a rising line (from ~1000 to ~1850). In data interpretation tasks, visual data usually takes precedence over a potentially erroneous or subjective title label, especially when the prompt asks to review the record for a trend. The condition that the title overrides the data is not supported by the task instructions which point to the dashboard (the chart) as the evidence source.",
+        "status": "refuted"
+      }
+    }
+  }
+}

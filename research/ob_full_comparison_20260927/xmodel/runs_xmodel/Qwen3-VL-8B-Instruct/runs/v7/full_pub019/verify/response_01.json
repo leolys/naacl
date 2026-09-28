@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b16d324ef961f030",
+    "object": "chat.completion",
+    "created": 1790616993,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The polygon labeled 'CA' is filled with a very dark maroon color.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The polygons labeled 'TN' and 'DE' are visibly much lighter than the CA polygon.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The visible caption reads: 'Clean choropleth: same US map base; darker color means higher true value.'\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"A vertical color scale is shown with dark maroon at the top beside 'High' and pale yellow at the bottom beside 'Low.'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"For this choropleth, if the printed caption applies uniformly to all state fills, darker state color encodes a higher true incidence value; therefore the darkest state on the shared map has the highest incidence and should be routed to the highest-incidence priority follow-up workflow.\",\n        \"evidence\": \"The caption 'darker color means higher true value' is explicitly printed and applies to the entire map. The color scale confirms that the darkest color (dark maroon) corresponds to the highest value (100). California (CA) is the only state colored with this darkest shade. Tennessee (TN) is the lightest, corresponding to the lowest value. Delaware (DE) is medium, corresponding to a moderate value. The task criterion is to route the state with the highest incidence.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2792,
+      "total_tokens": 3165,
+      "completion_tokens": 373,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a11ce3f06cdc1e49",
+    "object": "chat.completion",
+    "created": 1790617549,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title at the top left reads 'Top Product Lines: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis label at the bottom reads 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical axis label on the left reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Five blue circular markers are visible, each labeled 'Line A', 'Line B', 'Line C', 'Line D', and 'Line E'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Visually, the markers progress from Line A (bottom-left) to Line E (top-right), increasing in both horizontal and vertical position.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 6,\n          \"evidence\": \"The visible chart contains only the title, axis labels, and point labels. There is no text indicating a timeframe, profitability, ROI, margin, budget threshold, or that these five lines constitute the full population.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that if a broader budget decision requires evidence beyond the displayed ad-spend/sales positions, and the chart lacks explicit decision criteria (like profitability or full scope), then the evidence-review option is the justified choice. This is conditional on the task not explicitly authorizing a conclusion from this scatterplot alone.\",\n        \"evidence\": \"The public task instructions state to 'Review the product-line ad spend and sales dashboard, then submit the budget conclusion.' They do not provide a specific policy table or explicit rule that a positive correlation in this specific scatterplot is sufficient to 'Approve' or 'Reject' a broader budget. The chart itself (as confirmed by O) lacks decision criteria. Therefore, the necessary condition for the reading—that the task/policy does not explicitly authorize a conclusion from this chart alone—is met by the absence of such authorization in the provided public task details.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title at the top left reads 'Top Product Lines: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis label at the bottom reads 'Advertising Spend ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical axis label on the left reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Visually, the markers progress from Line A (bottom-left) to Line E (top-right), increasing in both horizontal and vertical position.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading posits that if the task treats the scatterplot as complete and the higher ad-spend/higher sales pattern as sufficient support, then the approval option could be selected. This requires the unstated assumptions that the plotted lines are the complete relevant scope and that sales positioning alone is an approval criterion.\",\n        \"evidence\": \"The public task does not explicitly state that the plotted lines are the 'complete relevant scope' (the title says 'Top Product Lines', implying a subset). Furthermore, the task does not define 'sales positioning alone' as an approval criterion. While the visual pattern exists, the necessary conditions for this reading (treating it as complete/sufficient) are not established by the public task or the chart's explicit text; they remain assumptions.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4161,
+      "total_tokens": 5127,
+      "completion_tokens": 966,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bdc99a8bf64c2672",
+    "object": "chat.completion",
+    "created": 1790615632,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line. This is visually confirmed by the chart: the June bar ends at 475, while the dashed line is at 550.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end. This is directly visible in the chart, labeled 'Average' at the right end of the dashed line.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The supplied task instructions and policy tables contain no explicit routing criterion beyond reviewing the dashboard and choosing an appropriate route. This is confirmed by the public_task: 'policy_tables': [] and page_instructions lack routing rules.\",\n        \"evidence\": \"Condition 1 is supported by the absence of policy tables and explicit instructions in the public_task. The B.text condition is not tested against a public fact, as it is a conditional statement about what the chart alone can establish. The chart does establish June sales are below average, but the B.text does not claim to establish the required response. The condition is met, but the B.text is not a claim about what must be done, only what the chart alone can establish.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Monthly Sales for Store B in City Y'. This is directly visible in the chart title.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The rightmost blue bar is positioned above the printed label 'June'. This is visually confirmed: the bar is centered under 'June' on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The top of the blue bar above 'June' is lower on the page than the horizontal dashed line. This is visually confirmed: the June bar ends at 475, while the dashed line is at 550.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The dashed horizontal line has the printed label 'Average' near its right end. This is directly visible in the chart, labeled 'Average' at the right end of the dashed line.\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"Visible y-axis tick inscriptions increase upward from 0 through 600. This is confirmed by the y-axis: 0 at the bottom, 600 at the top, with increasing values upward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The chart title identifies Store B; the June bar is the target. This is supported by O.1 and O.2. 2. The final routing mapping is an assumption because no policy table or instruction explicitly defines which option applies below average. This is supported by the public_task: 'policy_tables': [] and page_instructions lack routing rules.\",\n        \"evidence\": \"Condition 1 is supported by O.1 (chart title) and O.2 (June bar position). Condition 2 is supported by the absence of policy tables and explicit routing instructions in the public_task. The B.text is a conditional statement: 'If... then...'. The conditions are met, but the B.text does not assert that the low-sales response is required, only that the chart alone does not establish it. The B.text is not a claim about what must be done, only what the chart alone can establish.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3911,
+      "total_tokens": 4733,
+      "completion_tokens": 822,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

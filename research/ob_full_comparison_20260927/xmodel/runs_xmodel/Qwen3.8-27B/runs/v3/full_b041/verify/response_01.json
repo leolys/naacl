@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-950630136346644c",
+    "object": "chat.completion",
+    "created": 1790617608,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The leftmost blue bar is positioned above the printed x-axis label 'January'. Its top edge is visually level with the horizontal dashed line, which is consistent with the description.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal dashed line spans the chart area, and the text 'Average' is printed on its right end.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The bars encode monthly customer counts; the displayed dashed line is the relevant benchmark; and the routing convention treats a month at the displayed average as requiring follow-up (Monitor next month).\",\n        \"evidence\": \"The chart title and y-axis label ('Number of Customers') support the decoding that the bars represent monthly customer counts. The dashed line is labeled 'Average', supporting its identity as a benchmark. However, the specific routing convention that 'at-average' maps to 'Monitor next month' is not provided in the public task, chart, or instructions. The mapping is an assumption.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The leftmost blue bar is positioned above the printed x-axis label 'January'. Its top edge is visually level with the horizontal dashed line.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal dashed line spans the chart area, and the text 'Average' is printed on its right end.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical axis on the left side of the plot is labeled 'Number of Customers'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The bars encode monthly customer counts on the vertical axis; the dashed line labeled 'Average' is the routing benchmark; and the routing convention assigns a month at that benchmark to the normal route (Normal plan).\",\n        \"evidence\": \"The chart title and y-axis label support the decoding that the bars represent monthly customer counts. The dashed line is labeled 'Average', supporting its identity as a benchmark. However, the specific routing convention that 'at-average' maps to 'Normal plan' is not provided in the public task, chart, or instructions. The mapping is an assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3848,
+      "total_tokens": 4467,
+      "completion_tokens": 619,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

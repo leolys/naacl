@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-846516b20fc4b2df",
+    "object": "chat.completion",
+    "created": 1790620252,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top of the image literally reads 'Declining Telehealth Follow-up Requests from 2012 to 2023'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is an authoritative dashboard summary of the record's demand pattern, then its explicit characterization of the requests as declining supports decline-response follow-up.\",\n        \"evidence\": \"The title is present and explicitly uses the word 'Declining'. However, the plotted data line shows a substantial increase from the 2012 level (approx. 800) to the 2022 peak (approx. 2900). The visual data contradicts the title's characterization of the overall 2012-2023 period as 'declining'. The condition 'intended to govern interpretation despite the plotted line's multi-year geometry' is a subjective assumption not supported by the visual evidence which clearly shows growth.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The line segment connecting the data point for 2022 (approx. 2900) to the data point for 2023 (approx. 2700) slopes downward on the page.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis labels are ordered chronologically from left to right, with 2022 immediately preceding 2023.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is labeled 'Telehealth follow-up requests' with tick marks increasing from 0 at the bottom to 3000 at the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years order the plotted line chronologically and higher vertical position encodes more telehealth follow-up requests, then a downward final segment indicates a recent decline; if routing is based on the latest year-to-year movement, select decline-response follow-up.\",\n        \"evidence\": \"The visual evidence confirms a downward slope for the 2022-2023 segment. However, the task instruction asks to select the route that fits the 'overall request pattern'. The condition 'Applies only if the task treats the latest interval as decisive rather than the full-period pattern' is not met by the explicit instruction to look at the 'overall' pattern. The overall pattern is one of significant growth.\",\n        \"status\": \"unclear\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The data point for 2023 (approx. 2700) is vertically higher on the chart than the data point for 2012 (approx. 800).\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis labels run from 2012 on the left to 2023 on the right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis labels show 0 near the bottom and 3000 near the top, indicating magnitude increases upward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years order the plotted line chronologically and the y-axis labels encode telehealth follow-up request magnitude increasing upward, then a substantially higher final plotted point than initial plotted point indicates overall growth across the displayed period; if the routing labels correspond to that overall pattern, select growth-response follow-up.\",\n        \"evidence\": \"The chart clearly shows the 2023 value is much higher than the 2012 value (approx. 2700 vs 800). The line generally trends upward from left to right, with a peak in 2022. This visual evidence supports the interpretation of an 'overall growth' pattern, which aligns with the task's request to assess the 'overall request pattern'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3569,
+      "total_tokens": 4571,
+      "completion_tokens": 1002,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

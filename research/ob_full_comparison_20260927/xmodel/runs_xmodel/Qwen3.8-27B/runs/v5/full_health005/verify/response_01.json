@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b1686d71a95062fb",
+    "object": "chat.completion",
+    "created": 1790621793,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Month vs. Number of samples tested' and a single blue line with markers is plotted across the horizontal axis.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The option list explicitly includes 'Route the testing-volume record to general laboratory operations review' alongside the specialized rising/declining options.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart establishes a volume pattern but the task provides no explicit operational policy tying that pattern to a specialized team, general laboratory operations review may be used as a fallback rather than inferring a capacity-planning assignment. (Condition: Applies only if the option wording is not treated as sufficient instruction that rising volume should route to capacity planning.)\",\n        \"evidence\": \"The task instructions state: 'route this testing record to the operational follow-up that best matches the volume pattern shown.' The option labels explicitly define the routing logic: 'rising-volume' maps to 'capacity planning' and 'declining-volume' maps to 'outreach review.' These labels function as the operational policy for this specific routing task. Therefore, the condition 'no explicit operational policy' is not met; the policy is embedded in the option labels themselves.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Month vs. Number of samples tested', the x-axis is labeled 'Month', and the y-axis is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The x-axis ticks are printed in reverse chronological order: 'Nov 20' is the leftmost tick and 'Jun 26' is the rightmost tick.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The y-axis is inverted with '0.0' at the top and '1.2' at the bottom. The blue data point at 'Nov 20' (left) is positioned near the bottom (approx 1.25), while the blue data point at 'Jun 26' (right) is positioned near the top (approx 0.4).\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the title and axis labels bind the blue series to monthly testing counts, the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen, then the series rises over chronological time. For this routing task, a rising testing-volume pattern maps to rising-volume capacity planning. (Condition: Assumes the plotted blue line is the testing-volume display referenced by the task and that chronological time follows the printed dates rather than screen left-to-right order.)\",\n        \"evidence\": \"The y-axis is inverted (0.0 top, 1.2 bottom), meaning higher vertical position on the screen corresponds to a lower numerical value. The x-axis is reverse chronological (Nov 20 left, Jun 26 right). Chronologically, time moves from left (Nov 20) to right (Jun 26). At the start (Nov 20), the value is high (approx 1.25e6). At the end (Jun 26), the value is low (approx 0.4e6). Therefore, the testing volume is declining over the reporting window, not rising. The assertion that the series 'rises over chronological time' is factually incorrect based on the axis labels and point positions.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2943,
+      "total_tokens": 3804,
+      "completion_tokens": 861,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

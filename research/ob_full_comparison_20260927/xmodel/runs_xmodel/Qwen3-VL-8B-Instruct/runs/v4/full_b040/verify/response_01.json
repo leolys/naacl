@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a8797654fa0689dc",
+    "object": "chat.completion",
+    "created": 1790613867,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line attached to the Q1, Q2, Q3, and Q4 x-axis positions ends higher on the page at Q4 than it begins at Q1.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis is labeled “Revenue,” and its printed tick labels increase upward from 0 at the bottom to 2,000 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue line encodes Company C revenue by quarter, the horizontal axis orders Q1 through Q4, and higher vertical position represents greater revenue because the labeled Revenue-axis values increase upward, then a line ending higher than it begins indicates revenue growth; the growth classification maps to the revenue growth response.\",\n        \"evidence\": \"The chart’s visual data shows a clear upward trend from Q1 (approx. 1,100) to Q4 (approx. 1,850). The vertical axis is explicitly labeled 'Revenue' with values increasing upward, confirming that higher position = higher revenue. The x-axis is ordered Q1 to Q4. Therefore, the line’s trajectory confirms revenue growth.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title literally reads “Stable Revenue of Company C from Q1 to Q4.”\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the dashboard title is the authoritative classification for the Company C Q1-Q4 revenue record, then the literal descriptor “Stable Revenue” maps to the revenue stability response.\",\n        \"evidence\": \"The chart’s title explicitly states 'Stable Revenue'. However, the visual data contradicts this, showing a clear increase from Q1 to Q4. The public task and chart reference instruct to use the dashboard as the evidence source for routing. The title is a descriptor, not a data source. The visual data is the authoritative evidence, not the title’s wording.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3501,
+      "total_tokens": 3992,
+      "completion_tokens": 491,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

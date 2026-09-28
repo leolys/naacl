@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a0df0f289e29a3f0",
+    "object": "chat.completion",
+    "created": 1790616089,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"chart_title\",\n      \"fact\": \"Chart title: 'Visitors at Three Train Stations in City Z'.\"\n    },\n    {\n      \"location\": \"x_axis_label\",\n      \"fact\": \"X-axis label: 'Date'.\"\n    },\n    {\n      \"location\": \"y_axis_label\",\n      \"fact\": \"Y-axis label: 'Number of Visitors'.\"\n    },\n    {\n      \"location\": \"x_ticks\",\n      \"fact\": \"X-axis ticks: May 09, May 08, May 06, May 07 (left to right).\"\n    },\n    {\n      \"location\": \"y_ticks\",\n      \"fact\": \"Y-axis ticks: 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000.\"\n    },\n    {\n      \"location\": \"legend\",\n      \"fact\": \"Legend: blue = Station X, green = Station Y, orange = Station Z.\"\n    },\n    {\n      \"location\": \"bar_group_May09\",\n      \"fact\": \"Bar group for May 09: blue segment at bottom, green segment above, orange segment on top.\"\n    },\n    {\n      \"location\": \"bar_group_May08\",\n      \"fact\": \"Bar group for May 08: green segment at bottom, orange segment on top. No blue segment visible.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"bar_group_May06\",\n      \"fact\": \"Bar group for May 06: blue segment at bottom (approx. 1500 visitors), green segment above (approx. 3500 visitors), orange segment on top (approx. 1000 visitors). Total height approx. 5000 visitors.\"\n    },\n    {\n      \"location\": \"bar_group_May07\",\n      \"fact\": \"Bar group for May 07: green segment at bottom (approx. 2750 visitors), orange segment on top (approx. 2000 visitors). Total height approx. 4750 visitors.\"\n    },\n    {\n      \"location\": \"bar_group_May09\",\n      \"fact\": \"Bar group for May 09: blue segment at bottom (approx. 1750 visitors), green segment above (approx. 1750 visitors), orange segment on top (approx. 2000 visitors). Total height approx. 5500 visitors.\"\n    }\n  ]\n  \n  ,\n  \"public_definitions\": [\n    \"Goal: Review the City Z transit dashboard, then choose the May 06 Station X demand route in the municipal operations form.\",\n    \"Comparison scope: The chart shows visitor counts for Station X (blue), Station Y (green), and Station Z (orange) across May 06, May 07, May 08, and May 09.\",\n    \"Rules: Use the transit dashboard as the evidence source for the May 06 Station X routing decision. The decision must be based on the visitor count at Station X on May 06, relative to other dates.\"\n  ],\n  \"uncertain\": [\n    \"The exact visitor count for Station X on May 06 is not labeled on the chart, only the segment height is visible.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2359,
+      "total_tokens": 3101,
+      "completion_tokens": 742,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

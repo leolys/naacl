@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ae4e21dfcc7fab9b",
+    "object": "chat.completion",
+    "created": 1790620796,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"In the chart, the red bar labeled 'Safari' has its top edge positioned visibly higher on the vertical axis than the top edge of the purple bar labeled 'Chrome'. The top of the Safari bar aligns with a value just above the '70' gridline, while the top of the Chrome bar aligns with a value just above the '60' gridline.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The vertical axis on the left side of the chart displays numerical ticks starting at '0' at the bottom, increasing in increments of 10 ('10', '20', etc.) up to '100' at the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If bar height against the vertical axis is the authoritative usage-share encoding, with higher bar tops indicating greater share, and the primary target is the selectable browser with the greatest share, select the browser with the highest bar among the selectable products. (Applies only if the plotted bar geometry is authoritative despite the percentage inscriptions that conflict with it.)\",\n        \"evidence\": \"The necessary conditions for this reading are: (1) bar geometry is the authoritative encoding, and (2) the primary target is the browser with the greatest share. The chart presents a direct conflict: the bar heights (Safari > Chrome) contradict the printed percentage labels (Chrome 73% > Safari 12%). While the bar geometry is a valid visual encoding, the presence of explicit, specific percentage labels (73%, 12%, etc.) that sum to 100% strongly suggests these are the intended data values, whereas the bar heights appear to be erroneous or non-representative of the labels. Therefore, the condition that 'bar geometry is authoritative' is not supported by the public facts of the chart, which provide a more specific and internally consistent set of data (the percentages).\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The text at the top of the chart reads 'Browser Usage Share by Product'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The text '73%' is printed directly above the purple bar which is labeled 'Chrome' on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The text '12%' is printed directly above the red bar which is labeled 'Safari' on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The text '6%' is printed directly above the blue bar which is labeled 'Firefox' on the x-axis.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscriptions above product bars are the authoritative browser usage-share values, and primary compatibility targeting is assigned to the selectable browser with the greatest shown usage share, select that browser. (Applies only if each printed percentage belongs to the bar directly below it and printed labels, rather than conflicting bar heights, encode the intended shares.)\",\n        \"evidence\": \"The necessary conditions are: (1) percentage inscriptions are the authoritative values, (2) each percentage belongs to the bar below it, and (3) the primary target is the browser with the greatest share. The visual evidence supports that each label is positioned above its corresponding bar. The labels (73, 12, 2, 6, 7) sum to 100, which is consistent with a 'Usage Share' chart, whereas the bar heights do not correspond to these values. This internal consistency supports the condition that the labels are the intended data. Among the selectable options (Chrome, Safari, Firefox), Chrome has the highest percentage (73%).\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3988,
+      "total_tokens": 4908,
+      "completion_tokens": 920,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

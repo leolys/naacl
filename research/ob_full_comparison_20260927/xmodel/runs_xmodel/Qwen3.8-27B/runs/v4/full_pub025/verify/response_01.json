@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9d9692ea417443ac",
+    "object": "chat.completion",
+    "created": 1790620617,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title at the top of the page literally reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891.'\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is the authoritative characterization of the tourism trend and its word 'Decreasing' is intended as the routing signal, then the trend should be treated as declining. If a declining new-tourist trend is to be routed to decline response, select the decline-response option.\", \"evidence\": \"The title contains the word 'Decreasing' (verified). However, the plotted data line shows a clear increase from ~1,100 in 1880 to ~3,200 in 1891. The task instructions state 'Use the Town Z new-tourist dashboard as the evidence source', which typically implies the data plot is the primary evidence over the title text, especially when they conflict. The condition that the title is 'authoritative' is not supported by the visual evidence of the data.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title contains the word 'Decreasing', while the blue line's 1891 endpoint is higher on the page than its 1880 endpoint.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If conflicting title and plotted-line signals, together with the absence of an explicit routing threshold or precedence rule, prevent a reliable trend classification, then retain routine monitoring rather than infer a growth or decline route.\", \"evidence\": \"There is a clear conflict between the title ('Decreasing') and the data line (increasing from ~1,100 to ~3,200). There is no explicit policy table or instruction defining how to resolve this conflict or what threshold constitutes 'growth' vs 'decline'. Therefore, the condition of 'conflicting signals' and 'absence of explicit routing threshold' is met.\", \"status\": \"supported\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The blue line begins near the 1880 tick at a lower screen position (approx y=1,100) and ends near the 1891 tick at a substantially higher screen position (approx y=3,200).\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The x-axis is labeled 'Year' and shows ticks from 1880 through 1891 in left-to-right order.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The vertical axis is labeled 'Number of Tourists' and its printed ticks increase upward from 0 to 3,500.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the blue line is the series encoded by the chart axes, the horizontal axis orders years left-to-right and higher vertical positions correspond to larger values on the upward-labeled tourist-count scale, then a higher endpoint at the later year indicates an increase over the review period. If an increasing new-tourist trend is to be routed to growth planning, select the growth-planning option.\", \"evidence\": \"The visual evidence supports the first part: the line rises from ~1,100 to ~3,200, indicating an increase. However, the second part ('If an increasing new-tourist trend is to be routed to growth planning') is a routing policy assumption. The task provides no explicit policy table linking 'increase' to 'growth planning'. While it is a plausible convention, it is not explicitly stated in the provided text.\", \"status\": \"unclear\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4546,
+      "total_tokens": 5347,
+      "completion_tokens": 801,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

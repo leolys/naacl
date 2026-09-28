@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b8693359d0d73c7a",
+    "object": "chat.completion",
+    "created": 1790613257,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"rec_1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart's x-axis is labeled 'Year' with visible tick marks for 2017, 2018, 2019, and 2020. This is visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The y-axis is labeled 'Referral volume (thousands)' and has a scale from 100 to 150, with gridlines at 10-unit intervals. This is visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The data points are located at approximately (2017, 102), (2018, 118), (2019, 134), and (2020, 150). These coordinates are visually consistent with the plotted points on the chart.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The line exhibits a consistent upward slope from left to right across the entire visible x-axis range. This is visually confirmed by the line connecting the four data points in ascending order.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Assuming the visible 2017-2020 data points represent the relevant trend for the 'full 2013-2020 utilization pattern' requested in the goal, the visual evidence of a steady increase across all displayed years supports the reading of 'sustained period-wide growth'.\",\n        \"evidence\": \"The visible data from 2017 to 2020 shows a clear, consistent upward trend. The task requires evaluating the 'full 2013-2020 utilization pattern', but the chart only displays 2017-2020. The reading assumes the visible data is sufficient to represent the full period, which is not visually supported. The necessary condition for 'sustained period-wide growth' is that the growth trend must be continuous from 2013 to 2020. The visual evidence does not confirm this; it only confirms growth from 2017 to 2020. The reading is refuted because the necessary condition of the 'full 2013-2020 utilization pattern' is not met by the visible data.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"rec_2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart's x-axis begins at the year 2017. This is visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The y-axis values increase from just above 100 at the start to 150 at the end. This is visually confirmed by the data points for 2017 and 2020.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"There are no data points or line segments visible for the years 2013, 2014, 2015, or 2016. This is visually confirmed as the chart only displays data from 2017 to 2020.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The slope of the line segment connecting 2019 to 2020 appears visually similar to the slope of the segment connecting 2017 to 2018. This is visually confirmed by the consistent upward slope of the line across all segments.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Assuming the 'full 2013-2020 utilization pattern' strictly requires data from 2013, the visible chart only provides evidence for the 2017-2020 window. A reading of 'recent upward shift' might be inferred if the user assumes the growth is a new phenomenon limited to this visible window, though the visible data itself shows growth across all four plotted years.\",\n        \"evidence\": \"The reading correctly identifies that the chart only shows data from 2017-2020 and that the visible data shows growth across all four years. The reading acknowledges that the 'full 2013-2020 utilization pattern' requires data from 2013, which is not visible. The reading then considers the possibility of a 'recent upward shift' as an inference, which is a valid interpretation given the visible data. The necessary condition for this reading is that the user must assume the growth is limited to the visible window, which is a reasonable assumption. The reading is supported because its necessary conditions are visually supported (the visible data shows growth) and the task allows for inference based on the available data.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3378,
+      "total_tokens": 4544,
+      "completion_tokens": 1166,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-90ee7163a566a2c1",
+    "object": "chat.completion",
+    "created": 1790621813,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top reads 'Year vs. Number of doctors per 1,000 inhabitants'. The horizontal axis at the bottom is labeled 'Year' and the vertical axis on the left is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line starts at a y-value of approximately 1.3 (near the top) and ends at a y-value of approximately 2.4 (near the bottom). Since the y-axis is inverted (0.0 at top, 2.5 at bottom), the rightmost marker is physically lower on the page than the leftmost marker.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The 'public_task' object lists 'policy_tables': [] and 'options' containing the three route paths. There are no explicit numeric thresholds or interpretation rules provided in the task state.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The chart alone shows the final plotted level and its change relative to the start, but no policy table, threshold, benchmark, or explicit routing criterion maps a level near the final point to either expansion or shortage. Therefore a definitive pathway selection cannot be validated from the displayed evidence alone.\",\n        \"evidence\": \"The necessary condition for this reading is that the task state contains no policy tables or interpretation rules defining pathway criteria. This is verified by the empty 'policy_tables' array. However, the reading claims that a 'definitive pathway selection cannot be validated'. This is refuted by the task instruction to 'route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern' and the use of ordinary language for the options. The 'expansion' pathway is the ordinary fit for an increasing capacity metric, even without a specific numeric threshold.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title at the top reads 'Year vs. Number of doctors per 1,000 inhabitants'. The horizontal axis at the bottom is labeled 'Year' and the vertical axis on the left is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis labels are 0.0 at the top, followed by 0.5, 1.0, 1.5, 2.0, and 2.5 at the bottom. This confirms an inverted scale where values increase downwards.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The leftmost blue marker is at year 2000.0 and is positioned near the 1.3 y-value. The rightmost blue marker is at year 2017.5 and is positioned near the 2.4 y-value. Because the y-axis is inverted, the rightmost marker is lower on the page and represents a larger numerical value.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"The x-axis encodes reporting year from left to right, and the plotted line/markers encode the chart's labeled doctors-per-1,000 measure using the y-axis. Because the y-axis labels increase downward, a lower screen position corresponds to a larger plotted measure. If the task routes based on an end-of-period higher capacity pattern, the capacity expansion review pathway is the matching option; no displayed rule defines a shortage threshold or says that a higher final value requires shortage routing.\",\n        \"evidence\": \"The necessary conditions are that the axis labels correctly describe the series and that the pathway names are interpreted by their ordinary meanings. The visual evidence confirms the y-axis is inverted (0.0 top, 2.5 bottom), meaning the downward visual trend represents an increase in the 'doctors per 1,000 inhabitants' value (from ~1.3 to ~2.4). An increase in physician capacity per resident is the ordinary meaning of 'capacity expansion'. The 'shortage response' pathway would ordinarily correspond to a decrease in capacity. Therefore, the reading that the expansion pathway is the matching option is supported by the visible data and ordinary language.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3218,
+      "total_tokens": 4213,
+      "completion_tokens": 995,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

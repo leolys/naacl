@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-ab7f5a27a1dbf799",
+    "object": "chat.completion",
+    "created": 1790613723,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The leftmost dark-red bar is positioned above the x-axis label 'Product E'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The y-axis is labeled 'Units Sold'; visible labeled ticks include 10,000 and 20,000, and the top of the Product E bar lies between them, much closer to 10,000.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the vertical axis labeled 'Units Sold' is a linear quantitative scale with equal tick spacing, a bar's top decodes to its units-sold value; if Product E is within 2,000 units of the 12,500-unit policy decision threshold, the stated variance-band policy maps it to manual sales verification.\",\n        \"evidence\": \"The bar for Product E is visually positioned at approximately 12,000 units, as confirmed by independent visual notes. The policy table defines the 'manual sales verification variance band' for sales that are '< 2,000 units from a decision threshold'. The 12,500-unit threshold is the upper bound for the 'Low-sales review queue activation level'. Since Product E's sales (12,000) are 500 units below 12,500, it is within the 2,000-unit variance band. The policy condition is met, and the reading correctly identifies the resulting action: 'Flag Product E for manual sales verification'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3705,
+      "total_tokens": 4084,
+      "completion_tokens": 379,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

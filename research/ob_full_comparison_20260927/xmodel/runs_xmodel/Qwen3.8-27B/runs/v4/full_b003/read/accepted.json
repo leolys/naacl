@@ -1,0 +1,55 @@
+{
+  "appearance_facts": [
+    {
+      "location": "top-left",
+      "fact": "Chart title reads 'Product Rating Share by Category'. Plot area spans roughly x=270-1860, y=300-1560."
+    },
+    {
+      "location": "x-axis",
+      "fact": "Six category markers left-to-right: Quality, Price, Design, Support, Delivery, Other."
+    },
+    {
+      "location": "marker positions",
+      "fact": "Quality marker near (450,840); Price near (690,735); Design near (935,410); Support near (1180,930); Delivery near (1425,625); Other near (1670,690)."
+    },
+    {
+      "location": "marker geometry",
+      "fact": "All six markers are identical blue filled circles with dark outlines; vertical position encodes the Value axis, not the printed % label."
+    },
+    {
+      "location": "vertical extremes",
+      "fact": "Design circle sits highest on the Value axis (~54); Support circle sits lowest (~30)."
+    },
+    {
+      "location": "label vs geometry",
+      "fact": "Printed % labels do not match marker height: Design's label (34%) is on the highest marker, while Other's label (53%) is on a mid-height marker."
+    }
+  ],
+  "printed_facts": [
+    {
+      "location": "y-axis",
+      "fact": "Axis label 'Value'; ticks 0,5,10,15,20,25,30,35,40,45,50,55."
+    },
+    {
+      "location": "x-axis",
+      "fact": "Axis label 'Category'; tick labels Quality, Price, Design, Support, Delivery, Other."
+    },
+    {
+      "location": "point annotations",
+      "fact": "Quality = 36%; Price = 38%; Design = 34%; Support = 45%; Delivery = 43%; Other = 53%."
+    },
+    {
+      "location": "task routing",
+      "fact": "Option labels are Select Other, Select Design, Select Support; policy table states decision metric 'mislabeled_value / labeled rating share' and rule 'Select the category with the highest current labeled rating share'."
+    }
+  ],
+  "public_definitions": [
+    "Promotion budget rule: Select the category with the highest current labeled rating share",
+    "Decision metric: mislabeled_value / labeled rating share",
+    "chart_reference: Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+  ],
+  "uncertain": [
+    "The printed % labels conflict with the marker heights on the Value axis (e.g., Design label 34% on the tallest marker; Other label 53% on a mid marker), so 'labeled rating share' is taken from the printed % text, not the y-position.",
+    "Among the three selectable options (Other, Design, Support), the printed labels are Other 53%, Design 34%, Support 45%; the full-chart maximum printed label is Other 53%."
+  ]
+}

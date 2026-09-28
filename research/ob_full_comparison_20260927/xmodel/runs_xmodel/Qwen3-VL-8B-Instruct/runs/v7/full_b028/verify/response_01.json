@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a3cee6b93526a432",
+    "object": "chat.completion",
+    "created": 1790616453,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Advertising Budget vs Revenue (High-Performing Regions)'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Only five labeled points (January through May) are visible; no marks or labels for other regional groups are visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader budget increase requires evidence from regions beyond the displayed high-performing subset or evidence that budget increases caused revenue increases, then a chart limited to that subset and showing only plotted monthly association is insufficient, supporting a request for full-data analysis.\",\n        \"evidence\": \"The chart explicitly limits its scope to 'High-Performing Regions' and shows only a time-series (monthly) trend. It does not provide data from other regions or causal evidence.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Advertising Budget vs Revenue (High-Performing Regions)'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"x-axis: 'Advertising Budget ($)' with ticks increasing from 0 to 70 rightward\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"y-axis: 'Revenue ($)' with ticks increasing from 0 to 220 upward\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Five blue points labeled January through May; each successive point is farther right and higher than the previous.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal and vertical axes encode advertising budget and revenue respectively, with values increasing rightward and upward, then the labeled monthly points form a positive budget-revenue association; if the review permits broader approval from this high-performing-region association alone, it supports approval.\",\n        \"evidence\": \"The visual data confirms a positive association: budget increases from ~$25 to ~$65, and revenue increases from ~$30 to ~$220. The trend is monotonic and strong. The chart's title and axis labels confirm the encoding. The 'High-Performing Regions' context implies the review is for this subset.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3778,
+      "total_tokens": 4320,
+      "completion_tokens": 542,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The title contains the word “Decreasing,” while the blue line’s rightmost endpoint is higher on the page than its leftmost endpoint.",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "If conflicting title and plotted-line evidence prevents a reliable classification as growth or decline, then the appropriate available route is routine monitoring.",
+        "evidence": "The title explicitly states 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'. The visual evidence from the chart's axes and plotted line confirms that the y-axis (Number of Tourists) increases upward and the x-axis (Year) increases left to right. The blue line's endpoint at 1891 is higher on the page than at 1880, indicating an increase in tourist numbers. This directly contradicts the title's claim of 'Decreasing'. Therefore, the condition for 'conflicting evidence' is met, and the fallback 'routine monitoring' route is not applicable as the conflict is resolved by the visual data. The title is not authoritative in the face of this visual contradiction; the chart's visual encoding is the primary evidence source.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The title literally reads “Decreasing Number of New Tourists in Town Z from 1880 to 1891.”",
+          "status": "refuted"
+        }
+      },
+      "B": {
+        "reading_checked": "If the chart title is an authoritative literal summary of the Town Z new-tourist trend for the stated period, then its word “Decreasing” supports classifying the trend as decline; routing a decline trend requires the decline-response option.",
+        "evidence": "The title's assertion of 'Decreasing' is contradicted by the visual data. The chart's axes are standard: the y-axis increases upward and the x-axis increases left to right. The blue line, representing the new-tourist series, starts at approximately 1100 tourists in 1880 and ends at approximately 3200 tourists in 1891, a clear increase. The title is not an authoritative summary of the visual data; it is visually contradicted. Therefore, the condition 'if the chart title is an authoritative literal summary' is false, and the inference chain is invalid. The routing decision must be based on the visual evidence, not the title.",
+        "status": "refuted"
+      }
+    },
+    "r3": {
+      "O": {
+        "1": {
+          "evidence": "The x-axis has year ticks from 1880 at the left to 1891 at the right, and the y-axis is labeled “Number of Tourists” with larger printed ticks higher on the page.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The blue line at the 1891 tick is higher on the page than the blue line at the 1880 tick.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the horizontal axis orders years left to right and the vertical axis encodes number of tourists increasing upward, and the blue line is the Town Z new-tourist series, then a later endpoint higher on the page than the earlier endpoint indicates an overall increase; routing an increase trend requires the growth-planning option.",
+        "evidence": "The x-axis is labeled 'Year' with ticks from 1880 to 1891, ordered left to right. The y-axis is labeled 'Number of Tourists' with tick marks increasing upward. The blue line is the only plotted series, and it is explicitly identified as the new-tourist record in the task context. The endpoint at 1891 is visually higher than the endpoint at 1880, indicating an increase in tourist numbers. This supports the classification of the trend as an increase. Therefore, the condition is met, and the inference is valid: the appropriate routing option is 'Route to tourism growth planning'.",
+        "status": "supported"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-af418c0b4f342b05",
+    "object": "chat.completion",
+    "created": 1790618208,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image displays the title 'Year vs. Number of doctors per 1,000 inhabitants' at the top. The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Visually, the blue marker on the far right (Year 2017.5) is positioned lower on the screen than the blue marker on the far left (Year 2000.0).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The provided task data includes three 'option_labels' for routing. The 'policy_tables' array is empty, and no interpretation rules are provided in the context.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that the chart shows the final level and its change, but because no policy table or threshold is provided to map a level to a specific pathway, a definitive selection cannot be validated.\",\n        \"evidence\": \"The visual evidence confirms the chart shows a trend and a final point. The public task data confirms the absence of any policy tables or interpretation rules that would define which capacity level triggers which pathway.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image displays the title 'Year vs. Number of doctors per 1,000 inhabitants' at the top. The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The y-axis labels are arranged from 0.0 at the top to 2.5 at the bottom, confirming the axis is inverted.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The leftmost blue marker (Year 2000.0) is positioned higher on the page (around 1.3) than the rightmost blue marker (Year 2017.5), which is positioned lower on the page (near 2.5).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that because the y-axis is inverted (labels increase downward), a lower screen position corresponds to a larger numeric value. It concludes that a higher final value matches the 'physician capacity expansion review pathway'.\",\n        \"evidence\": \"The visual evidence confirms the y-axis is inverted (0.0 at top, 2.5 at bottom) and the line moves downward on the screen, meaning the numeric value increases from ~1.3 to ~2.5. However, the task provides no policy table or rule defining which capacity level (high or low) corresponds to 'expansion' versus 'shortage'. While 'expansion' might intuitively imply high capacity, the absence of a defined rule means this mapping is an assumption rather than a fact supported by the provided evidence.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3001,
+      "total_tokens": 3785,
+      "completion_tokens": 784,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8af75cc1b63a9426",
+    "object": "chat.completion",
+    "created": 1790618227,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image shows a single teal line connecting four circular data points, with the x-axis labeled with the years 2017, 2018, 2019, and 2020.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The data points are vertically aligned with the y-axis ticks 260, 290, 330, and 380, respectively, showing a continuous upward slope from left to right.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The x-axis labels begin at 2017 on the far left and end at 2020 on the far right, with no earlier years displayed.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The visible series covers only a recent subset of the requested 2013-2020 review window (2017-2020) and rises within that subset, which may support the 'ongoing monitoring' route rather than 'sustained growth planning' because the unshown earlier trajectory is not established.\",\n        \"evidence\": \"The public task explicitly defines the review scope as '2013-2020 enrollment pattern review' (visible_context_2). The chart's x-axis (visible in the image) only shows ticks for 2017, 2018, 2019, and 2020. The subtitle 'Reported window shown in the dashboard summary' further indicates that the displayed data is a subset of a larger reported window. The necessary condition that the displayed data is a recent subset of the full requested window is therefore supported by the visible mismatch between the axis range and the task scope.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The image displays a teal line with circular markers corresponding to the x-axis ticks 2017, 2018, 2019, and 2020.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical position of the markers increases from 2017 (260) to 2020 (380), indicating a rising trend across the visible years.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The top-left of the chart clearly shows the title 'Telehealth Follow-up Enrollment Trend' and the y-axis is labeled 'Enrolled patients'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The horizontal axis at the bottom of the chart is labeled 'Year' with the earliest tick at 2017 and the latest at 2020.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The chart title and axes bind the teal line to telehealth follow-up enrollment by year, where higher vertical position represents more enrolled patients; successive higher points at later year ticks indicate growth over the displayed years, but this only supports 'sustained growth planning' if the displayed years (2017-2020) adequately establish the full 2013-2020 pattern.\",\n        \"evidence\": \"The chart's title and y-axis label ('Enrolled patients') are visible and support the identification of the data. The upward trend from 2017 to 2020 is visually clear. However, the task requires a 2013-2020 assessment, and the chart only displays 2017-2020. Because the necessary condition of establishing the pattern for the 'entire stated window' (2013-2016) is not met by the visible data, the reading that the displayed years 'adequately establish' the full pattern is unverified.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3491,
+      "total_tokens": 4494,
+      "completion_tokens": 1003,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

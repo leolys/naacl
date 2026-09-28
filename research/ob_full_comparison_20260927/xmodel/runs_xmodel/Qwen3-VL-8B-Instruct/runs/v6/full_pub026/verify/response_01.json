@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a61b0893c2e0a545",
+    "object": "chat.completion",
+    "created": 1790616251,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads: 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue line begins at the 1880 tick aligned with the y-axis tick labeled '1,000' and ends at the 1891 tick above the y-axis tick labeled '2,500'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The title is intended as a valid trend label. 2. Unresolved contradictory chart evidence should not trigger a directional response.\",\n        \"evidence\": \"1. The title explicitly states 'Decreasing'. 2. The plotted line ends at ~2600, which is higher than the starting value of 1000, indicating a net increase. This contradicts the title's claim.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line begins at the 1880 tick aligned with the y-axis tick labeled '1,000' and ends at the 1891 tick above the y-axis tick labeled '2,500'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is inscribed 'Year' and has ticks from 1880 through 1891; the vertical axis is inscribed 'Number of Tourists' with increasing labeled ticks upward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. The plotted line is authoritative for the new-tourist measure. 2. The task uses whole-period endpoint change. 3. No explicit routing policy is supplied.\",\n        \"evidence\": \"1. The line's start (1000) and end (~2600) are clearly defined and consistent with the axes. 2. The endpoint change (from 1000 to ~2600) is positive. 3. No routing policy is printed in the task or chart.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3995,
+      "total_tokens": 4524,
+      "completion_tokens": 529,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b8a02e982696ff4e",
+    "object": "chat.completion",
+    "created": 1790616459,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Five blue points are visibly labeled Store 6, Store 7, Store 8, Store 9, and Store 10; no other store labels or points are visible.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader ad-budget increase requires evidence representative of the full store population, then a chart explicitly scoped to additional top stores cannot by itself establish support for that broader action.\",\n        \"evidence\": \"The chart title explicitly defines the population as 'Additional Top Stores'. The public task and page instructions do not require evidence from the full store population for a broader budget increase. The policy tables are empty, so no policy mandates a full-store scope. The B condition is not met because the task does not require full-store evidence for a broader increase; the chart's scope is sufficient for its stated purpose.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis inscription reads 'Advertising Spend ($ thousands)' and the vertical axis inscription reads 'Sales ($ thousands).'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"From Store 6 through Store 10, each successive labeled point is visibly farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the displayed scales, then points farther right and higher represent stores with higher plotted spend and higher plotted sales, respectively; this visual association alone does not establish incremental sales, profitability, or causal return from spending.\",\n        \"evidence\": \"The axis labels are correctly applied to the plotted points. The visual trend is supported by the printed facts: Store 6 (30k spend, 67k sales) → Store 7 (40k, 90k) → Store 8 (50k, 120k) → Store 9 (60k, 150k) → Store 10 (70k, 175k). The B condition is fully supported by the visual and printed evidence. The B statement is correct: the chart shows a positive correlation, but it does not establish incremental sales, profitability, or causal return, which are not shown. The B reading is accurate and supported.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r3\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The horizontal axis inscription reads 'Advertising Spend ($ thousands)' and the vertical axis inscription reads 'Sales ($ thousands).'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"From Store 6 through Store 10, each successive labeled point is visibly farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a decision may be made from an observed positive spend-sales pattern among the displayed stores without requiring full-store, causal, or profitability evidence, then that pattern can support a broader ad-budget increase.\",\n        \"evidence\": \"The public task and page instructions do not specify a decision standard that allows a decision based solely on a positive spend-sales pattern. The chart's title and scope ('Additional Top Stores') imply it is not representative of the full store population. The B condition is not met because the task does not provide a policy or rule allowing a decision based on this pattern alone. The B reading is not supported by the public task or chart context; it is an unsupported alternative standard.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3720,
+      "total_tokens": 4590,
+      "completion_tokens": 870,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

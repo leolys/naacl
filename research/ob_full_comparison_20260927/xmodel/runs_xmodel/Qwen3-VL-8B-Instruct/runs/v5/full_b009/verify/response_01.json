@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a57d3f167da778d4",
+    "object": "chat.completion",
+    "created": 1790614523,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"Chart title: 'Smartphone Market Share in Europe'\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Label inside light-orange pie slice: 'Apple (60%)'\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Label inside orange pie slice: 'Samsung (12%)'\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"Label inside red pie slice: 'Xiaomi (10%)'\",\n          \"status\": \"supported\"\n        },\n        \"5\": {\n          \"evidence\": \"Label inside pale-yellow pie slice: 'Others (18%)'\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the pie-slice inscriptions in the chart titled 'Smartphone Market Share in Europe' encode each labeled category's current European market_share, then the brand with the greatest labeled market_share is the current market leader; under the stated premium-promotion rule, select that brand's option.\",\n        \"evidence\": \"The chart title confirms the scope is 'Europe'. The pie-slice inscriptions explicitly state market shares: Apple 60%, Samsung 12%, Xiaomi 10%, Others 18%. The policy rule is to allocate the promotion to the brand with the highest market_share. The labeled brands are Apple, Samsung, Xiaomi. 'Others' is an aggregate category, not a selectable brand, as confirmed by the dashboard options (Apple, Xiaomi, Samsung) and the policy table's 'Review scope' of 'Europe smartphone brands'.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3442,
+      "total_tokens": 3829,
+      "completion_tokens": 387,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

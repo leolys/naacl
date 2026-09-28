@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a8b2d010fb5143e3",
+    "object": "chat.completion",
+    "created": 1790620555,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title at the top of the image reads 'Decreasing Number of New Tourists in Town Z from 1880 to 1891'.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the chart title is an authoritative statement of the tourism trend and the word 'Decreasing' is intended as the routing-relevant classification, then the decline-response route is appropriate.\", \"evidence\": \"The title text is visible and contains the word 'Decreasing'. However, the plotted line on the chart shows a clear upward trend from 1880 to 1891, which contradicts the title. There is no explicit policy or rule provided that states the title overrides the visual data.\", \"status\": \"unclear\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The title contains the word 'Decreasing', while the blue line's endpoint at 1891 (approx. 3,000) is visibly higher on the page than its beginning at 1880 (approx. 1,100).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If contradictory chart signals cannot be resolved because neither an authority hierarchy nor a routing threshold is supplied, then the trend cannot be classified reliably for escalation and routine monitoring is the conservative route.\", \"evidence\": \"The contradiction between the title ('Decreasing') and the plot (increasing) is visible. The task instructions do not provide a rule for resolving this conflict (e.g., 'trust the data over the title'). While 'routine monitoring' is an option, the B reading assumes it is the 'conservative route' for unresolved evidence, which is a policy assumption not explicitly stated in the provided materials.\", \"status\": \"unclear\"}}, \"r3\": {\"O\": {\"1\": {\"evidence\": \"The blue line starts at the vertical alignment of the x-axis tick '1880' at a y-value of approximately 1,100.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The blue line ends at the vertical alignment of the x-axis tick '1891' at a y-value of approximately 3,000, which is higher than the starting point.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Number of New Tourists' with values increasing from 0 to 4,000.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"If the single plotted line is the dashboard's New tourists series, the horizontal axis encodes chronological year left-to-right, and higher vertical position maps to a larger number of new tourists using the upward-increasing y-axis, then a line ending higher than it begins indicates growth over the reviewed period. If the routing labels are intended to map a growth trend to growth planning, select the growth-planning route.\", \"evidence\": \"The visual evidence supports the conditions: the line represents the series, the x-axis is chronological, and the y-axis is an increasing count. The line clearly ends higher than it begins, indicating growth. The mapping of 'growth trend' to 'growth planning' is a standard semantic link in the context of the options provided.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4061,
+      "total_tokens": 4787,
+      "completion_tokens": 726,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

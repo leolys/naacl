@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a8faba9042469d23",
+    "object": "chat.completion",
+    "created": 1790613243,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The public task lists a general laboratory operations review option as one of three choices, alongside specialized rising-volume and declining-volume options. This is visible in the task definition under 'option_labels'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the chart establishes a volume pattern but the task provides no explicit operational policy tying that pattern to a specialized team, general laboratory operations review may be used as a fallback rather than inferring a capacity-planning assignment.\",\n        \"evidence\": \"The public task does not contain any explicit policy linking volume patterns to specific teams beyond the three listed options. The task’s instruction is to route to the option that 'best matches the volume pattern', not to infer a team based on unstated rules. The fallback option is explicitly available.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is 'Month vs. Number of samples tested', and the axes are labeled 'Month' (x-axis) and 'Count' (y-axis). This is visible in the chart title and axis labels.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal tick labels run from 'Nov 20' on the left to 'Jun 26' on the right, progressing through Nov, Oct, Sep, Aug, Jul, and Jun. This is visible in the x-axis tick labels.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical axis shows '0.0' near the top and '1.2' near the bottom, with '1e6' printed above the axis. The blue point at 'Nov 20' is lower on the page than the blue point at 'Jun 26'. This is visible in the y-axis scale and the relative vertical positions of the data points.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the title and axis labels bind the blue series to monthly testing counts, the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen, then the series rises over chronological time. For this routing task, a rising testing-volume pattern maps to rising-volume capacity planning.\",\n        \"evidence\": \"The chart title and axis labels confirm the data represents monthly testing counts. The x-axis tick labels run from 'Nov 20' (left) to 'Jun 26' (right), which is chronological order from left to right. The y-axis has larger values lower on the screen (e.g., 1.2 at the bottom, 0.0 at the top), so a point lower on the screen has a higher count. The blue point at 'Nov 20' is near the bottom (high count) and the point at 'Jun 26' is near the top (low count), meaning the series is falling, not rising. The reading incorrectly states the series rises and maps to rising-volume capacity planning, which contradicts the visual data.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2948,
+      "total_tokens": 3690,
+      "completion_tokens": 742,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

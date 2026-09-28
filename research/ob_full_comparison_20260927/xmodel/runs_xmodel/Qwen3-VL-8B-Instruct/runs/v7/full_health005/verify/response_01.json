@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a5cdba08e1b67e6f",
+    "object": "chat.completion",
+    "created": 1790616787,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart presents one blue line with monthly points under the title 'Month vs. Number of samples tested'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The public task lists a general laboratory operations review option in addition to specialized rising-volume and declining-volume options.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart establishes a volume pattern but the task provides no explicit operational policy tying that pattern to a specialized team, general laboratory operations review may be used as a fallback rather than inferring a capacity-planning assignment.\",\n        \"evidence\": \"The task does not specify a policy that forces routing to capacity planning for any pattern; it presents three options without conditional logic. The fallback is explicitly allowed by the option set.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Month vs. Number of samples tested'; the horizontal axis is labeled 'Month' and the vertical axis is labeled 'Count'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The leftmost visible month tick reads 'Nov 20' and the rightmost visible month tick reads 'Jun 26', with intervening labels progressing through Nov, Oct, Sep, Aug, Jul, and Jun from left to right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The vertical axis shows '0.0' near the top and '1.2' near the bottom, with '1e6' printed above the axis; the blue point at Nov 20 is lower on the page than the blue point at Jun 26.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the title and axis labels bind the blue series to monthly testing counts, the printed month ticks run from Jun 26 at the right toward Nov 20 at the left, and the vertical Count scale has larger labeled values lower on the screen, then the series rises over chronological time. For this routing task, a rising testing-volume pattern maps to rising-volume capacity planning.\",\n        \"evidence\": \"The x-axis is chronological from left to right ('Nov 20' to 'Jun 26'). The y-axis is logarithmic, with values increasing from bottom to top (0.0 to 1.2). The point at 'Nov 20' is lower on the page than the point at 'Jun 26', meaning its value is smaller. This contradicts the reading's claim that the series rises over time. The actual data shows a decline: 1.2 million at 'Nov 20' to 0.4 million at 'Jun 26'.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2967,
+      "total_tokens": 3618,
+      "completion_tokens": 651,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

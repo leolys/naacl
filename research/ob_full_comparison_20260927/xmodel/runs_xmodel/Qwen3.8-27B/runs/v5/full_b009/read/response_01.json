@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a4636d81038227c7",
+    "object": "chat.completion",
+    "created": 1790620754,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"appearance_facts\": [\n    {\n      \"location\": \"upper-left to upper-center slice\",\n      \"fact\": \"Orange slice labeled 'Apple (60 %)' occupies the largest angular extent, spanning roughly from the 12 o'clock position counter-clockwise to about the 10 o'clock position.\"\n    },\n    {\n      \"location\": \"upper-right slice\",\n      \"fact\": \"Dark red slice labeled 'Xiaomi (10 %)' is the smallest named brand slice, spanning roughly from 12 o'clock clockwise to about 4 o'clock.\"\n    },\n    {\n      \"location\": \"lower-right to bottom slice\",\n      \"fact\": \"Orange-red slice labeled 'Samsung (12 %)' spans roughly from 4 o'clock clockwise to about 7 o'clock.\"\n    },\n    {\n      \"location\": \"left slice\",\n      \"fact\": \"Pale yellow slice labeled 'Others (18 %)' spans roughly from 7 o'clock counter-clockwise to about 10 o'clock.\"\n    },\n    {\n      \"location\": \"all four slices\",\n      \"fact\": \"Each slice contains a white text label with the brand name and a percentage in parentheses, positioned near the centroid of its slice.\"\n    }\n  ],\n  \"printed_facts\": [\n    {\n      \"location\": \"top-left of page\",\n      \"fact\": \"Title text: 'Smartphone Market Share in Europe'\"\n    },\n    {\n      \"location\": \"orange slice (upper-left)\",\n      \"fact\": \"Label: 'Apple (60 %)'\"\n    },\n    {\n      \"location\": \"dark red slice (upper-right)\",\n      \"fact\": \"Label: 'Xiaomi (10 %)'\"\n    },\n    {\n      \"location\": \"orange-red slice (bottom)\",\n      \"fact\": \"Label: 'Samsung (12 %)'\"\n    },\n    {\n      \"location\": \"pale yellow slice (left)\",\n      \"fact\": \"Label: 'Others (18 %)'\"\n    }\n  ],\n  \"public_definitions\": [\n    \"User goal: 'Review the Europe smartphone market-share dashboard, then assign the next premium retail promotion to the brand with the highest current market_share.'\",\n    \"Policy table 'Premium promotion rule': 'Select the brand with the highest current market_share'; Decision metric: 'market_share'; Review scope: 'Europe smartphone brands'.\",\n    \"Form instruction: 'Use the dashboard market_share values as the evidence source; the next premium retail promotion is reserved for the current European market leader.'\",\n    \"Primary field: 'Premium retail promotion brand' with options 'Select Apple', 'Select Xiaomi', 'Select Samsung'.\"\n  ],\n  \"uncertain\": [\n    \"The dashboard percentages (60 + 10 + 12 + 18 = 100) are internally consistent, but the absolute market-share figures appear unusually high for real-world European smartphone data; this is taken at face value as the printed evidence.\",\n    \"'Others (18 %)' is not a selectable brand option, so it is excluded from the promotion assignment per the option list.\"\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2737,
+      "total_tokens": 3439,
+      "completion_tokens": 702,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

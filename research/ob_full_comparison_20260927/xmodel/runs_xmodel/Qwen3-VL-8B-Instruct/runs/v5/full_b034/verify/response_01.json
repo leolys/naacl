@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9181f66c417a07cc",
+    "object": "chat.completion",
+    "created": 1790614721,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title is 'Top Regions: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The plot area contains five labeled markers: Region A, Region B, Region C, Region D, and Region E.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If approval requires evidence of a causal effect or complete regional coverage, a five-marker chart titled as covering 'Top Regions' is insufficient unless it supplies such evidence or states that it is complete. In that case, select the evidence-review option rather than approve.\",\n        \"evidence\": \"The B statement's condition is not met. The task instructions do not specify that causal validation or complete regional coverage is required. The dashboard is explicitly intended to be used to complete the ad spend review form, and the chart is titled 'Top Regions', which implies a representative sample. The B statement is not triggered by the visible evidence.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The bottom axis is labeled 'Advertising Spend ($ thousands)' with ticks from 25 to 75.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The left axis is labeled 'Sales ($ thousands)' with ticks from 70 to 180.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"Five blue circular markers are labeled Region A through Region E.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"From Region A through Region E, each successive marker is farther right and higher on the page.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis inscription identifies left-to-right position as Advertising Spend ($ thousands) and the vertical axis inscription identifies bottom-to-top position as Sales ($ thousands), with both printed tick sequences increasing in those directions, then labeled marker positions can be decoded as a cross-sectional association between regional ad spend and sales. If this five-region association is representative enough for a broader decision and causal proof is not required, a consistent positive association supports approving a broader ad spend increase.\",\n        \"evidence\": \"The conditions of B are met. The axes are correctly labeled and oriented. The markers are labeled and positioned. The association is positive and consistent: as ad spend increases (left to right), sales increase (bottom to top). The chart is titled 'Top Regions', suggesting a representative sample. The task instructions do not require causal proof, only a decision based on the dashboard. The B statement's conclusion is directly supported by the visible data and the task context.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3786,
+      "total_tokens": 4416,
+      "completion_tokens": 630,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

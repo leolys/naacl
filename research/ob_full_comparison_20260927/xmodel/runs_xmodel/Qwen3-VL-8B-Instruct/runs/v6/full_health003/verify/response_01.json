@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8a1b8bdde2390cc3",
+    "object": "chat.completion",
+    "created": 1790615952,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line descends from near the 0 tick at the left to below the 8000 tick at the right. The y-axis label is 'Count', and its printed numeric ticks increase from 0 at the top to 8000 lower on the page. This establishes the y-axis is inverted in visual presentation but the quantity increases downward.\",\n          \"status\": \"supported\"\n        }\n      ,\n        \"2\": {\n          \"evidence\": \"The y-axis label is 'Count', and its printed numeric ticks increase from 0 at the top to 8000 lower on the page. This establishes the y-axis is inverted in visual presentation but the quantity increases downward.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies only if the printed y-axis labels are not the operative value mapping.\",\n        \"evidence\": \"The y-axis label is 'Count', and its printed numeric ticks increase from 0 at the top to 8000 lower on the page. This establishes the y-axis is inverted in visual presentation but the quantity increases downward. The condition 'printed y-axis labels are not the operative value mapping' is satisfied, as the visual presentation is inverted but the quantity increases downward. The condition is met.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Month vs. Number of COVID-19 patients hospitalized'; the horizontal axis is labeled 'Month' and the vertical axis is labeled 'Count'. This establishes the chart represents hospitalization count over time.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"Visible date labels run from 'Feb 24, 2020' at the left to 'Mar 14, 2020' at the right. This establishes the x-axis progresses from earlier dates at left to later dates at right.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The printed y-axis ticks show 0 near the top, then 2000, 4000, 6000, and 8000 at progressively lower positions. This establishes the y-axis numeric labels increase downward.\",\n          \"status\": \"supported\"\n        },\n        \"4\": {\n          \"evidence\": \"The blue line and markers descend sharply toward the right; the final marker is below the 8000 tick and the preceding recent markers span between the 4000, 6000, and 8000 tick levels. This establishes the line moves downward toward the right.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"1. Applies to the single visible COVID-19 hospitalization series and treats the rightmost date as the current period; 'rapidly increasing' is assessed from the visibly steep recent segment.\",\n        \"evidence\": \"The chart displays a single blue series representing COVID-19 hospitalization count over time. The x-axis progresses from earlier dates at left to later dates at right. The y-axis numeric labels increase downward. The line moves downward toward the right, indicating decreasing inpatient census. The condition 'treats the rightmost date as the current period' is satisfied, as Mar 14, 2020, is the rightmost date. The condition 'rapidly increasing' is assessed from the visibly steep recent segment. However, the line is trending downward, not upward. The condition 'rapidly increasing' is not met. The condition remains open.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3063,
+      "total_tokens": 3885,
+      "completion_tokens": 822,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

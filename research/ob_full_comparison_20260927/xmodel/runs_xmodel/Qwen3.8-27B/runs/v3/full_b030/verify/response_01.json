@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b224f1f47fa15b85",
+    "object": "chat.completion",
+    "created": 1790617531,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title at the top of the image clearly reads 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The plot area contains exactly five blue circular markers. Each is labeled 'Store 6' through 'Store 10'. No other data points or store labels are visible in the chart area.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a broader ad-budget increase requires evidence representative of the full store population, then a chart explicitly scoped to additional top stores cannot by itself establish support for that broader action.\",\n        \"evidence\": \"The chart title 'Additional Top Stores' visually supports the condition that the displayed population is a subset. However, the necessary condition that a 'broader ad-budget increase' *requires* evidence of the full store population is a policy assumption not provided in the public task or visible on the dashboard.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis label at the bottom reads 'Advertising Spend ($ thousands)' and the vertical axis label on the left reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Visually, the points for Store 6 through Store 10 are arranged in a diagonal line from the bottom-left to the top-right. Each successive point is positioned further to the right (higher x-value) and higher up (higher y-value) than the previous one.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the displayed scales, then points farther right and higher represent stores with higher plotted spend and higher plotted sales, respectively; this visual association alone does not establish incremental sales, profitability, or causal return from spending.\",\n        \"evidence\": \"The axis labels and the physical positions of the points on the 2D plane provide concrete support for the decoding. The assertion that this is a visual association (correlation) rather than a causal or profitability measure is a valid logical interpretation of the chart's content, which lacks such indicators.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis label at the bottom reads 'Advertising Spend ($ thousands)' and the vertical axis label on the left reads 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Visually, the points for Store 6 through Store 10 are arranged in a diagonal line from the bottom-left to the top-right. Each successive point is positioned further to the right (higher x-value) and higher up (higher y-value) than the previous one.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a decision may be made from an observed positive spend-sales pattern among the displayed stores without requiring full-store, causal, or profitability evidence, then that pattern can support a broader ad-budget increase.\",\n        \"evidence\": \"The chart displays a positive pattern among the specific stores shown. However, the necessary condition that a decision *may* be made on this basis alone is an alternative decision standard. The public task and dashboard do not provide a rule confirming that this limited pattern is sufficient to support a 'broader' budget increase.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 4114,
+      "total_tokens": 5011,
+      "completion_tokens": 897,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

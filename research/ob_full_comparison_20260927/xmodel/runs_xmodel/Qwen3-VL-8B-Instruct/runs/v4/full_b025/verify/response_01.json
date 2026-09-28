@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8844b6e4cf6159f1",
+    "object": "chat.completion",
+    "created": 1790613772,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart displays blue points labeled Week 2 through Week 6 and axis titles, with no visible profit, margin, incremental-sales, control-group, or causal-method annotation.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If a broader-spend approval requires evidence that added advertising caused profitable incremental sales, then a scatterplot of weekly spend and sales without a causal design, costs, margin, or return measures is insufficient; select full-data analysis.\",\n        \"evidence\": \"The chart does not show any measures of profit, margin, or causal attribution. The visual evidence confirms the absence of these annotations.\",\n        \"status\": \"refuted\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title reads 'Weeks with Promotional Campaigns: Ad Spend vs Sales'; the horizontal axis is inscribed 'Advertising Spend ($ thousands)' and the vertical axis is inscribed 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The blue points labeled Week 2, Week 3, Week 4, Week 5, and Week 6 progress from lower-left to upper-right; each later labeled point is to the right of and higher on the page than the preceding labeled point.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands as printed, then points farther right and higher represent weeks with greater spend and greater sales. If a consistent higher-spend/higher-sales pattern across the labeled campaign weeks is sufficient evidence for a spend recommendation, select broader spend expansion.\",\n        \"evidence\": \"The chart's axes are labeled in $ thousands. The data points for Weeks 2 through 6 show a clear positive trend: as spend increases (moving right), sales also increase (moving up). The coordinates from the independent notes confirm this: Week 2 (22, 65) → Week 3 (32, 90) → Week 4 (42, 120) → Week 5 (52, 150) → Week 6 (62, 190). This is a monotonic, consistent upward trend across the labeled campaign weeks.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3585,
+      "total_tokens": 4134,
+      "completion_tokens": 549,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

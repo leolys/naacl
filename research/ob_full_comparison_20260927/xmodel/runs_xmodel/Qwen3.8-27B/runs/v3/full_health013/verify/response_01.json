@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a6e09f21639726d6",
+    "object": "chat.completion",
+    "created": 1790618339,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The subtitle directly beneath the main title in the image clearly reads 'Selected large-volume hospitals shown in dashboard summary', matching the content assertion exactly.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The scatter plot area contains exactly five teal circular markers, each explicitly labeled with text: 'Hospital A', 'Hospital B', 'Hospital C', 'Hospital D', and 'Hospital E'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that a descriptive comparison lacking causal or population-wide evidence can be retained as contextual material. Its necessary condition is that the organization requires stronger evidence than a subset descriptive association for operational escalation.\",\n        \"evidence\": \"The visible chart is a scatter plot of a specific subset (five hospitals) showing a descriptive relationship. The public task explicitly states the goal is to handle a 'proposed enterprise-level statement' and asks to decide if it needs 'broader review across the full hospital population'. The task's framing of 'enterprise-level' implies a requirement for broader evidence than a subset view. The chart itself lacks any explicit causal markers or population-wide statistical claims, fitting the 'descriptive comparison' part of the reading.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The subtitle 'Selected large-volume hospitals shown in dashboard summary' is clearly visible and legible in the image, confirming the inscription.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The main title at the top of the chart reads 'Top Hospitals: Nurse Hours vs Discharge Count', matching the content assertion.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that a dashboard displaying only a selected subset is not evidence for the full population, and therefore requires full-population review before enterprise approval. Its necessary conditions are that the statement is enterprise-level and the chart does not show the full population.\",\n        \"evidence\": \"The chart's subtitle explicitly states 'Selected large-volume hospitals', confirming it is a subset and not the full population. The public task explicitly defines the goal as handling a 'proposed enterprise-level statement' and provides an option for 'full-hospital population review'. Both necessary conditions (subset chart, enterprise-level goal) are directly supported by the visible text and public task instructions.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Visually, the points are arranged in a diagonal line. Hospital A is at the bottom-left, and Hospital E is at the top-right. Hospitals B, C, and D are positioned sequentially between them, each farther right and higher than the previous one. This matches the assertion of successively farther right and higher positioning.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal axis is clearly labeled 'Weekly nurse hours (thousands)' and the vertical axis is labeled 'Monthly discharge count (thousands)', exactly as stated in the content assertion.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that the axis encodings and point positions indicate a positive displayed association, which is descriptive only and does not establish causation or enterprise generalizability. Its necessary conditions are the specific axis encodings and the relative positioning of the points.\",\n        \"evidence\": \"The axis labels are confirmed as 'Weekly nurse hours (thousands)' (horizontal) and 'Monthly discharge count (thousands)' (vertical). The points are visually arranged in a clear upward trend from left to right (A to E), which constitutes a positive displayed association. The assertion that this is 'descriptive only' and does not establish causation is a standard statistical interpretation of a scatter plot without further inferential statistics, which is consistent with the visual evidence of a simple plot.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3440,
+      "total_tokens": 4427,
+      "completion_tokens": 987,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

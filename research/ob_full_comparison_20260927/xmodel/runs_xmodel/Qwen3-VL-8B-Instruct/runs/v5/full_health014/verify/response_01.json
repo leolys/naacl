@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b6d8feda49f28f70",
+    "object": "chat.completion",
+    "created": 1790615106,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The chart title reads 'Kidney vs Liver Transplants', and the x-axis is labeled 'Year' with visible ticks for 2015, 2016, and 2017.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"At the 2017 tick on the x-axis, the blue solid-line endpoint and the red square marker are visually aligned at the same position on the chart.\",\n          \"status\": \"supported\"\n        },\n        \"3\": {\n          \"evidence\": \"The left side of the plot is labeled 'Kidney' in blue, and the right side is labeled 'Liver' in red.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the blue solid series is the Kidney series and the red dashed square-marked series is the Liver series, and coincident marks at the same year encode equal transplant volume, then their 2017 volumes are matched. If the routing labels are intended to map matched volumes to matched-volume review, that route applies; the chart does not itself print this routing policy.\",\n        \"evidence\": \"The chart visually confirms that the blue line (Kidney) and red line (Liver) meet at the 2017 tick. The labels on the left ('Kidney') and right ('Liver') bind the respective series. The printed values for 2017 are both 17698, confirming equal volume. The routing policy is not printed on the chart but is implied by the reading's condition that coincident marks encode equal volume.\",\n        \"status\": \"supported\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 2409,
+      "total_tokens": 2796,
+      "completion_tokens": 387,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

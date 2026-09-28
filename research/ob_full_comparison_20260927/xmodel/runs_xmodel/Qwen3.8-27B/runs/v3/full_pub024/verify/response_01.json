@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a744e304d55e342d",
+    "object": "chat.completion",
+    "created": 1790618653,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The top of the image clearly displays the text 'Decreasing Number of New Tourists in Town Z from 1880 to 1891', which matches the observation's description of the title.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading assumes the chart title is an authoritative statement of the trend and that the word 'Decreasing' is the intended routing-relevant classification, which would make the decline-response route appropriate.\",\n        \"evidence\": \"The title 'Decreasing Number of New Tourists' is visibly present and provides a literal classification. However, the reading relies on an unstated assumption that the title text overrides the plotted data; the task provides no explicit rule establishing this hierarchy of authority.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title visibly contains the word 'Decreasing'. The blue line's starting point on the left (1880) is at a lower vertical position (approx. 1,100) than its ending point on the right (1891) (approx. 3,000), meaning the endpoint is higher on the page.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if contradictory signals cannot be resolved due to a lack of an authority hierarchy or routing threshold, the trend cannot be classified reliably and routine monitoring is the conservative route.\",\n        \"evidence\": \"The visual conflict between the title and the plotted line is real and no explicit routing policy is provided to resolve it. However, the reading's conclusion that 'routine monitoring' is the appropriate default is an assumption not supported by the public task or any visible rule.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The leftmost point of the blue line aligns vertically with the '1880' tick mark on the x-axis.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The rightmost point of the blue line aligns vertically with the '1891' tick mark and is at a higher vertical position on the page than the starting point at 1880.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The horizontal axis is labeled 'Year' and the vertical axis is labeled 'Number of New Tourists' with tick marks increasing from 0 to 4,000 in an upward direction.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading asserts that if the plotted line represents the new-tourist series, the x-axis encodes time, and the y-axis maps higher position to a larger number, then a line ending higher than it begins indicates growth, warranting the growth-planning route.\",\n        \"evidence\": \"The visual components of the reading are supported: the line starts at ~1,100 and ends at ~3,000, indicating a net increase based on the plotted data. However, the reading assumes the plotted line is the authoritative source over the contradictory title and that a net increase maps to 'growth planning'; neither the authority hierarchy nor the specific routing policy is explicitly stated in the task.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3835,
+      "total_tokens": 4698,
+      "completion_tokens": 863,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

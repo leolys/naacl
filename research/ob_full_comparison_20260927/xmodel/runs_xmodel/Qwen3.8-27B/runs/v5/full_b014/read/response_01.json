@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a2ecf8e0e096556d",
+    "object": "chat.completion",
+    "created": 1790620815,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n \"appearance_facts\": [\n  {\n   \"location\": \"dashboard panel\",\n   \"fact\": \"Bar chart titled 'Units Sold by Product (Weekend Pop-up)' with five dark red bars.\"\n  },\n  {\n   \"location\": \"x-axis\",\n   \"fact\": \"Product categories are ordered left-to-right as Product B, Product E, Product C, Product A, Product D.\"\n  },\n  {\n   \"location\": \"Product C bar\",\n   \"fact\": \"Product C is the third bar from the left and is visibly the shortest bar, with its top just above the 20,000 gridline.\"\n  },\n  {\n   \"location\": \"relative extents\",\n   \"fact\": \"Product A is the tallest bar (above 90,000), followed by Product D (80,000), Product E (~48,000), Product B (~28,000), and Product C (~24,000).\"\n  },\n  {\n   \"location\": \"y-axis\",\n   \"fact\": \"Vertical axis is labeled 'Units Sold' with tick marks at 20,000, 30,000, 40,000, 50,000, 60,000, 70,000, 80,000, 90,000.\"\n  }\n ],\n \"printed_facts\": [\n  {\n   \"location\": \"chart title\",\n   \"fact\": \"Units Sold by Product (Weekend Pop-up)\"\n  },\n  {\n   \"location\": \"y-axis label\",\n   \"fact\": \"Units Sold\"\n  },\n  {\n   \"location\": \"x-axis label\",\n   \"fact\": \"Product\"\n  },\n  {\n   \"location\": \"y-axis ticks\",\n   \"fact\": \"20,000; 30,000; 40,000; 50,000; 60,000; 70,000; 80,000; 90,000\"\n  },\n  {\n   \"location\": \"x-axis categories\",\n   \"fact\": \"Product B, Product E, Product C, Product A, Product D\"\n  },\n  {\n   \"location\": \"policy table\",\n   \"fact\": \"< 12,000 units → Critical low-demand escalation level\"\n  },\n  {\n   \"location\": \"policy table\",\n   \"fact\": \"< 25,000 units → Low-demand review queue activation level\"\n  },\n  {\n   \"location\": \"policy table\",\n   \"fact\": \"< 2,500 units from a decision threshold → Manual merchandising verification variance band\"\n  }\n ],\n \"public_definitions\": [\n  \"Use the Units Sold by Product dashboard as the evidence source for the Product C merchandising route.\",\n  \"Select the appropriate product route for Product C based on its units sold.\",\n  \"Policy: < 25,000 units → Low-demand review queue activation level.\",\n  \"Policy: < 12,000 units → Critical low-demand escalation level.\"\n ],\n \"uncertain\": [\n  \"The exact numeric value for Product C is not printed on the bar; it is visually estimated between 20,000 and 25,000 (approximately 24,000).\",\n  \"Whether Product C's value falls within 2,500 units of the 25,000 decision threshold (which would trigger the manual check band) cannot be confirmed without an exact printed value.\"\n ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 2701,
+      "total_tokens": 3548,
+      "completion_tokens": 847,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

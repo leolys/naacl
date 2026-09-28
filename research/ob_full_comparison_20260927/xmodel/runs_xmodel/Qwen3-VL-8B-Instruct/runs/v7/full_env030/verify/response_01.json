@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bc94ad2d63fc3339",
+    "object": "chat.completion",
+    "created": 1790616746,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": {\n    \"r1\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The blue line at the 2023 tick is visibly lower on the page than the blue line at the 2018 tick.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The Recovery Score axis has visibly printed tick labels increasing upward from 0 near the bottom to 2,800 near the top.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the x-axis years progress left to right and higher vertical position on the Recovery Score axis represents a higher recovery score, then a final mark lower than the initial mark indicates a lower final recovery score; if a lower overall recovery score warrants deterioration review, select that route.\",\n        \"evidence\": \"The chart's y-axis is explicitly labeled 'Recovery Score' with tick marks increasing upward from 0 to 2,800. The x-axis is labeled 'Year' with 2018 on the left and 2023 on the right. The data line begins at 2,800 in 2018 and ends at approximately 2,500 in 2023, which is a lower position on the chart. This confirms the endpoint comparison shows a decline in recovery score.\",\n        \"status\": \"supported\"\n      }\n    },\n    \"r2\": {\n      \"O\": {\n        \"1\": {\n          \"evidence\": \"The title visibly reads 'Increasing Regional Air Quality Recovery from 2018 to 2023'.\",\n          \"status\": \"supported\"\n        },\n        \"2\": {\n          \"evidence\": \"The horizontal axis is visibly labeled 'Year' and has printed years 2018 through 2023; the vertical axis is visibly labeled 'Recovery Score'.\",\n          \"status\": \"supported\"\n        }\n      },\n      \"B\": {\n        \"reading_checked\": \"If the chart title is intended to summarize the overall 2018-2023 dashboard finding, and an increasing air-quality recovery finding is routed to recovery expansion follow-up, select the recovery expansion route.\",\n        \"evidence\": \"The chart title explicitly states 'Increasing Regional Air Quality Recovery from 2018 to 2023'. However, the data contradicts this. The Recovery Score starts at 2,800 in 2018, drops to 2,400 in 2019, peaks at 2,800 in 2020, and then declines to approximately 2,500 by 2023. The overall trend is not increasing; it is volatile with a net decline. The title is therefore misleading or inaccurate relative to the data.\",\n        \"status\": \"refuted\"\n      }\n    }\n  }\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-1f4abcd7",
+    "usage": {
+      "prompt_tokens": 3387,
+      "total_tokens": 4016,
+      "completion_tokens": 629,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9212b2acbf34024d",
+    "object": "chat.completion",
+    "created": 1790620056,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\": {\"r1\": {\"O\": {\"1\": {\"evidence\": \"The chart title reads 'Year vs. Number of doctors per 1,000 inhabitants', the x-axis is labeled 'Year', and the y-axis is labeled 'Count'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The rightmost blue marker is positioned lower on the vertical axis than the leftmost blue marker.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The task state lists three route options, and the 'policy_tables' and 'interpretation_rules' fields are empty.\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The chart shows the final plotted level and its change relative to the start, but no policy table, threshold, or explicit routing criterion maps a level near the final point to either expansion or shortage. Therefore a definitive pathway selection cannot be validated from the displayed evidence alone.\", \"evidence\": \"The task instructions state: 'route this record to the follow-up pathway that best fits the observed end-of-period capacity pattern.' The chart shows a clear trend where the 'Count' (doctors per 1,000) increases from ~1.3 to ~2.4 (noting the inverted y-axis). Ordinary task semantics allow for a comparison of 'capacity pattern' (increasing) to the 'pathway' names (expansion vs. shortage). An increasing capacity pattern fits the 'expansion' pathway. The reading's condition that 'no policy table... defines the pathway criteria' is true, but its conclusion that a 'definitive pathway selection cannot be validated' is refuted by the ordinary semantic mapping of an increasing trend to an expansion pathway.\", \"status\": \"refuted\"}}, \"r2\": {\"O\": {\"1\": {\"evidence\": \"The chart title reads 'Year vs. Number of doctors per 1,000 inhabitants', the x-axis is labeled 'Year', and the y-axis is labeled 'Count'.\", \"status\": \"supported\"}, \"2\": {\"evidence\": \"The y-axis labels run from 0.0 at the top to 2.5 at the bottom.\", \"status\": \"supported\"}, \"3\": {\"evidence\": \"The leftmost blue marker (year 2000) is higher on the page (near y=1.3) than the rightmost blue marker (year 2017.5, near y=2.4).\", \"status\": \"supported\"}}, \"B\": {\"reading_checked\": \"The x-axis encodes reporting year from left to right, and the plotted line/markers encode the chart's labeled doctors-per-1,000 measure using the y-axis. Because the y-axis labels increase downward, a lower screen position corresponds to a larger plotted measure. If the task routes based on an end-of-period higher capacity pattern, the capacity expansion review pathway is the matching option; no displayed rule defines a shortage threshold or says that a higher final value requires shortage routing.\", \"evidence\": \"The y-axis is indeed inverted (0.0 at top, 2.5 at bottom). The final point is at the bottom of the chart (y≈2.4), which corresponds to a higher numeric value than the start point (y≈1.3). This indicates an increase in physicians per 1,000 inhabitants. The 'physician capacity expansion review pathway' is the option that semantically matches an increase in capacity. The reading correctly identifies the inverted scale and the resulting increase in the measure.\", \"status\": \"supported\"}}}}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3174,
+      "total_tokens": 3931,
+      "completion_tokens": 757,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

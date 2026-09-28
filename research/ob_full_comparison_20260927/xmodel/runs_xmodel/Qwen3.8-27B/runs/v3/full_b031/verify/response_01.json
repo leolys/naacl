@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bda5eab596bcaec4",
+    "object": "chat.completion",
+    "created": 1790617501,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title at the top reads 'Additional Promotion Weeks: Ad Spend vs Sales', and the plot area contains exactly five labeled markers (Week 7 through Week 11).\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The visible chart area contains only the title, axis labels, and the five data points. There are no legends, cost/margin lines, or text annotations indicating controls or full-data analysis.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if approval requires causal or profitability evidence, a five-point observational scatterplot without controls or costs is insufficient, making 'request full-data analysis' the appropriate action. It requires that the dashboard lacks causal/profitability validation.\",\n        \"evidence\": \"The dashboard's visible content (five points, two axes) does not provide the causal or profitability validation mentioned in the reading's condition.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the vertical axis is labeled 'Sales ($ thousands)'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The five blue markers (Week 7 to Week 11) are arranged in a rising diagonal from the bottom-left to the top-right of the plot.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The 'Week 7' marker is located at x=30 and y=65 (between 60 and 70). The 'Week 11' marker is located at x=70 and y=160.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"The reading states that if the axis labels correctly bind to the points and the positive association is considered sufficient evidence for expansion, the action is to 'approve broader ad spend increase'. It requires that the observed pattern is accepted as sufficient for approval.\",\n        \"evidence\": \"The axis labels are correctly bound to the plotted points, and the positive association is visible. However, the condition that this association is 'considered sufficient' for approval is an assumption not established by the dashboard itself.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3770,
+      "total_tokens": 4389,
+      "completion_tokens": 619,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

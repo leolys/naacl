@@ -1,0 +1,59 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The map region labeled 'California' is filled orange. (Visual: California is colored orange.)",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The map region labeled 'Texas' is filled orange. (Visual: Texas is colored orange.)",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "An orange swatch is inscribed '30+ M' in the legend. (Visual: Legend explicitly states orange = 30+ M.)",
+          "status": "supported"
+        },
+        {
+          "index": 4,
+          "evidence": "The map region labeled 'Florida' is filled purple. (Visual: Florida is colored purple.)",
+          "status": "supported"
+        },
+        {
+          "index": 5,
+          "evidence": "A purple swatch is inscribed '20 - 30 M' in the legend. (Visual: Legend explicitly states purple = 20-30 M.)",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.",
+        "evidence": "The chart title 'US Population by State (in Millions)' and the legend explicitly define the color-to-population mapping. California and Texas are both orange (30+ M), Florida is purple (20-30 M).",
+        "status": "refuted"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "Both the region labeled 'California' and the region labeled 'Texas' are filled orange. (Visual: Both states are colored orange.)",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The orange swatch is inscribed '30+ M'. (Visual: Legend explicitly states orange = 30+ M.)",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the map colors are bound to state population using the legend's ordered ranges, an orange state is encoded as 30+ M and a purple state as 20-30 M. The highest-population routing option can be justified only when the chart distinguishes the selected state's population from every other offered state; membership in the same open-ended top bin does not establish an ordering within that bin.",
+        "evidence": "The chart title and legend define the color-to-population mapping. California and Texas are both in the 30+ M bin. The reading's condition requires distinguishing the selected state from others, which is not possible for the orange states.",
+        "status": "refuted"
+      }
+    }
+  ]
+}

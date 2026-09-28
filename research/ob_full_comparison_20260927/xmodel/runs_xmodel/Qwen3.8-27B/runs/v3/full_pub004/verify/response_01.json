@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-84a655322beb5096",
+    "object": "chat.completion",
+    "created": 1790618406,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"reviews\":[{\"id\":\"r1\",\"O\":[{\"index\":1,\"evidence\":\"The title text in the top-left corner of the image is clearly visible and reads 'Risk Index of Hazard H in US States', matching the assertion.\",\"status\":\"supported\"},{\"index\":2,\"evidence\":\"The region labeled 'ID' in the upper-left portion of the map is filled with a very pale yellow color, consistent with the 'High' end of the legend.\",\"status\":\"supported\"},{\"index\":3,\"evidence\":\"The region labeled 'SC' in the mid-right portion of the map is filled with a dark maroon/burgundy color, consistent with the 'Low' end of the legend.\",\"status\":\"supported\"},{\"index\":4,\"evidence\":\"The Arizona-shaped region in the lower-left is filled with a solid light gray color. The label 'AZ' is visible within the state boundary, contradicting the claim that it has 'no visible AZ inscription'.\",\"status\":\"refuted\"},{\"index\":5,\"evidence\":\"The vertical color scale on the right shows a gradient from pale yellow at the top (labeled 'High' and '100') to dark maroon at the bottom (labeled 'Low' and '0').\",\"status\":\"supported\"}],\"B\":{\"reading_checked\":\"The reading asserts that if state fills are encoded by the adjacent color scale, the pale-yellow end labeled 'High' and '100' represents higher Risk Index values than the dark burgundy end labeled 'Low' and '0'. It further states that for this routing task, one should select the offered state with the highest displayed risk, and that gray is not assigned a position on the shown color scale. The necessary conditions are that each labeled state region uses the displayed Risk Index scale and that gray denotes no displayed scale value.\",\"evidence\":\"The visual evidence supports the decoding: the legend explicitly labels the pale yellow top as 'High' (100) and the dark maroon bottom as 'Low' (0). Idaho (ID) is pale yellow (High), South Carolina (SC) is dark maroon (Low), and Arizona (AZ) is gray. The gray color is indeed not part of the yellow-to-maroon gradient shown in the legend. The condition that gray denotes no displayed scale value is a reasonable interpretation given the legend's structure, though not explicitly defined in the text. The core decoding (yellow = high, maroon = low) is directly supported by the visible legend labels.\",\"status\":\"supported\"}},{\"id\":\"r2\",\"O\":[],\"B\":{\n\"reading_checked\":\"No B text provided for this record.\",\"evidence\":\"No B text provided for this record.\",\"status\":\"unclear\"}}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+    "usage": {
+      "prompt_tokens": 3531,
+      "total_tokens": 4097,
+      "completion_tokens": 566,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

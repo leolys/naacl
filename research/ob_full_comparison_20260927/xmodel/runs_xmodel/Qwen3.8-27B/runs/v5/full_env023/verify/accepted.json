@@ -1,0 +1,50 @@
+{
+  "reviews": {
+    "r1": {
+      "O": {
+        "1": {
+          "evidence": "The yellow bar above the x-axis label 'Solar' has the bold text '41.2%' positioned directly above it in the plot area.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The light-blue bar above the x-axis label 'Wind' has the bold text '29.8%' positioned directly above it in the plot area.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The blue bar above the x-axis label 'Hydroelectric' has the bold text '18.5%' positioned directly above it in the plot area.",
+          "status": "supported"
+        },
+        "4": {
+          "evidence": "The green bar above 'Biomass' has '7.2%' above it, and the brown bar above 'Geothermal' has '3.3%' above it.",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If the bold percentage annotations attached above each source bar are the operative reported production-share values, the source with the greatest printed percentage is the largest contribution source; the routing criterion requires escalating that source.",
+        "evidence": "The necessary condition for this reading is that the printed percentage annotations are the authoritative representation of 'production share' on the dashboard. The chart's y-axis is explicitly labeled 'Reported production share (%)'. In standard data visualization, the geometry of the bars (their height relative to the y-axis) is the primary encoding of the variable being measured. Here, the visual encoding contradicts the printed annotations: the bar for Wind is the tallest (reaching ~68 on the y-axis), yet it is labeled 29.8%. The bar for Solar is shorter (reaching ~41 on the y-axis), yet it is labeled 41.2%. Because the bar heights are the standard mechanism for reading values on a vertical axis, the condition that the *printed annotations* are the operative values is not supported by the chart's structure. The annotations appear to be erroneous or disconnected from the scale.",
+        "status": "refuted"
+      }
+    },
+    "r2": {
+      "O": {
+        "1": {
+          "evidence": "The light-blue bar above 'Wind' is the tallest bar in the chart. Its top edge aligns horizontally with a point on the y-axis between the 65 and 70 tick marks (approx 68). The bold text '29.8%' is visible above it.",
+          "status": "supported"
+        },
+        "2": {
+          "evidence": "The yellow bar above 'Solar' reaches the 40 tick mark on the y-axis. The bold text '41.2%' is visible above it.",
+          "status": "supported"
+        },
+        "3": {
+          "evidence": "The blue bar above 'Hydroelectric' reaches a point on the y-axis between the 50 and 55 tick marks (approx 52).",
+          "status": "supported"
+        }
+      },
+      "B": {
+        "reading_checked": "If bar height is the operative encoding of reported production share on the labeled vertical scale, the tallest source bar is the largest contribution source; the routing criterion requires escalating that source.",
+        "evidence": "The necessary condition is that the vertical bar geometry is the authoritative encoding for the 'Reported production share (%)' variable. The y-axis is labeled 'Reported production share (%)' and provides a scale from 0 to 70. The bars are drawn against this scale. The Wind bar is the tallest, reaching a value of approximately 68 on this scale. The Solar bar reaches approximately 41. The Hydroelectric bar reaches approximately 52. Based on the visual encoding against the labeled axis, Wind has the greatest value. The printed annotations (29.8% for Wind) conflict with the bar height (approx 68), but the bar height is the standard, structural method for reading a bar chart's values. Therefore, the condition that bar height is the operative encoding is supported by the chart's design.",
+        "status": "supported"
+      }
+    }
+  }
+}
