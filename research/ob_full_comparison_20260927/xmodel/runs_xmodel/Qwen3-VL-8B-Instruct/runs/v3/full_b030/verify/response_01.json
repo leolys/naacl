@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-926ad9eacae7fccb",
+    "object": "chat.completion",
+    "created": 1790611880,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is literally 'Additional Top Stores: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five blue points are labeled Store 6, Store 7, Store 8, Store 9, and Store 10; no other store labels or points are visible.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a broader ad-budget increase requires evidence representative of the full store population, then a chart explicitly scoped to additional top stores cannot by itself establish support for that broader action.\",\n        \"evidence\": \"The chart title is treated as defining the displayed population; no supplied policy states that results from additional top stores alone are sufficient for a broader budget increase.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis inscription reads 'Advertising Spend ($ thousands)' and the vertical axis inscription reads 'Sales ($ thousands).'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"From Store 6 through Store 10, each successive labeled point is visibly farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales on the displayed scales, then points farther right and higher represent stores with higher plotted spend and higher plotted sales, respectively; this visual association alone does not establish incremental sales, profitability, or causal return from spending.\",\n        \"evidence\": \"Axis labels apply to the plotted points; no causal, profit, or ROI measure is shown.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis inscription reads 'Advertising Spend ($ thousands)' and the vertical axis inscription reads 'Sales ($ thousands).'\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"From Store 6 through Store 10, each successive labeled point is visibly farther right and higher on the page than the preceding one.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a decision may be made from an observed positive spend-sales pattern among the displayed stores without requiring full-store, causal, or profitability evidence, then that pattern can support a broader ad-budget increase.\",\n        \"evidence\": \"This is an alternative decision standard not supplied by the task or chart.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 4175,
+      "total_tokens": 4813,
+      "completion_tokens": 638,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

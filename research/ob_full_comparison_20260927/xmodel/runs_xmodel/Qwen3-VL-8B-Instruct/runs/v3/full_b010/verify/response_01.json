@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-87a7711847e3f25e",
+    "object": "chat.completion",
+    "created": 1790611438,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The top of the red bar above 'Huawei' is higher on the page than the tops of the orange Apple, dark-blue Samsung, green Xiaomi, and blue Others bars.\",\n          \"status\": \"refuted\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the bars encode market_share by vertical height on the shared y-axis, with higher bar tops meaning larger values, then the tallest bar identifies the current market-share leader; under the stated promotion policy, select that leader.\",\n        \"evidence\": \"The bar tops are visually aligned with the y-axis scale. The bar for 'Others' (blue) is visibly taller than the Huawei bar (red), reaching approximately 25% on the y-axis, while the Huawei bar reaches 23%. The Apple bar (orange) reaches 30%, which is visibly higher than the Huawei bar. The printed labels above the bars are not visually aligned with the bar tops, but the y-axis scale provides an authoritative height-based encoding. The claim that the Huawei bar is the tallest is contradicted by the visual height of the Apple and Others bars.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The x-axis label 'Apple' is centered below the leftmost orange bar, and the inscription '30%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The x-axis label 'Samsung' is centered below the dark-blue bar, and the inscription '11%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The x-axis label 'Xiaomi' is centered below the green bar, and the inscription '11%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The x-axis label 'Huawei' is centered below the red bar, and the inscription '23%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"The x-axis label 'Others' is centered below the rightmost blue bar, and the inscription '25%' appears directly above that bar.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If each percentage inscription placed immediately above a brand's bar is the dashboard's authoritative market_share value for that x-axis brand, then those inscriptions can be compared to identify the current market-share leader; under the stated promotion policy, select that leader.\",\n        \"evidence\": \"The printed percentage labels are clearly visible, directly above each bar, and correspond to the brand names on the x-axis. The values are 30% for Apple, 11% for Samsung, 11% for Xiaomi, 23% for Huawei, and 25% for Others. These values are explicitly stated and do not require decoding from bar height. The public task and policy tables confirm that the dashboard market_share values are the evidence source. The condition that the printed labels are authoritative is supported by their direct placement and clear visibility.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 4105,
+      "total_tokens": 4859,
+      "completion_tokens": 754,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

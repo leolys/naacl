@@ -1,0 +1,49 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The chart title is visibly 'Units Sold by Product (Weekend Pop-up)' in bold black text at the top-left.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The vertical axis is labeled 'Units Sold' with visible tick marks at 20,000, 30,000, 40,000, 50,000, 60,000, 70,000, 80,000, and 90,000.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The bar for Product C is visually the shortest, positioned directly above its x-axis label, and its top lies clearly above the 20,000 tick and below the 30,000 tick, appearing to reach approximately 22,000 units.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the vertical axis is a linear upward Units Sold scale and the Product C bar is bound to its label, its height can be interpolated from the 20,000 and 30,000 ticks. A value below 25,000 and less than 2,500 units from that threshold meets the stated manual-verification variance band; selecting the manual-check option assumes that this band governs when it overlaps the low-demand rule.",
+        "evidence": "The bar for Product C is visibly below the 25,000 mark and well above the 20,000 mark, appearing to be approximately 22,000 units. This value is below 25,000 and more than 2,500 units from the 25,000 threshold, so it does not meet the manual-verification variance band condition. The policy table defines the manual-band condition as '< 2,500 units from a decision threshold', which is not met here. The condition for the manual-check option is not satisfied by the visible data.",
+        "status": "refuted"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The Product C bar top lies between the visible 20,000 and 30,000 tick heights and is closer on the page to the 20,000 tick height than to the 30,000 tick height.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The visible label 'Product C' is directly below the relevant dark red bar.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "If the vertical axis is a linear upward Units Sold scale and the Product C bar is bound to its label, its height can be interpolated from the 20,000 and 30,000 ticks. Under the policy, a decoded Product C value below 25,000 activates the low-demand review queue.",
+        "evidence": "The bar for Product C is visibly below the 25,000 mark, appearing to be approximately 22,000 units. The policy table states that '< 25,000 units' activates the 'Low-demand review queue activation level'. This condition is met by the visible data.",
+        "status": "supported"
+      }
+    }
+  ]
+}

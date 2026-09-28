@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-bec8c778a004c94f",
+    "object": "chat.completion",
+    "created": 1790611938,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title is visually confirmed as 'Top Regions: Ad Spend vs Sales' at the top of the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The plot area contains five distinct blue circular markers, each labeled with 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E' respectively, visible next to their respective data points.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If approval requires evidence of a causal effect or complete regional coverage, a five-marker chart titled as covering 'Top Regions' is insufficient unless it supplies such evidence or states that it is complete. In that case, select the evidence-review option rather than approve.\",\n        \"evidence\": \"The chart is titled 'Top Regions: Ad Spend vs Sales' and displays five regions. However, the visual evidence does not state or supply evidence of causal effect, complete regional coverage, or that the five regions are representative of the entire region. The public task does not specify any requirement for causal validation or full regional coverage.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The horizontal axis is labeled 'Advertising Spend ($ thousands)' and the printed ticks increase from 25 to 75 from left to right.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is labeled 'Sales ($ thousands)' and the printed ticks increase from 25 to 180 from bottom to top.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Five blue circular markers are visibly labeled 'Region A', 'Region B', 'Region C', 'Region D', and 'Region E' next to their respective marks.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"From Region A through Region E, each successive labeled marker is positioned farther right and higher on the page than the preceding one, indicating a positive association.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis inscription identifies left-to-right position as Advertising Spend ($ thousands) and the vertical axis inscription identifies bottom-to-top position as Sales ($ thousands), with both printed tick sequences increasing in those directions, then labeled marker positions can be decoded as a cross-sectional association between regional ad spend and sales. If this five-region association is representative enough for a broader decision and causal proof is not required, a consistent positive association supports approving a broader ad spend increase.\",\n        \"evidence\": \"The axes are correctly labeled and oriented. The markers are labeled and positioned to show a clear positive association (increasing spend correlates with increasing sales). The public task and chart title do not specify a requirement for causal proof, and the chart is titled 'Top Regions', which may imply a representative sample. However, the visual evidence does not confirm whether the five regions are representative of the broader regional market.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 3983,
+      "total_tokens": 4706,
+      "completion_tokens": 723,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

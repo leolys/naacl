@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b042a7439db46055",
+    "object": "chat.completion",
+    "created": 1790611755,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title reads 'Selected High-Growth Quarters: Ad Spend vs Sales' — visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The plot area contains five blue points labeled Q2, Q3, Q4, Q5, and Q6 — visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"No visible legend, control-group marks, causal annotation, or full-quarter data table is shown — visually confirmed in the image; no such elements are present.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If a budget approval requires full-quarter coverage or evidence that advertising caused sales changes, a scatterplot limited by its title to selected high-growth quarters and lacking causal controls is insufficient; the evidence-review option is then appropriate.\",\n      \"evidence\": \"The chart is titled 'Selected High-Growth Quarters: Ad Spend vs Sales' and lacks causal controls or full-quarter data — visually confirmed. The chart's scope is explicitly limited to selected quarters, and no controls or causal indicators are visible.\",\n      \"status\": \"supported\"\n    }\n  },\n  {\n    \"id\": \"r2\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"The chart title reads 'Selected High-Growth Quarters: Ad Spend vs Sales' — visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The horizontal-axis inscription reads 'Advertising Spend ($ thousands)'; labeled ticks include 30, 40, 50, 60, and 70 — visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"The vertical-axis inscription reads 'Sales ($ thousands)'; labeled ticks include 60 through 170 — visually confirmed in the image.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 4,\n        \"evidence\": \"Blue points labeled Q2, Q3, Q4, Q5, and Q6 progress from lower-left to upper-right; Q6 is right of and above Q5, and Q5 is right of and above Q4 — visually confirmed in the image; Q2 is near (30, 65), Q3 near (40, 90), Q4 near (50, 115), Q5 near (60, 140), Q6 near (70, 170).\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, as their printed labels state, then points farther right and higher represent quarters with greater plotted spend and sales. If this selected-quarter association is considered sufficient and generalizable evidence for a broader advertising-budget decision, it supports approving an ad-budget increase; the chart alone does not establish causation or represent all quarters.\",\n      \"evidence\": \"Axes are labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)' — visually confirmed. Points Q2–Q6 show increasing spend and sales — visually confirmed. The chart does not show causation or full-quarter data — visually confirmed.\",\n      \"status\": \"supported\"\n    }\n  }\n,\n  {\n    \"id\": \"independent_visual_notes\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"Title: 'Selected High-Growth Quarters: Ad Spend vs Sales' — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"Vertical axis labeled 'Sales ($ thousands)' — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"Horizontal axis labeled 'Advertising Spend ($ thousands)' — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 4,\n        \"evidence\": \"Origin point at (25, 60) — visually confirmed by axis ticks and absence of data points below 25 on x or 60 on y.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 5,\n        \"evidence\": \"Data point labeled 'Q6' is the highest on the chart, positioned near (70, 170) — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 6,\n        \"evidence\": \"Data point labeled 'Q5' is positioned near (60, 140) — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 7,\n        \"evidence\": \"Data point labeled 'Q4' is positioned near (50, 115) — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 8,\n        \"evidence\": \"Data point labeled 'Q2' is positioned near (30, 65) — visually confirmed.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"The chart shows selected high-growth quarters with advertising spend on the x-axis and sales on the y-axis. The user must review the dashboard to make a budget approval decision from three options. The dashboard is titled 'Selected High-Growth Quarters: Ad Spend vs Sales'. The user goal is to review the dashboard and submit the budget approval decision.\",\n      \"evidence\": \"Chart title, axes, and data points visually confirm the description. The public task and user goal are explicitly stated in the task context.\",\n      \"status\": \"supported\"\n    }\n  }\n,\n  {\n    \"id\": \"uncertain\",\n    \"O\": [\n      {\n        \"index\": 1,\n        \"evidence\": \"The exact values of the data points are not explicitly labeled on the chart, only their quarter labels — visually confirmed; no numeric values are labeled on points.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 2,\n        \"evidence\": \"The chart does not show any trend lines or statistical annotations — visually confirmed; no such elements are present.\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n        \"index\": 3,\n        \"evidence\": \"The 'template_context_recommendation_area', 'template_context_review_record', and 'template_context_decision_queue' fields are not visually represented in the chart — visually confirmed; these are form fields, not chart elements.\"\n        ,\n        \"status\": \"supported\"\n      }\n    ],\n    \"B\": {\n      \"reading_checked\": \"The chart does not show any trend lines or statistical annotations (e.g., correlation coefficient, regression line). The 'template_context_recommendation_area', 'template_context_review_record', and 'template_context_decision_queue' fields are not visually represented in the chart.\",\n      \"evidence\": \"No trend lines or statistical annotations are visible — visually confirmed. The form fields are not part of the chart — visually confirmed.\",\n      \"status\": \"supported\"\n    }\n  }\n] }",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 3920,
+      "total_tokens": 5537,
+      "completion_tokens": 1617,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

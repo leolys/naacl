@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8156e24f10d9aa7d",
+    "object": "chat.completion",
+    "created": 1790611922,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"rec_01\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title visible: 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"x-axis label visible: 'Advertising Spend ($ thousands)' and range from 25 to 75.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"y-axis label visible: 'Sales ($ thousands)' and range from 60 to 170.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Five labeled points (Q2, Q3, Q4, Q5, Q6) visible on the chart.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Points are arranged in ascending order from bottom-left (Q2) to top-right (Q6), visually forming an upward slope.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the visual pattern of the five plotted points is interpreted as a positive correlation, then the data suggests that higher advertising spend is associated with higher sales for these specific quarters.\",\n        \"evidence\": \"The points Q2 (lowest) to Q6 (highest) show a clear upward trend in both axes, consistent with a positive correlation.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"rec_02\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Q2 point visually at x≈30, y≈70.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Q6 point visually at x≈70, y≈170.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Vertical gap between Q2 and Q6 is visually the largest among all consecutive point pairs (Q2-Q3, Q3-Q4, Q4-Q5, Q5-Q6).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"Assuming the axis scales are linear and the points represent the only data available, the transition from Q2 to Q6 represents the largest absolute increase in both advertising spend and sales volume among the displayed quarters.\",\n        \"evidence\": \"Q2 to Q6 shows the largest x-increase (40k) and y-increase (100k), and no other consecutive pair exceeds this in either dimension.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"rec_03\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title 'Selected High-Growth Quarters' visible.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"x-axis starts at 25, first data point at 30; y-axis starts at 60, first data point at 70.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"No data points appear in the lower-left quadrant (x<30, y<70).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the selection of data points is interpreted as a filter for 'high-growth' performance, then the chart does not provide a baseline for quarters with lower spend or sales, making it impossible to determine the overall average performance from this view alone.\",\n        \"evidence\": \"The chart explicitly excludes lower-performing quarters by starting the axes above the first data point, and no data is shown for the lower-left quadrant.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 3696,
+      "total_tokens": 4577,
+      "completion_tokens": 881,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

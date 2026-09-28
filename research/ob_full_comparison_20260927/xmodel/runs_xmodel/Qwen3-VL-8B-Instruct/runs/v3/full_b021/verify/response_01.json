@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-84e4340bc4f2ef4e",
+    "object": "chat.completion",
+    "created": 1790611684,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The visible plot contains five labeled weekly points, Week 7 through Week 11. — Supported by visual inspection of the chart, which shows five distinct blue circles labeled 'Week 7', 'Week 8', 'Week 9', 'Week 10', and 'Week 11'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The chart title and axes identify advertising spend and sales, but no visible inscription gives a causal method, profitability measure, approval threshold, or decision policy. — Supported by visual inspection: the title and axis labels confirm 'Advertising Spend' and 'Sales', but no text on the chart or in the public task states a causal relationship, profitability metric, or approval threshold. The public task only instructs to 'review the dashboard' and 'submit the campaign approval decision' without specifying required evidence.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If an observed association without full-data, causal, profitability, or policy-threshold evidence is insufficient for a budget recommendation, then the evidence-review option is the corresponding decision. — Applies if approval requires evidence beyond this five-point dashboard view; no such requirement is visibly stated in the supplied task or chart.\",\n        \"evidence\": \"The reading’s condition — 'no such requirement is visibly stated' — is supported by the public task and chart. The task does not state that the dashboard must be supplemented with additional data or that a specific threshold must be met. The chart does not contain any policy thresholds, profitability measures, or causal explanations. Therefore, the reading’s condition is met: no visible requirement for additional evidence exists.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The title reads 'Additional Promotion Weeks: Ad Spend vs Sales'. — Supported by visual inspection of the chart title.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five blue points are visibly labeled Week 7, Week 8, Week 9, Week 10, and Week 11. — Supported by visual inspection of the chart, which shows five distinct blue circles with these labels.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The horizontal axis is inscribed 'Advertising Spend ($ thousands)' and the vertical axis is inscribed 'Sales ($ thousands)'; from Week 7 through Week 11, each successive labeled point is positioned farther right and higher than the preceding one. — Supported by visual inspection: the axes are labeled as stated, and the points clearly trend upward and rightward. Week 7 is at (30, 60), Week 8 at (40, 85), Week 9 at (50, 110), Week 10 at (60, 135), and Week 11 at (70, 160).\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis labeled 'Advertising Spend ($ thousands)' and vertical axis labeled 'Sales ($ thousands)' encode each point's respective values, then points farther right and higher represent greater advertising spend and greater sales; week labels identify the associated points. — Assumes the labeled axes apply uniformly to all plotted points and the nearby week text labels identify those points.\",\n        \"evidence\": \"The reading’s conditions are met. The axes are labeled uniformly for all points. The week labels are clearly attached to their respective points. The reading’s decoding — that rightward position = higher spend and upward position = higher sales — is standard for Cartesian plots with labeled axes. The visual evidence confirms this encoding. No visual or textual evidence contradicts this assumption.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 3825,
+      "total_tokens": 4699,
+      "completion_tokens": 874,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

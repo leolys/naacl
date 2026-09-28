@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-a020b9a90fcc569e",
+    "object": "chat.completion",
+    "created": 1790611670,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title: 'High-Response Age Groups: Ad Spend vs Sales' — visible in bold, black text at top-left, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Five labeled blue points: 18–24, 25–34, 35–44, 45–54, 55–64 — visible in plot area, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Horizontal axis: 'Advertising Spend ($ thousands)' — visible at bottom, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Vertical axis: 'Sales ($ thousands)' — visible at left, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"55–64 point is rightmost and highest — visually confirmed by its position at (70, 165), above 45–54 (60, 140), 35–44 (50, 75), 25–34 (40, 95), and 18–24 (30, 75).\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the title accurately describes the inclusion scope, and approval standards require broader-audience or ROI/comparator evidence not shown in this view, then the displayed chart is insufficient and the review should be held for full-data analysis.\",\n        \"evidence\": \"The title explicitly limits the scope to 'High-Response Age Groups'. The 'Review record' field is set to 'High-response age-group request', confirming the review is scoped to this subset. The public task and form fields do not specify any requirement for broader-audience or ROI evidence beyond this chart. The chart does not show any comparator groups or full-audience data. The condition 'approval standards require broader-audience or ROI/comparator evidence not shown' is not supported by visible public/printed facts — it is an assumption about unstated policy.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Axes labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)' — visible at bottom and left, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"55–64 point is right and high; 45–54 point is right and high; 25–34 point is lower — visually confirmed by coordinates: 55–64 (70, 165), 45–54 (60, 140), 25–34 (40, 95).\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes Advertising Spend and the vertical axis encodes Sales on common increasing scales, then points farther right and higher represent greater plotted spend and sales respectively; this can support a positive descriptive association among the displayed groups, but does not by itself establish causal return or justify broader targeting.\",\n        \"evidence\": \"Axis labels are visible and match the plotted data. The scales are increasing and common (both axes increase left-to-right and bottom-to-top). The relative positions of points (55–64 > 45–54 > 25–34) show a positive association. The reading correctly states this supports a descriptive association but not causal return or broader targeting. No visible public/printed fact contradicts this decoding. The condition 'no causal or ROI inference is made' is explicitly stated and supported by the visual evidence and the reading’s own limitation.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r3\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title: 'High-Response Age Groups: Ad Spend vs Sales' — visible, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"55–64 point is highest — visually confirmed at (70, 165), above all others.\"\n        ,\n        \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Axes labeled 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)' — visible, matching printed fact.\"\n        ,\n        \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the displayed high-response groups are the only population relevant to the recommendation and higher plotted sales at higher plotted spend is accepted as sufficient decision evidence, then the chart can be treated as support for approving broader targeting.\",\n        \"evidence\": \"The title and 'Review record' field confirm the scope is limited to 'High-response age-group request'. The chart shows a positive association: higher spend correlates with higher sales for the displayed groups. The reading’s condition 'higher plotted sales at higher plotted spend is accepted as sufficient decision evidence' is not supported by any visible public/printed fact — it is an unstated assumption about policy or approval standards. The reading’s conclusion 'support for approving broader targeting' requires the assumption that this evidence is sufficient for broader targeting, which is not visible or stated. The condition 'no additional full-audience, ROI, or comparison evidence is required' is not supported by visible facts — it is an assumption.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 4320,
+      "total_tokens": 5620,
+      "completion_tokens": 1300,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

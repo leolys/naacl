@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-8b9e62482bcb0f2c",
+    "object": "chat.completion",
+    "created": 1790611821,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title 'Top Regions: Ad Spend vs Sales' is visible and matches O content.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Axes labels 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)' are visible and match O content.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Five labeled points (Region A, B, C, D, E) are visible in the plot area, matching O content.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If an expansion decision requires full regional coverage or additional financial evidence beyond sales and advertising spend, then a chart explicitly scoped to 'Top Regions' and showing only those two measures is insufficient, favoring a request for full regional data analysis.\",\n        \"evidence\": \"The public task states the user must use the dashboard to complete the form. The chart is limited to 'Top Regions' and only shows 'Ad Spend vs Sales'. No evidence in the visual or public task indicates that the decision requires data beyond these two measures or for regions beyond the five shown. The task does not specify a required threshold for sales or spend, nor does it mention profitability, risk, or other metrics. The dashboard is presented as the sole evidence source.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Chart title 'Top Regions: Ad Spend vs Sales' is visible and matches O content.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Horizontal axis is labeled 'Advertising Spend ($ thousands)' and matches O content.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Vertical axis is labeled 'Sales ($ thousands)' and matches O content.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Region E is positioned at the upper-right, higher and further right than Regions A, B, C, and D, matching O content.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Points progress from Region A (lower-left) to Region E (upper-right), matching O content.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, with higher page position representing larger sales values, then the labeled points show the displayed regions' spend-and-sales ordering. Proceeding with an expansion review follows only if high displayed sales among the shown top regions is sufficient evidence for review; no such sufficiency threshold is stated.\",\n        \"evidence\": \"The axes are labeled correctly. Higher page position on the y-axis represents higher sales, as confirmed by the axis labels and the increasing values from bottom to top. The points are ordered from Region A (lowest sales) to Region E (highest sales). The public task states the user must use the dashboard to complete the form, implying the chart is the sole evidence. However, the task does not define what 'sufficient evidence' means, nor does it state that high sales are sufficient to justify proceeding. The reading correctly notes that no threshold is stated, which is a factual condition. The reading does not claim the decision is implied, only that proceeding follows only if high sales are sufficient — which remains unestablished.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 3901,
+      "total_tokens": 4711,
+      "completion_tokens": 810,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

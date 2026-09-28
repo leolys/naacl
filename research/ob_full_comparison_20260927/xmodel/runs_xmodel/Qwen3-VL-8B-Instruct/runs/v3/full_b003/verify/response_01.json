@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-b50a415a9b54142e",
+    "object": "chat.completion",
+    "created": 1790611346,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The blue circular mark above 'Design' is visibly higher on the page than the marks above Quality, Price, Support, Delivery, and Other.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The vertical axis is visibly labeled 'Value' and has printed ticks increasing upward from 0 to 55.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the vertical positions of the plotted markers encode the current rating-share values on the y-axis labeled 'Value,' then the highest marker corresponds to the greatest value and should be selected under the promotion rule.\",\n        \"evidence\": \"The vertical axis is labeled 'Value' and has ticks from 0 to 55. The 'Design' marker is the highest on the chart, visually implying the highest value.\",\n        \"status\": \"refuted\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"A blue circular mark aligned above the x-axis label 'Other' has the printed inscription '53%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"A blue circular mark aligned above the x-axis label 'Support' has the printed inscription '45%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"A blue circular mark aligned above the x-axis label 'Design' has the printed inscription '34%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"A blue circular mark aligned above the x-axis label 'Delivery' has the printed inscription '43%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"A blue circular mark aligned above the x-axis label 'Price' has the printed inscription '38%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 6,\n          \"evidence\": \"A blue circular mark aligned above the x-axis label 'Quality' has the printed inscription '36%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 7,\n          \"evidence\": \"The title visibly reads 'Product Rating Share by Category'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscriptions attached to each category's plotted mark are the dashboard's current labeled rating-share values, then compare those inscriptions across all shown categories and select the category with the greatest value; the task policy assigns additional promotional budget to that category.\",\n        \"evidence\": \"The task explicitly names the dashboard labeled rating-share values as the evidence source. Each percent inscription is visibly attached to its adjacent category mark and is numerically authoritative. The 'Other' category is not visible in the chart, but the form includes it as an option.\",\n        \"status\": \"refuted\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 4320,
+      "total_tokens": 5034,
+      "completion_tokens": 714,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

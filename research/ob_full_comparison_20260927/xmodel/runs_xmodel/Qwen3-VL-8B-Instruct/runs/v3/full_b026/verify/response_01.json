@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-9525054c35cc0cba",
+    "object": "chat.completion",
+    "created": 1790611801,
+    "model": "Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title literally reads 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Only five labeled markers, Q2 through Q6, are visible, and no full-period comparison, profitability measure, or decision threshold is visibly printed.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If a chart is explicitly limited to selected high-growth quarters and does not display the full campaign data or a decision threshold, then the chart alone is insufficient to establish that the observed association generalizes to a broader budget increase; request full-data analysis.\",\n        \"evidence\": \"The chart title confirms it is limited to 'Selected High-Growth Quarters'. No full-period data, profitability measure, or decision threshold is visible or printed on the chart.\",\n        \"status\": \"supported\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"The chart title literally reads 'Selected High-Growth Quarters: Ad Spend vs Sales'.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"The horizontal-axis inscription reads 'Advertising Spend ($ thousands)' and shows ticks from 25 through 75.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"The vertical-axis inscription reads 'Sales ($ thousands)' and shows ticks from 50 through 170.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"The blue markers labeled Q2, Q3, Q4, Q5, and Q6 progress upward and to the right on the page.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the horizontal axis encodes advertising spend and the vertical axis encodes sales, both in $ thousands, and the labeled quarter markers are the relevant evidence for a broader budget decision, then an upward-right pattern supports approving a broader budget increase; this assumes the selected quarters are representative and the association is sufficient for the decision.\",\n        \"evidence\": \"The axes are correctly labeled as 'Advertising Spend ($ thousands)' and 'Sales ($ thousands)'. The data points for Q2 through Q6 form a clear upward-right trend. The chart is titled 'Selected High-Growth Quarters', implying these are the relevant data points for the decision.\",\n        \"status\": \"unclear\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-54c7d703",
+    "usage": {
+      "prompt_tokens": 3767,
+      "total_tokens": 4363,
+      "completion_tokens": 596,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}
