@@ -210,18 +210,23 @@ class Runner:
                 return validate(version, stage, read(folder / 'accepted.json'), context)
             if (folder / 'failure.json').exists():
                 raise ValueError('Previously failed stage retained; no quality retry')
-            response_file = folder / 'response_01.json'
-            if response_file.exists() and read(response_file).get('http_status') == 200:
+            responses = sorted(folder.glob('response_*.json'))
+            if responses and read(responses[-1]).get('http_status') == 200:
                 save_new(folder / ('recovery_%d.json' % time.time_ns()),
-                         {'at': stamp(), 'response': response_file.name, 'new_request': False})
-                return self.accept(folder, read(response_file)['body'], stage, context, version)
-            raise Stop('incomplete_unknown_stage_no_automatic_replay')
+                         {'at': stamp(), 'response': responses[-1].name, 'new_request': False})
+                return self.accept(folder, read(responses[-1])['body'], stage, context, version)
+            if (folder / 'replay_authorized.json').exists():
+                (folder / 'replay_authorized.json').unlink()  # operator-authorized one-shot replay
+            else:
+                raise Stop('incomplete_unknown_stage_no_automatic_replay')
+        else:
+            self.guard()
+            folder.mkdir(parents=True, exist_ok=False)
+            save_new(folder / 'request.json', payload)
+            save_new(folder / 'context.json', context)
+            if image is not None:
+                save_new(folder / 'image_identity.json', {'sha256': sha(image), 'bytes': Path(image).stat().st_size})
         self.guard()
-        folder.mkdir(parents=True, exist_ok=False)
-        save_new(folder / 'request.json', payload)
-        save_new(folder / 'context.json', context)
-        if image is not None:
-            save_new(folder / 'image_identity.json', {'sha256': sha(image), 'bytes': Path(image).stat().st_size})
         with self.lock:
             self.ledger['attempts'] += 1
             event = {'number': self.ledger['attempts'], 'version': version, 'stage': stage,
@@ -229,25 +234,34 @@ class Runner:
             self.ledger['events'].append(event)
             update_json(self.ledger_file, self.ledger)
         start = time.monotonic()
-        try:
-            response = self.http.post(self.endpoint, json=payload, timeout=self.http_timeout, allow_redirects=False)
-        except requests.RequestException as exc:
+        body = None
+        response = None
+        for attempt in (1, 2):  # transient_http_attempts=2, same as the archived engine
+            try:
+                response = self.http.post(self.endpoint, json=payload, timeout=self.http_timeout, allow_redirects=False)
+            except requests.RequestException as exc:
+                with self.lock:
+                    event.update(state='unknown_transport', error=type(exc).__name__, elapsed=time.monotonic() - start)
+                    self.ledger['blocked'] = 'unknown_transport_no_retry'
+                    update_json(self.ledger_file, self.ledger)
+                raise Stop(self.ledger['blocked']) from exc
+            try:
+                body = response.json()
+            except ValueError:
+                body = {'raw_body': response.text}
+            save_new(folder / ('response_%02d.json' % attempt), {'http_status': response.status_code, 'body': body})
             with self.lock:
-                event.update(state='unknown_transport', error=type(exc).__name__, elapsed=time.monotonic() - start)
-                self.ledger['blocked'] = 'unknown_transport_no_retry'
+                event.update(http_status=response.status_code, state='response_saved', attempt=attempt,
+                             elapsed=time.monotonic() - start,
+                             usage=body.get('usage') if isinstance(body, dict) else None,
+                             model=body.get('model') if isinstance(body, dict) else None)
                 update_json(self.ledger_file, self.ledger)
-            raise Stop(self.ledger['blocked']) from exc
-        try:
-            body = response.json()
-        except ValueError:
-            body = {'raw_body': response.text}
-        save_new(folder / 'response_01.json', {'http_status': response.status_code, 'body': body})
-        with self.lock:
-            event.update(http_status=response.status_code, state='response_saved', elapsed=time.monotonic() - start,
-                         usage=body.get('usage') if isinstance(body, dict) else None,
-                         model=body.get('model') if isinstance(body, dict) else None)
-            update_json(self.ledger_file, self.ledger)
-        if response.status_code != 200:
+            if response.status_code in (408, 429, 500, 502, 503, 504) and attempt < 2:
+                self.guard()
+                time.sleep(2)
+                continue
+            break
+        if response is None or response.status_code != 200:
             with self.lock:
                 self.ledger['blocked'] = 'http_%s' % response.status_code
                 update_json(self.ledger_file, self.ledger)
