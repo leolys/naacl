@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The visual note confirms the green bar (Edge) is visibly higher than the blue bar (Firefox). The observation claims the opposite (Firefox higher than Edge), which is directly contradicted by the image.",
+          "status": "refuted"
+        },
+        {
+          "index": 2,
+          "evidence": "The visual note confirms the green bar (Edge) is one of the two tallest, and the orange bar (Chrome) is significantly shorter. The observation claims Firefox (blue) is higher than Chrome (orange). While the relative height of Firefox vs Chrome is not explicitly the primary comparison in the notes, the visual note confirms Edge > Firefox and Edge > Chrome. The image shows the blue bar is indeed higher than the orange bar. However, the first part of the observation (Firefox > Edge) is false. This specific assertion (Firefox > Chrome) is visually supported.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The image shows the Y-axis labels increasing from 0 at the bottom to 100 at the top. This is a standard vertical axis orientation.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading assumes bar height encodes market_share and that the tallest bar represents the highest share. The visual evidence supports that bar height is the primary visual encoding for value on the Y-axis (0-100). However, the specific conclusion that 'the tallest browser bar' is Firefox is factually incorrect based on the image (Edge is taller). The reading's condition 'Assumes the bars... are the authoritative market_share encoding' is a valid interpretation of the chart's visual structure, but the application of that reading to identify Firefox as the tallest is an error in observation, not necessarily in the reading logic itself. The reading is supported as a valid interpretation of the chart's encoding, but the premise that Firefox is the tallest is refuted by the visual evidence.",
+        "evidence": "The chart uses a vertical axis (0-100) to represent values, supporting the idea that height encodes magnitude. However, the visual evidence shows the green bar (Edge) is taller than the blue bar (Firefox). The reading's logic is sound, but its application to identify the 'tallest' bar as Firefox is factually wrong based on the image.",
+        "status": "supported"
+      }
+    },
+    {
+      "id": "r2",
+      "O": [
+        {
+          "index": 1,
+          "evidence": "The image clearly shows the text '87%' printed above the green bar, which is aligned with the x-axis label 'Edge'.",
+          "status": "supported"
+        },
+        {
+          "index": 2,
+          "evidence": "The image clearly shows the text '23%' printed above the blue bar, which is aligned with the x-axis label 'Firefox'.",
+          "status": "supported"
+        },
+        {
+          "index": 3,
+          "evidence": "The image clearly shows the text '5%' printed above the orange bar, which is aligned with the x-axis label 'Chrome'.",
+          "status": "supported"
+        }
+      ],
+      "B": {
+        "reading_checked": "The reading assumes the percentage inscriptions are the authoritative current market_share values. The visual evidence supports that these inscriptions are present and legible. The reading's condition 'Assumes the percentage annotations... are the authoritative current market_share values' is a valid interpretation, especially given the conflict with bar heights (where 87% is on the shorter bar and 23% is on the taller bar). The reading is supported as a valid interpretation of the data labels.",
+        "evidence": "The percentage labels are clearly visible and legible in the image. The reading correctly identifies these as potential data sources. The conflict between the labels (87% vs 23%) and the bar heights (Edge shorter than Firefox) makes the assumption about which is authoritative a necessary part of the reading, which is explicitly stated in the conditions.",
+        "status": "supported"
+      }
+    }
+  ]
+}

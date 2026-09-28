@@ -1,0 +1,45 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-955184506ee51b03",
+    "object": "chat.completion",
+    "created": 1790612561,
+    "model": "Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"reviews\": [\n    {\n      \"id\": \"r1\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The blue mark above 'Design' is at the highest vertical position on the page (near the 55 tick) compared to all other marks (Quality, Price, Support, Delivery, Other).\"\n        ,\n        \"status\": \"supported\"\n      },\n      {\n          \"index\": 2,\n          \"evidence\": \"Supported. The vertical axis is labeled 'Value' and the visible ticks increase from 0 to 55 in increments of 5.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If vertical positions encode the current rating-share values on the y-axis, the highest marker corresponds to the greatest value and should be selected.\",\n        \"evidence\": \"The visual condition (marker height encoding value) is visible, but the task explicitly requires using 'labeled rating-share values' as the evidence source. The reading's condition is an alternative interpretation that assumes marker height is the relevant encoding, which is not established by the public task instructions.\",\n        \"status\": \"unclear\"\n      }\n    },\n    {\n      \"id\": \"r2\",\n      \"O\": [\n        {\n          \"index\": 1,\n          \"evidence\": \"Supported. The mark above 'Other' has the printed inscription '53%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 2,\n          \"evidence\": \"Supported. The mark above 'Support' has the printed inscription '45%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 3,\n          \"evidence\": \"Supported. The mark above 'Design' has the printed inscription '34%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 4,\n          \"evidence\": \"Supported. The mark above 'Delivery' has the printed inscription '43%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 5,\n          \"evidence\": \"Supported. The mark above 'Price' has the printed inscription '38%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 6,\n          \"evidence\": \"Supported. The mark above 'Quality' has the printed inscription '36%' immediately above it.\",\n          \"status\": \"supported\"\n        },\n        {\n          \"index\": 7,\n          \"evidence\": \"Supported. The chart title visibly reads 'Product Rating Share by Category'.\",\n          \"status\": \"supported\"\n        }\n      ],\n      \"B\": {\n        \"reading_checked\": \"If the percentage inscriptions attached to each category's plotted mark are the dashboard's current labeled rating-share values, compare those inscriptions and select the category with the greatest value.\",\n        \"evidence\": \"Supported. The task explicitly names 'dashboard labeled rating-share values' as the evidence source. The visible percentage inscriptions (53%, 45%, 34%, 43%, 38%, 36%) are the only labeled values present. The condition that these inscriptions are the relevant values is directly supported by the public task instructions.\",\n        \"status\": \"supported\"\n      }\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-00b630d6",
+    "usage": {
+      "prompt_tokens": 4250,
+      "total_tokens": 5036,
+      "completion_tokens": 786,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

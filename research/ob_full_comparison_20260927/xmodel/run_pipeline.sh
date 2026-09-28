@@ -21,7 +21,7 @@ run_model() { # dir name port thinking_flag
   local think_args=""
   [ "$thinking" = "yes" ] && think_args="--enable-thinking"
   $PY "$XM/run_xmodel.py" --model "$name" --endpoint "http://127.0.0.1:$port/v1" \
-      --versions plain,v3,v4,v5,v6,v7 --concurrency 8 $think_args \
+      --versions plain,v3,v4,v5,v6,v7 --concurrency 16 $think_args \
       --out "$XM/runs_xmodel/$name" > "$LOGDIR/run_${name}.log" 2>&1
   local rc=$?
   echo "== runner $name rc=$rc $(date -u +%FT%TZ) =="

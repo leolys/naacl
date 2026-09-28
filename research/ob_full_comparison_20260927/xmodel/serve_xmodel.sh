@@ -20,7 +20,7 @@ exec $VLLM_BIN serve "$MODEL_PATH" \
   --dtype bfloat16 \
   --tensor-parallel-size 1 \
   --max-model-len 16384 \
-  --max-num-seqs 12 \
+  --max-num-seqs 16 \
   --max-num-batched-tokens 4096 \
   --gpu-memory-utilization 0.88 \
   --limit-mm-per-prompt '{"image": 1, "video": 0}' \
