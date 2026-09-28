@@ -1,4 +1,5 @@
 #!/bin/bash
+export PATH="$HOME/.local/bin:$PATH"
 # xmodel serving script. Params mirror the archived service_config.json (BF16,
 # TP=1, 16k ctx, num_seqs 1, eager, mm image cap 1605632) on a fresh endpoint.
 set -euo pipefail

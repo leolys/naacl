@@ -22,6 +22,10 @@ python3 eval_xmodel.py --out runs_xmodel/* --output eval || { echo "EVAL FAILED"
 # 2) git push small artifacts (code, summaries, ledgers, eval; no request bodies)
 cd "$XM/../.."   # repo root
 git add -A research/ob_full_comparison_20260927/xmodel
+# double-guard: never stage heavy request artifacts even if .gitignore regresses
+git reset -q -- 'research/ob_full_comparison_20260927/xmodel/runs_xmodel/**/request.json' \
+                'research/ob_full_comparison_20260927/xmodel/runs_xmodel/**/context.json' \
+                'research/ob_full_comparison_20260927/xmodel/runs_xmodel/**/image_identity.json' 2>/dev/null || true
 git commit -m "xmodel run artifacts: cross-model static panel results and eval ($(date -u +%FT%TZ))" || echo "nothing to commit"
 git push origin main || { echo "PUSH FAILED"; exit 1; }
 echo "== git pushed =="

@@ -110,9 +110,10 @@ class Runner:
     def __init__(self, args):
         self.model = args.model
         self.endpoint = args.endpoint.rstrip('/') + '/chat/completions'
-        self.base = self.endpoint.rsplit('/chat/completions', 1)[0]
+        self.base = self.endpoint.split('/v1/chat/completions')[0]
         self.versions = args.versions
         self.enable_thinking = args.enable_thinking
+        self.limit = args.limit
         self.root = Path(args.out)
         self.http_timeout = args.http_timeout
         self.http = requests.Session()
@@ -283,6 +284,8 @@ class Runner:
         summary = read(summary_file) if summary_file.exists() else {
             'model': self.model, 'status': 'prepared', 'started': stamp(), 'units': {},
             'expected_units': 140 * len(self.versions)}
+        if getattr(self, 'limit', None):
+            summary['limit'] = self.limit
         if summary['status'] == 'finished':
             print('already finished; no requests', flush=True)
             return
@@ -301,8 +304,12 @@ class Runner:
             control_folder_fallback = self.root / 'control_noimage'
             self.call(control_folder_fallback, 'Return exactly {"ready":true}. This is a non-chart service check.',
                       {'purpose': 'text-only structured-output service check'}, None, 'control', 'plain')
+        unit_keys = list(self.manifest)
+        if getattr(self, 'limit', None):
+            unit_keys = unit_keys[:self.limit]
+            summary['status'] = 'smoke_finished'
         for version in self.versions:
-            for key in self.manifest:
+            for key in unit_keys:
                 unit = self.manifest[key]
                 data, dest = PANEL / 'data' / key, self.root / 'runs' / version / key
                 result_file = dest / 'result.json'
@@ -358,6 +365,7 @@ if __name__ == '__main__':
     parser.add_argument('--enable-thinking', action='store_true', help='send chat_template_kwargs enable_thinking=false')
     parser.add_argument('--out', required=True)
     parser.add_argument('--http-timeout', type=int, default=300)
+    parser.add_argument('--limit', type=int, default=None, help='process only the first N units (smoke)')
     args = parser.parse_args()
     args.versions = [v for v in args.versions.split(',') if v]
     for v in args.versions:
