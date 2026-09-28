@@ -23,7 +23,7 @@
 | 任务 | 140 固定单图任务（`manifest.json` units） | 输入投影 `data/<unit>/input.json` 与图片逐字节校验（sha256） |
 | 解码 | temperature 0.7, top_p 0.8, top_k 20, seed 12345, enable_thinking=false（仅 M1） | 与原 `config.json` 一致；同 seed 不保证确定性，如实声明 |
 | 输出上限 | read 1500 / verify 3600 / decide 700 / control 64 token | 同原 |
-| 服务 | vLLM OpenAI server，BF16，TP=1，`--max-model-len 16384`，`--max-num-seqs 8`（提速改动；原协议为每副本 1，串行性由调度保持），`--max-num-batched-tokens 4096`，`--gpu-memory-utilization 0.88`，`--limit-mm-per-prompt {"image":1,"video":0}`，`--mm-processor-kwargs {"max_pixels":1605632}`，`--enforce-eager` | 与原 `service_config.json` 参数一致处：dtype/TP/ctx/mm 上限/eager/显存利用率；差异处如实声明 |
+| 服务 | vLLM OpenAI server，BF16，TP=1，`--max-model-len 16384`，`--max-num-seqs 16`（提速改动；原协议为每副本 1），`--max-num-batched-tokens 4096`，`--gpu-memory-utilization 0.88`，`--limit-mm-per-prompt {"image":1,"video":0}`，`--mm-processor-kwargs {"max_pixels":1605632}`，`--enforce-eager` | 与原 `service_config.json` 参数一致处：dtype/TP/ctx/mm 上限/eager/显存利用率；差异处如实声明 |
 | 每模型预算 | plain 140 + 5×420 = **2240** 次主请求 + 1 次非图表控制 | 与原 2236+控制 同量级 |
 
 执行顺序：先 M2（下载快，先验证全链路），后 M1（复刻）。若 M1 架构（`Qwen3_5ForConditionalGeneration`）不被当前 vLLM 支持，降级方案：改用 `Qwen/Qwen3-VL-30B-A3B-Instruct` 并在报告中如实记录降级。
@@ -34,6 +34,7 @@
 2. 服务栈：按 Lab 环境安装的 vLLM/transformers 版本记录（`runtime_identity.json` 留档）；结构化输出参数做一次兼容性探测并记录所用参数形态。
 3. 不沿用旧 `RUNTIME_SEAL.json`、旧端口、旧 GPU UUID 与旧授权；本轮自建 `runtime_identity_xmodel.json` 与独立 seal。
 4. 本轮结果目录与旧 capture 完全分离；绝不回写旧 manifest/评分。
+5. 并发与超时：runner 并发 16（原引擎串行）、HTTP 读超时 900 s（原 300 s；A100 上尾部 verify 单请求实测可超 300 s，属传输层参数，非解码参数）。两者已在本文件与 `runtime_identity_xmodel.json` 中如实声明。
 
 ## 3. 指标定义（冻结；与 `evaluate.py` 逐字一致以保证可比性）
 
