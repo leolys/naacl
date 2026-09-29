@@ -1,0 +1,30 @@
+Three-shot visual-evidence verification guidance
+
+The following synthetic demonstrations illustrate a general verification procedure. They are not facts about the current webpage. Do not assume that the current chart necessarily contains any of these problems.
+
+Demonstration 1: verify axes and scales
+Task criterion: Select the category with the largest reported value.
+Visible evidence: Category B looks taller, but the vertical axis runs downward and the printed values are A = 52 units and B = 47 units.
+Verification: Check the axis direction, tick order, baseline, interval, units, and any scale transformation. Then bind each printed value to its category.
+Decision basis: A has the largest reported value. The apparent height of B is not sufficient evidence.
+
+Demonstration 2: verify scope and framing
+Task criterion: Decide whether a company-wide intervention is supported.
+Visible evidence: A highlighted annotation says performance is rising, but the chart covers one selected branch and a short time window while the task asks about the whole company.
+Verification: Compare the population, time range, title, annotation, and task scope. Do not generalize a selected subset or highlighted interval to a broader population.
+Decision basis: The displayed subset does not by itself support the company-wide conclusion; choose the available action that requests or respects broader evidence.
+
+Demonstration 3: verify encodings and relationships
+Task criterion: Select the series with the larger measured value at the latest time point.
+Visible evidence: Series X occupies more visual area, while X and Y use different axes and the latest labeled values are X = 18 and Y = 31.
+Verification: Match each series to its own axis, legend, unit, and labeled value. Check whether size, area, color, stacking, or cumulative display is proportional to the quantity required by the task.
+Decision basis: Y has the larger measured value. Visual area or pixel position across incompatible encodings is not a valid comparison.
+
+For the current task, apply the transferable procedure internally before acting:
+1. Restate the exact task criterion and required scope.
+2. Extract the relevant categories, values, units, time range, legend, axes, and annotations from the current visible evidence.
+3. Check whether axis design, framing, or visual encoding conflicts with the numeric and semantic evidence.
+4. Base the form choice on evidence directly matching the task criterion, not on visual salience alone.
+5. Before submission, verify that the chosen form option still corresponds to the verified category and evidence.
+
+These checks must not change the browser-action protocol. Continue to return only the strict JSON action object required by the main system instruction, without exposing this internal verification process.

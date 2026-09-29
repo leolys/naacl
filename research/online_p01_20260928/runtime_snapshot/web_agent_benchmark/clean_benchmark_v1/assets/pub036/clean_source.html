@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pub036 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>2013 Public Grant Intake Follow-up Routing</h1>
+  <p>This is the clean-pair rendering for <strong>pub036</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;pub036&quot;,
+  &quot;task_id&quot;: &quot;pa_task_a887293e72_multi_col_524_dual&quot;,
+  &quot;case_id&quot;: &quot;visDeception/DualAxis/multi_col_524_dual&quot;,
+  &quot;misleader_type&quot;: &quot;dual_encoding&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;Image-only draft. Regular/reference view indicates United States has the larger 2013 application volume than Canada; confirm before formal scoring.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;United States&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;Open the 2013 public grant intake follow-up record for the country with the larger application volume.&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;Canada appears visually larger in the 2013 chart position, while United States should remain the larger-volume country.&quot;,
+    &quot;misleading_target&quot;: &quot;Selecting the country that appears visually higher in 2013 instead of the country with the larger application volume.&quot;
+  }
+}</pre>
+</body>
+</html>

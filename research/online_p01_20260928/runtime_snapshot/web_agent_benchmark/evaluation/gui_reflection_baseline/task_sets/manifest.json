@@ -1,0 +1,194 @@
+{
+  "counts": {
+    "chart_only114": 114,
+    "full140": 140,
+    "readiness95": 95,
+    "smoke17": 17,
+    "strict_review94": 94
+  },
+  "dataset_root": "web_agent_benchmark/benchmark_v2_open",
+  "metadata_conflicts": [
+    {
+      "description": "canonical row is formal_scored_task while its source review annotation still contains gt_uncertain",
+      "review_issues": [
+        "gt_uncertain"
+      ],
+      "scenario": "environment_climate_water_energy",
+      "slug": "env032",
+      "task_readiness": [
+        "formal_scored_task"
+      ]
+    }
+  ],
+  "pair_comparison_field_groups": {
+    "action_space": [
+      "primary_action",
+      "action_space",
+      "companion_actions",
+      "completion_action"
+    ],
+    "ground_truth_and_scoring": [
+      "ground_truth",
+      "intermediate_decision",
+      "expected_action_id",
+      "misleading_action_ids",
+      "fallback_scoring"
+    ],
+    "task_and_workflow": [
+      "workflow_instruction",
+      "page_title",
+      "chart_reference",
+      "shell_page_design",
+      "recommended_environment_template",
+      "image_only_review_context"
+    ]
+  },
+  "paired_non_chart_field_difference_counts": {
+    "action_space": 26,
+    "chart_reference": 4,
+    "expected_action_id": 22,
+    "ground_truth": 26,
+    "intermediate_decision": 22,
+    "primary_action": 26,
+    "workflow_instruction": 22
+  },
+  "readiness_exclusion_counts_within_chart_only": {
+    "image_only_draft": 19
+  },
+  "review_annotation_sources": {
+    "environment_climate_water_energy": "web_agent_benchmark/environment_energy_tasks/review_annotations.json",
+    "health": "web_agent_benchmark/health_tasks/review_annotations.json",
+    "public_statistics": "web_agent_benchmark/public_affairs_tasks/review_annotations.json"
+  },
+  "review_issue_counts_within_chart_only": {
+    "gt_uncertain": 20
+  },
+  "review_issue_exclusions": [
+    "gt_uncertain"
+  ],
+  "selection_rules": {
+    "chart_only114": "no differences in paired task/workflow/action-space/ground-truth fields",
+    "full140": "all paired official140/clean140 records",
+    "readiness95": "chart_only114 excluding task_readiness=image_only_draft in either arm",
+    "smoke17": "lexicographically minimum slug per (scenario, type) stratum in readiness95",
+    "strict_review94": "readiness95 additionally excluding gt_uncertain in source review annotations; this removes env032"
+  },
+  "smoke_strata": [
+    {
+      "eligible_count": 3,
+      "scenario": "business_operations",
+      "selected_slug": "b001",
+      "type": "MS_inappropriate_scale_functions"
+    },
+    {
+      "eligible_count": 5,
+      "scenario": "business_operations",
+      "selected_slug": "b012",
+      "type": "MS_inappropriate_scale_range"
+    },
+    {
+      "eligible_count": 7,
+      "scenario": "business_operations",
+      "selected_slug": "b002",
+      "type": "data_visual_disproportion"
+    },
+    {
+      "eligible_count": 13,
+      "scenario": "business_operations",
+      "selected_slug": "b035",
+      "type": "misleading_annotations"
+    },
+    {
+      "eligible_count": 1,
+      "scenario": "business_operations",
+      "selected_slug": "b011",
+      "type": "misuse_of_cumulative_relationship"
+    },
+    {
+      "eligible_count": 14,
+      "scenario": "environment_climate_water_energy",
+      "selected_slug": "env001",
+      "type": "MS_inappropriate_scale_functions"
+    },
+    {
+      "eligible_count": 5,
+      "scenario": "environment_climate_water_energy",
+      "selected_slug": "env007",
+      "type": "MS_inappropriate_scale_range"
+    },
+    {
+      "eligible_count": 5,
+      "scenario": "environment_climate_water_energy",
+      "selected_slug": "env008",
+      "type": "data_visual_disproportion"
+    },
+    {
+      "eligible_count": 1,
+      "scenario": "environment_climate_water_energy",
+      "selected_slug": "env032",
+      "type": "dual_encoding"
+    },
+    {
+      "eligible_count": 7,
+      "scenario": "environment_climate_water_energy",
+      "selected_slug": "env025",
+      "type": "misleading_annotations"
+    },
+    {
+      "eligible_count": 4,
+      "scenario": "health",
+      "selected_slug": "health016",
+      "type": "misleading_annotations"
+    },
+    {
+      "eligible_count": 2,
+      "scenario": "public_statistics",
+      "selected_slug": "pub008",
+      "type": "MS_inappropriate_scale_range"
+    },
+    {
+      "eligible_count": 13,
+      "scenario": "public_statistics",
+      "selected_slug": "pub001",
+      "type": "MS_unconventional_scale_directions"
+    },
+    {
+      "eligible_count": 1,
+      "scenario": "public_statistics",
+      "selected_slug": "pub005",
+      "type": "categorical_encoding_for_continuous_data"
+    },
+    {
+      "eligible_count": 3,
+      "scenario": "public_statistics",
+      "selected_slug": "pub020",
+      "type": "data_visual_disproportion"
+    },
+    {
+      "eligible_count": 10,
+      "scenario": "public_statistics",
+      "selected_slug": "pub010",
+      "type": "misleading_annotations"
+    },
+    {
+      "eligible_count": 1,
+      "scenario": "public_statistics",
+      "selected_slug": "pub006",
+      "type": "small_size"
+    }
+  ],
+  "strict_review_additional_exclusion_counts": {
+    "gt_uncertain": 1
+  },
+  "strict_review_missing_readiness_smoke_strata": [
+    {
+      "readiness95_smoke_slug": "env032",
+      "scenario": "environment_climate_water_energy",
+      "type": "dual_encoding"
+    }
+  ],
+  "strict_review_strata_count": 16,
+  "task_readiness_exclusions": [
+    "image_only_draft"
+  ]
+}

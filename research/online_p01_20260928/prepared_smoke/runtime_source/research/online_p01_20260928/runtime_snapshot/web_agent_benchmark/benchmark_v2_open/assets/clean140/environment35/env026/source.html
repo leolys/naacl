@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly River Discharge Monitoring</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    #chart {
+      width: 1000px;
+      height: 750px;
+      margin: 50px auto;
+    }
+    .bar { fill: #4f7faf; }
+    .avg-line { stroke: black; stroke-dasharray: 7,7; stroke-width: 2px; }
+    .annotation { font-size: 18px; font-weight: bold; fill: black; }
+    .axis path, .axis line { stroke: #000; }
+    .axis-label { font-size: 18px; font-weight: bold; text-anchor: middle; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; font-size: 32px; font-weight: bold;">Monthly River Discharge Monitoring</h1>
+  <div id="chart"></div>
+  <script>
+    const margin = {top: 40, right: 80, bottom: 70, left: 80};
+    const width = 1000 - margin.left - margin.right;
+    const height = 750 - margin.top - margin.bottom;
+    const data = [{"month": "January", "value": 442.0}, {"month": "February", "value": 380.0}, {"month": "March", "value": 255.0}];
+    const trueAverage = 359.0;
+
+    const svg = d3.select("#chart").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom);
+
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.month))
+      .range([0, width])
+      .padding(0.42);
+    const y = d3.scaleLinear()
+      .domain([0, 521.56])
+      .range([height, 0]);
+
+    g.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
+    g.append("g").call(d3.axisLeft(y).ticks(6).tickFormat(d3.format(",.0f")));
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("x", width / 2 + margin.left)
+      .attr("y", height + margin.top + 55)
+      .text("Month");
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2 - margin.top)
+      .attr("y", margin.left - 55)
+      .text("Discharge Level Index");
+
+    g.selectAll(".bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", d => x(d.month))
+      .attr("y", d => y(d.value))
+      .attr("height", d => height - y(d.value))
+      .attr("width", x.bandwidth());
+
+    g.append("line")
+      .attr("class", "avg-line")
+      .attr("x1", 0)
+      .attr("y1", y(trueAverage))
+      .attr("x2", width)
+      .attr("y2", y(trueAverage));
+
+    g.append("text")
+      .attr("class", "annotation")
+      .attr("x", width - 10)
+      .attr("y", y(trueAverage) - 10)
+      .attr("text-anchor", "end")
+      .text("Average");
+  </script>
+</body>
+</html>

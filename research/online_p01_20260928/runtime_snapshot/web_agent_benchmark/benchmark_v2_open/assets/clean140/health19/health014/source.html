@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>health014 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>2017 Transplant Volume Comparison Routing</h1>
+  <p>This is the clean-pair rendering for <strong>health014</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;health014&quot;,
+  &quot;task_id&quot;: &quot;health_task_f2164478dc_multi_col_20263_dual&quot;,
+  &quot;case_id&quot;: &quot;visDeception/DualAxis/multi_col_20263_dual&quot;,
+  &quot;misleader_type&quot;: &quot;dual_axis_distortion&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;This task focuses on the 2017 single-year comparison. The dual-axis design makes the kidney and liver endpoints for 2017 look nearly overlapped, which can create a matched-volume impression. Even so, the chart data still support kidney being higher than liver in 2017, so the kidney program should receive the higher-volume follow-up route.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;Kidney transplants are higher than liver transplants in 2017&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;route_2017_higher_volume_kidney_program_to_follow_up&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;Separate left and right axes compress the apparent difference in 2017, and the two endpoints look nearly overlapped. That can make the kidney and liver programs appear matched even though kidney is actually higher.&quot;,
+    &quot;misleading_target&quot;: &quot;Treat the 2017 kidney and liver programs as matched because their endpoints look nearly overlapped&quot;
+  }
+}</pre>
+</body>
+</html>
