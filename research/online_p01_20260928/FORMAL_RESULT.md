@@ -35,3 +35,15 @@ owner 在 ScienceGuru 会话中批准（"执行选项1和选项2"）：
 ## 稳定性验证
 AUTHORIZATION_API_STABILITY.json 授权 batch_api_terra_003 重跑 C 批一次
 （同配置 temperature 0），用于单元级稳定性对照。
+
+## 稳定性验证结果（batch_api_terra_003，48/48 单元）
+- ordinary：20/24 正确（83.3%），0 错误提交，3 弃答，0 工程失败，1 actor_call_limit
+- method 臂：7/24 正确（29.2%），0 错误提交，9 弃答，7 工程失败，1 actor_call_limit
+- 提交精度 27/27 = 100%（两批均零错误提交）
+- 与 batch_api_terra_002 单元级一致率 37/48（77.1%）；11 处差异全部为
+  弃答↔正确翻转，任何运行中都从未出现错误提交 → "弃答而非错答"的行为
+  稳定，正确率聚合区间 ordinary 75.0–83.3%、method 29.2–33.3%
+- 配对：ordinary 胜 13 / method 胜 0 / 平 11（与 C1 方向一致）
+- 工程失败类别与 C1 同族（观察-引用对齐、公共路径 JSON pointer），
+  无速率限制/http 类失败
+- 用量：331 请求尝试 / 254 浏览器操作 / 1,809,639 in + 114,981 out tokens
