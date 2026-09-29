@@ -1,0 +1,36 @@
+{
+ "protocol": "online_explanation_completion_v2_batch_live",
+ "endpoint": "https://api.chatanywhere.tech/v1/chat/completions",
+ "model": "gpt-5.6-terra",
+ "task_ids": [
+  "b001",
+  "b002",
+  "b003",
+  "b004",
+  "b005",
+  "b006",
+  "env001",
+  "env002",
+  "env003",
+  "health001",
+  "health002",
+  "pub001"
+ ],
+ "arms": [
+  "official140",
+  "clean140"
+ ],
+ "systems": [
+  "ordinary",
+  "online_completion"
+ ],
+ "max_request_attempts": 1600,
+ "max_browser_operations": 2400,
+ "max_estimated_usd": 10.0,
+ "max_actor_calls": 8,
+ "max_reverification": 1,
+ "interface_version": "typed_scalars_v2",
+ "authorized": true,
+ "user_approval_reference": "Owner instruction in ScienceGuru session 2026-09-29: 'execute option 1 and option 2' — option 2 = rerun batch C once for stability verification. Same scope as AUTHORIZATION_API.json: 12 tasks x 2 arms x 2 systems, actor gpt-5.6-terra via chatanywhere.tech (api.chatanywhere.tech), strict protocol, no guidance. Output dir batch_api_terra_003; max_estimated_usd 10.0 cap as spend protection.",
+ "scope": "12 tasks x 2 arms x 2 systems; actor gpt-5.6-terra via chatanywhere.tech (api.chatanywhere.tech); strict protocol; stability rerun of batch_api_terra_002 (identical config, temperature 0)"
+}
