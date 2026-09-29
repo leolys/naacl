@@ -1,0 +1,61 @@
+{
+  "new_rules": [],
+  "new_chains": [],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/options/1/label",
+          "content": "Open product feedback follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/options/1/label",
+          "content": "Prioritize highest current rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/options/1/label",
+          "content": "Product operations feedback follow-up queue"
+        }
+      ],
+      "condition_note": "If the Design selection supported by this chain is used to complete the form, the three required companion fields must also be set to Open product feedback follow-up, Prioritize highest current rating share, and Product operations feedback follow-up queue.",
+      "reason": "This adds the public workflow-completion requirements that follow the category decision and are not represented in the original category-selection chain."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c1"
+      ],
+      "reason": "The refinement extends the existing conditional support for Select Design with the three required companion-field selections needed for form completion; it does not alter the chart-based category conclusion."
+    }
+  ]
+}

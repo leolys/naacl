@@ -1,0 +1,197 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "all six category marks across the plot",
+            "content": "Visible x-axis category inscriptions are Quality, Price, Design, Support, Delivery, and Other; the adjacent inscriptions above their respective blue dots are 24%, 10%, 52%, 45%, 39%, and 32%."
+          }
+        ],
+        "reason": "The chart visibly shows the cited category labels, blue-dot attachments, and percentage inscriptions. The observations do not treat the percentages as validated metric values."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Design"
+          }
+        ],
+        "reason": "The public task expressly identifies dashboard labeled rating-share values as the evidence source and requires the highest current labeled rating share; Select Design is an available option. This supports r1's conditional label-based decision bridge."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "percentage inscriptions above the six category dots",
+            "content": "The visible percentage inscriptions are 24% for Quality, 10% for Price, 52% for Design, 45% for Support, 39% for Delivery, and 32% for Other."
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          }
+        ],
+        "reason": "Among the visible printed percentage inscriptions, 52% beside Design exceeds each of the others. Under the task's explicitly label-based rule, this supports the conditional Select Design claim, notwithstanding the separately visible y-position mismatch."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "chart title and left vertical axis",
+            "content": "The title is visibly inscribed \"Product Rating Share by Category\" and the vertical axis is visibly inscribed \"Value\" with labeled ticks from 0 to 65."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Quality and Design category positions",
+            "content": "The blue dot above Quality is near the 60 tick and is higher on the page than the blue dot above Design, which is near the 42 level."
+          },
+          {
+            "ref": "chart_1",
+            "location": "inscriptions above Quality and Design dots",
+            "content": "The visible inscriptions above the Quality and Design dots are \"24%\" and \"52%\", respectively."
+          }
+        ],
+        "reason": "The cited title, axis text and ticks, dot geometry, and printed percentage inscriptions are directly visible. The geometric ordering is a screen-space observation, not a decoded metric ranking."
+      },
+      "B": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "The chart labels the vertical axis \"Value,\" but neither the visible chart nor the public task establishes that dot height encodes the same current labeled rating-share metric as the printed percentages. The public task instead directs use of labeled rating-share values."
+      },
+      "implication": {
+        "status": "refuted",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          }
+        ],
+        "reason": "The visible dot-height and printed-label orderings differ, but the claimed unresolved authority of geometry versus labels is not warranted for this task: the public instructions specifically designate labeled rating-share values and require the highest current labeled rating share. This does not establish what the unlabeled y-axis metric represents or infer an alternative action."
+      }
+    },
+    {
+      "target_id": "refine_1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/options/1/label",
+            "content": "Open product feedback follow-up"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/options/1/label",
+            "content": "Prioritize highest current rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/options/1/label",
+            "content": "Product operations feedback follow-up queue"
+          }
+        ],
+        "reason": "The added public-task citations accurately identify the three companion fields as required and identify their available non-placeholder option labels. There are no added chart observations to assess."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/options/1/label",
+            "content": "Open product feedback follow-up"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/options/1/label",
+            "content": "Prioritize highest current rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/options/1/label",
+            "content": "Product operations feedback follow-up queue"
+          }
+        ],
+        "reason": "The condition note correctly states the visible required companion-field values for a completed form. It is an additional completion condition and does not alter r1's label-to-category decision rule."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/required",
+            "content": true
+          }
+        ],
+        "reason": "Conditioned on using the target chain's category selection to complete the form, the refinement appropriately adds required workflow-field constraints. It does not itself strengthen or independently establish the Design category conclusion."
+      }
+    }
+  ],
+  "summary": "The label-based chain is supported because the task explicitly directs use of labeled rating-share values and the visible Design label is 52%, larger than the other printed category percentages. The chart also visibly has a conflicting dot-height ordering, but the available evidence does not establish that the y-axis geometry encodes the task metric; the task's label-based instruction resolves the task-specific authority without validating or explaining the y-axis. The refinement accurately adds required companion-field conditions while remaining separate from the category-ranking inference."
+}

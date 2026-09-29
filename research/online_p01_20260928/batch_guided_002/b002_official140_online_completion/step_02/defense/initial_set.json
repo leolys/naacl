@@ -1,0 +1,137 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a bar chart's x-axis labels bind each bar to a browser product and the y-axis scale maps bar height to market_share percentage, then the bar with the greatest height represents the browser with the highest market_share.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the chart's y-axis is a linear percentage scale from 0 to 100 and that bar height is the sole visual encoding of the market_share value."
+    },
+    {
+      "id": "r2",
+      "text": "If a bar chart displays explicit percentage inscriptions above each bar, those printed values can be used to determine the highest market_share, provided the printed values are consistent with the relative bar heights.",
+      "component": "numeric decoding",
+      "conditions": "Assumes the printed percentage labels are accurate representations of the underlying data and that no hidden data overrides the visible inscriptions."
+    },
+    {
+      "id": "r3",
+      "text": "If the public task policy requires selecting the browser with the highest current market_share for the priority compatibility-testing queue, then the browser identified as having the highest market_share in the chart must be assigned to that queue.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the policy table's rule 'Select the browser with the highest current market_share' is the active decision metric and that the chart is the designated evidence source."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The labels 'Chrome', 'Safari', 'Edge', 'Firefox', and 'Others' are printed below their respective bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The vertical axis is marked with ticks from 0 to 100 in increments of 10."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar heights",
+          "content": "The green bar above 'Edge' reaches a height near the 80 tick, and the blue bar above 'Firefox' reaches a height near the 85 tick, making the Firefox bar visibly taller than the Edge bar."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "market_share"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "Based on bar height geometry, Firefox appears to have the highest market_share, which would challenge the proposed selection of Edge. However, this reading depends on the assumption that bar height is the primary data encoding and that the printed labels are not the authoritative source."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "above Chrome bar",
+          "content": "The text '5%' is printed above the orange bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Safari bar",
+          "content": "The text '1%' is printed above the dark blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Edge bar",
+          "content": "The text '87%' is printed above the green bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Firefox bar",
+          "content": "The text '23%' is printed above the blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Others bar",
+          "content": "The text '3%' is printed above the yellow bar."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The printed inscription '87%' above the Edge bar is the highest value among all visible percentage labels (87 > 23 > 5 > 3 > 1). If the printed labels are taken as the authoritative market_share values, Edge has the highest share, supporting the proposed action."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "above Edge bar",
+          "content": "The text '87%' is printed above the green bar labeled 'Edge'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Firefox bar",
+          "content": "The text '23%' is printed above the blue bar labeled 'Firefox'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Assign Edge to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The task requires assigning the browser with the highest market_share. The chart shows Edge with a printed value of 87%, which is higher than Firefox's 23%. Following the policy to select the highest market_share, Edge is the correct browser to assign to the priority queue."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  }
+}

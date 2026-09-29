@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl-8de00e64892eed50",
+  "object": "chat.completion",
+  "created": 1790663891,
+  "model": "Qwen3.8-27B",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"rules\":[{\"id\":\"r1\",\"text\":\"If a pie chart's printed slice labels are treated as the current Europe smartphone market-share values, the brand whose printed percentage is numerically greatest is the current market-share leader.\",\"component\":\"encoding/task relation\",\"conditions\":\"The chart is the Europe smartphone market-share dashboard; printed percentages are accepted as the current market_share values; the task's decision metric is market_share.\"},{\"id\":\"r2\",\"text\":\"If the promotion budget rule requires allocating to the current market-share leader, the public option whose brand name matches that leader is the supported action.\",\"component\":\"task-to-action relation\",\"conditions\":\"The selected option label names the brand identified as the leader; the budget rule is 'Allocate to current market-share leader'.\"},{\"id\":\"r3\",\"text\":\"If the chart's printed percentages are not accepted as authoritative current market-share values, the leader cannot be determined from the chart alone, and no option is supported by the chart.\",\"component\":\"support gap\",\"conditions\":\"The printed labels are treated as unvalidated or potentially inconsistent with the actual current market_share data.\"}],\"chains\":[{\"chain_id\":\"base_c1\",\"rule_id\":\"r1\",\"observations\":[{\"ref\":\"chart_1\",\"location\":\"pie slice, right side\",\"content\":\"Printed label 'Apple (45%)' inside the orange slice.\"},{\"ref\":\"chart_1\",\"location\":\"pie slice, lower left\",\"content\":\"Printed label 'Xiaomi (30%)' inside the orange-red slice.\"},{\"ref\":\"chart_1\",\"location\":\"pie slice, upper left\",\"content\":\"Printed label 'Samsung (15%)' inside the pale yellow slice.\"},{\"ref\":\"chart_1\",\"location\":\"pie slice, top\",\"content\":\"Printed label 'Others (10%)' inside the red slice.\"}],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/policy_tables/0/rows/1/1\",\"content\":\"market_share\"},{\"ref\":\"public_task\",\"path\":\"/policy_tables/0/rows/2/1\",\"content\":\"Europe smartphone brands\"}],\"claim_kind\":\"supports_action\",\"option_label\":\"Select Apple for the premium EU retail promotion budget\",\"claim\":\"If the printed percentages are the current market-share values, Apple's 45% is the highest, making Apple the current market-share leader in Europe.\"},{\"chain_id\":\"base_c2\",\"rule_id\":\"r2\",\"observations\":[{\"ref\":\"chart_1\",\"location\":\"pie slice, right side\",\"content\":\"Printed label 'Apple (45%)' inside the orange slice.\"}],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/option_labels/0\",\"content\":\"Select Apple for the premium EU retail promotion budget\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/options/1/label\",\"content\":\"Allocate to current market-share leader\"}],\"claim_kind\":\"supports_action\",\"option_label\":\"Select Apple for the premium EU retail promotion budget\",\"claim\":\"If Apple is the current market-share leader, the public option naming Apple is the supported action under the budget rule.\"},{\"chain_id\":\"base_c3\",\"rule_id\":\"r3\",\"observations\":[{\"ref\":\"chart_1\",\"location\":\"pie slice, right side\",\"content\":\"Printed label 'Apple (45%)' inside the orange slice.\"}],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/chart_reference\",\"content\":\"Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader.\"}],\"claim_kind\":\"underdetermined\",\"option_label\":null,\"claim\":\"If the printed percentages are not accepted as authoritative current market-share values, the chart alone does not establish which brand is the leader, and no option is supported.\"}]}",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+  "usage": {
+    "prompt_tokens": 4254,
+    "total_tokens": 5021,
+    "completion_tokens": 767,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

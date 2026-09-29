@@ -1,0 +1,668 @@
+{
+  "case": {
+    "task_id": "b003",
+    "arm": "clean140",
+    "domain": "business47",
+    "alias": "task_143"
+  },
+  "system": "online_completion",
+  "status": "submitted",
+  "actor_calls": 8,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Select Other"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Quality",
+                  "content": "The point above \"Quality\" has the printed inscription \"36%\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Price",
+                  "content": "The point above \"Price\" has the printed inscription \"38%\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Design",
+                  "content": "The point above \"Design\" has the printed inscription \"34%\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Support",
+                  "content": "The point above \"Support\" has the printed inscription \"45%\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Delivery",
+                  "content": "The point above \"Delivery\" has the printed inscription \"43%\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Other",
+                  "content": "The point above \"Other\" has the printed inscription \"53%\"."
+                }
+              ],
+              "reason": "The six category labels, adjacent blue points, and printed percentage inscriptions are visibly present and legible."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Other"
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "chart title at upper left",
+                  "content": "The visible title reads \"Product Rating Share by Category\"."
+                }
+              ],
+              "reason": "The public rule directs selection of the highest current labeled rating share, and the chart visibly presents category-associated percentage labels under a rating-share title. The rule remains conditional on those labels being the intended metric."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue point above x-axis label Other",
+                  "content": "The point above \"Other\" has the printed inscription \"53%\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue points above the other five category labels",
+                  "content": "The printed inscriptions are \"36%\" for Quality, \"38%\" for Price, \"34%\" for Design, \"45%\" for Support, and \"43%\" for Delivery."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Other"
+                }
+              ],
+              "reason": "Given r1's encoding condition, comparison of the visible printed labels yields Other as uniquely largest, and the matching available option is Select Other. This is a conditional decoded conclusion, not a raw visual observation."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "chart title at upper left",
+                  "content": "The visible title reads \"Product Rating Share by Category\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "vertical axis label",
+                  "content": "The vertical axis is visibly labeled \"Value\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "point labels across the plot",
+                  "content": "Each of the six blue plotted points has a percentage inscription above it."
+                }
+              ],
+              "reason": "The stated title, generic vertical-axis inscription, and percentage labels are visible on the supplied chart."
+            },
+            "B": {
+              "status": "refuted",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/1/1",
+                  "content": "mislabeled_value / labeled rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                }
+              ],
+              "reason": "Although the generic visible axis label motivates caution, the public task expressly identifies the dashboard's labeled rating-share values as the evidence source and explicitly names the decision metric. Thus r2's asserted insufficiency/applicability condition is not supported by the full public task."
+            },
+            "implication": {
+              "status": "refuted",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "chart title at upper left",
+                  "content": "The visible title reads \"Product Rating Share by Category\"."
+                }
+              ],
+              "reason": "The public task supplies the metric identity that the chain says is unresolved: it directs use of dashboard labeled rating-share values. The generic \"Value\" axis alone does not negate that explicit task binding. This refutation does not independently establish a winning action beyond the separately checked conditional chain."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/options/1/label",
+                  "content": "Assign additional promotional budget"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Prioritize highest current rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/options/1/label",
+                  "content": "Rating-share category promotion"
+                }
+              ],
+              "reason": "The added public-task citations accurately identify three required fields and their listed non-placeholder selections. The refinement adds no chart observation."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/options/1/label",
+                  "content": "Assign additional promotional budget"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Prioritize highest current rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/options/1/label",
+                  "content": "Rating-share category promotion"
+                }
+              ],
+              "reason": "For the stated conditional context of submitting the workflow, the public form identifies all three companion fields as required and provides the stated selections. This supports a workflow-completion condition without changing r1's chart-decoding rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                }
+              ],
+              "reason": "The refinement is warranted as a distinct conditional completion requirement alongside the target chain's category-selection reasoning. It does not add evidence about which category has the highest labeled value and does not activate or replace the target rule."
+            }
+          }
+        ],
+        "summary": "base_c1's visible category-label inscriptions and the public highest-labeled-rating-share rule conditionally support Select Other. base_c2 correctly observes the generic \"Value\" axis label but its metric-identity challenge is not sustained because the public task explicitly designates dashboard labeled rating-share values as the evidence source. refine_1 is supported only as an additional required-form-fields condition; it does not independently validate chart decoding or a category choice. Visual reading is limited to the legible supplied chart, and the selection remains conditional on the chart labels functioning as the task-designated values."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 4,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 5,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 6,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 7,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task explicitly requires reviewing the Product Rating Share dashboard before submitting the workflow form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard reviewed; the workflow form is reached via the visible Open Form link.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Other"
+        },
+        "chart_dependent": true,
+        "brief_basis": "chart_1 labels Other at 53%, higher than Support 45%, Delivery 43%, Price 38%, Quality 36%, and Design 34%. The visible Promotion budget rule applies to this unchanged rating-share chart and requires the category with the highest current labeled rating share.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Other"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The displayed Product Rating Share chart labels Other at 53%, higher than Support 45%, Delivery 43%, Price 38%, Quality 36%, and Design 34%. The active highest-current-labeled-rating-share rule applies to this unchanged dashboard and maps Other to the visible option Select Other. Required companion fields remain incomplete, so submission is not yet appropriate.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The current public dashboard is titled Product Rating Share by Category; each category has an adjacent printed percentage, the task explicitly designates dashboard labeled rating-share values as the decision evidence, and the form has the literal matching option Select Other."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_budget_action",
+          "option": "Assign additional promotional budget"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Other is already selected and remains correct: the current dashboard labels Other 53%, above Delivery 43%, Support 45%, Price 38%, Quality 36%, and Design 34%. The public rule selects the highest current labeled rating share. Scope check: the unchanged chart is titled Product Rating Share by Category, task instructions explicitly designate its labeled rating-share values, and Other literally matches the selected form option. Budget action is a required incomplete field.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The unchanged chart’s adjacent category labels and percentage inscriptions identify rating-share values; the task explicitly binds those labels to the decision metric, and Other matches the available selected option."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "refine_1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Other",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_queue_rule",
+          "option": "Prioritize highest current rating share"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Other is already selected; the active chart-to-task rule applies because the displayed rating-share labels identify Other at 53%, uniquely above all other categories. Queue rule is required and currently incomplete.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The unchanged dashboard is titled Product Rating Share by Category, its labeled points map to literal category names, and the public task explicitly directs using labeled rating-share values to select the highest category; Other's 53% maps to the selected Select Other option."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "refine_1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Other",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_campaign_program",
+          "option": "Rating-share category promotion"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The active r1 scope conditions match this unchanged dashboard/task: point labels identify category percentages, the task explicitly designates labeled rating-share values, and the option literally matches Other. Other is uniquely highest at 53%, so the already selected Select Other remains correct. Budget action and Queue rule are already valid; Campaign program is the only incomplete required field.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart title and task identify the printed category percentages as labeled rating-share values; Other is 53%, exceeding Quality 36%, Price 38%, Design 34%, Support 45%, and Delivery 43%, and the matching option Select Other is selected."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "refine_1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Other",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 7,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart labels show Other at 53%, exceeding Quality 36%, Price 38%, Design 34%, Support 45%, and Delivery 43%. The active highest-current-labeled-rating-share rule applies to this unchanged Product Rating Share chart; Select Other is already selected and all required companion fields are complete.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart title and task both identify labeled rating-share values, each category maps literally to its form option where available, and Other's 53% is uniquely highest."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Other",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": 1
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "post_verification_choices": [
+    {
+      "step": 3,
+      "recommended_option": "Select Other",
+      "execution_ok": true,
+      "observed_selection_after": "Select Other",
+      "rule_version": 1
+    }
+  ],
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Select Other"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_budget_action",
+        "option": "Assign additional promotional budget"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_queue_rule",
+        "option": "Prioritize highest current rating share"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_campaign_program",
+        "option": "Rating-share category promotion"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Other"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

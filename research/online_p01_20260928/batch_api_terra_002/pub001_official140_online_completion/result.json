@@ -1,0 +1,98 @@
+{
+  "case": {
+    "task_id": "pub001",
+    "arm": "official140",
+    "domain": "public39",
+    "alias": "task_048"
+  },
+  "system": "online_completion",
+  "status": "engineering_or_response_failure",
+  "actor_calls": 3,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Select ME for priority review"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false
+    }
+  ],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard review is required before choosing a state record.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard reviewed; the visible next workflow step is Open Form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select ME for priority review"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The hazard risk index map shows ME in the highest-risk light-yellow range, while OK and TX are in the lowest dark-red range; priority review therefore supports ME.",
+        "used_rules": [],
+        "supporting_chain_ids": [
+          "chart_1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "error": {
+    "stage": "defense",
+    "type": "SchemaError",
+    "category": "observations_require_chart_citations"
+  }
+}

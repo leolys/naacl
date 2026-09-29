@@ -1,0 +1,89 @@
+{
+  "id": "chatcmpl-ETMh1xcvKduPbrWWJ6yPvbh6KHw8j",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"rules\":[{\"id\":\"r1\",\"text\":\"If the pie-chart slice inscriptions identify source categories and their shares of global energy consumption, and those shares are comparable category shares, then the category with the greatest printed percentage is the largest global energy consumption category. If that category is Nuclear, the public routing criterion calls for selecting the Nuclear priority-monitoring route.\",\"component\":\"pie-slice labels and percentages/task routing relation\",\"conditions\":\"The chart title and slice labels accurately describe the dashboard's relevant global energy-consumption categories, the printed percentages encode comparable shares, and the form's Nuclear option routes the identified largest category to priority monitoring.\"}],\"chains\":[{\"chain_id\":\"base_c1\",\"rule_id\":\"r1\",\"observations\":[{\"ref\":\"chart_1\",\"location\":\"title above the pie chart\",\"content\":\"The visible title reads \\\"Global Energy Consumption by Source\\\".\"},{\"ref\":\"chart_1\",\"location\":\"large pale-yellow right-side pie slice\",\"content\":\"The slice inscription reads \\\"Nuclear (45%)\\\".\"},{\"ref\":\"chart_1\",\"location\":\"red lower-left pie slice\",\"content\":\"The slice inscription reads \\\"Fossil Fuels (30%)\\\".\"},{\"ref\":\"chart_1\",\"location\":\"orange left-side pie slice\",\"content\":\"The slice inscription reads \\\"Renewables (15%)\\\".\"},{\"ref\":\"chart_1\",\"location\":\"orange-red upper-left pie slice\",\"content\":\"The slice inscription reads \\\"Hydroelectric (10%)\\\".\"}],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/companion_fields/4/value\",\"content\":\"Largest global energy consumption category\"},{\"ref\":\"public_task\",\"path\":\"/option_labels/0\",\"content\":\"Route Nuclear to priority source monitoring\"}],\"claim_kind\":\"supports_action\",\"option_label\":\"Route Nuclear to priority source monitoring\",\"claim\":\"Conditional on the printed slice percentages being valid, comparable shares for the titled global-energy-consumption chart, Nuclear's printed 45% is greater than the other printed shares, so Nuclear is the largest category and the Nuclear priority-monitoring route matches the stated routing criterion.\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "finish_reason": "stop",
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "detected": false,
+          "filtered": false
+        },
+        "protected_material_text": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      },
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1790667451,
+  "model": "gpt-5.6-terra-2026-07-09",
+  "object": "chat.completion",
+  "usage": {
+    "prompt_tokens": 3728,
+    "completion_tokens": 428,
+    "total_tokens": 4156,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "routing": {
+    "serving_pipereplica": "d20260902231100-48cb0b2d-prefill-r10-dp0-prefill"
+  },
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "service_tier": "default"
+}

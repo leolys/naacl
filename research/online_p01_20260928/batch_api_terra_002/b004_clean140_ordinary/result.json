@@ -1,0 +1,294 @@
+{
+  "case": {
+    "task_id": "b004",
+    "arm": "clean140",
+    "domain": "business47",
+    "alias": "task_144"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 7,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task requires reviewing the dashboard before the workflow form, and the visible public link is Open Dashboard.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard has been reviewed; workflow instruction says to continue via the visible Open Form link.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Samsung as the current market leader"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The Europe smartphone market-share chart shows Samsung at 55%, higher than Xiaomi (20%), Apple (15%), and Others (10%); Samsung is therefore the current market leader.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_market_region",
+          "option": "Europe"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The visible Europe chart labels Samsung at 55%, above Xiaomi (20%), Apple (15%), and Others (10%); the already selected Samsung action is therefore correct. Market region is a required incomplete field.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Samsung as the current market leader",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_follow_up_program",
+          "option": "Featured vendor follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Europe chart shows Samsung at 55%, the largest market share; Samsung is already selected. The required Follow-up program field is incomplete.",
+        "used_rules": [],
+        "supporting_chain_ids": [
+          "chart_1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Samsung as the current market leader",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_record_type",
+          "option": "Smartphone brand account"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The required Record type field is incomplete; Samsung is already selected, and the other required fields are complete.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Samsung as the current market leader",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The currently displayed Europe smartphone market-share chart shows Samsung at 55%, above Xiaomi (20%), Apple (15%), and Others (10%). The task scope is Europe smartphone market leadership, matching the chart title and selected region; Samsung is already selected and all required public fields are complete.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Samsung as the current market leader",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Select Samsung as the current market leader"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_market_region",
+        "option": "Europe"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_follow_up_program",
+        "option": "Featured vendor follow-up"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_record_type",
+        "option": "Smartphone brand account"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Samsung as the current market leader"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

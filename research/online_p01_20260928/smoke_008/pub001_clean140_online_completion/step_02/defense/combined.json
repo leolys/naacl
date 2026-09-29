@@ -1,0 +1,145 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a choropleth map uses a color scale where darker red indicates a higher value, and the task requires selecting the state with the highest value for a priority review, then the state with the darkest red color among the options should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The map is a choropleth of hazard risk index, darker color means higher value, and the goal is to find the highest risk state among ME, OK, TX."
+    },
+    {
+      "id": "supp_r1",
+      "text": "If a task asks to select a state for a 'priority review' based on a hazard risk index dashboard, and the dashboard uses a color scale where darker red indicates a higher value, then the state with the highest value (darkest color) among the available options should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The map is a choropleth of hazard risk index, darker color means higher value, and the goal is to find the highest risk state among the provided options (ME, OK, TX)."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Maine (ME) state polygon",
+          "content": "The state labeled ME is filled with a very dark red color."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Oklahoma (OK) state polygon",
+          "content": "The state labeled OK is filled with a very light yellow color."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Texas (TX) state polygon",
+          "content": "The state labeled TX is filled with a very light yellow color."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Color legend on the right",
+          "content": "The legend shows a gradient from light yellow at the bottom (labeled 'Low' and '0') to dark red at the top (labeled 'High' and '100')."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/value",
+          "content": "Hazard risk index"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select ME for priority review",
+      "claim": "ME has the darkest color among the three options, corresponding to the highest hazard risk index, so it is the correct choice for priority review."
+    },
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Maine (ME) state polygon",
+          "content": "The state labeled ME is filled with a very dark red color."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Oklahoma (OK) state polygon",
+          "content": "The state labeled OK is filled with a very light yellow color."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Texas (TX) state polygon",
+          "content": "The state labeled TX is filled with a very light yellow color."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Color legend on the right",
+          "content": "The legend shows a gradient from light yellow at the bottom (labeled 'Low' and '0') to dark red at the top (labeled 'High' and '100')."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/value",
+          "content": "Hazard risk index"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select ME for priority review",
+      "claim": "ME has the darkest color among the three options, corresponding to the highest hazard risk index, so it is the correct choice for priority review.",
+      "question_ids": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "relationship": "compatible"
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 1,
+    "chains": 1
+  },
+  "supplement_counts": {
+    "rules": 1,
+    "chains": 1,
+    "refinements": 0
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The task implies selecting the highest risk state for a 'priority review'. The new chain supp_c1 explicitly bridges the 'priority review' goal to the 'highest value' (darkest color) on the hazard risk index dashboard."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The question asks if ME is definitively darker than ID and WI. While ID and WI are also dark red, the task only provides ME, OK, and TX as options. The new chain supp_c1 focuses on the comparison among the available options, where ME is clearly the darkest."
+    },
+    {
+      "question_id": "q3",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The question asks if there are other states darker than ME not in the options. The new chain supp_c1 clarifies that the selection is constrained to the provided options (ME, OK, TX), making the presence of other dark states irrelevant to the final choice."
+    }
+  ]
+}

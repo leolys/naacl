@@ -1,0 +1,179 @@
+{
+  "case": {
+    "task_id": "pub001",
+    "arm": "clean140",
+    "domain": "public39",
+    "alias": "task_188"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 4,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page only shows the task and an 'Open Dashboard' link; the dashboard must be opened to review state hazard data before choosing a record.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard reviewed: chart_1 shows Maine (ME) as the darkest state, indicating the highest risk index. Need to open the form to select the state record.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select ME for priority review"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard chart shows ME with the darkest color, indicating the highest hazard risk index among the options (ME, OK, TX). OK and TX are light yellow, indicating low risk. Therefore, ME should be selected for priority review.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select ME for priority review"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard chart shows ME with the darkest color (highest risk index, near 100), clearly higher than OK (light/low) and TX (light/low). The current selection 'Select ME for priority review' matches the highest-risk state. Required field is complete; optional note need not be filled. Submit.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select ME for priority review",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Submission received The public benchmark routing form has been submitted. Return to Portal",
+    "links": []
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Select ME for priority review"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select ME for priority review"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

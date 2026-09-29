@@ -1,0 +1,102 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the visible line chart's data points move from a lower vertical position on the left to a higher vertical position on the right, and the y-axis is labeled 'Count' with increasing values upward, then the chart encodes an increasing case trajectory over the displayed time period.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the x-axis represents chronological time and the y-axis represents case count, as labeled on the chart."
+    },
+    {
+      "id": "r2",
+      "text": "If the observed case trajectory is increasing, and the public task provides a routing option explicitly labeled for rising-case escalation, then the increasing trajectory supports selecting that specific rising-case option.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the routing options are mutually exclusive categories corresponding to the direction of the case trend."
+    },
+    {
+      "id": "r3",
+      "text": "If the visible line chart's data points move from a higher vertical position on the left to a lower vertical position on the right, then the chart encodes a decreasing case trajectory, which would challenge a rising-case routing proposal and support a declining-case or background monitoring option instead.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the x-axis represents chronological time and the y-axis represents case count, as labeled on the chart."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "left side of plot area",
+          "content": "The first several data points are positioned near the bottom of the y-axis, close to the 0 tick mark, corresponding to x-axis labels from Jan 27, 2020 to Mar 08, 2020."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right side of plot area",
+          "content": "The final data point is positioned near the top of the y-axis, above the 1400 tick mark, corresponding to the x-axis label Mar 22, 2020."
+        },
+        {
+          "ref": "chart_1",
+          "location": "entire line path",
+          "content": "The blue line connecting the data points moves continuously from a lower vertical position on the left to a higher vertical position on the right."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the surveillance record to rising-case escalation follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the surveillance record to rising-case escalation follow-up",
+      "claim": "The visible upward movement of the line from near 0 to above 1400 indicates an increasing case trajectory, which supports routing the record to the rising-case escalation follow-up option."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Count' with tick marks increasing from 0 at the bottom to 1400 near the top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis displays date labels progressing from Jan 27, 2020 on the left to Mar 22, 2020 on the right."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the surveillance record to rising-case escalation follow-up",
+      "claim": "Given the y-axis represents case count and the x-axis represents time, the rising line matches the 'rising-case' category in the public task's routing options, supporting the proposed selection."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "entire line path",
+          "content": "The blue line does not show a downward movement from left to right; instead, it maintains an upward or flat trajectory throughout the displayed period."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Route the surveillance record to declining-case stabilization review"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The absence of a visible downward trend in the chart challenges the support for the declining-case stabilization review option, as the data does not visually indicate a decrease in cases."
+    }
+  ]
+}

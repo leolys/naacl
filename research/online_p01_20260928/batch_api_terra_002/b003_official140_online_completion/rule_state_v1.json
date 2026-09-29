@@ -1,0 +1,240 @@
+{
+  "scope": {
+    "task_id": "task_003",
+    "chart_ref": "c3ebeaf0e96cba834ab8ed14cf98443254188b157a2eb247733e10958ed7de15"
+  },
+  "version": 1,
+  "rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "status": "active",
+      "text": "If each percentage inscription directly above a category-aligned marker is the dashboard's current labeled rating-share value for that category, and the public instruction requires selecting the category with the highest current labeled rating share, then the category with the greatest such inscription is the promotional-budget selection.",
+      "component": "label-to-category decoding and task-to-action relation",
+      "conditions": "Applies only if the visible percentage inscriptions are correctly attached to their horizontally aligned category markers and are the evidence source specified by the task.",
+      "checks": [
+        {
+          "target_id": "base_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "far-right plotted category",
+                "content": "A blue circular marker is horizontally aligned with the x-axis label \"Other\", and the inscription \"53%\" is immediately above the marker."
+              },
+              {
+                "ref": "chart_1",
+                "location": "plotted markers above x-axis labels Quality, Price, Design, Support, and Delivery",
+                "content": "The visible inscriptions above the aligned markers read \"36%\", \"38%\", \"34%\", \"45%\", and \"43%\", respectively."
+              }
+            ],
+            "reason": "The cited category-marker alignments and percentage inscriptions are visibly present; the small attachment offsets are consistent with each label being above its corresponding marker."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+              },
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/0/1",
+                "content": "Select the category with the highest current labeled rating share"
+              }
+            ],
+            "reason": "The public task expressly designates labeled rating-share values as the evidence source and directs selection of the highest current labeled rating share. The rule remains conditional on the visible labels being correctly category-attached."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "percentage inscriptions above all six category-aligned markers",
+                "content": "The visible percentage inscriptions are \"36%\", \"38%\", \"34%\", \"45%\", \"43%\", and \"53%\", with \"53%\" above Other."
+              },
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/0/1",
+                "content": "Select the category with the highest current labeled rating share"
+              }
+            ],
+            "reason": "Among the printed percentage inscriptions, 53% is larger than 36%, 38%, 34%, 45%, and 43%; under r1's stated label-to-category condition, this supports Select Other. This does not resolve the separate geometry-label inconsistency."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "status": "active",
+      "text": "If vertical marker position on the axis labeled \"Value\" is also intended to encode the same rating-share metric on a common increasing scale, then a category whose marker is visibly higher than another's represents a larger plotted value; disagreement between that ordering and the attached percentage inscriptions leaves the chart's internal encoding unresolved unless the task specifies which encoding governs.",
+      "component": "axis/geometry comparability",
+      "conditions": "Applies only if vertical position is intended as a comparable encoding of the decision metric rather than a separate or erroneous display element.",
+      "checks": [
+        {
+          "target_id": "base_c2",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "plot area at Design and Other",
+                "content": "The blue marker aligned with \"Design\" is visibly higher on the page than the blue marker aligned with \"Other\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "left vertical axis and Design/Other annotations",
+                "content": "The vertical axis bears the label \"Value\"; the inscription above Design is \"34%\" and the inscription above Other is \"53%\"."
+              }
+            ],
+            "reason": "Both the screen-space marker-height relationship and the printed axis and percentage inscriptions are visible."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "left side of plot",
+                "content": "The vertical axis is visibly labeled \"Value\"."
+              },
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+              }
+            ],
+            "reason": "r2 is expressly conditional: if vertical position encodes the same metric on a common increasing scale, higher placement implies a larger plotted value. The chart's Value axis visibly motivates that condition, but neither the chart nor task verifies that this geometry is the governing rating-share encoding."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "Design and Other markers and their adjacent inscriptions",
+                "content": "Design's marker is higher on the page than Other's, while their visible inscriptions are \"34%\" and \"53%\", respectively."
+              },
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+              }
+            ],
+            "reason": "If the Value-axis geometry is a comparable increasing rating-share encoding, the visible Design-versus-Other height ordering conflicts with the attached percentage ordering. The task favors labeled rating-share values, but the chart provides no visible legend or explanation resolving why marker heights and percentage labels disagree; r2 therefore identifies an unresolved conditional reading rather than an alternative selection."
+          }
+        }
+      ],
+      "history": []
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Other category at the far right of the plot",
+          "content": "A blue circular marker is horizontally aligned with the x-axis label \"Other\", and the inscription \"53%\" appears immediately above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality through Delivery category markers",
+          "content": "The inscriptions immediately above the markers aligned with \"Quality\", \"Price\", \"Design\", \"Support\", and \"Delivery\" read \"36%\", \"38%\", \"34%\", \"45%\", and \"43%\", respectively."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Other",
+      "claim": "Conditional on the displayed percentage inscriptions being the category-attached labeled rating-share values, Other's 53% inscription is greater than every other displayed category inscription, so the public highest-labeled-share rule supports selecting Other."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "plot area around the Design and Other markers",
+          "content": "The marker horizontally aligned with \"Design\" is visibly higher on the page than the marker horizontally aligned with \"Other\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left axis and marker annotations",
+          "content": "The vertical axis is labeled \"Value\"; the Design-aligned marker has the inscription \"34%\" above it, while the Other-aligned marker has the inscription \"53%\" above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the vertical positions on the Value axis are meant to encode the same rating-share values on a common increasing scale, Design's higher marker conflicts with the percentage-inscription ordering that favors Other. The task explicitly identifies labeled rating-share values as the evidence source, but the chart itself does not visibly explain this geometry-label mismatch."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "target_rule_id": "r1",
+      "target_rule_version": 1,
+      "status": "supported",
+      "applied_to_original": false,
+      "asserted_dimensions": [
+        "B",
+        "implication"
+      ],
+      "condition_note": "Completing the supported category action for submission also requires selecting the available non-placeholder option in each of the three required companion fields: the additional-budget action, the highest-current-rating-share queue rule, and the rating-share category-promotion program.",
+      "added_observations": [],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/options/1/label",
+          "content": "Assign additional promotional budget"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/options/1/label",
+          "content": "Prioritize highest current rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/options/1/label",
+          "content": "Rating-share category promotion"
+        }
+      ]
+    }
+  ]
+}

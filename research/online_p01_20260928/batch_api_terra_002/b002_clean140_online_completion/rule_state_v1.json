@@ -1,0 +1,246 @@
+{
+  "scope": {
+    "task_id": "task_142",
+    "chart_ref": "aa7542cca653122cfdbe621fe5dcc9fdf28e8e27bef19ddde4dcd5f798002abf"
+  },
+  "version": 1,
+  "rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "status": "active",
+      "text": "If the bars and percentage inscriptions are valid, comparable encodings of each named browser's current market_share, and each browser label is correctly attached to its bar, then the browser with the greatest displayed market_share is the browser to assign when the task requires assigning the browser with the highest current market_share to the priority compatibility-testing queue.",
+      "component": "chart encoding/task relation",
+      "conditions": "The displayed percentages must represent current market_share on a common comparable basis, and the public task's highest-market_share instruction must govern the selection.",
+      "checks": [
+        {
+          "target_id": "base_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "upper-left chart title",
+                "content": "The title visibly reads \"Browser Usage Share by Product\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Edge",
+                "content": "A green bar above the label \"Edge\" has the printed inscription \"87%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Firefox",
+                "content": "A blue bar above the label \"Firefox\" has the printed inscription \"23%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Chrome",
+                "content": "An orange bar above the label \"Chrome\" has the printed inscription \"5%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Safari",
+                "content": "A dark-blue bar above the label \"Safari\" has the printed inscription \"1%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Others",
+                "content": "An orange-yellow bar above the label \"Others\" has the printed inscription \"3%\"."
+              }
+            ],
+            "reason": "The listed labels, bar attachments, and percentage inscriptions are visibly present and legible."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+              },
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/0/1",
+                "content": "Select the browser with the highest current market_share"
+              },
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+              }
+            ],
+            "reason": "The public task supplies the highest-current-market_share selection rule and identifies dashboard values as the evidence source. The chart-to-current-market_share encoding remains an explicit condition rather than a directly verified chart fact."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "all five plotted bars and their inscriptions",
+                "content": "The visible inscriptions are 87% for Edge, 23% for Firefox, 5% for Chrome, 1% for Safari, and 3% for Others."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Assign Edge to the priority compatibility-testing queue"
+              }
+            ],
+            "reason": "Under r1's stated condition that these comparable displayed percentages encode current market_share, Edge's displayed 87% exceeds every other displayed value and the cited option is the matching task action. This remains conditional because chart validity and the exact market_share encoding are not independently established by the image."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "status": "pending",
+      "text": "If the percentage inscriptions are intended as mutually exclusive product market shares within one complete market, then their total should be compatible with a 100% whole; a total materially above 100% challenges using the displayed values as directly validated exclusive market-share values. This challenge does not apply if the chart uses overlapping, multi-select, or otherwise nonexclusive usage definitions.",
+      "component": "percentage-scale validity",
+      "conditions": "Applies only if the chart title and product categories are meant to denote mutually exclusive shares of one whole; the chart does not visibly state whether that condition holds.",
+      "checks": [
+        {
+          "target_id": "base_c2",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Chrome",
+                "content": "The bar labeled \"Chrome\" has the printed inscription \"5%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Safari",
+                "content": "The bar labeled \"Safari\" has the printed inscription \"1%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Edge",
+                "content": "The bar labeled \"Edge\" has the printed inscription \"87%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Firefox",
+                "content": "The bar labeled \"Firefox\" has the printed inscription \"23%\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bar above x-axis label Others",
+                "content": "The bar labeled \"Others\" has the printed inscription \"3%\"."
+              }
+            ],
+            "reason": "All five percentage inscriptions and their labeled bars are visibly legible."
+          },
+          "B": {
+            "status": "undetermined",
+            "evidence": [],
+            "reason": "r2 applies only when the categories are mutually exclusive shares of one complete market. The visible chart title and bars do not state whether browser usage is exclusive, overlapping, or otherwise defined, and the public task does not provide that condition."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "percentage inscriptions above the five bars",
+                "content": "The chart visibly prints 5%, 1%, 87%, 23%, and 3% above Chrome, Safari, Edge, Firefox, and Others, respectively."
+              }
+            ],
+            "reason": "Those printed values sum to 119%. The claim properly limits the resulting validity concern to the unresolved mutually-exclusive-whole condition and does not infer an alternative assignment. The chart's category definition remains unavailable."
+          }
+        }
+      ],
+      "history": []
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "bar chart title at upper left",
+          "content": "The visible title reads \"Browser Usage Share by Product\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "green bar above the x-axis label Edge",
+          "content": "A green bar is visibly attached to the label \"Edge\" and has the printed inscription \"87%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue bar above the x-axis label Firefox",
+          "content": "A blue bar is visibly attached to the label \"Firefox\" and has the printed inscription \"23%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange bar above the x-axis label Chrome",
+          "content": "An orange bar is visibly attached to the label \"Chrome\" and has the printed inscription \"5%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "dark-blue bar above the x-axis label Safari",
+          "content": "A dark-blue bar is visibly attached to the label \"Safari\" and has the printed inscription \"1%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange-yellow bar above the x-axis label Others",
+          "content": "An orange-yellow bar is visibly attached to the label \"Others\" and has the printed inscription \"3%\" above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Assign Edge to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "Conditionally, Edge has the greatest displayed market_share among the plotted products and therefore supports assigning Edge to the priority compatibility-testing queue."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "percentage inscription above the Chrome bar",
+          "content": "The inscription \"5%\" is visibly printed above the bar labeled \"Chrome\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "percentage inscription above the Safari bar",
+          "content": "The inscription \"1%\" is visibly printed above the bar labeled \"Safari\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "percentage inscription above the Edge bar",
+          "content": "The inscription \"87%\" is visibly printed above the bar labeled \"Edge\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "percentage inscription above the Firefox bar",
+          "content": "The inscription \"23%\" is visibly printed above the bar labeled \"Firefox\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "percentage inscription above the Others bar",
+          "content": "The inscription \"3%\" is visibly printed above the bar labeled \"Others\"."
+        }
+      ],
+      "task_evidence": [],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The five printed percentages total 119%, so, if these are supposed to be mutually exclusive shares of one complete market, the chart has a validity gap. The visible chart does not state whether its usage categories overlap, so this does not by itself establish a different queue assignment."
+    }
+  ],
+  "refinements": []
+}

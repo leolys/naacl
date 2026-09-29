@@ -1,0 +1,50 @@
+{
+ "protocol": "online_explanation_completion_v2_batch_live",
+ "interface_version": "typed_scalars_v2",
+ "endpoint": "http://127.0.0.1:8059/v1/chat/completions",
+ "model": "Qwen3.8-27B",
+ "temperature": 0,
+ "phase_max_tokens": {
+  "proposal": 2400,
+  "generation": 4800,
+  "verification": 6000
+ },
+ "max_attempts_per_call": 2,
+ "max_request_attempts": 1600,
+ "max_browser_operations": 2400,
+ "max_estimated_usd": 10.0,
+ "attempt_reserve_usd": 0,
+ "estimated_input_usd_per_m": 0,
+ "estimated_output_usd_per_m": 0,
+ "timeout_seconds": 600,
+ "proxy": null,
+ "allow_trailing_json_closers": false,
+ "concurrency": 1,
+ "max_actor_calls": 8,
+ "max_reverification": 1,
+ "browser_executable": "/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome",
+ "task_ids": [
+  "b001",
+  "b002",
+  "b003",
+  "b004",
+  "b005",
+  "b006",
+  "env001",
+  "env002",
+  "env003",
+  "health001",
+  "health002",
+  "pub001"
+ ],
+ "arms": [
+  "official140",
+  "clean140"
+ ],
+ "systems": [
+  "ordinary",
+  "online_completion"
+ ],
+ "wandb": false,
+ "gpu_enabled": false
+}

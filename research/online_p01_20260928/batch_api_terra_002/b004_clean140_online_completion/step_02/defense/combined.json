@@ -1,0 +1,99 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the pie-slice inscriptions are the dashboard's intended market-share values for the region named in the chart title, and “current market leader” means the brand with the largest displayed market-share value, then the brand whose displayed percentage exceeds every other displayed brand percentage is the option to select for follow-up.",
+      "component": "chart encoding/task relation",
+      "conditions": "This bridge relies on the printed slice labels accurately encoding comparable current smartphone market shares for Europe and on the task using displayed market-share leadership as its criterion."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title at upper left",
+          "content": "The chart title is inscribed “Smartphone Market Share in Europe”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "large pale-yellow pie slice on the right",
+          "content": "The slice is inscribed “Samsung (55%)”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red pie slice at lower left",
+          "content": "The slice is inscribed “Xiaomi (20%)”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange pie slice at upper left",
+          "content": "The slice is inscribed “Apple (15%)”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light-orange pie slice near the top",
+          "content": "The slice is inscribed “Others (10%)”."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "Conditionally, the displayed Samsung percentage is larger than each of the other displayed percentages, so Samsung is the chart-indicated current market leader for the Europe follow-up task. This support depends on the slice inscriptions being valid and comparable market-share encodings; the image itself does not independently verify the underlying data."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie chart, pale-yellow Samsung sector on the right",
+          "content": "The pale-yellow sector containing the inscription “Samsung (55%)” visibly spans a larger angular portion of the pie than each of the red Xiaomi, orange Apple, and light-orange Others sectors individually."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "This is visual geometric corroboration only; it assumes the sectors are intended to encode the same market-share quantities represented by their inscriptions.",
+      "reason": "The base chain compares printed percentages, while this added observation separately records that the Samsung-labeled sector is visibly the largest individual pie sector."
+    }
+  ],
+  "initial_counts": {
+    "rules": 1,
+    "chains": 1
+  },
+  "supplement_counts": {
+    "rules": 0,
+    "chains": 0,
+    "refinements": 1
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c1"
+      ],
+      "reason": "The refinement supplies the requested independent visual-geometry support: the Samsung-labeled sector is visibly larger than each other labeled sector, consistent with the printed percentages and the existing conditional action claim."
+    }
+  ]
+}

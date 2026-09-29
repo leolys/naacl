@@ -1,0 +1,162 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a bar chart's x-axis labels identify browser products and its y-axis scale represents usage share, then a product whose bar is visibly taller than the other product bars and whose printed percentage label is numerically greater than the other printed percentage labels has the highest usage share among the displayed products.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is a bar chart of browser usage share by product; the y-axis is a comparable percentage scale; the printed percentage labels are taken as the chart's stated values; the task asks for the primary compatibility target based on market share."
+    },
+    {
+      "id": "r2",
+      "text": "If the public task asks to select the browser product that should be set as the primary compatibility target and the available options are Chrome, Safari, and Firefox, then the product with the highest usage share among those three options is the supported action, provided the chart's usage-share values are the intended basis for the target.",
+      "component": "task-to-action relation",
+      "conditions": "The public task's user_goal and chart_reference tie the primary compatibility target to the browser market share dashboard; the option labels correspond to the chart's product labels; no other policy threshold or criterion is supplied."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart displays a product that is not among the public option labels, then that product's value cannot directly support any listed option, and the highest value among the listed options must be compared separately.",
+      "component": "scope/assumptions",
+      "conditions": "The chart includes products beyond the three public options; the public options are the only selectable actions."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The labels 'Chrome', 'Safari', 'Edge', 'Firefox', and 'Others' are printed beneath five bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled with ticks from 0 to 100 in increments of 10."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Chrome bar",
+          "content": "A purple bar above the 'Chrome' label reaches a height near the 73 tick, and the inscription '73%' is printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Safari bar",
+          "content": "A red bar above the 'Safari' label reaches a height near the 12 tick, and the inscription '12%' is printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Edge bar",
+          "content": "A green bar above the 'Edge' label reaches a height near the 2 tick, and the inscription '2%' is printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Firefox bar",
+          "content": "A blue bar above the 'Firefox' label reaches a height near the 6 tick, and the inscription '6%' is printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Others bar",
+          "content": "An orange bar above the 'Others' label reaches a height near the 7 tick, and the inscription '7%' is printed above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        },
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the browser market share dashboard to identify the product for primary compatibility targeting."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Set Chrome as the primary compatibility target",
+      "claim": "Under the assumption that the printed percentage labels are the chart's stated usage-share values and that the y-axis scale is comparable, Chrome's bar is visibly taller than the other product bars and its printed 73% is numerically greater than the other printed percentages, so Chrome has the highest usage share among the displayed products."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels and bars",
+          "content": "The chart displays bars for Chrome, Safari, Edge, Firefox, and Others."
+        },
+        {
+          "ref": "chart_1",
+          "location": "printed labels",
+          "content": "The inscriptions '73%', '12%', '2%', '6%', and '7%' are printed above the Chrome, Safari, Edge, Firefox, and Others bars respectively."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Set Chrome as the primary compatibility target"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Set Safari as the primary compatibility target"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Set Firefox as the primary compatibility target"
+        },
+        {
+          "ref": "public_task",
+          "path": "/primary_field_label",
+          "content": "Primary Compatibility Target"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Set Chrome as the primary compatibility target",
+      "claim": "If the public task's primary compatibility target is to be chosen from the three listed options based on the dashboard's usage-share values, then among Chrome (73%), Safari (12%), and Firefox (6%), Chrome has the highest value, supporting the Chrome option."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The chart includes an 'Others' bar with the inscription '7%' printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The chart includes an 'Edge' bar with the inscription '2%' printed above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Set Chrome as the primary compatibility target"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Set Safari as the primary compatibility target"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Set Firefox as the primary compatibility target"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart displays 'Edge' and 'Others' as products, but neither appears among the public option labels; therefore their values cannot directly support any listed option, and the comparison for the selectable action must be restricted to Chrome, Safari, and Firefox."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  }
+}

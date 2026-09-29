@@ -1,0 +1,110 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If each plotted category label identifies its adjacent point, the percentage inscription above that point is that category's current labeled rating-share value, and the public rule selects the category with the highest such value, then the matching form option for the uniquely highest labeled category is the promotional-budget choice.",
+      "component": "chart encoding/task relation",
+      "conditions": "This bridge assumes the point inscriptions are the dashboard's intended current labeled rating-share values and that the category-to-option names match literally."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's title and point percentage inscriptions are not sufficient to establish that the plotted measure is the public task's required labeled rating-share metric, then a highest plotted percentage alone does not fully establish the requested selection.",
+      "component": "metric identity validation",
+      "conditions": "This applies because the vertical axis is generically labeled Value; resolving it requires treating the chart title and percentage labels as defining the requested metric despite that generic axis label."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "plot point above x-axis label Quality",
+          "content": "A blue circular point aligned with the inscription \"Quality\" has the printed inscription \"36%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot point above x-axis label Price",
+          "content": "A blue circular point aligned with the inscription \"Price\" has the printed inscription \"38%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot point above x-axis label Design",
+          "content": "A blue circular point aligned with the inscription \"Design\" has the printed inscription \"34%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot point above x-axis label Support",
+          "content": "A blue circular point aligned with the inscription \"Support\" has the printed inscription \"45%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot point above x-axis label Delivery",
+          "content": "A blue circular point aligned with the inscription \"Delivery\" has the printed inscription \"43%\" above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot point above x-axis label Other",
+          "content": "A blue circular point aligned with the inscription \"Other\" has the printed inscription \"53%\" above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Other"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Other",
+      "claim": "Conditionally, Other has the highest printed percentage among the displayed category points, so the highest-current-labeled-rating-share rule supports Select Other."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title at upper left",
+          "content": "The chart title is \"Product Rating Share by Category\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis label",
+          "content": "The vertical axis is labeled \"Value\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "point labels across the plot",
+          "content": "Each of the six plotted blue points has a percentage inscription above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "mislabeled_value / labeled rating share"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The title and percentage inscriptions visibly motivate reading the points as rating-share values, but the generic y-axis label \"Value\" and the public metric wording leave a metric-identity condition to verify; absent that condition, the chart does not by itself fully establish that its highest plotted label is the required decision metric."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 2,
+    "chains": 2
+  }
+}

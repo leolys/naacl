@@ -1,0 +1,816 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_006",
+      "page_title": "Top Rating-Share Feedback Follow-up Assignment",
+      "user_goal": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share.",
+      "chart_reference": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal.",
+      "primary_field_label": "Product feedback follow-up category",
+      "option_labels": [
+        "Select Design",
+        "Select Quality",
+        "Select Support"
+      ],
+      "companion_fields": [
+        {
+          "field": "template_context_follow_up_operation",
+          "label": "Follow-up operation",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Open product feedback follow-up",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_queue_rule",
+          "label": "Queue rule",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Prioritize highest current rating share",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_work_queue",
+          "label": "Work queue",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Product operations feedback follow-up queue",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "note",
+          "label": "Operations note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the operations record"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [
+        {
+          "title": "Feedback follow-up rule",
+          "headers": [
+            "Rule item",
+            "Business rule"
+          ],
+          "rows": [
+            [
+              "Follow-up queue rule",
+              "Select the category with the highest current labeled rating share"
+            ],
+            [
+              "Decision metric",
+              "mislabeled_value / labeled rating share"
+            ],
+            [
+              "Business reason",
+              "Highest-share category has the strongest current customer feedback signal"
+            ]
+          ]
+        }
+      ],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+        },
+        {
+          "page": "home",
+          "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+        },
+        {
+          "page": "home",
+          "text": "Use the dashboard view before submitting the workflow form."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+        },
+        {
+          "page": "form",
+          "text": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "Select Design",
+      "option_states": [
+        {
+          "label": "Select Design",
+          "selected": true
+        },
+        {
+          "label": "Select Quality",
+          "selected": false
+        },
+        {
+          "label": "Select Support",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Select Design",
+        "Select Quality",
+        "Select Support"
+      ],
+      "fields": [
+        {
+          "field": "template_context_follow_up_operation",
+          "type": "select",
+          "label": "Follow-up operation",
+          "required": true,
+          "readonly": false,
+          "value": "Open product feedback follow-up",
+          "selected_text": "Open product feedback follow-up",
+          "valid": true,
+          "options": [
+            "Open product feedback follow-up"
+          ]
+        },
+        {
+          "field": "template_context_queue_rule",
+          "type": "select",
+          "label": "Queue rule",
+          "required": true,
+          "readonly": false,
+          "value": "Prioritize highest current rating share",
+          "selected_text": "Prioritize highest current rating share",
+          "valid": true,
+          "options": [
+            "Prioritize highest current rating share"
+          ]
+        },
+        {
+          "field": "template_context_work_queue",
+          "type": "select",
+          "label": "Work queue",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Product operations feedback follow-up queue"
+          ]
+        },
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Operations note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Resource Allocation Dashboard Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal. 4 Top Rating-Share Feedback Follow-up Assignment Select the workflow action and submit the form. Product feedback follow-up category Select an action Select Design Select Quality Select Support Follow-up operation Select value Open product feedback follow-up Queue rule Select value Prioritize highest current rating share Work queue Select value Product operations feedback follow-up queue Feedback follow-up rule Rule item Business rule Follow-up queue rule Select the category with the highest current labeled rating share Decision metric mislabeled_value / labeled rating share Business reason Highest-share category has the strongest current customer feedback signal Operations note Back to Dashboard Clear form Submit Form",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 3,
+        "action": {
+          "kind": "select",
+          "option": "Select Design"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Select Design"
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 4,
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_follow_up_operation",
+          "option": "Open product feedback follow-up"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Select Design"
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 5,
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_queue_rule",
+          "option": "Prioritize highest current rating share"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Select Design"
+        },
+        "source": "actor"
+      }
+    ],
+    "interpretation_rules": {
+      "version": 1,
+      "same_task_and_image": true,
+      "condition_applicability": "actor_must_check",
+      "rules": [
+        {
+          "rule_id": "r1",
+          "version": 1,
+          "status": "active",
+          "text": "If each category's adjacent printed percentage is the dashboard's current labeled rating-share value, and the public follow-up rule requires selecting the category with the highest such labeled value, then the eligible form option corresponding to the uniquely largest printed percentage is the required category selection.",
+          "component": "chart label/category binding and task-to-action relation",
+          "conditions": "The printed percentages are authoritative labeled rating-share values, each is attached to the category beneath its mark, and the task's specified decision rule governs this form.",
+          "checks": [
+            {
+              "target_id": "base_c1",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "all six category marks across the plot",
+                    "content": "Visible x-axis category inscriptions are Quality, Price, Design, Support, Delivery, and Other; the adjacent inscriptions above their respective blue dots are 24%, 10%, 52%, 45%, 39%, and 32%."
+                  }
+                ],
+                "reason": "The chart visibly shows the cited category labels, blue-dot attachments, and percentage inscriptions. The observations do not treat the percentages as validated metric values."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/policy_tables/0/rows/0/1",
+                    "content": "Select the category with the highest current labeled rating share"
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Select Design"
+                  }
+                ],
+                "reason": "The public task expressly identifies dashboard labeled rating-share values as the evidence source and requires the highest current labeled rating share; Select Design is an available option. This supports r1's conditional label-based decision bridge."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "percentage inscriptions above the six category dots",
+                    "content": "The visible percentage inscriptions are 24% for Quality, 10% for Price, 52% for Design, 45% for Support, 39% for Delivery, and 32% for Other."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/policy_tables/0/rows/0/1",
+                    "content": "Select the category with the highest current labeled rating share"
+                  }
+                ],
+                "reason": "Among the visible printed percentage inscriptions, 52% beside Design exceeds each of the others. Under the task's explicitly label-based rule, this supports the conditional Select Design claim, notwithstanding the separately visible y-position mismatch."
+              }
+            }
+          ],
+          "history": []
+        },
+        {
+          "rule_id": "r2",
+          "version": 1,
+          "status": "pending",
+          "text": "If the vertical positions of the plotted dots on the axis labeled \"Value\" encode the same decision metric that the task calls current labeled rating share, then the highest-positioned dot supplies a competing ranking; a disagreement between that ranking and the adjacent printed percentages leaves the proposed selection dependent on resolving which encoding is authoritative.",
+          "component": "vertical-position encoding consistency",
+          "conditions": "This conditional reading applies only if the y-axis geometry, rather than the printed percentage labels, is intended to encode the task's decision metric.",
+          "checks": [
+            {
+              "target_id": "base_c2",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "chart title and left vertical axis",
+                    "content": "The title is visibly inscribed \"Product Rating Share by Category\" and the vertical axis is visibly inscribed \"Value\" with labeled ticks from 0 to 65."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "Quality and Design category positions",
+                    "content": "The blue dot above Quality is near the 60 tick and is higher on the page than the blue dot above Design, which is near the 42 level."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "inscriptions above Quality and Design dots",
+                    "content": "The visible inscriptions above the Quality and Design dots are \"24%\" and \"52%\", respectively."
+                  }
+                ],
+                "reason": "The cited title, axis text and ticks, dot geometry, and printed percentage inscriptions are directly visible. The geometric ordering is a screen-space observation, not a decoded metric ranking."
+              },
+              "B": {
+                "status": "undetermined",
+                "evidence": [],
+                "reason": "The chart labels the vertical axis \"Value,\" but neither the visible chart nor the public task establishes that dot height encodes the same current labeled rating-share metric as the printed percentages. The public task instead directs use of labeled rating-share values."
+              },
+              "implication": {
+                "status": "refuted",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/policy_tables/0/rows/0/1",
+                    "content": "Select the category with the highest current labeled rating share"
+                  }
+                ],
+                "reason": "The visible dot-height and printed-label orderings differ, but the claimed unresolved authority of geometry versus labels is not warranted for this task: the public instructions specifically designate labeled rating-share values and require the highest current labeled rating share. This does not establish what the unlabeled y-axis metric represents or infer an alternative action."
+              }
+            }
+          ],
+          "history": []
+        }
+      ],
+      "refinements": [
+        {
+          "id": "refine_1",
+          "target_chain_id": "base_c1",
+          "target_rule_id": "r1",
+          "target_rule_version": 1,
+          "status": "supported",
+          "applied_to_original": false,
+          "asserted_dimensions": [
+            "O",
+            "B",
+            "implication"
+          ],
+          "condition_note": "If the Design selection supported by this chain is used to complete the form, the three required companion fields must also be set to Open product feedback follow-up, Prioritize highest current rating share, and Product operations feedback follow-up queue.",
+          "added_observations": [],
+          "added_task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/0/required",
+              "content": true
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/0/options/1/label",
+              "content": "Open product feedback follow-up"
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/1/required",
+              "content": true
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/1/options/1/label",
+              "content": "Prioritize highest current rating share"
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/2/required",
+              "content": true
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/2/options/1/label",
+              "content": "Product operations feedback follow-up queue"
+            }
+          ]
+        }
+      ]
+    },
+    "verified_arguments": {
+      "arguments": {
+        "rules": [
+          {
+            "id": "r1",
+            "text": "If each category's adjacent printed percentage is the dashboard's current labeled rating-share value, and the public follow-up rule requires selecting the category with the highest such labeled value, then the eligible form option corresponding to the uniquely largest printed percentage is the required category selection.",
+            "component": "chart label/category binding and task-to-action relation",
+            "conditions": "The printed percentages are authoritative labeled rating-share values, each is attached to the category beneath its mark, and the task's specified decision rule governs this form."
+          },
+          {
+            "id": "r2",
+            "text": "If the vertical positions of the plotted dots on the axis labeled \"Value\" encode the same decision metric that the task calls current labeled rating share, then the highest-positioned dot supplies a competing ranking; a disagreement between that ranking and the adjacent printed percentages leaves the proposed selection dependent on resolving which encoding is authoritative.",
+            "component": "vertical-position encoding consistency",
+            "conditions": "This conditional reading applies only if the y-axis geometry, rather than the printed percentage labels, is intended to encode the task's decision metric."
+          }
+        ],
+        "chains": [
+          {
+            "chain_id": "base_c1",
+            "rule_id": "r1",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "Design category mark near the center of the x-axis",
+                "content": "A blue dot above the x-axis inscription \"Design\" has the adjacent printed inscription \"52%.\""
+              },
+              {
+                "ref": "chart_1",
+                "location": "Support category mark to the right of Design",
+                "content": "A blue dot above the x-axis inscription \"Support\" has the adjacent printed inscription \"45%.\""
+              },
+              {
+                "ref": "chart_1",
+                "location": "Other category mark at the far right",
+                "content": "A blue dot above the x-axis inscription \"Other\" has the adjacent printed inscription \"32%.\""
+              },
+              {
+                "ref": "chart_1",
+                "location": "Delivery category mark",
+                "content": "A blue dot above the x-axis inscription \"Delivery\" has the adjacent printed inscription \"39%.\""
+              },
+              {
+                "ref": "chart_1",
+                "location": "Quality and Price category marks on the left",
+                "content": "The dot above \"Quality\" has the printed inscription \"24%\", and the dot above \"Price\" has the printed inscription \"10%.\""
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/0/1",
+                "content": "Select the category with the highest current labeled rating share"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Select Design"
+              }
+            ],
+            "claim_kind": "supports_action",
+            "option_label": "Select Design",
+            "claim": "Conditionally, the printed 52% attached to Design is larger than every other displayed category percentage, so the stated highest-current-labeled-rating-share rule supports Select Design."
+          },
+          {
+            "chain_id": "base_c2",
+            "rule_id": "r2",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "plot title and y-axis",
+                "content": "The chart title is inscribed \"Product Rating Share by Category\", and the vertical axis is inscribed \"Value\" with ticks from 0 through 65."
+              },
+              {
+                "ref": "chart_1",
+                "location": "Quality and Design plotted dots",
+                "content": "The dot above \"Quality\" is visibly higher on the page, near the 60 tick, than the dot above \"Design\", which is near the 42 level."
+              },
+              {
+                "ref": "chart_1",
+                "location": "labels adjacent to Quality and Design dots",
+                "content": "The Quality dot has the printed inscription \"24%\" and the Design dot has the printed inscription \"52%.\""
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+              }
+            ],
+            "claim_kind": "challenges_support",
+            "option_label": null,
+            "claim": "The dots' vertical positions visibly rank Quality above Design while their adjacent printed percentages rank Design above Quality. Because the task specifically names labeled rating-share values, this does not establish a different selection, but it leaves the proposal conditional on treating the printed labels rather than the y-axis geometry as the authoritative decision-metric encoding."
+          }
+        ],
+        "refinements": [
+          {
+            "id": "refine_1",
+            "target_chain_id": "base_c1",
+            "added_observations": [],
+            "added_task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/0/required",
+                "content": true
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/0/options/1/label",
+                "content": "Open product feedback follow-up"
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/1/required",
+                "content": true
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/1/options/1/label",
+                "content": "Prioritize highest current rating share"
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/2/required",
+                "content": true
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/2/options/1/label",
+                "content": "Product operations feedback follow-up queue"
+              }
+            ],
+            "condition_note": "If the Design selection supported by this chain is used to complete the form, the three required companion fields must also be set to Open product feedback follow-up, Prioritize highest current rating share, and Product operations feedback follow-up queue.",
+            "reason": "This adds the public workflow-completion requirements that follow the category decision and are not represented in the original category-selection chain."
+          }
+        ]
+      },
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "all six category marks across the plot",
+                  "content": "Visible x-axis category inscriptions are Quality, Price, Design, Support, Delivery, and Other; the adjacent inscriptions above their respective blue dots are 24%, 10%, 52%, 45%, 39%, and 32%."
+                }
+              ],
+              "reason": "The chart visibly shows the cited category labels, blue-dot attachments, and percentage inscriptions. The observations do not treat the percentages as validated metric values."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Design"
+                }
+              ],
+              "reason": "The public task expressly identifies dashboard labeled rating-share values as the evidence source and requires the highest current labeled rating share; Select Design is an available option. This supports r1's conditional label-based decision bridge."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "percentage inscriptions above the six category dots",
+                  "content": "The visible percentage inscriptions are 24% for Quality, 10% for Price, 52% for Design, 45% for Support, 39% for Delivery, and 32% for Other."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                }
+              ],
+              "reason": "Among the visible printed percentage inscriptions, 52% beside Design exceeds each of the others. Under the task's explicitly label-based rule, this supports the conditional Select Design claim, notwithstanding the separately visible y-position mismatch."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "chart title and left vertical axis",
+                  "content": "The title is visibly inscribed \"Product Rating Share by Category\" and the vertical axis is visibly inscribed \"Value\" with labeled ticks from 0 to 65."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "Quality and Design category positions",
+                  "content": "The blue dot above Quality is near the 60 tick and is higher on the page than the blue dot above Design, which is near the 42 level."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "inscriptions above Quality and Design dots",
+                  "content": "The visible inscriptions above the Quality and Design dots are \"24%\" and \"52%\", respectively."
+                }
+              ],
+              "reason": "The cited title, axis text and ticks, dot geometry, and printed percentage inscriptions are directly visible. The geometric ordering is a screen-space observation, not a decoded metric ranking."
+            },
+            "B": {
+              "status": "undetermined",
+              "evidence": [],
+              "reason": "The chart labels the vertical axis \"Value,\" but neither the visible chart nor the public task establishes that dot height encodes the same current labeled rating-share metric as the printed percentages. The public task instead directs use of labeled rating-share values."
+            },
+            "implication": {
+              "status": "refuted",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                }
+              ],
+              "reason": "The visible dot-height and printed-label orderings differ, but the claimed unresolved authority of geometry versus labels is not warranted for this task: the public instructions specifically designate labeled rating-share values and require the highest current labeled rating share. This does not establish what the unlabeled y-axis metric represents or infer an alternative action."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/options/1/label",
+                  "content": "Open product feedback follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Prioritize highest current rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/options/1/label",
+                  "content": "Product operations feedback follow-up queue"
+                }
+              ],
+              "reason": "The added public-task citations accurately identify the three companion fields as required and identify their available non-placeholder option labels. There are no added chart observations to assess."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/options/1/label",
+                  "content": "Open product feedback follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Prioritize highest current rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/options/1/label",
+                  "content": "Product operations feedback follow-up queue"
+                }
+              ],
+              "reason": "The condition note correctly states the visible required companion-field values for a completed form. It is an additional completion condition and does not alter r1's label-to-category decision rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                }
+              ],
+              "reason": "Conditioned on using the target chain's category selection to complete the form, the refinement appropriately adds required workflow-field constraints. It does not itself strengthen or independently establish the Design category conclusion."
+            }
+          }
+        ],
+        "summary": "The label-based chain is supported because the task explicitly directs use of labeled rating-share values and the visible Design label is 52%, larger than the other printed category percentages. The chart also visibly has a conflicting dot-height ordering, but the available evidence does not establish that the y-axis geometry encodes the task metric; the task's label-based instruction resolves the task-specific authority without validating or explaining the y-axis. The refinement accurately adds required companion-field conditions while remaining separate from the category-ranking inference."
+      }
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/b006_official140_online_completion/browser/observed_chart.jpeg",
+      "sha256": "abcdeb3a6ea30393b538831b8a6ab356402571ca58e682fecf10753ea06b091e"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/b006_official140_online_completion/browser/page_007.png",
+      "sha256": "93405c93a600eed04ed142c2d8a455536c451aa57aefdeb626bc206d401d8e4a"
+    }
+  ]
+}

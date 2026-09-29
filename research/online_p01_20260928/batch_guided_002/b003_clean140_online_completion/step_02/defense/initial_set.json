@@ -1,0 +1,122 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's x-axis labels are the product categories and the y-axis values are the labeled rating shares, then the category with the highest labeled rating share is the one whose point is highest on the y-axis and has the largest printed percentage.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the evidence source for the promotion budget request, and the task requires selecting the category with the highest current labeled rating share."
+    },
+    {
+      "id": "r2",
+      "text": "If the form's primary field 'Promotional budget category' must be set to the category identified by the highest labeled rating share, then the option label matching that category is the correct selection.",
+      "component": "task-to-action relation",
+      "conditions": "The form is on the form page, the primary field is unselected, and the option labels correspond to the chart categories."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis is labeled 'Value' and the x-axis is labeled 'Category', and the printed percentages are the labeled rating shares, then the highest printed percentage corresponds to the highest y-axis position.",
+      "component": "scale comparability",
+      "conditions": "The chart uses a linear scale from 0 to 55, and the printed percentages are aligned with the y-axis ticks."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The x-axis labels are 'Quality', 'Price', 'Design', 'Support', 'Delivery', 'Other'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis labels",
+          "content": "The y-axis is labeled 'Value' with ticks from 0 to 55."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data points are at y-values corresponding to 36%, 38%, 34%, 45%, 43%, 53% for the categories Quality, Price, Design, Support, Delivery, Other respectively."
+        },
+        {
+          "ref": "chart_1",
+          "location": "printed percentages",
+          "content": "The printed percentages are 36%, 38%, 34%, 45%, 43%, 53%."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+        },
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Other",
+      "claim": "The category with the highest labeled rating share is 'Other' at 53%, so the promotional budget category should be 'Select Other'."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data point for 'Other' is at the highest y-value (53%) among all categories."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/primary_field_label",
+          "content": "Promotional budget category"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Other"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Other",
+      "claim": "The form's primary field 'Promotional budget category' should be set to 'Select Other' because 'Other' has the highest labeled rating share."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Value' and the ticks are 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data point for 'Other' is at y=53, which is the highest among all data points."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Other",
+      "claim": "The highest printed percentage (53%) corresponds to the highest y-axis position (53), confirming that 'Other' is the category with the highest labeled rating share."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  }
+}

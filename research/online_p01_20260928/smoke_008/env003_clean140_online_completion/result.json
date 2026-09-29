@@ -1,0 +1,488 @@
+{
+  "case": {
+    "task_id": "env003",
+    "arm": "clean140",
+    "domain": "environment35",
+    "alias": "task_229"
+  },
+  "system": "online_completion",
+  "status": "submitted",
+  "actor_calls": 5,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Route Nuclear to priority source monitoring"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "right yellow slice",
+                  "content": "The inscription 'Nuclear (45%)' is printed inside the yellow slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "lower red slice",
+                  "content": "The inscription 'Fossil Fuels (30%)' is printed inside the red slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "upper-left orange slice",
+                  "content": "The inscription 'Renewables (15%)' is printed inside the orange slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "upper small red-orange slice",
+                  "content": "The inscription 'Hydroelectric (10%)' is printed inside the small red-orange slice."
+                }
+              ],
+              "reason": "All four printed percentage labels are directly visible and match the observations."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Largest global energy consumption category"
+                }
+              ],
+              "reason": "The rule correctly bridges the highest printed percentage to the task's routing criterion."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "Nuclear has the highest printed percentage (45%), and the corresponding public option is available."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "right yellow slice",
+                  "content": "The inscription 'Nuclear (45%)' is printed inside the yellow slice."
+                }
+              ],
+              "reason": "The observation of the Nuclear label is directly visible."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The rule correctly links the identified largest category to the specific public option that routes it."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The claim correctly identifies the matching public option for the largest category."
+            }
+          },
+          {
+            "target_id": "base_c3",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "right yellow slice",
+                  "content": "The yellow slice labeled 'Nuclear (45%)' occupies the largest visible area of the pie chart."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "lower red slice",
+                  "content": "The red slice labeled 'Fossil Fuels (30%)' occupies the second-largest visible area."
+                }
+              ],
+              "reason": "The relative visible areas of the slices are directly observable and match the claims."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Largest global energy consumption category"
+                }
+              ],
+              "reason": "The rule correctly uses visible slice area as an alternative measure for category size."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The Nuclear slice is visibly the largest, supporting the same routing action."
+            }
+          },
+          {
+            "target_id": "supp_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "right yellow slice",
+                  "content": "The yellow slice labeled 'Nuclear (45%)' spans from the 12 o'clock position to approximately the 5 o'clock position, covering roughly 162 degrees."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "lower red slice",
+                  "content": "The red slice labeled 'Fossil Fuels (30%)' spans from approximately the 5 o'clock position to the 9 o'clock position, covering roughly 108 degrees."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "upper-left orange slice",
+                  "content": "The orange slice labeled 'Renewables (15%)' spans from the 9 o'clock position to approximately the 10:30 position, covering roughly 54 degrees."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "upper small red-orange slice",
+                  "content": "The small red-orange slice labeled 'Hydroelectric (10%)' spans from approximately the 10:30 position to the 12 o'clock position, covering roughly 36 degrees."
+                }
+              ],
+              "reason": "The angular spans of the slices are visually consistent with the printed percentages."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Largest global energy consumption category"
+                }
+              ],
+              "reason": "The rule correctly checks for convergence between label-based and area-based readings."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The geometric consistency confirms Nuclear as the largest category, supporting the routing action."
+            }
+          },
+          {
+            "target_id": "supp_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "right yellow slice",
+                  "content": "The inscription 'Nuclear (45%)' is printed inside the yellow slice."
+                }
+              ],
+              "reason": "The observation of the Nuclear label is directly visible."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/2",
+                  "content": "Keep Fossil Fuels on routine source monitoring"
+                }
+              ],
+              "reason": "The rule correctly distinguishes the valid routing option from invalid fallbacks."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The claim correctly identifies the supported action and refutes the fallback option."
+            }
+          }
+        ],
+        "summary": "All provided chains are fully supported by the chart and public task. The pie chart clearly shows Nuclear as the largest category (45%) both by printed label and visible area, and the public task provides a direct option to route it to priority source monitoring. No unresolved issues or conflicting readings were found."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 4,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page only shows task description and 'Open Dashboard' link. Need to open dashboard to view energy mix data before identifying largest source category.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows Nuclear (45%) is the largest slice, exceeding Fossil Fuels (30%), Renewables (15%), and Hydroelectric (10%). The dashboard instruction says to use it to determine the largest category for routing. Next step is to open the workflow form to route that source record.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Route Nuclear to priority source monitoring"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard pie chart 'Global Energy Consumption by Source' shows Nuclear at 45%, the largest slice, exceeding Fossil Fuels (30%), Renewables (15%), and Hydroelectric (10%). The routing criterion is the largest global energy consumption category, so Nuclear is the correct source to route to priority source monitoring.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Route Nuclear to priority source monitoring"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The pie chart shows Nuclear (45%) as the largest category by both printed label and visible slice area, exceeding Fossil Fuels (30%), Renewables (15%), and Hydroelectric (10%). The routing criterion is the largest global energy consumption category, and the public option 'Route Nuclear to priority source monitoring' matches it. No selection is currently made, so I select it.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is a pie chart of global energy consumption by source with printed percentage labels; Nuclear's 45% is the highest printed value."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "Nuclear is identified as the largest category and a public option exists that routes Nuclear to priority source monitoring."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Route Nuclear to priority source monitoring"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The pie chart shows Nuclear (45%) as the largest category, both by printed label and visible slice area. The current selection 'Route Nuclear to priority source monitoring' matches the routing criterion. All required fields are complete; optional note is not required. Submitting.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is a pie chart of global energy consumption by source, and the printed percentage labels are accepted as the category values. Nuclear (45%) is the highest."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The largest category (Nuclear) is identified, and a public option exists that routes Nuclear to priority source monitoring."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Route Nuclear to priority source monitoring",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": 1
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "post_verification_choices": [
+    {
+      "step": 3,
+      "recommended_option": "Route Nuclear to priority source monitoring",
+      "execution_ok": true,
+      "observed_selection_after": "Route Nuclear to priority source monitoring",
+      "rule_version": 1
+    }
+  ],
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Submission received The environment routing form has been submitted. Return to Portal",
+    "links": []
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Route Nuclear to priority source monitoring"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Route Nuclear to priority source monitoring"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

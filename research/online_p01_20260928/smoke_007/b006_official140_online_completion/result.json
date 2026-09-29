@@ -1,0 +1,67 @@
+{
+  "case": {
+    "task_id": "b006",
+    "arm": "official140",
+    "domain": "business47",
+    "alias": "task_006"
+  },
+  "system": "online_completion",
+  "status": "engineering_or_response_failure",
+  "actor_calls": 2,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task requires reviewing the Product Rating Share dashboard before opening the follow-up item. The home page provides the 'Open Dashboard' link as the ordinary navigation path.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 labels: Quality 24%, Price 10%, Design 52%, Support 45%, Delivery 39%, Other 32%. Highest labeled rating share is Design at 52%. The dashboard has been reviewed; the next step is to open the workflow form to select the Design follow-up item.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": false,
+        "submitted": false,
+        "error": "action_not_available_or_invalid_for_current_visible_page"
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "error": {
+    "stage": "actor",
+    "type": "TargetClosedError",
+    "category": "Page.content: Target page, context or browser has been closed"
+  }
+}

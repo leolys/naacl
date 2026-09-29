@@ -1,0 +1,258 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Quality",
+            "content": "The point above \"Quality\" has the printed inscription \"36%\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Price",
+            "content": "The point above \"Price\" has the printed inscription \"38%\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Design",
+            "content": "The point above \"Design\" has the printed inscription \"34%\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Support",
+            "content": "The point above \"Support\" has the printed inscription \"45%\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Delivery",
+            "content": "The point above \"Delivery\" has the printed inscription \"43%\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Other",
+            "content": "The point above \"Other\" has the printed inscription \"53%\"."
+          }
+        ],
+        "reason": "The six category labels, adjacent blue points, and printed percentage inscriptions are visibly present and legible."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Other"
+          },
+          {
+            "ref": "chart_1",
+            "location": "chart title at upper left",
+            "content": "The visible title reads \"Product Rating Share by Category\"."
+          }
+        ],
+        "reason": "The public rule directs selection of the highest current labeled rating share, and the chart visibly presents category-associated percentage labels under a rating-share title. The rule remains conditional on those labels being the intended metric."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "blue point above x-axis label Other",
+            "content": "The point above \"Other\" has the printed inscription \"53%\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "blue points above the other five category labels",
+            "content": "The printed inscriptions are \"36%\" for Quality, \"38%\" for Price, \"34%\" for Design, \"45%\" for Support, and \"43%\" for Delivery."
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Other"
+          }
+        ],
+        "reason": "Given r1's encoding condition, comparison of the visible printed labels yields Other as uniquely largest, and the matching available option is Select Other. This is a conditional decoded conclusion, not a raw visual observation."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "chart title at upper left",
+            "content": "The visible title reads \"Product Rating Share by Category\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "vertical axis label",
+            "content": "The vertical axis is visibly labeled \"Value\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "point labels across the plot",
+            "content": "Each of the six blue plotted points has a percentage inscription above it."
+          }
+        ],
+        "reason": "The stated title, generic vertical-axis inscription, and percentage labels are visible on the supplied chart."
+      },
+      "B": {
+        "status": "refuted",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/1/1",
+            "content": "mislabeled_value / labeled rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          }
+        ],
+        "reason": "Although the generic visible axis label motivates caution, the public task expressly identifies the dashboard's labeled rating-share values as the evidence source and explicitly names the decision metric. Thus r2's asserted insufficiency/applicability condition is not supported by the full public task."
+      },
+      "implication": {
+        "status": "refuted",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          },
+          {
+            "ref": "chart_1",
+            "location": "chart title at upper left",
+            "content": "The visible title reads \"Product Rating Share by Category\"."
+          }
+        ],
+        "reason": "The public task supplies the metric identity that the chain says is unresolved: it directs use of dashboard labeled rating-share values. The generic \"Value\" axis alone does not negate that explicit task binding. This refutation does not independently establish a winning action beyond the separately checked conditional chain."
+      }
+    },
+    {
+      "target_id": "refine_1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/options/1/label",
+            "content": "Assign additional promotional budget"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/options/1/label",
+            "content": "Prioritize highest current rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/options/1/label",
+            "content": "Rating-share category promotion"
+          }
+        ],
+        "reason": "The added public-task citations accurately identify three required fields and their listed non-placeholder selections. The refinement adds no chart observation."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/options/1/label",
+            "content": "Assign additional promotional budget"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/options/1/label",
+            "content": "Prioritize highest current rating share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/options/1/label",
+            "content": "Rating-share category promotion"
+          }
+        ],
+        "reason": "For the stated conditional context of submitting the workflow, the public form identifies all three companion fields as required and provides the stated selections. This supports a workflow-completion condition without changing r1's chart-decoding rule."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/0/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/required",
+            "content": true
+          },
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          }
+        ],
+        "reason": "The refinement is warranted as a distinct conditional completion requirement alongside the target chain's category-selection reasoning. It does not add evidence about which category has the highest labeled value and does not activate or replace the target rule."
+      }
+    }
+  ],
+  "summary": "base_c1's visible category-label inscriptions and the public highest-labeled-rating-share rule conditionally support Select Other. base_c2 correctly observes the generic \"Value\" axis label but its metric-identity challenge is not sustained because the public task explicitly designates dashboard labeled rating-share values as the evidence source. refine_1 is supported only as an additional required-form-fields condition; it does not independently validate chart decoding or a category choice. Visual reading is limited to the legible supplied chart, and the selection remains conditional on the chart labels functioning as the task-designated values."
+}

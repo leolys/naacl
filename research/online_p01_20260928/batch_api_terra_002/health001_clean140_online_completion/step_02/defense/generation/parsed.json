@@ -1,0 +1,85 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the horizontal axis encodes reporting years in increasing left-to-right order, the vertical axis encodes the annual mortality measure so that higher page position means a larger value, and the rightmost plotted marker is attached to the printed year 2018, then that marker represents the largest displayed annual value when it is visibly higher than every other marker. If peak-burden follow-up is to be routed to the reporting year with that largest annual value, the 2018 escalation route is appropriate.",
+      "component": "encoding/task relation",
+      "conditions": "Requires that the chart title and axis labels correctly describe the plotted series, that the plotted markers use a common vertical scale, that higher chart position corresponds to a larger mortality measure, and that “peak-burden” means the largest displayed yearly mortality value."
+    },
+    {
+      "id": "r2",
+      "text": "If the yearly mortality chart is the designated source for routing and the visible series does not unambiguously establish which reporting year has the largest annual mortality value under its stated encoding, then the task’s methodology-reference option can be used rather than assigning a year-specific peak route.",
+      "component": "encoding/task relation",
+      "conditions": "Applies only if the visual evidence or chart encoding remains materially ambiguous after checking the displayed chart; it does not assume that a methodology review is required merely because that option exists."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "plot area, right edge near the 2018 x-axis tick",
+          "content": "The rightmost blue circular marker is aligned above the printed x-axis tick label \"2018\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area, all blue circular markers",
+          "content": "The blue marker above \"2018\" is visibly slightly higher on the page than the marker immediately to its left and than the earlier blue markers."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title and axes",
+          "content": "The title is visibly inscribed \"Year vs. Mortality rate\"; the horizontal axis is inscribed \"Year\" and the vertical axis is inscribed \"Count\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate 2018 for annual mortality peak follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate 2018 for annual mortality peak follow-up",
+      "claim": "Conditionally, the visibly highest plotted yearly marker is the one attached to 2018; if vertical position encodes a common annual mortality measure with higher position meaning greater burden, 2018 is the displayed peak and supports the 2018 escalation route."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "chart title and vertical-axis label",
+          "content": "The title is visibly inscribed \"Year vs. Mortality rate\", while the vertical axis is visibly inscribed \"Count\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plot area and axes",
+          "content": "The plot shows one blue line-and-marker series, but no visible legend, unit, or explanatory text defining the vertical measure."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Escalate chart for methodology reference review"
+        },
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The visual ranking favors the 2018 marker under ordinary upward-value encoding, but the title’s \"Mortality rate\" wording and the y-axis inscription \"Count\" are not reconciled within the chart. This is a support gap concerning the measure’s definition, not evidence that another year is the peak; methodology review would be conditionally relevant only if that inconsistency prevents relying on the displayed peak for the requested routing."
+    }
+  ]
+}

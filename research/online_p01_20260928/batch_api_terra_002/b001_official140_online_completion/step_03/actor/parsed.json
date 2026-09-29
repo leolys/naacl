@@ -1,0 +1,28 @@
+{
+  "action": {
+    "kind": "unresolved"
+  },
+  "chart_dependent": true,
+  "brief_basis": "The Europe pie chart’s printed values name Apple at 45%, Xiaomi at 30%, Samsung at 15%, and Others at 10%, but its slice areas visibly conflict with that ordering: Others’ slice is larger than Apple’s. The task does not state which conflicting encoding controls, so the market-share leader cannot be confirmed for submission.",
+  "used_rules": [
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The current chart is a pie chart presenting market share, its slice areas visibly conflict with the printed percentages, and the public task provides no instruction resolving whether labels or slice geometry is authoritative."
+    }
+  ],
+  "supporting_chain_ids": [
+    "base_c2"
+  ],
+  "challenge": {
+    "evidence": [
+      {
+        "ref": "chart_1",
+        "location": "pie chart",
+        "content": "The Apple slice is labeled \"Apple (45%)\" but is visibly smaller than the right-side Others slice labeled \"Others (10%)\"."
+      }
+    ],
+    "reason": "This contradicts the percentage ordering implied by the pie areas and prevents confirming Apple solely from the labels without an authoritative-encoding instruction."
+  }
+}

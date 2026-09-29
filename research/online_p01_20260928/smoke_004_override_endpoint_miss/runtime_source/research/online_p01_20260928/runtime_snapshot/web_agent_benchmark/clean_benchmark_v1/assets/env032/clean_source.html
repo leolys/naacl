@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>env032 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>2010 Fuel Supply Escalation Review</h1>
+  <p>This is the clean-pair rendering for <strong>env032</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;env032&quot;,
+  &quot;task_id&quot;: &quot;env_task_39fbf24191_multi_col_1291_dual&quot;,
+  &quot;case_id&quot;: &quot;visDeception/DualAxis/multi_col_1291_dual&quot;,
+  &quot;misleader_type&quot;: &quot;dual_encoding&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;Human review confirmed that in this residential resource consumption chart, Gas is the larger actual 2010 consumption or demand resource compared with Coal. The task therefore routes 2010 Gas to priority residential supply follow-up; Coal is the visual/dual-axis trap.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;2010 Gas&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;Route 2010 Gas to priority residential supply follow-up.&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;At the 2010 comparison point, the dual-axis presentation can lead viewers to route Coal, even though the actual priority resource for this residential consumption decision is Gas.&quot;,
+    &quot;misleading_target&quot;: &quot;2010 Coal&quot;
+  }
+}</pre>
+</body>
+</html>

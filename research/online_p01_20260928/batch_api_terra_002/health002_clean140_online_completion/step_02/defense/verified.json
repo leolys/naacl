@@ -1,0 +1,177 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "plot area, blue line endpoints",
+            "content": "A blue marker is near the bottom-left of the plot, and the rightmost blue marker is near the upper-right."
+          },
+          {
+            "ref": "chart_1",
+            "location": "vertical axis",
+            "content": "The vertical-axis label visibly reads \"Count,\" and the printed tick inscriptions include 0, 200, 400, 600, 800, 1000, 1200, and 1400."
+          },
+          {
+            "ref": "chart_1",
+            "location": "top-center chart title",
+            "content": "The title visibly reads \"Month vs. Number of cases\"."
+          }
+        ],
+        "reason": "The stated endpoint geometry, axis label/tick inscriptions, and title are visibly present."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical axis",
+            "content": "The printed tick values increase in vertical placement from 0 near the bottom toward 1400 near the top."
+          },
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Route the surveillance record to rising-case escalation follow-up"
+          }
+        ],
+        "reason": "The rule is explicitly conditional on the vertical and horizontal encodings and on semantic correspondence of the route label. The visible vertical scale supports its count-direction condition, while its chronological-order condition remains conditional rather than established."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "plot area, blue line endpoints",
+            "content": "The rightmost blue endpoint is higher on the page than the leftmost blue endpoint."
+          },
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Route the surveillance record to rising-case escalation follow-up"
+          }
+        ],
+        "reason": "Given the rule's stated encoding assumptions, the endpoint geometry supports the conditional rising-trajectory reading and the correspondingly named route. This does not independently verify that left-to-right placement is chronological."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "horizontal axis beneath the plot",
+            "content": "The rotated date inscriptions are densely placed and visibly overlap one another in multiple areas beneath the plot."
+          },
+          {
+            "ref": "chart_1",
+            "location": "horizontal axis",
+            "content": "No separate visible arrow or explicit sentence on the axis states that left-to-right position is chronological progression."
+          }
+        ],
+        "reason": "Both the crowded overlap and the absence of a separately printed directional instruction are visible. The lack of an arrow does not by itself establish that the dated labels fail to encode chronology."
+      },
+      "B": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "Rule r2 applies only if the overlap prevents reliable verification of chronological order. The labels are crowded, but the complete image does not establish whether their readable date content is nevertheless sufficient to verify ordering."
+      },
+      "implication": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "The chart visibly motivates an upward left-to-right reading, but the record does not establish that the overlapping labels make chronological progression unverifiable. Thus the requested confirmation remains a reasonable caution, not a conclusively required limitation."
+      }
+    },
+    {
+      "target_id": "refine_1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical axis, lower and upper tick positions",
+            "content": "The printed tick inscription 0 is near the bottom of the vertical axis, while 1400 is near the top."
+          },
+          {
+            "ref": "chart_1",
+            "location": "vertical axis, tick sequence",
+            "content": "The visible vertical-axis tick inscriptions ascend in page position as 0, 200, 400, 600, 800, 1000, 1200, and 1400."
+          }
+        ],
+        "reason": "The added tick-placement observations accurately describe the visible axis."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical axis",
+            "content": "Higher vertical tick placements carry larger printed count inscriptions, from 0 at the bottom through 1400 near the top."
+          }
+        ],
+        "reason": "The visible scale supports the condition that a higher plotted position corresponds to a greater displayed count. These vertical-axis observations do not themselves provide evidence about horizontal chronological ordering."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical axis",
+            "content": "The count tick inscriptions increase upward in placement from 0 to 1400."
+          }
+        ],
+        "reason": "The refinement warrantedly strengthens base_c1's vertical count-direction condition without purporting to settle its separate horizontal-order condition."
+      }
+    },
+    {
+      "target_id": "refine_2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "blue series across the plot area",
+            "content": "Each successive blue marker is higher on the page and farther right than the preceding marker, and the connecting blue segments visibly slope upward from left to right across the series."
+          }
+        ],
+        "reason": "The visible line has no downward-sloping connecting segment when read in screen-space from left to right."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "blue series across the plot area",
+            "content": "The blue line and markers rise continuously in page position from left to right."
+          }
+        ],
+        "reason": "Subject to base_c1's still-unresolved condition that horizontal position encodes reporting progression, the added observation is relevant to characterizing the full series as consistently rising rather than relying only on endpoints."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "blue series across the plot area",
+            "content": "The intervening blue segments, including the early low values and later high values, all slope upward from left to right."
+          }
+        ],
+        "reason": "The refinement is warranted as added support for a consistently upward screen-space series under the existing chronological-order assumption; it does not independently establish that assumption."
+      }
+    }
+  ],
+  "summary": "The complete chart visibly supports an upward left-to-right blue series and an upward-increasing Count scale. Base_c1 therefore supports its action only conditionally on left-to-right positions representing reporting progression and on the route-label semantic mapping. The crowded date labels visibly motivate caution, but the record does not conclusively show that chronology cannot be verified from them; base_c2's applicability and resulting limitation remain unresolved. No alternative route is established merely from that unresolved condition."
+}

@@ -1,0 +1,214 @@
+{
+  "phase": "generation",
+  "context": {
+    "task": {
+      "task_alias": "task_123",
+      "page_title": "Surveillance Trend Escalation Routing",
+      "user_goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+      "chart_reference": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.",
+      "primary_field_label": "Surveillance trend routing decision",
+      "option_labels": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the health record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Infectious disease surveillance"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Reported case trajectory assessment"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Surveillance follow-up routing"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Route the surveillance record to rising-case escalation follow-up",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to declining-case stabilization review",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to background monitoring intake",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling. Surveillance Trend Escalation Routing Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory. Program area Infectious disease surveillance Review scope Reported case trajectory assessment Record workflow Surveillance follow-up routing Surveillance trend routing decision Select a route Route the surveillance record to rising-case escalation follow-up Route the surveillance record to declining-case stabilization review Route the surveillance record to background monitoring intake Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "public_task_leaf_paths": [
+      "/task_alias",
+      "/page_title",
+      "/user_goal",
+      "/chart_reference",
+      "/primary_field_label",
+      "/option_labels/0",
+      "/option_labels/1",
+      "/option_labels/2",
+      "/companion_fields/0/field",
+      "/companion_fields/0/label",
+      "/companion_fields/0/type",
+      "/companion_fields/0/required",
+      "/companion_fields/0/readonly",
+      "/companion_fields/0/value",
+      "/companion_fields/0/placeholder",
+      "/companion_fields/1/field",
+      "/companion_fields/1/type",
+      "/companion_fields/1/required",
+      "/companion_fields/1/readonly",
+      "/companion_fields/1/label",
+      "/companion_fields/1/value",
+      "/companion_fields/2/field",
+      "/companion_fields/2/type",
+      "/companion_fields/2/required",
+      "/companion_fields/2/readonly",
+      "/companion_fields/2/label",
+      "/companion_fields/2/value",
+      "/companion_fields/3/field",
+      "/companion_fields/3/type",
+      "/companion_fields/3/required",
+      "/companion_fields/3/readonly",
+      "/companion_fields/3/label",
+      "/companion_fields/3/value",
+      "/completion_label",
+      "/page_instructions/0/page",
+      "/page_instructions/0/text",
+      "/page_instructions/1/page",
+      "/page_instructions/1/text",
+      "/page_instructions/2/page",
+      "/page_instructions/2/text",
+      "/page_instructions/3/page",
+      "/page_instructions/3/text"
+    ],
+    "unexecuted_proposal": {
+      "action": {
+        "kind": "select",
+        "option": "Route the surveillance record to rising-case escalation follow-up"
+      },
+      "chart_dependent": true,
+      "brief_basis": "The chart's y-axis is inverted (0 at top, 1400 at bottom). The line starts near 0 cases on Jan 27 and moves downward on the plot, which corresponds to increasing case counts, ending near 1400+ cases by Mar 22. This is a rising case trajectory, matching the rising-case escalation follow-up route.",
+      "used_rules": [],
+      "supporting_chain_ids": [],
+      "challenge": null
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/health002_official140_online_completion/browser/observed_chart.png",
+      "sha256": "5a2653fae8ace6ddd3e30da6bc87dd30029b0f9350122a5cb36eec32a59a13a0"
+    }
+  ]
+}

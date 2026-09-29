@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>health015 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Adolescent Breakfast Cereal Follow-up Routing</h1>
+  <p>This is the clean-pair rendering for <strong>health015</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;health015&quot;,
+  &quot;task_id&quot;: &quot;health_task_51f8d806df_multi_col_20517_png_dual&quot;,
+  &quot;case_id&quot;: &quot;visDeception/DualAxis/multi_col_20517.png_dual&quot;,
+  &quot;misleader_type&quot;: &quot;dual_axis_distortion&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;For the 11-18 years group, this task treats high-fibre breakfast cereals as the correct higher option. The dual-axis design can make other breakfast cereals look higher when the two series are compared visually.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;High fibre breakfast cereals for 11-18 years&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;route_high_fibre_cereal_option_for_11_18_years_to_adolescent_fibre_support_follow_up&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;The dual-axis design can distort direct comparison between the two cereal series, making other breakfast cereals appear higher than high-fibre breakfast cereals for 11-18 years.&quot;,
+    &quot;misleading_target&quot;: &quot;treat other breakfast cereals as higher for 11-18 years because the dual-axis comparison is visually misleading&quot;
+  }
+}</pre>
+</body>
+</html>

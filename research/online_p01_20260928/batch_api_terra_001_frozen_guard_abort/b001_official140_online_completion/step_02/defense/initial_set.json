@@ -1,0 +1,137 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the pie-slice inscriptions are intended to state the current Europe smartphone market-share values for their attached brands, and the promotion rule allocates the budget to the brand with the highest such value, then the brand with the largest printed percentage is the required promotion selection.",
+      "component": "chart label encoding and task-to-action relation",
+      "conditions": "The printed brand-and-percentage inscriptions accurately encode current market share, and the public promotion rule applies to those dashboard values."
+    },
+    {
+      "id": "r2",
+      "text": "If the angular extent of each pie sector encodes current Europe smartphone market share and the promotion rule allocates the budget to the current leader, then the brand attached to the visibly largest sector is the required promotion selection.",
+      "component": "pie-sector geometry encoding and task-to-action relation",
+      "conditions": "Sector geometry, rather than or in addition to the printed percentages, accurately encodes the market-share values used by the public rule."
+    },
+    {
+      "id": "r3",
+      "text": "If both the printed percentages and the pie-sector extents are intended to encode the same current market-share distribution, then a material disagreement between their implied leaders prevents the chart alone from establishing a single leader until the intended encoding is checked.",
+      "component": "cross-encoding consistency check",
+      "conditions": "The labels and sector geometry are both expected to represent the same metric, scope, and current snapshot."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left chart title",
+          "content": "The title inscription reads \"Smartphone Market Share in Europe\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left orange pie sector",
+          "content": "The inscription inside the sector reads \"Apple (45%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-left orange-red pie sector",
+          "content": "The inscription inside the sector reads \"Xiaomi (30%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower pie sector",
+          "content": "The inscription inside the sector reads \"Samsung (15%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right red pie sector",
+          "content": "The inscription inside the sector reads \"Others (10%)\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the brand with the highest current market share"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "Conditionally, if the printed percentages are the dashboard's authoritative current market-share values, Apple has the largest printed value and supports selecting Apple under the stated leader rule."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "right side of pie",
+          "content": "The red sector containing the inscription \"Others (10%)\" visibly spans a larger angular portion of the pie than each of the other sectors."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left orange pie sector",
+          "content": "The sector containing the inscription \"Apple (45%)\" visibly spans a smaller angular portion of the pie than the red \"Others (10%)\" sector."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the brand with the highest current market share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Select Others for the premium EU retail promotion budget"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Others for the premium EU retail promotion budget",
+      "claim": "Conditionally, if pie-sector extent is the authoritative market-share encoding, the visibly largest sector is attached to Others, which instead supports selecting Others."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "upper-left orange pie sector",
+          "content": "The sector inscribed \"Apple (45%)\" is visibly smaller than the right red sector."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right red pie sector",
+          "content": "The visibly largest sector is inscribed \"Others (10%)\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the brand with the highest current market share"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The printed percentages indicate Apple as the largest labeled value, while the pie geometry visibly makes the Others sector largest. If both encodings are meant to represent the same current market-share data, the chart has an unresolved encoding conflict and does not by itself establish which leader-based option should be selected."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  }
+}

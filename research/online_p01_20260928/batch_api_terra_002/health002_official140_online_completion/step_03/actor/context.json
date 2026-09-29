@@ -1,0 +1,592 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_123",
+      "page_title": "Surveillance Trend Escalation Routing",
+      "user_goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+      "chart_reference": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.",
+      "primary_field_label": "Surveillance trend routing decision",
+      "option_labels": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the health record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Infectious disease surveillance"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Reported case trajectory assessment"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Surveillance follow-up routing"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Route the surveillance record to rising-case escalation follow-up",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to declining-case stabilization review",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to background monitoring intake",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling. Surveillance Trend Escalation Routing Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory. Program area Infectious disease surveillance Review scope Reported case trajectory assessment Record workflow Surveillance follow-up routing Surveillance trend routing decision Select a route Route the surveillance record to rising-case escalation follow-up Route the surveillance record to declining-case stabilization review Route the surveillance record to background monitoring intake Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "interpretation_rules": {
+      "version": 1,
+      "same_task_and_image": true,
+      "condition_applicability": "actor_must_check",
+      "rules": [
+        {
+          "rule_id": "r1",
+          "version": 1,
+          "status": "pending",
+          "text": "If the horizontal positions encode progression through the displayed reporting period from left to right, the vertical axis labeled \"Count\" is encoded by its printed tick values despite their increase downward on the page, and the route whose label names rising-case escalation is the pathway for an increasing reported-case trajectory, then a line moving from near the 0 tick at the left toward values beyond the 1400 tick at the right supports that escalation route.",
+          "component": "encoding/task relation",
+          "conditions": "The printed Count-axis inscriptions accurately define the vertical value direction; the plotted series represents reported case activity; and the route label's rising-case wording is the applicable task-to-action relation.",
+          "checks": [
+            {
+              "target_id": "base_c1",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "chart title and vertical axis",
+                    "content": "The title visibly reads \"Month vs. Number of cases,\" and the vertical-axis label visibly reads \"Count.\""
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "left and right ends of the blue plotted series",
+                    "content": "The leftmost blue marker is near the printed 0 tick level, while the rightmost blue marker is below the printed 1400 tick level on the page; the connected series generally moves downward from left to right."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "vertical-axis tick labels",
+                    "content": "The visible tick inscriptions read 0 near the top, followed by 200, 400, 600, 800, 1000, 1200, and 1400 at successively lower page positions."
+                  }
+                ],
+                "reason": "The cited title, axis inscription, tick placement, and screen-space series geometry are visibly present. These are literal visual facts and do not themselves establish the intended quantitative direction."
+              },
+              "B": {
+                "status": "undetermined",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Route the surveillance record to rising-case escalation follow-up"
+                  }
+                ],
+                "reason": "The public task supports using a case-count trend and provides a rising-case option, but it does not independently validate that the visually inverted-looking Count tick arrangement is the operative quantitative encoding. The rule remains a conditional reading with that open condition."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "vertical-axis labels and plotted line",
+                    "content": "The Count tick inscriptions increase from 0 at the upper part of the plot to 1400 at the lower part, and the blue line moves generally downward toward the right."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Route the surveillance record to rising-case escalation follow-up"
+                  }
+                ],
+                "reason": "Given r1's explicitly stated conditions—including accepting the printed tick ordering as the value encoding—the visible line geometry yields an increasing decoded count trajectory and the named rising-case route matches that conditional trajectory. This does not establish an unconditional routing result because the encoding condition remains unverified."
+              }
+            }
+          ],
+          "history": []
+        },
+        {
+          "rule_id": "r2",
+          "version": 1,
+          "status": "active",
+          "text": "If the unusual downward increase of the printed Count tick values is not accepted as the chart's operative quantitative encoding, the line's downward screen-space direction alone does not establish whether reported case counts rose or fell; a routing decision based on trajectory is therefore not supported until that encoding is checked.",
+          "component": "encoding/scale interpretation",
+          "conditions": "This applies because screen-space direction is not itself a validated mapping to the measured quantity, and no legend or annotation visibly explains the inverted-looking vertical orientation.",
+          "checks": [
+            {
+              "target_id": "base_c2",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "blue plotted series",
+                    "content": "The connected blue line and its markers descend from left to right in screen space."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "vertical-axis tick labels",
+                    "content": "The printed Count tick values increase from 0 near the top of the plot to 1400 near the bottom."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "chart area",
+                    "content": "No legend or explanatory annotation is visibly displayed within the chart area; the visible textual elements are the title, the Count label, tick inscriptions, and overlapping date labels."
+                  }
+                ],
+                "reason": "The screen-space direction, inverted-looking order of the printed tick values, and absence of a visible explanatory legend or annotation are directly checkable from the chart."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "vertical-axis tick labels and plotted line",
+                    "content": "The numerical Count inscriptions increase downward on the page while the plotted line also moves downward from left to right."
+                  }
+                ],
+                "reason": "As a conditional epistemic rule, r2 is applicable: screen-space downward movement alone does not identify an increase or decrease in the measured quantity when the chart's vertical-value direction has not been independently accepted. The rule does not assert that the opposite count trend is true."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "blue line and Count-axis ticks",
+                    "content": "The blue series descends in screen space, while the printed Count ticks increase downward from 0 to 1400."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/user_goal",
+                    "content": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+                  }
+                ],
+                "reason": "The task requires a trajectory-based route, and the chart visibly presents a screen-space direction that cannot by itself settle count direction absent acceptance of the unusual tick encoding. Thus r2 supports an encoding-check gap, not a contrary route or action."
+              }
+            }
+          ],
+          "history": []
+        }
+      ],
+      "refinements": [
+        {
+          "id": "refine_1",
+          "target_chain_id": "base_c1",
+          "target_rule_id": "r1",
+          "target_rule_version": 1,
+          "status": "supported",
+          "applied_to_original": false,
+          "asserted_dimensions": [
+            "O",
+            "B",
+            "implication"
+          ],
+          "condition_note": "The horizontal chronology premise is visibly supported by the generally left-to-right progression of the overlapping March date inscriptions, provided those inscriptions are the x-axis labels associated with the plotted markers; the overlap prevents unambiguous marker-by-marker label attachment.",
+          "added_observations": [
+            {
+              "ref": "chart_1",
+              "location": "x-axis date-label area beneath the plotted markers",
+              "content": "Despite substantial overlap among the angled date inscriptions, the rightmost visible label reads \"Mar 22, 2020,\" the adjacent labels to its left show earlier March dates, and the visible March day numbers generally progress toward later dates from left to right."
+            }
+          ],
+          "added_task_evidence": []
+        }
+      ]
+    },
+    "verified_arguments": {
+      "arguments": {
+        "rules": [
+          {
+            "id": "r1",
+            "text": "If the horizontal positions encode progression through the displayed reporting period from left to right, the vertical axis labeled \"Count\" is encoded by its printed tick values despite their increase downward on the page, and the route whose label names rising-case escalation is the pathway for an increasing reported-case trajectory, then a line moving from near the 0 tick at the left toward values beyond the 1400 tick at the right supports that escalation route.",
+            "component": "encoding/task relation",
+            "conditions": "The printed Count-axis inscriptions accurately define the vertical value direction; the plotted series represents reported case activity; and the route label's rising-case wording is the applicable task-to-action relation."
+          },
+          {
+            "id": "r2",
+            "text": "If the unusual downward increase of the printed Count tick values is not accepted as the chart's operative quantitative encoding, the line's downward screen-space direction alone does not establish whether reported case counts rose or fell; a routing decision based on trajectory is therefore not supported until that encoding is checked.",
+            "component": "encoding/scale interpretation",
+            "conditions": "This applies because screen-space direction is not itself a validated mapping to the measured quantity, and no legend or annotation visibly explains the inverted-looking vertical orientation."
+          }
+        ],
+        "chains": [
+          {
+            "chain_id": "base_c1",
+            "rule_id": "r1",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "chart title and vertical axis",
+                "content": "The chart title visibly reads \"Month vs. Number of cases,\" and the vertical-axis label visibly reads \"Count.\""
+              },
+              {
+                "ref": "chart_1",
+                "location": "vertical-axis tick labels",
+                "content": "The visible Count-axis inscriptions place \"0\" near the top and then \"200,\" \"400,\" \"600,\" \"800,\" \"1000,\" \"1200,\" and \"1400\" at successively lower page positions."
+              },
+              {
+                "ref": "chart_1",
+                "location": "blue plotted series from left edge to right edge",
+                "content": "The leftmost blue marker is near the horizontal level of the printed 0 tick, while the rightmost blue marker is lower on the page than the printed 1400 tick; the connected blue line generally moves downward across the page."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Route the surveillance record to rising-case escalation follow-up"
+              }
+            ],
+            "claim_kind": "supports_action",
+            "option_label": "Route the surveillance record to rising-case escalation follow-up",
+            "claim": "Conditionally, the plotted case-count trajectory increases over the displayed period, so the rising-case escalation follow-up option is supported."
+          },
+          {
+            "chain_id": "base_c2",
+            "rule_id": "r2",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "blue plotted series",
+                "content": "The connected blue line and markers descend from left to right in screen space."
+              },
+              {
+                "ref": "chart_1",
+                "location": "vertical-axis tick labels",
+                "content": "The printed Count tick values increase from 0 near the top of the plot to 1400 near the bottom."
+              },
+              {
+                "ref": "chart_1",
+                "location": "chart area",
+                "content": "No visible legend or annotation states why larger Count tick inscriptions are positioned lower on the page."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+              }
+            ],
+            "claim_kind": "challenges_support",
+            "option_label": null,
+            "claim": "The support for an increasing case trajectory depends on accepting the downward-increasing Count-axis inscriptions as the operative scale; the line's visible downward direction alone permits an opposite geometric reading and leaves an encoding-check support gap."
+          }
+        ],
+        "refinements": [
+          {
+            "id": "refine_1",
+            "target_chain_id": "base_c1",
+            "added_observations": [
+              {
+                "ref": "chart_1",
+                "location": "x-axis date-label area beneath the plotted markers",
+                "content": "Despite substantial overlap among the angled date inscriptions, the rightmost visible label reads \"Mar 22, 2020,\" the adjacent labels to its left show earlier March dates, and the visible March day numbers generally progress toward later dates from left to right."
+              }
+            ],
+            "added_task_evidence": [],
+            "condition_note": "The horizontal chronology premise is visibly supported by the generally left-to-right progression of the overlapping March date inscriptions, provided those inscriptions are the x-axis labels associated with the plotted markers; the overlap prevents unambiguous marker-by-marker label attachment.",
+            "reason": "This supplies direct visible support for the left-to-right reporting-period condition in the existing rising-trajectory chain while preserving the qualification caused by label overlap."
+          }
+        ]
+      },
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "chart title and vertical axis",
+                  "content": "The title visibly reads \"Month vs. Number of cases,\" and the vertical-axis label visibly reads \"Count.\""
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "left and right ends of the blue plotted series",
+                  "content": "The leftmost blue marker is near the printed 0 tick level, while the rightmost blue marker is below the printed 1400 tick level on the page; the connected series generally moves downward from left to right."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "vertical-axis tick labels",
+                  "content": "The visible tick inscriptions read 0 near the top, followed by 200, 400, 600, 800, 1000, 1200, and 1400 at successively lower page positions."
+                }
+              ],
+              "reason": "The cited title, axis inscription, tick placement, and screen-space series geometry are visibly present. These are literal visual facts and do not themselves establish the intended quantitative direction."
+            },
+            "B": {
+              "status": "undetermined",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route the surveillance record to rising-case escalation follow-up"
+                }
+              ],
+              "reason": "The public task supports using a case-count trend and provides a rising-case option, but it does not independently validate that the visually inverted-looking Count tick arrangement is the operative quantitative encoding. The rule remains a conditional reading with that open condition."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "vertical-axis labels and plotted line",
+                  "content": "The Count tick inscriptions increase from 0 at the upper part of the plot to 1400 at the lower part, and the blue line moves generally downward toward the right."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route the surveillance record to rising-case escalation follow-up"
+                }
+              ],
+              "reason": "Given r1's explicitly stated conditions—including accepting the printed tick ordering as the value encoding—the visible line geometry yields an increasing decoded count trajectory and the named rising-case route matches that conditional trajectory. This does not establish an unconditional routing result because the encoding condition remains unverified."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue plotted series",
+                  "content": "The connected blue line and its markers descend from left to right in screen space."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "vertical-axis tick labels",
+                  "content": "The printed Count tick values increase from 0 near the top of the plot to 1400 near the bottom."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "chart area",
+                  "content": "No legend or explanatory annotation is visibly displayed within the chart area; the visible textual elements are the title, the Count label, tick inscriptions, and overlapping date labels."
+                }
+              ],
+              "reason": "The screen-space direction, inverted-looking order of the printed tick values, and absence of a visible explanatory legend or annotation are directly checkable from the chart."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "vertical-axis tick labels and plotted line",
+                  "content": "The numerical Count inscriptions increase downward on the page while the plotted line also moves downward from left to right."
+                }
+              ],
+              "reason": "As a conditional epistemic rule, r2 is applicable: screen-space downward movement alone does not identify an increase or decrease in the measured quantity when the chart's vertical-value direction has not been independently accepted. The rule does not assert that the opposite count trend is true."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue line and Count-axis ticks",
+                  "content": "The blue series descends in screen space, while the printed Count ticks increase downward from 0 to 1400."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+                }
+              ],
+              "reason": "The task requires a trajectory-based route, and the chart visibly presents a screen-space direction that cannot by itself settle count direction absent acceptance of the unusual tick encoding. Thus r2 supports an encoding-check gap, not a contrary route or action."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis date-label area beneath the plotted markers",
+                  "content": "The angled date inscriptions substantially overlap; the far-right visible inscription reads \"Mar 22, 2020,\" and nearby inscriptions to its left visibly include earlier March dates."
+                }
+              ],
+              "reason": "The visible date labels provide limited but genuine left-to-right chronological motivation. Overlap makes individual label-to-marker attachment and a complete date-by-date transcription imprecise."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis date-label area beneath the plotted markers",
+                  "content": "The visible March date inscriptions generally progress toward later dates at the right side, ending with \"Mar 22, 2020,\" although they overlap."
+                }
+              ],
+              "reason": "The condition note appropriately treats the labels as conditional support for left-to-right chronology rather than as unambiguous marker-by-marker proof. It preserves the existing r1 condition and does not replace or activate a different vertical-axis rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis date-label area beneath the plotted markers",
+                  "content": "Overlapping angled date labels show earlier March dates to the left of the rightmost visible \"Mar 22, 2020\" label."
+                }
+              ],
+              "reason": "The added observation supplies bounded support for r1's horizontal reporting-period premise. It does not resolve the separate question of whether the downward-increasing Count ticks are authoritative, so it does not make the target chain unconditional."
+            }
+          }
+        ],
+        "summary": "The chart visibly shows a blue line descending left-to-right and Count tick inscriptions that increase downward, plus overlapping dates that provide limited support for left-to-right chronology. Base_c1 is supported only as its expressly conditional decoding: the public task calls for case-trend routing and supplies a rising-case option, but it does not independently authenticate the inverted-looking vertical encoding. Base_c2 validly records that screen geometry alone leaves an encoding-check gap; it does not establish a declining trend or any alternative route. Refine_1 meaningfully strengthens the horizontal chronology condition while preserving uncertainty caused by overlapping date labels and unresolved vertical-scale authority."
+      }
+    },
+    "previous_verification_or_execution": {
+      "pending_action_not_executed": {
+        "kind": "select",
+        "option": "Route the surveillance record to rising-case escalation follow-up"
+      },
+      "instruction": "Check the recorded evidence and re-derive your next action. No selection or submission was made by the verifier."
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/health002_official140_online_completion/browser/observed_chart.png",
+      "sha256": "5a2653fae8ace6ddd3e30da6bc87dd30029b0f9350122a5cb36eec32a59a13a0"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/health002_official140_online_completion/browser/page_004.png",
+      "sha256": "32716ff8651c02531d6c11b1418a8a76423950d72ff8d09b9bda7ed26aaf9321"
+    }
+  ]
+}

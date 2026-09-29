@@ -1,0 +1,106 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a pie chart's printed percentage labels are treated as the authoritative market-share values, then the brand whose label has the highest numeric value is the current market leader, and the matching public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed percentages are valid and comparable; assumes 'market leader' means the largest printed share."
+    },
+    {
+      "id": "r2",
+      "text": "If the pie chart's visible slice areas are treated as the authoritative market-share values, then the brand whose slice occupies the largest visible area is the current market leader, and the matching public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the drawn slice geometry is valid and comparable; assumes 'market leader' means the largest visible slice."
+    },
+    {
+      "id": "r3",
+      "text": "If the printed percentage labels and the visible slice areas disagree, the chart is internally inconsistent, and the current market leader is underdetermined until the discrepancy is resolved.",
+      "component": "scale comparability",
+      "conditions": "Applies when the highest printed percentage is attached to a slice that is not the largest visible slice."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "upper-left yellow slice",
+          "content": "The inscription 'Samsung (55 %)' is printed inside the yellow slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left red slice",
+          "content": "The inscription 'Xiaomi (20 %)' is printed inside the red slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower orange-red slice",
+          "content": "The inscription 'Apple (15 %)' is printed inside the orange-red slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right orange slice",
+          "content": "The inscription 'Others (10 %)' is printed inside the orange slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "If the printed percentages are authoritative, Samsung's 55% is the highest value, so Samsung is the current market leader and the matching option is supported."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "left red slice",
+          "content": "The red slice labeled 'Xiaomi (20 %)' occupies the largest visible area of the pie chart."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left yellow slice",
+          "content": "The yellow slice labeled 'Samsung (55 %)' occupies a visibly smaller area than the red slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Select Xiaomi as the current market leader"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the visible slice geometry is authoritative, Xiaomi's slice is the largest, which would make Xiaomi the market leader and challenge the printed-label reading."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "upper-left yellow slice",
+          "content": "The inscription 'Samsung (55 %)' is printed inside the yellow slice, which is visibly smaller than the red slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left red slice",
+          "content": "The inscription 'Xiaomi (20 %)' is printed inside the red slice, which is visibly the largest slice."
+        }
+      ],
+      "task_evidence": [],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The highest printed percentage (Samsung 55%) is attached to a slice that is not the largest visible slice (Xiaomi), so the chart is internally inconsistent and the market leader is underdetermined."
+    }
+  ]
+}

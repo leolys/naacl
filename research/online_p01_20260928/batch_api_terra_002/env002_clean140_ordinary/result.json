@@ -1,0 +1,194 @@
+{
+  "case": {
+    "task_id": "env002",
+    "arm": "clean140",
+    "domain": "environment35",
+    "alias": "task_228"
+  },
+  "system": "ordinary",
+  "status": "unresolved_public_evidence",
+  "actor_calls": 4,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task page provides the visible Open Dashboard link, which is the ordinary navigation required to review the dashboard before opening the workflow form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard review is complete; the visible workflow link is Open Form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Escalate the 2005-2015 temperature decline for follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "chart_1 shows a sustained decline from 24 in 2005 to 10 in 2015 (14-unit magnitude); the displayed workflow is Substantial trend follow-up and its criterion is magnitude across the review period, so that scope applies to this multi-year decline.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "unresolved"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The chart shows a decline from about 24 in 2005 to 10 in 2015 (about 14 units), but no active public rule or threshold defines when a magnitude warrants the substantial-trend escalation route. The existing selection is only a proposal.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Escalate the 2005-2015 temperature decline for follow-up",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "Escalate the 2005-2015 temperature decline for follow-up",
+    "option_states": [
+      {
+        "label": "Escalate the 2005-2015 temperature decline for follow-up",
+        "selected": true
+      },
+      {
+        "label": "Keep the 2005-2015 temperature decline on routine monitoring",
+        "selected": false
+      },
+      {
+        "label": "Archive the temperature trend record without targeted follow-up",
+        "selected": false
+      }
+    ],
+    "options": [
+      "Escalate the 2005-2015 temperature decline for follow-up",
+      "Keep the 2005-2015 temperature decline on routine monitoring",
+      "Archive the temperature trend record without targeted follow-up"
+    ],
+    "fields": [
+      {
+        "field": "note",
+        "type": "textarea",
+        "label": "Routing note",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "selected_text": null,
+        "valid": true,
+        "options": null
+      }
+    ],
+    "submit_visible": true,
+    "page": "form",
+    "visible_text": "Dashboard Reference Use the charted yearly temperature readings as the basis for this routing decision. Temperature Trend Follow-Up Routing Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow. Program area Temperature monitoring Review scope Multi-year environmental trend Record workflow Substantial trend follow-up Routing criterion Magnitude of change across the review period Temperature trend routing decision Select a route Escalate the 2005-2015 temperature decline for follow-up Keep the 2005-2015 temperature decline on routine monitoring Archive the temperature trend record without targeted follow-up Routing note Submit Form Back to Dashboard",
+    "links": [
+      "Back to Dashboard"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "source": "actor"
+    }
+  ]
+}

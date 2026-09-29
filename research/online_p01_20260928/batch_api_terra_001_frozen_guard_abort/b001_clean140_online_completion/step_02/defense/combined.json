@@ -1,0 +1,140 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the percentage inscriptions inside the pie slices are valid, comparable market-share values for the named Europe smartphone categories, then the category with the largest printed percentage is the displayed market-share leader; if the task reserves the premium retail promotion budget for that leader, the matching brand option is supported.",
+      "component": "pie-slice label decoding and task-to-action relation",
+      "conditions": "Applies only if the pie labels correctly encode comparable Europe market shares and the dashboard values are the intended current evidence source."
+    },
+    {
+      "id": "r2",
+      "text": "If a task requires a current market-share leader, a chart supports that temporal qualification only when its displayed scope or the supplied task context establishes that the shown values are current; absence of a visible date or current-period label leaves independent temporal verification incomplete.",
+      "component": "temporal scope validation",
+      "conditions": "Applies to whether the chart itself visibly establishes the required current-period status, not to the relative ordering of its printed percentages."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie slice on the right side",
+          "content": "The slice contains the inscription \"Apple (45%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-left pie slice",
+          "content": "The slice contains the inscription \"Xiaomi (30%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left pie slice",
+          "content": "The slice contains the inscription \"Samsung (15%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left pie slice",
+          "content": "The slice contains the inscription \"Others (10%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title at upper left",
+          "content": "The title inscription reads \"Smartphone Market Share in Europe\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Apple for the premium EU retail promotion budget"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "Conditionally, treating the printed pie-slice percentages as comparable current Europe market-share values, Apple has the largest displayed share at 45%, above the other printed values, so the Apple promotion option is supported by the stated leader-allocation rule."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "entire visible chart area, including title and pie labels",
+          "content": "Visible inscriptions identify Europe and the four percentage-labeled categories, but no date, reporting period, or inscription containing \"current\" is visible."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The chart visibly supports a displayed percentage ordering but does not independently show a reporting date or current-period label. The public task characterizes the dashboard as current-market-share evidence, so this is a temporal-verification support gap rather than evidence for a different brand option."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie chart sectors",
+          "content": "The Apple-labeled sector visibly occupies a larger portion of the pie than each of the Xiaomi-, Samsung-, and Others-labeled sectors."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie chart sector boundaries",
+          "content": "The Apple sector extends from the top radial boundary around the right side to the lower-right boundary, while the other labeled sectors occupy smaller portions on the left side."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "This is only a visual cross-check of the printed-label ordering; the conclusion still depends on the sector labels and percentages being valid comparable market-share encodings.",
+      "reason": "The base chain uses the printed percentage inscriptions; these visible sector extents independently corroborate that the Apple-associated sector is the largest displayed sector."
+    }
+  ],
+  "initial_counts": {
+    "rules": 2,
+    "chains": 2
+  },
+  "supplement_counts": {
+    "rules": 0,
+    "chains": 0,
+    "refinements": 1
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c1"
+      ],
+      "reason": "The added observations provide the requested visible geometric cross-check without replacing the base chain's percentage-label decoding."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "already_covered",
+      "record_ids": [],
+      "covered_chain_ids": [
+        "base_c2"
+      ],
+      "reason": "The existing chain distinguishes the absent chart date/current-period inscription from the public task's characterization of the dashboard as evidence for a current-market-share decision, preserving the resulting temporal-verification limitation."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "If a pie chart's visible slice areas are treated as the authoritative market-share values, then the brand whose slice occupies the largest visible area is the current market leader, and the corresponding public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the drawn slice geometry is valid and that 'current market leader' means the largest visible slice."
+    },
+    {
+      "id": "supp_r2",
+      "text": "If a pie chart's printed percentage labels are treated as the authoritative market-share values, then the brand whose printed percentage is numerically greatest is the current market leader, and the corresponding public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed percentage inscriptions are valid and that 'current market leader' means the largest printed share."
+    },
+    {
+      "id": "supp_r3",
+      "text": "If the printed percentage labels and the visible slice areas conflict, the chart is internally inconsistent, and the current market leader is underdetermined until the conflict is resolved.",
+      "component": "scale comparability",
+      "conditions": "Applies when the largest printed percentage and the largest visible slice belong to different brands."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "left red slice",
+          "content": "The red slice labeled 'Xiaomi (20 %)' visibly occupies a larger area than the orange slice labeled 'Others (10 %)'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Select Xiaomi as the current market leader"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the visible slice areas are authoritative, Xiaomi's slice is the largest, so Xiaomi would be the current market leader, challenging the printed-label reading.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "competing"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q2",
+        "q3"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "top title",
+          "content": "The title 'Smartphone Market Share in Europe' is printed at the top of the chart."
+        }
+      ],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/options/1/label",
+          "content": "Europe"
+        }
+      ],
+      "condition_note": "The chart title and the public task's 'Europe' region context align, validating the chart as the correct source for the follow-up decision. No public rule specifies whether printed labels or visible geometry are authoritative in a conflict.",
+      "reason": "Adds the missing title observation and task context to confirm the chart's relevance, and explicitly notes the absence of a public rule for resolving the label-vs-geometry conflict."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The new chain supp_c1 explicitly compares the 'Others' slice to the 'Xiaomi' slice, confirming that Xiaomi's slice is larger and thus the largest visible slice."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The refinement refine_1 explicitly states that no public rule or task instruction specifies which source (printed labels or visible geometry) is authoritative when they conflict."
+    },
+    {
+      "question_id": "q3",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The refinement refine_1 adds the chart title observation and the public task's 'Europe' context, confirming that the chart is the correct source for the follow-up decision."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a pie chart's printed slice labels are treated as the current Europe smartphone market-share values, the brand whose printed percentage is numerically greatest is the current market-share leader.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market-share dashboard; printed percentages are comparable market-share values; the task's decision metric is market_share."
+    },
+    {
+      "id": "r2",
+      "text": "If the public task's budget rule requires allocating the premium EU retail promotion budget to the current market-share leader, the public option naming that leader is the supported action.",
+      "component": "task-to-action relation",
+      "conditions": "The selected option must name the brand identified as the leader; the budget rule and review scope match the chart's Europe smartphone brands."
+    },
+    {
+      "id": "r3",
+      "text": "If a pie chart's printed percentage labels are not accepted as authoritative market-share values, the chart alone cannot establish which brand has the highest current market share.",
+      "component": "numeric decoding",
+      "conditions": "No external data or policy threshold is supplied; only visible marks and literal inscriptions may be used."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title at top left",
+          "content": "Inscription reads 'Smartphone Market Share in Europe'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "large orange slice on the right",
+          "content": "Inscription inside the slice reads 'Apple (45%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange-red slice at lower left",
+          "content": "Inscription inside the slice reads 'Xiaomi (30%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pale yellow slice at upper left",
+          "content": "Inscription inside the slice reads 'Samsung (15%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice at top left",
+          "content": "Inscription inside the slice reads 'Others (10%)'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/2/1",
+          "content": "Europe smartphone brands"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": null,
+      "claim": "If the printed slice labels are accepted as the Europe market-share values, Apple's 45% is the greatest printed percentage, so Apple is the current market-share leader."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "large orange slice on the right",
+          "content": "Inscription inside the slice reads 'Apple (45%)'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the brand with the highest current market share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Apple for the premium EU retail promotion budget"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "If Apple is the current market-share leader, the public option naming Apple is the supported action under the budget rule."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "all four pie slices",
+          "content": "Each slice contains a printed brand label and percentage: Apple (45%), Xiaomi (30%), Samsung (15%), Others (10%)."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "If the printed percentages are not accepted as authoritative market-share values, the chart alone does not establish which brand has the highest current market share."
+    }
+  ]
+}

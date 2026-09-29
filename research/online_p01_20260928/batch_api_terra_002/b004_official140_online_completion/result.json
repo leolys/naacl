@@ -1,0 +1,372 @@
+{
+  "case": {
+    "task_id": "b004",
+    "arm": "official140",
+    "domain": "business47",
+    "alias": "task_004"
+  },
+  "system": "online_completion",
+  "status": "unresolved_public_evidence",
+  "actor_calls": 4,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Select Samsung as the current market leader"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "upper-left title",
+                  "content": "The title visibly reads “Smartphone Market Share in Europe”."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "light-yellow upper-left sector",
+                  "content": "The sector visibly contains the inscription “Samsung (55%)”."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "red left-lower sector",
+                  "content": "The sector visibly contains the inscription “Xiaomi (20%)”."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange right sector",
+                  "content": "The sector visibly contains the inscription “Others (10%)”."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange-red lower-right sector",
+                  "content": "The sector visibly contains the inscription “Apple (15%)”."
+                }
+              ],
+              "reason": "The stated title and all four brand-percentage inscriptions are visibly present in the described sectors. Their truth or authority as market-share measurements is not established by their visibility alone."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Samsung as the current market leader"
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "upper-left title",
+                  "content": "The title visibly reads “Smartphone Market Share in Europe”."
+                }
+              ],
+              "reason": "The task connects the Europe smartphone-market dashboard to selecting a current market leader, and provides a Samsung leader option. The rule is appropriately conditional on the printed values and their attachments being authoritative and on leader meaning largest current share; those conditions remain unverified."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "four labeled pie sectors",
+                  "content": "The visible inscriptions are “Samsung (55%),” “Xiaomi (20%),” “Others (10%),” and “Apple (15%).”"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Samsung as the current market leader"
+                }
+              ],
+              "reason": "Under r1's expressly stated authority and task-meaning conditions, 55% is greater than each of the other printed percentages, so the conditional Samsung conclusion and matching option follow. This does not establish that the inscriptions control over the conflicting sector geometry."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "refuted",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie sectors centered on the circle",
+                  "content": "The sector bearing “Others (10%)” visibly spans a larger angular portion of the circle than the light-yellow sector bearing “Samsung (55%).”"
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie sectors centered on the circle",
+                  "content": "The chart visibly shows radial boundaries and differently sized sectors, but it does not print an angular fraction for either sector."
+                }
+              ],
+              "reason": "The qualitative larger-than comparison is visible. However, “roughly about one-third” is an unprinted quantitative estimate rather than a literal observation and should not appear in O; visual geometry alone does not supply that stated numeric fraction with sufficient precision."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "central circular graphic",
+                  "content": "The graphic is visibly divided into radial sectors forming a pie-like circle."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the Europe smartphone market share dashboard to identify the brand for market-leader follow-up."
+                }
+              ],
+              "reason": "r2 is a conditional validation rule: proportional sector-area encoding would make a visible size/label discrepancy relevant. The displayed graphic visibly has pie-like sectors, but neither the chart nor the public task expressly confirms that geometry encodes the same quantity as the inscriptions or establishes which element controls if they conflict."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "light-yellow Samsung sector and orange Others sector",
+                  "content": "The light-yellow sector inscribed “Samsung (55%)” is visibly smaller in angular extent than the orange sector inscribed “Others (10%).”"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the Europe smartphone market share dashboard to identify the brand for market-leader follow-up."
+                }
+              ],
+              "reason": "The visible geometry conflicts with the printed Samsung-versus-Others ordering if the pie sectors are intended to encode the printed market shares proportionally. The public task directs use of the dashboard but does not state label-versus-geometry precedence, so the stated unresolved encoding-validation condition legitimately bears on the support for Samsung without establishing a different winner."
+            }
+          }
+        ],
+        "summary": "The chart visibly supplies the Europe title and the four printed brand-percentage inscriptions, which conditionally support Samsung if inscriptions are authoritative. It also visibly presents a pie-like geometric ordering in which the Others sector is larger than the Samsung sector, creating a material conflict under proportional-pie encoding. The public task does not resolve whether printed inscriptions or sector geometry governs; no alternative market-leader selection is established. One c2 observation improperly stated an unprinted approximate angular fraction and is therefore not a valid literal O observation."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task explicitly requires reviewing the Europe smartphone market share dashboard before completing the workflow form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The dashboard has been reviewed; the visible workflow navigation offers the link “Open Form” to continue to the assignment form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Samsung as the current market leader"
+        },
+        "chart_dependent": true,
+        "brief_basis": "chart_1 is titled “Smartphone Market Share in Europe” and labels Samsung 55%, above Xiaomi 20%, Apple 15%, and Others 10%; therefore Samsung is the current market leader for this Europe task. Scope check: the chart’s Europe smartphone-market scope matches the form’s stated dashboard reference and assignment.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "unresolved"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The Europe chart prints Samsung (55%) as the largest percentage, but its Samsung sector is visibly smaller than the Others (10%) sector. The task does not establish whether labels or pie geometry controls, so no market-leader option is sufficiently supported.",
+        "used_rules": [
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The current chart is a pie-like market-share graphic with visibly unequal sectors, and neither the chart nor task specifies precedence between conflicting sector geometry and printed labels."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": 1
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [
+      {
+        "label": "Select Samsung as the current market leader",
+        "selected": false
+      },
+      {
+        "label": "Select Others as the current market leader",
+        "selected": false
+      },
+      {
+        "label": "Select Xiaomi as the current market leader",
+        "selected": false
+      }
+    ],
+    "options": [
+      "Select Samsung as the current market leader",
+      "Select Others as the current market leader",
+      "Select Xiaomi as the current market leader"
+    ],
+    "fields": [
+      {
+        "field": "template_context_market_region",
+        "type": "select",
+        "label": "Market region",
+        "required": true,
+        "readonly": false,
+        "value": "",
+        "selected_text": "Select value",
+        "valid": false,
+        "options": [
+          "Europe"
+        ]
+      },
+      {
+        "field": "template_context_follow_up_program",
+        "type": "select",
+        "label": "Follow-up program",
+        "required": true,
+        "readonly": false,
+        "value": "",
+        "selected_text": "Select value",
+        "valid": false,
+        "options": [
+          "Featured vendor follow-up"
+        ]
+      },
+      {
+        "field": "template_context_record_type",
+        "type": "select",
+        "label": "Record type",
+        "required": true,
+        "readonly": false,
+        "value": "",
+        "selected_text": "Select value",
+        "valid": false,
+        "options": [
+          "Smartphone brand account"
+        ]
+      },
+      {
+        "field": "note",
+        "type": "textarea",
+        "label": "Operations note",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "selected_text": null,
+        "valid": true,
+        "options": null
+      }
+    ],
+    "submit_visible": true,
+    "page": "form",
+    "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Resource Allocation Dashboard Use the Europe smartphone market share dashboard to identify the brand for market-leader follow-up. 4 Market Leader Follow-up Assignment Select the workflow action and submit the form. Current Market Leader Select an action Select Samsung as the current market leader Select Others as the current market leader Select Xiaomi as the current market leader Market region Select value Europe Follow-up program Select value Featured vendor follow-up Record type Select value Smartphone brand account Operations note Back to Dashboard Clear form Submit Form",
+    "links": [
+      "Back to Dashboard"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

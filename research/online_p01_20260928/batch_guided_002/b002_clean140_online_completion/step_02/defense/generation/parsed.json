@@ -1,0 +1,94 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a bar chart's x-axis labels identify browser products and its y-axis represents market share, then the bar with the greatest vertical height corresponds to the browser with the highest market share.",
+      "component": "encoding/task relation",
+      "conditions": "The chart's y-axis is a linear scale of market share, and the x-axis labels are the browser entities."
+    },
+    {
+      "id": "r2",
+      "text": "If the task requires assigning the browser with the highest current market_share to a priority queue, then the browser identified as having the highest market share in the chart is the correct option to select.",
+      "component": "task-to-action relation",
+      "conditions": "The chart is the designated evidence source for market_share values, and the queue rule prioritizes the highest current usage share."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis, first label from left",
+          "content": "The label 'Chrome' is printed below the first bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis, second label from left",
+          "content": "The label 'Safari' is printed below the second bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis, third label from left",
+          "content": "The label 'Edge' is printed below the third bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis, fourth label from left",
+          "content": "The label 'Firefox' is printed below the fourth bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis, fifth label from left",
+          "content": "The label 'Others' is printed below the fifth bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the third bar",
+          "content": "The text '87%' is printed directly above the green bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the fourth bar",
+          "content": "The text '23%' is printed directly above the blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the first bar",
+          "content": "The text '5%' is printed directly above the orange bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the second bar",
+          "content": "The text '1%' is printed directly above the dark blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the fifth bar",
+          "content": "The text '3%' is printed directly above the yellow bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical comparison of bars",
+          "content": "The green bar (third from left) is visibly taller than all other bars, reaching near the 90 tick mark on the y-axis."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+        },
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The green bar labeled 'Edge' has the greatest height and is annotated with '87%', which is the highest value among all bars. According to the task's queue rule, the browser with the highest market share (Edge) should be assigned to the priority compatibility-testing queue."
+    }
+  ]
+}

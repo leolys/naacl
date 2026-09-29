@@ -1,0 +1,95 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "If the y-axis is inverted (0 at top, 8 at bottom), a point lower on the plot corresponds to a higher mortality rate, and the lowest point on the plot indicates the peak mortality rate.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis is inverted, and the task requires identifying the year with the peak mortality rate."
+    },
+    {
+      "id": "supp_r2",
+      "text": "If the y-axis is standard (0 at bottom, 8 at top), a point higher on the plot corresponds to a higher mortality rate, and the highest point on the plot indicates the peak mortality rate.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis is standard, and the task requires identifying the year with the peak mortality rate."
+    },
+    {
+      "id": "supp_r3",
+      "text": "If the chart's y-axis label is 'Count' but the task refers to 'Mortality rate', the chart may be mislabeled or the task may be misaligned, warranting a methodology review.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis label does not match the task's metric, and the task requires identifying the peak mortality rate."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Count' and has ticks 0, 2, 4, 6, 8 from top to bottom."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data point for 2018 is the lowest on the plot, positioned slightly below the 2017 point and lower than the 2010 point."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate 2018 for annual mortality peak follow-up",
+      "claim": "The 2018 point is the lowest on the plot, indicating the peak mortality rate among the years shown, so 2018 warrants peak-burden escalation.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "competing"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c3",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The chart title is 'Year vs. Mortality rate'."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "The chart title explicitly names the metric as 'Mortality rate', which provides context that resolves the mismatch with the y-axis label 'Count'.",
+      "reason": "This clarifies that the metric mismatch is likely a labeling error rather than a fundamental task misalignment, reducing the need for a methodology review."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The visual evidence confirms that the 2018 data point is the absolute lowest on the plot, which changes the peak-burden year from 2010 to 2018."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c3"
+      ],
+      "reason": "The chart title 'Year vs. Mortality rate' provides sufficient context to resolve the metric mismatch, making a methodology review less necessary."
+    }
+  ]
+}

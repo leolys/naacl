@@ -1,0 +1,285 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_145",
+      "page_title": "Browser Compatibility Target Setup",
+      "user_goal": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.",
+      "chart_reference": "Use the browser market share dashboard to identify the product for primary compatibility targeting.",
+      "primary_field_label": "Primary Compatibility Target",
+      "option_labels": [
+        "Set Chrome as the primary compatibility target",
+        "Set Safari as the primary compatibility target",
+        "Set Firefox as the primary compatibility target"
+      ],
+      "companion_fields": [
+        {
+          "field": "template_context_testing_program",
+          "label": "Testing program",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Browser compatibility testing",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_target_scope",
+          "label": "Target scope",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Cross-browser coverage",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_compatibility_track",
+          "label": "Compatibility track",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Primary compatibility target setup",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "note",
+          "label": "Operations note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the operations record"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        },
+        {
+          "page": "home",
+          "text": "Review operational performance and submit the appropriate status or follow-up route."
+        },
+        {
+          "page": "home",
+          "text": "Use the dashboard view before submitting the workflow form."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        },
+        {
+          "page": "form",
+          "text": "Use the browser market share dashboard to identify the product for primary compatibility targeting."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "Set Chrome as the primary compatibility target",
+      "option_states": [
+        {
+          "label": "Set Chrome as the primary compatibility target",
+          "selected": true
+        },
+        {
+          "label": "Set Safari as the primary compatibility target",
+          "selected": false
+        },
+        {
+          "label": "Set Firefox as the primary compatibility target",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Set Chrome as the primary compatibility target",
+        "Set Safari as the primary compatibility target",
+        "Set Firefox as the primary compatibility target"
+      ],
+      "fields": [
+        {
+          "field": "template_context_testing_program",
+          "type": "select",
+          "label": "Testing program",
+          "required": true,
+          "readonly": false,
+          "value": "Browser compatibility testing",
+          "selected_text": "Browser compatibility testing",
+          "valid": true,
+          "options": [
+            "Browser compatibility testing"
+          ]
+        },
+        {
+          "field": "template_context_target_scope",
+          "type": "select",
+          "label": "Target scope",
+          "required": true,
+          "readonly": false,
+          "value": "Cross-browser coverage",
+          "selected_text": "Cross-browser coverage",
+          "valid": true,
+          "options": [
+            "Cross-browser coverage"
+          ]
+        },
+        {
+          "field": "template_context_compatibility_track",
+          "type": "select",
+          "label": "Compatibility track",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Primary compatibility target setup"
+          ]
+        },
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Operations note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Performance Monitoring Dashboard Use the browser market share dashboard to identify the product for primary compatibility targeting. 4 Browser Compatibility Target Setup Select the workflow action and submit the form. Primary Compatibility Target Select an action Set Chrome as the primary compatibility target Set Safari as the primary compatibility target Set Firefox as the primary compatibility target Testing program Select value Browser compatibility testing Target scope Select value Cross-browser coverage Compatibility track Select value Primary compatibility target setup Operations note Back to Dashboard Clear form Submit Form",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 3,
+        "action": {
+          "kind": "select",
+          "option": "Set Chrome as the primary compatibility target"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Set Chrome as the primary compatibility target"
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 4,
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_testing_program",
+          "option": "Browser compatibility testing"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Set Chrome as the primary compatibility target"
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 5,
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_target_scope",
+          "option": "Cross-browser coverage"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Set Chrome as the primary compatibility target"
+        },
+        "source": "actor"
+      }
+    ]
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/b005_clean140_ordinary/browser/observed_chart.png",
+      "sha256": "a83acf57d1709a2b1486a1bddafd1bfed889c2d7485084bd2af5b7785b13f78b"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/b005_clean140_ordinary/browser/page_006.png",
+      "sha256": "5d1099c6325073e4b6ebd6adc62fbf56e52cebdd246744c68560d75ff4f71f19"
+    }
+  ]
+}

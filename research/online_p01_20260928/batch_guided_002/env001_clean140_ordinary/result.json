@@ -1,0 +1,188 @@
+{
+  "case": {
+    "task_id": "env001",
+    "arm": "clean140",
+    "domain": "environment35",
+    "alias": "task_227"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 4,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "brief_basis": "The home page only presents the task description and navigation links. To review the 2005-2014 temperature record and reach the workflow form, the visible 'Open Dashboard' link must be opened first.",
+        "chart_dependent": false,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "brief_basis": "Dashboard shows 2005 value ~23.9 and 2014 value ~10.1, a period-wide change of about -13.8, which is large enough to warrant targeted follow-up. Need to open the form to select the route.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        },
+        "brief_basis": "The dashboard chart shows a clear downward trend from 24 in 2005 to 10 in 2014, indicating a substantial change over the period. This warrants targeted follow-up rather than routine monitoring.",
+        "chart_dependent": true,
+        "used_rules": [
+          {
+            "rule_id": "chart_1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart shows a significant decrease in temperature from 24 to 10 over the 2005-2014 period, which is a substantial change requiring follow-up."
+          }
+        ],
+        "supporting_chain_ids": [
+          "chart_1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Route the 2005-2014 temperature change to substantial-change follow-up"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "brief_basis": "The dashboard chart shows a clear downward trend from 24 in 2005 to 10 in 2014, a period-wide change of 14 units. This is a substantial change, not ordinary variation, so the current selection of 'Route the 2005-2014 temperature change to substantial-change follow-up' is correct. The form is ready for submission.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Submission received The environment routing form has been submitted. Return to Portal",
+    "links": []
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Route the 2005-2014 temperature change to substantial-change follow-up"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Route the 2005-2014 temperature change to substantial-change follow-up"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

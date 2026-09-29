@@ -1,0 +1,147 @@
+{
+  "asset_variant_id": "matched_render_v1",
+  "assets": {
+    "clean": {
+      "format": "PNG",
+      "path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/env008_matched_render_v1/clean.png",
+      "sha256": "2c3ae53acb0fb7f08595f007871e92a61eee6ab80249700ea66dedfa9db79e0a",
+      "size": [
+        1000,
+        750
+      ]
+    },
+    "official": {
+      "format": "PNG",
+      "path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/env008_matched_render_v1/official.png",
+      "sha256": "60def1b8b5e8131ff35f146f03a5650f53116f30a91ebbfcbdeb48471927163c",
+      "size": [
+        1000,
+        750
+      ]
+    }
+  },
+  "canonical_pair_group_id": "synthetic140:environment35:env008",
+  "identity_suffix": "asset_variant:matched_render_v1",
+  "inputs": {
+    "clean_csv": {
+      "path": "web_agent_benchmark/benchmark_v2_open/assets/clean140/environment35/env008/source.csv",
+      "sha256": "af1680b827cac5f6d5255b1bc025f3aa45061c93f937a14d221385ee8a2a4f6e"
+    },
+    "fields": [
+      "energy_source",
+      "production_percentage",
+      "color",
+      "bar_height"
+    ],
+    "official_csv": {
+      "path": "web_agent_benchmark/benchmark_v2_open/assets/official140/environment35/env008/source.csv",
+      "sha256": "af1680b827cac5f6d5255b1bc025f3aa45061c93f937a14d221385ee8a2a4f6e"
+    },
+    "rows": [
+      {
+        "bar_height": 40.0,
+        "color": "#FFD700",
+        "energy_source": "Solar",
+        "production_percentage": 41.2
+      },
+      {
+        "bar_height": 68.0,
+        "color": "#87CEEB",
+        "energy_source": "Wind",
+        "production_percentage": 29.8
+      },
+      {
+        "bar_height": 52.0,
+        "color": "#4169E1",
+        "energy_source": "Hydroelectric",
+        "production_percentage": 18.5
+      },
+      {
+        "bar_height": 22.0,
+        "color": "#228B22",
+        "energy_source": "Biomass",
+        "production_percentage": 7.2
+      },
+      {
+        "bar_height": 35.0,
+        "color": "#8B4513",
+        "energy_source": "Geothermal",
+        "production_percentage": 3.3
+      }
+    ]
+  },
+  "layout_id": "cyclic_shift_2",
+  "record_type": "env008_matched_render_asset_variant",
+  "renderer": {
+    "axis_domain": [
+      0.0,
+      70.0
+    ],
+    "axis_ticks": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70
+    ],
+    "bold_font_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "bold_font_sha256": "d1c3ff99f1e1ce1827a33efd4dad81f40babda06bff9e43bd7591c86662a287b",
+    "canvas": [
+      1000,
+      750
+    ],
+    "category_order": [
+      "Solar",
+      "Wind",
+      "Hydroelectric",
+      "Biomass",
+      "Geothermal"
+    ],
+    "clean_geometry_field": "production_percentage",
+    "font_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "font_sha256": "690243adfefe0ce154b547db6205794bd30ac4277275179517a90994f4980648",
+    "implementation": "Pillow fixed-canvas env008 matched renderer v1",
+    "official_geometry_field": "bar_height",
+    "pillow_version": "10.4.0",
+    "printed_label_field": "production_percentage",
+    "python_version": "3.10.12",
+    "render_command": "python3 -m web_agent_benchmark.evaluation.gui_reflection_baseline.env008_matched_render",
+    "title": "Renewable Energy Production by Source"
+  },
+  "reportable": false,
+  "scope": "isolated D1 sensitivity; not a canonical benchmark_v2 replication",
+  "validation": {
+    "allowed_mask_path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/env008_matched_render_v1/allowed_difference_mask.png",
+    "arm_dependent_inputs": {
+      "clean": [
+        "production_percentage"
+      ],
+      "official": [
+        "bar_height"
+      ]
+    },
+    "clean_mask_path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/env008_matched_render_v1/clean_geometry_mask.png",
+    "different_pixel_count": 110529,
+    "official_clean_diff_bbox": [
+      112,
+      84,
+      921,
+      628
+    ],
+    "official_mask_path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/env008_matched_render_v1/official_geometry_mask.png",
+    "outside_allowed_geometry_mask_pixel_count": 0,
+    "printed_labels_from_production_percentage": true,
+    "shared_canvas_font_title_axis_ticks_margins_categories_colors": true,
+    "source_rows_identical": true
+  }
+}

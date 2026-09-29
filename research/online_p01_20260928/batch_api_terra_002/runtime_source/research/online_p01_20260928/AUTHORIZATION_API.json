@@ -1,0 +1,36 @@
+{
+ "protocol": "online_explanation_completion_v2_batch_live",
+ "endpoint": "https://api.chatanywhere.tech/v1/chat/completions",
+ "model": "gpt-5.6-terra",
+ "task_ids": [
+  "b001",
+  "b002",
+  "b003",
+  "b004",
+  "b005",
+  "b006",
+  "env001",
+  "env002",
+  "env003",
+  "health001",
+  "health002",
+  "pub001"
+ ],
+ "arms": [
+  "official140",
+  "clean140"
+ ],
+ "systems": [
+  "ordinary",
+  "online_completion"
+ ],
+ "max_request_attempts": 1600,
+ "max_browser_operations": 2400,
+ "max_estimated_usd": 10.0,
+ "max_actor_calls": 8,
+ "max_reverification": 1,
+ "interface_version": "typed_scalars_v2",
+ "authorized": true,
+ "user_approval_reference": "Owner instruction in ScienceGuru session 2026-09-29: API KEY provided at project root for https://chatanywhere.tech; 'please proceed with the experiment according to C. dual-batch comparison and continue running the experiment'. Batch C = API actor gpt-5.6-terra via chatanywhere.tech relay, strict protocol, no schema guidance (pilot-fidelity reference). max_estimated_usd 10.0 cap as spend protection.",
+ "scope": "12 tasks x 2 arms x 2 systems; actor gpt-5.6-terra via chatanywhere.tech (api.chatanywhere.tech); strict protocol"
+}

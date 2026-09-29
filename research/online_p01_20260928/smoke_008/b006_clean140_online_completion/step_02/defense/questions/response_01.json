@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl-9c4435228ee70343",
+  "object": "chat.completion",
+  "created": 1790653785,
+  "model": "Qwen3.8-27B",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n\"questions\": [\n{\n\"id\": \"q1\",\n\"target_chain_ids\": [\n\"base_c1\",\n\"base_c2\",\n\"base_c3\"\n],\n\"focus\": \"rule_conditions\",\n\"question\": \"Does the policy table's 'Decision metric' row, which reads 'mislabeled_value / labeled rating share', introduce a condition that the printed percentage labels must be verified as 'labeled' rather than 'mislabeled' before they can be used as the authoritative rating share?\"\n},\n{\n\"id\": \"q2\",\n\"target_chain_ids\": [\n\"base_c1\"\n],\n\"focus\": \"coverage\",\n\"question\": \"The chart displays six categories (Quality, Price, Design, Support, Delivery, Other), but the form only provides three options (Select Design, Select Quality, Select Support). Is the omission of Price, Delivery, and Other from the form options a condition that limits the scope of the 'highest current labeled rating share' rule to only the three available options?\"\n}\n],\n\"summary\": \"Inspected the chart and the provided argument chains. The chains correctly identify Design (52%) as the highest value among all six categories shown. The main remaining limits are the interpretation of the 'mislabeled_value / labeled rating share' metric in the policy table and the scope of the rule given that the form only offers three of the six chart categories.\"\n}",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+  "usage": {
+    "prompt_tokens": 5488,
+    "total_tokens": 5794,
+    "completion_tokens": 306,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

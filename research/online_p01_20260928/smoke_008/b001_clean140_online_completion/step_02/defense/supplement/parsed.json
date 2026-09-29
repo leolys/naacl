@@ -1,0 +1,104 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "If a pie chart's visible slice angular sizes are consistent with its printed percentage labels, the printed labels are supported as the chart's market-share values; if a visible discrepancy exists, the printed labels' authority is weakened.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market-share dashboard; only visible marks and literal inscriptions are used; no external data is supplied."
+    },
+    {
+      "id": "supp_r2",
+      "text": "If the public task's review scope is 'Europe smartphone brands' and the chart's 'Others' slice is an aggregate of multiple brands, the chart alone cannot establish whether any single brand within 'Others' exceeds the named leader's share.",
+      "component": "task-to-action relation",
+      "conditions": "The 'Others' category is not individually broken out in the chart; no external data is supplied to decompose it."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "large orange slice on the right",
+          "content": "The orange slice labeled 'Apple (45%)' spans from the 12 o'clock position clockwise to approximately the 5 o'clock position, covering roughly 45% of the circle's area."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange-red slice at lower left",
+          "content": "The orange-red slice labeled 'Xiaomi (30%)' spans from approximately the 5 o'clock position to the 9 o'clock position, covering roughly 30% of the circle's area."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pale yellow slice at upper left",
+          "content": "The pale yellow slice labeled 'Samsung (15%)' spans from the 9 o'clock position to approximately the 11 o'clock position, covering roughly 15% of the circle's area."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice at top left",
+          "content": "The red slice labeled 'Others (10%)' spans from approximately the 11 o'clock position to the 12 o'clock position, covering roughly 10% of the circle's area."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "market_share"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": null,
+      "claim": "The visible angular sizes of the four slices are consistent with their printed percentage labels (45%, 30%, 15%, 10%), supporting the assumption that the printed labels are the chart's authoritative market-share values.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "compatible"
+    },
+    {
+      "chain_id": "supp_c2",
+      "rule_id": "supp_r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "red slice at top left",
+          "content": "Inscription inside the slice reads 'Others (10%)'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/2/1",
+          "content": "Europe smartphone brands"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The 'Others' category is an aggregate of 10% and is not broken out into individual brands in the chart; therefore, the chart alone cannot confirm whether any single brand within 'Others' exceeds Apple's 45% share, though the aggregate 10% is less than 45%.",
+      "question_ids": [
+        "q2"
+      ],
+      "relationship": "support_gap"
+    }
+  ],
+  "refinements": [],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The visible slice geometry (angular sizes) is consistent with the printed percentages, supporting the assumption that the printed labels are authoritative. No visible discrepancy was found."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c2"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The 'Others' category is an aggregate of 10%. While the chart does not break it into individual brands, the aggregate 10% is less than Apple's 45%, so no single brand within 'Others' can exceed Apple's share. The support gap is noted but does not change the leader."
+    }
+  ]
+}

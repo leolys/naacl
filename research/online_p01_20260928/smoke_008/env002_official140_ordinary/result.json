@@ -1,0 +1,179 @@
+{
+  "case": {
+    "task_id": "env002",
+    "arm": "official140",
+    "domain": "environment35",
+    "alias": "task_088"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 4,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page only shows task summary and links. Need to open dashboard to view the 2005-2015 temperature trend chart and routing form.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard shows the 2005-2015 temperature chart (24.0°C in 2005 down to 10.0°C in 2015, a 14.0°C decline). The routing decision requires the workflow form, which is not yet open. Open the form to review options and required fields before selecting a route.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Escalate the 2005-2015 temperature decline for follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows a continuous decline from $24.0°C in 2005 to $10.0°C in 2015, a total drop of 14.0°C over the review period. This magnitude of change across the review period meets the routing criterion for the substantial trend workflow, warranting escalation for follow-up.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows a monotonic decline from $24.0°C in 2005 to $10.0°C in 2015, a total drop of 14.0°C (58.3% of the starting value) over the review period. The routing criterion is 'Magnitude of change across the review period' under the 'Substantial trend follow-up' workflow. A 14°C decline is a substantial multi-year change, warranting escalation for follow-up. The currently selected option 'Escalate the 2005-2015 temperature decline for follow-up' is correct. The optional note field need not be filled. Submitting.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Escalate the 2005-2015 temperature decline for follow-up",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Submission received The environment routing form has been submitted. Return to Portal",
+    "links": []
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

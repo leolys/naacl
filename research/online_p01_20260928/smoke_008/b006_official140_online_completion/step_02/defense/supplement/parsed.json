@@ -1,0 +1,163 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "If the public task's policy table and instructions explicitly define the decision metric as 'labeled rating share', then the printed percentage inscriptions on the chart are the authoritative values for the follow-up decision, and the chart's vertical axis geometry is treated as a separate, non-authoritative scale that does not override the printed labels.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the term 'labeled rating share' in the public task refers specifically to the printed percentage text on the chart, and that the y-axis 'Value' scale is not the intended metric for this specific task."
+    },
+    {
+      "id": "supp_r2",
+      "text": "If the public task's available option labels are a restricted subset of the chart's categories, then the follow-up category must be selected from the available options, and the 'highest current labeled rating share' rule is applied only among the categories that have a corresponding public option label.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the form's option labels are the only valid selections and that the task's intent is to select the best available option from the provided list."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Design category point",
+          "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category point",
+          "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality category point",
+          "content": "The point above the 'Quality' x-axis label has the printed inscription '24%' directly above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "mislabeled_value / labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "The public task's policy table explicitly names 'labeled rating share' as the decision metric. This resolves the conflict between the chart's geometry (Quality highest) and its printed labels (Design highest) by designating the printed labels as the authoritative source. Design's 52% is the highest printed label, supporting the 'Select Design' action.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "compatible"
+    },
+    {
+      "chain_id": "supp_c2",
+      "rule_id": "supp_r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Design category point",
+          "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality category point",
+          "content": "The point above the 'Quality' x-axis label has the printed inscription '24%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category point",
+          "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Select Quality"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Select Support"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "The public task provides only three options: Design, Quality, and Support. Among these available options, Design has the highest printed label (52%), followed by Support (45%) and Quality (24%). Even if the overall highest category were different, Design is the highest among the selectable options, supporting the 'Select Design' action.",
+      "question_ids": [
+        "q2"
+      ],
+      "relationship": "compatible"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c2",
+      "question_ids": [
+        "q3"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "Quality category point",
+          "content": "The point above the 'Quality' x-axis label is positioned at approximately y=60 on the Value axis."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category point",
+          "content": "The point above the 'Support' x-axis label is positioned at approximately y=54 on the Value axis."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Design category point",
+          "content": "The point above the 'Design' x-axis label is positioned at approximately y=42 on the Value axis."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "The vertical positions are visually distinct: Quality (y≈60) is clearly higher than Support (y≈54), which is clearly higher than Design (y≈42).",
+      "reason": "This refinement confirms the geometric reading in base_c2 by explicitly comparing the vertical positions of the three main categories, addressing the counterquestion about whether the Quality point is definitively higher."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The new chain supp_c1 uses the public task's policy table to establish that 'labeled rating share' refers to the printed labels, resolving the conflict between the y-axis scale and the printed percentages."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c2"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The new chain supp_c2 addresses the limited options by showing that Design is the highest among the available choices (Design, Quality, Support), which supports the action regardless of the other categories."
+    },
+    {
+      "question_id": "q3",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c2"
+      ],
+      "reason": "The refinement refine_1 adds specific observations comparing the vertical positions of Quality, Support, and Design, confirming that Quality is the highest point on the y-axis."
+    }
+  ]
+}

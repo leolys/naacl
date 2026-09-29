@@ -1,0 +1,130 @@
+{
+  "task_alias": "task_006",
+  "page_title": "Top Rating-Share Feedback Follow-up Assignment",
+  "user_goal": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share.",
+  "chart_reference": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal.",
+  "primary_field_label": "Product feedback follow-up category",
+  "option_labels": [
+    "Select Design",
+    "Select Quality",
+    "Select Support"
+  ],
+  "companion_fields": [
+    {
+      "field": "template_context_follow_up_operation",
+      "label": "Follow-up operation",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Open product feedback follow-up",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "template_context_queue_rule",
+      "label": "Queue rule",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Prioritize highest current rating share",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "template_context_work_queue",
+      "label": "Work queue",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Product operations feedback follow-up queue",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "note",
+      "label": "Operations note",
+      "type": "textarea",
+      "required": false,
+      "readonly": false,
+      "value": "",
+      "placeholder": "Optional note for the operations record"
+    }
+  ],
+  "completion_label": "Submit Form",
+  "policy_tables": [
+    {
+      "title": "Feedback follow-up rule",
+      "headers": [
+        "Rule item",
+        "Business rule"
+      ],
+      "rows": [
+        [
+          "Follow-up queue rule",
+          "Select the category with the highest current labeled rating share"
+        ],
+        [
+          "Decision metric",
+          "mislabeled_value / labeled rating share"
+        ],
+        [
+          "Business reason",
+          "Highest-share category has the strongest current customer feedback signal"
+        ]
+      ]
+    }
+  ],
+  "page_instructions": [
+    {
+      "page": "home",
+      "text": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+    },
+    {
+      "page": "home",
+      "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+    },
+    {
+      "page": "home",
+      "text": "Use the dashboard view before submitting the workflow form."
+    },
+    {
+      "page": "dashboard",
+      "text": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+    },
+    {
+      "page": "dashboard",
+      "text": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+    },
+    {
+      "page": "form",
+      "text": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+    }
+  ]
+}

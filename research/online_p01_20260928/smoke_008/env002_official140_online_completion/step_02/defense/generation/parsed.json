@@ -1,0 +1,107 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis is read as temperature in °C and the printed point labels are taken as the yearly values, then the 2005-to-2015 change is the difference between the first and last printed values; a large absolute difference across the review period is the visible basis for a 'substantial trend' reading.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed labels are the intended data values and that the routing criterion 'magnitude of change' is evaluated as the absolute endpoint difference over 2005-2015."
+    },
+    {
+      "id": "r2",
+      "text": "If the routing workflow requires a defined threshold for 'substantial' change, then the chart alone cannot confirm escalation unless that threshold is supplied; the visible decline can only be recorded as a support gap for the escalate option.",
+      "component": "task-to-action relation",
+      "conditions": "Applies when no policy table or numeric threshold for 'substantial trend' is present in the public task."
+    },
+    {
+      "id": "r3",
+      "text": "If the visible decline is interpreted as not meeting an unstated substantial-change bar, the same chart supports keeping the record on routine monitoring rather than escalating or archiving it.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the decline is real but below whatever threshold would trigger follow-up; no threshold is printed."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left data point above the 2005 tick",
+          "content": "The first point is printed with the label \"$24.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost data point above the 2015 tick",
+          "content": "The final point is printed with the label \"$10.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "line connecting the points from 2005 to 2015",
+          "content": "Each successive point sits lower on the page than the previous one, forming a downward-sloping line."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Magnitude of change across the review period"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate the 2005-2015 temperature decline for follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+      "claim": "Reading the printed labels as the data, the endpoint difference is 24.0 - 10.0 = 14.0°C, a large absolute change across the review period; under the stated routing criterion this visible magnitude motivates the escalate option, pending confirmation that 14.0°C counts as 'substantial'."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis and point labels",
+          "content": "The y-axis is labeled \"Temperature (°C)\" with ticks at 0, 5, 10, 15, 20; no threshold line or 'substantial' marker is printed on the chart."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/value",
+          "content": "Substantial trend follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables",
+          "content": []
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The public task names a 'substantial trend' workflow and a magnitude criterion but supplies no numeric threshold (policy_tables is empty), so the chart's 14.0°C drop cannot by itself verify that the escalate option is the required route; this is a support gap for the proposed escalation."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "middle segment of the line, roughly 2010 to 2012",
+          "content": "The line flattens between the \"$16.3°C\" (2010) and \"$15.4°C\" (2012) points, showing a smaller visible drop than the surrounding segments."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2015 temperature decline on routine monitoring"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "Because no threshold defines 'substantial', a reading that treats the decline as below the follow-up bar would instead support routine monitoring; the chart alone does not force escalation over this alternative."
+    }
+  ]
+}

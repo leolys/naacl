@@ -1,0 +1,234 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a bar chart's x-axis labels bind each bar to a browser product and the y-axis scale maps bar height to market_share percentage, then the bar with the greatest height represents the browser with the highest market_share.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the chart's y-axis is a linear percentage scale from 0 to 100 and that bar height is the sole visual encoding of the market_share value."
+    },
+    {
+      "id": "r2",
+      "text": "If a bar chart displays explicit percentage inscriptions above each bar, those printed values can be used to determine the highest market_share, provided the printed values are consistent with the relative bar heights.",
+      "component": "numeric decoding",
+      "conditions": "Assumes the printed percentage labels are accurate representations of the underlying data and that no hidden data overrides the visible inscriptions."
+    },
+    {
+      "id": "r3",
+      "text": "If the public task policy requires selecting the browser with the highest current market_share for the priority compatibility-testing queue, then the browser identified as having the highest market_share in the chart must be assigned to that queue.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the policy table's rule 'Select the browser with the highest current market_share' is the active decision metric and that the chart is the designated evidence source."
+    },
+    {
+      "id": "supp_r1",
+      "text": "If a bar chart displays explicit percentage inscriptions directly above each bar, and the public task designates the dashboard's market_share values as the evidence source, then the printed percentage labels are the authoritative values for market_share, and the bar with the highest printed label represents the browser with the highest market_share, regardless of any visual discrepancy with bar height.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed labels are the intended data values and that the task's instruction to use 'dashboard market_share values' refers to the explicit numeric inscriptions rather than the geometric bar heights."
+    },
+    {
+      "id": "supp_r2",
+      "text": "If the sum of the explicit percentage labels in a market-share chart does not equal 100%, and the public task or policy provides no rule for normalization or data correction, the values must be interpreted exactly as printed, and the highest value is determined by direct comparison of the printed numbers.",
+      "component": "numeric decoding",
+      "conditions": "Assumes no hidden normalization policy exists and that the task requires acting on the visible data as presented."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis labels",
+          "content": "The labels 'Chrome', 'Safari', 'Edge', 'Firefox', and 'Others' are printed below their respective bars."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The vertical axis is marked with ticks from 0 to 100 in increments of 10."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar heights",
+          "content": "The green bar above 'Edge' reaches a height near the 80 tick, and the blue bar above 'Firefox' reaches a height near the 85 tick, making the Firefox bar visibly taller than the Edge bar."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "market_share"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "Based on bar height geometry, Firefox appears to have the highest market_share, which would challenge the proposed selection of Edge. However, this reading depends on the assumption that bar height is the primary data encoding and that the printed labels are not the authoritative source."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "above Chrome bar",
+          "content": "The text '5%' is printed above the orange bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Safari bar",
+          "content": "The text '1%' is printed above the dark blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Edge bar",
+          "content": "The text '87%' is printed above the green bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Firefox bar",
+          "content": "The text '23%' is printed above the blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Others bar",
+          "content": "The text '3%' is printed above the yellow bar."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The printed inscription '87%' above the Edge bar is the highest value among all visible percentage labels (87 > 23 > 5 > 3 > 1). If the printed labels are taken as the authoritative market_share values, Edge has the highest share, supporting the proposed action."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "above Edge bar",
+          "content": "The text '87%' is printed above the green bar labeled 'Edge'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Firefox bar",
+          "content": "The text '23%' is printed above the blue bar labeled 'Firefox'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Assign Edge to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The task requires assigning the browser with the highest market_share. The chart shows Edge with a printed value of 87%, which is higher than Firefox's 23%. Following the policy to select the highest market_share, Edge is the correct browser to assign to the priority queue."
+    },
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "above Edge bar",
+          "content": "The text '87%' is printed directly above the green bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above Firefox bar",
+          "content": "The text '23%' is printed directly above the blue bar."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar heights",
+          "content": "The top of the blue bar (Firefox) is visibly higher on the y-axis than the top of the green bar (Edge)."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The task explicitly instructs to use the dashboard's market_share values as the evidence source. In the context of a chart with explicit numeric labels, these values are the printed inscriptions. Although the Firefox bar is geometrically taller, the printed label for Edge (87%) is numerically higher than the label for Firefox (23%). Therefore, Edge is the browser with the highest market_share according to the designated evidence source.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "competing"
+    },
+    {
+      "chain_id": "supp_c2",
+      "rule_id": "supp_r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "percentage labels",
+          "content": "The visible percentage labels are '5%', '1%', '87%', '23%', and '3%'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The sum of the printed labels is 119%, which is not 100%. However, the public task and policy tables provide no rule for normalizing or correcting these values. The policy simply requires selecting the browser with the highest current market_share. Comparing the printed values directly (87 > 23 > 5 > 3 > 1), Edge has the highest value, supporting the selection of Edge.",
+      "question_ids": [
+        "q2"
+      ],
+      "relationship": "compatible"
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  },
+  "supplement_counts": {
+    "rules": 2,
+    "chains": 2,
+    "refinements": 0
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The new chain supp_c1 resolves the conflict by establishing that the task's instruction to use 'dashboard market_share values' points to the explicit printed labels as the authoritative source, overriding the geometric bar heights."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c2"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The new chain supp_c2 addresses the 119% sum by noting the absence of any normalization rule in the task or policy, concluding that the values must be used as printed, which still identifies Edge as the highest."
+    }
+  ]
+}

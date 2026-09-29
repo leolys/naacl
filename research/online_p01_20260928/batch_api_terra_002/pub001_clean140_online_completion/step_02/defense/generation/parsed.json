@@ -1,0 +1,116 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If chart_1's title and state labels identify a state-level Hazard H risk-index choropleth, and the form's statistic record and jurisdiction level refer to the same measure and state scope, then the chart is relevant evidence for choosing among the listed state records.",
+      "component": "chart-to-task scope relation",
+      "conditions": "Requires that 'Hazard H' on the chart is the hazard risk index intended by the public task; the task does not state a separate hazard definition."
+    },
+    {
+      "id": "r2",
+      "text": "If the visible legend and caption correctly encode darker red as a higher risk-index value, then a state filled darker red than the other listed states has a higher displayed risk-index value than those lighter-filled listed states.",
+      "component": "choropleth color encoding and option comparison",
+      "conditions": "Requires that the legend/caption applies to all three state fills and that the visible color differences are not a rendering or category artifact."
+    },
+    {
+      "id": "r3",
+      "text": "If the priority-review program is intended to add the listed state with the highest displayed Hazard H risk index, then selecting the listed state with the darkest corresponding fill is supported; the public task does not explicitly state that highest index is the selection criterion.",
+      "component": "metric-to-priority-selection relation",
+      "conditions": "Requires a program rule favoring the highest hazard risk index; no threshold, tie rule, or alternate priority criterion is provided in the public task."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title at upper left",
+          "content": "The printed title reads \"Risk Index of Hazard H in US States\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern US map area",
+          "content": "A map region is visibly inscribed \"ME\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/value",
+          "content": "Hazard risk index"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/value",
+          "content": "State"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select ME for priority review",
+      "claim": "Conditionally, the chart concerns a Hazard H risk index for US states and the task identifies the record as a state-level hazard risk index, so ME's chart mark is relevant to the proposed ME selection. The exact correspondence between Hazard H and the task's hazard risk index remains unverified."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "legend at right of map",
+          "content": "The vertical color legend is labeled \"High\" at its top and \"Low\" at its bottom, with printed tick labels 0, 20, 40, 60, 80, and 100."
+        },
+        {
+          "ref": "chart_1",
+          "location": "caption along bottom left",
+          "content": "The printed caption reads \"Clean choropleth: same US map base; darker color means higher true value.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern US state labeled ME",
+          "content": "ME is filled a very dark red."
+        },
+        {
+          "ref": "chart_1",
+          "location": "south-central US state labeled OK",
+          "content": "OK is filled a very pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "south-central US state labeled TX",
+          "content": "TX is filled a very pale yellow."
+        }
+      ],
+      "task_evidence": [],
+      "claim_kind": "supports_action",
+      "option_label": "Select ME for priority review",
+      "claim": "If the displayed color encoding is valid for these fills, ME has a higher displayed risk-index value than OK and TX, supporting ME over the other listed options on that metric."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "northeastern US state labeled ME and south-central states labeled OK and TX",
+          "content": "ME is visibly much darker red than the pale-yellow fills of OK and TX."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Priority hazard review"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The public task requests a priority-review selection but does not specify whether the highest hazard risk index, a threshold, another metric, or another program rule determines priority. Thus ME is conditionally supported if higher displayed risk index determines priority, but that task-to-action bridge remains a support gap."
+    }
+  ]
+}

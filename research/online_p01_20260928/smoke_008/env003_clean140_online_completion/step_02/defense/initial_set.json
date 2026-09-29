@@ -1,0 +1,112 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a pie chart's printed percentage labels are treated as the authoritative values for each source category, then the category with the highest printed percentage is the largest global energy consumption category.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is a pie chart of global energy consumption by source, and the printed percentage labels are accepted as the category values."
+    },
+    {
+      "id": "r2",
+      "text": "If the task requires routing the largest global energy consumption category to priority source monitoring, then the public option that names that category for priority source monitoring is the supported action.",
+      "component": "task-to-action relation",
+      "conditions": "The largest category is identified, and a public option exists that routes that exact category to priority source monitoring."
+    },
+    {
+      "id": "r3",
+      "text": "If the printed percentage labels are not accepted as authoritative and the visible slice areas are used instead, then the category whose slice occupies the largest visible area is the largest global energy consumption category.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is a pie chart, and visible slice area is used as the measure of category size rather than printed labels."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "right yellow slice",
+          "content": "The inscription 'Nuclear (45%)' is printed inside the yellow slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower red slice",
+          "content": "The inscription 'Fossil Fuels (30%)' is printed inside the red slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left orange slice",
+          "content": "The inscription 'Renewables (15%)' is printed inside the orange slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper small red-orange slice",
+          "content": "The inscription 'Hydroelectric (10%)' is printed inside the small red-orange slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Largest global energy consumption category"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route Nuclear to priority source monitoring",
+      "claim": "If the printed labels are authoritative, Nuclear at 45% is the largest category, so the supported action is to route Nuclear to priority source monitoring."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "right yellow slice",
+          "content": "The inscription 'Nuclear (45%)' is printed inside the yellow slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route Nuclear to priority source monitoring"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route Nuclear to priority source monitoring",
+      "claim": "If Nuclear is the largest category, the public option that routes Nuclear to priority source monitoring matches the task's routing requirement."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "right yellow slice",
+          "content": "The yellow slice labeled 'Nuclear (45%)' occupies the largest visible area of the pie chart."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower red slice",
+          "content": "The red slice labeled 'Fossil Fuels (30%)' occupies the second-largest visible area."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Largest global energy consumption category"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route Nuclear to priority source monitoring",
+      "claim": "If visible slice area is used instead of printed labels, the Nuclear slice is still the largest, so the supported action remains to route Nuclear to priority source monitoring."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  }
+}

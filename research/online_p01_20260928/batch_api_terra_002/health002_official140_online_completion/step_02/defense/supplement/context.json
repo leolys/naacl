@@ -1,0 +1,313 @@
+{
+  "phase": "generation",
+  "context": {
+    "task": {
+      "task_alias": "task_123",
+      "page_title": "Surveillance Trend Escalation Routing",
+      "user_goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+      "chart_reference": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.",
+      "primary_field_label": "Surveillance trend routing decision",
+      "option_labels": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the health record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Infectious disease surveillance"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Reported case trajectory assessment"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Surveillance follow-up routing"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Route the surveillance record to rising-case escalation follow-up",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to declining-case stabilization review",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to background monitoring intake",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling. Surveillance Trend Escalation Routing Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory. Program area Infectious disease surveillance Review scope Reported case trajectory assessment Record workflow Surveillance follow-up routing Surveillance trend routing decision Select a route Route the surveillance record to rising-case escalation follow-up Route the surveillance record to declining-case stabilization review Route the surveillance record to background monitoring intake Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "public_task_leaf_paths": [
+      "/task_alias",
+      "/page_title",
+      "/user_goal",
+      "/chart_reference",
+      "/primary_field_label",
+      "/option_labels/0",
+      "/option_labels/1",
+      "/option_labels/2",
+      "/companion_fields/0/field",
+      "/companion_fields/0/label",
+      "/companion_fields/0/type",
+      "/companion_fields/0/required",
+      "/companion_fields/0/readonly",
+      "/companion_fields/0/value",
+      "/companion_fields/0/placeholder",
+      "/companion_fields/1/field",
+      "/companion_fields/1/type",
+      "/companion_fields/1/required",
+      "/companion_fields/1/readonly",
+      "/companion_fields/1/label",
+      "/companion_fields/1/value",
+      "/companion_fields/2/field",
+      "/companion_fields/2/type",
+      "/companion_fields/2/required",
+      "/companion_fields/2/readonly",
+      "/companion_fields/2/label",
+      "/companion_fields/2/value",
+      "/companion_fields/3/field",
+      "/companion_fields/3/type",
+      "/companion_fields/3/required",
+      "/companion_fields/3/readonly",
+      "/companion_fields/3/label",
+      "/companion_fields/3/value",
+      "/completion_label",
+      "/page_instructions/0/page",
+      "/page_instructions/0/text",
+      "/page_instructions/1/page",
+      "/page_instructions/1/text",
+      "/page_instructions/2/page",
+      "/page_instructions/2/text",
+      "/page_instructions/3/page",
+      "/page_instructions/3/text"
+    ],
+    "unexecuted_proposal": {
+      "action": {
+        "kind": "select",
+        "option": "Route the surveillance record to rising-case escalation follow-up"
+      },
+      "chart_dependent": true,
+      "brief_basis": "The case-count plot rises from near 0 at the start of the displayed period to roughly 1,470 by Mar 22, showing a sustained increasing case trajectory; escalation follow-up matches this trend.",
+      "used_rules": [],
+      "supporting_chain_ids": [],
+      "challenge": null
+    },
+    "initial_arguments": {
+      "rules": [
+        {
+          "id": "r1",
+          "text": "If the horizontal positions encode progression through the displayed reporting period from left to right, the vertical axis labeled \"Count\" is encoded by its printed tick values despite their increase downward on the page, and the route whose label names rising-case escalation is the pathway for an increasing reported-case trajectory, then a line moving from near the 0 tick at the left toward values beyond the 1400 tick at the right supports that escalation route.",
+          "component": "encoding/task relation",
+          "conditions": "The printed Count-axis inscriptions accurately define the vertical value direction; the plotted series represents reported case activity; and the route label's rising-case wording is the applicable task-to-action relation."
+        },
+        {
+          "id": "r2",
+          "text": "If the unusual downward increase of the printed Count tick values is not accepted as the chart's operative quantitative encoding, the line's downward screen-space direction alone does not establish whether reported case counts rose or fell; a routing decision based on trajectory is therefore not supported until that encoding is checked.",
+          "component": "encoding/scale interpretation",
+          "conditions": "This applies because screen-space direction is not itself a validated mapping to the measured quantity, and no legend or annotation visibly explains the inverted-looking vertical orientation."
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "base_c1",
+          "rule_id": "r1",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "chart title and vertical axis",
+              "content": "The chart title visibly reads \"Month vs. Number of cases,\" and the vertical-axis label visibly reads \"Count.\""
+            },
+            {
+              "ref": "chart_1",
+              "location": "vertical-axis tick labels",
+              "content": "The visible Count-axis inscriptions place \"0\" near the top and then \"200,\" \"400,\" \"600,\" \"800,\" \"1000,\" \"1200,\" and \"1400\" at successively lower page positions."
+            },
+            {
+              "ref": "chart_1",
+              "location": "blue plotted series from left edge to right edge",
+              "content": "The leftmost blue marker is near the horizontal level of the printed 0 tick, while the rightmost blue marker is lower on the page than the printed 1400 tick; the connected blue line generally moves downward across the page."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/chart_reference",
+              "content": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+            },
+            {
+              "ref": "public_task",
+              "path": "/option_labels/0",
+              "content": "Route the surveillance record to rising-case escalation follow-up"
+            }
+          ],
+          "claim_kind": "supports_action",
+          "option_label": "Route the surveillance record to rising-case escalation follow-up",
+          "claim": "Conditionally, the plotted case-count trajectory increases over the displayed period, so the rising-case escalation follow-up option is supported."
+        },
+        {
+          "chain_id": "base_c2",
+          "rule_id": "r2",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "blue plotted series",
+              "content": "The connected blue line and markers descend from left to right in screen space."
+            },
+            {
+              "ref": "chart_1",
+              "location": "vertical-axis tick labels",
+              "content": "The printed Count tick values increase from 0 near the top of the plot to 1400 near the bottom."
+            },
+            {
+              "ref": "chart_1",
+              "location": "chart area",
+              "content": "No visible legend or annotation states why larger Count tick inscriptions are positioned lower on the page."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/user_goal",
+              "content": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+            }
+          ],
+          "claim_kind": "challenges_support",
+          "option_label": null,
+          "claim": "The support for an increasing case trajectory depends on accepting the downward-increasing Count-axis inscriptions as the operative scale; the line's visible downward direction alone permits an opposite geometric reading and leaves an encoding-check support gap."
+        }
+      ],
+      "refinements": []
+    },
+    "counterquestions": {
+      "questions": [
+        {
+          "id": "q1",
+          "target_chain_ids": [
+            "base_c1"
+          ],
+          "focus": "rule_conditions",
+          "question": "Do the overlapping x-axis date inscriptions, from the leftmost reporting-period label through the rightmost \"Mar 22, 2020\" label, establish that left-to-right marker order represents chronological progression rather than merely plotted position?"
+        }
+      ],
+      "summary": "Inspected the visible title, inverted-looking Count tick order, blue series direction, and x-axis date-label area. The existing chains cover the conditional rising-route interpretation and the scale-encoding challenge; the remaining check is whether the horizontal time-order premise is visibly established despite overlapping labels."
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/health002_official140_online_completion/browser/observed_chart.png",
+      "sha256": "5a2653fae8ace6ddd3e30da6bc87dd30029b0f9350122a5cb36eec32a59a13a0"
+    }
+  ]
+}

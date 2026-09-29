@@ -1,0 +1,113 @@
+{
+  "asset_variant_id": "matched_annotation_v1",
+  "assets": {
+    "clean": {
+      "format": "PNG",
+      "path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/matched_annotation_v1/b038/clean.png",
+      "sha256": "f298b3c5a502c6a92bf0de54e67f325b2b9ffff34d62ca40f9733d79238d65b9",
+      "size": [
+        1000,
+        750
+      ]
+    },
+    "official": {
+      "format": "PNG",
+      "path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/matched_annotation_v1/b038/official.png",
+      "sha256": "fae743bd82aeb66cefb7ed9e7a5095258a21d9ff72ba51fdb5bc35894fd7e5db",
+      "size": [
+        1000,
+        750
+      ]
+    }
+  },
+  "canonical_pair_group_id": "synthetic140:business47:b038",
+  "identity_suffix": "asset_variant:matched_annotation_v1",
+  "inputs": {
+    "clean": {
+      "csv": {
+        "path": "web_agent_benchmark/benchmark_v2_open/assets/clean140/business47/b038/source.csv",
+        "sha256": "d202721488bfb7b6dc421ca5f018f9010663256bb30e6464a7292e1127d0394a"
+      },
+      "html": {
+        "path": "web_agent_benchmark/benchmark_v2_open/assets/clean140/business47/b038/source.html",
+        "sha256": "7a362c4af420c693f4570945988151bcc6fe1740a51646a5f2bed83c9872e680"
+      },
+      "title": "Increasing Revenue of Company C from Q1 to Q4"
+    },
+    "official": {
+      "csv": {
+        "path": "web_agent_benchmark/benchmark_v2_open/assets/official140/business47/b038/source.csv",
+        "sha256": "d202721488bfb7b6dc421ca5f018f9010663256bb30e6464a7292e1127d0394a"
+      },
+      "html": {
+        "path": "web_agent_benchmark/benchmark_v2_open/assets/official140/business47/b038/source.html",
+        "sha256": "b52350aa550b4831a5fd04d1db56917b22a5e987bbb5793a709a745fa77f2a23"
+      },
+      "title": "Stable Revenue of Company C from Q1 to Q4"
+    },
+    "rows": [
+      {
+        "quarter": "Q1",
+        "revenue": 1085.0
+      },
+      {
+        "quarter": "Q2",
+        "revenue": 1358.0
+      },
+      {
+        "quarter": "Q3",
+        "revenue": 1359.0
+      },
+      {
+        "quarter": "Q4",
+        "revenue": 1618.0
+      }
+    ]
+  },
+  "record_type": "matched_annotation_asset_variant",
+  "renderer": {
+    "arm_dependent_input": "title text only",
+    "bold_font_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "bold_font_sha256": "d1c3ff99f1e1ce1827a33efd4dad81f40babda06bff9e43bd7591c86662a287b",
+    "canvas": [
+      1000,
+      750
+    ],
+    "clean_title": "Increasing Revenue of Company C from Q1 to Q4",
+    "font_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "font_sha256": "690243adfefe0ce154b547db6205794bd30ac4277275179517a90994f4980648",
+    "implementation": "Pillow fixed-canvas matched annotation renderer v1",
+    "official_title": "Stable Revenue of Company C from Q1 to Q4",
+    "pillow_version": "10.4.0",
+    "python_version": "3.10.12",
+    "x_field": "quarter",
+    "x_label": "Quarter",
+    "y_field": "revenue",
+    "y_label": "Revenue",
+    "y_tick_step": 200
+  },
+  "reportable": false,
+  "scope": "controlled matched-title diagnostic; not a canonical release render",
+  "slug": "b038",
+  "validation": {
+    "allowed_mask_path": "web_agent_benchmark/evaluation/gui_reflection_baseline/assets/matched_annotation_v1/b038/allowed_title_mask.png",
+    "arm_dependent_inputs": {
+      "clean": [
+        "title"
+      ],
+      "official": [
+        "title"
+      ]
+    },
+    "different_pixel_count": 6239,
+    "official_clean_diff_bbox": [
+      199,
+      24,
+      803,
+      46
+    ],
+    "outside_allowed_title_mask_pixel_count": 0,
+    "shared_canvas_font_axes_data_line_margins": true,
+    "source_rows_identical": true
+  }
+}

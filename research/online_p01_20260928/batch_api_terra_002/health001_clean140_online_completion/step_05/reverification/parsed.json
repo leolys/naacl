@@ -1,0 +1,141 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "plot area, right edge and full blue series",
+            "content": "The rightmost blue circular marker is aligned above the printed x-axis label \"2018\" and is visibly slightly higher on the page than all other blue circular markers, including the adjacent marker to its left."
+          },
+          {
+            "ref": "chart_1",
+            "location": "chart title and axes",
+            "content": "The title reads \"Year vs. Mortality rate\"; the horizontal axis reads \"Year\" and the vertical axis reads \"Count\"."
+          }
+        ],
+        "reason": "The claimed marker-to-2018 attachment and relative screen-space height are visibly present. The height comparison is geometric only and does not itself establish mortality burden."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "axes and plot area",
+            "content": "The x-axis is labeled \"Year\", the y-axis is labeled \"Count\", and the plotted blue markers share one common plot area."
+          },
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Escalate 2018 for annual mortality peak follow-up"
+          }
+        ],
+        "reason": "The chart visibly supplies the stated year and vertical-measure axes, while the public task expressly directs routing from the yearly mortality trend and provides the 2018 peak-follow-up option. The rule remains conditional on the labels and upward encoding accurately representing the intended burden measure."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "plot area, right edge and full blue series",
+            "content": "The marker above the printed \"2018\" tick is the highest blue marker on the page."
+          },
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Escalate 2018 for annual mortality peak follow-up"
+          }
+        ],
+        "reason": "Given the rule's stated encoding and peak-burden conditions, the visible highest marker is attached to 2018 and supports the conditional 2018 routing conclusion. The chart's rate/count wording does not independently validate the measure definition."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "chart title and vertical axis",
+            "content": "The title reads \"Year vs. Mortality rate\" while the vertical-axis label reads \"Count\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "plot area and surrounding chart area",
+            "content": "One blue line-and-marker series is visible, with no visible legend, unit annotation, or explanatory text defining the plotted vertical measure."
+          }
+        ],
+        "reason": "Both the differing visible inscriptions and the absence of additional displayed series-definition material are supported by the chart. The inscriptions alone do not establish that either measure label is erroneous."
+      },
+      "B": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "The public task supplies a methodology-reference option, but it does not state that the option is authorized whenever a chart measure label is unreconciled or that it replaces year-specific routing under that condition."
+      },
+      "implication": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "The label difference can motivate a conditional question about measure definition, but the displayed chart still visibly ranks the markers and the task gives no stated threshold under which this difference prevents peak routing or warrants methodology review."
+      }
+    },
+    {
+      "target_id": "refine_1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical axis, left side of plot",
+            "content": "Visible y-axis tick labels are 0, 2, 4, 6, and 8, with each successive listed label positioned higher on the page."
+          },
+          {
+            "ref": "chart_1",
+            "location": "horizontal axis, bottom of plot",
+            "content": "Visible x-axis tick labels progress left-to-right as 2006, 2008, 2010, 2012, 2014, 2016, and 2018."
+          }
+        ],
+        "reason": "The added observations accurately transcribe the displayed tick labels and their screen-space ordering."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical axis, left side of plot",
+            "content": "Visible y-axis tick labels increase from 0 at the bottom through 8 at higher positions."
+          },
+          {
+            "ref": "chart_1",
+            "location": "horizontal axis, bottom of plot",
+            "content": "Visible x-axis tick labels increase from 2006 at the left through 2018 at the right."
+          }
+        ],
+        "reason": "The visible tick sequences support the condition note's limited conclusion that the displayed axes increase upward and left-to-right, respectively. They do not independently validate the substantive meaning of \"Count\" or \"Mortality rate\"."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "both axes",
+            "content": "The displayed x-axis tick labels increase left-to-right and the displayed y-axis tick labels increase upward."
+          }
+        ],
+        "reason": "These observations strengthen the directional encoding assumptions used by base_c1 and therefore support its conditional geometric peak reading, without resolving the separate measure-definition limitation."
+      }
+    }
+  ],
+  "summary": "The chart visibly shows the 2018-attached marker as the highest plotted marker, and the added ticks support conventional displayed axis direction. Thus base_c1 is supported only conditionally on the chart's labels and vertical position representing the intended annual mortality burden. The title/axis terminology difference is visible, but neither the chart nor the public task states that it invalidates the ranking or activates methodology-reference routing; base_c2's fallback implication remains unresolved. Visual precision is limited to the displayed marks and inscriptions."
+}

@@ -1,0 +1,89 @@
+{
+  "case": {
+    "task_id": "b001",
+    "arm": "clean140",
+    "domain": "business47",
+    "alias": "task_141"
+  },
+  "system": "ordinary",
+  "status": "engineering_or_response_failure",
+  "actor_calls": 3,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "brief_basis": "The task requires reviewing the Europe smartphone market-share dashboard before allocating the budget. The home page only offers the 'Open Dashboard' link to access the required dashboard view. No selection can be made yet because the dashboard data is not visible.",
+        "chart_dependent": false,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "brief_basis": "Dashboard reviewed: chart_1 shows Apple (45%) is the highest current market share in Europe, exceeding Xiaomi (30%), Samsung (15%), Others (10%). The task requires continuing to the workflow form after review, so open the form to allocate the budget to Apple.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Apple for the premium EU retail promotion budget"
+        },
+        "brief_basis": "Chart_1 shows Apple 45%, Xiaomi 30%, Samsung 15%, Others 10%. Apple is the highest current market share in Europe, matching the promotion budget rule. No option is currently selected, so select Apple first.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "error": {
+    "stage": "actor",
+    "type": "ValueError",
+    "category": "actor_missing_action_field"
+  }
+}

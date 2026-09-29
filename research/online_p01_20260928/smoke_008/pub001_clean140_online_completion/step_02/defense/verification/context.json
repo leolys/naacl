@@ -1,0 +1,304 @@
+{
+  "phase": "verification",
+  "context": {
+    "task": {
+      "task_alias": "task_188",
+      "page_title": "State Hazard Priority Review",
+      "user_goal": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list.",
+      "chart_reference": "Use the state hazard dashboard as the evidence source for this priority review selection.",
+      "primary_field_label": "Priority review state",
+      "option_labels": [
+        "Select ME for priority review",
+        "Select OK for priority review",
+        "Select TX for priority review"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the public benchmark record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Statistic record",
+          "value": "Hazard risk index"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Jurisdiction level",
+          "value": "State"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review program",
+          "value": "Priority hazard review"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the state hazard dashboard as the evidence source for this priority review selection."
+        },
+        {
+          "page": "form",
+          "text": "Use the state hazard dashboard as the evidence source for this priority review selection."
+        },
+        {
+          "page": "form",
+          "text": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Select ME for priority review",
+          "selected": false
+        },
+        {
+          "label": "Select OK for priority review",
+          "selected": false
+        },
+        {
+          "label": "Select TX for priority review",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Select ME for priority review",
+        "Select OK for priority review",
+        "Select TX for priority review"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the state hazard dashboard as the evidence source for this priority review selection. State Hazard Priority Review Review the state hazard dashboard, then choose the state record that should be added to the priority review list. Statistic record Hazard risk index Jurisdiction level State Review program Priority hazard review Priority review state Select a route Select ME for priority review Select OK for priority review Select TX for priority review Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "public_task_leaf_paths": [
+      "/task_alias",
+      "/page_title",
+      "/user_goal",
+      "/chart_reference",
+      "/primary_field_label",
+      "/option_labels/0",
+      "/option_labels/1",
+      "/option_labels/2",
+      "/companion_fields/0/field",
+      "/companion_fields/0/label",
+      "/companion_fields/0/type",
+      "/companion_fields/0/required",
+      "/companion_fields/0/readonly",
+      "/companion_fields/0/value",
+      "/companion_fields/0/placeholder",
+      "/companion_fields/1/field",
+      "/companion_fields/1/type",
+      "/companion_fields/1/required",
+      "/companion_fields/1/readonly",
+      "/companion_fields/1/label",
+      "/companion_fields/1/value",
+      "/companion_fields/2/field",
+      "/companion_fields/2/type",
+      "/companion_fields/2/required",
+      "/companion_fields/2/readonly",
+      "/companion_fields/2/label",
+      "/companion_fields/2/value",
+      "/companion_fields/3/field",
+      "/companion_fields/3/type",
+      "/companion_fields/3/required",
+      "/companion_fields/3/readonly",
+      "/companion_fields/3/label",
+      "/companion_fields/3/value",
+      "/completion_label",
+      "/page_instructions/0/page",
+      "/page_instructions/0/text",
+      "/page_instructions/1/page",
+      "/page_instructions/1/text",
+      "/page_instructions/2/page",
+      "/page_instructions/2/text",
+      "/page_instructions/3/page",
+      "/page_instructions/3/text"
+    ],
+    "arguments": {
+      "rules": [
+        {
+          "id": "r1",
+          "text": "If a choropleth map uses a color scale where darker red indicates a higher value, and the task requires selecting the state with the highest value for a priority review, then the state with the darkest red color among the options should be selected.",
+          "component": "encoding/task relation",
+          "conditions": "The map is a choropleth of hazard risk index, darker color means higher value, and the goal is to find the highest risk state among ME, OK, TX."
+        },
+        {
+          "id": "supp_r1",
+          "text": "If a task asks to select a state for a 'priority review' based on a hazard risk index dashboard, and the dashboard uses a color scale where darker red indicates a higher value, then the state with the highest value (darkest color) among the available options should be selected.",
+          "component": "encoding/task relation",
+          "conditions": "The map is a choropleth of hazard risk index, darker color means higher value, and the goal is to find the highest risk state among the provided options (ME, OK, TX)."
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "base_c1",
+          "rule_id": "r1",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "Maine (ME) state polygon",
+              "content": "The state labeled ME is filled with a very dark red color."
+            },
+            {
+              "ref": "chart_1",
+              "location": "Oklahoma (OK) state polygon",
+              "content": "The state labeled OK is filled with a very light yellow color."
+            },
+            {
+              "ref": "chart_1",
+              "location": "Texas (TX) state polygon",
+              "content": "The state labeled TX is filled with a very light yellow color."
+            },
+            {
+              "ref": "chart_1",
+              "location": "Color legend on the right",
+              "content": "The legend shows a gradient from light yellow at the bottom (labeled 'Low' and '0') to dark red at the top (labeled 'High' and '100')."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/user_goal",
+              "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/1/value",
+              "content": "Hazard risk index"
+            }
+          ],
+          "claim_kind": "supports_action",
+          "option_label": "Select ME for priority review",
+          "claim": "ME has the darkest color among the three options, corresponding to the highest hazard risk index, so it is the correct choice for priority review."
+        },
+        {
+          "chain_id": "supp_c1",
+          "rule_id": "supp_r1",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "Maine (ME) state polygon",
+              "content": "The state labeled ME is filled with a very dark red color."
+            },
+            {
+              "ref": "chart_1",
+              "location": "Oklahoma (OK) state polygon",
+              "content": "The state labeled OK is filled with a very light yellow color."
+            },
+            {
+              "ref": "chart_1",
+              "location": "Texas (TX) state polygon",
+              "content": "The state labeled TX is filled with a very light yellow color."
+            },
+            {
+              "ref": "chart_1",
+              "location": "Color legend on the right",
+              "content": "The legend shows a gradient from light yellow at the bottom (labeled 'Low' and '0') to dark red at the top (labeled 'High' and '100')."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/user_goal",
+              "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+            },
+            {
+              "ref": "public_task",
+              "path": "/companion_fields/1/value",
+              "content": "Hazard risk index"
+            }
+          ],
+          "claim_kind": "supports_action",
+          "option_label": "Select ME for priority review",
+          "claim": "ME has the darkest color among the three options, corresponding to the highest hazard risk index, so it is the correct choice for priority review."
+        }
+      ],
+      "refinements": []
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/pub001_clean140_online_completion/browser/observed_chart.png",
+      "sha256": "34b96e540d03073bd313df2df18b151f81c597b047b142d6ab70540a71f0919a"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "phase": "generation",
+  "context": {
+    "task": {
+      "task_alias": "task_003",
+      "page_title": "Top Rating-Share Category Promotion Budget Request",
+      "user_goal": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share.",
+      "chart_reference": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal.",
+      "primary_field_label": "Promotional budget category",
+      "option_labels": [
+        "Select Other",
+        "Select Design",
+        "Select Support"
+      ],
+      "companion_fields": [
+        {
+          "field": "template_context_budget_action",
+          "label": "Budget action",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Assign additional promotional budget",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_queue_rule",
+          "label": "Queue rule",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Prioritize highest current rating share",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_campaign_program",
+          "label": "Campaign program",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Rating-share category promotion",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "note",
+          "label": "Operations note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the operations record"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [
+        {
+          "title": "Promotion budget rule",
+          "headers": [
+            "Rule item",
+            "Business rule"
+          ],
+          "rows": [
+            [
+              "Promotion budget rule",
+              "Select the category with the highest current labeled rating share"
+            ],
+            [
+              "Decision metric",
+              "mislabeled_value / labeled rating share"
+            ],
+            [
+              "Business reason",
+              "Highest-share category has the strongest current customer signal"
+            ]
+          ]
+        }
+      ],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+        },
+        {
+          "page": "home",
+          "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+        },
+        {
+          "page": "home",
+          "text": "Use the dashboard view before submitting the workflow form."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+        },
+        {
+          "page": "form",
+          "text": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Select Other",
+          "selected": false
+        },
+        {
+          "label": "Select Design",
+          "selected": false
+        },
+        {
+          "label": "Select Support",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Select Other",
+        "Select Design",
+        "Select Support"
+      ],
+      "fields": [
+        {
+          "field": "template_context_budget_action",
+          "type": "select",
+          "label": "Budget action",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Assign additional promotional budget"
+          ]
+        },
+        {
+          "field": "template_context_queue_rule",
+          "type": "select",
+          "label": "Queue rule",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Prioritize highest current rating share"
+          ]
+        },
+        {
+          "field": "template_context_campaign_program",
+          "type": "select",
+          "label": "Campaign program",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Rating-share category promotion"
+          ]
+        },
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Operations note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Resource Allocation Dashboard Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal. 4 Top Rating-Share Category Promotion Budget Request Select the workflow action and submit the form. Promotional budget category Select an action Select Other Select Design Select Support Budget action Select value Assign additional promotional budget Queue rule Select value Prioritize highest current rating share Campaign program Select value Rating-share category promotion Promotion budget rule Rule item Business rule Promotion budget rule Select the category with the highest current labeled rating share Decision metric mislabeled_value / labeled rating share Business reason Highest-share category has the strongest current customer signal Operations note Back to Dashboard Clear form Submit Form",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "public_task_leaf_paths": [
+      "/task_alias",
+      "/page_title",
+      "/user_goal",
+      "/chart_reference",
+      "/primary_field_label",
+      "/option_labels/0",
+      "/option_labels/1",
+      "/option_labels/2",
+      "/companion_fields/0/field",
+      "/companion_fields/0/label",
+      "/companion_fields/0/type",
+      "/companion_fields/0/required",
+      "/companion_fields/0/readonly",
+      "/companion_fields/0/options/0/label",
+      "/companion_fields/0/options/0/disabled",
+      "/companion_fields/0/options/0/selected",
+      "/companion_fields/0/options/1/label",
+      "/companion_fields/0/options/1/disabled",
+      "/companion_fields/0/options/1/selected",
+      "/companion_fields/1/field",
+      "/companion_fields/1/label",
+      "/companion_fields/1/type",
+      "/companion_fields/1/required",
+      "/companion_fields/1/readonly",
+      "/companion_fields/1/options/0/label",
+      "/companion_fields/1/options/0/disabled",
+      "/companion_fields/1/options/0/selected",
+      "/companion_fields/1/options/1/label",
+      "/companion_fields/1/options/1/disabled",
+      "/companion_fields/1/options/1/selected",
+      "/companion_fields/2/field",
+      "/companion_fields/2/label",
+      "/companion_fields/2/type",
+      "/companion_fields/2/required",
+      "/companion_fields/2/readonly",
+      "/companion_fields/2/options/0/label",
+      "/companion_fields/2/options/0/disabled",
+      "/companion_fields/2/options/0/selected",
+      "/companion_fields/2/options/1/label",
+      "/companion_fields/2/options/1/disabled",
+      "/companion_fields/2/options/1/selected",
+      "/companion_fields/3/field",
+      "/companion_fields/3/label",
+      "/companion_fields/3/type",
+      "/companion_fields/3/required",
+      "/companion_fields/3/readonly",
+      "/companion_fields/3/value",
+      "/companion_fields/3/placeholder",
+      "/completion_label",
+      "/policy_tables/0/title",
+      "/policy_tables/0/headers/0",
+      "/policy_tables/0/headers/1",
+      "/policy_tables/0/rows/0/0",
+      "/policy_tables/0/rows/0/1",
+      "/policy_tables/0/rows/1/0",
+      "/policy_tables/0/rows/1/1",
+      "/policy_tables/0/rows/2/0",
+      "/policy_tables/0/rows/2/1",
+      "/page_instructions/0/page",
+      "/page_instructions/0/text",
+      "/page_instructions/1/page",
+      "/page_instructions/1/text",
+      "/page_instructions/2/page",
+      "/page_instructions/2/text",
+      "/page_instructions/3/page",
+      "/page_instructions/3/text",
+      "/page_instructions/4/page",
+      "/page_instructions/4/text",
+      "/page_instructions/5/page",
+      "/page_instructions/5/text"
+    ],
+    "unexecuted_proposal": {
+      "action": {
+        "kind": "select",
+        "option": "Select Other"
+      },
+      "brief_basis": "Chart_1 labeled rating shares: Quality 36%, Price 38%, Design 34%, Support 45%, Delivery 43%, Other 53%. The highest labeled rating share is Other at 53%, so the promotional budget category should be Other. The form is on the form page with the primary field unselected; selecting 'Select Other' is the first required step before filling companion fields and submitting.",
+      "chart_dependent": true,
+      "used_rules": [],
+      "supporting_chain_ids": [],
+      "challenge": null
+    },
+    "initial_arguments": {
+      "rules": [
+        {
+          "id": "r1",
+          "text": "If the chart's printed percentage labels are treated as the current labeled rating-share values and the public task's decision metric is the highest current labeled rating share, then the category whose printed label is numerically greatest is the category that should receive the additional promotional budget.",
+          "component": "encoding/task relation",
+          "conditions": "The printed percentage labels are the intended labeled rating-share values; the public task's 'highest current labeled rating share' rule applies to those labels; the form's primary field maps each category to its 'Select <Category>' option."
+        },
+        {
+          "id": "r2",
+          "text": "If the chart's vertical axis position is treated as the rating-share value instead of the printed percentage labels, then the category whose point is highest on the page is the category that should receive the additional promotional budget.",
+          "component": "encoding/task relation",
+          "conditions": "The vertical axis position is the intended rating-share value; the public task's 'highest current labeled rating share' rule applies to the axis position; the form's primary field maps each category to its 'Select <Category>' option."
+        },
+        {
+          "id": "r3",
+          "text": "If the chart's printed percentage labels and vertical axis positions are treated as conflicting evidence, then the task's 'labeled rating share' wording must be resolved before a category can be selected.",
+          "component": "encoding/task relation",
+          "conditions": "The printed percentage labels and vertical axis positions are in conflict; the public task's 'labeled rating share' wording is ambiguous between the two; the form's primary field maps each category to its 'Select <Category>' option."
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "base_c1",
+          "rule_id": "r1",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "x-axis label under the rightmost point",
+              "content": "the text 'Other' is printed under the rightmost point"
+            },
+            {
+              "ref": "chart_1",
+              "location": "above the rightmost point",
+              "content": "the text '53%' is printed above the rightmost point"
+            },
+            {
+              "ref": "chart_1",
+              "location": "above the point under 'Design'",
+              "content": "the text '34%' is printed above the point under 'Design'"
+            },
+            {
+              "ref": "chart_1",
+              "location": "above the point under 'Support'",
+              "content": "the text '45%' is printed above the point under 'Support'"
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/policy_tables/0/rows/0/1",
+              "content": "Select the category with the highest current labeled rating share"
+            },
+            {
+              "ref": "public_task",
+              "path": "/option_labels/0",
+              "content": "Select Other"
+            }
+          ],
+          "claim_kind": "supports_action",
+          "option_label": "Select Other",
+          "claim": "If the printed percentage labels are the labeled rating-share values, then 'Other' at 53% is the highest labeled rating share, so the promotional budget category should be 'Select Other'."
+        },
+        {
+          "chain_id": "base_c2",
+          "rule_id": "r2",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "point under 'Design'",
+              "content": "the point under 'Design' is higher on the page than the point under 'Other'"
+            },
+            {
+              "ref": "chart_1",
+              "location": "point under 'Other'",
+              "content": "the point under 'Other' is lower on the page than the point under 'Design'"
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/policy_tables/0/rows/0/1",
+              "content": "Select the category with the highest current labeled rating share"
+            },
+            {
+              "ref": "public_task",
+              "path": "/option_labels/1",
+              "content": "Select Design"
+            }
+          ],
+          "claim_kind": "challenges_support",
+          "option_label": null,
+          "claim": "If the vertical axis position is the rating-share value, then 'Design' is the highest point on the page, which would challenge the support for 'Select Other' based on the printed label."
+        },
+        {
+          "chain_id": "base_c3",
+          "rule_id": "r3",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "point under 'Design'",
+              "content": "the point under 'Design' is higher on the page than the point under 'Other'"
+            },
+            {
+              "ref": "chart_1",
+              "location": "above the point under 'Design'",
+              "content": "the text '34%' is printed above the point under 'Design'"
+            },
+            {
+              "ref": "chart_1",
+              "location": "above the point under 'Other'",
+              "content": "the text '53%' is printed above the point under 'Other'"
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/policy_tables/0/rows/1/1",
+              "content": "mislabeled_value / labeled rating share"
+            }
+          ],
+          "claim_kind": "underdetermined",
+          "option_label": null,
+          "claim": "The printed label for 'Other' (53%) is numerically greater than the printed label for 'Design' (34%), but the point for 'Design' is higher on the page than the point for 'Other'. The task's 'labeled rating share' wording must be resolved to determine which evidence is authoritative."
+        }
+      ],
+      "refinements": []
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_guided_002/b003_official140_online_completion/browser/observed_chart.jpeg",
+      "sha256": "c3ebeaf0e96cba834ab8ed14cf98443254188b157a2eb247733e10958ed7de15"
+    }
+  ]
+}

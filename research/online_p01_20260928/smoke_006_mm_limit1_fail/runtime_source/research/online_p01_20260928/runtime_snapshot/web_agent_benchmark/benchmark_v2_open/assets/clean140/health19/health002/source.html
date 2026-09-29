@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>health002 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Surveillance Trend Escalation Routing</h1>
+  <p>This is the clean-pair rendering for <strong>health002</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;health002&quot;,
+  &quot;task_id&quot;: &quot;health_task_c229574acc_4127_aggressive&quot;,
+  &quot;case_id&quot;: &quot;visDeception/InvertedAxis/4127_Aggressive&quot;,
+  &quot;misleader_type&quot;: &quot;MS_unconventional_scale_directions&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;The chart uses a reversed vertical scale, so the line appears to move downward even while the case counts are climbing. The plotted pattern should therefore be treated as a rising case-count trend, not as a decline.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;Rising case-count trend&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;route_rising_case_count_pattern_to_escalation_follow_up&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;The inverted axis makes the line look like it is moving downward, which can be misread as a decline in cases even though the values are increasing over time.&quot;,
+    &quot;misleading_target&quot;: &quot;Declining case-count trend&quot;
+  }
+}</pre>
+</body>
+</html>

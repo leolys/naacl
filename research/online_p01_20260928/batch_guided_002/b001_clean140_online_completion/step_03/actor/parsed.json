@@ -1,0 +1,27 @@
+{
+  "action": {
+    "kind": "select",
+    "option": "Select Apple for the premium EU retail promotion budget"
+  },
+  "brief_basis": "The chart 'Smartphone Market Share in Europe' shows Apple (45%) as the highest printed percentage, exceeding Xiaomi (30%), Samsung (15%), and Others (10%). The task's policy table defines the decision metric as market_share and the rule as selecting the brand with the highest current market share. The chart_reference explicitly designates the dashboard values as the evidence source. Therefore, Apple is the current market-share leader, and the option naming Apple is the supported action. The pending action to select Apple is correct and should be executed.",
+  "chart_dependent": true,
+  "used_rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The chart is the Europe smartphone market-share dashboard (title visible). The task's chart_reference designates the dashboard values as the evidence source, satisfying the condition that printed percentages are accepted as current market_share values. The policy table confirms the decision metric is market_share and the scope is Europe smartphone brands."
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The budget rule is 'Allocate to current market-share leader' (visible in the form and policy table). The option 'Select Apple for the premium EU retail promotion budget' names the brand identified as the leader by r1."
+    }
+  ],
+  "supporting_chain_ids": [
+    "base_c1",
+    "base_c2"
+  ],
+  "challenge": null
+}

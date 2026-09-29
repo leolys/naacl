@@ -1,0 +1,127 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis represents the temperature metric and the x-axis represents the 2005-2014 review period, then the period-wide change is the difference between the final and initial plotted values. If this difference is large enough to be considered a substantial change rather than ordinary variation, the record should be routed to substantial-change follow-up.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis 'value' is the temperature metric, the x-axis 'year' covers 2005-2014, and the task's 'large enough' threshold is met by the observed difference."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's y-axis represents the temperature metric and the x-axis represents the 2005-2014 review period, then the period-wide change is the difference between the final and initial plotted values. If this difference is small enough to be considered ordinary variation, the record should remain on routine monitoring.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis 'value' is the temperature metric, the x-axis 'year' covers 2005-2014, and the task's 'ordinary enough' threshold is met by the observed difference."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis represents the temperature metric and the x-axis represents the 2005-2014 review period, then the period-wide change is the difference between the final and initial plotted values. If the task provides no explicit threshold for 'large enough' versus 'ordinary enough', the routing decision is underdetermined by the chart alone.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis 'value' is the temperature metric, the x-axis 'year' covers 2005-2014, and no explicit numeric threshold for substantial vs. ordinary change is provided in the task or chart."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'value' with printed ticks at 10, 12, 14, 16, 18, 20, 22, and 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'year' with printed ticks for 2005 through 2014."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2005",
+          "content": "The first data point is aligned horizontally with the y-axis tick labeled 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2014",
+          "content": "The final data point is aligned horizontally with the y-axis tick labeled 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "The chart shows a period-wide change from a value of 24 in 2005 to a value of 10 in 2014, a difference of 14 units. Assuming this difference is large enough to constitute a substantial change, the record supports routing to substantial-change follow-up."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "data point at 2005",
+          "content": "The first data point is aligned horizontally with the y-axis tick labeled 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2014",
+          "content": "The final data point is aligned horizontally with the y-axis tick labeled 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The chart shows a period-wide change from a value of 24 in 2005 to a value of 10 in 2014, a difference of 14 units. If this difference is considered ordinary variation rather than a substantial change, the record would support keeping it on routine monitoring, challenging the support for the substantial-change route."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'value' with printed ticks at 10, 12, 14, 16, 18, 20, 22, and 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2005",
+          "content": "The first data point is aligned horizontally with the y-axis tick labeled 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2014",
+          "content": "The final data point is aligned horizontally with the y-axis tick labeled 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Whether the period-wide temperature change warrants targeted follow-up"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart shows a period-wide change of 14 units (from 24 to 10). However, the task and chart do not provide an explicit numeric threshold defining when a change is 'large enough' for targeted follow-up versus 'ordinary enough' for routine monitoring, leaving the routing decision underdetermined by the visible evidence."
+    }
+  ]
+}

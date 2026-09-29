@@ -1,0 +1,349 @@
+{
+  "phase": "generation",
+  "context": {
+    "task": {
+      "task_alias": "task_263",
+      "page_title": "Surveillance Trend Escalation Routing",
+      "user_goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+      "chart_reference": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.",
+      "primary_field_label": "Surveillance trend routing decision",
+      "option_labels": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the health record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Infectious disease surveillance"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Reported case trajectory assessment"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Surveillance follow-up routing"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Route the surveillance record to rising-case escalation follow-up",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to declining-case stabilization review",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to background monitoring intake",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling. Surveillance Trend Escalation Routing Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory. Program area Infectious disease surveillance Review scope Reported case trajectory assessment Record workflow Surveillance follow-up routing Surveillance trend routing decision Select a route Route the surveillance record to rising-case escalation follow-up Route the surveillance record to declining-case stabilization review Route the surveillance record to background monitoring intake Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "public_task_leaf_paths": [
+      "/task_alias",
+      "/page_title",
+      "/user_goal",
+      "/chart_reference",
+      "/primary_field_label",
+      "/option_labels/0",
+      "/option_labels/1",
+      "/option_labels/2",
+      "/companion_fields/0/field",
+      "/companion_fields/0/label",
+      "/companion_fields/0/type",
+      "/companion_fields/0/required",
+      "/companion_fields/0/readonly",
+      "/companion_fields/0/value",
+      "/companion_fields/0/placeholder",
+      "/companion_fields/1/field",
+      "/companion_fields/1/type",
+      "/companion_fields/1/required",
+      "/companion_fields/1/readonly",
+      "/companion_fields/1/label",
+      "/companion_fields/1/value",
+      "/companion_fields/2/field",
+      "/companion_fields/2/type",
+      "/companion_fields/2/required",
+      "/companion_fields/2/readonly",
+      "/companion_fields/2/label",
+      "/companion_fields/2/value",
+      "/companion_fields/3/field",
+      "/companion_fields/3/type",
+      "/companion_fields/3/required",
+      "/companion_fields/3/readonly",
+      "/companion_fields/3/label",
+      "/companion_fields/3/value",
+      "/completion_label",
+      "/page_instructions/0/page",
+      "/page_instructions/0/text",
+      "/page_instructions/1/page",
+      "/page_instructions/1/text",
+      "/page_instructions/2/page",
+      "/page_instructions/2/text",
+      "/page_instructions/3/page",
+      "/page_instructions/3/text"
+    ],
+    "unexecuted_proposal": {
+      "action": {
+        "kind": "select",
+        "option": "Route the surveillance record to rising-case escalation follow-up"
+      },
+      "chart_dependent": true,
+      "brief_basis": "The chart 'Month vs. Number of cases' shows a clear upward trend, starting near 0 in late January/early February 2020 and rising to over 1400 by late March 2020. This indicates a rising case trajectory, which matches the 'rising-case escalation follow-up' route.",
+      "used_rules": [],
+      "supporting_chain_ids": [],
+      "challenge": null
+    },
+    "initial_arguments": {
+      "rules": [
+        {
+          "id": "r1",
+          "text": "If the visible line chart's data points move from a lower vertical position on the left to a higher vertical position on the right, and the y-axis is labeled 'Count' with increasing values upward, then the chart encodes an increasing case trajectory over the displayed time period.",
+          "component": "encoding/task relation",
+          "conditions": "Assumes the x-axis represents chronological time and the y-axis represents case count, as labeled on the chart."
+        },
+        {
+          "id": "r2",
+          "text": "If the observed case trajectory is increasing, and the public task provides a routing option explicitly labeled for rising-case escalation, then the increasing trajectory supports selecting that specific rising-case option.",
+          "component": "task-to-action relation",
+          "conditions": "Assumes the routing options are mutually exclusive categories corresponding to the direction of the case trend."
+        },
+        {
+          "id": "r3",
+          "text": "If the visible line chart's data points move from a higher vertical position on the left to a lower vertical position on the right, then the chart encodes a decreasing case trajectory, which would challenge a rising-case routing proposal and support a declining-case or background monitoring option instead.",
+          "component": "encoding/task relation",
+          "conditions": "Assumes the x-axis represents chronological time and the y-axis represents case count, as labeled on the chart."
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "base_c1",
+          "rule_id": "r1",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "left side of plot area",
+              "content": "The first several data points are positioned near the bottom of the y-axis, close to the 0 tick mark, corresponding to x-axis labels from Jan 27, 2020 to Mar 08, 2020."
+            },
+            {
+              "ref": "chart_1",
+              "location": "right side of plot area",
+              "content": "The final data point is positioned near the top of the y-axis, above the 1400 tick mark, corresponding to the x-axis label Mar 22, 2020."
+            },
+            {
+              "ref": "chart_1",
+              "location": "entire line path",
+              "content": "The blue line connecting the data points moves continuously from a lower vertical position on the left to a higher vertical position on the right."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/option_labels/0",
+              "content": "Route the surveillance record to rising-case escalation follow-up"
+            }
+          ],
+          "claim_kind": "supports_action",
+          "option_label": "Route the surveillance record to rising-case escalation follow-up",
+          "claim": "The visible upward movement of the line from near 0 to above 1400 indicates an increasing case trajectory, which supports routing the record to the rising-case escalation follow-up option."
+        },
+        {
+          "chain_id": "base_c2",
+          "rule_id": "r2",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "y-axis",
+              "content": "The y-axis is labeled 'Count' with tick marks increasing from 0 at the bottom to 1400 near the top."
+            },
+            {
+              "ref": "chart_1",
+              "location": "x-axis",
+              "content": "The x-axis displays date labels progressing from Jan 27, 2020 on the left to Mar 22, 2020 on the right."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/user_goal",
+              "content": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+            }
+          ],
+          "claim_kind": "supports_action",
+          "option_label": "Route the surveillance record to rising-case escalation follow-up",
+          "claim": "Given the y-axis represents case count and the x-axis represents time, the rising line matches the 'rising-case' category in the public task's routing options, supporting the proposed selection."
+        },
+        {
+          "chain_id": "base_c3",
+          "rule_id": "r3",
+          "observations": [
+            {
+              "ref": "chart_1",
+              "location": "entire line path",
+              "content": "The blue line does not show a downward movement from left to right; instead, it maintains an upward or flat trajectory throughout the displayed period."
+            }
+          ],
+          "task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/option_labels/1",
+              "content": "Route the surveillance record to declining-case stabilization review"
+            }
+          ],
+          "claim_kind": "challenges_support",
+          "option_label": null,
+          "claim": "The absence of a visible downward trend in the chart challenges the support for the declining-case stabilization review option, as the data does not visually indicate a decrease in cases."
+        }
+      ],
+      "refinements": []
+    },
+    "counterquestions": {
+      "questions": [
+        {
+          "id": "q1",
+          "target_chain_ids": [
+            "base_c1",
+            "base_c2"
+          ],
+          "focus": "rule_conditions",
+          "question": "Does the chart's y-axis label 'Count' and the x-axis date labels explicitly confirm that the plotted values represent reported case counts over time, as required by the rule conditions?"
+        },
+        {
+          "id": "q2",
+          "target_chain_ids": [
+            "base_c3"
+          ],
+          "focus": "coverage",
+          "question": "Does the observation that the line 'maintains an upward or flat trajectory' sufficiently rule out a declining-case trajectory, or is there a visible segment that could be interpreted as flat or decreasing?"
+        },
+        {
+          "id": "q3",
+          "target_chain_ids": [
+            "base_c1",
+            "base_c2",
+            "base_c3"
+          ],
+          "focus": "observations",
+          "question": "Are the specific data point values (e.g., near 0 to above 1400) directly visible as printed numerals on the chart, or are they estimated from the y-axis tick marks?"
+        }
+      ],
+      "summary": "Inspected the chart for axis labels, line trajectory, and data point positions. The chart shows a clear upward trend from left to right, with the y-axis labeled 'Count' and x-axis showing dates. The initial explanations correctly identify the rising trend and link it to the 'rising-case escalation' option. The main limits are the reliance on estimated values rather than printed data labels and the need to confirm that the axis labels explicitly map to 'case count' and 'time' as assumed in the rules."
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/health002_clean140_online_completion/browser/observed_chart.png",
+      "sha256": "3fe11f371c41fad2a78aa554aa833d00dc219fe1a6eb261b2d128a4dac45b518"
+    }
+  ]
+}

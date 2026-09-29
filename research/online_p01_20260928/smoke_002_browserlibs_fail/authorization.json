@@ -1,0 +1,36 @@
+{
+  "protocol": "online_explanation_completion_v2_batch_live",
+  "endpoint": "http://127.0.0.1:8058/v1/chat/completions",
+  "model": "Qwen3.8-27B",
+  "task_ids": [
+    "b001",
+    "b002",
+    "b003",
+    "b004",
+    "b005",
+    "b006",
+    "env001",
+    "env002",
+    "env003",
+    "health001",
+    "health002",
+    "pub001"
+  ],
+  "arms": [
+    "official140",
+    "clean140"
+  ],
+  "systems": [
+    "ordinary",
+    "online_completion"
+  ],
+  "max_request_attempts": 1600,
+  "max_browser_operations": 2400,
+  "max_estimated_usd": 10.0,
+  "max_actor_calls": 8,
+  "max_reverification": 1,
+  "interface_version": "typed_scalars_v2",
+  "authorized": true,
+  "user_approval_reference": "Owner instruction in ScienceGuru session 2026-09-28: '写P5报告，然后开始准备在线实验'; local-only serving, no external API",
+  "scope": "12 tasks x 2 arms x 2 systems; actor Qwen3.8-27B local vLLM; no third-party API"
+}

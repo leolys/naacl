@@ -1,0 +1,96 @@
+{
+  "case": {
+    "task_id": "health001",
+    "arm": "clean140",
+    "domain": "health19",
+    "alias": "task_262"
+  },
+  "system": "online_completion",
+  "status": "engineering_or_response_failure",
+  "actor_calls": 3,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Escalate 2018 for annual mortality peak follow-up"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false
+    }
+  ],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page only shows task description and 'Open Dashboard' link; need to open dashboard to review mortality data before routing.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard chart shows mortality rate peaking at 2018 (highest point, ~9.1, tied/slightly above 2017). Need to open the form to select the routing option for the peak-burden year. The form is not yet open; current page is dashboard with 'Open Form' link visible.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Escalate 2018 for annual mortality peak follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The chart 'Year vs. Mortality rate' shows the mortality rate rising over time, with the highest point at the final year, 2018 (approximately 9.1-9.2), which is visibly higher than 2010 (approximately 8.1) and all other years. The task asks to route the year that should receive peak-burden follow-up, which corresponds to the peak year 2018. The option 'Escalate 2018 for annual mortality peak follow-up' matches this.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "error": {
+    "stage": "defense",
+    "type": "SchemaError",
+    "category": "supports_action_requires_exact_public_option"
+  }
+}

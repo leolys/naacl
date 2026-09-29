@@ -1,0 +1,107 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis is read as temperature in Celsius and the x-axis as year, then the period-wide change from 2005 to 2014 is the difference between the first and last labeled data points; a large absolute difference supports substantial-change follow-up, while a small difference supports routine monitoring.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed point labels are the intended data values and that the task's 'large enough' threshold is not numerically specified, so magnitude is judged qualitatively."
+    },
+    {
+      "id": "r2",
+      "text": "If the task requires a specific numeric threshold to distinguish substantial change from ordinary variation, and no such threshold is provided in the public task or policy tables, then the routing decision is underdetermined and cannot be conclusively assigned to either follow-up or routine monitoring.",
+      "component": "task-to-action relation",
+      "conditions": "Applies when the public task defines the criterion only qualitatively as 'large enough' or 'ordinary enough' without a numeric cutoff."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis label and point labels are treated as literal inscriptions rather than validated measurements, then the visible drop from the 2005 label to the 2014 label is a raw visual fact, but its interpretation as a 'substantial' temperature change depends on the missing policy threshold.",
+      "component": "scale comparability",
+      "conditions": "Preserves the distinction between raw printed values and derived business meaning; does not assume the printed values are true."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left data point",
+          "content": "A black dot is positioned above the x-axis tick '2005', with the printed label '$23.9°C' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom-right data point",
+          "content": "A black dot is positioned above the x-axis tick '2014', with the printed label '$10.1°C' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The vertical axis is labeled 'Temperature (°C)' with visible ticks at 0, 5, 10, 15, and 20."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "The visible drop from the 2005 label to the 2014 label represents a large period-wide change, which qualitatively supports routing to substantial-change follow-up, though the exact threshold is not specified."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "Ten black dots are connected by a blue line, each with a printed temperature label, showing a general downward trend from left to right."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Whether the period-wide temperature change warrants targeted follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables",
+          "content": []
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The public task does not provide a numeric threshold or policy table to define 'large enough' versus 'ordinary enough', so the routing decision lacks a definitive criterion and remains underdetermined."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "data labels",
+          "content": "The printed labels on the data points include '$23.9°C', '$21.4°C', '$20.0°C', '$17.9°C', '$15.5°C', '$15.3°C', '$13.8°C', '$11.3°C', and '$10.1°C'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard record as the evidence source for deciding whether the period-wide temperature change warrants targeted follow-up."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The printed labels are literal inscriptions and not validated measurements; interpreting them as a 'substantial' change requires an external threshold that is absent from the public task, challenging the automatic support for the follow-up route."
+    }
+  ]
+}

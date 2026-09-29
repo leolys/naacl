@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Trend Follow-Up Routing</title>
+  <style>
+    :root { --bg:#f6f7f8; --panel:#fff; --ink:#1f2937; --muted:#667085; --line:#d7dde7; --accent:#2454a6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); }
+    header { background:#fff; border-bottom:1px solid var(--line); padding:16px 24px; }
+    h1 { margin:0 0 6px; font-size:22px; letter-spacing:0; }
+    h2 { margin:0 0 8px; font-size:18px; letter-spacing:0; }
+    .sub { color:var(--muted); font-size:13px; }
+    main { max-width:1320px; margin:0 auto; padding:22px 24px 48px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:14px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .task-card { display:grid; gap:10px; }
+    .chips { display:flex; flex-wrap:wrap; gap:6px; }
+    .chip { border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; color:var(--muted); background:#fafbfc; }
+    a.button, button { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:8px 12px; border-radius:6px; border:1px solid var(--accent); background:var(--accent); color:#fff; text-decoration:none; font:inherit; cursor:pointer; }
+    a.secondary { border-color:var(--line); background:#fff; color:var(--ink); }
+    .layout { display:grid; grid-template-columns:minmax(360px, 56%) minmax(320px, 1fr); gap:16px; align-items:start; }
+    .chart { width:100%; border:1px solid var(--line); border-radius:8px; background:#fff; }
+    .chart-compare { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .chart-compare figure { margin:0; }
+    .chart-compare figcaption { color:var(--muted); font-size:13px; font-weight:650; margin:0 0 6px; }
+    .field { margin:12px 0; }
+    label { display:block; font-weight:650; margin-bottom:6px; }
+    select, textarea { width:100%; border:1px solid var(--line); border-radius:6px; padding:9px; font:inherit; background:#fff; }
+    textarea { min-height:80px; resize:vertical; }
+    dl { display:grid; grid-template-columns:180px minmax(0,1fr); gap:8px 12px; margin:12px 0; }
+    dt { color:var(--muted); }
+    dd { margin:0; overflow-wrap:anywhere; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    @media (max-width:900px) { .layout, .chart-compare { grid-template-columns:1fr; } main { padding:14px; } }
+  </style>
+</head>
+<body>
+  <header><h1>Temperature Trend Follow-Up Routing</h1><div class="sub">Environment Benchmark Portal</div></header>
+  <main><div class="layout">
+      <section class="card">
+        <h2>Dashboard Reference</h2>
+        <p>Use the charted yearly temperature readings as the basis for this routing decision.</p>
+        <img class="chart" src="/task/env002/chart" alt="environment dashboard reference">
+      </section>
+      <section class="card">
+        <h2>Temperature Trend Follow-Up Routing</h2>
+        <p>Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow.</p>
+        
+        <dl><dt>Program area</dt><dd>Temperature monitoring</dd><dt>Review scope</dt><dd>Multi-year environmental trend</dd><dt>Record workflow</dt><dd>Substantial trend follow-up</dd><dt>Routing criterion</dt><dd>Magnitude of change across the review period</dd></dl>
+        
+        <form method="post" action="/task/env002/submit">
+          <div class="field">
+            <label for="primary_action">Temperature trend routing decision</label>
+            <select id="primary_action" name="primary_action"><option value="">Select a route</option><option value="option_0">Escalate the 2005-2015 temperature decline for follow-up</option><option value="option_1">Keep the 2005-2015 temperature decline on routine monitoring</option><option value="option_2">Archive the temperature trend record without targeted follow-up</option></select>
+          </div>
+          <div class="field">
+            <label for="note">Routing note</label>
+            <textarea id="note" name="note" placeholder="Optional note for the environment record"></textarea>
+          </div>
+          <div class="actions">
+            <button type="submit">Submit Form</button>
+            <a class="button secondary" href="/task/env002/dashboard">Back to Dashboard</a>
+          </div>
+        </form>
+      </section>
+    </div></main>
+
+</body></html>

@@ -1,0 +1,81 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "If the public task or policy table does not explicitly state whether the printed percentage labels or the geometric bar heights are the authoritative source for the 'market_share' decision metric, and the chart shows a direct conflict between the two, then the support for any single option is underdetermined until that check is resolved.",
+      "component": "scale comparability / label vs geometry",
+      "conditions": "A printed numeric label appears above a bar; the bar's top edge position relative to y-axis ticks may or may not match the printed number; the public task or policy table does not specify which is authoritative."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "green bar (Edge) top edge vs y-axis",
+          "content": "The top edge of the green bar labeled 'Edge' is positioned just below the y-axis tick marked 80, while the printed label above it reads '87%'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "blue bar (Firefox) top edge vs y-axis",
+          "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The public task and policy table do not explicitly state whether the printed percentage labels or the geometric bar heights are the authoritative source for the 'market_share' decision metric. Given the direct conflict (Firefox is geometrically tallest but labeled 23%, while Edge is labeled 87%), the support for the proposed Edge assignment is underdetermined until this ambiguity is resolved.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "support_gap"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c2",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "blue bar (Firefox) top edge vs y-axis",
+          "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "The evidence for the 'Assign Edge' action assumes the printed labels are authoritative. It does not account for the possibility that the chart's y-axis scale and bar heights are the intended encoding of market_share, which would make Firefox the highest-usage browser.",
+      "reason": "This adds the specific condition that the 'Assign Edge' action's support is contingent on the printed labels being the intended encoding, and explicitly notes the alternative reading (geometry) that would invalidate the selection."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The public task and policy table do not explicitly state which visual encoding (printed labels vs. bar heights) is the authoritative source for 'market_share'. The new chain supp_c1 records this support gap, making the underdetermined status explicit."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The refinement to base_c2 explicitly adds the condition that the 'Assign Edge' action's support depends on the printed labels being the intended encoding, and notes the alternative reading (geometry) that would make Firefox the highest-usage browser."
+    }
+  ]
+}

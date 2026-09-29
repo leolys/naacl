@@ -1,0 +1,111 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's x-axis labels bind each point to a category and the printed percentage labels are the current labeled rating shares, then the category whose printed percentage is numerically greatest is the highest-share category.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the evidence source; printed labels are treated as the labeled values; no other metric overrides the printed percentages."
+    },
+    {
+      "id": "r2",
+      "text": "If the public task requires selecting the category with the highest current labeled rating share, then the public option label matching that category is the supported action.",
+      "component": "task-to-action relation",
+      "conditions": "The option label must exactly match the category name from the chart; the task's primary field is the selection target."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's printed labels are ambiguous, missing, or conflict with the visual geometry, then the highest-share category is underdetermined and no option is supported.",
+      "component": "scale comparability",
+      "conditions": "Printed labels must be legible and unambiguous; visual point positions must not contradict the printed labels in a way that changes the ranking."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis, third label from left",
+          "content": "The label 'Design' is printed below the third point."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the third point",
+          "content": "The text '52%' is printed directly above the point aligned with 'Design'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the first point",
+          "content": "The text '24%' is printed directly above the point aligned with 'Quality'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the second point",
+          "content": "The text '10%' is printed directly above the point aligned with 'Price'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the fourth point",
+          "content": "The text '45%' is printed directly above the point aligned with 'Support'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the fifth point",
+          "content": "The text '39%' is printed directly above the point aligned with 'Delivery'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the sixth point",
+          "content": "The text '32%' is printed directly above the point aligned with 'Other'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "The printed label '52%' above the 'Design' point is numerically greater than all other printed labels (24%, 10%, 45%, 39%, 32%), so Design is the highest-share category, supporting the selection of 'Select Design'."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Value' with ticks from 0 to 55 in increments of 5."
+        },
+        {
+          "ref": "chart_1",
+          "location": "point aligned with 'Design'",
+          "content": "The point is positioned slightly above the 50 tick mark."
+        },
+        {
+          "ref": "chart_1",
+          "location": "point aligned with 'Support'",
+          "content": "The point is positioned exactly on the 45 tick mark."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The visual geometry (point positions relative to y-axis ticks) is consistent with the printed labels, but the task explicitly requires using 'labeled rating-share values'. If the printed labels were to be questioned, the visual positions alone would not provide a definitive ranking without interpolation, leaving the highest-share category underdetermined under a strict visual-only reading."
+    }
+  ]
+}

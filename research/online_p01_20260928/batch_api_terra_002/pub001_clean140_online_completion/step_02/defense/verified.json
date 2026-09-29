@@ -1,0 +1,186 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "title at upper left",
+            "content": "The printed title reads \"Risk Index of Hazard H in US States\"."
+          },
+          {
+            "ref": "chart_1",
+            "location": "far northeastern map area",
+            "content": "The map region is visibly inscribed \"ME\"."
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/value",
+            "content": "Hazard risk index"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/value",
+            "content": "State"
+          }
+        ],
+        "reason": "The chart visibly supplies the stated title and ME label, while the task literally identifies the statistic record as Hazard risk index and jurisdiction level as State."
+      },
+      "B": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "The rule is appropriately conditional, but neither the chart nor the public task establishes that chart-specific \"Hazard H\" is the same hazard definition as the task's \"Hazard risk index.\""
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "title at upper left",
+            "content": "The printed title reads \"Risk Index of Hazard H in US States\"."
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/value",
+            "content": "Hazard risk index"
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/2/value",
+            "content": "State"
+          }
+        ],
+        "reason": "The claim preserves the unresolved Hazard H correspondence and only states conditional relevance, which follows from the visible and task-level scope similarities without asserting that ME should be selected."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "vertical legend at right of map",
+            "content": "The legend shows \"High\" above the color bar and \"Low\" below it, with visible tick inscriptions 0, 20, 40, 60, 80, and 100."
+          },
+          {
+            "ref": "chart_1",
+            "location": "caption at bottom left",
+            "content": "The printed caption reads \"Clean choropleth: same US map base; darker color means higher true value.\""
+          },
+          {
+            "ref": "chart_1",
+            "location": "far northeastern state labeled ME",
+            "content": "ME has a very dark red fill."
+          },
+          {
+            "ref": "chart_1",
+            "location": "south-central state labeled OK",
+            "content": "OK has a very pale yellow fill."
+          },
+          {
+            "ref": "chart_1",
+            "location": "south-central state labeled TX",
+            "content": "TX has a very pale yellow fill."
+          }
+        ],
+        "reason": "The legend, caption, labels, and relative fill appearances are visibly present; the color descriptions are screen-visible rather than decoded values."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "caption at bottom left",
+            "content": "The printed caption reads \"Clean choropleth: same US map base; darker color means higher true value.\""
+          },
+          {
+            "ref": "chart_1",
+            "location": "vertical legend at right of map",
+            "content": "The legend shows \"High\" above the color bar and \"Low\" below it, with visible tick inscriptions 0, 20, 40, 60, 80, and 100."
+          }
+        ],
+        "reason": "The visible caption explicitly provides the required darker-color-to-higher-value encoding, and the legend is visually consistent with that direction. Rendering precision does not affect the large visible ME-versus-OK/TX difference."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "far northeastern state labeled ME",
+            "content": "ME has a very dark red fill."
+          },
+          {
+            "ref": "chart_1",
+            "location": "south-central state labeled OK",
+            "content": "OK has a very pale yellow fill."
+          },
+          {
+            "ref": "chart_1",
+            "location": "south-central state labeled TX",
+            "content": "TX has a very pale yellow fill."
+          },
+          {
+            "ref": "chart_1",
+            "location": "caption at bottom left",
+            "content": "The printed caption reads \"Clean choropleth: same US map base; darker color means higher true value.\""
+          }
+        ],
+        "reason": "Given the displayed encoding, the visibly darker ME fill supports the limited conclusion that ME's displayed index exceeds OK's and TX's. This does not independently establish the task's priority-selection criterion."
+      }
+    },
+    {
+      "target_id": "base_c3",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "far northeastern ME and south-central OK and TX map regions",
+            "content": "ME is visibly much darker red than the pale-yellow fills of OK and TX."
+          },
+          {
+            "ref": "public_task",
+            "path": "/user_goal",
+            "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/3/value",
+            "content": "Priority hazard review"
+          }
+        ],
+        "reason": "The relative fill appearance is visible, and the public task explicitly frames the requested choice as a priority-review selection."
+      },
+      "B": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "Rule r3 is a conditional metric-to-priority bridge, but the supplied public task provides no cited policy condition stating that the highest displayed hazard risk index, a threshold, or another comparison rule determines priority."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/user_goal",
+            "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/3/value",
+            "content": "Priority hazard review"
+          },
+          {
+            "ref": "chart_1",
+            "location": "caption at bottom left",
+            "content": "The printed caption reads \"Clean choropleth: same US map base; darker color means higher true value.\""
+          }
+        ],
+        "reason": "The claim correctly leaves the action underdetermined: chart evidence can conditionally favor ME on the displayed metric, but the available task text does not itself supply the necessary metric-to-priority decision rule."
+      }
+    }
+  ],
+  "summary": "The chart visibly supports a darker-fill/higher-displayed-value comparison in which ME exceeds OK and TX. The chart and task also have partial state-level hazard-index scope alignment, but the identity of \"Hazard H\" with the task's hazard measure remains unverified. Most importantly, no public-task policy supplied here states that highest displayed index determines priority review, so no final selection is verified."
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三个代表性误导可视化 Web Agent 任务</title>
+
+<meta name="generator" content="ARIS render-html (academic, v1)">
+<meta name="aris:source-path" content="web_agent_benchmark/evaluation/gui_reflection_baseline/THREE_MISLEADING_SAMPLES_SHOWCASE_ZH.md">
+<meta name="aris:source-sha256" content="748ac9aaee7f6f228620f1059ce61d8ef238ebf269134a4f3b0b3fe7ac27bc6f">
+<meta name="aris:generated-at" content="2026-09-03 05:24 UTC">
+
+<!-- offline mode: MathJax + highlight.js skipped; math and code blocks render as plain text -->
+
+<style>
+:root {
+  --bg: #fdfcf7;
+  --bg-soft: #f4f1ea;
+  --bg-code: #f8f5ec;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #6b6b6b;
+  --primary: #1a4a8c;
+  --primary-soft: #2d6cb8;
+  --accent: #b8390e;
+  --warn: #b45309;
+  --warn-bg: #fef3c7;
+  --info-bg: #dbeafe;
+  --good-bg: #d1fae5;
+  --good: #065f46;
+  --bad-bg: #fee2e2;
+  --bad: #991b1b;
+  --border: #d6d0c0;
+  --border-soft: #e8e3d5;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Source Serif Pro", "Source Serif 4", "Crimson Pro", "Georgia", "Songti SC", "STSong", serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  padding: 40px 32px;
+}
+
+nav.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  font-size: 13px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border-right: 1px solid var(--border-soft);
+  padding-right: 16px;
+}
+nav.toc h3 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+nav.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+nav.toc ol li { margin: 5px 0; counter-increment: toc; }
+nav.toc ol li::before { content: counter(toc) ". "; color: var(--ink-muted); margin-right: 4px; }
+nav.toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+nav.toc a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+nav.toc ul { list-style: none; padding-left: 14px; margin: 3px 0; font-size: 12px; }
+nav.toc ul li::before { content: "→ "; color: var(--border); }
+
+main { min-width: 0; }
+
+header.hero {
+  border-bottom: 3px double var(--primary);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+header.hero .eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+header.hero h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+header.hero .subtitle {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+header.hero .byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+header.hero .byline strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+header.hero .meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
+}
+header.hero .meta span strong { color: var(--ink-soft); }
+header.hero .meta code {
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 11px;
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+}
+
+h2 {
+  font-size: 24px;
+  margin: 44px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 700;
+}
+h2 .num { color: var(--primary); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 19px; margin: 28px 0 10px; color: var(--primary); font-weight: 600; }
+h4 { font-size: 16px; margin: 20px 0 8px; color: var(--ink); font-weight: 600; }
+
+p { margin: 10px 0; }
+ul, ol { padding-left: 22px; margin: 10px 0; }
+ul li, ol li { margin: 4px 0; }
+ul li::marker { color: var(--primary); }
+
+strong { color: var(--accent); font-weight: 600; }
+em { color: var(--ink-soft); }
+
+a { color: var(--primary); }
+a:hover { color: var(--accent); }
+
+code:not(.hljs) {
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.86em;
+  background: var(--bg-code);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+  color: var(--accent);
+}
+
+pre {
+  background: #fafaf6;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 0;
+  overflow-x: auto;
+  border-radius: 4px;
+  margin: 14px 0;
+}
+pre code, pre code.hljs {
+  background: transparent !important;
+  display: block;
+  padding: 14px 18px !important;
+  font-size: 13px;
+  line-height: 1.55;
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+  color: var(--ink);
+}
+pre.diagram {
+  background: #f9f6ed;
+  border-left: 4px solid var(--accent);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.callout {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-left: 4px solid;
+  font-size: 15px;
+}
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.callout-info { background: var(--info-bg); border-left-color: var(--primary); }
+.callout-info .callout-title { color: var(--primary); }
+.callout-warn { background: var(--warn-bg); border-left-color: var(--warn); }
+.callout-warn .callout-title { color: var(--warn); }
+.callout-good { background: var(--good-bg); border-left-color: var(--good); }
+.callout-good .callout-title { color: var(--good); }
+.callout-bad { background: var(--bad-bg); border-left-color: var(--bad); }
+.callout-bad .callout-title { color: var(--bad); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+thead { background: var(--primary); color: white; }
+th, td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: top;
+}
+th { font-weight: 600; font-size: 13px; letter-spacing: 0.02em; }
+tr:last-child td { border-bottom: none; }
+tbody tr:nth-child(even) { background: var(--bg-soft); }
+
+details.qa, details {
+  background: white;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 0;
+}
+details summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary);
+  list-style: none;
+  user-select: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: "▸ ";
+  margin-right: 4px;
+  display: inline-block;
+  transition: transform 0.15s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+details[open] summary { border-bottom: 1px solid var(--border-soft); }
+details > :not(summary) { padding: 10px 14px; }
+details p:first-of-type { margin-top: 8px; }
+
+mjx-container[display="true"] { margin: 12px 0 !important; }
+
+footer.aris-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+footer.aris-footer a { color: var(--ink-muted); border-bottom: 1px dotted var(--border); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 20px; padding: 20px 16px; }
+  nav.toc {
+    position: static;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+    padding-right: 0;
+    padding-bottom: 14px;
+  }
+  header.hero h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+}
+@media print {
+  nav.toc { display: none; }
+  .layout { grid-template-columns: 1fr; padding: 0; }
+  body { background: white; }
+  header.hero { border-bottom-color: var(--ink); }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="toc">
+  <h3>Contents</h3>
+  <ol>
+<li><a href="#一页结论">一页结论</a>
+</li>
+<li><a href="#样本一pub010错误标题把增长说成下降">样本一：`pub010`——错误标题把“增长”说成“下降”</a>
+<ul>
+<li><a href="#原始任务要求">原始任务要求</a></li>
+<li><a href="#误导版标题和折线结论冲突">误导版：标题和折线结论冲突</a></li>
+<li><a href="#完整任务流程从错误选择恢复到正确提交">完整任务流程：从错误选择恢复到正确提交</a></li>
+<li><a href="#干净对照只把标题改回与数据一致">干净对照：只把标题改回与数据一致</a></li>
+<li><a href="#这个样本测试什么">这个样本测试什么</a></li>
+</ul>
+</li>
+<li><a href="#样本二env008柱形高度和印刷数值互相矛盾">样本二：`env008`——柱形高度和印刷数值互相矛盾</a>
+<ul>
+<li><a href="#原始任务要求-1">原始任务要求</a></li>
+<li><a href="#误导版wind-看起来最高solar-的数字实际最大">误导版：Wind 看起来最高，Solar 的数字实际最大</a></li>
+<li><a href="#完整任务流程从-wind-恢复到-solar-并提交">完整任务流程：从 Wind 恢复到 Solar 并提交</a></li>
+<li><a href="#干净对照柱形高度恢复为与数字一致">干净对照：柱形高度恢复为与数字一致</a></li>
+<li><a href="#这个样本测试什么-1">这个样本测试什么</a></li>
+</ul>
+</li>
+<li><a href="#样本三b035错误标题把下降说成上升">样本三：`b035`——错误标题把“下降”说成“上升”</a>
+<ul>
+<li><a href="#原始任务要求-2">原始任务要求</a></li>
+<li><a href="#误导版标题宣称增长数据首尾明显下降">误导版：标题宣称增长，数据首尾明显下降</a></li>
+<li><a href="#完整任务流程保护正确选择并直接完成">完整任务流程：保护正确选择并直接完成</a></li>
+<li><a href="#干净对照只把标题改回与数据一致-1">干净对照：只把标题改回与数据一致</a></li>
+<li><a href="#这个样本测试什么-2">这个样本测试什么</a></li>
+</ul>
+</li>
+<li><a href="#三条任务放在一起看">三条任务放在一起看</a>
+</li>
+<li><a href="#给老师的-30-秒说明">给老师的 30 秒说明</a>
+</li>
+<li><a href="#展示范围与出处">展示范围与出处</a>
+</li>
+</ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">TEACHER BRIEFING · COMPLETE TASK WALKTHROUGHS</div>
+  <h1>三个代表性误导可视化 Web Agent 任务</h1>
+  <p class="subtitle">pub010、env008 与 b035 的完整任务流程、误导机制和正确提交</p>
+  
+  <div class="meta">
+    <span><strong>Source:</strong> <code>web_agent_benchmark/evaluation/gui_reflection_baseline/THREE_MISLEADING_SAMPLES_SHOWCASE_ZH.md</code></span>
+    <span><strong>SHA256:</strong> <code>748ac9aaee7f</code></span>
+    <span><strong>Rendered:</strong> 2026-09-03 05:24 UTC</span>
+    
+  </div>
+</header>
+
+<h1 id="三个代表性误导可视化-web-agent-任务">三个代表性误导可视化 Web Agent 任务</h1>
+<blockquote><p><strong>展示对象：</strong> <code>pub010</code>、<code>env008</code>、<code>b035</code> <strong>用途：</strong> 向老师直观说明任务原貌、误导因素如何影响决策，以及每条任务真正要求 agent 执行的网页动作。 <strong>阅读方式：</strong> 每条样本依次展示误导版初始页、直至成功提交的完整多步流程，以及仅修正误导因素的干净对照。流程截图来自实际执行并经过隐藏评分核对。</p></blockquote>
+<h2 id="一页结论">一页结论</h2>
+<p>这三条任务不是单纯的“看图回答问题”。Agent 必须完成一条从视觉证据到网页操作的决策链：</p>
+<pre><code class="language-text">读取图表证据
+    → 形成事实判断
+    → 将事实判断绑定到一个候选操作
+    → 点击并提交该操作</code></pre>
+<p>误导可视化攻击的正是这条链的上游。如果 agent 接受了错误标题或错误几何形状，它不仅会说错，还会点击错误的业务分支。</p>
+<table><thead><tr><th>样本</th><th>图表与任务</th><th>误导方式</th><th>数据支持的结论</th><th>应执行的动作</th></tr></thead><tbody><tr><td><code>pub010</code></td><td>城镇游客折线图；判断总体增长还是下降</td><td>标题宣称“游客数量下降”，但折线总体上升</td><td>1880 年约 993 人，1891 年约 2917 人，整体增长</td><td>选择第 1 项“增长规划”并提交</td></tr><tr><td><code>env008</code></td><td>可再生能源柱状图；找出贡献最大的来源</td><td>Wind 的柱形被画得最高，但印刷数值显示 Solar 最大</td><td>Solar 41.2% 大于 Wind 29.8%</td><td>选择第 2 项“Solar 优先跟进”并提交</td></tr><tr><td><code>b035</code></td><td>工厂产量折线图；判断总体上升还是下降</td><td>标题宣称“产量上升”，但首尾数据明显下降</td><td>2018 年约 3480，2023 年约 2055，整体下降</td><td>选择第 3 项“生产效率审查”并提交</td></tr></tbody></table>
+<h2 id="样本一pub010错误标题把增长说成下降">样本一：<code>pub010</code>——错误标题把“增长”说成“下降”</h2>
+<h3 id="原始任务要求">原始任务要求</h3>
+<p>页面要求 agent 查看 Town Z 在 1880—1891 年的新游客数量，判断数据总体是增长还是下降，然后选择相应的工作流并提交。</p>
+<p>页面提供三个候选动作：</p>
+<ol><li><strong>Select growth-planning option</strong>：选择增长规划；</li><li><strong>Select decline-response option</strong>：选择下降响应；</li><li><strong>Select monitor-without-change option</strong>：保持不变并继续监测。</li></ol>
+<h3 id="误导版标题和折线结论冲突">误导版：标题和折线结论冲突</h3>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_pub010_official_operator_only/restores/restore_0000_7ee5eb/state_00_initial.png" alt="pub010 误导版初始任务页面：标题声称游客数量下降，但折线总体上升" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p>图表标题写的是 <strong>“Decreasing Number of New Tourists in Town Z from 1880 to 1891”</strong>，直接告诉读者“游客数量正在下降”。但折线从 1880 年约 993 上升到 1891 年约 2917；中间虽有波动，首尾和整体走势都支持增长。</p>
+<table><thead><tr><th>判断层次</th><th>正确读取</th><th>被标题误导后的读取</th></tr></thead><tbody><tr><td>视觉证据</td><td>折线首尾明显上升</td><td>只抓住标题中的 “Decreasing”</td></tr><tr><td>事实判断</td><td>新游客数量总体增长</td><td>新游客数量总体下降</td></tr><tr><td>动作绑定</td><td>增长 → 第 1 项增长规划</td><td>下降 → 第 2 项下降响应</td></tr></tbody></table>
+<p>正确判断链是：</p>
+<pre><code class="language-text">约 993 → 约 2917
+    → 总体增长
+    → 选择增长规划
+    → 点击第 1 项并提交</code></pre>
+<h3 id="完整任务流程从错误选择恢复到正确提交">完整任务流程：从错误选择恢复到正确提交</h3>
+<p><strong>步骤 1：读取初始任务。</strong> 上面的误导版初始页同时呈现上升折线和“Decreasing”标题。定向恢复协议随后继承了被标题支持的错误选择：第 2 项下降响应。</p>
+<p><strong>步骤 2：错误选择进入提交前复核。</strong> 页面显示当前尚未提交，继承的选择是下降响应。此时若直接点击 Confirm，任务就会以错误业务分支结束。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_pub010_official_operator_only/restores/restore_0000_7ee5eb/state_01_transition_0000.png" alt="pub010 步骤 2：错误的下降响应已进入提交前复核" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 3：点击 Revise selection 返回修改。</strong> 页面保留“上一次选择是下降响应”的历史，同时重新开放三个候选动作。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_pub010_official_operator_only/committed/state_02_transition_0001.png" alt="pub010 步骤 3：返回修改并重新检查三个候选动作" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 4：依据折线重选第 1 项增长规划。</strong> Final review 页面显示当前选择已经从下降响应改为增长规划，但仍未提交。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_pub010_official_operator_only/committed/state_03_transition_0002.png" alt="pub010 步骤 4：已正确重选增长规划，等待最终确认" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 5：点击 Confirm selection 完成提交。</strong> 终止页显示 “Decision submitted”；隐藏评分记录的提交动作是增长规划，结果为成功。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_pub010_official_operator_only/committed/state_04_transition_0003.png" alt="pub010 步骤 5：正确的增长规划已经提交，任务完成" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<h3 id="干净对照只把标题改回与数据一致">干净对照：只把标题改回与数据一致</h3>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_pub010_clean_operator_only/restores/restore_0000_a0bb1f/state_00_initial.png" alt="pub010 干净版初始任务页面：标题和上升折线一致" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p>干净版保留同一数据、同一任务和同一候选动作，只把标题改为 <strong>“Increasing Number of New Tourists in Town Z from 1880 to 1891”</strong>。因此，误导版与干净版的关键差异是标题叙事是否与数据一致。</p>
+<h3 id="这个样本测试什么">这个样本测试什么</h3>
+<p>它测试 agent 会不会把高显著性的自然语言标题当作事实前提，并让这个错误前提继续支配后续点击。对恢复方法而言，仅仅执行一次“返回”还不够；恢复后必须明确撤销“总体下降”这一前提，并重新绑定到“增长规划”。</p>
+<h2 id="样本二env008柱形高度和印刷数值互相矛盾">样本二：<code>env008</code>——柱形高度和印刷数值互相矛盾</h2>
+<h3 id="原始任务要求-1">原始任务要求</h3>
+<p>页面要求 agent 查看可再生能源发电仪表盘，找出贡献最大的能源来源，然后把该来源送入优先贡献跟进流程。</p>
+<p>页面提供三个候选动作：</p>
+<ol><li><strong>Keep Hydroelectric on routine contribution monitoring</strong>：Hydroelectric 保持常规监测；</li><li><strong>Route Solar for priority contribution follow-up</strong>：将 Solar 送入优先跟进；</li><li><strong>Route Wind for priority contribution follow-up</strong>：将 Wind 送入优先跟进。</li></ol>
+<h3 id="误导版wind-看起来最高solar-的数字实际最大">误导版：Wind 看起来最高，Solar 的数字实际最大</h3>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_env008_official_operator_only/restores/restore_0000_99aefa/state_00_initial.png" alt="env008 误导版初始任务页面：柱形几何暗示 Wind 最大，但标签显示 Solar 为 41.2%" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p>图中存在两套冲突的视觉证据：</p>
+<ul><li><strong>柱顶印刷数值：</strong> Solar 41.2%，Wind 29.8%，Hydroelectric 18.5%，Biomass 7.2%，Geothermal 3.3%；</li><li><strong>柱形几何高度：</strong> Wind 被画成最高柱，Solar 反而更矮。</li></ul>
+<p>任务问的是“贡献最大的来源”。可核验的印刷数值明确支持 Solar，而被篡改的几何高度会把 agent 引向 Wind。</p>
+<table><thead><tr><th>判断层次</th><th>正确读取</th><th>被几何形状误导后的读取</th></tr></thead><tbody><tr><td>视觉证据</td><td>比较柱顶的明确数值：41.2% 最大</td><td>比较柱形高度：Wind 看起来最高</td></tr><tr><td>事实判断</td><td>Solar 的贡献最大</td><td>Wind 的贡献最大</td></tr><tr><td>动作绑定</td><td>Solar → 第 2 项优先跟进</td><td>Wind → 第 3 项优先跟进</td></tr></tbody></table>
+<p>正确判断链是：</p>
+<pre><code class="language-text">Solar 41.2% &gt; Wind 29.8%
+    → Solar 贡献最大
+    → 选择 Solar 优先跟进
+    → 点击第 2 项并提交</code></pre>
+<h3 id="完整任务流程从-wind-恢复到-solar-并提交">完整任务流程：从 Wind 恢复到 Solar 并提交</h3>
+<p><strong>步骤 1：读取初始任务。</strong> 上面的误导版初始页把 Wind 的柱形画得最高，但 Solar 的印刷值 41.2% 才是最大值。定向恢复协议随后继承了依据几何高度作出的错误选择：第 3 项 Wind 优先跟进。</p>
+<p><strong>步骤 2：错误的 Wind 已进入提交前复核。</strong> 页面显示当前尚未提交，因此仍可返回修改；若直接确认，错误实体 Wind 就会被送入优先流程。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_env008_official_operator_only/restores/restore_0000_99aefa/state_01_transition_0000.png" alt="env008 步骤 2：错误的 Wind 优先跟进已进入提交前复核" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 3：点击 Revise selection 返回修改。</strong> 页面明确展示上一次选择是 Wind，并重新开放 Hydroelectric、Solar 和 Wind 三个候选动作。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_env008_official_operator_only/committed/state_02_transition_0001.png" alt="env008 步骤 3：返回修改并重新检查三个能源候选动作" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 4：依据 41.2% 重选第 2 项 Solar。</strong> Final review 页面显示当前实体已经从 Wind 重绑定为 Solar，但仍未提交。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_env008_official_operator_only/committed/state_03_transition_0002.png" alt="env008 步骤 4：已正确重选 Solar 优先跟进，等待最终确认" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 5：点击 Confirm selection 完成提交。</strong> 终止页显示 “Decision submitted”；隐藏评分记录的提交实体是 Solar，结果为成功。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_env008_official_operator_only/committed/state_04_transition_0003.png" alt="env008 步骤 5：正确的 Solar 优先跟进已经提交，任务完成" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<h3 id="干净对照柱形高度恢复为与数字一致">干净对照：柱形高度恢复为与数字一致</h3>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_env008_clean_operator_only/restores/restore_0000_3a9a46/state_00_initial.png" alt="env008 干净版初始任务页面：Solar 的柱形和 41.2% 数值均为最大" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p>干净版保留相同的数值标签、任务和候选动作，只让柱形高度重新对应印刷百分比：Solar 最高、Wind 次之。这里的关键对照不是“有没有数字”，而是当数字与几何形状冲突时，agent 选择相信哪一种证据。</p>
+<h3 id="这个样本测试什么-1">这个样本测试什么</h3>
+<p>它测试 agent 在多种视觉通道冲突时能否建立证据优先级。对恢复方法而言，<code>Back → 换一个点击</code> 可能偶然改到 Solar，但只有明确记录“41.2% 是最大值，因此目标实体是 Solar”，才能防止返回后再次凭柱形高度重入 Wind 分支。</p>
+<h2 id="样本三b035错误标题把下降说成上升">样本三：<code>b035</code>——错误标题把“下降”说成“上升”</h2>
+<h3 id="原始任务要求-2">原始任务要求</h3>
+<p>页面要求 agent 查看 Factory F 在 2018—2023 年的产量折线图，判断总体趋势上升还是下降，并选择相应工作流：若上升则进入产能扩张规划，若下降则进入生产效率审查，最后提交决定。</p>
+<p>页面提供三个候选动作：</p>
+<ol><li><strong>Route to capacity expansion planning</strong>：进入产能扩张规划；</li><li><strong>Keep under routine operations monitoring</strong>：保持常规运营监测；</li><li><strong>Route to production efficiency review</strong>：进入生产效率审查。</li></ol>
+<h3 id="误导版标题宣称增长数据首尾明显下降">误导版：标题宣称增长，数据首尾明显下降</h3>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_b035_official_operator_only/restores/restore_0000_74d18a/state_00_initial.png" alt="b035 误导版初始任务页面：标题声称产量上升，但折线总体下降" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p>图表标题写的是 <strong>“Increasing Production at Factory F from 2018 to 2023”</strong>。然而产量从 2018 年约 3480 降至 2023 年约 2055。2019—2022 年间虽有局部回升和波动，但不改变首尾总体下降的结论。</p>
+<table><thead><tr><th>判断层次</th><th>正确读取</th><th>被标题误导后的读取</th></tr></thead><tbody><tr><td>视觉证据</td><td>约 3480 降至约 2055</td><td>只抓住标题中的 “Increasing”</td></tr><tr><td>事实判断</td><td>工厂产量总体下降</td><td>工厂产量总体上升</td></tr><tr><td>动作绑定</td><td>下降 → 第 3 项生产效率审查</td><td>上升 → 第 1 项产能扩张规划</td></tr></tbody></table>
+<p>正确判断链是：</p>
+<pre><code class="language-text">约 3480 → 约 2055
+    → 总体下降
+    → 进入生产效率审查
+    → 点击第 3 项并提交</code></pre>
+<h3 id="完整任务流程保护正确选择并直接完成">完整任务流程：保护正确选择并直接完成</h3>
+<p><strong>步骤 1：读取初始任务。</strong> 上面的误导版初始页用“Increasing”标题暗示第 1 项产能扩张，但折线数据支持第 3 项生产效率审查。</p>
+<p><strong>步骤 2：正确选择进入提交前复核。</strong> 在这条完成控制轨迹中，接管状态已经选择第 3 项生产效率审查，页面仍未提交。纠错系统此时不应机械地产生一次改选。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_b035_official_operator_only/restores/restore_0000_74d18a/state_01_transition_0000.png" alt="b035 步骤 2：正确的生产效率审查已经选中，等待确认" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p><strong>步骤 3：点击 Confirm selection 直接完成。</strong> 终止页显示 “Decision submitted”；隐藏评分记录的提交动作是生产效率审查，结果为成功。这里的关键能力不是“换一个按钮”，而是识别当前状态已经正确并保护它。</p>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_b035_official_operator_only/committed/state_02_transition_0001.png" alt="b035 步骤 3：正确的生产效率审查已经提交，任务完成" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<h3 id="干净对照只把标题改回与数据一致-1">干净对照：只把标题改回与数据一致</h3>
+<p><img src="runs/agentic_recovery_baselines/mobile_qwen8b_native_neutral_three_cases_v4/cells/mobile_b035_clean_operator_only/restores/restore_0000_ae7c83/state_00_initial.png" alt="b035 干净版初始任务页面：标题和下降折线一致" style="display:block;max-width:100%;height:auto;border:1px solid #d9d6cc;border-radius:6px;" /></p>
+<p>干净版使用同一数据、任务和候选动作，只把标题改为 <strong>“Decreasing Production at Factory F from 2018 to 2023”</strong>。因此可以单独观察错误标题是否改变 agent 的趋势判断和工作流选择。</p>
+<h3 id="这个样本测试什么-2">这个样本测试什么</h3>
+<p>它一方面测试标题能否劫持“下降 → 生产效率审查”的绑定；另一方面，在后续定向恢复实验中，我们把接管状态设置为“第 3 项已经正确选中、但尚未提交”，用它检查纠错系统能否保护正确状态并直接完成任务，而不是为了产生一次纠正而破坏答案。这个接管设置属于恢复实验协议，不是上图原始任务页面的一部分。</p>
+<h2 id="三条任务放在一起看">三条任务放在一起看</h2>
+<table><thead><tr><th>对比维度</th><th><code>pub010</code></th><th><code>env008</code></th><th><code>b035</code></th></tr></thead><tbody><tr><td>业务判断</td><td>游客总体增长或下降</td><td>哪种能源贡献最大</td><td>产量总体上升或下降</td></tr><tr><td>误导通道</td><td>自然语言标题</td><td>柱形几何高度</td><td>自然语言标题</td></tr><tr><td>与误导冲突的可靠证据</td><td>折线首尾及整体走势</td><td>柱顶明确百分比</td><td>折线首尾及整体走势</td></tr><tr><td>误导会选择的错误动作</td><td>第 2 项下降响应</td><td>第 3 项 Wind 优先跟进</td><td>第 1 项产能扩张规划</td></tr><tr><td>正确动作</td><td>第 1 项增长规划</td><td>第 2 项 Solar 优先跟进</td><td>第 3 项生产效率审查</td></tr><tr><td>恢复方法必须做到的事</td><td>撤销“下降”前提并绑定增长规划</td><td>确认 41.2% 最大并把实体重绑定为 Solar</td><td>撤销“上升”前提；若当前已正确则避免破坏</td></tr></tbody></table>
+<p>三条样本共同说明，真正需要恢复的不是一个鼠标坐标，而是：</p>
+<pre><code class="language-text">错误视觉前提
+    → 错误事实判断
+    → 错误目标实体或业务分支</code></pre>
+<p>一个可靠的轨迹纠错方法必须逆向撤销这三层影响，再从可靠证据出发重建动作。只记录“刚才的点击错了”或者机械地“返回后换一个按钮”，无法保证新的点击由正确的视觉事实支撑。</p>
+<h2 id="给老师的-30-秒说明">给老师的 30 秒说明</h2>
+<blockquote><p>我们研究的不是图表问答，而是误导图表如何让 Web Agent 执行错误操作。<code>pub010</code> 和 <code>b035</code> 用错误标题扭曲趋势判断，<code>env008</code> 用错误柱形高度扭曲最大值判断。每个页面都要求 agent 把判断落实为一次工作流点击并提交。干净对照只修正目标误导因素，因此可以观察视觉误导是否改变决策，以及回溯方法是否真正撤销了错误视觉前提，而不只是执行了一次返回。</p></blockquote>
+<h2 id="展示范围与出处">展示范围与出处</h2>
+<ul><li>本文件展示的是三条<strong>定向恢复机制样本</strong>，用于解释任务设计和开展逐样本分析，不代表整个数据集上的总体统计结论。</li><li>“误导版”对应实验中的 official arm；“干净版”对应 clean arm。两臂保留同一任务和候选动作，并修正目标误导因素。</li><li>截图取自正式本地 MobileUse 风格运行：既包括 agent 作答前的初始任务页面，也包括复核、返回修改、重新选择、确认和提交完成状态。三条所展示终态均经隐藏评分核对为成功。</li><li>当前三条诊断资产在清单中标记为 <code>reportable=false</code>，应表述为机制探针，不应包装成 <code>benchmark_v2_open</code> 的正式总体分数。</li><li>三种回溯/纠错 baseline 的完整设置、模型参数和逐样本结果见 <a href="AGENTIC_RECOVERY_BASELINES_RESULTS_ZH.md">实验汇报文档</a>。</li></ul>
+
+<footer class="aris-footer">
+  Generated by <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/render-html/SKILL.md">ARIS <code>/render-html</code></a> ·
+  source path <code>web_agent_benchmark/evaluation/gui_reflection_baseline/THREE_MISLEADING_SAMPLES_SHOWCASE_ZH.md</code> ·
+  SHA256 <code>748ac9aaee7f</code> ·
+  generated at 2026-09-03 05:24 UTC.
+  This is a generated view — edit the source Markdown, then re-render.
+</footer>
+</main>
+
+</div>
+</body>
+</html>

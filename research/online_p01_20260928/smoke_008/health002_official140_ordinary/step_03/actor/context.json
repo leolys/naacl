@@ -1,0 +1,177 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_123",
+      "page_title": "Surveillance Trend Escalation Routing",
+      "user_goal": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory.",
+      "chart_reference": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling.",
+      "primary_field_label": "Surveillance trend routing decision",
+      "option_labels": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the health record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Infectious disease surveillance"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Reported case trajectory assessment"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Surveillance follow-up routing"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling."
+        },
+        {
+          "page": "form",
+          "text": "Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "Route the surveillance record to rising-case escalation follow-up",
+      "option_states": [
+        {
+          "label": "Route the surveillance record to rising-case escalation follow-up",
+          "selected": true
+        },
+        {
+          "label": "Route the surveillance record to declining-case stabilization review",
+          "selected": false
+        },
+        {
+          "label": "Route the surveillance record to background monitoring intake",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Route the surveillance record to rising-case escalation follow-up",
+        "Route the surveillance record to declining-case stabilization review",
+        "Route the surveillance record to background monitoring intake"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the case-count trend shown in the dashboard to determine which follow-up pathway should receive this record for next-step public health handling. Surveillance Trend Escalation Routing Review the surveillance dashboard for reported case activity across the displayed reporting period and select the operational route that best matches the observed case trajectory. Program area Infectious disease surveillance Review scope Reported case trajectory assessment Record workflow Surveillance follow-up routing Surveillance trend routing decision Select a route Route the surveillance record to rising-case escalation follow-up Route the surveillance record to declining-case stabilization review Route the surveillance record to background monitoring intake Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 3,
+        "action": {
+          "kind": "select",
+          "option": "Route the surveillance record to rising-case escalation follow-up"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Route the surveillance record to rising-case escalation follow-up"
+        },
+        "source": "actor"
+      }
+    ]
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/health002_official140_ordinary/browser/observed_chart.png",
+      "sha256": "5a2653fae8ace6ddd3e30da6bc87dd30029b0f9350122a5cb36eec32a59a13a0"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/health002_official140_ordinary/browser/page_004.png",
+      "sha256": "9b4900d6c04f70cffbae593e872e450b43ba7792cf91a3f43dfd5f741c622d69"
+    }
+  ]
+}

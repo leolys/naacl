@@ -1,0 +1,504 @@
+{
+  "case": {
+    "task_id": "b002",
+    "arm": "official140",
+    "domain": "business47",
+    "alias": "task_002"
+  },
+  "system": "online_completion",
+  "status": "unresolved_public_evidence",
+  "actor_calls": 4,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis, leftmost bar",
+                  "content": "The label 'Chrome' is printed below an orange bar whose top edge aligns with the y-axis tick at 10; the printed label '5%' appears above this bar."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis, second bar",
+                  "content": "The label 'Safari' is printed below a dark blue bar whose top edge aligns with the y-axis tick at 20; the printed label '1%' appears above this bar."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis, third bar",
+                  "content": "The label 'Edge' is printed below a green bar whose top edge is just below the y-axis tick at 80; the printed label '87%' appears above this bar."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis, fourth bar",
+                  "content": "The label 'Firefox' is printed below a blue bar whose top edge is just above the y-axis tick at 80; the printed label '23%' appears above this bar."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis, fifth bar",
+                  "content": "The label 'Others' is printed below an orange bar whose top edge is between the y-axis ticks at 10 and 20; the printed label '3%' appears above this bar."
+                }
+              ],
+              "reason": "The literal visual observations of bar heights, y-axis tick alignments, and printed percentage labels match the chart exactly."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the browser with the highest current market_share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/1/1",
+                  "content": "market_share"
+                }
+              ],
+              "reason": "The rule correctly identifies the conditional bridge: if the chart encodes market_share via bar height, the tallest bar represents the highest value. The task evidence confirms market_share is the decision metric."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "green bar (Edge) top edge vs y-axis",
+                  "content": "The top edge of the green bar labeled 'Edge' is positioned just below the y-axis tick marked 80, while the printed label above it reads '87%'."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                }
+              ],
+              "reason": "The claim correctly identifies the tension between printed labels (Edge 87% > Firefox 23%) and geometric heights (Firefox > Edge), and correctly concludes that the support for a specific action is underdetermined until the authoritative source is resolved."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "above the green bar (third from left)",
+                  "content": "The printed inscription '87%' is located directly above the green bar labeled 'Edge' on the x-axis."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "above the blue bar (fourth from left)",
+                  "content": "The printed inscription '23%' is located directly above the blue bar labeled 'Firefox' on the x-axis."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "above the orange bar (leftmost)",
+                  "content": "The printed inscription '5%' is located directly above the orange bar labeled 'Chrome' on the x-axis."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "above the dark blue bar (second from left)",
+                  "content": "The printed inscription '1%' is located directly above the dark blue bar labeled 'Safari' on the x-axis."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "above the orange bar (rightmost)",
+                  "content": "The printed inscription '3%' is located directly above the orange bar labeled 'Others' on the x-axis."
+                }
+              ],
+              "reason": "The literal visual observations of the printed percentage labels and their attachment to the correct bars match the chart exactly."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Assign Edge to the priority compatibility-testing queue"
+                }
+              ],
+              "reason": "The rule correctly bridges the task policy (select highest market_share) to the action (assign the browser with the highest value). The task evidence confirms the goal and the available option label."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "above the green bar (third from left)",
+                  "content": "The printed inscription '87%' is located directly above the green bar labeled 'Edge' on the x-axis."
+                }
+              ],
+              "reason": "The claim correctly derives that if printed labels are authoritative, Edge (87%) is the highest, supporting the 'Assign Edge' action. It appropriately marks this as a conditional reading that assumes the printed labels are correct."
+            }
+          },
+          {
+            "target_id": "base_c3",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "green bar (Edge) top edge vs y-axis",
+                  "content": "The top edge of the green bar labeled 'Edge' is positioned just below the y-axis tick marked 80, while the printed label above it reads '87%'."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "dark blue bar (Safari) top edge vs y-axis",
+                  "content": "The top edge of the dark blue bar labeled 'Safari' is positioned at the y-axis tick marked 20, while the printed label above it reads '1%'."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange bar (Chrome) top edge vs y-axis",
+                  "content": "The top edge of the leftmost orange bar labeled 'Chrome' is positioned at the y-axis tick marked 10, while the printed label above it reads '5%'."
+                }
+              ],
+              "reason": "The literal visual observations of the discrepancies between bar heights and printed labels match the chart exactly."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+                }
+              ],
+              "reason": "The rule correctly identifies the conditional bridge: if a printed label is inconsistent with visible height, the reading is in tension and requires checking which is authoritative. The task evidence confirms the chart is the evidence source."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                }
+              ],
+              "reason": "The claim correctly identifies that if geometry is the intended encoding, Firefox would be the highest-usage browser, challenging the support for the Edge assignment and indicating a conflict that requires resolution."
+            }
+          },
+          {
+            "target_id": "supp_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "green bar (Edge) top edge vs y-axis",
+                  "content": "The top edge of the green bar labeled 'Edge' is positioned just below the y-axis tick marked 80, while the printed label above it reads '87%'."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                }
+              ],
+              "reason": "The literal visual observations of the specific conflict between Edge and Firefox match the chart exactly."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+                }
+              ],
+              "reason": "The rule correctly identifies the conditional bridge: if the public task does not specify which source (label vs geometry) is authoritative and there is a direct conflict, the support is underdetermined. The task evidence confirms the chart is the source but does not specify the encoding authority."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                }
+              ],
+              "reason": "The claim correctly concludes that the support for the Edge assignment is underdetermined until the ambiguity between printed labels and geometric heights is resolved."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                }
+              ],
+              "reason": "The added observation is a literal visual fact that matches the chart exactly."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+                }
+              ],
+              "reason": "The condition note correctly identifies that the base_c2 chain's support for 'Assign Edge' is contingent on the printed labels being the intended encoding, and that the alternative reading (geometry) would invalidate the selection. This is a valid applicability check on the target rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "blue bar (Firefox) top edge vs y-axis",
+                  "content": "The top edge of the blue bar labeled 'Firefox' is positioned just above the y-axis tick marked 80, while the printed label above it reads '23%'."
+                }
+              ],
+              "reason": "The refinement is warranted as it explicitly adds the missing condition to the base_c2 chain, noting that the 'Assign Edge' action's support is contingent on the printed labels being authoritative and that the geometric reading would make Firefox the highest-usage browser."
+            }
+          }
+        ],
+        "summary": "All chains and the refinement are supported by the chart and public task evidence. The set correctly identifies a direct conflict between the printed percentage labels (Edge 87% > Firefox 23%) and the geometric bar heights (Firefox > Edge). The base chains appropriately represent the conditional readings (labels authoritative vs geometry authoritative) and the underdetermined state. The refinement successfully adds the specific condition to the 'Assign Edge' chain, noting its contingency on the label-reading. No unresolved issues remain within the scope of the provided evidence."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page instructs to review the browser usage-share dashboard before submitting the workflow form. The only relevant visible link is 'Open Dashboard'. No selection can be made yet because the dashboard data is not visible.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows Edge at 87%, the highest market_share among Chrome 5%, Safari 1%, Firefox 23%, Others 3%. Dashboard reviewed; next ordinary navigation is the visible 'Open Form' link to reach the workflow form where Edge will be assigned.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Assign Edge to the priority compatibility-testing queue"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows Edge at 87%, the highest market_share among the listed browsers (Chrome 5%, Safari 1%, Firefox 23%, Others 3%). The policy table requires selecting the browser with the highest current market_share. Edge is the correct choice.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "unresolved"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The chart shows a direct conflict: the printed label for Edge is 87% (highest), but the geometric height of the Firefox bar is visibly taller than the Edge bar. The public task and policy table do not specify whether the printed labels or the bar heights are the authoritative source for 'market_share'. Therefore, the support for selecting either Edge or Firefox is underdetermined.",
+        "used_rules": [
+          {
+            "rule_id": "supp_r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The public task does not explicitly state whether the printed percentage labels or the geometric bar heights are the authoritative source for the 'market_share' decision metric, and the chart shows a direct conflict between the two (Edge 87% vs Firefox tallest bar)."
+          }
+        ],
+        "supporting_chain_ids": [
+          "supp_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": 1
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [
+      {
+        "label": "Assign Edge to the priority compatibility-testing queue",
+        "selected": false
+      },
+      {
+        "label": "Assign Firefox to the priority compatibility-testing queue",
+        "selected": false
+      },
+      {
+        "label": "Assign Chrome to the priority compatibility-testing queue",
+        "selected": false
+      }
+    ],
+    "options": [
+      "Assign Edge to the priority compatibility-testing queue",
+      "Assign Firefox to the priority compatibility-testing queue",
+      "Assign Chrome to the priority compatibility-testing queue"
+    ],
+    "fields": [
+      {
+        "field": "template_context_compatibility_scope",
+        "type": "select",
+        "label": "Compatibility scope",
+        "required": true,
+        "readonly": false,
+        "value": "",
+        "selected_text": "Select value",
+        "valid": false,
+        "options": [
+          "Browser product support"
+        ]
+      },
+      {
+        "field": "template_context_queue_rule",
+        "type": "select",
+        "label": "Queue rule",
+        "required": true,
+        "readonly": false,
+        "value": "",
+        "selected_text": "Select value",
+        "valid": false,
+        "options": [
+          "Prioritize highest current usage share"
+        ]
+      },
+      {
+        "field": "template_context_testing_program",
+        "type": "select",
+        "label": "Testing program",
+        "required": true,
+        "readonly": false,
+        "value": "",
+        "selected_text": "Select value",
+        "valid": false,
+        "options": [
+          "High-impact compatibility regression testing"
+        ]
+      },
+      {
+        "field": "note",
+        "type": "textarea",
+        "label": "Operations note",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "selected_text": null,
+        "valid": true,
+        "options": null
+      }
+    ],
+    "submit_visible": true,
+    "page": "form",
+    "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Resource Allocation Dashboard Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact. 4 Browser Usage Leader Compatibility Testing Intake Select the workflow action and submit the form. Priority compatibility-testing browser Select an action Assign Edge to the priority compatibility-testing queue Assign Firefox to the priority compatibility-testing queue Assign Chrome to the priority compatibility-testing queue Compatibility scope Select value Browser product support Queue rule Select value Prioritize highest current usage share Testing program Select value High-impact compatibility regression testing Compatibility queue rule Rule item Business rule Compatibility queue rule Select the browser with the highest current market_share Decision metric market_share Business reason Highest-usage browser has the largest user-impact surface Operations note Back to Dashboard Clear form Submit Form",
+    "links": [
+      "Back to Dashboard"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

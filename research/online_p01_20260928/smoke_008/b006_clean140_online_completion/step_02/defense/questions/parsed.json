@@ -1,0 +1,23 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "target_chain_ids": [
+        "base_c1",
+        "base_c2",
+        "base_c3"
+      ],
+      "focus": "rule_conditions",
+      "question": "Does the policy table's 'Decision metric' row, which reads 'mislabeled_value / labeled rating share', introduce a condition that the printed percentage labels must be verified as 'labeled' rather than 'mislabeled' before they can be used as the authoritative rating share?"
+    },
+    {
+      "id": "q2",
+      "target_chain_ids": [
+        "base_c1"
+      ],
+      "focus": "coverage",
+      "question": "The chart displays six categories (Quality, Price, Design, Support, Delivery, Other), but the form only provides three options (Select Design, Select Quality, Select Support). Is the omission of Price, Delivery, and Other from the form options a condition that limits the scope of the 'highest current labeled rating share' rule to only the three available options?"
+    }
+  ],
+  "summary": "Inspected the chart and the provided argument chains. The chains correctly identify Design (52%) as the highest value among all six categories shown. The main remaining limits are the interpretation of the 'mislabeled_value / labeled rating share' metric in the policy table and the scope of the rule given that the form only offers three of the six chart categories."
+}

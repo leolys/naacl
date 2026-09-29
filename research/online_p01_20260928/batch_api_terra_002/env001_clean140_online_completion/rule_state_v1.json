@@ -1,0 +1,332 @@
+{
+  "scope": {
+    "task_id": "task_227",
+    "chart_ref": "868956742793c7ce71580078a38491294b114bcd89ed7619001e86ce48de2b53"
+  },
+  "version": 1,
+  "rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "status": "active",
+      "text": "If the horizontal year labels bind the plotted markers to years, the vertical axis labeled \"value\" is a linear numeric scale with the printed ticks, and this chart is the dashboard record for the requested 2005-2014 temperature review, then the 2005 and 2014 marker heights can be decoded and compared to estimate the period-wide change. If the routing standard treats a change at least as large in magnitude as that estimate as substantial, the substantial-change follow-up option is supported.",
+      "component": "encoding/task relation",
+      "conditions": "Requires that the plotted series is the relevant temperature record, that the axes encode the displayed years and values as assumed, and that the unspecified substantial-change standard includes the decoded endpoint change.",
+      "checks": [
+        {
+          "target_id": "base_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "title centered above the plot",
+                "content": "The title visibly reads \"Global Temperature Change\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "horizontal axis and its outermost labeled ticks",
+                "content": "The horizontal axis is labeled \"year\", with \"2005\" at the leftmost labeled tick and \"2014\" at the rightmost labeled tick; blue circular markers are plotted above both ticks."
+              },
+              {
+                "ref": "chart_1",
+                "location": "vertical axis and the two endpoint markers",
+                "content": "The vertical axis is labeled \"value\" and visibly shows ticks labeled 10, 12, 14, 16, 18, 20, 22, and 24. The 2005 marker is just below the 24 gridline, while the 2014 marker is just above the 10 gridline."
+              }
+            ],
+            "reason": "The cited title, axis inscriptions, ticks, and marker positions are visible. The stated endpoint values remain approximate readings rather than printed values."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard record as the evidence source for deciding whether the period-wide temperature change warrants targeted follow-up."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+              },
+              {
+                "ref": "chart_1",
+                "location": "plot axes and endpoint markers",
+                "content": "The chart visibly provides year-labeled horizontal positions, a value-labeled vertical axis with evenly spaced printed tick labels, and plotted markers at 2005 and 2014."
+              }
+            ],
+            "reason": "The rule is a conditional encoding and task bridge that is visibly motivated by the chart and task. Its substantial-change condition is not activated because the public task supplies no applicable threshold or standard."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "2005 and 2014 endpoint markers relative to the vertical ticks",
+                "content": "The 2005 marker is visibly near 24 and the 2014 marker visibly near 10 on the displayed value scale."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+              }
+            ],
+            "reason": "Given the rule's stated linear-scale and endpoint-decoding conditions, the approximate endpoint decline and its magnitude are reasonable estimates. The claim correctly remains conditional and does not establish the follow-up route without an unprovided substantial-change standard."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "status": "active",
+      "text": "If routing depends on whether the period-wide temperature change is \"large enough\" for targeted follow-up, a choice between substantial-change follow-up and routine monitoring requires a defined or otherwise verifiable standard for what counts as large enough; a qualitative criterion alone does not establish that classification.",
+      "component": "task-to-action relation",
+      "conditions": "Applies because no numeric, categorical, or other decision threshold is supplied in the public task.",
+      "checks": [
+        {
+          "target_id": "base_c2",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "plotted endpoint markers at the 2005 and 2014 x-axis ticks",
+                "content": "The blue marker at 2014 is lower on the page than the blue marker at 2005."
+              }
+            ],
+            "reason": "This is a direct screen-space comparison of the two visible markers and does not itself decode a temperature change."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/4/value",
+                "content": "Whether the period-wide temperature change warrants targeted follow-up"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/1",
+                "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+              }
+            ],
+            "reason": "The public task frames the decision as whether the change is large enough or ordinary, but supplies no numeric, categorical, or otherwise verifiable dividing standard. Thus the rule requiring such a standard is applicable."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/1",
+                "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+              }
+            ],
+            "reason": "Because the task provides the two classifications but no verifiable criterion separating them, the available chart and public-task evidence do not establish which of those two routes is required. This does not support an opposite route."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "supp_r1",
+      "version": 1,
+      "status": "active",
+      "text": "A review scope naming a multi-year period does not by itself define the calculation meant by “period-wide temperature change.” Net endpoint difference is supported only if the task or chart encoding specifies that the first and last annual values are the relevant inputs, rather than another whole-period measure such as cumulative change, trend, range, or variability.",
+      "component": "encoding/task relation",
+      "conditions": "Applies where the public task names a period-wide change but provides no definition of the measure used for routing.",
+      "checks": [
+        {
+          "target_id": "supp_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "connected blue series across the horizontal axis",
+                "content": "Blue circular markers connected by one line are visible at yearly ticks from 2005 through 2014."
+              }
+            ],
+            "reason": "The chart visibly depicts a connected annual series over the stated period. It does not visibly state which whole-period calculation is intended for routing."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/2/value",
+                "content": "2005-2014 temperature-change review"
+              }
+            ],
+            "reason": "The public task identifies a period-wide temperature-change review but does not define that phrase as an endpoint difference, cumulative change, trend, range, or variability measure. The rule is therefore applicable."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+              },
+              {
+                "ref": "chart_1",
+                "location": "series endpoints and intervening connected markers",
+                "content": "The chart shows markers for each year from 2005 through 2014, including visible first and last markers."
+              }
+            ],
+            "reason": "The period label and annual series make an endpoint reading plausible, but neither source specifies that endpoint difference is the routing measure. The conclusion appropriately preserves that unresolved condition."
+          }
+        }
+      ],
+      "history": []
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "plot title centered above the graph",
+          "content": "The visible title is \"Global Temperature Change\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis and endpoint markers",
+          "content": "The horizontal axis is labeled \"year\"; its leftmost labeled tick is \"2005\" and its rightmost labeled tick is \"2014\", each with a blue circular marker above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis and endpoint markers",
+          "content": "The vertical axis is labeled \"value\" and has printed ticks 10, 12, 14, 16, 18, 20, 22, and 24. The 2005 marker is just below the 24 gridline, while the 2014 marker is just above the 10 gridline."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard record as the evidence source for deciding whether the period-wide temperature change warrants targeted follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "Conditionally, decoding the endpoints from the displayed linear scale gives an estimated decline from about 23.9 in 2005 to about 10.1 in 2014, or about 13.8 units in magnitude. This supports substantial-change follow-up only if that magnitude meets the applicable substantial-change standard."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "endpoint markers at 2005 and 2014",
+          "content": "The marker at 2014 is lower on the page than the marker at 2005."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Whether the period-wide temperature change warrants targeted follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart visibly motivates checking a sizable endpoint difference, but the public task supplies no threshold or other verifiable definition distinguishing a substantial change from ordinary variation. Therefore the available evidence does not establish whether substantial-change follow-up or routine monitoring is the required route."
+    },
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "connected plotted series from the 2005 through 2014 x-axis ticks",
+          "content": "Blue circular markers are connected by one line across yearly ticks labeled 2005 through 2014."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/value",
+          "content": "2005-2014 temperature-change review"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The public task identifies the 2005-2014 review period but does not define “period-wide temperature change” as the net difference of the 2005 and 2014 endpoint markers or specify that its magnitude is the routing input. The endpoint-difference reading remains a plausible conditional interpretation, but the intended whole-period measure is not established.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "support_gap"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c2",
+      "target_rule_id": "r2",
+      "target_rule_version": 1,
+      "status": "supported",
+      "applied_to_original": false,
+      "asserted_dimensions": [
+        "B",
+        "implication"
+      ],
+      "condition_note": "The stated routing criterion supplies targeted follow-up and routine monitoring as the two described outcomes, but supplies no condition under which archive and background filing applies.",
+      "added_observations": [],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Route the temperature record to archive and background filing"
+        },
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        }
+      ]
+    }
+  ]
+}

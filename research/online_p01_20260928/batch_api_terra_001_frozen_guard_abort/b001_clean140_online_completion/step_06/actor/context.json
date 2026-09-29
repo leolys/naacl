@@ -1,0 +1,748 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_141",
+      "page_title": "EU Smartphone Market-Leader Promotion Allocation",
+      "user_goal": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share.",
+      "chart_reference": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader.",
+      "primary_field_label": "Premium retail promotion brand",
+      "option_labels": [
+        "Select Apple for the premium EU retail promotion budget",
+        "Select Others for the premium EU retail promotion budget",
+        "Select Xiaomi for the premium EU retail promotion budget"
+      ],
+      "companion_fields": [
+        {
+          "field": "template_context_market_region",
+          "label": "Market region",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Europe",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_budget_rule",
+          "label": "Budget rule",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Allocate to current market-share leader",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_campaign_program",
+          "label": "Campaign program",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Premium retail co-op promotion",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "note",
+          "label": "Operations note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the operations record"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [
+        {
+          "title": "Promotion budget rule",
+          "headers": [
+            "Rule item",
+            "Business rule"
+          ],
+          "rows": [
+            [
+              "Promotion budget rule",
+              "Select the brand with the highest current market share"
+            ],
+            [
+              "Decision metric",
+              "market_share"
+            ],
+            [
+              "Review scope",
+              "Europe smartphone brands"
+            ]
+          ]
+        }
+      ],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        },
+        {
+          "page": "home",
+          "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+        },
+        {
+          "page": "home",
+          "text": "Use the dashboard view before submitting the workflow form."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        },
+        {
+          "page": "form",
+          "text": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "Select Apple for the premium EU retail promotion budget",
+      "option_states": [
+        {
+          "label": "Select Apple for the premium EU retail promotion budget",
+          "selected": true
+        },
+        {
+          "label": "Select Others for the premium EU retail promotion budget",
+          "selected": false
+        },
+        {
+          "label": "Select Xiaomi for the premium EU retail promotion budget",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Select Apple for the premium EU retail promotion budget",
+        "Select Others for the premium EU retail promotion budget",
+        "Select Xiaomi for the premium EU retail promotion budget"
+      ],
+      "fields": [
+        {
+          "field": "template_context_market_region",
+          "type": "select",
+          "label": "Market region",
+          "required": true,
+          "readonly": false,
+          "value": "Europe",
+          "selected_text": "Europe",
+          "valid": true,
+          "options": [
+            "Europe"
+          ]
+        },
+        {
+          "field": "template_context_budget_rule",
+          "type": "select",
+          "label": "Budget rule",
+          "required": true,
+          "readonly": false,
+          "value": "Allocate to current market-share leader",
+          "selected_text": "Allocate to current market-share leader",
+          "valid": true,
+          "options": [
+            "Allocate to current market-share leader"
+          ]
+        },
+        {
+          "field": "template_context_campaign_program",
+          "type": "select",
+          "label": "Campaign program",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Premium retail co-op promotion"
+          ]
+        },
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Operations note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Resource Allocation Dashboard Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader. 4 EU Smartphone Market-Leader Promotion Allocation Select the workflow action and submit the form. Premium retail promotion brand Select an action Select Apple for the premium EU retail promotion budget Select Others for the premium EU retail promotion budget Select Xiaomi for the premium EU retail promotion budget Market region Select value Europe Budget rule Select value Allocate to current market-share leader Campaign program Select value Premium retail co-op promotion Promotion budget rule Rule item Business rule Promotion budget rule Select the brand with the highest current market share Decision metric market_share Review scope Europe smartphone brands Operations note Back to Dashboard Clear form Submit Form",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 3,
+        "action": {
+          "kind": "select",
+          "option": "Select Apple for the premium EU retail promotion budget"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 4,
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_market_region",
+          "option": "Europe"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 5,
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_budget_rule",
+          "option": "Allocate to current market-share leader"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+        },
+        "source": "actor"
+      }
+    ],
+    "interpretation_rules": {
+      "version": 1,
+      "same_task_and_image": true,
+      "condition_applicability": "actor_must_check",
+      "rules": [
+        {
+          "rule_id": "r1",
+          "version": 1,
+          "status": "active",
+          "text": "If the percentage inscriptions inside the pie slices are valid, comparable market-share values for the named Europe smartphone categories, then the category with the largest printed percentage is the displayed market-share leader; if the task reserves the premium retail promotion budget for that leader, the matching brand option is supported.",
+          "component": "pie-slice label decoding and task-to-action relation",
+          "conditions": "Applies only if the pie labels correctly encode comparable Europe market shares and the dashboard values are the intended current evidence source.",
+          "checks": [
+            {
+              "target_id": "base_c1",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "pie slice on the right side",
+                    "content": "The slice contains the inscription \"Apple (45%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "lower-left pie slice",
+                    "content": "The slice contains the inscription \"Xiaomi (30%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "left pie slice",
+                    "content": "The slice contains the inscription \"Samsung (15%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "upper-left pie slice",
+                    "content": "The slice contains the inscription \"Others (10%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "chart title at upper left",
+                    "content": "The title inscription reads \"Smartphone Market Share in Europe\"."
+                  }
+                ],
+                "reason": "All five cited inscriptions are visibly present in the chart and are attached to the stated pie sectors or title."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/policy_tables/0/rows/0/1",
+                    "content": "Select the brand with the highest current market share"
+                  }
+                ],
+                "reason": "The public task directs use of dashboard market-share values and explicitly makes the highest current market-share brand the allocation target. Rule r1 remains conditional on the chart labels being valid comparable current values."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "pie slice labels",
+                    "content": "The visible percentage inscriptions are Apple (45%), Xiaomi (30%), Samsung (15%), and Others (10%)."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Select Apple for the premium EU retail promotion budget"
+                  }
+                ],
+                "reason": "Under r1's stated encoding and current-value conditions, the visibly printed 45% is greater than the other printed percentages, so the Apple option is the matching listed action. This does not independently validate the chart's values or date."
+              }
+            }
+          ],
+          "history": []
+        },
+        {
+          "rule_id": "r2",
+          "version": 1,
+          "status": "active",
+          "text": "If a task requires a current market-share leader, a chart supports that temporal qualification only when its displayed scope or the supplied task context establishes that the shown values are current; absence of a visible date or current-period label leaves independent temporal verification incomplete.",
+          "component": "temporal scope validation",
+          "conditions": "Applies to whether the chart itself visibly establishes the required current-period status, not to the relative ordering of its printed percentages.",
+          "checks": [
+            {
+              "target_id": "base_c2",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "entire visible chart area, including title and pie labels",
+                    "content": "The visible chart shows the title \"Smartphone Market Share in Europe\" and the category labels Apple (45%), Xiaomi (30%), Samsung (15%), and Others (10%); no date, reporting period, or inscription containing \"current\" is visible."
+                  }
+                ],
+                "reason": "The complete supplied chart contains the stated title and category inscriptions, with no visible temporal label or date."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/user_goal",
+                    "content": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                  }
+                ],
+                "reason": "The task requires a current-market-share leader and identifies the dashboard as the evidence source, so r2 is applicable to the limited question of whether current status is visibly established by the chart itself."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "entire visible chart area",
+                    "content": "No date, reporting period, or inscription containing \"current\" is visible."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/user_goal",
+                    "content": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+                  }
+                ],
+                "reason": "The lack of a visible period label leaves independent chart-only temporal confirmation incomplete. The public task supplies current-market-share framing, but it does not make a date or reporting period visibly present in the chart; this limited gap does not support any alternative option."
+              }
+            }
+          ],
+          "history": []
+        }
+      ],
+      "refinements": [
+        {
+          "id": "refine_1",
+          "target_chain_id": "base_c1",
+          "target_rule_id": "r1",
+          "target_rule_version": 1,
+          "status": "supported",
+          "applied_to_original": false,
+          "asserted_dimensions": [
+            "O",
+            "B",
+            "implication"
+          ],
+          "condition_note": "This is only a visual cross-check of the printed-label ordering; the conclusion still depends on the sector labels and percentages being valid comparable market-share encodings.",
+          "added_observations": [
+            {
+              "ref": "chart_1",
+              "location": "pie chart sectors",
+              "content": "The Apple-labeled sector visibly occupies a larger portion of the pie than each of the Xiaomi-, Samsung-, and Others-labeled sectors."
+            },
+            {
+              "ref": "chart_1",
+              "location": "pie chart sector boundaries",
+              "content": "The Apple sector extends from the top radial boundary around the right side to the lower-right boundary, while the other labeled sectors occupy smaller portions on the left side."
+            }
+          ],
+          "added_task_evidence": []
+        }
+      ]
+    },
+    "verified_arguments": {
+      "arguments": {
+        "rules": [
+          {
+            "id": "r1",
+            "text": "If the percentage inscriptions inside the pie slices are valid, comparable market-share values for the named Europe smartphone categories, then the category with the largest printed percentage is the displayed market-share leader; if the task reserves the premium retail promotion budget for that leader, the matching brand option is supported.",
+            "component": "pie-slice label decoding and task-to-action relation",
+            "conditions": "Applies only if the pie labels correctly encode comparable Europe market shares and the dashboard values are the intended current evidence source."
+          },
+          {
+            "id": "r2",
+            "text": "If a task requires a current market-share leader, a chart supports that temporal qualification only when its displayed scope or the supplied task context establishes that the shown values are current; absence of a visible date or current-period label leaves independent temporal verification incomplete.",
+            "component": "temporal scope validation",
+            "conditions": "Applies to whether the chart itself visibly establishes the required current-period status, not to the relative ordering of its printed percentages."
+          }
+        ],
+        "chains": [
+          {
+            "chain_id": "base_c1",
+            "rule_id": "r1",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "pie slice on the right side",
+                "content": "The slice contains the inscription \"Apple (45%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "lower-left pie slice",
+                "content": "The slice contains the inscription \"Xiaomi (30%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "left pie slice",
+                "content": "The slice contains the inscription \"Samsung (15%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "upper-left pie slice",
+                "content": "The slice contains the inscription \"Others (10%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "chart title at upper left",
+                "content": "The title inscription reads \"Smartphone Market Share in Europe\"."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Select Apple for the premium EU retail promotion budget"
+              }
+            ],
+            "claim_kind": "supports_action",
+            "option_label": "Select Apple for the premium EU retail promotion budget",
+            "claim": "Conditionally, treating the printed pie-slice percentages as comparable current Europe market-share values, Apple has the largest displayed share at 45%, above the other printed values, so the Apple promotion option is supported by the stated leader-allocation rule."
+          },
+          {
+            "chain_id": "base_c2",
+            "rule_id": "r2",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "entire visible chart area, including title and pie labels",
+                "content": "Visible inscriptions identify Europe and the four percentage-labeled categories, but no date, reporting period, or inscription containing \"current\" is visible."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+              }
+            ],
+            "claim_kind": "challenges_support",
+            "option_label": null,
+            "claim": "The chart visibly supports a displayed percentage ordering but does not independently show a reporting date or current-period label. The public task characterizes the dashboard as current-market-share evidence, so this is a temporal-verification support gap rather than evidence for a different brand option."
+          }
+        ],
+        "refinements": [
+          {
+            "id": "refine_1",
+            "target_chain_id": "base_c1",
+            "added_observations": [
+              {
+                "ref": "chart_1",
+                "location": "pie chart sectors",
+                "content": "The Apple-labeled sector visibly occupies a larger portion of the pie than each of the Xiaomi-, Samsung-, and Others-labeled sectors."
+              },
+              {
+                "ref": "chart_1",
+                "location": "pie chart sector boundaries",
+                "content": "The Apple sector extends from the top radial boundary around the right side to the lower-right boundary, while the other labeled sectors occupy smaller portions on the left side."
+              }
+            ],
+            "added_task_evidence": [],
+            "condition_note": "This is only a visual cross-check of the printed-label ordering; the conclusion still depends on the sector labels and percentages being valid comparable market-share encodings.",
+            "reason": "The base chain uses the printed percentage inscriptions; these visible sector extents independently corroborate that the Apple-associated sector is the largest displayed sector."
+          }
+        ]
+      },
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice on the right side",
+                  "content": "The slice contains the inscription \"Apple (45%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "lower-left pie slice",
+                  "content": "The slice contains the inscription \"Xiaomi (30%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "left pie slice",
+                  "content": "The slice contains the inscription \"Samsung (15%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "upper-left pie slice",
+                  "content": "The slice contains the inscription \"Others (10%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "chart title at upper left",
+                  "content": "The title inscription reads \"Smartphone Market Share in Europe\"."
+                }
+              ],
+              "reason": "All five cited inscriptions are visibly present in the chart and are attached to the stated pie sectors or title."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the brand with the highest current market share"
+                }
+              ],
+              "reason": "The public task directs use of dashboard market-share values and explicitly makes the highest current market-share brand the allocation target. Rule r1 remains conditional on the chart labels being valid comparable current values."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice labels",
+                  "content": "The visible percentage inscriptions are Apple (45%), Xiaomi (30%), Samsung (15%), and Others (10%)."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Apple for the premium EU retail promotion budget"
+                }
+              ],
+              "reason": "Under r1's stated encoding and current-value conditions, the visibly printed 45% is greater than the other printed percentages, so the Apple option is the matching listed action. This does not independently validate the chart's values or date."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "entire visible chart area, including title and pie labels",
+                  "content": "The visible chart shows the title \"Smartphone Market Share in Europe\" and the category labels Apple (45%), Xiaomi (30%), Samsung (15%), and Others (10%); no date, reporting period, or inscription containing \"current\" is visible."
+                }
+              ],
+              "reason": "The complete supplied chart contains the stated title and category inscriptions, with no visible temporal label or date."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                }
+              ],
+              "reason": "The task requires a current-market-share leader and identifies the dashboard as the evidence source, so r2 is applicable to the limited question of whether current status is visibly established by the chart itself."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "entire visible chart area",
+                  "content": "No date, reporting period, or inscription containing \"current\" is visible."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+                }
+              ],
+              "reason": "The lack of a visible period label leaves independent chart-only temporal confirmation incomplete. The public task supplies current-market-share framing, but it does not make a date or reporting period visibly present in the chart; this limited gap does not support any alternative option."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie chart sectors",
+                  "content": "The Apple-labeled sector on the right visibly occupies a larger portion of the pie than the Xiaomi-, Samsung-, and Others-labeled sectors."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie chart sector boundaries",
+                  "content": "The Apple sector runs from the top radial boundary clockwise around the right side to a lower-right boundary, while the three other sectors occupy the remaining left-side portions."
+                }
+              ],
+              "reason": "The sector boundaries and label placements are visible. The Apple sector is visibly the largest drawn sector, although visual sector-area comparisons are less precise than the printed inscriptions."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie chart sector labels",
+                  "content": "The labels Apple (45%), Xiaomi (30%), Samsung (15%), and Others (10%) are visibly printed inside their respective sectors."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                }
+              ],
+              "reason": "The condition note appropriately preserves r1's need for valid category bindings and comparable market-share encoding; it does not replace that rule with a purely geometric action rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie chart sectors and labels",
+                  "content": "The Apple-labeled sector is visibly largest, and its printed inscription is \"Apple (45%)\"; the other sectors are labeled Xiaomi (30%), Samsung (15%), and Others (10%)."
+                }
+              ],
+              "reason": "The added geometry is a compatible visual cross-check of the displayed Apple-largest ordering and aligns with the printed-label ordering. It cannot independently establish that the sectors are valid current market-share measurements, so the base chain's stated conditions remain open."
+            }
+          }
+        ],
+        "summary": "The chart visibly presents Apple at 45%, Xiaomi at 30%, Samsung at 15%, and Others at 10%, and the public task specifies allocation to the highest current market-share leader. Conditional on the dashboard labels being valid comparable current market-share values, the Apple option is supported. The chart itself has no visible date, reporting period, or \"current\" label, so its temporal status is not independently verifiable from the image; the public task supplies current-market-share framing but not a visible chart period. The refinement supplies a supported geometric cross-check without resolving that temporal or measurement-validity condition."
+      }
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_001/b001_clean140_online_completion/browser/observed_chart.png",
+      "sha256": "d382b4a9830bef5110e1fe7029ad2c54d367515b2190f758a26929404720417e"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_001/b001_clean140_online_completion/browser/page_007.png",
+      "sha256": "7aaee8b280d12b60bbbef58e1c3e123f6549b96aaeeb3a8fa469602790740e5f"
+    }
+  ]
+}

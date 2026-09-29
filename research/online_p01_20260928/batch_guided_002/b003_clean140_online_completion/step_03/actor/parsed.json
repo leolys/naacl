@@ -1,0 +1,27 @@
+{
+  "action": {
+    "kind": "select",
+    "option": "Select Other"
+  },
+  "brief_basis": "The chart 'Product Rating Share by Category' shows 'Other' with the highest labeled rating share at 53%. The policy table requires selecting the category with the highest current labeled rating share. The form's primary field 'Promotional budget category' is currently unselected, so 'Select Other' is the correct next action.",
+  "chart_dependent": true,
+  "used_rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The chart is the evidence source, and the task requires selecting the category with the highest current labeled rating share. The chart's x-axis labels are the product categories and the y-axis values are the labeled rating shares."
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The form is on the form page, the primary field is unselected, and the option labels correspond to the chart categories. 'Other' is the category with the highest share, so 'Select Other' is the correct option."
+    }
+  ],
+  "supporting_chain_ids": [
+    "base_c1",
+    "base_c2"
+  ],
+  "challenge": null
+}

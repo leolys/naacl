@@ -1,0 +1,122 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's x-axis labels are reporting years and the y-axis values are mortality rates, then the reporting year whose plotted point is highest on the page corresponds to the peak-burden year, and the public option naming that year is the supported escalation route.",
+      "component": "encoding/task relation",
+      "conditions": "The x-axis tick labels bind to the plotted points as reporting years, the y-axis scale is comparable across all points, and the task's 'peak-burden follow-up' means the year with the maximum plotted mortality value."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's y-axis label or title indicates a quantity other than mortality rate, or if the plotted series cannot be bound to the mortality metric named in the task, then the chart does not directly support selecting a peak-burden year, and the methodological or reference-review option becomes a substantively different motivated reading.",
+      "component": "encoding/task relation",
+      "conditions": "The visible axis label or title must be checked against the task's mortality metric; a mismatch or ambiguity in the metric binding leaves the year-selection underdetermined."
+    },
+    {
+      "id": "r3",
+      "text": "If two or more plotted points are at the same or nearly the same maximum height, or if the highest point's year label is ambiguous, then the peak year is not uniquely determined from the visible marks, and the support for a single-year escalation option is a support gap.",
+      "component": "numeric decoding",
+      "conditions": "The topmost plotted points must be compared in screen space, and their x-axis tick labels must be unambiguously readable to assign a single peak year."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis tick labels",
+          "content": "The x-axis shows tick labels '2006', '2008', '2010', '2012', '2014', '2016', '2018' from left to right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "plotted line and points",
+          "content": "A blue line with circular markers runs across the chart; the rightmost two points (above the 2017 and 2018 tick positions) are the highest on the page, with the final point at the far right appearing at or very near the top of the series."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Count' with ticks at 0, 2, 4, 6, 8; the plotted points sit above the 8 tick, roughly between 8 and 9."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title inscription reads 'Year vs. Mortality rate'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate 2018 for annual mortality peak follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate 2018 for annual mortality peak follow-up",
+      "claim": "Conditionally, if the x-axis labels bind to the points as reporting years and the plotted series represents the mortality rate, the rightmost point (2018) is at or near the maximum height, supporting the 2018 escalation option. This awaits confirmation that the 2018 point is strictly the highest and that the y-axis 'Count' label does not contradict the mortality-rate binding."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis label",
+          "content": "The y-axis label inscription reads 'Count', not 'Mortality rate'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The title inscription reads 'Year vs. Mortality rate'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Escalate chart for methodology reference review"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The y-axis is labeled 'Count' while the title says 'Mortality rate', creating a visible mismatch in the metric binding. If the axis label is authoritative, the plotted quantity is not clearly the mortality rate, which would challenge the direct year-selection and motivate the methodology reference review option instead. This reading is conditional on treating the axis label as the operative metric definition."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted points",
+          "content": "The final two points (above the 2017 and 2018 tick positions) are at nearly the same height, with the 2018 point appearing marginally higher or equal to the 2017 point."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis tick labels near the right edge",
+          "content": "The rightmost labeled tick is '2018'; the point immediately to its left sits above an unlabeled position between '2016' and '2018'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Escalate 2010 for annual mortality peak follow-up"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The 2017 and 2018 points are at nearly the same maximum height, and the 2017 point's year is not directly labeled on the x-axis. If the peak is not uniquely 2018, the support for a single-year escalation is a gap. The 2010 option is not supported by the visible marks, as the 2010 point is visibly lower than the rightmost points."
+    }
+  ]
+}

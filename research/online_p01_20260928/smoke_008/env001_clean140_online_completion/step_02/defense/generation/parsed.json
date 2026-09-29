@@ -1,0 +1,90 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis represents the temperature metric and the x-axis represents the 2005-2014 review period, then the period-wide change is the difference between the final and initial plotted values. A large absolute difference indicates a substantial change warranting targeted follow-up, while a small difference indicates ordinary variation for routine monitoring.",
+      "component": "encoding/task relation",
+      "conditions": "The chart's y-axis is the temperature metric and the x-axis is the 2005-2014 period."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's y-axis represents the temperature metric and the x-axis represents the 2005-2014 review period, then the period-wide change is the difference between the final and initial plotted values. A small absolute difference indicates ordinary variation for routine monitoring, while a large difference indicates a substantial change warranting targeted follow-up.",
+      "component": "encoding/task relation",
+      "conditions": "The chart's y-axis is the temperature metric and the x-axis is the 2005-2014 period."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'value' and has printed ticks at 10, 12, 14, 16, 18, 20, 22, and 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'year' and has printed ticks for 2005 through 2014."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2005",
+          "content": "The first data point is aligned horizontally with the y-axis tick labeled 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2014",
+          "content": "The final data point is aligned horizontally with the y-axis tick labeled 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "Assuming the y-axis 'value' represents the temperature metric, the period-wide change is a decrease from 24 to 10, an absolute difference of 14. This large change supports routing to substantial-change follow-up."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'value' and has printed ticks at 10, 12, 14, 16, 18, 20, 22, and 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'year' and has printed ticks for 2005 through 2014."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2005",
+          "content": "The first data point is aligned horizontally with the y-axis tick labeled 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2014",
+          "content": "The final data point is aligned horizontally with the y-axis tick labeled 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Whether the period-wide temperature change warrants targeted follow-up"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart shows a change from 24 to 10, but the y-axis is labeled 'value' rather than 'temperature'. Without a policy threshold defining what constitutes a 'large enough' change for targeted follow-up, it is underdetermined whether this specific magnitude warrants substantial-change follow-up or routine monitoring."
+    }
+  ]
+}

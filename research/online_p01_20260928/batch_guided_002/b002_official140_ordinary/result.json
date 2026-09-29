@@ -1,0 +1,292 @@
+{
+  "case": {
+    "task_id": "b002",
+    "arm": "official140",
+    "domain": "business47",
+    "alias": "task_002"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 7,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "brief_basis": "The task requires reviewing the browser usage-share dashboard before submitting the workflow form. The home page shows an 'Open Dashboard' link, which is the necessary first step to access the dashboard data. No selection or submission can be made yet because the dashboard has not been reviewed.",
+        "chart_dependent": false,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "brief_basis": "Chart_1 shows Edge at 87%, the highest market_share among Chrome 5%, Safari 1%, Firefox 23%, Others 3%. Dashboard reviewed; next ordinary navigation is the visible 'Open Form' link to reach the workflow form where Edge will be assigned.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Assign Edge to the priority compatibility-testing queue"
+        },
+        "brief_basis": "Chart_1 shows Edge at 87%, the highest market_share among the listed browsers (Chrome 5%, Safari 1%, Firefox 23%, Others 3%). The policy table requires selecting the browser with the highest current market_share. Edge is the correct choice.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Browser product support",
+          "field": "template_context_compatibility_scope"
+        },
+        "brief_basis": "Chart shows Edge 87% is highest market_share, so Edge selection is correct. Required companion fields are incomplete; fill Compatibility scope first.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Assign Edge to the priority compatibility-testing queue",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Prioritize highest current usage share",
+          "field": "template_context_queue_rule"
+        },
+        "brief_basis": "Chart shows Edge 87% is highest market_share, so Edge selection is correct. Queue rule field is required and still 'Select value'; select the matching rule before submission.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Assign Edge to the priority compatibility-testing queue",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "High-impact compatibility regression testing",
+          "field": "template_context_testing_program"
+        },
+        "brief_basis": "Chart shows Edge at 87%, the highest market_share, so the current Edge selection is correct. The required Testing program field is still 'Select value' and must be completed before submission.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Assign Edge to the priority compatibility-testing queue",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "brief_basis": "Chart_1 shows Edge at 87%, the highest market_share among the listed browsers (Chrome 5%, Safari 1%, Firefox 23%, Others 3%). The current selection 'Assign Edge to the priority compatibility-testing queue' matches the highest-usage browser. All required companion fields (Compatibility scope, Queue rule, Testing program) are filled with valid values. The form is complete and ready for submission.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Assign Edge to the priority compatibility-testing queue",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "option": "Browser product support",
+        "field": "template_context_compatibility_scope"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "option": "Prioritize highest current usage share",
+        "field": "template_context_queue_rule"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "option": "High-impact compatibility regression testing",
+        "field": "template_context_testing_program"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Assign Edge to the priority compatibility-testing queue"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

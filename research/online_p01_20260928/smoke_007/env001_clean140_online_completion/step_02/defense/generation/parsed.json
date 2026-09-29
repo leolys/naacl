@@ -1,0 +1,137 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the dashboard line chart's y-axis is read as the temperature-change value and the x-axis as the year, then the period-wide change from 2005 to 2014 is the difference between the 2005 point and the 2014 point; a large absolute difference supports the substantial-change follow-up route, while a small difference supports routine monitoring.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the y-axis 'value' is the temperature-change metric and the x-axis 'year' spans 2005-2014; assumes the task's 'large enough' threshold is met by a visually large drop."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's y-axis values are not explicitly labeled as temperature-change units and the task provides no numeric threshold for 'large enough', then the magnitude of the period-wide change cannot be definitively classified as substantial versus ordinary, leaving the routing decision underdetermined.",
+      "component": "scale comparability / task-to-action relation",
+      "conditions": "Applies when no policy table or explicit threshold is present in the public task; the chart alone shows a drop but not a formal criterion."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart shows a monotonic or near-monotonic decline across the entire 2005-2014 span, the visual pattern of a sustained downward trend can be read as evidence of a non-ordinary variation, supporting targeted follow-up over routine monitoring.",
+      "component": "trend interpretation",
+      "conditions": "Assumes a sustained multi-year decline is qualitatively different from ordinary year-to-year variation."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis, top tick",
+          "content": "The top y-axis tick is labeled '24'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis, bottom tick",
+          "content": "The bottom y-axis tick is labeled '10'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis, first tick",
+          "content": "The first x-axis tick is labeled '2005'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis, last tick",
+          "content": "The last x-axis tick is labeled '2014'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2005",
+          "content": "The 2005 data point aligns horizontally with the '24' y-axis tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data point at 2014",
+          "content": "The 2014 data point aligns horizontally with the '10' y-axis tick."
+        },
+        {
+          "ref": "chart_1",
+          "location": "line segment 2005-2014",
+          "content": "The blue line connects the 2005 point at 24 to the 2014 point at 10, showing a downward slope across the full span."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "The 2005 point is at 24 and the 2014 point is at 10, giving a period-wide change of 14 units. Under the assumption that this magnitude is 'large enough', this supports the substantial-change follow-up route."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis label",
+          "content": "The y-axis is labeled 'value' with no unit or explicit temperature-change descriptor."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title",
+          "content": "The chart title reads 'Global Temperature Change'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Whether the period-wide temperature change warrants targeted follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables",
+          "content": null
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart shows a 14-unit drop, but the y-axis is labeled only 'value' and the public task provides no numeric threshold for 'large enough'. Without an explicit criterion, the classification of this change as substantial versus ordinary is underdetermined."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "line from 2005 to 2014",
+          "content": "The blue line descends from 24 in 2005 to 10 in 2014, with intermediate points at 24 (2006), ~21.5 (2007), 20 (2008), 18 (2009), ~15.5 (2010), ~15.3 (2011), ~13.8 (2012), ~11.3 (2013), and 10 (2014)."
+        },
+        {
+          "ref": "chart_1",
+          "location": "overall shape",
+          "content": "The line shows a sustained downward trend across all years, with no year showing an increase over the prior year."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The sustained, monotonic decline across the entire 2005-2014 span is visually distinct from ordinary year-to-year variation. This pattern challenges the routine-monitoring option and reinforces the case for targeted follow-up, though it does not independently establish a numeric threshold."
+    }
+  ]
+}

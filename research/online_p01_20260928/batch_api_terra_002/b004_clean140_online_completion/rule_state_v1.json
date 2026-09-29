@@ -1,0 +1,146 @@
+{
+  "scope": {
+    "task_id": "task_144",
+    "chart_ref": "c33f0712c938907ff5bc7494af0f9e618671a45d677ffc8a5621f91e261f588c"
+  },
+  "version": 1,
+  "rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "status": "pending",
+      "text": "If the pie-slice inscriptions are the dashboard's intended market-share values for the region named in the chart title, and “current market leader” means the brand with the largest displayed market-share value, then the brand whose displayed percentage exceeds every other displayed brand percentage is the option to select for follow-up.",
+      "component": "chart encoding/task relation",
+      "conditions": "This bridge relies on the printed slice labels accurately encoding comparable current smartphone market shares for Europe and on the task using displayed market-share leadership as its criterion.",
+      "checks": [
+        {
+          "target_id": "base_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "upper-left chart title",
+                "content": "The title visibly reads “Smartphone Market Share in Europe”."
+              },
+              {
+                "ref": "chart_1",
+                "location": "large pale-yellow sector on the right side of the pie",
+                "content": "The sector inscription visibly reads “Samsung (55%)”."
+              },
+              {
+                "ref": "chart_1",
+                "location": "red sector at lower left of the pie",
+                "content": "The sector inscription visibly reads “Xiaomi (20%)”."
+              },
+              {
+                "ref": "chart_1",
+                "location": "orange sector at left of the pie",
+                "content": "The sector inscription visibly reads “Apple (15%)”."
+              },
+              {
+                "ref": "chart_1",
+                "location": "light-orange sector near the top of the pie",
+                "content": "The sector inscription visibly reads “Others (10%)”."
+              },
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Select Samsung as the current market leader"
+              }
+            ],
+            "reason": "The supplied observations accurately transcribe visible chart inscriptions and the task evidence accurately identifies the Europe market-leader follow-up objective and Samsung option."
+          },
+          "B": {
+            "status": "undetermined",
+            "evidence": [],
+            "reason": "The task calls for a “current market leader” but does not explicitly define that term as the brand with the largest displayed market-share percentage, nor does the image independently validate that the printed percentages are accurate comparable current shares. Rule r1 appropriately states these as conditions, but their applicability remains unverified."
+          },
+          "implication": {
+            "status": "undetermined",
+            "evidence": [],
+            "reason": "The inscriptions visibly provide a conditional numerical basis for Samsung being the largest displayed percentage, but the conclusion and option selection depend on the unresolved r1 conditions concerning chart encoding and the task meaning of “market leader.”"
+          }
+        }
+      ],
+      "history": []
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title at upper left",
+          "content": "The chart title is inscribed “Smartphone Market Share in Europe”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "large pale-yellow pie slice on the right",
+          "content": "The slice is inscribed “Samsung (55%)”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red pie slice at lower left",
+          "content": "The slice is inscribed “Xiaomi (20%)”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange pie slice at upper left",
+          "content": "The slice is inscribed “Apple (15%)”."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light-orange pie slice near the top",
+          "content": "The slice is inscribed “Others (10%)”."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "Conditionally, the displayed Samsung percentage is larger than each of the other displayed percentages, so Samsung is the chart-indicated current market leader for the Europe follow-up task. This support depends on the slice inscriptions being valid and comparable market-share encodings; the image itself does not independently verify the underlying data."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "target_rule_id": "r1",
+      "target_rule_version": 1,
+      "status": "supported",
+      "applied_to_original": false,
+      "asserted_dimensions": [
+        "O",
+        "B",
+        "implication"
+      ],
+      "condition_note": "This is visual geometric corroboration only; it assumes the sectors are intended to encode the same market-share quantities represented by their inscriptions.",
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie chart, pale-yellow Samsung sector on the right",
+          "content": "The pale-yellow sector containing the inscription “Samsung (55%)” visibly spans a larger angular portion of the pie than each of the red Xiaomi, orange Apple, and light-orange Others sectors individually."
+        }
+      ],
+      "added_task_evidence": []
+    }
+  ]
+}

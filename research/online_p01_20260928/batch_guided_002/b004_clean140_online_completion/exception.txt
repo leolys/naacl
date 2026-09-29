@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 108, in one_run
+    combined, verdict = defense(api, step_dir / 'defense', case['alias'], context, browser.chart, proposal)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 40, in defense
+    combined = core.import_initial(generated, public)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/core.py", line 140, in import_initial
+    _task_evidence(chain.get('task_evidence', []), public)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/core.py", line 110, in _task_evidence
+    _evidence(item, public)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/core.py", line 74, in _evidence
+    raise SchemaError('public_task citation must point at a scalar leaf')
+online_completion_core.SchemaError: public_task citation must point at a scalar leaf

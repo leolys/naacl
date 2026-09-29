@@ -1,0 +1,91 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "A review scope naming a multi-year period does not by itself define the calculation meant by “period-wide temperature change.” Net endpoint difference is supported only if the task or chart encoding specifies that the first and last annual values are the relevant inputs, rather than another whole-period measure such as cumulative change, trend, range, or variability.",
+      "component": "encoding/task relation",
+      "conditions": "Applies where the public task names a period-wide change but provides no definition of the measure used for routing."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "connected plotted series from the 2005 through 2014 x-axis ticks",
+          "content": "Blue circular markers are connected by one line across yearly ticks labeled 2005 through 2014."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/value",
+          "content": "2005-2014 temperature-change review"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The public task identifies the 2005-2014 review period but does not define “period-wide temperature change” as the net difference of the 2005 and 2014 endpoint markers or specify that its magnitude is the routing input. The endpoint-difference reading remains a plausible conditional interpretation, but the intended whole-period measure is not established.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "support_gap"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c2",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Route the temperature record to archive and background filing"
+        },
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        }
+      ],
+      "condition_note": "The stated routing criterion supplies targeted follow-up and routine monitoring as the two described outcomes, but supplies no condition under which archive and background filing applies.",
+      "reason": "This makes explicit that the existing substantial-versus-ordinary underdetermination does not create affirmative support for the separately listed archive option."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [
+        "base_c1",
+        "base_c2"
+      ],
+      "reason": "The existing chains conditionally decode an endpoint difference and identify the missing route threshold, while the added chain identifies the separate missing definition of the whole-period change measure."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c2"
+      ],
+      "reason": "The refinement adds the archive option and the stated two-outcome routing criterion, showing that no public archive-eligibility condition is provided."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the pie-chart inscriptions are the dashboard's comparable Europe smartphone market-share values, and Apple’s displayed value exceeds every other displayed brand value, then Apple is the current market-share leader; if the stated promotion rule allocates the budget to that leader, the Apple promotion option is supported.",
+      "component": "chart encoding/task relation",
+      "conditions": "This bridge assumes the slice labels accurately encode the current Europe market-share values and that the dashboard is the evidence source specified by the task."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title at upper left",
+          "content": "The chart title visibly reads \"Smartphone Market Share in Europe\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "large right-side pie slice",
+          "content": "The slice is visibly inscribed \"Apple (45%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-left pie slice",
+          "content": "The slice is visibly inscribed \"Xiaomi (30%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left-side pie slice",
+          "content": "The slice is visibly inscribed \"Samsung (15%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left pie slice",
+          "content": "The slice is visibly inscribed \"Others (10%)\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the brand with the highest current market share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Apple for the premium EU retail promotion budget"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "Conditionally, the displayed Apple value is higher than each other displayed value, so Apple is the chart-indicated Europe market-share leader and the Apple promotion option follows the stated allocation rule."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 1,
+    "chains": 1
+  },
+  "supplement_counts": {
+    "rules": 0,
+    "chains": 0,
+    "refinements": 0
+  },
+  "question_responses": []
+}

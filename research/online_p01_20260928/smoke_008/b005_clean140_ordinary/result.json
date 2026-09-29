@@ -1,0 +1,292 @@
+{
+  "case": {
+    "task_id": "b005",
+    "arm": "clean140",
+    "domain": "business47",
+    "alias": "task_145"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 7,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page instructs to review the browser market share dashboard before selecting the primary compatibility target. The only relevant visible link is 'Open Dashboard'. No selection can be made yet because the dashboard data is not visible.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows Chrome at 73%, far above Safari 12%, Others 7%, Firefox 6%, Edge 2%. The primary compatibility target should be the largest market share, Chrome. I have reviewed the dashboard; now proceed to the workflow form to make the selection.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Set Chrome as the primary compatibility target"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard chart 'Browser Usage Share by Product' shows Chrome at 73%, the highest share among all products (Safari 12%, Edge 2%, Firefox 6%, Others 7%). The task requires selecting the browser product for primary compatibility targeting based on market share, so Chrome is the correct choice. The form is currently on the 'form' page with no selection made, so I need to select the Chrome option first.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_testing_program",
+          "option": "Browser compatibility testing"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Chart shows Chrome at 73%, the highest share, so the already-selected Chrome target is correct. The required Testing program field is still 'Select value' and must be set before submission.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Set Chrome as the primary compatibility target",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_target_scope",
+          "option": "Cross-browser coverage"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Chart shows Chrome at 73%, the highest share, so the already-selected Chrome target is correct. Testing program is set. Target scope is still 'Select value' and required, so select its only valid option before proceeding.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Set Chrome as the primary compatibility target",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_compatibility_track",
+          "option": "Primary compatibility target setup"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The chart shows Chrome at 73%, the highest share, so the already-selected Chrome option is correct. The required Compatibility track field is still 'Select value' and must be set before submitting.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Set Chrome as the primary compatibility target",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard chart shows Chrome at 73%, the highest market share among all products (Safari 12%, Edge 2%, Firefox 6%, Others 7%). The form already has 'Set Chrome as the primary compatibility target' selected, which matches the chart evidence. All required companion fields (Testing program, Target scope, Compatibility track) are filled with valid values. The optional note is empty, which is acceptable. Therefore, the form is complete and ready for submission.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Set Chrome as the primary compatibility target",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Set Chrome as the primary compatibility target"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_testing_program",
+        "option": "Browser compatibility testing"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_target_scope",
+        "option": "Cross-browser coverage"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_compatibility_track",
+        "option": "Primary compatibility target setup"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Set Chrome as the primary compatibility target"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

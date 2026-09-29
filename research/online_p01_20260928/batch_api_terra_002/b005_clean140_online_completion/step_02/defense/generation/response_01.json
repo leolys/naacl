@@ -1,0 +1,89 @@
+{
+  "id": "chatcmpl-ETMUlinYbBjJ5lyXzbU09ie3DrrNw",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"rules\":[{\"id\":\"r1\",\"text\":\"If the bars are bound to the browser names printed directly below them and the printed percentage annotations represent comparable browser usage-share values, then Chrome's annotated share exceeds the annotated shares for Safari and Firefox. If primary compatibility targeting is to be selected by the greatest displayed browser usage share among the offered browser products, Chrome is the appropriate offered option.\",\"component\":\"bar-to-browser binding, percentage comparability, and market-share-to-primary-target relation\",\"conditions\":\"This applies only if the bar labels and percentage annotations are valid for the dashboard's intended current browser market-share comparison, and if greatest displayed usage share is the intended criterion for primary targeting.\"},{\"id\":\"r2\",\"text\":\"The public task directs the user to use the browser market share dashboard to identify a product for primary compatibility targeting, but it does not expressly state that the product with the greatest market share must be selected. Therefore, a primary-target choice remains underdetermined unless that selection criterion is intended or otherwise established.\",\"component\":\"task instruction to selection criterion relation\",\"conditions\":\"This applies because no explicit policy table or stated market-share threshold/selection rule is provided in the public task.\"}],\"chains\":[{\"chain_id\":\"base_c1\",\"rule_id\":\"r1\",\"observations\":[{\"ref\":\"chart_1\",\"location\":\"chart title at upper left\",\"content\":\"The visible title reads \\\"Browser Usage Share by Product\\\".\"},{\"ref\":\"chart_1\",\"location\":\"purple bar above the x-axis label Chrome\",\"content\":\"A purple vertical bar is visibly aligned above the inscription \\\"Chrome\\\" and has the printed annotation \\\"73%\\\" above it.\"},{\"ref\":\"chart_1\",\"location\":\"red bar above the x-axis label Safari\",\"content\":\"A red vertical bar is visibly aligned above the inscription \\\"Safari\\\" and has the printed annotation \\\"12%\\\" above it.\"},{\"ref\":\"chart_1\",\"location\":\"blue bar above the x-axis label Firefox\",\"content\":\"A blue vertical bar is visibly aligned above the inscription \\\"Firefox\\\" and has the printed annotation \\\"6%\\\" above it.\"}],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/chart_reference\",\"content\":\"Use the browser market share dashboard to identify the product for primary compatibility targeting.\"},{\"ref\":\"public_task\",\"path\":\"/option_labels/0\",\"content\":\"Set Chrome as the primary compatibility target\"}],\"claim_kind\":\"supports_action\",\"option_label\":\"Set Chrome as the primary compatibility target\",\"claim\":\"Conditionally, Chrome is the displayed highest-share offered browser product and supports setting Chrome as the primary compatibility target if the task intends the highest displayed browser usage share to determine that target.\"},{\"chain_id\":\"base_c2\",\"rule_id\":\"r2\",\"observations\":[],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/user_goal\",\"content\":\"Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.\"},{\"ref\":\"public_task\",\"path\":\"/chart_reference\",\"content\":\"Use the browser market share dashboard to identify the product for primary compatibility targeting.\"}],\"claim_kind\":\"underdetermined\",\"option_label\":null,\"claim\":\"The task establishes that the dashboard should inform the choice, but it does not visibly provide an explicit rule that highest market share determines the primary compatibility target; that task-to-action bridge is a support gap.\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "finish_reason": "stop",
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "detected": false,
+          "filtered": false
+        },
+        "protected_material_text": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      },
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1790666691,
+  "model": "gpt-5.6-terra-2026-07-09",
+  "object": "chat.completion",
+  "usage": {
+    "prompt_tokens": 4081,
+    "completion_tokens": 685,
+    "total_tokens": 4766,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "routing": {
+    "serving_pipereplica": "d20260825170006-c8af8e33-prefill-r13-dp0-prefill"
+  },
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "service_tier": "default"
+}

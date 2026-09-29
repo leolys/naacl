@@ -1,0 +1,142 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's printed percentage labels are treated as the authoritative 'labeled rating share' values, then the category whose label is numerically greatest is the one with the highest current labeled rating share, and the corresponding public option label is the required follow-up category.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed percentage inscriptions are the intended rating-share values and that the public option labels map one-to-one to the chart categories."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's vertical axis position (Value) is treated as the authoritative rating-share value instead of the printed labels, then the category whose point is highest on the page is the one with the highest current rating share, and the corresponding public option label is the required follow-up category.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the y-axis 'Value' scale is the intended rating-share measure and that the printed percentage labels are decorative or inconsistent with the axis."
+    },
+    {
+      "id": "r3",
+      "text": "If the public task requires selecting a category from the provided option_labels, then any chart category that does not appear in option_labels cannot be selected, and the highest-share category must be chosen from among the available options only.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the option_labels list is exhaustive for the primary field and that no other category can be entered."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "above the point aligned with the 'Design' x-axis tick",
+          "content": "the inscription '52%' is printed directly above the blue circular mark"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point aligned with the 'Support' x-axis tick",
+          "content": "the inscription '45%' is printed directly above the blue circular mark"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point aligned with the 'Quality' x-axis tick",
+          "content": "the inscription '24%' is printed directly above the blue circular mark"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point aligned with the 'Price' x-axis tick",
+          "content": "the inscription '10%' is printed directly above the blue circular mark"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point aligned with the 'Delivery' x-axis tick",
+          "content": "the inscription '39%' is printed directly above the blue circular mark"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point aligned with the 'Other' x-axis tick",
+          "content": "the inscription '32%' is printed directly above the blue circular mark"
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "Under the assumption that printed labels are the authoritative rating-share values, Design's 52% label is numerically greater than all other labels (45%, 39%, 32%, 24%, 10%), making Design the highest current labeled rating share category and supporting the selection of 'Select Design'."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "the blue circular mark aligned with the 'Quality' x-axis tick",
+          "content": "the mark is positioned at approximately y=60 on the Value axis, which is higher on the page than all other marks"
+        },
+        {
+          "ref": "chart_1",
+          "location": "the blue circular mark aligned with the 'Support' x-axis tick",
+          "content": "the mark is positioned at approximately y=54 on the Value axis"
+        },
+        {
+          "ref": "chart_1",
+          "location": "the blue circular mark aligned with the 'Other' x-axis tick",
+          "content": "the mark is positioned at approximately y=45 on the Value axis"
+        },
+        {
+          "ref": "chart_1",
+          "location": "the blue circular mark aligned with the 'Design' x-axis tick",
+          "content": "the mark is positioned at approximately y=42 on the Value axis"
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the y-axis 'Value' position is the intended measure rather than the printed labels, Quality's mark at ~60 is highest on the page, not Design's at ~42. This creates a visible conflict between the printed label (Design 52%) and the axis geometry (Quality ~60), leaving the 'labeled rating share' interpretation open to challenge if the axis is considered authoritative."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis tick labels",
+          "content": "the visible category labels are 'Quality', 'Price', 'Design', 'Support', 'Delivery', 'Other'"
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Select Quality"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Select Support"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart contains six categories (Quality, Price, Design, Support, Delivery, Other), but the public option_labels only include Design, Quality, and Support. If the highest-share category were Price, Delivery, or Other under any interpretation, it could not be selected. Under the label-based reading, Design is available; under the axis-based reading, Quality is available. The constraint does not resolve the conflict but confirms that only Design, Quality, or Support can be the final selection."
+    }
+  ]
+}

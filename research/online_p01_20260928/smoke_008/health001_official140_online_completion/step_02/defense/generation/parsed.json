@@ -1,0 +1,102 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the y-axis is inverted (0 at top, 8 at bottom), a point lower on the plot corresponds to a higher mortality rate, and the lowest point on the plot indicates the peak mortality rate.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis is inverted, and the task requires identifying the year with the peak mortality rate."
+    },
+    {
+      "id": "r2",
+      "text": "If the y-axis is standard (0 at bottom, 8 at top), a point higher on the plot corresponds to a higher mortality rate, and the highest point on the plot indicates the peak mortality rate.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis is standard, and the task requires identifying the year with the peak mortality rate."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis label is 'Count' but the task refers to 'Mortality rate', the chart may be mislabeled or the task may be misaligned, warranting a methodology review.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis label does not match the task's metric, and the task requires identifying the peak mortality rate."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Count' and has ticks 0, 2, 4, 6, 8 from top to bottom."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data point for 2010 is the lowest on the plot, closest to the 8 tick."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate 2010 for annual mortality peak follow-up",
+      "claim": "The 2010 point is the lowest on the plot, indicating the peak mortality rate among the years shown, so 2010 warrants peak-burden escalation."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Count' and has ticks 0, 2, 4, 6, 8 from top to bottom."
+        },
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data point for 2010 is the lowest on the plot, closest to the 8 tick."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the y-axis is standard (0 at bottom, 8 at top), the 2010 point being the lowest would indicate the minimum mortality rate, not the peak, challenging the support for 2010."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Count'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The chart title is 'Year vs. Mortality rate'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The y-axis label 'Count' does not match the task's 'Mortality rate', which may warrant a methodology review, but the chart title does say 'Mortality rate', so it is underdetermined."
+    }
+  ]
+}

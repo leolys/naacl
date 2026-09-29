@@ -1,0 +1,102 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis is read as the temperature value and the x-axis as the year, then the vertical distance between the 2005 and 2015 points represents the magnitude of change across the review period. A large vertical drop indicates a substantial multi-year change.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the y-axis scale is linear and the points correspond to the labeled years."
+    },
+    {
+      "id": "r2",
+      "text": "If the task requires routing based on whether the multi-year change warrants follow-up under a substantial trend workflow, then a large magnitude of change supports escalation for follow-up, while a small change supports routine monitoring or archiving.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes 'substantial trend' is defined by a large magnitude of change, as indicated by the routing criterion."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart shows a consistent downward trend over the entire period, this supports the interpretation of a sustained decline rather than a temporary fluctuation, which may be relevant to the routing decision.",
+      "component": "trend interpretation",
+      "conditions": "Assumes the line connects the yearly readings and the trend is monotonic."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'value' and has ticks at 10, 12, 14, 16, 18, 20, 22, 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'year' and has ticks from 2005 to 2015."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2005 data point",
+          "content": "The data point for 2005 is aligned with the y-axis tick 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2015 data point",
+          "content": "The data point for 2015 is aligned with the y-axis tick 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Magnitude of change across the review period"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+      "claim": "The chart shows a drop from 24 in 2005 to 10 in 2015, a 14-unit change. This large magnitude of change supports escalation for follow-up."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "entire line",
+          "content": "The line connecting the data points shows a continuous downward slope from 2005 to 2015."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/value",
+          "content": "Substantial trend follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+      "claim": "The routing criterion is the magnitude of change. A 14-unit drop is a substantial change, which aligns with the 'substantial trend follow-up' workflow, supporting escalation."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "data points 2005-2015",
+          "content": "Each successive data point from 2005 to 2015 is lower on the y-axis than the previous one."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+      "claim": "The consistent downward trend over the 11-year period indicates a sustained decline, reinforcing the case for follow-up under the substantial trend workflow."
+    }
+  ]
+}

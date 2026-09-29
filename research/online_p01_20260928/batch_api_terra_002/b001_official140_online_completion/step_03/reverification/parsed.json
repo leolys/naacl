@@ -1,0 +1,91 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "pie-slice inscriptions",
+            "content": "The pie chart visibly contains the inscriptions \"Apple (45%)\", \"Xiaomi (30%)\", \"Samsung (15%)\", and \"Others (10%)\" inside their respective slices."
+          },
+          {
+            "ref": "chart_1",
+            "location": "title at the upper left",
+            "content": "The visible title reads \"Smartphone Market Share in Europe\"."
+          }
+        ],
+        "reason": "The stated slice inscriptions and Europe title are visibly present and attached within the corresponding pie slices."
+      },
+      "B": {
+        "status": "undetermined",
+        "evidence": [],
+        "reason": "The public task requires use of dashboard market-share values and selection of the highest current share, but it does not state that printed slice inscriptions control over pie-slice angular area when those encodings conflict."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the brand with the highest current market share"
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Apple for the premium EU retail promotion budget"
+          }
+        ],
+        "reason": "As explicitly conditional on the printed percentages being the authoritative current market-share values, 45% is greater than the other printed values and the stated policy maps the highest-share brand to the Apple option. This does not establish that the inscriptions are authoritative."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "pie chart",
+            "content": "The Apple-inscribed upper-left slice has a visibly smaller angular span than both the Xiaomi-inscribed lower-left slice and the Others-inscribed right slice."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Apple and Others pie slices",
+            "content": "The smaller upper-left slice is inscribed \"Apple (45%)\" and the larger right-side slice is inscribed \"Others (10%)\"."
+          }
+        ],
+        "reason": "The relative screen-space angular spans and the two literal inscriptions are visibly observable; they conflict with the size ordering suggested by the printed percentages."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+          }
+        ],
+        "reason": "The stated rule is conditional on pie areas encoding the same metric. The public task directs use of dashboard market-share values but provides no instruction resolving whether conflicting slice geometry or printed inscriptions is authoritative."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "pie chart",
+            "content": "The Apple-inscribed slice is visibly smaller than the Others-inscribed slice, although their inscriptions read \"Apple (45%)\" and \"Others (10%)\"."
+          },
+          {
+            "ref": "public_task",
+            "path": "/chart_reference",
+            "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+          }
+        ],
+        "reason": "The visible encoding mismatch supports the conditional support gap: if angular area is intended to encode market share, it conflicts with the printed values. The task supplies no authority rule for resolving that conflict, so Apple cannot be confirmed from the chart without that condition being settled."
+      }
+    }
+  ],
+  "summary": "Both chains have supported visible observations. The printed labels conditionally support Apple under a label-authoritative reading, while the pie geometry conditionally raises an unresolved conflict under an area-authoritative reading. The public task states the highest-market-share policy but does not identify which conflicting chart encoding is authoritative; no final action is established by this verification."
+}

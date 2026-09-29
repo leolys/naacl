@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising Budget vs Revenue (All Observations)</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        #chart {
+            width: 1000px;
+            height: 750px;
+            margin: 60px auto;
+        }
+        .dot { fill: steelblue; opacity: 0.8; }
+        .axis path, .axis line { stroke: #000; }
+        .month-label {
+            font-size: 10px;
+            fill: #333;
+            text-anchor: middle;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Advertising Budget vs Revenue (All Observations)</h1>
+    <div id="chart"></div>
+    <script>
+        const margin = {top: 40, right: 30, bottom: 50, left: 70};
+        const width = 1000 - margin.left - margin.right;
+        const height = 750 - margin.top - margin.bottom;
+
+        const svg = d3.select("#chart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom);
+
+        const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+        const data = [{"Month": "January", "AdSpend": 25, "Sales": 30}, {"Month": "February", "AdSpend": 35, "Sales": 50}, {"Month": "March", "AdSpend": 45, "Sales": 85}, {"Month": "April", "AdSpend": 55, "Sales": 140}, {"Month": "May", "AdSpend": 65, "Sales": 220}, {"Month": "June", "AdSpend": 75, "Sales": 105}, {"Month": "July", "AdSpend": 85, "Sales": 95}, {"Month": "August", "AdSpend": 95, "Sales": 118}];
+
+        data.forEach(d => {
+          d["AdSpend"] = +d["AdSpend"];
+          d["Sales"] = +d["Sales"];
+        });
+
+        const x = d3.scaleLinear()
+          .domain([d3.min(data, d => d["AdSpend"]) - 5, d3.max(data, d => d["AdSpend"]) + 5])
+          .range([0, width]);
+
+        const y = d3.scaleLinear()
+          .domain([d3.min(data, d => d["Sales"]) - 10, d3.max(data, d => d["Sales"]) + 10])
+          .range([height, 0]);
+
+        g.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
+        g.append("g").call(d3.axisLeft(y));
+
+        g.append("text")
+          .attr("x", width / 2)
+          .attr("y", height + 40)
+          .attr("text-anchor", "middle")
+          .style("font-size", "12px")
+          .text("Advertising Spend ($ thousands)");
+
+        g.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("x", -height / 2)
+          .attr("y", -50)
+          .attr("text-anchor", "middle")
+          .style("font-size", "12px")
+          .text("Sales ($ thousands)");
+
+        g.selectAll(".dot")
+          .data(data)
+          .enter().append("circle")
+          .attr("class", "dot")
+          .attr("cx", d => x(d["AdSpend"]))
+          .attr("cy", d => y(d["Sales"]))
+          .attr("r", 5);
+
+        g.selectAll(".month-label")
+          .data(data)
+          .enter().append("text")
+          .attr("class", "month-label")
+          .attr("x", d => x(d["AdSpend"]))
+          .attr("y", d => y(d["Sales"]) - 15)
+          .text(d => d.Month);
+    </script>
+</body>
+</html>

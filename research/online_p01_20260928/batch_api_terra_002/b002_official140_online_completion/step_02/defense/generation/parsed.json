@@ -1,0 +1,80 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the percentage inscriptions positioned above each browser's bar are the dashboard's authoritative current market_share values and each inscription is attached to the bar beneath it, then the browser with the greatest printed percentage is the browser to select under the stated highest-current-market_share queue rule.",
+      "component": "printed-value encoding/task relation",
+      "conditions": "This bridge applies only if the printed percentages, rather than bar heights, encode current market_share and are correctly attached to their respective browser bars."
+    },
+    {
+      "id": "r2",
+      "text": "If the vertical bar heights share the displayed y-axis scale, larger upward bar extent encodes larger current market_share, and the browser label beneath each bar identifies that bar, then the tallest browser bar is the browser to select under the stated highest-current-market_share queue rule.",
+      "component": "bar-height encoding/task relation",
+      "conditions": "This bridge applies only if the unlabeled vertical scale represents current market_share and the bar geometry is authoritative despite conflicting percentage inscriptions."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "bar labeled Edge near the center",
+          "content": "A green bar has the x-axis inscription \"Edge\" beneath it, and the inscription \"87%\" appears immediately above its top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "other browser bars",
+          "content": "The bars labeled Chrome, Safari, Firefox, and Others have percentage inscriptions \"5%\", \"1%\", \"23%\", and \"3%\", respectively, immediately above their tops."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Assign Edge to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "Conditionally, treating the printed percentages as authoritative current market_share values, Edge has the greatest displayed percentage and supports assigning Edge to the priority compatibility-testing queue."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "central Edge and Firefox bars",
+          "content": "The blue bar labeled \"Firefox\" extends higher on the page than the green bar labeled \"Edge\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The visible y-axis tick inscriptions increase from \"0\" at the bottom upward through \"100\" near the top."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Assign Firefox to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Firefox to the priority compatibility-testing queue",
+      "claim": "Conditionally, if the bar heights on the upward-increasing y-axis encode authoritative current market_share, Firefox is the tallest bar and supports assigning Firefox to the priority compatibility-testing queue; this visibly differs from the printed-percentage reading and requires resolving which encoding is authoritative."
+    }
+  ]
+}

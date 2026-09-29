@@ -1,0 +1,95 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If each category's adjacent printed percentage is the dashboard's current labeled rating-share value, and the public follow-up rule requires selecting the category with the highest such labeled value, then the eligible form option corresponding to the uniquely largest printed percentage is the required category selection.",
+      "component": "chart label/category binding and task-to-action relation",
+      "conditions": "The printed percentages are authoritative labeled rating-share values, each is attached to the category beneath its mark, and the task's specified decision rule governs this form."
+    },
+    {
+      "id": "r2",
+      "text": "If the vertical positions of the plotted dots on the axis labeled \"Value\" encode the same decision metric that the task calls current labeled rating share, then the highest-positioned dot supplies a competing ranking; a disagreement between that ranking and the adjacent printed percentages leaves the proposed selection dependent on resolving which encoding is authoritative.",
+      "component": "vertical-position encoding consistency",
+      "conditions": "This conditional reading applies only if the y-axis geometry, rather than the printed percentage labels, is intended to encode the task's decision metric."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Design category mark near the center of the x-axis",
+          "content": "A blue dot above the x-axis inscription \"Design\" has the adjacent printed inscription \"52%.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category mark to the right of Design",
+          "content": "A blue dot above the x-axis inscription \"Support\" has the adjacent printed inscription \"45%.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "Other category mark at the far right",
+          "content": "A blue dot above the x-axis inscription \"Other\" has the adjacent printed inscription \"32%.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delivery category mark",
+          "content": "A blue dot above the x-axis inscription \"Delivery\" has the adjacent printed inscription \"39%.\""
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality and Price category marks on the left",
+          "content": "The dot above \"Quality\" has the printed inscription \"24%\", and the dot above \"Price\" has the printed inscription \"10%.\""
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "Conditionally, the printed 52% attached to Design is larger than every other displayed category percentage, so the stated highest-current-labeled-rating-share rule supports Select Design."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "plot title and y-axis",
+          "content": "The chart title is inscribed \"Product Rating Share by Category\", and the vertical axis is inscribed \"Value\" with ticks from 0 through 65."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality and Design plotted dots",
+          "content": "The dot above \"Quality\" is visibly higher on the page, near the 60 tick, than the dot above \"Design\", which is near the 42 level."
+        },
+        {
+          "ref": "chart_1",
+          "location": "labels adjacent to Quality and Design dots",
+          "content": "The Quality dot has the printed inscription \"24%\" and the Design dot has the printed inscription \"52%.\""
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The dots' vertical positions visibly rank Quality above Design while their adjacent printed percentages rank Design above Quality. Because the task specifically names labeled rating-share values, this does not establish a different selection, but it leaves the proposal conditional on treating the printed labels rather than the y-axis geometry as the authoritative decision-metric encoding."
+    }
+  ]
+}

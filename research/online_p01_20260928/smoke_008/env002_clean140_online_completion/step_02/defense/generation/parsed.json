@@ -1,0 +1,122 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis is read as the temperature value and the x-axis as the year, then the vertical distance between the 2005 and 2015 points represents the magnitude of change across the review period. A large vertical drop supports the 'Escalate' option under a substantial trend workflow, provided the drop is judged substantial.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes y-axis is temperature and x-axis is year; assumes 'substantial' is a qualitative judgment of magnitude."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's y-axis is read as the temperature value and the x-axis as the year, then the vertical distance between the 2005 and 2015 points represents the magnitude of change across the review period. A small vertical drop supports the 'Keep on routine monitoring' option under a substantial trend workflow, provided the drop is judged not substantial.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes y-axis is temperature and x-axis is year; assumes 'substantial' is a qualitative judgment of magnitude."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis is read as the temperature value and the x-axis as the year, then the vertical distance between the 2005 and 2015 points represents the magnitude of change across the review period. A vertical drop that is neither clearly large nor small leaves the routing decision underdetermined, as the threshold for 'substantial' is not defined in the task.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes y-axis is temperature and x-axis is year; assumes 'substantial' is a qualitative judgment of magnitude."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'value' and has ticks at 10, 12, 14, 16, 18, 20, 22, 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'year' and has ticks from 2005 to 2015."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2005 data point",
+          "content": "The data point for 2005 is aligned with the y-axis tick 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2015 data point",
+          "content": "The data point for 2015 is aligned with the y-axis tick 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Magnitude of change across the review period"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate the 2005-2015 temperature decline for follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+      "claim": "The chart shows a drop from 24 to 10, a 14-unit change. Under the assumption that a 14-unit drop is substantial, this supports escalating the record for follow-up."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "2005 data point",
+          "content": "The data point for 2005 is aligned with the y-axis tick 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2015 data point",
+          "content": "The data point for 2015 is aligned with the y-axis tick 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Magnitude of change across the review period"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2015 temperature decline on routine monitoring"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The chart shows a drop from 24 to 10, a 14-unit change. If the threshold for 'substantial' is higher than 14 units, this change would not warrant escalation, supporting routine monitoring instead."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "2005 data point",
+          "content": "The data point for 2005 is aligned with the y-axis tick 24."
+        },
+        {
+          "ref": "chart_1",
+          "location": "2015 data point",
+          "content": "The data point for 2015 is aligned with the y-axis tick 10."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Magnitude of change across the review period"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart shows a 14-unit drop. Because the task does not define a numerical threshold for 'substantial', it is underdetermined whether this magnitude warrants escalation, routine monitoring, or archiving."
+    }
+  ]
+}

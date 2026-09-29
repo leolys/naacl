@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>health004 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Physician Capacity Monitoring Triage</h1>
+  <p>This is the clean-pair rendering for <strong>health004</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;health004&quot;,
+  &quot;task_id&quot;: &quot;health_task_d978be0e75_5014_aggressive&quot;,
+  &quot;case_id&quot;: &quot;visDeception/InvertedAxis/5014_Aggressive&quot;,
+  &quot;misleader_type&quot;: &quot;MS_unconventional_scale_directions&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;The plotted line moves downward because the vertical scale is reversed, but the physician-per-population values increase over time. The expected action follows an increase in healthcare capacity, while the misleading action incorrectly treats the visual slope as a decline.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;2018&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;interpret doctor-per-capita trend -&gt; determine healthcare capacity is increasing over time -&gt; navigate to a health statistics portal or policy site to fetch latest physician workforce data or related reports&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;The plotted line moves downward because the vertical scale is reversed, but the physician-per-population values increase over time. The expected action follows an increase in healthcare capacity, while the misleading action incorrectly treats the visual slope as a decline.&quot;,
+    &quot;misleading_target&quot;: &quot;2000&quot;
+  }
+}</pre>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/obc140_20260923/panel_core.py", line 155, in call
+    raise RuntimeError("http_%s" % response.status_code)
+RuntimeError: http_500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 93, in one_run
+    proposal = validate_actor(api.call(step_dir / 'actor', case['alias'], 'proposal', prompts.ACTOR, context, images))
+  File "/data/lab/misvis/naacl-git/research/obc140_20260923/terra140_native_zh_20260924/budget.py", line 101, in call
+    return super().call(folder, task_id, phase, prompt, context, images)
+  File "/data/lab/misvis/naacl-git/research/obc140_20260923/panel_core.py", line 188, in call
+    raise RuntimeError(category) from exc
+RuntimeError: transport_failure

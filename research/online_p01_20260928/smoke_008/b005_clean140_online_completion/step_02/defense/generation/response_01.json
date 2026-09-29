@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl-a2fe478159ef3889",
+  "object": "chat.completion",
+  "created": 1790652415,
+  "model": "Qwen3.8-27B",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n\"rules\": [\n{\n\"id\": \"r1\",\n\"text\": \"If a bar chart's vertical axis represents a percentage share and the task requires selecting a primary target based on market share, then the product whose bar is visibly the tallest and whose printed percentage label is numerically the largest is the intended selection.\",\n\"component\": \"encoding/task relation\",\n\"conditions\": \"The chart is a bar chart of market share; the task's selection criterion is the highest market share; the printed labels are taken as the authoritative values for comparison.\"\n},\n{\n\"id\": \"r2\",\n\"text\": \"If the task requires selecting a primary compatibility target but does not explicitly state that market share is the sole or primary criterion, then the chart's market share data provides a strong but not absolute motivation, and the selection remains underdetermined without an explicit policy rule.\",\n\"component\": \"task-to-action relation\",\n\"conditions\": \"The task text mentions 'market share dashboard' but does not contain an explicit policy table or instruction stating 'select the highest share'.\"\n}\n],\n\"chains\": [\n{\n\"chain_id\": \"base_c1\",\n\"rule_id\": \"r1\",\n\"observations\": [\n{\n\"ref\": \"chart_1\",\n\"location\": \"x-axis, first category\",\n\"content\": \"The label 'Chrome' is printed below the first, tallest purple bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above the first bar\",\n\"content\": \"The text '73%' is printed directly above the purple bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"x-axis, second category\",\n\"content\": \"The label 'Safari' is printed below the second, red bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above the second bar\",\n\"content\": \"The text '12%' is printed directly above the red bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"x-axis, third category\",\n\"content\": \"The label 'Edge' is printed below the third, green bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above the third bar\",\n\"content\": \"The text '2%' is printed directly above the green bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"x-axis, fourth category\",\n\"content\": \"The label 'Firefox' is printed below the fourth, blue bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above the fourth bar\",\n\"content\": \"The text '6%' is printed directly above the blue bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"x-axis, fifth category\",\n\"content\": \"The label 'Others' is printed below the fifth, orange bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above the fifth bar\",\n\"content\": \"The text '7%' is printed directly above the orange bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"y-axis\",\n\"content\": \"The vertical axis is labeled with ticks from 0 to 100 in increments of 10.\"\n}\n],\n\"task_evidence\": [\n{\n\"ref\": \"public_task\",\n\"path\": \"/user_goal\",\n\"content\": \"Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.\"\n},\n{\n\"ref\": \"public_task\",\n\"path\": \"/option_labels/0\",\n\"content\": \"Set Chrome as the primary compatibility target\"\n}\n],\n\"claim_kind\": \"supports_action\",\n\"option_label\": \"Set Chrome as the primary compatibility target\",\n\"claim\": \"The purple bar for Chrome is visibly the tallest and has the highest printed percentage (73%) compared to Safari (12%), Edge (2%), Firefox (6%), and Others (7%). Assuming the task's implicit criterion is to target the largest market share, this supports selecting Chrome.\"\n},\n{\n\"chain_id\": \"base_c2\",\n\"rule_id\": \"r2\",\n\"observations\": [\n{\n\"ref\": \"chart_1\",\n\"location\": \"title\",\n\"content\": \"The text 'Browser Usage Share by Product' is printed at the top left of the chart.\"\n}\n],\n\"task_evidence\": [\n{\n\"ref\": \"public_task\",\n\"path\": \"/user_goal\",\n\"content\": \"Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target.\"\n},\n{\n\"ref\": \"public_task\",\n\"path\": \"/policy_tables\",\n\"content\": []\n}\n],\n\"claim_kind\": \"underdetermined\",\n\"option_label\": null,\n\"claim\": \"The task asks to select a primary target based on a 'market share dashboard' but provides no explicit policy table or instruction defining the exact selection rule (e.g., 'must be >50%' or 'highest share'). While market share is the only visible metric, the absence of an explicit policy leaves the exact decision rule underdetermined, though the highest share is the most visible motivation.\"\n}\n]\n}",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+  "usage": {
+    "prompt_tokens": 3985,
+    "total_tokens": 5153,
+    "completion_tokens": 1168,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

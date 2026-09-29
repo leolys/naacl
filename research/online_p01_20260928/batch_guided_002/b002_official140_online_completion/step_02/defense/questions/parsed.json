@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "target_chain_ids": [
+        "base_c1",
+        "base_c2"
+      ],
+      "focus": "rule_conditions",
+      "question": "The chart displays a direct visual conflict: the Firefox bar is visibly taller than the Edge bar, yet the printed labels state 23% for Firefox and 87% for Edge. Which visual element (bar height or printed label) is the authoritative source for the 'market_share' value required by the policy?"
+    },
+    {
+      "id": "q2",
+      "target_chain_ids": [
+        "base_c2"
+      ],
+      "focus": "coverage",
+      "question": "The sum of the printed percentage labels (5% + 1% + 87% + 23% + 3%) is 119%. Does the task or policy provide a rule for how to interpret or normalize these values if they do not sum to 100%?"
+    }
+  ],
+  "summary": "I inspected the chart and the provided argument chains. The primary gap is the unresolved conflict between the bar heights (which show Firefox as the highest) and the printed labels (which show Edge as the highest). The existing chains (base_c1 and base_c2) identify this conflict but do not resolve which encoding is authoritative. Additionally, the printed labels sum to 119%, which is a data integrity issue not addressed by any existing chain."
+}

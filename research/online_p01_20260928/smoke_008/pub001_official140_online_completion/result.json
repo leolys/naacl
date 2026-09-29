@@ -1,0 +1,96 @@
+{
+  "case": {
+    "task_id": "pub001",
+    "arm": "official140",
+    "domain": "public39",
+    "alias": "task_048"
+  },
+  "system": "online_completion",
+  "status": "engineering_or_response_failure",
+  "actor_calls": 3,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Select OK for priority review"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false
+    }
+  ],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Home page only shows task description and 'Open Dashboard' link; dashboard must be opened to review state hazard data before choosing a record.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard reviewed; chart shows risk index by state. Need to open the workflow form to select the state record for priority review. The form is the next ordinary navigation step before any selection can be made.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select OK for priority review"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard chart 'Risk Index of Hazard H in US States' uses a color scale where dark red/maroon indicates a low risk index (0) and light yellow indicates a high risk index (100). The task is to choose the state for a 'priority hazard review'. Typically, priority review is given to states with the highest hazard risk. Looking at the three options: ME is light yellow (high risk, ~90-100), OK is dark maroon (low risk, ~0-10), and TX is dark red (low risk, ~10-20). Wait, let me re-read the chart. The legend says 'High' at the top (light yellow) and 'Low' at the bottom (dark red). So light yellow = high risk. ME is light yellow, meaning it has a high risk index. OK and TX are dark, meaning low risk. Therefore, ME should be the priority for review because it has the highest hazard risk index among the choices.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "error": {
+    "stage": "defense",
+    "type": "SchemaError",
+    "category": "exact public leaf content required (typed scalar, no repair)"
+  }
+}

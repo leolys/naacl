@@ -1,0 +1,109 @@
+{
+  "new_rules": [
+    {
+      "id": "supp_r1",
+      "text": "If the visible slice boundaries in a pie chart are consistent with the printed percentage labels (e.g., 45% corresponds to a 162-degree arc, 30% to 108 degrees, 15% to 54 degrees, and 10% to 36 degrees), then the label-based and area-based readings converge on the same largest category.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is a pie chart with printed percentage labels, and the visible slice boundaries can be compared to the expected angular spans of those percentages."
+    },
+    {
+      "id": "supp_r2",
+      "text": "If the task requires routing the largest global energy consumption category to priority source monitoring, and the public options include a specific route for that category, then the option that explicitly routes that category to priority monitoring is the supported action, while options that keep other categories on routine monitoring are not valid fallbacks for the largest category.",
+      "component": "task-to-action relation",
+      "conditions": "The largest category is identified, and the public options include a route for that exact category to priority monitoring."
+    }
+  ],
+  "new_chains": [
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "right yellow slice",
+          "content": "The yellow slice labeled 'Nuclear (45%)' spans from the 12 o'clock position to approximately the 5 o'clock position, covering roughly 162 degrees."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower red slice",
+          "content": "The red slice labeled 'Fossil Fuels (30%)' spans from approximately the 5 o'clock position to the 9 o'clock position, covering roughly 108 degrees."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper-left orange slice",
+          "content": "The orange slice labeled 'Renewables (15%)' spans from the 9 o'clock position to approximately the 10:30 position, covering roughly 54 degrees."
+        },
+        {
+          "ref": "chart_1",
+          "location": "upper small red-orange slice",
+          "content": "The small red-orange slice labeled 'Hydroelectric (10%)' spans from approximately the 10:30 position to the 12 o'clock position, covering roughly 36 degrees."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Largest global energy consumption category"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route Nuclear to priority source monitoring",
+      "claim": "The visible slice boundaries are geometrically consistent with the printed percentage labels, so the label-based and area-based readings converge on Nuclear as the largest category, supporting the action to route Nuclear to priority source monitoring.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "compatible"
+    },
+    {
+      "chain_id": "supp_c2",
+      "rule_id": "supp_r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "right yellow slice",
+          "content": "The inscription 'Nuclear (45%)' is printed inside the yellow slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route Nuclear to priority source monitoring"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Keep Fossil Fuels on routine source monitoring"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route Nuclear to priority source monitoring",
+      "claim": "Since Nuclear is the largest category, the option 'Route Nuclear to priority source monitoring' is the correct action. The option 'Keep Fossil Fuels on routine source monitoring' is not a valid fallback because Fossil Fuels is not the largest category.",
+      "question_ids": [
+        "q2"
+      ],
+      "relationship": "compatible"
+    }
+  ],
+  "refinements": [],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The visible slice boundaries in the pie chart are geometrically consistent with the printed percentage labels. The yellow slice (Nuclear 45%) spans approximately 162 degrees, the red slice (Fossil Fuels 30%) spans approximately 108 degrees, the orange slice (Renewables 15%) spans approximately 54 degrees, and the small red-orange slice (Hydroelectric 10%) spans approximately 36 degrees. This confirms that the label-based and area-based readings converge on Nuclear as the largest category."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c2"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The public option 'Route Nuclear to priority source monitoring' is the only option that routes the largest category (Nuclear) to priority monitoring. The option 'Keep Fossil Fuels on routine source monitoring' is not a valid fallback because Fossil Fuels is not the largest category; it is the second-largest at 30%."
+    }
+  ]
+}

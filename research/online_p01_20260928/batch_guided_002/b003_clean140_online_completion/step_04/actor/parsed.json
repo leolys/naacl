@@ -1,0 +1,28 @@
+{
+  "action": {
+    "kind": "select_field",
+    "option": "Assign additional promotional budget",
+    "field": "template_context_budget_action"
+  },
+  "brief_basis": "The chart shows 'Other' has the highest labeled rating share at 53%, which is already selected. The required field 'Budget action' is currently 'Select value' and must be set to 'Assign additional promotional budget' to complete the form.",
+  "chart_dependent": true,
+  "used_rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The chart's x-axis labels are the product categories and the y-axis values are the labeled rating shares. 'Other' has the highest value at 53%."
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "conditions_match": true,
+      "basis": "The form's primary field 'Promotional budget category' is set to 'Select Other', matching the category with the highest labeled rating share."
+    }
+  ],
+  "supporting_chain_ids": [
+    "base_c1",
+    "base_c2"
+  ],
+  "challenge": null
+}

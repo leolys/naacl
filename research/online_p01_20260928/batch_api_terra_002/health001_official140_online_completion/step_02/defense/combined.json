@@ -1,0 +1,168 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the plotted line represents the annual mortality burden requested by the task, the y-axis tick inscriptions encode larger Count values lower on the page, and the endpoint horizontally attached to 2018 is among the lowest plotted annual markers, then 2018 is among the chart's maximum displayed annual Count values; if routing a tied maximum is permitted, the 2018 peak-follow-up option is supported.",
+      "component": "encoding/task relation",
+      "conditions": "The y-axis's printed Count scale is the intended burden measure; the endpoint is attached to reporting year 2018; and the task permits routing one offered year when the displayed maximum is tied."
+    },
+    {
+      "id": "r2",
+      "text": "If equal vertical positions on this shared y-axis encode equal annual values, then the final 2018 marker and the preceding marker at the same visible height indicate a tied displayed maximum rather than a uniquely established 2018 maximum; the chart alone does not state how to break such a tie.",
+      "component": "scale comparability/tie handling",
+      "conditions": "The points are comparable annual observations on the same Count scale, and no unshown tie-breaking instruction applies."
+    },
+    {
+      "id": "r3",
+      "text": "If the task's phrase peak-burden requires a specific mortality measure, then the chart must establish that its plotted Count axis is the intended burden metric; the title inscription 'Year vs. Mortality rate' and y-axis inscription 'Count' use different measure terms, so the chart alone leaves that metric correspondence open.",
+      "component": "metric binding/task relation",
+      "conditions": "The differing title and axis terms are intended as potentially distinct measures rather than interchangeable labels, and no external dashboard definition resolves them."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "left y-axis",
+          "content": "The axis is inscribed \"Count\" and its visible tick labels run from 0 near the top through 2, 4, 6, and 8 lower on the page."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted marker and x-axis",
+          "content": "The rightmost blue marker is horizontally aligned with the printed x-axis label \"2018\" and is among the lowest blue markers on the page."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the yearly mortality trend in the chart to determine which reporting year warrants escalation, then select the corresponding routing option."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate 2018 for annual mortality peak follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate 2018 for annual mortality peak follow-up",
+      "claim": "Conditionally, 2018 is among the maximum displayed annual Count values and can support escalation for peak-burden follow-up, subject to the Count scale being the intended burden measure and tied maxima being eligible."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "far-right portion of plotted line",
+          "content": "The rightmost blue marker aligned with 2018 and the immediately preceding blue marker appear at the same vertical screen position; both are lower on the page than the marker aligned with 2016."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate 2018 for annual mortality peak follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Escalate 2010 for annual mortality peak follow-up"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The visible plot may show 2018 tied with the preceding reporting year at the displayed maximum, so it does not by itself establish 2018 as the unique peak or provide a tie-breaking basis."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-center title",
+          "content": "The chart title is inscribed \"Year vs. Mortality rate\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left y-axis label",
+          "content": "The y-axis is inscribed \"Count\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the annual mortality surveillance dashboard and route the year that should receive peak-burden follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Escalate chart for methodology reference review"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart visibly uses both \"Mortality rate\" and \"Count\" terminology, while the task asks for peak burden. Without a definition connecting those terms, the intended metric for burden-based routing remains unverified."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "late-series markers between the printed 2014, 2016, and 2018 x-axis ticks",
+          "content": "The rightmost marker aligned with the printed \"2018\" tick is visibly lower on the page than the marker halfway between the 2014 and 2016 ticks and lower than the marker halfway between the 2016 and 2018 ticks."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "If the evenly spaced annual markers between the labeled even-year ticks represent 2015 and 2017 respectively, and lower page position on the downward-increasing Count axis encodes a larger value, this closer ordering supports 2018 being strictly above those late-year values rather than tied with them.",
+      "reason": "This directly addresses the previously uninspected ordering of the 2018 endpoint against the markers for 2015 and 2017, strengthening the maximum support without treating screen position alone as a decoded Count value."
+    }
+  ],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  },
+  "supplement_counts": {
+    "rules": 0,
+    "chains": 0,
+    "refinements": 1
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c1",
+        "base_c2"
+      ],
+      "reason": "Closer visible inspection places the 2018 endpoint lower than the intervening late-series markers corresponding conditionally to 2015 and 2017. This weakens the apparent-tie concern in base_c2 for those markers, while the Count-scale and metric-binding conditions remain."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "already_covered",
+      "record_ids": [],
+      "covered_chain_ids": [
+        "base_c3"
+      ],
+      "reason": "The chart visibly provides the title \"Year vs. Mortality rate\" and the y-axis label \"Count\" but no displayed legend, annotation, or other axis context connecting Count to mortality burden. Base_c3 already records that this metric correspondence remains unverified."
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "scope": {
+    "task_id": "task_001",
+    "chart_ref": "1e35566603ab51e7ce5d513fd68c3b06dccf78bbb7a3830b634d49fb1901ab8e"
+  },
+  "version": 1,
+  "rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "status": "active",
+      "text": "If the parenthetical percentages inscribed inside the pie slices are the dashboard's current Europe smartphone market-share values and each inscription is attached to its named brand, then Apple’s printed 45% exceeds Xiaomi’s 30%, Samsung’s 15%, and Others’ 10%. If the promotion rule selects the brand with the highest current market share, the matching Apple promotion option is supported.",
+      "component": "pie-label metric decoding and task-to-action relation",
+      "conditions": "Treat the slice inscriptions, rather than slice geometry, as authoritative current market-share values for the Europe scope; treat the public rule as requiring the highest such value.",
+      "checks": [
+        {
+          "target_id": "base_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "upper-left orange pie slice",
+                "content": "The slice is inscribed \"Apple (45%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "lower-left orange-red pie slice",
+                "content": "The slice is inscribed \"Xiaomi (30%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "bottom pale-yellow pie slice",
+                "content": "The slice is inscribed \"Samsung (15%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "right red pie slice",
+                "content": "The slice is inscribed \"Others (10%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "title at the top of the chart",
+                "content": "The title reads \"Smartphone Market Share in Europe\"."
+              }
+            ],
+            "reason": "The recorded inscriptions and title are visibly present and attached within the indicated pie slices."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/0/1",
+                "content": "Select the brand with the highest current market share"
+              },
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/2/1",
+                "content": "Europe smartphone brands"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Select Apple for the premium EU retail promotion budget"
+              }
+            ],
+            "reason": "The public task specifies Europe smartphone brands and requires selection of the highest current market-share brand; the Apple option exists. The rule remains conditional on treating the printed slice inscriptions as the authoritative values."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "pie-slice inscriptions",
+                "content": "The visible inscriptions read \"Apple (45%)\", \"Xiaomi (30%)\", \"Samsung (15%)\", and \"Others (10%)\"."
+              },
+              {
+                "ref": "public_task",
+                "path": "/policy_tables/0/rows/0/1",
+                "content": "Select the brand with the highest current market share"
+              }
+            ],
+            "reason": "Under r1's explicitly stated label-authority condition, the printed 45% is greater than the other printed percentages, so Apple conditionally supports the stated option. The chart's conflicting slice geometry leaves that authority condition unresolved."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "status": "active",
+      "text": "If the pie-slice angular areas, rather than the parenthetical inscriptions, are intended to encode the same market-share metric, visibly unequal slice areas that do not align with the printed percentage ordering create a support gap. A choice cannot be confirmed from the chart until it is established whether the labels or the slice geometry are authoritative.",
+      "component": "pie-area encoding consistency check",
+      "conditions": "Applies only if slice area is meant to represent the same market-share values printed within the slices; the public task does not explicitly resolve a conflict between those visual encodings.",
+      "checks": [
+        {
+          "target_id": "base_c2",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "pie slices",
+                "content": "The Apple-labeled upper-left slice has a visibly smaller angular span than both the Xiaomi-labeled lower-left slice and the Others-labeled right slice."
+              },
+              {
+                "ref": "chart_1",
+                "location": "Apple and Others pie-slice inscriptions",
+                "content": "The smaller Apple slice is inscribed \"Apple (45%)\", while the larger right-side Others slice is inscribed \"Others (10%)\"."
+              }
+            ],
+            "reason": "The cited slice-size comparisons are visible screen-space geometry, and the two inscriptions are visibly printed in their respective slices."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+              }
+            ],
+            "reason": "The public task requires dashboard market-share values but does not state whether printed percentages or pie-slice angular areas control if those encodings conflict. r2 is properly conditional on areas being intended to encode that same metric."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "pie chart",
+                "content": "The Others slice is visibly larger than the Apple slice despite the inscriptions \"Others (10%)\" and \"Apple (45%)\"."
+              },
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+              }
+            ],
+            "reason": "The visible area ordering conflicts with the printed percentage ordering. Therefore, if angular area is also intended as the authoritative market-share encoding, the chart does not by itself confirm Apple as leader; this challenges confirmation without asserting an alternative selection."
+          }
+        }
+      ],
+      "history": []
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "upper-left pie slice",
+          "content": "The slice is inscribed \"Apple (45%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "lower-left pie slice",
+          "content": "The slice is inscribed \"Xiaomi (30%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom pie slice",
+          "content": "The slice is inscribed \"Samsung (15%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right pie slice",
+          "content": "The slice is inscribed \"Others (10%)\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "chart title at top",
+          "content": "The title reads \"Smartphone Market Share in Europe\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the brand with the highest current market share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Apple for the premium EU retail promotion budget"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "Conditionally, the printed slice values identify Apple as the current Europe market-share leader, so the public promotion rule supports selecting Apple."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie slices",
+          "content": "The Apple-labeled upper-left slice visibly has a smaller angular span than the Xiaomi-labeled lower-left slice and the Others-labeled right slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Apple and Others slice inscriptions",
+          "content": "The Apple slice is inscribed \"Apple (45%)\", while the larger right slice is inscribed \"Others (10%)\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The pie geometry appears inconsistent with the printed percentage ordering. If slice areas are intended as the authoritative market-share encoding, the chart does not reliably establish Apple as leader; support for the proposed selection depends on confirming that the printed values control."
+    }
+  ],
+  "refinements": []
+}

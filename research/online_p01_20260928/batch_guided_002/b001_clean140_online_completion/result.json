@@ -1,0 +1,667 @@
+{
+  "case": {
+    "task_id": "b001",
+    "arm": "clean140",
+    "domain": "business47",
+    "alias": "task_141"
+  },
+  "system": "online_completion",
+  "status": "submitted",
+  "actor_calls": 8,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Select Apple for the premium EU retail promotion budget"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "Printed label 'Apple (45%)' inside the orange slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, lower left",
+                  "content": "Printed label 'Xiaomi (30%)' inside the orange-red slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, upper left",
+                  "content": "Printed label 'Samsung (15%)' inside the pale yellow slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, top",
+                  "content": "Printed label 'Others (10%)' inside the red slice."
+                }
+              ],
+              "reason": "The four printed percentage labels are directly visible and match the observations."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/1/1",
+                  "content": "market_share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/2/1",
+                  "content": "Europe smartphone brands"
+                }
+              ],
+              "reason": "The public task defines the decision metric as market_share and the scope as Europe smartphone brands, aligning with r1's conditions."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "Printed label 'Apple (45%)' inside the orange slice."
+                }
+              ],
+              "reason": "Given the printed labels, 45% is numerically greater than 30%, 15%, and 10%, making Apple the leader under r1."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "Printed label 'Apple (45%)' inside the orange slice."
+                }
+              ],
+              "reason": "The observation of the Apple label is directly visible on the chart."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Apple for the premium EU retail promotion budget"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Allocate to current market-share leader"
+                }
+              ],
+              "reason": "The public task provides the exact option label and the budget rule, matching r2's conditions."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Apple for the premium EU retail promotion budget"
+                }
+              ],
+              "reason": "If Apple is the leader, the option naming Apple is the supported action under the budget rule."
+            }
+          },
+          {
+            "target_id": "base_c3",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "Printed label 'Apple (45%)' inside the orange slice."
+                }
+              ],
+              "reason": "The observation of the Apple label is directly visible on the chart."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                }
+              ],
+              "reason": "The public task's chart_reference establishes the condition under which the chart is the evidence source, aligning with r3's support gap condition."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                }
+              ],
+              "reason": "If the printed percentages are not accepted as authoritative, the chart alone cannot determine the leader, leaving the action underdetermined."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "top left",
+                  "content": "Printed title 'Smartphone Market Share in Europe'."
+                }
+              ],
+              "reason": "The chart title is directly visible and matches the added observation."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                }
+              ],
+              "reason": "The public task explicitly designates the dashboard values as the evidence source, supporting the condition note that the 'current' condition is met by the task instruction."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+                }
+              ],
+              "reason": "The refinement correctly clarifies that the task's instruction satisfies the temporal condition for r1 without requiring an independent timestamp."
+            }
+          },
+          {
+            "target_id": "refine_2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "The orange slice labeled 'Apple (45%)' occupies the largest visible area, extending from the top vertical radius to the lower-right."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, lower left",
+                  "content": "The orange-red slice labeled 'Xiaomi (30%)' is visibly smaller than the Apple slice but larger than the Samsung and Others slices."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, upper left",
+                  "content": "The pale yellow slice labeled 'Samsung (15%)' is visibly smaller than the Xiaomi slice."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, top",
+                  "content": "The red slice labeled 'Others (10%)' is the smallest visible slice."
+                }
+              ],
+              "reason": "The relative sizes of the pie slices are directly visible and match the added observations."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "Printed label 'Apple (45%)' inside the orange slice."
+                }
+              ],
+              "reason": "The visual geometry of the pie chart is consistent with the printed percentages, supporting the condition note that there is no geometric discrepancy."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "pie slice, right side",
+                  "content": "Printed label 'Apple (45%)' inside the orange slice."
+                }
+              ],
+              "reason": "The refinement confirms that the pie chart's geometry aligns with the printed labels, strengthening the case for treating the labels as the true market-share values."
+            }
+          }
+        ],
+        "summary": "All chains and refinements are supported by the chart and public task. The printed labels on the pie chart (Apple 45%, Xiaomi 30%, Samsung 15%, Others 10%) are consistent with the visual geometry. The public task explicitly designates the dashboard as the evidence source and defines the decision metric and scope, supporting the conclusion that Apple is the current market-share leader and the corresponding option is the supported action. No unresolved issues remain."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 4,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 5,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 6,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 7,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "brief_basis": "The task requires reviewing the Europe smartphone market-share dashboard before allocating the budget. The home page only offers the 'Open Dashboard' link to access the required dashboard view. No selection can be made yet because the dashboard data is not visible.",
+        "chart_dependent": false,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "brief_basis": "Dashboard reviewed: chart_1 shows Apple (45%) is the highest current market share in Europe, exceeding Xiaomi (30%), Samsung (15%), Others (10%). The task requires continuing to the workflow form after review, so open the form to allocate the budget to Apple.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Apple for the premium EU retail promotion budget"
+        },
+        "brief_basis": "Chart_1 shows Apple 45%, Xiaomi 30%, Samsung 15%, Others 10%. Apple is the highest current market share in Europe, matching the promotion budget rule. No option is currently selected, so select Apple first.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Apple for the premium EU retail promotion budget"
+        },
+        "brief_basis": "The chart 'Smartphone Market Share in Europe' shows Apple (45%) as the highest printed percentage, exceeding Xiaomi (30%), Samsung (15%), and Others (10%). The task's policy table defines the decision metric as market_share and the rule as selecting the brand with the highest current market share. The chart_reference explicitly designates the dashboard values as the evidence source. Therefore, Apple is the current market-share leader, and the option naming Apple is the supported action. The pending action to select Apple is correct and should be executed.",
+        "chart_dependent": true,
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is the Europe smartphone market-share dashboard (title visible). The task's chart_reference designates the dashboard values as the evidence source, satisfying the condition that printed percentages are accepted as current market_share values. The policy table confirms the decision metric is market_share and the scope is Europe smartphone brands."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The budget rule is 'Allocate to current market-share leader' (visible in the form and policy table). The option 'Select Apple for the premium EU retail promotion budget' names the brand identified as the leader by r1."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Europe",
+          "field": "template_context_market_region"
+        },
+        "brief_basis": "The chart shows Apple (45%) as the highest market share, so the Apple option is correctly selected. The required Market region field is still 'Select value' and must be set to 'Europe' before submission.",
+        "chart_dependent": true,
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is the Europe smartphone market-share dashboard; the task designates the dashboard values as the evidence source; the decision metric is market_share. Apple's 45% is the highest printed value."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The budget rule is 'Allocate to current market-share leader' and the selected option names Apple, the identified leader."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Allocate to current market-share leader",
+          "field": "template_context_budget_rule"
+        },
+        "brief_basis": "The chart shows Apple (45%) as the highest market share, so the Apple option is correct and already selected. The required Budget rule field is still 'Select value' and must be set to 'Allocate to current market-share leader' before submission. The Campaign program field also needs to be set, but I can only return one action at a time. I'll set the Budget rule first.",
+        "chart_dependent": true,
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is the Europe smartphone market-share dashboard, printed percentages are accepted as current market_share values per the task's chart_reference, and the decision metric is market_share. Apple's 45% is the highest."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The budget rule is 'Allocate to current market-share leader' and the selected option names Apple, the identified leader."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Premium retail co-op promotion",
+          "field": "template_context_campaign_program"
+        },
+        "brief_basis": "The chart shows Apple (45%) as the highest market share, so the Apple option is correct and already selected. Market region and Budget rule are set. The required Campaign program field is still 'Select value' and must be set to 'Premium retail co-op promotion' before submitting.",
+        "chart_dependent": true,
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is the Europe smartphone market-share dashboard; the task designates dashboard values as the evidence source; decision metric is market_share. Apple's 45% is the greatest printed percentage."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The budget rule is 'Allocate to current market-share leader' and the selected option names Apple, the identified leader."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 7,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "brief_basis": "The dashboard chart shows Apple at 45%, the highest market share in Europe. The form already has the correct option selected and all required fields filled. Submitting the form.",
+        "chart_dependent": true,
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart is the Europe smartphone market-share dashboard, and the task designates it as the evidence source. Apple's 45% is the highest printed percentage."
+          },
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The budget rule is 'Allocate to current market-share leader', and the selected option names Apple, the identified leader."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1",
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": 1
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "post_verification_choices": [
+    {
+      "step": 3,
+      "recommended_option": "Select Apple for the premium EU retail promotion budget",
+      "execution_ok": true,
+      "observed_selection_after": "Select Apple for the premium EU retail promotion budget",
+      "rule_version": 1
+    }
+  ],
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Select Apple for the premium EU retail promotion budget"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "option": "Europe",
+        "field": "template_context_market_region"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "option": "Allocate to current market-share leader",
+        "field": "template_context_budget_rule"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "option": "Premium retail co-op promotion",
+        "field": "template_context_campaign_program"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

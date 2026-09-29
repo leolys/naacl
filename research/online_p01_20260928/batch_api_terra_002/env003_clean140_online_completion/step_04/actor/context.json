@@ -1,0 +1,601 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_229",
+      "page_title": "Energy Portfolio Escalation Review",
+      "user_goal": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle.",
+      "chart_reference": "Use the dashboard to determine which energy source is the largest category in global energy consumption for this routing decision.",
+      "primary_field_label": "Priority source monitoring route",
+      "option_labels": [
+        "Route Nuclear to priority source monitoring",
+        "Route Hydroelectric to priority source monitoring",
+        "Keep Fossil Fuels on routine source monitoring"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the environment record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Energy source monitoring"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Portfolio share review"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Priority source monitoring"
+        },
+        {
+          "field": "visible_context_4",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Routing criterion",
+          "value": "Largest global energy consumption category"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the dashboard to determine which energy source is the largest category in global energy consumption for this routing decision."
+        },
+        {
+          "page": "form",
+          "text": "Use the dashboard to determine which energy source is the largest category in global energy consumption for this routing decision."
+        },
+        {
+          "page": "form",
+          "text": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "Route Nuclear to priority source monitoring",
+      "option_states": [
+        {
+          "label": "Route Nuclear to priority source monitoring",
+          "selected": true
+        },
+        {
+          "label": "Route Hydroelectric to priority source monitoring",
+          "selected": false
+        },
+        {
+          "label": "Keep Fossil Fuels on routine source monitoring",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Route Nuclear to priority source monitoring",
+        "Route Hydroelectric to priority source monitoring",
+        "Keep Fossil Fuels on routine source monitoring"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the dashboard to determine which energy source is the largest category in global energy consumption for this routing decision. Energy Portfolio Escalation Review Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle. Program area Energy source monitoring Review scope Portfolio share review Record workflow Priority source monitoring Routing criterion Largest global energy consumption category Priority source monitoring route Select a route Route Nuclear to priority source monitoring Route Hydroelectric to priority source monitoring Keep Fossil Fuels on routine source monitoring Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 3,
+        "action": {
+          "kind": "select",
+          "option": "Route Nuclear to priority source monitoring"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": "Route Nuclear to priority source monitoring"
+        },
+        "source": "actor"
+      }
+    ],
+    "interpretation_rules": {
+      "version": 1,
+      "same_task_and_image": true,
+      "condition_applicability": "actor_must_check",
+      "rules": [
+        {
+          "rule_id": "r1",
+          "version": 1,
+          "status": "active",
+          "text": "If the pie-chart slice inscriptions identify source categories and their shares of global energy consumption, and those shares are comparable category shares, then the category with the greatest printed percentage is the largest global energy consumption category. If that category is Nuclear, the public routing criterion calls for selecting the Nuclear priority-monitoring route.",
+          "component": "pie-slice labels and percentages/task routing relation",
+          "conditions": "The chart title and slice labels accurately describe the dashboard's relevant global energy-consumption categories, the printed percentages encode comparable shares, and the form's Nuclear option routes the identified largest category to priority monitoring.",
+          "checks": [
+            {
+              "target_id": "base_c1",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "title above the pie chart",
+                    "content": "The visible title reads \"Global Energy Consumption by Source\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "large pale-yellow right-side pie slice",
+                    "content": "The slice inscription reads \"Nuclear (45%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "red lower-left pie slice",
+                    "content": "The slice inscription reads \"Fossil Fuels (30%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "orange left-side pie slice",
+                    "content": "The slice inscription reads \"Renewables (15%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "orange-red upper-left pie slice",
+                    "content": "The slice inscription reads \"Hydroelectric (10%)\"."
+                  }
+                ],
+                "reason": "The title and all four stated slice inscriptions are visibly legible in the supplied chart."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "title above the pie chart",
+                    "content": "The visible title reads \"Global Energy Consumption by Source\"."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/4/value",
+                    "content": "Largest global energy consumption category"
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Route Nuclear to priority source monitoring"
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/user_goal",
+                    "content": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+                  }
+                ],
+                "reason": "The rule is expressly conditional on the title and printed percentages functioning as comparable shares. The public task supplies the largest-category criterion, an instruction to route the identified source to priority monitoring, and a Nuclear-specific priority route option."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "large pale-yellow right-side pie slice",
+                    "content": "The slice inscription reads \"Nuclear (45%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "red lower-left pie slice",
+                    "content": "The slice inscription reads \"Fossil Fuels (30%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "orange left-side pie slice",
+                    "content": "The slice inscription reads \"Renewables (15%)\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "orange-red upper-left pie slice",
+                    "content": "The slice inscription reads \"Hydroelectric (10%)\"."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Route Nuclear to priority source monitoring"
+                  }
+                ],
+                "reason": "Under r1's stated encoding and comparability conditions, the printed 45% exceeds the other printed percentages, and the displayed Nuclear option is the priority-monitoring route for that labeled source. This remains conditional on the chart's printed percentages accurately encoding the relevant shares."
+              }
+            }
+          ],
+          "history": []
+        }
+      ],
+      "refinements": [
+        {
+          "id": "refine_1",
+          "target_chain_id": "base_c1",
+          "target_rule_id": "r1",
+          "target_rule_version": 1,
+          "status": "supported",
+          "applied_to_original": false,
+          "asserted_dimensions": [
+            "O",
+            "B",
+            "implication"
+          ],
+          "condition_note": "This supports treating the four labeled slices as the complete set of categories displayed in this pie, conditional on the chart being an accurate representation of the relevant consumption categories.",
+          "added_observations": [
+            {
+              "ref": "chart_1",
+              "location": "entire pie chart",
+              "content": "The visible circular pie is partitioned into four contiguous colored slices, each bearing one of the inscriptions Nuclear, Fossil Fuels, Renewables, or Hydroelectric; no additional slice is visible."
+            }
+          ],
+          "added_task_evidence": []
+        },
+        {
+          "id": "refine_2",
+          "target_chain_id": "base_c1",
+          "target_rule_id": "r1",
+          "target_rule_version": 1,
+          "status": "supported",
+          "applied_to_original": false,
+          "asserted_dimensions": [
+            "B",
+            "implication"
+          ],
+          "condition_note": "The route implication depends on applying this instruction to the source identified as largest and on the Nuclear-labeled form option being the route for that source.",
+          "added_observations": [],
+          "added_task_evidence": [
+            {
+              "ref": "public_task",
+              "path": "/user_goal",
+              "content": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+            }
+          ]
+        }
+      ]
+    },
+    "verified_arguments": {
+      "arguments": {
+        "rules": [
+          {
+            "id": "r1",
+            "text": "If the pie-chart slice inscriptions identify source categories and their shares of global energy consumption, and those shares are comparable category shares, then the category with the greatest printed percentage is the largest global energy consumption category. If that category is Nuclear, the public routing criterion calls for selecting the Nuclear priority-monitoring route.",
+            "component": "pie-slice labels and percentages/task routing relation",
+            "conditions": "The chart title and slice labels accurately describe the dashboard's relevant global energy-consumption categories, the printed percentages encode comparable shares, and the form's Nuclear option routes the identified largest category to priority monitoring."
+          }
+        ],
+        "chains": [
+          {
+            "chain_id": "base_c1",
+            "rule_id": "r1",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "title above the pie chart",
+                "content": "The visible title reads \"Global Energy Consumption by Source\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "large pale-yellow right-side pie slice",
+                "content": "The slice inscription reads \"Nuclear (45%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "red lower-left pie slice",
+                "content": "The slice inscription reads \"Fossil Fuels (30%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "orange left-side pie slice",
+                "content": "The slice inscription reads \"Renewables (15%)\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "orange-red upper-left pie slice",
+                "content": "The slice inscription reads \"Hydroelectric (10%)\"."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/4/value",
+                "content": "Largest global energy consumption category"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Route Nuclear to priority source monitoring"
+              }
+            ],
+            "claim_kind": "supports_action",
+            "option_label": "Route Nuclear to priority source monitoring",
+            "claim": "Conditional on the printed slice percentages being valid, comparable shares for the titled global-energy-consumption chart, Nuclear's printed 45% is greater than the other printed shares, so Nuclear is the largest category and the Nuclear priority-monitoring route matches the stated routing criterion."
+          }
+        ],
+        "refinements": [
+          {
+            "id": "refine_1",
+            "target_chain_id": "base_c1",
+            "added_observations": [
+              {
+                "ref": "chart_1",
+                "location": "entire pie chart",
+                "content": "The visible circular pie is partitioned into four contiguous colored slices, each bearing one of the inscriptions Nuclear, Fossil Fuels, Renewables, or Hydroelectric; no additional slice is visible."
+              }
+            ],
+            "added_task_evidence": [],
+            "condition_note": "This supports treating the four labeled slices as the complete set of categories displayed in this pie, conditional on the chart being an accurate representation of the relevant consumption categories.",
+            "reason": "The original observations list all four inscriptions but do not explicitly record that these slices visibly exhaust the displayed pie."
+          },
+          {
+            "id": "refine_2",
+            "target_chain_id": "base_c1",
+            "added_observations": [],
+            "added_task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+              }
+            ],
+            "condition_note": "The route implication depends on applying this instruction to the source identified as largest and on the Nuclear-labeled form option being the route for that source.",
+            "reason": "This directly supplies the public instruction connecting identification of the largest source category to routing that source record to priority monitoring."
+          }
+        ]
+      },
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "title above the pie chart",
+                  "content": "The visible title reads \"Global Energy Consumption by Source\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "large pale-yellow right-side pie slice",
+                  "content": "The slice inscription reads \"Nuclear (45%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "red lower-left pie slice",
+                  "content": "The slice inscription reads \"Fossil Fuels (30%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange left-side pie slice",
+                  "content": "The slice inscription reads \"Renewables (15%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange-red upper-left pie slice",
+                  "content": "The slice inscription reads \"Hydroelectric (10%)\"."
+                }
+              ],
+              "reason": "The title and all four stated slice inscriptions are visibly legible in the supplied chart."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "title above the pie chart",
+                  "content": "The visible title reads \"Global Energy Consumption by Source\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Largest global energy consumption category"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+                }
+              ],
+              "reason": "The rule is expressly conditional on the title and printed percentages functioning as comparable shares. The public task supplies the largest-category criterion, an instruction to route the identified source to priority monitoring, and a Nuclear-specific priority route option."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "large pale-yellow right-side pie slice",
+                  "content": "The slice inscription reads \"Nuclear (45%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "red lower-left pie slice",
+                  "content": "The slice inscription reads \"Fossil Fuels (30%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange left-side pie slice",
+                  "content": "The slice inscription reads \"Renewables (15%)\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "orange-red upper-left pie slice",
+                  "content": "The slice inscription reads \"Hydroelectric (10%)\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "Under r1's stated encoding and comparability conditions, the printed 45% exceeds the other printed percentages, and the displayed Nuclear option is the priority-monitoring route for that labeled source. This remains conditional on the chart's printed percentages accurately encoding the relevant shares."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "entire pie chart",
+                  "content": "A circular pie is visibly divided into four contiguous colored slices; the visible inscriptions are \"Nuclear (45%)\", \"Fossil Fuels (30%)\", \"Renewables (15%)\", and \"Hydroelectric (10%)\", and no additional slice is visible."
+                }
+              ],
+              "reason": "The chart visibly shows four contiguous labeled slices filling the displayed pie, with no further slice apparent."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "entire pie chart",
+                  "content": "A circular pie is visibly divided into four contiguous colored slices; the visible inscriptions are \"Nuclear (45%)\", \"Fossil Fuels (30%)\", \"Renewables (15%)\", and \"Hydroelectric (10%)\", and no additional slice is visible."
+                }
+              ],
+              "reason": "The condition note appropriately limits its support to completeness of the categories displayed in this pie and retains the separate condition that the chart accurately represents the relevant consumption categories."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "entire pie chart",
+                  "content": "A circular pie is visibly divided into four contiguous colored slices; the visible inscriptions are \"Nuclear (45%)\", \"Fossil Fuels (30%)\", \"Renewables (15%)\", and \"Hydroelectric (10%)\", and no additional slice is visible."
+                }
+              ],
+              "reason": "The added observation meaningfully fills the stated gap by supporting that the four recorded labels exhaust the displayed pie. It reinforces, but does not independently establish, that these are all relevant real-world categories."
+            }
+          },
+          {
+            "target_id": "refine_2",
+            "O": {
+              "status": "undetermined",
+              "evidence": [],
+              "reason": "This refinement adds no chart observations, so it supplies no new literal visual fact to assess."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The added public instruction explicitly connects identifying the largest source category with routing that source to priority monitoring, while the option label identifies the Nuclear-specific route."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the global energy mix dashboard, identify the largest global energy consumption source category, then route that source record to priority source monitoring for this reporting cycle."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route Nuclear to priority source monitoring"
+                }
+              ],
+              "reason": "The added task evidence warrants strengthening the route portion of the target chain, conditional on Nuclear having been validly identified as the largest category. It does not itself establish that chart identification."
+            }
+          }
+        ],
+        "summary": "The base chain's literal chart transcriptions, conditional percentage comparison, and Nuclear route linkage are supported by the supplied chart and public task. Refine_1 supports displayed-pie completeness but cannot validate the chart as a complete or accurate real-world energy taxonomy. Refine_2 supplies the public routing instruction but adds no visual evidence and does not independently establish the largest category. The conclusion remains conditional on the printed pie labels and percentages being valid, comparable global-consumption shares."
+      }
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/env003_clean140_online_completion/browser/observed_chart.png",
+      "sha256": "38a59c0fc7af8eadabf841caf07291a3397938fea16177b336ea589ca4540a0b"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/env003_clean140_online_completion/browser/page_005.png",
+      "sha256": "34f664dfdf8053ebbaa9a8a5f0927bcdbed1f43487b783bf64e9c4e8e5d78857"
+    }
+  ]
+}

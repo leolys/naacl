@@ -1,0 +1,95 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a bar chart displays product names on the x-axis and percentage values on the y-axis, and the task requires selecting the product with the highest market share, then the product corresponding to the tallest bar (or the highest printed percentage) is the correct selection.",
+      "component": "encoding/task relation",
+      "conditions": "The chart must be a bar chart of market share by product, and the task must explicitly ask for the highest market share."
+    },
+    {
+      "id": "r2",
+      "text": "If a policy table specifies a decision metric (e.g., market_share) and a business rule (e.g., select highest), the chart's data for that metric must be used to determine the action, overriding any other potential metrics.",
+      "component": "policy/chart relation",
+      "conditions": "A policy table is present and explicitly names the decision metric and rule."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "Labels 'Chrome', 'Safari', 'Edge', 'Firefox', 'Others' are visible."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "Scale from 0 to 100 is visible."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar for Edge",
+          "content": "A green bar extends to the 87 mark, with '87%' printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar for Firefox",
+          "content": "A blue bar extends to the 23 mark, with '23%' printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar for Chrome",
+          "content": "An orange bar extends to the 5 mark, with '5%' printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar for Safari",
+          "content": "A dark blue bar extends to the 1 mark, with '1%' printed above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bar for Others",
+          "content": "A yellow bar extends to the 3 mark, with '3%' printed above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "Edge has the highest market share at 87%, which is greater than Firefox (23%), Chrome (5%), Others (3%), and Safari (1%). Therefore, Edge should be assigned to the priority queue."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "bar for Edge",
+          "content": "The bar for Edge is the tallest, reaching 87%."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "market_share"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "The policy table explicitly designates 'market_share' as the decision metric and requires selecting the highest. The chart shows Edge has the highest market share (87%), supporting the selection of Edge."
+    }
+  ]
+}

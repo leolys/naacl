@@ -1,0 +1,130 @@
+{
+  "task_alias": "task_002",
+  "page_title": "Browser Usage Leader Compatibility Testing Intake",
+  "user_goal": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue.",
+  "chart_reference": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact.",
+  "primary_field_label": "Priority compatibility-testing browser",
+  "option_labels": [
+    "Assign Edge to the priority compatibility-testing queue",
+    "Assign Firefox to the priority compatibility-testing queue",
+    "Assign Chrome to the priority compatibility-testing queue"
+  ],
+  "companion_fields": [
+    {
+      "field": "template_context_compatibility_scope",
+      "label": "Compatibility scope",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Browser product support",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "template_context_queue_rule",
+      "label": "Queue rule",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Prioritize highest current usage share",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "template_context_testing_program",
+      "label": "Testing program",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "High-impact compatibility regression testing",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "note",
+      "label": "Operations note",
+      "type": "textarea",
+      "required": false,
+      "readonly": false,
+      "value": "",
+      "placeholder": "Optional note for the operations record"
+    }
+  ],
+  "completion_label": "Submit Form",
+  "policy_tables": [
+    {
+      "title": "Compatibility queue rule",
+      "headers": [
+        "Rule item",
+        "Business rule"
+      ],
+      "rows": [
+        [
+          "Compatibility queue rule",
+          "Select the browser with the highest current market_share"
+        ],
+        [
+          "Decision metric",
+          "market_share"
+        ],
+        [
+          "Business reason",
+          "Highest-usage browser has the largest user-impact surface"
+        ]
+      ]
+    }
+  ],
+  "page_instructions": [
+    {
+      "page": "home",
+      "text": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+    },
+    {
+      "page": "home",
+      "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+    },
+    {
+      "page": "home",
+      "text": "Use the dashboard view before submitting the workflow form."
+    },
+    {
+      "page": "dashboard",
+      "text": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+    },
+    {
+      "page": "dashboard",
+      "text": "Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue."
+    },
+    {
+      "page": "form",
+      "text": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+    }
+  ]
+}

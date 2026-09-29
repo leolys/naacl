@@ -1,0 +1,112 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a bar chart's printed percentage labels are treated as the authoritative values for each product's market share, and the task's goal of selecting a primary compatibility target is interpreted as choosing the product with the largest market share, then the product with the highest printed percentage is the supported option.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes printed labels are correct and that 'primary compatibility target' maps to maximum market share."
+    },
+    {
+      "id": "r2",
+      "text": "If the visual heights of the bars are treated as the authoritative representation of market share, ignoring the printed percentage labels, and the task's goal is interpreted as choosing the product with the largest market share, then the product with the tallest bar is the supported option.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes bar geometry is correct and that 'primary compatibility target' maps to maximum market share."
+    },
+    {
+      "id": "r3",
+      "text": "If the task's goal of selecting a primary compatibility target is not explicitly defined by a specific metric (e.g., market share, growth rate, or strategic importance) in the public instructions, then the chart alone is insufficient to determine a single correct option, making the choice underdetermined.",
+      "component": "task relation",
+      "conditions": "Assumes no hidden policy or external context defines the selection criteria beyond the visible text."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Top of the first bar",
+          "content": "The text '73%' is printed above the purple bar labeled 'Chrome'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Top of the second bar",
+          "content": "The text '12%' is printed above the red bar labeled 'Safari'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Top of the third bar",
+          "content": "The text '2%' is printed above the green bar labeled 'Edge'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Top of the fourth bar",
+          "content": "The text '6%' is printed above the blue bar labeled 'Firefox'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Top of the fifth bar",
+          "content": "The text '7%' is printed above the orange bar labeled 'Others'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Set Chrome as the primary compatibility target",
+      "claim": "Based on the printed labels, Chrome has the highest share (73%), supporting the selection of Chrome as the primary target under the assumption that market share dictates the choice."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Second bar from the left",
+          "content": "The red bar labeled 'Safari' is visibly taller than the purple bar labeled 'Chrome' to its left."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Second bar from the left",
+          "content": "The top of the red 'Safari' bar aligns with the y-axis tick for 70, while the top of the purple 'Chrome' bar aligns slightly below the 70 tick."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If bar height is the true indicator of share, Safari appears to have the largest share, which conflicts with the printed label for Chrome and challenges the support for the Chrome option."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Chart title",
+          "content": "The title 'Browser Usage Share by Product' is printed at the top left."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the browser market share dashboard, then select the browser product that should be set as the primary compatibility target."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The task asks to select a 'primary compatibility target' but does not explicitly state that this must be the product with the highest market share, leaving the selection criteria open to interpretation."
+    }
+  ]
+}

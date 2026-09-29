@@ -1,0 +1,292 @@
+{
+  "case": {
+    "task_id": "b001",
+    "arm": "clean140",
+    "domain": "business47",
+    "alias": "task_141"
+  },
+  "system": "ordinary",
+  "status": "submitted",
+  "actor_calls": 7,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "brief_basis": "The task requires reviewing the Europe smartphone market-share dashboard before allocating the budget. The home page only offers the 'Open Dashboard' link to access the required dashboard view. No selection can be made yet because the dashboard data is not visible.",
+        "chart_dependent": false,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "brief_basis": "Dashboard reviewed: chart_1 shows Apple (45%) is the highest current market share in Europe, exceeding Xiaomi (30%), Samsung (15%), Others (10%). The task requires continuing to the workflow form after review, so open the form to allocate the budget to Apple.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Apple for the premium EU retail promotion budget"
+        },
+        "brief_basis": "Chart_1 shows Apple 45%, Xiaomi 30%, Samsung 15%, Others 10%. Apple is the highest current market share in Europe, matching the promotion budget rule. No option is currently selected, so select Apple first.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Europe",
+          "field": "template_context_market_region"
+        },
+        "brief_basis": "Chart shows Apple 45%, Xiaomi 30%, Samsung 15%, Others 10%. Apple is the highest, so the current selection of Apple is correct. The required companion fields are not yet filled. Market region is required and should be Europe per the review scope. I will fill the required selects before submitting.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Allocate to current market-share leader",
+          "field": "template_context_budget_rule"
+        },
+        "brief_basis": "Chart shows Apple 45% is highest, so Apple selection is correct. Market region is set. Budget rule is required and still 'Select value', so select it before submitting.",
+        "chart_dependent": false,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "option": "Premium retail co-op promotion",
+          "field": "template_context_campaign_program"
+        },
+        "brief_basis": "Chart shows Apple 45% is the highest market share, so Apple selection is correct. Market region and budget rule are set. Campaign program is required but still 'Select value'; must select 'Premium retail co-op promotion' before submitting.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "rule_version": null
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "brief_basis": "Chart shows Apple 45%, Xiaomi 30%, Samsung 15%, Others 10%. Apple is the highest current market share in Europe. The form already has Apple selected, all required fields (Market region: Europe, Budget rule: Allocate to current market-share leader, Campaign program: Premium retail co-op promotion) are filled. Submitting the form.",
+        "chart_dependent": true,
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "Select Apple for the premium EU retail promotion budget",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Select Apple for the premium EU retail promotion budget"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "option": "Europe",
+        "field": "template_context_market_region"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "option": "Allocate to current market-share leader",
+        "field": "template_context_budget_rule"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "option": "Premium retail co-op promotion",
+        "field": "template_context_campaign_program"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Apple for the premium EU retail promotion budget"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

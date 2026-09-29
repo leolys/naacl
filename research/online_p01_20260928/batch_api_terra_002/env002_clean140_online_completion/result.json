@@ -1,0 +1,424 @@
+{
+  "case": {
+    "task_id": "env002",
+    "arm": "clean140",
+    "domain": "environment35",
+    "alias": "task_228"
+  },
+  "system": "online_completion",
+  "status": "unresolved_public_evidence",
+  "actor_calls": 4,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "plot at the 2005 x-axis label and y=24 horizontal tick",
+                  "content": "The leftmost blue circular marker is aligned with the printed x-axis label \"2005\" and lies on the horizontal gridline labeled \"24\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "plot at the 2015 x-axis label and y=10 horizontal tick",
+                  "content": "The rightmost blue circular marker is aligned with the printed x-axis label \"2015\" and lies on the horizontal gridline labeled \"10\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue line across the plot",
+                  "content": "Blue line segments connect the circular markers, and each displayed marker to the right is lower on the page than the preceding displayed marker."
+                }
+              ],
+              "reason": "The stated endpoint locations and screen-space downward sequence are visibly present."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "top-center chart heading and axes",
+                  "content": "The heading reads \"Global Temperature Change\"; the horizontal axis is labeled \"year\"; y-axis tick labels run upward from \"10\" to \"24\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                }
+              ],
+              "reason": "r1 expressly makes the temperature-series binding, y-axis encoding, and substantial-trend threshold conditional. The chart and task visibly motivate those conditions, although the chart does not identify temperature units and the task does not supply the threshold."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "2005 and 2015 endpoint markers and labeled y-axis gridlines",
+                  "content": "The marker at \"2005\" is on the gridline labeled \"24\", while the marker at \"2015\" is on the gridline labeled \"10\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Escalate the 2005-2015 temperature decline for follow-up"
+                }
+              ],
+              "reason": "Given r1's stated encoding and workflow conditions, the labeled endpoint difference supports an approximately 14-unit decline and only conditional support for the escalation option; it does not establish that the unstated substantial-trend standard is met."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "y-axis and endpoint x-axis labels",
+                  "content": "The y-axis visibly has printed tick labels from \"10\" through \"24\", and plotted endpoint markers occur above the printed x-axis labels \"2005\" and \"2015\"."
+                }
+              ],
+              "reason": "The cited labels and endpoint-marker placements are visible, though their measurement meaning requires an encoding rule."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Magnitude of change across the review period"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/3/value",
+                  "content": "Substantial trend follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Escalate the 2005-2015 temperature decline for follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/1",
+                  "content": "Keep the 2005-2015 temperature decline on routine monitoring"
+                }
+              ],
+              "reason": "The supplied task names magnitude and the substantial-trend workflow but contains no provided numeric cutoff, comparison standard, or mapping from a measured magnitude to escalation versus routine monitoring."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "2005 and 2015 endpoint markers and y-axis gridlines",
+                  "content": "The 2005 endpoint marker lies on the gridline labeled \"24\" and the 2015 endpoint marker lies on the gridline labeled \"10\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Magnitude of change across the review period"
+                }
+              ],
+              "reason": "The endpoint geometry visibly motivates a downward endpoint comparison, while r2's verified absence of a supplied decision threshold leaves whether that comparison warrants escalation unresolved. The word \"large\" remains interpretive rather than a raw visual fact."
+            }
+          },
+          {
+            "target_id": "supp_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis labels between 2010 and 2012",
+                  "content": "The x-axis visibly labels adjacent displayed positions \"2010\" and \"2012\"; no printed \"2011\" label appears between them."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "blue series between the 2010 and 2012 positions",
+                  "content": "A blue line segment connects the circular marker above \"2010\" directly to the circular marker above \"2012\"."
+                }
+              ],
+              "reason": "The chart visibly omits an explicitly labeled 2011 position and shows a direct segment between the displayed 2010 and 2012 markers."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis labels spanning the displayed record",
+                  "content": "The displayed x-axis labels are \"2005\", \"2006\", \"2007\", \"2008\", \"2009\", \"2010\", \"2012\", \"2013\", \"2014\", and \"2015\"."
+                }
+              ],
+              "reason": "supp_r1 is explicitly conditional on construing “yearly temperature readings” as requiring an annual observation for every year. Under that condition, no visibly identified 2011 reading is available to establish full annual coverage. The task itself does not expressly impose that completeness requirement."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis labels and endpoint markers",
+                  "content": "No \"2011\" label or corresponding explicitly identified marker is visible, while the endpoint markers remain visibly aligned with \"2005\" and \"2015\"."
+                }
+              ],
+              "reason": "The missing explicit 2011 identification supports the limited conclusion that complete annual coverage is unverified, not that no 2011 observation exists off-chart or that the visible endpoint comparison is invalid."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "top-center chart heading",
+                  "content": "The chart title is visibly printed as \"Global Temperature Change\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "left vertical axis",
+                  "content": "The y-axis label is visibly printed as \"value\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                }
+              ],
+              "reason": "The added chart inscriptions and the cited task instruction are accurately present."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "top-center chart heading and left vertical axis",
+                  "content": "The chart is titled \"Global Temperature Change\" and its y-axis is labeled \"value\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                }
+              ],
+              "reason": "The condition note is appropriately limited: the title visibly provides temperature-related context, while the generic axis inscription does not state units or independently prove that the plotted series is the task's specified record."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "top-center chart heading",
+                  "content": "The visible title reads \"Global Temperature Change\"."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                }
+              ],
+              "reason": "The refinement adds visible contextual support to r1's already conditional chart-to-task series binding. It does not establish the binding, the units, or the substantial-trend threshold, so base_c1 remains conditional."
+            }
+          }
+        ],
+        "summary": "All supplied chart observations are visually supported, including the 24-to-10 endpoint placement, the downward screen-space sequence, and the absence of an explicitly labeled 2011 point. The chart title and task language provide limited contextual support for treating the series as temperature-related, but the generic y-axis label does not supply units or independently validate the dataset binding. The public task identifies magnitude as the routing criterion and a substantial-trend workflow, yet supplies no threshold or decision mapping; escalation therefore remains conditional and no route is decisively established."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The home page provides the visible Open Dashboard link; the workflow form and monitoring evidence are not yet available.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard review is complete; opening the workflow form is required to view the available routing choices and required fields.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Escalate the 2005-2015 temperature decline for follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The chart shows a sustained decline from about 24 in 2005 to 10 in 2015 (roughly 14 units) across the review period; under the stated substantial-trend follow-up workflow and magnitude criterion, this warrants escalation.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "unresolved"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The displayed series falls from 24 in 2005 to 10 in 2015, but the public task states only that routing depends on magnitude under a substantial-trend workflow and provides no cutoff or mapping that determines escalation versus routine monitoring.",
+        "used_rules": [
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "This is the supplied public task and chart; the task identifies magnitude as the criterion but gives no quantitative substantial-trend standard, and no threshold is inferred from option wording."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c2"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": 1
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [
+      {
+        "label": "Escalate the 2005-2015 temperature decline for follow-up",
+        "selected": false
+      },
+      {
+        "label": "Keep the 2005-2015 temperature decline on routine monitoring",
+        "selected": false
+      },
+      {
+        "label": "Archive the temperature trend record without targeted follow-up",
+        "selected": false
+      }
+    ],
+    "options": [
+      "Escalate the 2005-2015 temperature decline for follow-up",
+      "Keep the 2005-2015 temperature decline on routine monitoring",
+      "Archive the temperature trend record without targeted follow-up"
+    ],
+    "fields": [
+      {
+        "field": "note",
+        "type": "textarea",
+        "label": "Routing note",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "selected_text": null,
+        "valid": true,
+        "options": null
+      }
+    ],
+    "submit_visible": true,
+    "page": "form",
+    "visible_text": "Dashboard Reference Use the charted yearly temperature readings as the basis for this routing decision. Temperature Trend Follow-Up Routing Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow. Program area Temperature monitoring Review scope Multi-year environmental trend Record workflow Substantial trend follow-up Routing criterion Magnitude of change across the review period Temperature trend routing decision Select a route Escalate the 2005-2015 temperature decline for follow-up Keep the 2005-2015 temperature decline on routine monitoring Archive the temperature trend record without targeted follow-up Routing note Submit Form Back to Dashboard",
+    "links": [
+      "Back to Dashboard"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

@@ -1,0 +1,604 @@
+{
+  "case": {
+    "task_id": "b006",
+    "arm": "official140",
+    "domain": "business47",
+    "alias": "task_006"
+  },
+  "system": "online_completion",
+  "status": "submitted",
+  "actor_calls": 8,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Select Design"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "all six category marks across the plot",
+                  "content": "Visible x-axis category inscriptions are Quality, Price, Design, Support, Delivery, and Other; the adjacent inscriptions above their respective blue dots are 24%, 10%, 52%, 45%, 39%, and 32%."
+                }
+              ],
+              "reason": "The chart visibly shows the cited category labels, blue-dot attachments, and percentage inscriptions. The observations do not treat the percentages as validated metric values."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Select Design"
+                }
+              ],
+              "reason": "The public task expressly identifies dashboard labeled rating-share values as the evidence source and requires the highest current labeled rating share; Select Design is an available option. This supports r1's conditional label-based decision bridge."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "percentage inscriptions above the six category dots",
+                  "content": "The visible percentage inscriptions are 24% for Quality, 10% for Price, 52% for Design, 45% for Support, 39% for Delivery, and 32% for Other."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                }
+              ],
+              "reason": "Among the visible printed percentage inscriptions, 52% beside Design exceeds each of the others. Under the task's explicitly label-based rule, this supports the conditional Select Design claim, notwithstanding the separately visible y-position mismatch."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "chart title and left vertical axis",
+                  "content": "The title is visibly inscribed \"Product Rating Share by Category\" and the vertical axis is visibly inscribed \"Value\" with labeled ticks from 0 to 65."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "Quality and Design category positions",
+                  "content": "The blue dot above Quality is near the 60 tick and is higher on the page than the blue dot above Design, which is near the 42 level."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "inscriptions above Quality and Design dots",
+                  "content": "The visible inscriptions above the Quality and Design dots are \"24%\" and \"52%\", respectively."
+                }
+              ],
+              "reason": "The cited title, axis text and ticks, dot geometry, and printed percentage inscriptions are directly visible. The geometric ordering is a screen-space observation, not a decoded metric ranking."
+            },
+            "B": {
+              "status": "undetermined",
+              "evidence": [],
+              "reason": "The chart labels the vertical axis \"Value,\" but neither the visible chart nor the public task establishes that dot height encodes the same current labeled rating-share metric as the printed percentages. The public task instead directs use of labeled rating-share values."
+            },
+            "implication": {
+              "status": "refuted",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/policy_tables/0/rows/0/1",
+                  "content": "Select the category with the highest current labeled rating share"
+                }
+              ],
+              "reason": "The visible dot-height and printed-label orderings differ, but the claimed unresolved authority of geometry versus labels is not warranted for this task: the public instructions specifically designate labeled rating-share values and require the highest current labeled rating share. This does not establish what the unlabeled y-axis metric represents or infer an alternative action."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/options/1/label",
+                  "content": "Open product feedback follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Prioritize highest current rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/options/1/label",
+                  "content": "Product operations feedback follow-up queue"
+                }
+              ],
+              "reason": "The added public-task citations accurately identify the three companion fields as required and identify their available non-placeholder option labels. There are no added chart observations to assess."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/options/1/label",
+                  "content": "Open product feedback follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/options/1/label",
+                  "content": "Prioritize highest current rating share"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/options/1/label",
+                  "content": "Product operations feedback follow-up queue"
+                }
+              ],
+              "reason": "The condition note correctly states the visible required companion-field values for a completed form. It is an additional completion condition and does not alter r1's label-to-category decision rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/0/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/1/required",
+                  "content": true
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/required",
+                  "content": true
+                }
+              ],
+              "reason": "Conditioned on using the target chain's category selection to complete the form, the refinement appropriately adds required workflow-field constraints. It does not itself strengthen or independently establish the Design category conclusion."
+            }
+          }
+        ],
+        "summary": "The label-based chain is supported because the task explicitly directs use of labeled rating-share values and the visible Design label is 52%, larger than the other printed category percentages. The chart also visibly has a conflicting dot-height ordering, but the available evidence does not establish that the y-axis geometry encodes the task metric; the task's label-based instruction resolves the task-specific authority without validating or explaining the y-axis. The refinement accurately adds required companion-field conditions while remaining separate from the category-ranking inference."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 4,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 5,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 6,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    },
+    {
+      "step": 7,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task requires reviewing the Product Rating Share dashboard before opening the follow-up workflow.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": true,
+        "brief_basis": "chart_1 shows labeled rating shares: Quality 24%, Price 10%, Design 52%, Support 45%, Delivery 39%, Other 32%; Design is highest at 52%. The visible product-operations follow-up workflow is accessed through the “Open Form” link.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Design"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Chart_1 shows labeled rating shares: Design 52%, Support 45%, Delivery 39%, Other 32%, Quality 24%, Price 10%. Design is highest; the displayed follow-up rule applies to this unchanged Product Rating Share task and requires the highest current labeled rating share.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Select Design"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard’s printed labeled rating-share values show Design at 52%, exceeding Support 45%, Delivery 39%, Other 32%, Quality 24%, and Price 10%. Scope check: r1 is active and applicable because this unchanged task explicitly designates the labeled rating-share values as the decision metric and requires the highest such value; the y-axis geometry is not established as that metric.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "Printed percentages are visibly attached to their category marks, and the current form’s public rule requires selecting the category with the highest current labeled rating share."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 4,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_follow_up_operation",
+          "option": "Open product feedback follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The unchanged visible dashboard labels Design at 52%, exceeding Quality 24%, Price 10%, Support 45%, Delivery 39%, and Other 32%. The task explicitly designates labeled rating-share values and requires the highest; Design is already selected. This required companion field remains incomplete.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "Scope check: this is the same task and visible chart; printed percentages are attached to their categories, and the task explicitly makes labeled rating-share values authoritative for this form."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Design",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 5,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_queue_rule",
+          "option": "Prioritize highest current rating share"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Design remains selected: the active label-based rule applies to this unchanged task because the task explicitly requires the highest current labeled rating share; Design's printed 52% exceeds all other printed shares. Follow-up operation is complete, while Queue rule is required and still shows Select value.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The printed category percentages are the task-designated labeled rating-share evidence, are visibly attached to their categories, and the current form is governed by the stated highest-labeled-share rule."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Design",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 6,
+      "proposal": {
+        "action": {
+          "kind": "select_field",
+          "field": "template_context_work_queue",
+          "option": "Product operations feedback follow-up queue"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Design remains selected; the active label-based rule applies because this unchanged task explicitly requires the highest current labeled rating share. Chart labels show Design 52%, exceeding Quality 24%, Price 10%, Support 45%, Delivery 39%, and Other 32%. The required operation and queue-rule fields are complete; Work queue is the only incomplete required field.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The chart's adjacent printed percentages are the task-designated labeled rating-share evidence, attached to their categories, and this form is governed by the stated highest-labeled-share rule."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Design",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "rule_version": 1
+    },
+    {
+      "step": 7,
+      "proposal": {
+        "action": {
+          "kind": "submit"
+        },
+        "chart_dependent": true,
+        "brief_basis": "Current form already selects Select Design and all required companion fields are complete. The dashboard’s labeled rating shares are 24%, 10%, 52%, 45%, 39%, and 32%; Design’s 52% is uniquely highest. Scope check: this unchanged task explicitly designates labeled rating-share values as authoritative and requires the highest labeled share, so r1 conditions match; the y-axis geometry is not established as this task metric.",
+        "used_rules": [
+          {
+            "rule_id": "r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The public task directs use of dashboard labeled rating-share values and selection of the highest current labeled rating share; labels bind 52% to Design, exceeding every other displayed label."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "Select Design",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "rule_version": 1
+    }
+  ],
+  "submitted": true,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "post_verification_choices": [
+    {
+      "step": 3,
+      "recommended_option": "Select Design",
+      "execution_ok": true,
+      "observed_selection_after": "Select Design",
+      "rule_version": 1
+    }
+  ],
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [],
+    "options": [],
+    "fields": [],
+    "submit_visible": false,
+    "page": "confirmation",
+    "visible_text": "Workflow submission recorded. Submission Recorded The business operations workflow has been saved. Return to Task List Open Task Again",
+    "links": [
+      "Open Task Again"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 3,
+      "action": {
+        "kind": "select",
+        "option": "Select Design"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 4,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_follow_up_operation",
+        "option": "Open product feedback follow-up"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 5,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_queue_rule",
+        "option": "Prioritize highest current rating share"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 6,
+      "action": {
+        "kind": "select_field",
+        "field": "template_context_work_queue",
+        "option": "Product operations feedback follow-up queue"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": "Select Design"
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 7,
+      "action": {
+        "kind": "submit"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": true,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

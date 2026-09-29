@@ -1,0 +1,28 @@
+{
+  "action": {
+    "kind": "unresolved"
+  },
+  "chart_dependent": true,
+  "brief_basis": "The Europe market-share pie chart has conflicting encodings: Apple is labeled 45% while its slice is visibly smaller than the Others slice labeled 10%. The task does not establish whether printed labels or pie-slice areas are authoritative, so the current leader cannot be confirmed.",
+  "used_rules": [
+    {
+      "rule_id": "r2",
+      "version": 2,
+      "conditions_match": true,
+      "basis": "This is a pie chart titled \"Smartphone Market Share in Europe,\" so slice areas plausibly encode the same market-share metric as the labels; the public task gives no conflict-resolution rule."
+    }
+  ],
+  "supporting_chain_ids": [
+    "base_c2"
+  ],
+  "challenge": {
+    "evidence": [
+      {
+        "ref": "chart_1",
+        "location": "Apple and Others pie slices",
+        "content": "The Apple slice is labeled \"Apple (45%)\" but is visibly smaller than the Others slice labeled \"Others (10%)\"."
+      }
+    ],
+    "reason": "This conflicts with the percentage ordering and challenges confirmation of Apple as the market-share leader without an authority rule for labels versus slice geometry."
+  }
+}

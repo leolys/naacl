@@ -1,0 +1,117 @@
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 78, in one_run
+    with browser_factory(case, output / 'browser', budget, config['browser_executable']) as browser:
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/original_env.py", line 64, in __enter__
+    self.page = self.browser.new_page(viewport={'width': 1440, 'height': 1000}, device_scale_factor=1)
+  File "/root/.local/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 16474, in new_page
+    self._sync(
+  File "/root/.local/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/root/.local/lib/python3.10/site-packages/playwright/_impl/_browser.py", line 234, in new_page
+    return await self._connection.wrap_api_call(inner, title="Create page")
+  File "/root/.local/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Browser.new_page: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-tq1S5H --remote-debugging-pipe --no-startup-window
+<launched> pid=39226
+[pid=39226][err] [39226:39241:0929/015128.760312:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=39226][err] [39226:39241:0929/015128.761238:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39241:0929/015128.766707:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=39226][err] Fontconfig error: Cannot load default config file: File not found
+[pid=39226][err] [39226:39241:0929/015128.767435:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=39226][err] [39226:39241:0929/015128.767648:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39241:0929/015128.800095:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39226:0929/015128.821512:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.821620:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39226:0929/015128.821713:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.821764:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39226:0929/015128.830931:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.831033:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39241:0929/015128.832720:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=39226][err] [39226:39226:0929/015128.832762:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.832779:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=39226][err] [39226:39226:0929/015128.832822:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.832921:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39226:0929/015128.834199:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39226:0929/015128.834575:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type: 
+[pid=39226][err] [39226:39226:0929/015128.834610:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.834671:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39226:0929/015128.835820:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] [39226:39241:0929/015128.835880:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=39226][err] [39226:39226:0929/015128.837024:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[pid=39226][err] 
+[pid=39226][err] (process:39226): GLib-GIO-CRITICAL **: 01:51:28.860: g_settings_schema_source_lookup: assertion 'source != NULL' failed
+[pid=39226][err] [39226:39226:0929/015128.861172:ERROR:ui/gfx/platform_font_skia.cc:258] Could not find any font: , sans. Falling back to the default
+[pid=39226][err] [39226:39226:0929/015128.861832:ERROR:ui/gfx/platform_font_skia.cc:258] Could not find any font: , sans. Falling back to the default
+[pid=39226][err] [39226:39226:0929/015128.873491:ERROR:ui/gfx/platform_font_skia.cc:258] Could not find any font: , sans. Falling back to the default
+[pid=39226][err] [39226:39226:0929/015128.873600:ERROR:ui/gfx/platform_font_skia.cc:258] Could not find any font: , sans. Falling back to the default
+[pid=39226][err] Received signal 11 SEGV_MAPERR 4848042dd946
+[pid=39226][err] #0 0x55bf9e5e5bc3 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6a9abc2)
+[pid=39226][err] #1 0x55bfa32ab494 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0xb760493)
+[pid=39226][err] #2 0x76f092907520 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4251f)
+[pid=39226][err] #3 0x55bf9bf2639f (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x43db39e)
+[pid=39226][err] #4 0x55bf9bf1efc9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x43d3fc8)
+[pid=39226][err] #5 0x55bf9bf2b169 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x43e0168)
+[pid=39226][err] #6 0x55bf9cc25fb1 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x50dafb0)
+[pid=39226][err] #7 0x55bf9cc25dd6 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x50dadd5)
+[pid=39226][err] #8 0x55bf9bb5e03d (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x401303c)
+[pid=39226][err] #9 0x55bf9bb5ded3 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4012ed2)
+[pid=39226][err] #10 0x55bf9bb5fce9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4014ce8)
+[pid=39226][err] #11 0x55bf9c5e0a58 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4a95a57)
+[pid=39226][err] #12 0x55bf9c77a23b (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4c2f23a)
+[pid=39226][err] #13 0x55bf9d96f5fe (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5e245fd)
+[pid=39226][err] #14 0x55bf9d96f556 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5e24555)
+[pid=39226][err] #15 0x55bf9d9707f9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5e257f8)
+[pid=39226][err] #16 0x55bf9d970591 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5e25590)
+[pid=39226][err] #17 0x55bf9dbb7be9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x606cbe8)
+[pid=39226][err] #18 0x55bf9dbb81bb (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x606d1ba)
+[pid=39226][err] #19 0x55bf9dbb80ce (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x606d0cd)
+[pid=39226][err] #20 0x55bf9dbbb3b8 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x60703b7)
+[pid=39226][err] #21 0x55bf9bfbd1e2 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x44721e1)
+[pid=39226][err] #22 0x55bf9d433ec6 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x58e8ec5)
+[pid=39226][err] #23 0x55bf9e1bbd83 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6670d82)
+[pid=39226][err] #24 0x55bf9ddb7960 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x626c95f)
+[pid=39226][err] #25 0x55bf9c730a74 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4be5a73)
+[pid=39226][err] #26 0x55bf9c7300b9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4be50b8)
+[pid=39226][err] #27 0x55bf9e79c313 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6c51312)
+[pid=39226][err] #28 0x55bf9c730a18 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4be5a17)
+[pid=39226][err] #29 0x55bf9c7300b9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4be50b8)
+[pid=39226][err] #30 0x55bf9dfd95b0 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x648e5af)
+[pid=39226][err] #31 0x55bf9dfd8095 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x648d094)
+[pid=39226][err] #32 0x55bf9dfd7cc2 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x648ccc1)
+[pid=39226][err] #33 0x55bf9e5e912e (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6a9e12d)
+[pid=39226][err] #34 0x55bf9e5e95fa (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6a9e5f9)
+[pid=39226][err] #35 0x55bf9e5e956d (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6a9e56c)
+[pid=39226][err] #36 0x55bf9e47c578 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6931577)
+[pid=39226][err] #37 0x55bf9e47b294 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x6930293)
+[pid=39226][err] #38 0x55bfa7ca7912 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x1015c911)
+[pid=39226][err] #39 0x55bfa7ca9f0f (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x1015ef0e)
+[pid=39226][err] #40 0x55bfa7ca9c9c (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x1015ec9b)
+[pid=39226][err] #41 0x55bf9caaa955 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4f5f954)
+[pid=39226][err] #42 0x55bf9caaa305 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4f5f304)
+[pid=39226][err] #43 0x55bf9caae77d (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4f6377c)
+[pid=39226][err] #44 0x55bfa0c903a5 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x91453a4)
+[pid=39226][err] #45 0x55bf9b0dc16a (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x3591169)
+[pid=39226][err] #46 0x55bf9b8c6ee1 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x3d7bee0)
+[pid=39226][err] #47 0x76f0936cad8b (/data/lab/chromium-libs/extract/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.7200.4+0x55d8a)
+[pid=39226][err] #48 0x000000000001 <unknown>
+[pid=39226][err] #49 0x55bf9b90124d (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x3db624c)
+[pid=39226][err] #50 0x55bf9b900936 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x3db5935)
+[pid=39226][err] #51 0x55bf9de43d22 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x62f8d21)
+[pid=39226][err] #52 0x55bf9de440c3 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x62f90c2)
+[pid=39226][err] #53 0x55bf9db19e20 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5fcee1f)
+[pid=39226][err] #54 0x55bf9c95ebf4 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x4e13bf3)
+[pid=39226][err] #55 0x55bf9db1a106 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5fcf105)
+[pid=39226][err] #56 0x55bf9db197a9 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5fce7a8)
+[pid=39226][err] #57 0x55bf9db18b00 (/root/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome+0x5fcdaff)
+[pid=39226][err] #58 0x76f0928eed90 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29d8f)
+[pid=39226][err]   r8: 00007ffe58ba3ac8  r9: fffffffc00000000 r10: 0000000000000005 r11: 0000000000000006
+[pid=39226][err]  r12: 0000000000000000 r13: 000024240239d2e0 r14: 00002424022d4700 r15: 00007ffe58ba3ac8
+[pid=39226][err]   di: 00002424022d4700  si: 00004848042dd946  bp: 00007ffe58ba3ab0  bx: 00007ffe58ba3a68
+[pid=39226][err]   dx: 00007ffe58ba3ac8  ax: 00004848042dd946  cx: 00004848042dd947  sp: 00007ffe58ba3a50
+[pid=39226][err]   ip: 000055bf9bf26601 efl: 0000000000010246 cgf: 002b000000000033 erf: 0000000000000004
+[pid=39226][err]  trp: 000000000000000e msk: 0000000000000000 cr2: 00004848042dd946
+[pid=39226][err] [end of stack trace]
+[pid=39226][err] [39256:39288:0929/015129.072729:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -3

@@ -1,0 +1,91 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis is read as temperature in Celsius and the x-axis as year, then the period-wide change is the difference between the final and initial printed values; a large absolute difference supports substantial-change follow-up, while a small difference supports routine monitoring.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed point labels are the authoritative values and that the task's 'large enough' threshold is met by a 13.8°C drop."
+    },
+    {
+      "id": "r2",
+      "text": "If the task requires a specific numeric threshold to distinguish 'substantial' from 'ordinary' variation and no such threshold is provided in the public task or policy tables, then the chart alone cannot definitively select between the two routes.",
+      "component": "task-to-action relation",
+      "conditions": "Applies when no explicit policy threshold is visible in the task or chart."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis scale is compressed or the printed labels are inconsistent with the axis ticks, the visual trend may be misleading, and the printed labels should be treated as the primary evidence for the period-wide change.",
+      "component": "scale comparability",
+      "conditions": "Applies when there is a discrepancy between the visual geometry and the printed numeric labels."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left data point",
+          "content": "The first data point is labeled '$23.9°C' and is positioned above the y-axis tick '20'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom-right data point",
+          "content": "The final data point is labeled '$10.1°C' and is positioned slightly above the y-axis tick '10'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'Year' with ticks from 2005 to 2014."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "The printed labels show a drop from 23.9°C to 10.1°C, a change of 13.8°C. Under the assumption that this magnitude is 'large enough', this supports the substantial-change follow-up route."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Temperature (°C)' with ticks at 0, 5, 10, 15, 20."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables",
+          "content": []
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The public task does not specify a numeric threshold for 'large enough' versus 'ordinary'. Without this threshold, the chart's 13.8°C change cannot be definitively mapped to a specific route, leaving the choice underdetermined."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "data points",
+          "content": "The data points form a generally downward line from left to right, with the first two points at the same height and the rest stepping down."
+        }
+      ],
+      "task_evidence": [],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The visual trend is a steady decline, but the y-axis scale (0-20+) makes the 13.8°C drop appear as a moderate slope. If the 'substantial' threshold is relative to the axis range, the visual impact might be considered ordinary, challenging the support for the follow-up route."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the x-axis year ticks bind the left endpoint marker to 2005 and the right endpoint marker to 2015, and the adjacent temperature inscriptions are valid readings on the chart's Temperature (°C) axis, then subtracting the 2015 reading from the 2005 reading yields the magnitude and direction of the endpoint change. If the substantial-trend workflow classifies that computed decline as substantial, the record should be escalated for follow-up.",
+      "component": "chart encoding, endpoint calculation, and conditional routing relation",
+      "conditions": "The endpoint markers are the intended 2005 and 2015 readings; their adjacent inscriptions are valid; and the workflow treats the computed endpoint decline as substantial."
+    },
+    {
+      "id": "r2",
+      "text": "A charted endpoint decline alone does not establish that escalation is required when the public task identifies magnitude of change as the routing criterion but supplies no threshold or other rule defining which magnitude is substantial. Until that criterion is specified or otherwise verified, the escalation option is conditionally supported but not established.",
+      "component": "policy-threshold support gap",
+      "conditions": "Applies because the available public task contains no policy table or numeric substantial-trend threshold."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "leftmost plotted marker at the 2005 x-axis tick",
+          "content": "A black marker aligned with the x-axis inscription \"2005\" has the adjacent printed inscription \"$24.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "rightmost plotted marker at the 2015 x-axis tick",
+          "content": "A black marker aligned with the x-axis inscription \"2015\" has the adjacent printed inscription \"$10.0°C\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis title",
+          "content": "The vertical axis is inscribed \"Temperature (°C)\"."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Magnitude of change across the review period"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Escalate the 2005-2015 temperature decline for follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+      "claim": "Provided the endpoint inscriptions validly encode the intended readings and a 14.0°C decrease from 2005 to 2015 meets the workflow's unstated substantial-trend criterion, the chart conditionally supports escalating the decline for follow-up."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "endpoint markers spanning the 2005 and 2015 x-axis ticks",
+          "content": "The marker at the 2015 tick is lower on the page than the marker at the 2005 tick, and the two markers are connected by a blue line."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/3/value",
+          "content": "Substantial trend follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Magnitude of change across the review period"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The visible endpoint pattern and stated magnitude criterion motivate follow-up consideration, but the supplied public task does not define what magnitude qualifies as substantial; therefore the proposed escalation is not conclusively established from the chart and public task alone."
+    }
+  ]
+}

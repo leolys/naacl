@@ -1,0 +1,137 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a pie chart's printed percentage labels are treated as the market share values for each named brand, then the brand with the largest printed percentage is the current market leader, and the corresponding public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market share dashboard; the printed percentages are valid share values; the task's 'current market leader' means the largest market share."
+    },
+    {
+      "id": "r2",
+      "text": "If the pie chart's visible slice areas are used as the primary evidence for market share instead of the printed labels, then the brand whose slice occupies the largest visible area is the current market leader, and the corresponding public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market share dashboard; the visible slice areas are valid share indicators; the task's 'current market leader' means the largest market share."
+    },
+    {
+      "id": "r3",
+      "text": "If the task's 'current market leader' is interpreted as the brand that should be marked for follow-up under a specific program, and the chart only shows market share without a follow-up policy, then the chart alone is insufficient to determine the correct option, and the claim is underdetermined.",
+      "component": "task relation",
+      "conditions": "The chart is the Europe smartphone market share dashboard; the task requires a follow-up action; no policy table or additional rule links market share to follow-up eligibility."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The text 'Smartphone Market Share in Europe' is printed at the top left."
+        },
+        {
+          "ref": "chart_1",
+          "location": "yellow slice",
+          "content": "The text 'Samsung (55%)' is printed inside the large yellow slice on the right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice",
+          "content": "The text 'Xiaomi (20%)' is printed inside the red slice at the bottom left."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange slice",
+          "content": "The text 'Apple (15%)' is printed inside the orange slice at the top left."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light orange slice",
+          "content": "The text 'Others (10%)' is printed inside the light orange slice at the top."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "Under the assumption that printed percentages represent market share and the largest share defines the market leader, Samsung at 55% is the largest, supporting the selection of the Samsung option."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "yellow slice",
+          "content": "The yellow slice occupies the largest visible area of the pie chart, extending from the top center to the bottom center."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice",
+          "content": "The red slice occupies a smaller visible area than the yellow slice, located at the bottom left."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange slice",
+          "content": "The orange slice occupies a smaller visible area than the red slice, located at the top left."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light orange slice",
+          "content": "The light orange slice occupies the smallest visible area, located at the top."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "Under the assumption that visible slice area represents market share, the yellow slice (labeled Samsung) is the largest, supporting the selection of the Samsung option."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "entire chart",
+          "content": "The chart displays four slices with printed percentages: Samsung (55%), Xiaomi (20%), Apple (15%), and Others (10%)."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables",
+          "content": null
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "If 'market-leader follow-up' requires a specific policy or program rule not present in the chart or task, the chart alone does not determine which brand to select, leaving the action underdetermined."
+    }
+  ]
+}

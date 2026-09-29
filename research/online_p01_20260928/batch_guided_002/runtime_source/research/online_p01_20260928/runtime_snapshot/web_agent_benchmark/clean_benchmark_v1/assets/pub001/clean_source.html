@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Index of Hazard H in US States</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <style>
+        body { margin: 8px; background: #fff; color: #111; }
+        h1 { font-family: serif; font-size: 24px; margin: 12px 0 0 0; }
+        .state { stroke: #fff; stroke-width: 0.5px; }
+        .legend { font-size: 14px; }
+        .state-label { text-anchor: middle; font-size: 10px; fill: black; pointer-events: none; }
+        .clean-note { font: 13px Arial, sans-serif; fill: #4b5563; }
+    </style>
+</head>
+<body>
+    <h1>Risk Index of Hazard H in US States</h1>
+    <div id="map"></div>
+    <script>
+        const width = 1000, height = 750;
+        const data = [{"state": 1, "inverted_prevalence": 81, "abbr": "AL"}, {"state": 2, "inverted_prevalence": 72, "abbr": "AK"}, {"state": 4, "inverted_prevalence": 60, "abbr": "AZ"}, {"state": 5, "inverted_prevalence": 67, "abbr": "AR"}, {"state": 6, "inverted_prevalence": 34, "abbr": "CA"}, {"state": 8, "inverted_prevalence": 61, "abbr": "CO"}, {"state": 9, "inverted_prevalence": 38, "abbr": "CT"}, {"state": 10, "inverted_prevalence": 57, "abbr": "DE"}, {"state": 12, "inverted_prevalence": 25, "abbr": "FL"}, {"state": 13, "inverted_prevalence": 50, "abbr": "GA"}, {"state": 16, "inverted_prevalence": 91, "abbr": "ID"}, {"state": 17, "inverted_prevalence": 5, "abbr": "IL"}, {"state": 18, "inverted_prevalence": 76, "abbr": "IN"}, {"state": 19, "inverted_prevalence": 75, "abbr": "IA"}, {"state": 20, "inverted_prevalence": 46, "abbr": "KS"}, {"state": 21, "inverted_prevalence": 30, "abbr": "KY"}, {"state": 22, "inverted_prevalence": 29, "abbr": "LA"}, {"state": 23, "inverted_prevalence": 100, "abbr": "ME"}, {"state": 24, "inverted_prevalence": 74, "abbr": "MD"}, {"state": 25, "inverted_prevalence": 26, "abbr": "MA"}, {"state": 26, "inverted_prevalence": 27, "abbr": "MI"}, {"state": 27, "inverted_prevalence": 87, "abbr": "MN"}, {"state": 28, "inverted_prevalence": 27, "abbr": "MS"}, {"state": 29, "inverted_prevalence": 8, "abbr": "MO"}, {"state": 30, "inverted_prevalence": 58, "abbr": "MT"}, {"state": 31, "inverted_prevalence": 72, "abbr": "NE"}, {"state": 32, "inverted_prevalence": 20, "abbr": "NV"}, {"state": 33, "inverted_prevalence": 75, "abbr": "NH"}, {"state": 34, "inverted_prevalence": 25, "abbr": "NJ"}, {"state": 35, "inverted_prevalence": 65, "abbr": "NM"}, {"state": 36, "inverted_prevalence": 26, "abbr": "NY"}, {"state": 37, "inverted_prevalence": 47, "abbr": "NC"}, {"state": 38, "inverted_prevalence": 47, "abbr": "ND"}, {"state": 39, "inverted_prevalence": 78, "abbr": "OH"}, {"state": 40, "inverted_prevalence": 0, "abbr": "OK"}, {"state": 41, "inverted_prevalence": 61, "abbr": "OR"}, {"state": 42, "inverted_prevalence": 90, "abbr": "PA"}, {"state": 44, "inverted_prevalence": 81, "abbr": "RI"}, {"state": 45, "inverted_prevalence": 63, "abbr": "SC"}, {"state": 46, "inverted_prevalence": 48, "abbr": "SD"}, {"state": 47, "inverted_prevalence": 8, "abbr": "TN"}, {"state": 48, "inverted_prevalence": 8, "abbr": "TX"}, {"state": 49, "inverted_prevalence": 48, "abbr": "UT"}, {"state": 50, "inverted_prevalence": 56, "abbr": "VT"}, {"state": 51, "inverted_prevalence": 54, "abbr": "VA"}, {"state": 53, "inverted_prevalence": 11, "abbr": "WA"}, {"state": 54, "inverted_prevalence": 53, "abbr": "WV"}, {"state": 55, "inverted_prevalence": 94, "abbr": "WI"}, {"state": 56, "inverted_prevalence": 7, "abbr": "WY"}];
+        const idColumn = "state";
+        const labelColumn = "abbr";
+        const valueColumn = "inverted_prevalence";
+        const valueMin = 0.0;
+        const valueMax = 100.0;
+        const preserveOriginalUnmatchedFips = false;
+        const svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
+        const path = d3.geoPath();
+        const color = d3.scaleSequential(d3.interpolateYlOrRd).domain([valueMin, valueMax]);
+
+        d3.json("https://d3js.org/us-10m.v1.json").then(us => {
+            const valueById = new Map();
+            const labelById = new Map();
+            data.forEach(d => {
+                const rawId = String(d[idColumn]);
+                const paddedId = /^\d+$/.test(rawId) ? rawId.padStart(2, "0") : rawId;
+                const value = +d[valueColumn];
+                const label = String(d[labelColumn]);
+                const keys = preserveOriginalUnmatchedFips ? [rawId] : [rawId, paddedId];
+                keys.forEach(key => {
+                    valueById.set(key, value);
+                    labelById.set(key, label);
+                });
+            });
+            const states = topojson.feature(us, us.objects.states).features;
+
+            svg.append("g")
+                .selectAll("path")
+                .data(states)
+                .enter().append("path")
+                .attr("class", "state")
+                .attr("fill", d => {
+                    const value = valueById.get(String(d.id));
+                    return value !== undefined && Number.isFinite(value) ? color(value) : "#ddd";
+                })
+                .attr("d", path);
+
+            svg.selectAll(".state-label")
+                .data(states)
+                .enter().append("text")
+                .attr("class", "state-label")
+                .attr("transform", d => "translate(" + path.centroid(d) + ")")
+                .attr("dy", ".35em")
+                .text(d => labelById.get(String(d.id)) || "");
+
+            const legend = svg.append("g").attr("class", "legend").attr("transform", "translate(900,300)");
+            const legendValues = d3.range(0, 101).map(i => valueMin + (valueMax - valueMin) * i / 100);
+            const legendScale = d3.scaleLinear().domain([valueMax, valueMin]).range([0, 200]);
+            const legendAxis = d3.axisRight(legendScale).ticks(5);
+
+            legend.selectAll("rect")
+                .data(legendValues)
+                .enter().append("rect")
+                .attr("x", 0)
+                .attr("y", d => legendScale(d))
+                .attr("width", 20)
+                .attr("height", 2)
+                .attr("fill", d => color(d));
+
+            legend.append("g").attr("transform", "translate(20,0)").call(legendAxis);
+            legend.append("text").attr("x", -10).attr("y", 0).attr("text-anchor", "end").text("High");
+            legend.append("text").attr("x", -10).attr("y", 200).attr("text-anchor", "end").text("Low");
+            svg.append("text").attr("x", 0).attr("y", 735).attr("class", "clean-note").text("Clean choropleth: same US map base; darker color means higher true value.");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-ETMYQT1i987dzfOV1fNgOIHyz17Zb",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"new_rules\":[{\"id\":\"supp_r1\",\"text\":\"If the category selected under Product feedback follow-up category is the category required by the dashboard rule, then completing the required follow-up form also requires selecting Open product feedback follow-up as the follow-up operation, Prioritize highest current rating share as the queue rule, and Product operations feedback follow-up queue as the work queue.\",\"component\":\"task relation\",\"conditions\":\"Applies when submitting the displayed form, whose three companion select fields are required.\"}],\"new_chains\":[{\"chain_id\":\"supp_c1\",\"rule_id\":\"supp_r1\",\"observations\":[],\"task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/companion_fields/0/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/0/options/1/label\",\"content\":\"Open product feedback follow-up\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/options/1/label\",\"content\":\"Prioritize highest current rating share\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/2/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/2/options/1/label\",\"content\":\"Product operations feedback follow-up queue\"}],\"claim_kind\":\"supports_action\",\"option_label\":\"Select Design\",\"claim\":\"Conditional on the category determination supporting Select Design, submission also requires the three listed companion selections: Open product feedback follow-up, Prioritize highest current rating share, and Product operations feedback follow-up queue.\",\"question_ids\":[\"q2\"],\"relationship\":\"compatible\"}],\"refinements\":[{\"id\":\"refine_1\",\"target_chain_id\":\"base_c1\",\"question_ids\":[\"q1\"],\"added_observations\":[],\"added_task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/chart_reference\",\"content\":\"Use the dashboard labeled rating-share values as the evidence source; the follow-up queue is reserved for the category with the strongest current customer feedback signal.\"},{\"ref\":\"public_task\",\"path\":\"/policy_tables/0/rows/1/1\",\"content\":\"mislabeled_value / labeled rating share\"}],\"condition_note\":\"The public task explicitly directs use of dashboard labeled rating-share values, while its decision-metric wording retains the displayed metric-label ambiguity; the chain remains conditional on the percentage inscriptions being the intended labeled rating-share values despite the y-axis inscription \\\"Value\\\".\",\"reason\":\"This supplies the requested public-task support for treating the category-attached percentage inscriptions as the intended evidence source without treating the generic y-axis label as independently authoritative.\"}],\"question_responses\":[{\"question_id\":\"q1\",\"outcome\":\"refined_existing\",\"record_ids\":[\"refine_1\"],\"covered_chain_ids\":[\"base_c1\"],\"reason\":\"The refinement adds the public instruction identifying dashboard labeled rating-share values as the evidence source and preserves the existing chain's metric-encoding condition.\"},{\"question_id\":\"q2\",\"outcome\":\"new_explanation\",\"record_ids\":[\"supp_c1\"],\"covered_chain_ids\":[\"base_c1\"],\"reason\":\"The new compatible chain covers the three required companion-field selections needed for form submission; the base chain already covers the conditional category selection.\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1790666918,
+  "model": "gpt-5.6-terra-2026-07-09",
+  "object": "chat.completion",
+  "usage": {
+    "prompt_tokens": 5361,
+    "completion_tokens": 969,
+    "total_tokens": 6330,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 295
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "routing": {
+    "serving_pipereplica": "d20260821074544-2314d7f2-prefill-r5-dp0-prefill"
+  },
+  "service_tier": "default"
+}

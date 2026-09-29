@@ -1,0 +1,130 @@
+{
+  "task_alias": "task_003",
+  "page_title": "Top Rating-Share Category Promotion Budget Request",
+  "user_goal": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share.",
+  "chart_reference": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal.",
+  "primary_field_label": "Promotional budget category",
+  "option_labels": [
+    "Select Other",
+    "Select Design",
+    "Select Support"
+  ],
+  "companion_fields": [
+    {
+      "field": "template_context_budget_action",
+      "label": "Budget action",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Assign additional promotional budget",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "template_context_queue_rule",
+      "label": "Queue rule",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Prioritize highest current rating share",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "template_context_campaign_program",
+      "label": "Campaign program",
+      "type": "select",
+      "required": true,
+      "readonly": false,
+      "options": [
+        {
+          "label": "Select value",
+          "disabled": true,
+          "selected": true
+        },
+        {
+          "label": "Rating-share category promotion",
+          "disabled": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "field": "note",
+      "label": "Operations note",
+      "type": "textarea",
+      "required": false,
+      "readonly": false,
+      "value": "",
+      "placeholder": "Optional note for the operations record"
+    }
+  ],
+  "completion_label": "Submit Form",
+  "policy_tables": [
+    {
+      "title": "Promotion budget rule",
+      "headers": [
+        "Rule item",
+        "Business rule"
+      ],
+      "rows": [
+        [
+          "Promotion budget rule",
+          "Select the category with the highest current labeled rating share"
+        ],
+        [
+          "Decision metric",
+          "mislabeled_value / labeled rating share"
+        ],
+        [
+          "Business reason",
+          "Highest-share category has the strongest current customer signal"
+        ]
+      ]
+    }
+  ],
+  "page_instructions": [
+    {
+      "page": "home",
+      "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+    },
+    {
+      "page": "home",
+      "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+    },
+    {
+      "page": "home",
+      "text": "Use the dashboard view before submitting the workflow form."
+    },
+    {
+      "page": "dashboard",
+      "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+    },
+    {
+      "page": "dashboard",
+      "text": "Review the Product Rating Share dashboard, then assign additional promotional budget to the category with the highest current labeled rating share."
+    },
+    {
+      "page": "form",
+      "text": "Use the dashboard labeled rating-share values as the evidence source; the promotion budget is reserved for the category with the strongest current rating-share signal."
+    }
+  ]
+}

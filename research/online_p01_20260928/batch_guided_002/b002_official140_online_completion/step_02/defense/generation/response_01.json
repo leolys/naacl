@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl-9dfb5021098d7d75",
+  "object": "chat.completion",
+  "created": 1790664537,
+  "model": "Qwen3.8-27B",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n\"rules\": [\n{\n\"id\": \"r1\",\n\"text\": \"If a bar chart's x-axis labels bind each bar to a browser product and the y-axis scale maps bar height to market_share percentage, then the bar with the greatest height represents the browser with the highest market_share.\",\n\"component\": \"encoding/task relation\",\n\"conditions\": \"Assumes the chart's y-axis is a linear percentage scale from 0 to 100 and that bar height is the sole visual encoding of the market_share value.\"\n},\n{\n\"id\": \"r2\",\n\"text\": \"If a bar chart displays explicit percentage inscriptions above each bar, those printed values can be used to determine the highest market_share, provided the printed values are consistent with the relative bar heights.\",\n\"component\": \"numeric decoding\",\n\"conditions\": \"Assumes the printed percentage labels are accurate representations of the underlying data and that no hidden data overrides the visible inscriptions.\"\n},\n{\n\"id\": \"r3\",\n\"text\": \"If the public task policy requires selecting the browser with the highest current market_share for the priority compatibility-testing queue, then the browser identified as having the highest market_share in the chart must be assigned to that queue.\",\n\"component\": \"task-to-action relation\",\n\"conditions\": \"Assumes the policy table's rule 'Select the browser with the highest current market_share' is the active decision metric and that the chart is the designated evidence source.\"\n}\n],\n\"chains\": [\n{\n\"chain_id\": \"base_c1\",\n\"rule_id\": \"r1\",\n\"observations\": [\n{\n\"ref\": \"chart_1\",\n\"location\": \"x-axis labels\",\n\"content\": \"The labels 'Chrome', 'Safari', 'Edge', 'Firefox', and 'Others' are printed below their respective bars.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"y-axis\",\n\"content\": \"The vertical axis is marked with ticks from 0 to 100 in increments of 10.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"bar heights\",\n\"content\": \"The green bar above 'Edge' reaches a height near the 80 tick, and the blue bar above 'Firefox' reaches a height near the 85 tick, making the Firefox bar visibly taller than the Edge bar.\"\n}\n],\n\"task_evidence\": [\n{\n\"ref\": \"public_task\",\n\"path\": \"/policy_tables/0/rows/0/1\",\n\"content\": \"Select the browser with the highest current market_share\"\n},\n{\n\"ref\": \"public_task\",\n\"path\": \"/policy_tables/0/rows/1/1\",\n\"content\": \"market_share\"\n}\n],\n\"claim_kind\": \"challenges_support\",\n\"option_label\": null,\n\"claim\": \"Based on bar height geometry, Firefox appears to have the highest market_share, which would challenge the proposed selection of Edge. However, this reading depends on the assumption that bar height is the primary data encoding and that the printed labels are not the authoritative source.\"\n}\n,\n{\n\"chain_id\": \"base_c2\",\n\"rule_id\": \"r2\",\n\"observations\": [\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Chrome bar\",\n\"content\": \"The text '5%' is printed above the orange bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Safari bar\",\n\"content\": \"The text '1%' is printed above the dark blue bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Edge bar\",\n\"content\": \"The text '87%' is printed above the green bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Firefox bar\",\n\"content\": \"The text '23%' is printed above the blue bar.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Others bar\",\n\"content\": \"The text '3%' is printed above the yellow bar.\"\n}\n],\n\"task_evidence\": [\n{\n\"ref\": \"public_task\",\n\"path\": \"/chart_reference\",\n\"content\": \"Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact.\"\n}\n],\n\"claim_kind\": \"supports_action\",\n\"option_label\": \"Assign Edge to the priority compatibility-testing queue\",\n\"claim\": \"The printed inscription '87%' above the Edge bar is the highest value among all visible percentage labels (87 > 23 > 5 > 3 > 1). If the printed labels are taken as the authoritative market_share values, Edge has the highest share, supporting the proposed action.\"\n}\n,\n{\n\"chain_id\": \"base_c3\",\n\"rule_id\": \"r3\",\n\"observations\": [\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Edge bar\",\n\"content\": \"The text '87%' is printed above the green bar labeled 'Edge'.\"\n},\n{\n\"ref\": \"chart_1\",\n\"location\": \"above Firefox bar\",\n\"content\": \"The text '23%' is printed above the blue bar labeled 'Firefox'.\"\n}\n],\n\"task_evidence\": [\n{\n\"ref\": \"public_task\",\n\"path\": \"/user_goal\",\n\"content\": \"Review the browser usage-share dashboard, then assign the browser with the highest current market_share to the priority compatibility-testing queue.\"\n},\n{\n\"ref\": \"public_task\",\n\"path\": \"/option_labels/0\",\n\"content\": \"Assign Edge to the priority compatibility-testing queue\"\n}\n],\n\"claim_kind\": \"supports_action\",\n\"option_label\": \"Assign Edge to the priority compatibility-testing queue\",\n\"claim\": \"The task requires assigning the browser with the highest market_share. The chart shows Edge with a printed value of 87%, which is higher than Firefox's 23%. Following the policy to select the highest market_share, Edge is the correct browser to assign to the priority queue.\"\n}\n]\n}",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.30.0-a8e1eb05",
+  "usage": {
+    "prompt_tokens": 4803,
+    "total_tokens": 6167,
+    "completion_tokens": 1364,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Positive Test Rate at Sentinel Sites</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #ffffff; color: #111827; }
+    .wrap { width: 1000px; margin: 32px auto; }
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    .subtitle { margin: 0 0 18px; color: #4b5563; font-size: 18px; }
+    svg { width: 1000px; height: 720px; display: block; }
+    .axis { stroke: #111827; stroke-width: 1.2; }
+    .tick { stroke: #d1d5db; stroke-width: 1; }
+    .line { fill: none; stroke: #7c3aed; stroke-width: 4; }
+    .dot { fill: #7c3aed; }
+    .label { font-size: 16px; fill: #374151; }
+    .axis-label { font-size: 18px; fill: #111827; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Positive Test Rate at Sentinel Sites</h1>
+    <p class="subtitle">Reported window shown in the dashboard summary</p>
+    <svg viewBox="0 0 1000 720" aria-label="Positive Test Rate at Sentinel Sites chart"></svg>
+  </div>
+  <script>
+    const fullData = [
+      { year: 2013, value: 4.8 },
+      { year: 2014, value: 4.7 },
+      { year: 2015, value: 4.8 },
+      { year: 2016, value: 4.8 },
+      { year: 2017, value: 5.6 },
+      { year: 2018, value: 6.4 },
+      { year: 2019, value: 7.2 },
+      { year: 2020, value: 8.0 }
+    ];
+    const data = fullData.filter(d => d.year >= 2017);
+    const svg = document.querySelector("svg");
+    const ns = "http://www.w3.org/2000/svg";
+    const margin = { top: 30, right: 40, bottom: 80, left: 90 };
+    const width = 1000 - margin.left - margin.right;
+    const height = 720 - margin.top - margin.bottom;
+    const xStep = width / (data.length - 1);
+    const yMin = 5.2;
+    const yMax = 8.2;
+    const x = i => margin.left + i * xStep;
+    const y = v => margin.top + (yMax - v) / (yMax - yMin) * height;
+
+    function append(tag, attrs, parent = svg) {
+      const el = document.createElementNS(ns, tag);
+      Object.entries(attrs || {}).forEach(([k, v]) => el.setAttribute(k, v));
+      parent.appendChild(el);
+      return el;
+    }
+
+    append("line", { x1: margin.left, y1: margin.top + height, x2: margin.left + width, y2: margin.top + height, class: "axis" });
+    append("line", { x1: margin.left, y1: margin.top, x2: margin.left, y2: margin.top + height, class: "axis" });
+
+    [5.5, 6.0, 6.5, 7.0, 7.5, 8.0].forEach(tick => {
+      const ty = y(tick);
+      append("line", { x1: margin.left, y1: ty, x2: margin.left + width, y2: ty, class: "tick" });
+      const text = append("text", { x: margin.left - 12, y: ty + 5, "text-anchor": "end", class: "label" });
+      text.textContent = `${tick.toFixed(1)}%`;
+    });
+
+    data.forEach((d, i) => {
+      const tx = x(i);
+      append("line", { x1: tx, y1: margin.top + height, x2: tx, y2: margin.top + height + 8, class: "axis" });
+      const text = append("text", { x: tx, y: margin.top + height + 28, "text-anchor": "middle", class: "label" });
+      text.textContent = d.year;
+    });
+
+    const path = data.map((d, i) => `${i === 0 ? "M" : "L"} ${x(i)} ${y(d.value)}`).join(" ");
+    append("path", { d: path, class: "line" });
+    data.forEach((d, i) => append("circle", { cx: x(i), cy: y(d.value), r: 5, class: "dot" }));
+
+    const xlabel = append("text", { x: margin.left + width / 2, y: 690, "text-anchor": "middle", class: "axis-label" });
+    xlabel.textContent = "Year";
+    const ylabel = append("text", { x: 28, y: margin.top + height / 2, transform: `rotate(-90 28 ${margin.top + height / 2})`, "text-anchor": "middle", class: "axis-label" });
+    ylabel.textContent = "Positive test rate";
+  </script>
+</body>
+</html>

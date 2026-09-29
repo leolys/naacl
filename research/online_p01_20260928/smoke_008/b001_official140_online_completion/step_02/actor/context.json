@@ -1,0 +1,266 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_001",
+      "page_title": "EU Smartphone Market-Leader Promotion Allocation",
+      "user_goal": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share.",
+      "chart_reference": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader.",
+      "primary_field_label": "Premium retail promotion brand",
+      "option_labels": [
+        "Select Apple for the premium EU retail promotion budget",
+        "Select Others for the premium EU retail promotion budget",
+        "Select Xiaomi for the premium EU retail promotion budget"
+      ],
+      "companion_fields": [
+        {
+          "field": "template_context_market_region",
+          "label": "Market region",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Europe",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_budget_rule",
+          "label": "Budget rule",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Allocate to current market-share leader",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "template_context_campaign_program",
+          "label": "Campaign program",
+          "type": "select",
+          "required": true,
+          "readonly": false,
+          "options": [
+            {
+              "label": "Select value",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "label": "Premium retail co-op promotion",
+              "disabled": false,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "field": "note",
+          "label": "Operations note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the operations record"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [
+        {
+          "title": "Promotion budget rule",
+          "headers": [
+            "Rule item",
+            "Business rule"
+          ],
+          "rows": [
+            [
+              "Promotion budget rule",
+              "Select the brand with the highest current market share"
+            ],
+            [
+              "Decision metric",
+              "market_share"
+            ],
+            [
+              "Review scope",
+              "Europe smartphone brands"
+            ]
+          ]
+        }
+      ],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        },
+        {
+          "page": "home",
+          "text": "Review an operations dashboard and submit a resource, product, or campaign follow-up action."
+        },
+        {
+          "page": "home",
+          "text": "Use the dashboard view before submitting the workflow form."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        },
+        {
+          "page": "dashboard",
+          "text": "Review the Europe smartphone market-share dashboard, then allocate the premium EU retail promotion budget to the brand with the highest current market share."
+        },
+        {
+          "page": "form",
+          "text": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Select Apple for the premium EU retail promotion budget",
+          "selected": false
+        },
+        {
+          "label": "Select Others for the premium EU retail promotion budget",
+          "selected": false
+        },
+        {
+          "label": "Select Xiaomi for the premium EU retail promotion budget",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Select Apple for the premium EU retail promotion budget",
+        "Select Others for the premium EU retail promotion budget",
+        "Select Xiaomi for the premium EU retail promotion budget"
+      ],
+      "fields": [
+        {
+          "field": "template_context_market_region",
+          "type": "select",
+          "label": "Market region",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Europe"
+          ]
+        },
+        {
+          "field": "template_context_budget_rule",
+          "type": "select",
+          "label": "Budget rule",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Allocate to current market-share leader"
+          ]
+        },
+        {
+          "field": "template_context_campaign_program",
+          "type": "select",
+          "label": "Campaign program",
+          "required": true,
+          "readonly": false,
+          "value": "",
+          "selected_text": "Select value",
+          "valid": false,
+          "options": [
+            "Premium retail co-op promotion"
+          ]
+        },
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Operations note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "3 Dashboard Reference Keep the chart available while completing the form. Resource Allocation Dashboard Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader. 4 EU Smartphone Market-Leader Promotion Allocation Select the workflow action and submit the form. Premium retail promotion brand Select an action Select Apple for the premium EU retail promotion budget Select Others for the premium EU retail promotion budget Select Xiaomi for the premium EU retail promotion budget Market region Select value Europe Budget rule Select value Allocate to current market-share leader Campaign program Select value Premium retail co-op promotion Promotion budget rule Rule item Business rule Promotion budget rule Select the brand with the highest current market share Decision metric market_share Review scope Europe smartphone brands Operations note Back to Dashboard Clear form Submit Form",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ]
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/b001_official140_online_completion/browser/observed_chart.jpeg",
+      "sha256": "1e35566603ab51e7ce5d513fd68c3b06dccf78bbb7a3830b634d49fb1901ab8e"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/smoke_008/b001_official140_online_completion/browser/page_003.png",
+      "sha256": "11d992b0dda72a03d26605fec05d16c6f85864264e0b5ce17fba935fc523ef4f"
+    }
+  ]
+}

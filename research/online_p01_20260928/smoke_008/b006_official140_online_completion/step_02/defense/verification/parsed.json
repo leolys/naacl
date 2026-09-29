@@ -1,0 +1,297 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Design category point",
+            "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Support category point",
+            "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Quality category point",
+            "content": "The point above the 'Quality' x-axis label has the printed inscription '24%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Price category point",
+            "content": "The point above the 'Price' x-axis label has the printed inscription '10%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Delivery category point",
+            "content": "The point above the 'Delivery' x-axis label has the printed inscription '39%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Other category point",
+            "content": "The point above the 'Other' x-axis label has the printed inscription '32%' directly above it."
+          }
+        ],
+        "reason": "All six printed percentage labels are clearly visible and correctly transcribed in the observations."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          }
+        ],
+        "reason": "The rule correctly bridges the printed labels to the task's 'labeled rating share' metric, assuming the labels are the intended values."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Design"
+          }
+        ],
+        "reason": "Design's 52% is the highest printed label, and 'Select Design' is a valid public option, making the implication sound under the rule's assumptions."
+      }
+    },
+    {
+      "target_id": "base_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Quality category point",
+            "content": "The point above the 'Quality' x-axis label is positioned at approximately y=60 on the Value axis, which is the highest vertical position among all six points."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Support category point",
+            "content": "The point above the 'Support' x-axis label is positioned at approximately y=54 on the Value axis."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Other category point",
+            "content": "The point above the 'Other' x-axis label is positioned at approximately y=45 on the Value axis."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Design category point",
+            "content": "The point above the 'Design' x-axis label is positioned at approximately y=42 on the Value axis."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Delivery category point",
+            "content": "The point above the 'Delivery' x-axis label is positioned at approximately y=25 on the Value axis."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Price category point",
+            "content": "The point above the 'Price' x-axis label is positioned at approximately y=5 on the Value axis."
+          }
+        ],
+        "reason": "The vertical positions of the points align with the y-axis ticks as described, with Quality being the highest."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/0/1",
+            "content": "Select the category with the highest current labeled rating share"
+          }
+        ],
+        "reason": "The rule provides a valid alternative encoding bridge (y-axis position) to test against the printed labels."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [],
+        "reason": "The claim correctly identifies a conflict between the geometric reading (Quality highest) and the printed-label reading (Design highest), which is a valid support gap."
+      }
+    },
+    {
+      "target_id": "base_c3",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Design category point",
+            "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Support category point",
+            "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+          }
+        ],
+        "reason": "The observations correctly transcribe the visible printed labels for Design and Support."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/user_goal",
+            "content": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+          },
+          {
+            "ref": "public_task",
+            "path": "/primary_field_label",
+            "content": "Product feedback follow-up category"
+          }
+        ],
+        "reason": "The rule correctly links the public task's instructions to the form's primary field."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Design"
+          }
+        ],
+        "reason": "Given the printed labels, Design is highest, and the task requires selecting it in the specified field."
+      }
+    },
+    {
+      "target_id": "supp_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Design category point",
+            "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Support category point",
+            "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Quality category point",
+            "content": "The point above the 'Quality' x-axis label has the printed inscription '24%' directly above it."
+          }
+        ],
+        "reason": "The observations correctly transcribe the visible printed labels."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/policy_tables/0/rows/1/1",
+            "content": "mislabeled_value / labeled rating share"
+          }
+        ],
+        "reason": "The rule uses the policy table's explicit mention of 'labeled rating share' to prioritize printed labels over geometry."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/user_goal",
+            "content": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+          }
+        ],
+        "reason": "The implication that printed labels are authoritative and Design is the correct choice is well-supported by the task's wording."
+      }
+    },
+    {
+      "target_id": "supp_c2",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Design category point",
+            "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Quality category point",
+            "content": "The point above the 'Quality' x-axis label has the printed inscription '24%' directly above it."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Support category point",
+            "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+          }
+        ],
+        "reason": "The observations correctly transcribe the visible printed labels for the three selectable categories."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/option_labels/0",
+            "content": "Select Design"
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/1",
+            "content": "Select Quality"
+          },
+          {
+            "ref": "public_task",
+            "path": "/option_labels/2",
+            "content": "Select Support"
+          }
+        ],
+        "reason": "The rule correctly notes that the form restricts choices to a subset of the chart's categories."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [],
+        "reason": "Among the available options, Design (52%) is indeed the highest printed label, supporting the action."
+      }
+    },
+    {
+      "target_id": "refine_1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Quality category point",
+            "content": "The point above the 'Quality' x-axis label is positioned at approximately y=60 on the Value axis."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Support category point",
+            "content": "The point above the 'Support' x-axis label is positioned at approximately y=54 on the Value axis."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Design category point",
+            "content": "The point above the 'Design' x-axis label is positioned at approximately y=42 on the Value axis."
+          }
+        ],
+        "reason": "The added observations accurately describe the vertical positions of the three points."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [],
+        "reason": "The condition note correctly identifies that the vertical positions are visually distinct and ordered as Quality > Support > Design."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [],
+        "reason": "The refinement successfully confirms the geometric reading in base_c2 by providing explicit comparisons of the vertical positions."
+      }
+    }
+  ],
+  "summary": "All chains and the refinement are well-supported by the chart and public task. The primary unresolved issue is the conflict between the chart's printed labels (Design highest) and its vertical geometry (Quality highest). The public task's use of the term 'labeled rating share' strongly supports the printed-label reading, making 'Select Design' the most justified action."
+}

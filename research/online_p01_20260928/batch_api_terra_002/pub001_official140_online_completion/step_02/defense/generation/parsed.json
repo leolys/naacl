@@ -1,0 +1,84 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the map’s colorbar encodes the hazard risk index with pale yellow at the high end near the printed 100 tick and dark red at the low end near the printed 0 tick, and if priority review is intended to select the option with the highest hazard risk index among the listed states, then the listed state whose fill is closest to pale yellow is the supported priority-review selection.",
+      "component": "map color encoding and task-to-selection relation",
+      "conditions": "The colorbar applies to the state fills; the ME, OK, and TX labels identify their respective filled state areas; and priority review is meant to favor the highest, rather than lowest or another threshold-defined, hazard risk index."
+    },
+    {
+      "id": "r2",
+      "text": "If the public task requires choosing a state for priority review but supplies no rule that defines whether priority corresponds to a high index, a low index, a threshold, or another criterion, then the map’s index ordering alone does not fully establish which option should be selected.",
+      "component": "task criterion sufficiency",
+      "conditions": "Applies unless an omitted public policy table, instruction, or visible task field supplies the priority-review decision criterion."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "upper-left chart title",
+          "content": "The title visibly reads \"Risk Index of Hazard H in US States\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "right-side vertical colorbar",
+          "content": "The colorbar visibly has \"High\" beside its pale-yellow upper end and \"Low\" beside its dark-red lower end, with printed ticks including 100 near the top and 0 near the bottom."
+        },
+        {
+          "ref": "chart_1",
+          "location": "northeastern map area labeled ME",
+          "content": "The state area labeled \"ME\" is filled pale yellow."
+        },
+        {
+          "ref": "chart_1",
+          "location": "south-central map areas labeled OK and TX",
+          "content": "The state areas labeled \"OK\" and \"TX\" are filled dark burgundy-red."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/value",
+          "content": "Hazard risk index"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select ME for priority review"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select ME for priority review",
+      "claim": "Conditionally, ME is visually mapped nearer the high end of the hazard risk index colorbar than OK and TX and supports selecting ME if priority review is intended to select the highest-index listed state."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+        },
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the state hazard dashboard as the evidence source for this priority review selection."
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables",
+          "content": []
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The supplied public task identifies the dashboard and hazard risk index as relevant but does not state the decision direction or threshold for priority review; therefore, the proposed ME selection retains a task-to-action support gap unless the intended criterion is highest hazard risk index."
+    }
+  ]
+}

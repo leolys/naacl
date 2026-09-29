@@ -1,0 +1,127 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's printed percentage labels are treated as the current labeled rating-share values and the public task's decision metric is the highest current labeled rating share, then the category whose printed label is numerically greatest is the category that should receive the additional promotional budget.",
+      "component": "encoding/task relation",
+      "conditions": "The printed percentage labels are the intended labeled rating-share values; the public task's 'highest current labeled rating share' rule applies to those labels; the form's primary field maps each category to its 'Select <Category>' option."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's vertical axis position is treated as the rating-share value instead of the printed percentage labels, then the category whose point is highest on the page is the category that should receive the additional promotional budget.",
+      "component": "encoding/task relation",
+      "conditions": "The vertical axis position is the intended rating-share value; the public task's 'highest current labeled rating share' rule applies to the axis position; the form's primary field maps each category to its 'Select <Category>' option."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's printed percentage labels and vertical axis positions are treated as conflicting evidence, then the task's 'labeled rating share' wording must be resolved before a category can be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The printed percentage labels and vertical axis positions are in conflict; the public task's 'labeled rating share' wording is ambiguous between the two; the form's primary field maps each category to its 'Select <Category>' option."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "x-axis label under the rightmost point",
+          "content": "the text 'Other' is printed under the rightmost point"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the rightmost point",
+          "content": "the text '53%' is printed above the rightmost point"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point under 'Design'",
+          "content": "the text '34%' is printed above the point under 'Design'"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point under 'Support'",
+          "content": "the text '45%' is printed above the point under 'Support'"
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Other"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Other",
+      "claim": "If the printed percentage labels are the labeled rating-share values, then 'Other' at 53% is the highest labeled rating share, so the promotional budget category should be 'Select Other'."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "point under 'Design'",
+          "content": "the point under 'Design' is higher on the page than the point under 'Other'"
+        },
+        {
+          "ref": "chart_1",
+          "location": "point under 'Other'",
+          "content": "the point under 'Other' is lower on the page than the point under 'Design'"
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the vertical axis position is the rating-share value, then 'Design' is the highest point on the page, which would challenge the support for 'Select Other' based on the printed label."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "point under 'Design'",
+          "content": "the point under 'Design' is higher on the page than the point under 'Other'"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point under 'Design'",
+          "content": "the text '34%' is printed above the point under 'Design'"
+        },
+        {
+          "ref": "chart_1",
+          "location": "above the point under 'Other'",
+          "content": "the text '53%' is printed above the point under 'Other'"
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "mislabeled_value / labeled rating share"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The printed label for 'Other' (53%) is numerically greater than the printed label for 'Design' (34%), but the point for 'Design' is higher on the page than the point for 'Other'. The task's 'labeled rating share' wording must be resolved to determine which evidence is authoritative."
+    }
+  ]
+}

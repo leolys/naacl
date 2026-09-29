@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/obc140_20260923/panel_core.py", line 159, in call
+    value = engine.parse_json(body["choices"][0]["message"]["content"],
+  File "/data/lab/misvis/naacl-git/research/competing_rules_20260923/engine.py", line 75, in parse_json
+    value = json.loads(text)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 93, in one_run
+    proposal = validate_actor(api.call(step_dir / 'actor', case['alias'], 'proposal', prompts.ACTOR, context, images))
+  File "/data/lab/misvis/naacl-git/research/obc140_20260923/terra140_native_zh_20260924/budget.py", line 101, in call
+    return super().call(folder, task_id, phase, prompt, context, images)
+  File "/data/lab/misvis/naacl-git/research/obc140_20260923/panel_core.py", line 188, in call
+    raise RuntimeError(category) from exc
+RuntimeError: response_or_schema_failure

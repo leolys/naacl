@@ -1,0 +1,48 @@
+{
+  "new_rules": [],
+  "new_chains": [],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [],
+      "added_task_evidence": [],
+      "condition_note": "The condition 'printed percentages are valid share values' is satisfied by the visible arithmetic check: 55 + 20 + 15 + 10 = 100, confirming the labels form a complete partition of the pie.",
+      "reason": "The initial rule r1 assumes validity but does not show the completeness check; adding the sum-to-100 verification explicitly closes the gap raised in q1."
+    },
+    {
+      "id": "refine_2",
+      "target_chain_id": "base_c3",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [],
+      "added_task_evidence": [],
+      "condition_note": "The condition 'public options are Samsung, Others, and Xiaomi' is refined to require that 'Others' is treated as a non-brand aggregate category, not a selectable single brand, so it cannot contain a hidden brand with a higher share than Samsung.",
+      "reason": "The initial rule r3 compares shares among options but does not explicitly state that 'Others' is an aggregate; adding this condition addresses the coverage gap raised in q2."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The sum of printed percentages (55+20+15+10) equals 100, which validates the chart's encoding as complete. This arithmetic check is now explicitly noted as a condition in base_c1."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_2"
+      ],
+      "covered_chain_ids": [],
+      "reason": "The 'Others' category is explicitly treated as a non-brand aggregate in the refined condition for base_c3, ensuring it is not misinterpreted as a single brand that could exceed Samsung's share."
+    }
+  ]
+}

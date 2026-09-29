@@ -1,0 +1,48 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If each category’s adjacent percentage inscription is the dashboard’s current labeled rating share and the inscription-to-category attachment is correct, then the category with the greatest such inscription is the category required by the follow-up rule; if that category is Design, the corresponding public option is Select Design.",
+      "component": "chart encoding/task relation",
+      "conditions": "Applies only if the visible percentage labels are authoritative current labeled rating shares and their category attachments are correctly read."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "scatter point above the x-axis label Design",
+          "content": "The point aligned with the x-axis inscription \"Design\" has the adjacent inscription \"52%\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "scatter points above the x-axis labels Quality, Price, Support, Delivery, and Other",
+          "content": "The visible adjacent inscriptions are \"24%\" for Quality, \"10%\" for Price, \"45%\" for Support, \"39%\" for Delivery, and \"32%\" for Other."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "Conditionally, the visible 52% inscription attached to Design exceeds every other visible category percentage inscription, so Design is the highest current labeled rating-share category and Select Design is supported."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 1,
+    "chains": 1
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "case": {
+    "task_id": "b004",
+    "arm": "official140",
+    "domain": "business47",
+    "alias": "task_004"
+  },
+  "system": "online_completion",
+  "status": "engineering_or_response_failure",
+  "actor_calls": 2,
+  "hook_events": [],
+  "rule_reads": [],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task requires reviewing the Europe smartphone market share dashboard before selecting a brand. The current home page only offers the 'Open Dashboard' link, so this is the necessary next navigation step.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "Dashboard reviewed: chart_1 shows Samsung 55%, Xiaomi 20%, Apple 15%, Others 10%. Samsung is the market leader. The task requires continuing to the workflow form to make the selection, so open the form now.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": false,
+        "submitted": false,
+        "error": "action_not_available_or_invalid_for_current_visible_page"
+      },
+      "rule_version": null
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "error": {
+    "stage": "actor",
+    "type": "TargetClosedError",
+    "category": "Page.content: Target page, context or browser has been closed"
+  }
+}

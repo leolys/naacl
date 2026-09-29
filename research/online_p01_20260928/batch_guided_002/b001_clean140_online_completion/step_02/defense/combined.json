@@ -1,0 +1,202 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If a pie chart's printed slice labels are treated as the current Europe smartphone market-share values, the brand whose printed percentage is numerically greatest is the current market-share leader.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market-share dashboard; printed percentages are accepted as the current market_share values; the task's decision metric is market_share."
+    },
+    {
+      "id": "r2",
+      "text": "If the promotion budget rule requires allocating to the current market-share leader, the public option whose brand name matches that leader is the supported action.",
+      "component": "task-to-action relation",
+      "conditions": "The selected option label names the brand identified as the leader; the budget rule is 'Allocate to current market-share leader'."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's printed percentages are not accepted as authoritative current market-share values, the leader cannot be determined from the chart alone, and no option is supported by the chart.",
+      "component": "support gap",
+      "conditions": "The printed labels are treated as unvalidated or potentially inconsistent with the actual current market_share data."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie slice, right side",
+          "content": "Printed label 'Apple (45%)' inside the orange slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie slice, lower left",
+          "content": "Printed label 'Xiaomi (30%)' inside the orange-red slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie slice, upper left",
+          "content": "Printed label 'Samsung (15%)' inside the pale yellow slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie slice, top",
+          "content": "Printed label 'Others (10%)' inside the red slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/1/1",
+          "content": "market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/2/1",
+          "content": "Europe smartphone brands"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "If the printed percentages are the current market-share values, Apple's 45% is the highest, making Apple the current market-share leader in Europe."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie slice, right side",
+          "content": "Printed label 'Apple (45%)' inside the orange slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Apple for the premium EU retail promotion budget"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/options/1/label",
+          "content": "Allocate to current market-share leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Apple for the premium EU retail promotion budget",
+      "claim": "If Apple is the current market-share leader, the public option naming Apple is the supported action under the budget rule."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie slice, right side",
+          "content": "Printed label 'Apple (45%)' inside the orange slice."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "If the printed percentages are not accepted as authoritative current market-share values, the chart alone does not establish which brand is the leader, and no option is supported."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "top left",
+          "content": "Printed title 'Smartphone Market Share in Europe'."
+        }
+      ],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market-share values as the evidence source; the premium retail promotion budget is reserved for the current market-share leader."
+        }
+      ],
+      "condition_note": "The chart title establishes the Europe scope, and the public task explicitly designates the dashboard market-share values as the evidence source. The temporal condition 'current' is satisfied by the task's own instruction to use the dashboard values, not by an independent timestamp on the chart.",
+      "reason": "This clarifies that the 'current' condition in r1 is met by the task's explicit evidence-source instruction, closing the temporal gap raised in q1 without asserting an unverified timestamp."
+    },
+    {
+      "id": "refine_2",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie slice, right side",
+          "content": "The orange slice labeled 'Apple (45%)' occupies the largest visible area, extending from the top vertical radius to the lower-right."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie slice, lower left",
+          "content": "The orange-red slice labeled 'Xiaomi (30%)' is visibly smaller than the Apple slice but larger than the Samsung and Others slices."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie slice, upper left",
+          "content": "The pale yellow slice labeled 'Samsung (15%)' is visibly smaller than the Xiaomi slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "pie slice, top",
+          "content": "The red slice labeled 'Others (10%)' is the smallest visible slice."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "The relative areas of the four slices are visually consistent with the printed percentages: Apple (45%) > Xiaomi (30%) > Samsung (15%) > Others (10%). No geometric discrepancy weakens the printed labels.",
+      "reason": "This directly addresses q2 by confirming that the pie chart geometry matches the printed percentages, supporting the treatment of the labels as the true market-share values."
+    }
+  ],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  },
+  "supplement_counts": {
+    "rules": 0,
+    "chains": 0,
+    "refinements": 2
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c1"
+      ],
+      "reason": "The temporal condition 'current' is satisfied by the public task's explicit instruction to use the dashboard market-share values as the evidence source. The chart title confirms the Europe scope. No independent timestamp is required."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_2"
+      ],
+      "covered_chain_ids": [
+        "base_c1"
+      ],
+      "reason": "The relative areas of the pie slices are visually consistent with the printed percentages (45% > 30% > 15% > 10%). No geometric discrepancy was found that would weaken the support for the printed labels."
+    }
+  ]
+}

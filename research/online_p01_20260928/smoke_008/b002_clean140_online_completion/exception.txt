@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 108, in one_run
+    combined, verdict = defense(api, step_dir / 'defense', case['alias'], context, browser.chart, proposal)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/runner.py", line 62, in defense
+    verdict = core.validate_verification(verdict, combined, public)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/core.py", line 337, in validate_verification
+    raise SchemaError('full verification requires every chain and refinement: missing %s' % missing[:3])
+online_completion_core.SchemaError: full verification requires every chain and refinement: missing ['base_c1', 'base_c2']

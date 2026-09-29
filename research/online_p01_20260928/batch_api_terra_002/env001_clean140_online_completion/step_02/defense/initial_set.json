@@ -1,0 +1,90 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the horizontal year labels bind the plotted markers to years, the vertical axis labeled \"value\" is a linear numeric scale with the printed ticks, and this chart is the dashboard record for the requested 2005-2014 temperature review, then the 2005 and 2014 marker heights can be decoded and compared to estimate the period-wide change. If the routing standard treats a change at least as large in magnitude as that estimate as substantial, the substantial-change follow-up option is supported.",
+      "component": "encoding/task relation",
+      "conditions": "Requires that the plotted series is the relevant temperature record, that the axes encode the displayed years and values as assumed, and that the unspecified substantial-change standard includes the decoded endpoint change."
+    },
+    {
+      "id": "r2",
+      "text": "If routing depends on whether the period-wide temperature change is \"large enough\" for targeted follow-up, a choice between substantial-change follow-up and routine monitoring requires a defined or otherwise verifiable standard for what counts as large enough; a qualitative criterion alone does not establish that classification.",
+      "component": "task-to-action relation",
+      "conditions": "Applies because no numeric, categorical, or other decision threshold is supplied in the public task."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "plot title centered above the graph",
+          "content": "The visible title is \"Global Temperature Change\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "horizontal axis and endpoint markers",
+          "content": "The horizontal axis is labeled \"year\"; its leftmost labeled tick is \"2005\" and its rightmost labeled tick is \"2014\", each with a blue circular marker above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "vertical axis and endpoint markers",
+          "content": "The vertical axis is labeled \"value\" and has printed ticks 10, 12, 14, 16, 18, 20, 22, and 24. The 2005 marker is just below the 24 gridline, while the 2014 marker is just above the 10 gridline."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard record as the evidence source for deciding whether the period-wide temperature change warrants targeted follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "Conditionally, decoding the endpoints from the displayed linear scale gives an estimated decline from about 23.9 in 2005 to about 10.1 in 2014, or about 13.8 units in magnitude. This supports substantial-change follow-up only if that magnitude meets the applicable substantial-change standard."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "endpoint markers at 2005 and 2014",
+          "content": "The marker at 2014 is lower on the page than the marker at 2005."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/4/value",
+          "content": "Whether the period-wide temperature change warrants targeted follow-up"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The chart visibly motivates checking a sizable endpoint difference, but the public task supplies no threshold or other verifiable definition distinguishing a substantial change from ordinary variation. Therefore the available evidence does not establish whether substantial-change follow-up or routine monitoring is the required route."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 2,
+    "chains": 2
+  }
+}

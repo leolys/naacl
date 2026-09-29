@@ -1,0 +1,430 @@
+{
+  "case": {
+    "task_id": "env001",
+    "arm": "clean140",
+    "domain": "environment35",
+    "alias": "task_227"
+  },
+  "system": "online_completion",
+  "status": "unresolved_public_evidence",
+  "actor_calls": 4,
+  "hook_events": [
+    {
+      "step": 2,
+      "timing": "before_first_chart_action_execution",
+      "pending_action": {
+        "kind": "select",
+        "option": "Route the 2005-2014 temperature change to substantial-change follow-up"
+      },
+      "selection_at_hook": "",
+      "old_results_used": false,
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "title centered above the plot",
+                  "content": "The title visibly reads \"Global Temperature Change\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "horizontal axis and its outermost labeled ticks",
+                  "content": "The horizontal axis is labeled \"year\", with \"2005\" at the leftmost labeled tick and \"2014\" at the rightmost labeled tick; blue circular markers are plotted above both ticks."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "vertical axis and the two endpoint markers",
+                  "content": "The vertical axis is labeled \"value\" and visibly shows ticks labeled 10, 12, 14, 16, 18, 20, 22, and 24. The 2005 marker is just below the 24 gridline, while the 2014 marker is just above the 10 gridline."
+                }
+              ],
+              "reason": "The cited title, axis inscriptions, ticks, and marker positions are visible. The stated endpoint values remain approximate readings rather than printed values."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the dashboard record as the evidence source for deciding whether the period-wide temperature change warrants targeted follow-up."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "plot axes and endpoint markers",
+                  "content": "The chart visibly provides year-labeled horizontal positions, a value-labeled vertical axis with evenly spaced printed tick labels, and plotted markers at 2005 and 2014."
+                }
+              ],
+              "reason": "The rule is a conditional encoding and task bridge that is visibly motivated by the chart and task. Its substantial-change condition is not activated because the public task supplies no applicable threshold or standard."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "2005 and 2014 endpoint markers relative to the vertical ticks",
+                  "content": "The 2005 marker is visibly near 24 and the 2014 marker visibly near 10 on the displayed value scale."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+                }
+              ],
+              "reason": "Given the rule's stated linear-scale and endpoint-decoding conditions, the approximate endpoint decline and its magnitude are reasonable estimates. The claim correctly remains conditional and does not establish the follow-up route without an unprovided substantial-change standard."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "plotted endpoint markers at the 2005 and 2014 x-axis ticks",
+                  "content": "The blue marker at 2014 is lower on the page than the blue marker at 2005."
+                }
+              ],
+              "reason": "This is a direct screen-space comparison of the two visible markers and does not itself decode a temperature change."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Whether the period-wide temperature change warrants targeted follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/1",
+                  "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+                }
+              ],
+              "reason": "The public task frames the decision as whether the change is large enough or ordinary, but supplies no numeric, categorical, or otherwise verifiable dividing standard. Thus the rule requiring such a standard is applicable."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/1",
+                  "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+                }
+              ],
+              "reason": "Because the task provides the two classifications but no verifiable criterion separating them, the available chart and public-task evidence do not establish which of those two routes is required. This does not support an opposite route."
+            }
+          },
+          {
+            "target_id": "supp_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "connected blue series across the horizontal axis",
+                  "content": "Blue circular markers connected by one line are visible at yearly ticks from 2005 through 2014."
+                }
+              ],
+              "reason": "The chart visibly depicts a connected annual series over the stated period. It does not visibly state which whole-period calculation is intended for routing."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/value",
+                  "content": "2005-2014 temperature-change review"
+                }
+              ],
+              "reason": "The public task identifies a period-wide temperature-change review but does not define that phrase as an endpoint difference, cumulative change, trend, range, or variability measure. The rule is therefore applicable."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "series endpoints and intervening connected markers",
+                  "content": "The chart shows markers for each year from 2005 through 2014, including visible first and last markers."
+                }
+              ],
+              "reason": "The period label and annual series make an endpoint reading plausible, but neither source specifies that endpoint difference is the routing measure. The conclusion appropriately preserves that unresolved condition."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "undetermined",
+              "evidence": [],
+              "reason": "The refinement adds no chart observations, so it supplies no additional visual assertion to verify."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/2",
+                  "content": "Route the temperature record to archive and background filing"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/1",
+                  "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+                }
+              ],
+              "reason": "The stated criterion expressly describes targeted follow-up and routine monitoring, while the separately listed archive option has no stated triggering condition in the supplied public task. This supports the condition note without adding an archive rule."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/2",
+                  "content": "Route the temperature record to archive and background filing"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+                }
+              ],
+              "reason": "The lack of a defined substantial-versus-ordinary threshold leaves the target chain underdetermined, but it does not affirmatively establish the archive option. The refinement is warranted and bears on avoiding that unsupported inference."
+            }
+          }
+        ],
+        "summary": "All chart observations used by the chains are visibly supported, subject to ordinary visual-reading precision for values near ticks. The task supports use of the dashboard record and names the relevant routing choices, but it supplies neither a verifiable substantial-change threshold nor a definition of the intended period-wide calculation. Accordingly, endpoint-difference and substantial-follow-up readings remain conditional, the substantial-versus-routine classification remains unresolved, and no affirmative basis is supplied for archive routing."
+      },
+      "rule_version": 1
+    }
+  ],
+  "rule_reads": [
+    {
+      "step": 3,
+      "state_version": 1,
+      "provided_to_actor": true,
+      "causal_use_proven": false
+    }
+  ],
+  "action_records": [
+    {
+      "step": 0,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The task page shows the visible workflow link “Open Dashboard”; review must proceed through it.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 1,
+      "proposal": {
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "chart_dependent": false,
+        "brief_basis": "The dashboard has been reviewed; the workflow form must be opened to view the available routing choices and any stated decision criteria.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": true,
+      "execution": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "rule_version": null
+    },
+    {
+      "step": 2,
+      "proposal": {
+        "action": {
+          "kind": "select",
+          "option": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        },
+        "chart_dependent": true,
+        "brief_basis": "chart_1 shows the 2005 value near 23.9 and the 2014 value near 10.1, a period-wide decrease of about 13.8; this is large enough for substantial-change follow-up under the task’s stated routing criterion.",
+        "used_rules": [],
+        "supporting_chain_ids": [],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": null
+    },
+    {
+      "step": 3,
+      "proposal": {
+        "action": {
+          "kind": "unresolved"
+        },
+        "chart_dependent": true,
+        "brief_basis": "The dashboard visibly shows a decline across 2005–2014, but the task supplies neither a verifiable threshold for “large enough” versus ordinary variation nor a definition of the required period-wide change measure. Thus no route is established; archive also has no stated trigger.",
+        "used_rules": [
+          {
+            "rule_id": "r2",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The current task asks whether change is large enough for targeted follow-up versus ordinary routine monitoring, but gives no numeric, categorical, or other verifiable dividing standard."
+          },
+          {
+            "rule_id": "supp_r1",
+            "version": 1,
+            "conditions_match": true,
+            "basis": "The current task names a 2005–2014 period-wide temperature change but does not specify whether routing uses endpoint difference, trend, range, variability, or another calculation."
+          }
+        ],
+        "supporting_chain_ids": [
+          "base_c2",
+          "supp_c1"
+        ],
+        "challenge": null
+      },
+      "selection_before": "",
+      "executed": false,
+      "execution": null,
+      "rule_version": 1
+    }
+  ],
+  "submitted": false,
+  "evidence_mode": "real_model",
+  "persistence_causal_effect": "not_established_by_this_panel",
+  "last_public_state": {
+    "current_selection": "",
+    "option_states": [
+      {
+        "label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+        "selected": false
+      },
+      {
+        "label": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation",
+        "selected": false
+      },
+      {
+        "label": "Route the temperature record to archive and background filing",
+        "selected": false
+      }
+    ],
+    "options": [
+      "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation",
+      "Route the temperature record to archive and background filing"
+    ],
+    "fields": [
+      {
+        "field": "note",
+        "type": "textarea",
+        "label": "Routing note",
+        "required": false,
+        "readonly": false,
+        "value": "",
+        "selected_text": null,
+        "valid": true,
+        "options": null
+      }
+    ],
+    "submit_visible": true,
+    "page": "form",
+    "visible_text": "Dashboard Reference Use the dashboard record as the evidence source for deciding whether the period-wide temperature change warrants targeted follow-up. Temperature Change Routing Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring. Program area Temperature monitoring Review scope 2005-2014 temperature-change review Record workflow Change-based follow-up routing Routing criterion Whether the period-wide temperature change warrants targeted follow-up Temperature change handling route Select a route Route the 2005-2014 temperature change to substantial-change follow-up Keep the 2005-2014 temperature change on routine monitoring for ordinary variation Route the temperature record to archive and background filing Routing note Submit Form Back to Dashboard",
+    "links": [
+      "Back to Dashboard"
+    ]
+  },
+  "history": [
+    {
+      "sequence": 0,
+      "action": {
+        "kind": "initial_open_home"
+      },
+      "receipt": {
+        "ok": true,
+        "page": "home"
+      },
+      "source": "setup"
+    },
+    {
+      "sequence": 1,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Dashboard"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    },
+    {
+      "sequence": 2,
+      "action": {
+        "kind": "open_link",
+        "label": "Open Form"
+      },
+      "receipt": {
+        "ok": true,
+        "submitted": false,
+        "observed_selection_after": null
+      },
+      "source": "actor"
+    }
+  ]
+}

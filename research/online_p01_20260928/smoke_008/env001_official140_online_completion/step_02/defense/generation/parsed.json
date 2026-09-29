@@ -1,0 +1,127 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's y-axis is read as temperature in Celsius and the x-axis as year, then the period-wide change from 2005 to 2014 is the difference between the first and last printed point values; a large absolute difference indicates a substantial change warranting targeted follow-up, while a small difference indicates ordinary variation for routine monitoring.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed point labels are the authoritative values for the temperature series and that the task's 'large enough' threshold is met by a visually large drop across the decade."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's y-axis is read as temperature in Celsius and the x-axis as year, then the period-wide change from 2005 to 2014 is the difference between the first and last printed point values; a small absolute difference indicates ordinary variation for routine monitoring, while a large difference indicates a substantial change warranting targeted follow-up.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed point labels are the authoritative values for the temperature series and that the task's 'ordinary enough' threshold is met by a visually small drop across the decade."
+    },
+    {
+      "id": "r3",
+      "text": "If the chart's y-axis is read as temperature in Celsius and the x-axis as year, then the period-wide change from 2005 to 2014 is the difference between the first and last printed point values; the archive and background filing route is not supported by the task's routing criterion, which only distinguishes between targeted follow-up and routine monitoring based on the magnitude of the change.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the task's routing criterion is the sole basis for choosing a route and that no other policy threshold for archiving is present."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left data point",
+          "content": "The first data point is labeled '$23.9°C' and is positioned above the y-axis tick '20'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom-right data point",
+          "content": "The last data point is labeled '$10.1°C' and is positioned above the y-axis tick '10'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "x-axis",
+          "content": "The x-axis is labeled 'Year' with ticks from 2005 to 2014."
+        },
+        {
+          "ref": "chart_1",
+          "location": "y-axis",
+          "content": "The y-axis is labeled 'Temperature (°C)' with ticks from 0 to 20."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Route the 2005-2014 temperature change to substantial-change follow-up"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Route the 2005-2014 temperature change to substantial-change follow-up",
+      "claim": "The period-wide change from $23.9°C in 2005 to $10.1°C in 2014 is a drop of 13.8°C, which is a large, substantial change warranting targeted follow-up."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left data point",
+          "content": "The first data point is labeled '$23.9°C' and is positioned above the y-axis tick '20'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom-right data point",
+          "content": "The last data point is labeled '$10.1°C' and is positioned above the y-axis tick '10'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Keep the 2005-2014 temperature change on routine monitoring for ordinary variation"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "The period-wide change from $23.9°C in 2005 to $10.1°C in 2014 is a drop of 13.8°C, which is not a small difference and therefore does not support the routine monitoring route for ordinary variation."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "top-left data point",
+          "content": "The first data point is labeled '$23.9°C' and is positioned above the y-axis tick '20'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "bottom-right data point",
+          "content": "The last data point is labeled '$10.1°C' and is positioned above the y-axis tick '10'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the 2005-2014 temperature record and choose the handling route based on whether the period-wide change is large enough to require targeted follow-up or ordinary enough to remain on routine monitoring."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Route the temperature record to archive and background filing"
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The task's routing criterion only distinguishes between targeted follow-up and routine monitoring based on the magnitude of the change, so the archive and background filing route is not supported by the visible evidence."
+    }
+  ]
+}

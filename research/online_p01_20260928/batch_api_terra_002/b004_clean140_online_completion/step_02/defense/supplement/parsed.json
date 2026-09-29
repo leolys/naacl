@@ -1,0 +1,36 @@
+{
+  "new_rules": [],
+  "new_chains": [],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q1"
+      ],
+      "added_observations": [
+        {
+          "ref": "chart_1",
+          "location": "pie chart, pale-yellow Samsung sector on the right",
+          "content": "The pale-yellow sector containing the inscription “Samsung (55%)” visibly spans a larger angular portion of the pie than each of the red Xiaomi, orange Apple, and light-orange Others sectors individually."
+        }
+      ],
+      "added_task_evidence": [],
+      "condition_note": "This is visual geometric corroboration only; it assumes the sectors are intended to encode the same market-share quantities represented by their inscriptions.",
+      "reason": "The base chain compares printed percentages, while this added observation separately records that the Samsung-labeled sector is visibly the largest individual pie sector."
+    }
+  ],
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1"
+      ],
+      "covered_chain_ids": [
+        "base_c1"
+      ],
+      "reason": "The refinement supplies the requested independent visual-geometry support: the Samsung-labeled sector is visibly larger than each other labeled sector, consistent with the printed percentages and the existing conditional action claim."
+    }
+  ]
+}

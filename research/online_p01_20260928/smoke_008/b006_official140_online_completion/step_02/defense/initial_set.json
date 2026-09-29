@@ -1,0 +1,162 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the chart's printed percentage labels are treated as the authoritative 'labeled rating share' values, then the category whose label is numerically greatest is the one with the highest current labeled rating share, and the corresponding public option label is the required follow-up category.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the printed percentage inscriptions are the intended labeled values and that the public option labels map one-to-one to the chart categories."
+    },
+    {
+      "id": "r2",
+      "text": "If the chart's vertical axis position (Value) is treated as the authoritative rating-share measure instead of the printed labels, then the category whose point is highest on the page is the one with the highest rating share, and the corresponding public option label is the required follow-up category.",
+      "component": "encoding/task relation",
+      "conditions": "Assumes the y-axis 'Value' scale encodes the rating share and that the printed percentage labels are unreliable or merely annotations."
+    },
+    {
+      "id": "r3",
+      "text": "If the public task's policy table and instructions are treated as the governing rule, then the follow-up category must be the one with the highest current labeled rating share, and the form's primary field must be set to the matching public option label before submission.",
+      "component": "task-to-action relation",
+      "conditions": "Assumes the policy table's 'highest current labeled rating share' rule is the operative decision metric and that the form's option labels correspond to the chart categories."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Design category point",
+          "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category point",
+          "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Quality category point",
+          "content": "The point above the 'Quality' x-axis label has the printed inscription '24%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Price category point",
+          "content": "The point above the 'Price' x-axis label has the printed inscription '10%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delivery category point",
+          "content": "The point above the 'Delivery' x-axis label has the printed inscription '39%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Other category point",
+          "content": "The point above the 'Other' x-axis label has the printed inscription '32%' directly above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "Under the assumption that printed labels are the authoritative 'labeled rating share', Design's 52% is the highest among all printed labels (52 > 45 > 39 > 32 > 24 > 10), so the follow-up category is Design, matching the public option 'Select Design'."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Quality category point",
+          "content": "The point above the 'Quality' x-axis label is positioned at approximately y=60 on the Value axis, which is the highest vertical position among all six points."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category point",
+          "content": "The point above the 'Support' x-axis label is positioned at approximately y=54 on the Value axis."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Other category point",
+          "content": "The point above the 'Other' x-axis label is positioned at approximately y=45 on the Value axis."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Design category point",
+          "content": "The point above the 'Design' x-axis label is positioned at approximately y=42 on the Value axis."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Delivery category point",
+          "content": "The point above the 'Delivery' x-axis label is positioned at approximately y=25 on the Value axis."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Price category point",
+          "content": "The point above the 'Price' x-axis label is positioned at approximately y=5 on the Value axis."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the category with the highest current labeled rating share"
+        }
+      ],
+      "claim_kind": "challenges_support",
+      "option_label": null,
+      "claim": "If the y-axis 'Value' position is the true rating-share measure, Quality (y≈60) is highest, not Design (y≈42). This conflicts with the printed-label reading and with the proposed 'Select Design' action, creating a support gap: the chart's geometry and its printed labels disagree on which category is highest."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "Design category point",
+          "content": "The point above the 'Design' x-axis label has the printed inscription '52%' directly above it."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Support category point",
+          "content": "The point above the 'Support' x-axis label has the printed inscription '45%' directly above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Product Rating Share dashboard, then open the product-operations follow-up item for the category with the highest current labeled rating share."
+        },
+        {
+          "ref": "public_task",
+          "path": "/primary_field_label",
+          "content": "Product feedback follow-up category"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Design"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Design",
+      "claim": "The public task explicitly requires selecting the category with the highest current labeled rating share in the 'Product feedback follow-up category' field. Given the printed labels, Design (52%) is highest, so the form action is to select 'Select Design'."
+    }
+  ],
+  "refinements": [],
+  "initial_counts": {
+    "rules": 3,
+    "chains": 3
+  }
+}

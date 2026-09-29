@@ -1,0 +1,372 @@
+{
+  "scope": {
+    "task_id": "task_144",
+    "chart_ref": "c33f0712c938907ff5bc7494af0f9e618671a45d677ffc8a5621f91e261f588c"
+  },
+  "version": 1,
+  "rules": [
+    {
+      "rule_id": "r1",
+      "version": 1,
+      "status": "active",
+      "text": "If a pie chart's printed percentage labels are treated as the market share values for each named brand, then the brand with the largest printed percentage is the current market leader, and the corresponding public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market share dashboard; the printed percentages are valid share values; the task's 'current market leader' means the largest market share.",
+      "checks": [
+        {
+          "target_id": "base_c1",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "title",
+                "content": "The title reads 'Smartphone Market Share in Europe'."
+              },
+              {
+                "ref": "chart_1",
+                "location": "yellow slice",
+                "content": "The yellow slice has the printed label 'Samsung (55%)'."
+              },
+              {
+                "ref": "chart_1",
+                "location": "red slice",
+                "content": "The red slice has the printed label 'Xiaomi (20%)'."
+              },
+              {
+                "ref": "chart_1",
+                "location": "orange slice",
+                "content": "The orange slice has the printed label 'Apple (15%)'."
+              },
+              {
+                "ref": "chart_1",
+                "location": "light orange slice",
+                "content": "The light orange slice has the printed label 'Others (10%)'."
+              }
+            ],
+            "reason": "All listed observations are directly visible as literal text and color attachments on the chart."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Select Samsung as the current market leader"
+              }
+            ],
+            "reason": "The rule correctly bridges the visual encoding (printed percentages) to the task requirement (selecting the market leader)."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "yellow slice",
+                "content": "The yellow slice has the printed label 'Samsung (55%)'."
+              }
+            ],
+            "reason": "Samsung's 55% is the largest printed value, supporting the claim that it is the market leader."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "r2",
+      "version": 1,
+      "status": "active",
+      "text": "If the pie chart's printed percentage labels are not treated as authoritative and the visual slice areas are used instead, the brand whose slice occupies the largest visible area is the current market leader, and the corresponding public option should be selected.",
+      "component": "encoding/task relation",
+      "conditions": "The chart is the Europe smartphone market share dashboard; the visual slice areas are valid share indicators; the task's 'current market leader' means the largest market share.",
+      "checks": [
+        {
+          "target_id": "base_c2",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "yellow slice",
+                "content": "The yellow slice occupies the largest visible area in the pie chart."
+              },
+              {
+                "ref": "chart_1",
+                "location": "red slice",
+                "content": "The red slice occupies a smaller visible area than the yellow slice."
+              },
+              {
+                "ref": "chart_1",
+                "location": "orange slice",
+                "content": "The orange slice occupies a smaller visible area than the red slice."
+              },
+              {
+                "ref": "chart_1",
+                "location": "light orange slice",
+                "content": "The light orange slice occupies the smallest visible area."
+              }
+            ],
+            "reason": "The relative sizes of the slices are clearly visible and match the stated observations."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/user_goal",
+                "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+              }
+            ],
+            "reason": "The rule provides a valid alternative bridge using visual area instead of printed labels."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "yellow slice",
+                "content": "The yellow slice occupies the largest visible area in the pie chart."
+              }
+            ],
+            "reason": "The yellow slice (Samsung) is visually the largest, supporting the claim."
+          }
+        }
+      ],
+      "history": []
+    },
+    {
+      "rule_id": "r3",
+      "version": 1,
+      "status": "active",
+      "text": "If the public task requires selecting a brand for market-leader follow-up and the chart shows multiple brands with different shares, the brand with the highest share among the public options is the one to select, provided the chart's encoding is valid.",
+      "component": "task-to-action relation",
+      "conditions": "The public options are Samsung, Others, and Xiaomi; the chart's encoding is valid; the task's 'current market leader' means the largest market share.",
+      "checks": [
+        {
+          "target_id": "base_c3",
+          "O": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "yellow slice",
+                "content": "The yellow slice has the printed label 'Samsung (55%)'."
+              },
+              {
+                "ref": "chart_1",
+                "location": "red slice",
+                "content": "The red slice has the printed label 'Xiaomi (20%)'."
+              },
+              {
+                "ref": "chart_1",
+                "location": "light orange slice",
+                "content": "The light orange slice has the printed label 'Others (10%)'."
+              }
+            ],
+            "reason": "The observations correctly identify the printed labels for the brands present in the public options."
+          },
+          "B": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Select Samsung as the current market leader"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/1",
+                "content": "Select Others as the current market leader"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/2",
+                "content": "Select Xiaomi as the current market leader"
+              }
+            ],
+            "reason": "The rule correctly identifies the public options and the task-to-action relation."
+          },
+          "implication": {
+            "status": "supported",
+            "evidence": [
+              {
+                "ref": "chart_1",
+                "location": "yellow slice",
+                "content": "The yellow slice has the printed label 'Samsung (55%)'."
+              }
+            ],
+            "reason": "Samsung has the highest share among the public options, supporting the claim."
+          }
+        }
+      ],
+      "history": []
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "title",
+          "content": "The title reads 'Smartphone Market Share in Europe'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "yellow slice",
+          "content": "The yellow slice has the printed label 'Samsung (55%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice",
+          "content": "The red slice has the printed label 'Xiaomi (20%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange slice",
+          "content": "The orange slice has the printed label 'Apple (15%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light orange slice",
+          "content": "The light orange slice has the printed label 'Others (10%)'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "If the printed percentages are valid, Samsung has the largest share (55%), so it is the current market leader and the corresponding option should be selected."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "yellow slice",
+          "content": "The yellow slice occupies the largest visible area in the pie chart."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice",
+          "content": "The red slice occupies a smaller visible area than the yellow slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "orange slice",
+          "content": "The orange slice occupies a smaller visible area than the red slice."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light orange slice",
+          "content": "The light orange slice occupies the smallest visible area."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/user_goal",
+          "content": "Review the Europe smartphone market share dashboard, then select the smartphone brand that should be marked for market-leader follow-up."
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "If the visual slice areas are valid, the yellow slice (Samsung) is the largest, so it is the current market leader and the corresponding option should be selected."
+    },
+    {
+      "chain_id": "base_c3",
+      "rule_id": "r3",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "yellow slice",
+          "content": "The yellow slice has the printed label 'Samsung (55%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "red slice",
+          "content": "The red slice has the printed label 'Xiaomi (20%)'."
+        },
+        {
+          "ref": "chart_1",
+          "location": "light orange slice",
+          "content": "The light orange slice has the printed label 'Others (10%)'."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Select Samsung as the current market leader"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Select Others as the current market leader"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/2",
+          "content": "Select Xiaomi as the current market leader"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Select Samsung as the current market leader",
+      "claim": "Among the public options (Samsung, Others, Xiaomi), Samsung has the highest printed share (55%), so it is the brand to select for market-leader follow-up."
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "target_rule_id": "r1",
+      "target_rule_version": 1,
+      "status": "supported",
+      "applied_to_original": false,
+      "asserted_dimensions": [
+        "B",
+        "implication"
+      ],
+      "condition_note": "The condition 'printed percentages are valid share values' is satisfied by the visible arithmetic check: 55 + 20 + 15 + 10 = 100, confirming the labels form a complete partition of the pie.",
+      "added_observations": [],
+      "added_task_evidence": []
+    },
+    {
+      "id": "refine_2",
+      "target_chain_id": "base_c3",
+      "target_rule_id": "r3",
+      "target_rule_version": 1,
+      "status": "supported",
+      "applied_to_original": false,
+      "asserted_dimensions": [
+        "B",
+        "implication"
+      ],
+      "condition_note": "The condition 'public options are Samsung, Others, and Xiaomi' is refined to require that 'Others' is treated as a non-brand aggregate category, not a selectable single brand, so it cannot contain a hidden brand with a higher share than Samsung.",
+      "added_observations": [],
+      "added_task_evidence": []
+    }
+  ]
+}

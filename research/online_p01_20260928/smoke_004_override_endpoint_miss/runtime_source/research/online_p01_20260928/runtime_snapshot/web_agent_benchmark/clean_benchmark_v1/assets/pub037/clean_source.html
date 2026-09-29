@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pub037 clean chart source</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+    img { max-width: 100%; border: 1px solid #d1d5db; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>2012 Age-cohort Planning Follow-up Routing</h1>
+  <p>This is the clean-pair rendering for <strong>pub037</strong>. The chart uses the official task CSV and removes the misleading visual mechanism while leaving task semantics unchanged.</p>
+  <p><strong>Cleaning rule:</strong> visDeception official paired Control/regular image</p>
+  <img src="clean.png" alt="Clean chart">
+  <h2>Source metadata</h2>
+  <pre>{
+  &quot;official_slug&quot;: &quot;pub037&quot;,
+  &quot;task_id&quot;: &quot;pa_task_fed1ed8a7a_multi_col_626_png_dual&quot;,
+  &quot;case_id&quot;: &quot;visDeception/DualAxis/multi_col_626.png_dual&quot;,
+  &quot;misleader_type&quot;: &quot;dual_encoding&quot;,
+  &quot;plot_type&quot;: &quot;line_chart&quot;,
+  &quot;cleaning_rule&quot;: &quot;visDeception official paired Control/regular image&quot;,
+  &quot;ground_truth&quot;: {
+    &quot;ground_truth_computation&quot;: &quot;Image-only draft. Regular/reference view indicates 20-39 years has the larger 2012 population than 0-19 years; confirm before formal scoring.&quot;,
+    &quot;ground_truth_entity&quot;: &quot;20-39 years&quot;,
+    &quot;ground_truth_value&quot;: null,
+    &quot;recommended_action_type&quot;: &quot;Open the 2012 demographic planning follow-up record for the age cohort with the larger population.&quot;
+  },
+  &quot;misleading_context&quot;: {
+    &quot;expected_visual_trap&quot;: &quot;0-19 years appears visually larger in the 2012 chart position, while 20-39 years should remain the larger-population cohort.&quot;,
+    &quot;misleading_target&quot;: &quot;Selecting the age cohort that appears visually higher in 2012 instead of the cohort with the larger population.&quot;
+  }
+}</pre>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "id": "chatcmpl-ETMLmBE0k1PPSvZ24csWpEkkO5Swr",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"new_rules\":[],\"new_chains\":[],\"refinements\":[{\"id\":\"refine_1\",\"target_chain_id\":\"base_c1\",\"question_ids\":[\"q1\"],\"added_observations\":[],\"added_task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/companion_fields/0/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/0/options/1/label\",\"content\":\"Assign additional promotional budget\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/options/1/label\",\"content\":\"Prioritize highest current rating share\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/2/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/2/options/1/label\",\"content\":\"Rating-share category promotion\"}],\"condition_note\":\"Completing the supported category action for submission also requires selecting the available non-placeholder option in each of the three required companion fields: the additional-budget action, the highest-current-rating-share queue rule, and the rating-share category-promotion program.\",\"reason\":\"The base chain establishes the category selection from the labeled chart values, while this refinement adds the separately required workflow-form completion conditions without changing that category conclusion.\"}],\"question_responses\":[{\"question_id\":\"q1\",\"outcome\":\"refined_existing\",\"record_ids\":[\"refine_1\"],\"covered_chain_ids\":[\"base_c1\"],\"reason\":\"The category basis is already covered by base_c1; refine_1 adds the three required companion selections needed to complete the promotional-budget workflow.\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "finish_reason": "stop",
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "detected": false,
+          "filtered": false
+        },
+        "protected_material_text": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      },
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1790666134,
+  "model": "gpt-5.6-terra-2026-07-09",
+  "object": "chat.completion",
+  "usage": {
+    "prompt_tokens": 8158,
+    "completion_tokens": 503,
+    "total_tokens": 8661,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 152
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "routing": {
+    "serving_pipereplica": "d20260825170006-c8af8e33-prefill-r2-dp0-prefill"
+  },
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "service_tier": "default"
+}

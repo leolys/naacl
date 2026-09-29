@@ -1,0 +1,89 @@
+{
+  "id": "chatcmpl-ETMNq8FdVeUIPqE8sku1QK5smRGh2",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"new_rules\":[],\"new_chains\":[],\"refinements\":[{\"id\":\"refine_1\",\"target_chain_id\":\"base_c1\",\"question_ids\":[\"q1\"],\"added_observations\":[],\"added_task_evidence\":[{\"ref\":\"public_task\",\"path\":\"/companion_fields/0/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/0/options/1/label\",\"content\":\"Assign additional promotional budget\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/1/options/1/label\",\"content\":\"Prioritize highest current rating share\"},{\"ref\":\"public_task\",\"path\":\"/companion_fields/2/required\",\"content\":true},{\"ref\":\"public_task\",\"path\":\"/companion_fields/2/options/1/label\",\"content\":\"Rating-share category promotion\"}],\"condition_note\":\"If the conditional category conclusion in the target chain is used to submit the workflow, the three required companion fields must also be set to their available promotion, highest-rating-share, and rating-share-promotion selections.\",\"reason\":\"The target chain establishes the conditional category choice from chart labels and the selection rule, while this adds the distinct required workflow-completion conditions and their matching available values.\"}],\"question_responses\":[{\"question_id\":\"q1\",\"outcome\":\"refined_existing\",\"record_ids\":[\"refine_1\"],\"covered_chain_ids\":[\"base_c1\"],\"reason\":\"The category-selection support remains in base_c1. The refinement adds evidence that all three specified companion fields are required and identifies the available selections that implement the requested promotion workflow.\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "finish_reason": "stop",
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "detected": false,
+          "filtered": false
+        },
+        "protected_material_text": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      },
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1790666262,
+  "model": "gpt-5.6-terra-2026-07-09",
+  "object": "chat.completion",
+  "usage": {
+    "prompt_tokens": 5807,
+    "completion_tokens": 703,
+    "total_tokens": 6510,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 350
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "routing": {
+    "serving_pipereplica": "d20260902231100-48cb0b2d-prefill-r6-dp0-prefill"
+  },
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "service_tier": "default"
+}

@@ -1,0 +1,710 @@
+{
+  "phase": "proposal",
+  "context": {
+    "task": {
+      "task_alias": "task_088",
+      "page_title": "Temperature Trend Follow-Up Routing",
+      "user_goal": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow.",
+      "chart_reference": "Use the charted yearly temperature readings as the basis for this routing decision.",
+      "primary_field_label": "Temperature trend routing decision",
+      "option_labels": [
+        "Escalate the 2005-2015 temperature decline for follow-up",
+        "Keep the 2005-2015 temperature decline on routine monitoring",
+        "Archive the temperature trend record without targeted follow-up"
+      ],
+      "companion_fields": [
+        {
+          "field": "note",
+          "label": "Routing note",
+          "type": "textarea",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "placeholder": "Optional note for the environment record"
+        },
+        {
+          "field": "visible_context_1",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Program area",
+          "value": "Temperature monitoring"
+        },
+        {
+          "field": "visible_context_2",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Review scope",
+          "value": "Multi-year environmental trend"
+        },
+        {
+          "field": "visible_context_3",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Record workflow",
+          "value": "Substantial trend follow-up"
+        },
+        {
+          "field": "visible_context_4",
+          "type": "readonly",
+          "required": false,
+          "readonly": true,
+          "label": "Routing criterion",
+          "value": "Magnitude of change across the review period"
+        }
+      ],
+      "completion_label": "Submit Form",
+      "policy_tables": [],
+      "page_instructions": [
+        {
+          "page": "home",
+          "text": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+        },
+        {
+          "page": "dashboard",
+          "text": "Use the charted yearly temperature readings as the basis for this routing decision."
+        },
+        {
+          "page": "form",
+          "text": "Use the charted yearly temperature readings as the basis for this routing decision."
+        },
+        {
+          "page": "form",
+          "text": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+        }
+      ]
+    },
+    "state": {
+      "current_selection": "",
+      "option_states": [
+        {
+          "label": "Escalate the 2005-2015 temperature decline for follow-up",
+          "selected": false
+        },
+        {
+          "label": "Keep the 2005-2015 temperature decline on routine monitoring",
+          "selected": false
+        },
+        {
+          "label": "Archive the temperature trend record without targeted follow-up",
+          "selected": false
+        }
+      ],
+      "options": [
+        "Escalate the 2005-2015 temperature decline for follow-up",
+        "Keep the 2005-2015 temperature decline on routine monitoring",
+        "Archive the temperature trend record without targeted follow-up"
+      ],
+      "fields": [
+        {
+          "field": "note",
+          "type": "textarea",
+          "label": "Routing note",
+          "required": false,
+          "readonly": false,
+          "value": "",
+          "selected_text": null,
+          "valid": true,
+          "options": null
+        }
+      ],
+      "submit_visible": true,
+      "page": "form",
+      "visible_text": "Dashboard Reference Use the charted yearly temperature readings as the basis for this routing decision. Temperature Trend Follow-Up Routing Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow. Program area Temperature monitoring Review scope Multi-year environmental trend Record workflow Substantial trend follow-up Routing criterion Magnitude of change across the review period Temperature trend routing decision Select a route Escalate the 2005-2015 temperature decline for follow-up Keep the 2005-2015 temperature decline on routine monitoring Archive the temperature trend record without targeted follow-up Routing note Submit Form Back to Dashboard",
+      "links": [
+        "Back to Dashboard"
+      ]
+    },
+    "history": [
+      {
+        "sequence": 0,
+        "action": {
+          "kind": "initial_open_home"
+        },
+        "receipt": {
+          "ok": true,
+          "page": "home"
+        },
+        "source": "setup"
+      },
+      {
+        "sequence": 1,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Dashboard"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      },
+      {
+        "sequence": 2,
+        "action": {
+          "kind": "open_link",
+          "label": "Open Form"
+        },
+        "receipt": {
+          "ok": true,
+          "submitted": false,
+          "observed_selection_after": null
+        },
+        "source": "actor"
+      }
+    ],
+    "interpretation_rules": {
+      "version": 1,
+      "same_task_and_image": true,
+      "condition_applicability": "actor_must_check",
+      "rules": [
+        {
+          "rule_id": "r1",
+          "version": 1,
+          "status": "active",
+          "text": "If the x-axis year ticks bind the left endpoint marker to 2005 and the right endpoint marker to 2015, and the adjacent temperature inscriptions are valid readings on the chart's Temperature (°C) axis, then subtracting the 2015 reading from the 2005 reading yields the magnitude and direction of the endpoint change. If the substantial-trend workflow classifies that computed decline as substantial, the record should be escalated for follow-up.",
+          "component": "chart encoding, endpoint calculation, and conditional routing relation",
+          "conditions": "The endpoint markers are the intended 2005 and 2015 readings; their adjacent inscriptions are valid; and the workflow treats the computed endpoint decline as substantial.",
+          "checks": [
+            {
+              "target_id": "base_c1",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "left endpoint at x-axis tick 2005",
+                    "content": "A black plotted marker is vertically aligned with the printed x-axis tick \"2005\" and has the adjacent inscription \"$24.0°C\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "right endpoint at x-axis tick 2015",
+                    "content": "A black plotted marker is vertically aligned with the printed x-axis tick \"2015\" and has the adjacent inscription \"$10.0°C\"."
+                  },
+                  {
+                    "ref": "chart_1",
+                    "location": "vertical axis title",
+                    "content": "The vertical axis is visibly inscribed \"Temperature (°C)\"."
+                  }
+                ],
+                "reason": "The endpoint markers, their adjacent printed inscriptions, their x-tick alignments, and the axis title are visible."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/4/value",
+                    "content": "Magnitude of change across the review period"
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/option_labels/0",
+                    "content": "Escalate the 2005-2015 temperature decline for follow-up"
+                  }
+                ],
+                "reason": "The rule is explicitly conditional on valid endpoint encoding and on the workflow classifying the computed decline as substantial; the public task identifies magnitude as the criterion and provides the escalation route, but does not itself verify the open conditions."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "endpoint inscriptions at 2005 and 2015",
+                    "content": "The visible endpoint inscriptions are \"$24.0°C\" at 2005 and \"$10.0°C\" at 2015."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/3/value",
+                    "content": "Substantial trend follow-up"
+                  }
+                ],
+                "reason": "If the visibly printed endpoint values validly bind as temperature readings, their arithmetic difference is 14.0°C, and the claim appropriately keeps both the encoding and substantiality conditions explicit rather than establishing escalation unconditionally."
+              }
+            }
+          ],
+          "history": []
+        },
+        {
+          "rule_id": "r2",
+          "version": 1,
+          "status": "active",
+          "text": "A charted endpoint decline alone does not establish that escalation is required when the public task identifies magnitude of change as the routing criterion but supplies no threshold or other rule defining which magnitude is substantial. Until that criterion is specified or otherwise verified, the escalation option is conditionally supported but not established.",
+          "component": "policy-threshold support gap",
+          "conditions": "Applies because the available public task contains no policy table or numeric substantial-trend threshold.",
+          "checks": [
+            {
+              "target_id": "base_c2",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "plotted series endpoints from 2005 to 2015",
+                    "content": "The black marker at the 2015 tick is lower on the page than the black marker at the 2005 tick, and blue line segments connect the plotted markers."
+                  }
+                ],
+                "reason": "The stated screen-space ordering and connected blue plotted line are visible."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/3/value",
+                    "content": "Substantial trend follow-up"
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/4/value",
+                    "content": "Magnitude of change across the review period"
+                  }
+                ],
+                "reason": "The supplied task frames the route as substantial-trend follow-up and names magnitude as the criterion, but supplies no numeric threshold, policy table, or other stated definition of substantiality. Thus the rule's support-gap condition applies."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/user_goal",
+                    "content": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/4/value",
+                    "content": "Magnitude of change across the review period"
+                  }
+                ],
+                "reason": "Without a supplied substantiality threshold or equivalent routing rule, the available chart and task cannot conclusively establish escalation. The claim does not infer a competing route."
+              }
+            }
+          ],
+          "history": []
+        },
+        {
+          "rule_id": "supp_r1",
+          "version": 1,
+          "status": "active",
+          "text": "When the public task directs review of the charted yearly temperature readings for the 2005-2015 trend but does not state whether every intervening year must have a plotted reading, an endpoint-only magnitude assessment is not established if a year tick within that period lacks a visible marker or reading. The missing-data requirement remains a support gap rather than evidence for a different routing option.",
+          "component": "chart coverage and task relation",
+          "conditions": "Applies where an intervening labeled year has no visible plotted reading and the public task supplies no completeness or endpoint-assessment rule.",
+          "checks": [
+            {
+              "target_id": "supp_c1",
+              "O": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "x-axis tick 2011 between plotted markers at 2010 and 2012",
+                    "content": "The x-axis visibly includes the tick inscription \"2011\"; no black marker or point-value inscription is visible at that tick, while blue line segments run between the markers at 2010 and 2012."
+                  }
+                ],
+                "reason": "The labeled 2011 tick has no visible plotted point or adjacent point label, and the connected line spans the interval."
+              },
+              "B": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/companion_fields/2/value",
+                    "content": "Multi-year environmental trend"
+                  }
+                ],
+                "reason": "The task calls for charted yearly readings in a multi-year review but does not state whether every labeled intervening year must be plotted or whether endpoints alone suffice. The rule preserves that missing requirement as an open condition."
+              },
+              "implication": {
+                "status": "supported",
+                "evidence": [
+                  {
+                    "ref": "chart_1",
+                    "location": "x-axis tick 2011 between 2010 and 2012 markers",
+                    "content": "The visible \"2011\" tick has no black plotted marker or adjacent temperature inscription."
+                  },
+                  {
+                    "ref": "public_task",
+                    "path": "/chart_reference",
+                    "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                  }
+                ],
+                "reason": "The missing visible 2011 point, combined with no stated completeness or endpoint-only assessment rule, warrants treating the intended completeness requirement as unresolved; it does not support a different routing option."
+              }
+            }
+          ],
+          "history": []
+        }
+      ],
+      "refinements": [
+        {
+          "id": "refine_1",
+          "target_chain_id": "base_c1",
+          "target_rule_id": "r1",
+          "target_rule_version": 1,
+          "status": "supported",
+          "applied_to_original": false,
+          "asserted_dimensions": [
+            "O",
+            "B",
+            "implication"
+          ],
+          "condition_note": "The endpoint labels can be used as temperature readings only if the unexplained leading \"$\" is decorative or otherwise does not change the numeric values' binding to the Temperature (°C) axis.",
+          "added_observations": [
+            {
+              "ref": "chart_1",
+              "location": "plot labels and chart annotations",
+              "content": "Each visible plotted-point inscription begins with a \"$\" character and ends with \"°C\", including \"$24.0°C\" at 2005 and \"$10.0°C\" at 2015; no legend or annotation visibly defines the \"$\" character."
+            }
+          ],
+          "added_task_evidence": []
+        }
+      ]
+    },
+    "verified_arguments": {
+      "arguments": {
+        "rules": [
+          {
+            "id": "r1",
+            "text": "If the x-axis year ticks bind the left endpoint marker to 2005 and the right endpoint marker to 2015, and the adjacent temperature inscriptions are valid readings on the chart's Temperature (°C) axis, then subtracting the 2015 reading from the 2005 reading yields the magnitude and direction of the endpoint change. If the substantial-trend workflow classifies that computed decline as substantial, the record should be escalated for follow-up.",
+            "component": "chart encoding, endpoint calculation, and conditional routing relation",
+            "conditions": "The endpoint markers are the intended 2005 and 2015 readings; their adjacent inscriptions are valid; and the workflow treats the computed endpoint decline as substantial."
+          },
+          {
+            "id": "r2",
+            "text": "A charted endpoint decline alone does not establish that escalation is required when the public task identifies magnitude of change as the routing criterion but supplies no threshold or other rule defining which magnitude is substantial. Until that criterion is specified or otherwise verified, the escalation option is conditionally supported but not established.",
+            "component": "policy-threshold support gap",
+            "conditions": "Applies because the available public task contains no policy table or numeric substantial-trend threshold."
+          },
+          {
+            "id": "supp_r1",
+            "text": "When the public task directs review of the charted yearly temperature readings for the 2005-2015 trend but does not state whether every intervening year must have a plotted reading, an endpoint-only magnitude assessment is not established if a year tick within that period lacks a visible marker or reading. The missing-data requirement remains a support gap rather than evidence for a different routing option.",
+            "component": "chart coverage and task relation",
+            "conditions": "Applies where an intervening labeled year has no visible plotted reading and the public task supplies no completeness or endpoint-assessment rule."
+          }
+        ],
+        "chains": [
+          {
+            "chain_id": "base_c1",
+            "rule_id": "r1",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "leftmost plotted marker at the 2005 x-axis tick",
+                "content": "A black marker aligned with the x-axis inscription \"2005\" has the adjacent printed inscription \"$24.0°C\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "rightmost plotted marker at the 2015 x-axis tick",
+                "content": "A black marker aligned with the x-axis inscription \"2015\" has the adjacent printed inscription \"$10.0°C\"."
+              },
+              {
+                "ref": "chart_1",
+                "location": "vertical axis title",
+                "content": "The vertical axis is inscribed \"Temperature (°C)\"."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/4/value",
+                "content": "Magnitude of change across the review period"
+              },
+              {
+                "ref": "public_task",
+                "path": "/option_labels/0",
+                "content": "Escalate the 2005-2015 temperature decline for follow-up"
+              }
+            ],
+            "claim_kind": "supports_action",
+            "option_label": "Escalate the 2005-2015 temperature decline for follow-up",
+            "claim": "Provided the endpoint inscriptions validly encode the intended readings and a 14.0°C decrease from 2005 to 2015 meets the workflow's unstated substantial-trend criterion, the chart conditionally supports escalating the decline for follow-up."
+          },
+          {
+            "chain_id": "base_c2",
+            "rule_id": "r2",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "endpoint markers spanning the 2005 and 2015 x-axis ticks",
+                "content": "The marker at the 2015 tick is lower on the page than the marker at the 2005 tick, and the two markers are connected by a blue line."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/3/value",
+                "content": "Substantial trend follow-up"
+              },
+              {
+                "ref": "public_task",
+                "path": "/companion_fields/4/value",
+                "content": "Magnitude of change across the review period"
+              }
+            ],
+            "claim_kind": "underdetermined",
+            "option_label": null,
+            "claim": "The visible endpoint pattern and stated magnitude criterion motivate follow-up consideration, but the supplied public task does not define what magnitude qualifies as substantial; therefore the proposed escalation is not conclusively established from the chart and public task alone."
+          },
+          {
+            "chain_id": "supp_c1",
+            "rule_id": "supp_r1",
+            "observations": [
+              {
+                "ref": "chart_1",
+                "location": "x-axis at the 2011 tick and connected line segment between 2010 and 2012",
+                "content": "The x-axis has an inscription \"2011\", while no black marker or adjacent temperature inscription is visible at that tick; the blue line connects the markers at 2010 and 2012 across it."
+              }
+            ],
+            "task_evidence": [
+              {
+                "ref": "public_task",
+                "path": "/chart_reference",
+                "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+              }
+            ],
+            "claim_kind": "underdetermined",
+            "option_label": null,
+            "claim": "Because the chart lacks a visible 2011 reading and the public task does not say whether the 2005-2015 magnitude may be assessed from endpoints despite an unplotted intervening year, the intended completeness requirement for the multi-year assessment is unresolved."
+          }
+        ],
+        "refinements": [
+          {
+            "id": "refine_1",
+            "target_chain_id": "base_c1",
+            "added_observations": [
+              {
+                "ref": "chart_1",
+                "location": "plot labels and chart annotations",
+                "content": "Each visible plotted-point inscription begins with a \"$\" character and ends with \"°C\", including \"$24.0°C\" at 2005 and \"$10.0°C\" at 2015; no legend or annotation visibly defines the \"$\" character."
+              }
+            ],
+            "added_task_evidence": [],
+            "condition_note": "The endpoint labels can be used as temperature readings only if the unexplained leading \"$\" is decorative or otherwise does not change the numeric values' binding to the Temperature (°C) axis.",
+            "reason": "The existing validity condition for endpoint inscriptions does not specifically identify the visible unexplained prefix as an open encoding condition."
+          }
+        ]
+      },
+      "verification": {
+        "checks": [
+          {
+            "target_id": "base_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "left endpoint at x-axis tick 2005",
+                  "content": "A black plotted marker is vertically aligned with the printed x-axis tick \"2005\" and has the adjacent inscription \"$24.0°C\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "right endpoint at x-axis tick 2015",
+                  "content": "A black plotted marker is vertically aligned with the printed x-axis tick \"2015\" and has the adjacent inscription \"$10.0°C\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "vertical axis title",
+                  "content": "The vertical axis is visibly inscribed \"Temperature (°C)\"."
+                }
+              ],
+              "reason": "The endpoint markers, their adjacent printed inscriptions, their x-tick alignments, and the axis title are visible."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Magnitude of change across the review period"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/option_labels/0",
+                  "content": "Escalate the 2005-2015 temperature decline for follow-up"
+                }
+              ],
+              "reason": "The rule is explicitly conditional on valid endpoint encoding and on the workflow classifying the computed decline as substantial; the public task identifies magnitude as the criterion and provides the escalation route, but does not itself verify the open conditions."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "endpoint inscriptions at 2005 and 2015",
+                  "content": "The visible endpoint inscriptions are \"$24.0°C\" at 2005 and \"$10.0°C\" at 2015."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/3/value",
+                  "content": "Substantial trend follow-up"
+                }
+              ],
+              "reason": "If the visibly printed endpoint values validly bind as temperature readings, their arithmetic difference is 14.0°C, and the claim appropriately keeps both the encoding and substantiality conditions explicit rather than establishing escalation unconditionally."
+            }
+          },
+          {
+            "target_id": "base_c2",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "plotted series endpoints from 2005 to 2015",
+                  "content": "The black marker at the 2015 tick is lower on the page than the black marker at the 2005 tick, and blue line segments connect the plotted markers."
+                }
+              ],
+              "reason": "The stated screen-space ordering and connected blue plotted line are visible."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/3/value",
+                  "content": "Substantial trend follow-up"
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Magnitude of change across the review period"
+                }
+              ],
+              "reason": "The supplied task frames the route as substantial-trend follow-up and names magnitude as the criterion, but supplies no numeric threshold, policy table, or other stated definition of substantiality. Thus the rule's support-gap condition applies."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/user_goal",
+                  "content": "Review the 2005-2015 temperature monitoring trend and route the record based on whether the multi-year change warrants follow-up under the substantial trend workflow."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/4/value",
+                  "content": "Magnitude of change across the review period"
+                }
+              ],
+              "reason": "Without a supplied substantiality threshold or equivalent routing rule, the available chart and task cannot conclusively establish escalation. The claim does not infer a competing route."
+            }
+          },
+          {
+            "target_id": "supp_c1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis tick 2011 between plotted markers at 2010 and 2012",
+                  "content": "The x-axis visibly includes the tick inscription \"2011\"; no black marker or point-value inscription is visible at that tick, while blue line segments run between the markers at 2010 and 2012."
+                }
+              ],
+              "reason": "The labeled 2011 tick has no visible plotted point or adjacent point label, and the connected line spans the interval."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/companion_fields/2/value",
+                  "content": "Multi-year environmental trend"
+                }
+              ],
+              "reason": "The task calls for charted yearly readings in a multi-year review but does not state whether every labeled intervening year must be plotted or whether endpoints alone suffice. The rule preserves that missing requirement as an open condition."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "x-axis tick 2011 between 2010 and 2012 markers",
+                  "content": "The visible \"2011\" tick has no black plotted marker or adjacent temperature inscription."
+                },
+                {
+                  "ref": "public_task",
+                  "path": "/chart_reference",
+                  "content": "Use the charted yearly temperature readings as the basis for this routing decision."
+                }
+              ],
+              "reason": "The missing visible 2011 point, combined with no stated completeness or endpoint-only assessment rule, warrants treating the intended completeness requirement as unresolved; it does not support a different routing option."
+            }
+          },
+          {
+            "target_id": "refine_1",
+            "O": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "point-value inscriptions across the plotted series",
+                  "content": "Visible point inscriptions include \"$24.0°C\", \"$22.8°C\", \"$21.9°C\", \"$20.3°C\", \"$19.1°C\", \"$16.3°C\", \"$15.4°C\", \"$13.9°C\", \"$12.2°C\", and \"$10.0°C\"; each begins with \"$\" and ends with \"°C\"."
+                },
+                {
+                  "ref": "chart_1",
+                  "location": "chart title, axes, and plot area",
+                  "content": "No visible legend or annotation defines the leading \"$\" character in the point-value inscriptions."
+                }
+              ],
+              "reason": "The leading dollar sign is visibly present on every displayed point label, and no visible chart key explains it."
+            },
+            "B": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "vertical axis and endpoint point-value inscriptions",
+                  "content": "The vertical axis reads \"Temperature (°C)\", while the endpoint labels visibly read \"$24.0°C\" and \"$10.0°C\"."
+                }
+              ],
+              "reason": "The condition note does not assert that \"$\" is decorative; it appropriately identifies that use of the numeric portions as temperature readings requires the unexplained prefix not to alter their binding to the temperature axis. This is a compatible, more specific open condition within r1's existing inscription-validity condition."
+            },
+            "implication": {
+              "status": "supported",
+              "evidence": [
+                {
+                  "ref": "chart_1",
+                  "location": "endpoint point-value inscriptions",
+                  "content": "The endpoint inscriptions visibly contain the unexplained prefix in \"$24.0°C\" and \"$10.0°C\"."
+                }
+              ],
+              "reason": "The refinement is warranted because it makes a visible potential encoding ambiguity explicit in base_c1's validity condition. It neither establishes nor negates the endpoint calculation or the escalation conclusion."
+            }
+          }
+        ],
+        "summary": "The visible chart supports the stated endpoint markings, the lower screen position of the 2015 point, and the absence of a visible 2011 point. Conditional endpoint-based escalation remains a compatible reading, but the public task supplies no substantial-trend magnitude threshold, and the chart does not visibly explain the \"$\" prefix on point labels. The public task also does not resolve whether a missing intervening yearly point prevents endpoint-based multi-year assessment; no alternative routing action is established."
+      }
+    },
+    "previous_verification_or_execution": {
+      "pending_action_not_executed": {
+        "kind": "select",
+        "option": "Escalate the 2005-2015 temperature decline for follow-up"
+      },
+      "instruction": "Check the recorded evidence and re-derive your next action. No selection or submission was made by the verifier."
+    }
+  },
+  "images": [
+    {
+      "ref": "chart_1",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/env002_official140_online_completion/browser/observed_chart.jpeg",
+      "sha256": "47cc606d8ae67fc88bffcb5869c5d5f9802609a5b8b6cc0ea78a672944092013"
+    },
+    {
+      "ref": "page_current",
+      "file": "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_api_terra_002/env002_official140_online_completion/browser/page_004.png",
+      "sha256": "44c2a157a08af597827e0756e30464b0f01ed26d0c588e0e54041867be3a45b4"
+    }
+  ]
+}

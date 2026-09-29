@@ -1,0 +1,117 @@
+{
+  "checks": [
+    {
+      "target_id": "base_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Maine (ME) state polygon",
+            "content": "The state labeled ME is filled with a very dark red color."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Oklahoma (OK) state polygon",
+            "content": "The state labeled OK is filled with a very light yellow color."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Texas (TX) state polygon",
+            "content": "The state labeled TX is filled with a very light yellow color."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Color legend on the right",
+            "content": "The legend shows a gradient from light yellow at the bottom (labeled 'Low' and '0') to dark red at the top (labeled 'High' and '100')."
+          }
+        ],
+        "reason": "The visual observations of the state colors and the legend gradient are directly verifiable from the provided chart."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/user_goal",
+            "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/value",
+            "content": "Hazard risk index"
+          }
+        ],
+        "reason": "The rule correctly bridges the visual encoding (darker red = higher value) to the task requirement (selecting the state for priority review based on hazard risk index)."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Maine (ME) state polygon",
+            "content": "The state labeled ME is filled with a very dark red color."
+          }
+        ],
+        "reason": "Since ME is the darkest red among the options and the legend indicates darker red is higher, ME is the correct choice for the priority review."
+      }
+    },
+    {
+      "target_id": "supp_c1",
+      "O": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Maine (ME) state polygon",
+            "content": "The state labeled ME is filled with a very dark red color."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Oklahoma (OK) state polygon",
+            "content": "The state labeled OK is filled with a very light yellow color."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Texas (TX) state polygon",
+            "content": "The state labeled TX is filled with a very light yellow color."
+          },
+          {
+            "ref": "chart_1",
+            "location": "Color legend on the right",
+            "content": "The legend shows a gradient from light yellow at the bottom (labeled 'Low' and '0') to dark red at the top (labeled 'High' and '100')."
+          }
+        ],
+        "reason": "The visual observations of the state colors and the legend gradient are directly verifiable from the provided chart."
+      },
+      "B": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "public_task",
+            "path": "/user_goal",
+            "content": "Review the state hazard dashboard, then choose the state record that should be added to the priority review list."
+          },
+          {
+            "ref": "public_task",
+            "path": "/companion_fields/1/value",
+            "content": "Hazard risk index"
+          }
+        ],
+        "reason": "The rule correctly bridges the visual encoding (darker red = higher value) to the task requirement (selecting the state for priority review based on hazard risk index)."
+      },
+      "implication": {
+        "status": "supported",
+        "evidence": [
+          {
+            "ref": "chart_1",
+            "location": "Maine (ME) state polygon",
+            "content": "The state labeled ME is filled with a very dark red color."
+          }
+        ],
+        "reason": "Since ME is the darkest red among the options and the legend indicates darker red is higher, ME is the correct choice for the priority review."
+      }
+    }
+  ],
+  "summary": "Both chains correctly identify that Maine (ME) has the darkest red color among the options, which corresponds to the highest hazard risk index according to the legend. The task requires selecting the state for a priority review, which logically aligns with selecting the state with the highest risk. All observations, rules, and implications are supported by the chart and public task evidence."
+}

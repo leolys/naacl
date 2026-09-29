@@ -1,0 +1,238 @@
+{
+  "rules": [
+    {
+      "id": "r1",
+      "text": "If the percentage inscriptions positioned above each browser's bar are the dashboard's authoritative current market_share values and each inscription is attached to the bar beneath it, then the browser with the greatest printed percentage is the browser to select under the stated highest-current-market_share queue rule.",
+      "component": "printed-value encoding/task relation",
+      "conditions": "This bridge applies only if the printed percentages, rather than bar heights, encode current market_share and are correctly attached to their respective browser bars."
+    },
+    {
+      "id": "r2",
+      "text": "If the vertical bar heights share the displayed y-axis scale, larger upward bar extent encodes larger current market_share, and the browser label beneath each bar identifies that bar, then the tallest browser bar is the browser to select under the stated highest-current-market_share queue rule.",
+      "component": "bar-height encoding/task relation",
+      "conditions": "This bridge applies only if the unlabeled vertical scale represents current market_share and the bar geometry is authoritative despite conflicting percentage inscriptions."
+    },
+    {
+      "id": "supp_r1",
+      "text": "If the chart presents contradictory candidate encodings for browser usage and neither a visible chart legend, axis title, or annotation nor the public task identifies which of those encodings is authoritative for current market_share, then the highest-current-market_share browser cannot be uniquely determined from the supplied evidence.",
+      "component": "encoding authority/task relation",
+      "conditions": "This applies when the competing readings select different browsers and the public instruction to use dashboard market_share values does not itself designate bar height or printed percentage as the authoritative encoding."
+    }
+  ],
+  "chains": [
+    {
+      "chain_id": "base_c1",
+      "rule_id": "r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "bar labeled Edge near the center",
+          "content": "A green bar has the x-axis inscription \"Edge\" beneath it, and the inscription \"87%\" appears immediately above its top."
+        },
+        {
+          "ref": "chart_1",
+          "location": "other browser bars",
+          "content": "The bars labeled Chrome, Safari, Firefox, and Others have percentage inscriptions \"5%\", \"1%\", \"23%\", and \"3%\", respectively, immediately above their tops."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/0",
+          "content": "Assign Edge to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Edge to the priority compatibility-testing queue",
+      "claim": "Conditionally, treating the printed percentages as authoritative current market_share values, Edge has the greatest displayed percentage and supports assigning Edge to the priority compatibility-testing queue."
+    },
+    {
+      "chain_id": "base_c2",
+      "rule_id": "r2",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "central Edge and Firefox bars",
+          "content": "The blue bar labeled \"Firefox\" extends higher on the page than the green bar labeled \"Edge\"."
+        },
+        {
+          "ref": "chart_1",
+          "location": "left vertical axis",
+          "content": "The visible y-axis tick inscriptions increase from \"0\" at the bottom upward through \"100\" near the top."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/policy_tables/0/rows/0/1",
+          "content": "Select the browser with the highest current market_share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/option_labels/1",
+          "content": "Assign Firefox to the priority compatibility-testing queue"
+        }
+      ],
+      "claim_kind": "supports_action",
+      "option_label": "Assign Firefox to the priority compatibility-testing queue",
+      "claim": "Conditionally, if the bar heights on the upward-increasing y-axis encode authoritative current market_share, Firefox is the tallest bar and supports assigning Firefox to the priority compatibility-testing queue; this visibly differs from the printed-percentage reading and requires resolving which encoding is authoritative."
+    },
+    {
+      "chain_id": "supp_c1",
+      "rule_id": "supp_r1",
+      "observations": [
+        {
+          "ref": "chart_1",
+          "location": "overall chart header and plotting area",
+          "content": "The chart is titled \"Browser Usage Share by Product\"; no legend, y-axis title, or annotation identifying either bar heights or the percentage inscriptions as market_share is visible."
+        },
+        {
+          "ref": "chart_1",
+          "location": "Edge and Firefox bars",
+          "content": "The green Edge bar has the inscription \"87%\" immediately above it, while the blue Firefox bar extends higher on the page and has the inscription \"23%\" immediately above it."
+        }
+      ],
+      "task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/chart_reference",
+          "content": "Use the dashboard market_share values as the evidence source; priority compatibility testing is reserved for the highest-usage browser because it has the largest user impact."
+        }
+      ],
+      "claim_kind": "underdetermined",
+      "option_label": null,
+      "claim": "The supplied chart and task leave the authoritative market_share encoding unresolved: the percentage inscriptions favor Edge, whereas the upward bar geometry favors Firefox. The public instruction requires dashboard market_share values but does not designate one of these conflicting visual encodings, so a unique priority-browser action is not established.",
+      "question_ids": [
+        "q1"
+      ],
+      "relationship": "support_gap"
+    }
+  ],
+  "refinements": [
+    {
+      "id": "refine_1",
+      "target_chain_id": "base_c1",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/options/1/label",
+          "content": "Browser product support"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/options/1/label",
+          "content": "Prioritize highest current usage share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/options/1/label",
+          "content": "High-impact compatibility regression testing"
+        }
+      ],
+      "condition_note": "If the Edge action is ultimately selected under the printed-percentage reading, form completion also requires selecting Browser product support, Prioritize highest current usage share, and High-impact compatibility regression testing in the three required companion fields.",
+      "reason": "The original chain establishes only the conditional Edge browser action; this adds the separately required workflow selections without treating them as evidence that resolves the chart-encoding conflict."
+    },
+    {
+      "id": "refine_2",
+      "target_chain_id": "base_c2",
+      "question_ids": [
+        "q2"
+      ],
+      "added_observations": [],
+      "added_task_evidence": [
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/required",
+          "content": true
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/0/options/1/label",
+          "content": "Browser product support"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/1/options/1/label",
+          "content": "Prioritize highest current usage share"
+        },
+        {
+          "ref": "public_task",
+          "path": "/companion_fields/2/options/1/label",
+          "content": "High-impact compatibility regression testing"
+        }
+      ],
+      "condition_note": "If the Firefox action is ultimately selected under the bar-height reading, form completion also requires selecting Browser product support, Prioritize highest current usage share, and High-impact compatibility regression testing in the three required companion fields.",
+      "reason": "The original chain establishes only the conditional Firefox browser action; this adds the separately required workflow selections without treating them as evidence that resolves the chart-encoding conflict."
+    }
+  ],
+  "initial_counts": {
+    "rules": 2,
+    "chains": 2
+  },
+  "supplement_counts": {
+    "rules": 1,
+    "chains": 1,
+    "refinements": 2
+  },
+  "question_responses": [
+    {
+      "question_id": "q1",
+      "outcome": "new_explanation",
+      "record_ids": [
+        "supp_c1"
+      ],
+      "covered_chain_ids": [
+        "base_c1",
+        "base_c2"
+      ],
+      "reason": "The existing chains identify the competing readings, while the added record specifically establishes the visible and task-level support gap: neither chart nor task designates which contradictory encoding is authoritative."
+    },
+    {
+      "question_id": "q2",
+      "outcome": "refined_existing",
+      "record_ids": [
+        "refine_1",
+        "refine_2"
+      ],
+      "covered_chain_ids": [
+        "base_c1",
+        "base_c2"
+      ],
+      "reason": "Both conditional browser-action chains now explicitly include the three required companion selections needed for form completion; these selections do not resolve the unresolved market_share encoding."
+    }
+  ]
+}
