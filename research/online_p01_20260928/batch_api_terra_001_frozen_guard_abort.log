@@ -1,0 +1,55 @@
+START b001_official140_ordinary
+127.0.0.1 - - [29/Sep/2026 06:24:35] "GET /task/b001 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:24:40] "GET /task/b001/dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:24:40] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:24:45] "GET /task/b001/form HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:24:45] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:25:13] "[32mPOST /task/b001/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [29/Sep/2026 06:25:13] "GET /task/b001/confirmation HTTP/1.1" 200 -
+END b001_official140_ordinary submitted
+START b001_official140_online_completion
+127.0.0.1 - - [29/Sep/2026 06:25:16] "GET /task/b001 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:25:20] "GET /task/b001/dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:25:20] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:25:24] "GET /task/b001/form HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:25:24] "GET /task/b001/chart HTTP/1.1" 200 -
+END b001_official140_online_completion unresolved_public_evidence
+START b001_clean140_ordinary
+127.0.0.1 - - [29/Sep/2026 06:26:32] "GET /task/b001 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:26:35] "GET /task/b001/dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:26:35] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:26:40] "GET /task/b001/form HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:26:40] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:27:05] "[32mPOST /task/b001/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [29/Sep/2026 06:27:05] "GET /task/b001/confirmation HTTP/1.1" 200 -
+END b001_clean140_ordinary submitted
+START b001_clean140_online_completion
+127.0.0.1 - - [29/Sep/2026 06:27:07] "GET /task/b001 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:27:10] "GET /task/b001/dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:27:10] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:27:15] "GET /task/b001/form HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:27:15] "GET /task/b001/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:28:37] "[32mPOST /task/b001/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [29/Sep/2026 06:28:37] "GET /task/b001/confirmation HTTP/1.1" 200 -
+END b001_clean140_online_completion submitted
+START b002_official140_ordinary
+127.0.0.1 - - [29/Sep/2026 06:28:39] "GET /task/b002 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:28:42] "GET /task/b002/dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:28:42] "GET /task/b002/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:28:47] "GET /task/b002/form HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:28:47] "GET /task/b002/chart HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2026 06:32:59] "[32mPOST /task/b002/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [29/Sep/2026 06:32:59] "GET /task/b002/confirmation HTTP/1.1" 200 -
+END b002_official140_ordinary submitted
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_main.py", line 202, in <module>
+    main()
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_main.py", line 179, in main
+    unchanged(output)
+  File "/data/lab/misvis/naacl-git/research/online_p01_20260928/batch_main.py", line 79, in unchanged
+    raise ValueError('frozen_source_or_asset_changed:' + name)
+ValueError: frozen_source_or_asset_changed:/data/lab/misvis/naacl-git/research/online_p01_20260928/endpoint_proxy.py

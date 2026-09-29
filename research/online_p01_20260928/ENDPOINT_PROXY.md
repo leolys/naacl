@@ -12,18 +12,6 @@
   （api.chatanywhere.tech），严格协议、无任何引导，pilot 保真度最高
   （与原 pilot 同模型名）。授权文件 AUTHORIZATION_API.json。
 
-## v2.1 收紧（guided_001 中断归档后）
-guided_001 跑出 actor `actor_missing_action_field`（select_field 给了 value
-而非 option）——sealed method.validate_actor 的 per-kind 必备字段未在 v2
-schema 中表达。v2.1 收紧三处，均为对 sealed 硬规则的镜像（仅结构，无语义）：
-1. actor.action → 7 kind 形状的 anyOf（const kind + 各自 required 字段）
-2. 验证 O/B/implication → supported/refuted 时 evidence minItems 1（core:
-   evidence reference required for supported/refuted judgments）
-3. public_task 引用 content → 类型化标量 anyOf（core: exact public leaf
-   content, typed scalar, no repair）
-guided_001 归档为 batch_guided_001_aborted_actor_schema_gap（2 单元失败
-签名保留为证据），重启为 batch_guided_002（全 12 任务）。
-
 ## v2 背景
 原 pilot（online_defense_20260925）的 actor 是 API 模型（OpenAI 兼容端点），
 对 `prompts.ACTOR` 末尾的 "JSON only:" 指令原生合规（纯 JSON 输出）。
