@@ -1,0 +1,74 @@
+This work studies defensive scaffolding around
+vision--language agents, and its limitations follow
+from the same design choices that produce the results.
+
+\emph{Scale and models.}
+The static panel uses one 27B open-weight VLM and one
+8B open-weight VLM under fixed decoding; the online
+deployment uses the same 27B model under two interface
+regimes and one frontier model accessed through a
+gateway.
+We do not claim that the reported gains generalize to
+proprietary or future models, to other agent
+frameworks, or to tasks outside the four covered
+domains; the 8B transfer already shows that variant
+choice interacts with actor capability in ways we do
+not fully predict.
+
+\emph{What the labels measure.}
+Robust accuracy is computed against the original
+option labels of the benchmark, and our agreement
+checks verify that submitted options and rule states
+match the recorded logs.
+Label agreement is not semantic verification: a run
+whose recorded reasoning matches its outcome may still
+rest on a misreading that the frozen labels do not
+separate, and conversely a correct submission may be
+produced for partially wrong reasons.
+The rule states we analyze are the agent's own
+declared rules, not independently validated facts.
+
+\emph{Selection effects and variance.}
+The paired gains are within-run comparisons on a fixed
+task set; the drop of direct selection from 81 to 73
+of 140 under an identical configuration quantifies
+sampling variance, and we therefore report McNemar
+tests and exact confidence intervals on paired
+decisions rather than cross-run rate differences.
+The 24-task development subset was used to calibrate
+configuration emphasis and is scored separately
+throughout; still, all configurations were designed by
+the authors after inspecting aggregate failure
+patterns, so the panel should be read as a controlled
+comparison rather than a held-out evaluation.
+
+\emph{Interface dependence.}
+The online results are conditional on the strict
+submission protocol.
+Its semantic contract---exact public-leaf values,
+bounded summaries, count-coupled responses---cannot be
+expressed in a response format, and under earlier
+actor systems the same machinery died in engineering
+failures rather than abstentions.
+The deployment therefore demonstrates the behavior of
+\ours{} under one operating point (frontier actor,
+direct gateway, strict typed interface), not a
+interface-robust defense; the negative environment-domain
+results of the static panel and the one-directional
+online paired effect are reported as found.
+
+\emph{Runtime footprint.}
+Verification multiplies requests by roughly
+$2.6\times$ over direct selection and the online
+arm operates within a fixed per-unit budget
+(1 re-verification round, 8 actor calls); agents
+deployed under tighter latency or cost envelopes may
+not accommodate this overhead.
+
+\emph{Reproducibility boundary.}
+The companion benchmark is under review and its
+instances are not yet public; until release, the
+results here cannot be independently recomputed from
+the logs alone, although all decision logs, prompts,
+and rule states referenced in this paper are preserved
+verbatim in the submission's supplementary material.

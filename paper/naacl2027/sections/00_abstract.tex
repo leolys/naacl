@@ -1,0 +1,35 @@
+Vision--language agents that execute multi-step web tasks
+treat charts as evidence: the way a chart is read enters
+tool calls, submissions, and actions.
+Charts, however, admit readings that are both faithful to
+the rendered image and wrong about the underlying data,
+because correct visual observation and misleading encoding
+conventions coexist in the same figure.
+Existing defenses operate at the level of single
+question--answer rounds and do not address how an
+interpretation, once revised, remains in force over a
+stateful execution.
+We present \ours, a harness-level defense that organizes
+chart interpretation around two coupled mechanisms: a
+competing-explanation chain that expresses the current
+judgment as $O\land B\Rightarrow C_q(a)$---an observation,
+an interpretation rule, and the conclusion an action
+requires---and a persistent rule state that records every
+validated rule revision with its supporting evidence and
+scope, and re-uses it in later reasoning.
+On a paired static panel of 140 executable web tasks built
+on \bench, \ours improves the robust accuracy of a
+27B open-weight VLM agent from 57.9\% to 68.6\% in the
+original round and replicates the gain in an independent
+round (52.1\% to 64.3\%; McNemar $p=0.0025$), with a
+smaller gain on an 8B model (46.4\% to 57.1\% for the
+most compatible variant).
+In stateful online execution over a closed deployment of
+twelve live tasks spanning both chart variants, both
+systems submit only correct actions when they submit at
+all (26/26 and 27/27 in two frontier-model batches);
+the defense arm converts ordinary agents'
+misleading-chart decisions into recorded abstentions
+rather than wrong submissions, and a stability rerun
+agrees with the formal run on 37 of 48 unit outcomes,
+with every disagreement an abstention--correct flip.

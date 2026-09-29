@@ -1,0 +1,189 @@
+\section{Execution Loop and Worked Example}\label{app:algorithm}
+
+Algorithm~\ref{alg:cers} summarizes one execution of
+\ours{} under the candidate budget $K$ and the review
+budget $L$ for a single verification node.
+
+\begin{algorithm}[t]
+\caption{\ours{} execution loop}
+\label{alg:cers}
+\begin{algorithmic}[1]
+\State inputs: task $q$; base agent $\mathcal{F}_\theta$
+and the original action interface; chain budget $K$;
+review budget $L$.
+\State initialize rule state $M \leftarrow \emptyset$;
+execution history $H \leftarrow \emptyset$.
+\For{each step $t$}
+  \State receive observation $o_t$; update chart
+  references and interpretation context $c_t$.
+  \State read applicable rules, revision evidence, and
+  disputes from $M$.
+  \State $(\widetilde{a}_t, \widetilde{\pi}_t)
+  \leftarrow \mathcal{F}_\theta(q, o_t, H,
+  \mathcal{R}_t)$.
+  \If{a trigger holds: first chart-dependent judgment,
+  interpretation conflict, or applicability change}
+    \State expand the current explanation into
+    $O \land B \Rightarrow C_q(\widetilde{a}_t)$.
+    \State generate at most $K$ substantially different
+    competing chains on the same complete chart.
+    \State normalize candidates; merge repeated chains
+    and shared rules.
+    \State verify observations, rule applicability, and
+    derivation sufficiency.
+    \State apply adoption, revocation, replacement, or
+    scope adjustment by the evidence.
+    \State re-derive the current action from the updated
+    state; within $L$, resolve remaining key disputes.
+  \EndIf
+  \State if the proposal reuses a revoked rule without
+  new evidence, return the revision record and require
+  re-derivation; with an effective new challenge,
+  re-verify the rule.
+  \State with \textsc{Keep} or \textsc{Revise}, execute
+  the approved action through the original interface;
+  with exhausted budget, record \textsc{Unresolved} and
+  stop the decision.
+  \State append the true observation, proposal, rule
+  versions, action, and feedback to $H$.
+\EndFor
+\State save the task's rule revisions and execution
+trajectory; close the task's rule scope.
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{A Worked Example of Revision and Cross-Step Reuse}\label{app:example}
+\label{sec:method:example}
+
+We illustrate the mechanism on the chart semantics of
+task pub013 from our execution data, which asks the
+agent to choose the highest-risk record among Illinois,
+Kansas, and Delaware; the case material records that the
+map legend assigns lighter yellow to higher risk and
+deep red to lower risk.
+The walkthrough below demonstrates the method and does
+not add experimental results.
+Suppose the current proposal selects Kansas under
+\begin{equation}\label{eq:pub013}
+\pi_0:
+\underbrace{\text{Kansas is darker}}_{O_0}
+\land
+\underbrace{\text{darker means higher risk}}_{B_0}
+\Rightarrow
+C_q(\mathrm{KS}).
+\end{equation}
+The competing module asks why a darker color should mean
+a higher risk; the model generates legend-dependent
+interpretations on the same complete map and compares
+the legend with the default color convention.
+If verification confirms that the chart does not support
+$B_0$, the rule loses applicability on this map and the
+state records the original interpretation, the revision
+reason that the convention contradicts the current
+legend definition, the current interpretation that
+candidate colors are read through the verified legend
+mapping, the scope of the current map and risk metric,
+and the condition for further updates, namely a
+different encoding or an effective refutation of the
+legend reading.
+The agent then re-compares the candidates with $B_1$ and
+the observed colors and completes the judgment the
+public task requires; the concrete option is an output
+of this reasoning, while the rule state keeps the
+interpretation basis of the current map.
+When the agent enters later pages or re-revisits the
+chart-dependent choice, what it reads is that rule and
+its revision reason: a new explanation that merely
+repeats ``deep red usually means more danger'' must
+answer the recorded legend evidence and cannot restore
+$B_0$ directly, while a re-reading that finds the
+earlier legend verification mistaken is allowed to
+revise again.
+The process records three distinct things: what changed
+in the interpretation rules, whether the current action
+must change, and which rule version later steps actually
+used.
+\section{Additional Results and Boundary Statements}\label{app:details}
+
+\subsection{Development Subset and Stratified Results}
+The 24-task development subset is scored separately in
+every round.
+In the original round the full configuration V5 gains
+$+17$ paired decisions on the remaining 116 tasks and
+$+1$ on the development subset; the same decomposition
+holds for the 8B round ($+10$ splits as $+9$ and
+$+1$).
+The environment domain is the only one in which V5
+loses against direct selection in both model rounds
+($-5$ in the 27B replication, $-9$ in the 8B round).
+At the family level, subset-extrapolation tasks
+contribute $+18$ (original round) and $+11$ (8B round)
+for V5; dual-axis and non-linear-axis families are
+mildly negative for V5 in the second model round
+($-5$ and $-6$), and bar-height tasks are near-neutral
+($-3$ and $-2$).
+
+\subsection{Interface-Failure Accounting}
+Interface failures are runs in which the agent never
+produces a schema-valid selection.
+They are zero for Direct, V4, V5, V6, and V7 on the
+27B model (all three rounds), and 6, 8, and 51 for V3
+in the original, replication, and 8B rounds
+respectively.
+V3's interface failures are not discarded: they remain
+in the denominator, which is why its large
+error-to-target correction counts on the 27B model
+(30 forward against 6 reverse, exact McNemar
+$p=0.0001$) reduce to a net $+2$.
+The 8B actor's failure mode is dominated by responses
+that violate the typed-record contract of the
+verification pass rather than by timeouts or
+truncations.
+
+\subsection{Online Deployment Details}
+Each online unit executes one task on one chart variant
+under one system inside a sealed environment: public
+inputs are mounted read-only, rule hooks intercept
+chart evidence entering the context, and the unit ends
+in exactly one of the recorded terminal statuses
+(submitted, abstention with reason, re-verification
+budget exhausted, or engineering failure).
+The strict interface (\texttt{typed\_scalars\_v2})
+permits at most eight actor calls and one
+re-verification round per unit at temperature zero.
+The three actor systems differ only below the
+interface: a local 27B model under strict response
+formats (Batch A), the same model behind a
+schema-guided proxy mirroring the sealed structural
+rules (Batch B), and the frontier model reached
+directly through the gateway (Batch C and its
+stability rerun).
+Across the two frontier-model batches the defense arm
+read its persistent rule state 48 and 46 times across
+its 24 units, never cooccurred with a wrong
+submission, and every per-unit persistence-causality
+flag reads \texttt{not\_established}; the ordinary arm
+produced exactly six wrong submissions, all
+chart-induced, all under the 27B actor on misleading
+charts, and none under the frontier actor.
+
+\subsection{Boundary Statements}
+Three boundary statements delimit the claims.
+First, the per-unit \texttt{causal\_persistence}
+effect is recorded as \emph{not established} in every
+online unit: the harness shows that revised rules were
+re-read and that outcomes changed between arms, but a
+single-unit causal attribution of outcome change to
+persistence is not identified by this design.
+Second, the stability rerun's unit-level agreement
+(37/48) bounds the reliability of any single-batch
+online estimate; disaggregated four-way cells shift by
+at most two units, and no flip ever crosses into a
+wrong submission.
+Third, the online deployment's paired effect is
+one-directional: the defense arm converts ordinary
+decisions into abstentions (10 and 13 per batch) and
+never the reverse, so the deployment should be read as
+a safe-fail characterization of the defense under the
+strict protocol, not as an accuracy improvement
+result.
