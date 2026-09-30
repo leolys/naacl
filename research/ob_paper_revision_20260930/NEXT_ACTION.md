@@ -83,3 +83,14 @@
 - 有意跳过:P1 ahn2026lies(2608.30428,为欺骗生成方向,切题度低,8.0 页刀刃无预算);P10 ARR 投稿表 Datasets/Software 字段——属提交时操作,已列投稿日 TODO。
 - 页限:正文仍恰 8.0 页(Conclusion p8 y505、Limitations p9 y72),15 页,0 undefined。
 - 验证纪律(本轮评审提出):每项修复以 PDF 文本逐项落位确认(L749/L759/L794/L1240/L1466),不再以计划为准。
+
+## 2026-09-30 第六轮评审修复(Phase 5 清单逐条执行)
+- B1(阻塞,本轮核心):轮 6 全量 48 单元普查(修正版分类器)发现配对效应措辞把 11/23 个转换误称为"记录在案的弃答"。真实拆分:Batch C 转换 10 = 7 弃答(5 误导+2 净图)+3 工程失败;重跑轮转换 13 = 5 弃答(3+2)+8 终止(7 工程失败+1 调用上限)。摘要还误加了"误导图"限定(10/13 跨两种图)。三处落位:04_experiments L183-196(拆分+合并符号检验:12 个已解析转换 12vs0,p=2×2⁻¹²≈4.9×10⁻⁴<.001)、00_abstract(12/23 弃答转换+11 终止,去图表限定)、07_appendix 边界三(附录不限页,写全拆分)。过程教训:前五轮验证只核对了计数(10/13、反向 0)与精度,未把单元状态分布对齐到"弃答"一词——轮 6 起每个状态性措辞都要对原始 status 分布审计。
+- S1:§4.2 重跑句补机制从句"in a fresh serving process of the identical configuration (serving-side batch admission is a nondeterminism source at a fixed seed)",吸收掉含糊的"quantifying sampling variance"。依据:xmodel_20260928 为独立服务进程(端口 8057),与 9/27 四服务部署分离。
+- S2:精度分母澄清为 batch-wide(26=18+8,27=20+7)并补防御臂 8/8、7/7(普查证实)。
+- S3:Batch C 接口句量化"abstention dominant among non-submissions (11 of 16)"(11 弃答+1 bug+4 失败=16 非提交)。
+- P5:§2 方法侧列表插入 TrustBench(sharma2026realtime,ACM CAIS'26,DOI 10.1145/3786335.3813145,arXiv 2605.05287)。refs.bib 两处必要修正(偏离逐字复制,按轮 2 修正先例):作者列表逗号→and 连接(逗号版被 BibTeX 解析为单人名,bbl 渲染"Pragya~Sharma Tavishi~Sharma, Vinayak~Sharma"乱序);title 加 {TrustBench} 大小写保护(bst 会把系统名小写)。
+- P6:改写消除"strictly one-directional/rather than corrections"三重复;P7:镜像成本句 em-dash 同位语→括号。
+- 补偿(§4 内等量吸收):V 阶梯阐述半句、stability 句枚举(分类学已在 B1 句中)、per-seed 指向、tabular 基线短语、(Playwright-controlled)、or variant、four-batch、Structural and semantic、executing agent's、cannot be taken for granted→is not guaranteed。摘要内:open-weight、holds 去重、12/23、or chart variant。
+- 页限:Conclusion p8 y511、Limitations p9 y72(与轮 5 完全一致),15 页,0 undefined。
+- 验证:pdftotext+归一化逐项落位(17 项 OK + 7 项旧文本 GONE);pdfplumber 抽取有空格合并怪癖,本轮起以 pdftotext 为成品验证基准。

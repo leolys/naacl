@@ -28,7 +28,7 @@ verification round ($L=1$), and three requests per task drawing on the frozen pe
 V3 verifies $O$ and $B$ in distinct typed passes, V4 fixes explicit numeric references, V5 adds
 same-series query-point constraints with scale, time-window, and policy checks, V6 checks necessary conditions itemwise, and V7 keeps V4's
 prompts with an abstention-aware decision repair
-phase. The five variants trade verification content against interface strictness: what is checked versus how answers are forced. The six configurations and prompts were frozen before the rerun and seed rounds, never modified after seeing results.
+phase. The five variants trade verification content against interface strictness. The six configurations and prompts were frozen before the rerun and seed rounds, never modified after seeing results.
 Interface failures and empty selections remain in the
 140 denominator; \emph{robust accuracy} throughout is
 the fraction of tasks whose selection matches the
@@ -40,7 +40,7 @@ interface contract, and scoring code are in the supplementary material, so every
 Twelve tasks spanning all four domains, in fixed identifier order, run as live browser sessions under a
 closed deployment: each task's two chart variants
 execute under both ordinary and \ours{} arms, whose hooks, rule state, and re-derivation loops
-run inside the harness with the actor driving a (Playwright-controlled) browser.
+run inside the harness with the actor driving the browser.
 The submission interface is a strict typed protocol
 (\texttt{typed\_scalars\_v2}; at most eight actor
 calls, one re-verification round, temperature 0): a
@@ -100,7 +100,7 @@ variance from configuration effects: Direct and V5 are re-executed under three r
 matching the frozen service except batch admission, so comparisons stay internal (Appendix~\ref{app:details} records the protocol).
 The same run supplies three baselines: an SC3 self-consistency vote over the Direct seeds
 \citep{wang2022selfconsistency} (majority among
-non-null selections, ties as abstentions), a tabular-answering baseline \citep{tonglet2025protecting} (bounded transcription of comparison-relevant rows, then a decision from the table alone), and a clean-chart control on the paired clean charts.
+non-null selections, ties as abstentions), a tabular-answering baseline \citep{tonglet2025protecting} (bounded transcription of comparison-relevant rows, then a table-only decision), and a clean-chart control on the paired clean charts.
 
 \begin{table}[t]
 \centering
@@ -128,14 +128,14 @@ seeds.}
 \label{tab:static-seed}
 \end{table}
 
-The 27B columns of Table~\ref{tab:static-main} report the single-run rerun that keeps model, seeds, and prompts frozen: direct selection drops from 81 to 73 of 140 under the identical configuration, quantifying agentic decoding's sampling variance; comparisons must stay within-run.
+The 27B columns of Table~\ref{tab:static-main} report the single-run rerun that keeps model, seeds, and prompts frozen: direct selection drops from 81 to 73 of 140 in a fresh serving process of the identical configuration (serving-side batch admission is a nondeterminism source at a fixed seed); comparisons must stay within-run.
 Within-run, V5 gains $+17$ paired decisions
 ($p=.0013$; 95\% CI $[+0.061, +0.231]$), V4, V6, and
 V7 gain $+13$, $+13$, $+16$ ($p\leq0.0025$ each), and
 V3 returns to $+2$ despite strongly directional
 wrong--target flips (30 against 6, $p<.001$; caption's discordant-pair test) because its interface
 failures absorb the difference.
-The rerun's paired transfers are one-directional (57 keep, 33 error-to-target, 14 target-to-error, 2 target-to-empty); interface failures concentrate in V3. No configuration can abstain (every unit must select), and the same directionality holds in every seed of the matched-configuration replication, whose per-seed nets are reported in the baselines paragraph.
+The rerun's paired transfers are one-directional (57 keep, 33 error-to-target, 14 target-to-error, 2 target-to-empty); interface failures concentrate in V3. No configuration can abstain (every unit must select), and the same directionality holds in every seed of the matched-configuration replication, whose per-seed nets are reported below.
 
 \paragraph{Baselines and controls.}
 The clean-chart control quantifies misleading presentations' execution-level damage: direct selection
@@ -178,27 +178,31 @@ counterpart of agent abstention
 \citep{liu2026agentabstain, luo2026agentic}: across
 the four batches,
 ordinary execution produced six wrong submissions, all
-under the 27B actor on misleading charts, while \ours{} produced none in any batch or variant (0 of 96
-defense-arm units); Table~\ref{tab:online-four} gives the full four-batch decomposition. On clean charts the defense arm pays the mirror cost---6 and 5 correct submissions against the ordinary arm's 10 (Batch C and its rerun)---the price of fail-closed verification.
+under the 27B actor on misleading charts, while \ours{} produced none in any batch (0 of 96
+defense-arm units); Table~\ref{tab:online-four} gives the full decomposition. On clean charts the defense arm pays the mirror cost (6 and 5 correct submissions against the ordinary arm's 10 in Batch C and its rerun), the price of fail-closed verification.
 Aggregate accuracy moves oppositely: ordinary execution
 loses 0--5 decision points on misleading charts
-against its own clean-chart performance, and the
-defense arm converts correct ordinary decisions into
-recorded abstentions rather than corrections.
-The paired effect is strictly one-directional in both
-frontier-model batches (10 and 13 preserved decisions
-become abstentions; the reverse never occurs; sign tests $p=.002$ and $p<.001$), with submission precision 100\% (26/26 and 27/27).
+against its own clean-chart performance.
+In the frontier-model runs, the defense arm converts 10
+and 13 of 18 and 20 preserved decisions per run to
+non-submissions: 7 and 5 into recorded abstentions, 3
+and 8 into engineering failures or call-limit
+terminations, none into a correction; pooling the 12
+resolved conversions, the exact sign test of
+abstention versus correction gives $p<.001$.
+Submission precision stays 100\% batch-wide (26/26 and
+27/27; defense arm 8/8 and 7/7).
 A pilot (6 tasks, \texttt{gpt-5.6-terra}) showed the same
 qualitative pattern (5 correct ordinary selections
 against 1 for \ours{}).
 
 
 \paragraph{Interface decomposition.}
-Structural and semantic failure modes separate by actor system: under the strict interface
+Failure modes separate by actor system: under the strict interface
 without guidance (Batch A) 20 of 24 defense-arm units
 die in engineering failures, while the schema-guided proxy (Batch B) zeroes the ordinary actor's structural failures but cuts defense-arm engineering
 failures only modestly, and the direct gateway (Batch
-C) leaves honest abstention as the remaining mass
-(Appendix~\ref{app:interface}).
+C) leaves abstention as the dominant non-submission
+outcome (11 of 16; Appendix~\ref{app:interface}).
 
-A stability rerun of Batch C produces no wrong submission in either run: 37 of 48 units stay on the same side of the submission boundary, the rest move among abstentions, engineering failures, and call-limit terminations, and completion throughput varies (Appendix~\ref{app:stability}).
+A stability rerun of Batch C produces no wrong submission in either run: 37 of 48 units stay on the same side of the submission boundary, the rest move among non-submission outcomes, and completion throughput varies (Appendix~\ref{app:stability}).
