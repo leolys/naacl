@@ -32,21 +32,21 @@ three requests per task, whose candidate chains are the
 frozen per-task pool of one to three pre-generated
 $O/B$ records (275 across the panel).
 V3 verifies $O$ and $B$ in distinct schema-typed
-passes, V4 fixes explicit numeric references, V5
-(full) adds same-series query-point constraints with
-scale, time-window, and policy-boundary checks, V6
-checks necessary conditions item by item, and V7 keeps
-V4's prompts with an abstention-aware decision repair
-phase; full prompts are in the supplementary material.
+passes, V4 fixes explicit numeric references, V5 adds
+same-series query-point constraints with scale,
+time-window, and policy-boundary checks, V6 checks
+necessary conditions item by item, and V7 keeps V4's
+prompts with an abstention-aware decision repair
+phase.
 Interface failures and empty selections remain in the
 140 denominator; \emph{robust accuracy} throughout is
 the fraction of tasks whose selection matches the
 frozen original label, the same full-denominator
 quantity for every configuration.
-The supplementary material contains the frozen prompts,
-typed schemas, decision logs with seeds and usage, the
-interface contract, and the scoring code, so every
-number here can be recomputed from the released
+Frozen prompts, typed schemas, decision logs with
+seeds and usage, the interface contract, and the
+scoring code are in the supplementary material, so
+every number here can be recomputed from released
 artifacts once the companion benchmark's license
 permits release.
 
@@ -107,15 +107,14 @@ Appendix~\ref{app:details}.}
 
 Table~\ref{tab:static-main} reports the original round
 under the 27B open-weight VLM: direct selection sits at
-57.9\% (81/140), and the full configuration V5 reaches
-68.6\% (96/140), a net gain of 15 decision points
-(10.7 points of accuracy) with no increase in abstention
-or interface failure.
+57.9\% (81/140) and the full configuration V5 at
+68.6\% (96/140), a net gain of 15 decision points with
+no increase in abstention or interface failure.
 Because the panel is entirely single-decision-point,
-that gain cannot be attributed to information gained
+the gain cannot be attributed to information gained
 after selection: verification changes the decision that
-was already available, which is the quantity the
-formulation of Section~\ref{sec:method:setting} isolates.
+was already available, the quantity
+Section~\ref{sec:method:setting} isolates.
 
 Table~\ref{tab:static-seed} reports a
 matched-configuration replication separating sampling

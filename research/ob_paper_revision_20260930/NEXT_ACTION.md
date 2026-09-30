@@ -22,3 +22,8 @@
 - lab_exec pkill -f self-match: never put a pattern-matching token in the same command line; kill by PID list.
 - Runner idempotency skips FAILED files too: purge non-ok files before gap-fill reruns.
 - Server wedges under sustained load with default async scheduling; --no-async-scheduling + full frozen flags fixed it.
+
+## 2026-09-30 晚间更新
+- 页限确认:NAACL 2027(ARR 2026-10 轮)长文正文 8 页,Limitations/Ethics/References/附录不计。正文已压至恰好 8.0 页(结论末句在 p8 底部)。
+- Lab 机器被重置(全新实例,无 /data、无 GPU)。三种子复现原始 run JSON 未回传,已随机器丢失;所有统计数字已在正文+本文件中锁定。如投稿需 artifact,需在新机器重建 vLLM 环境重跑(约 4-6h GPU)。
+- 残留 TODO:P16 提交前 XXX 全文扫描(正文 sections 目前干净,仅 main.tex 有 ARR Paper ID 占位)。

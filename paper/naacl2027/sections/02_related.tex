@@ -7,16 +7,15 @@ faithful drawings with selective context and framing
 The second measures the phenomenon in models:
 benchmarks evaluate multimodal LLMs on misleading chart
 QA \citep{chen2025unmasking, bharti2024chartom,
-alexander2024models}, manipulations are quantified with
-mitigations \citep{mahbub2025perils, mahbub2026chart},
-and recent work asks whether agents recognize
-misleadingness unprompted \citep{panda2026making,
-blasilli2026true, seto2026llms}.
-Method-side responses include tool-augmented reasoning
-\citep{kaur2025chartagent}, structured extraction
-\citep{das2025chartsofthought}, detection
-\citep{tonglet2025this}, and dual-path frameworks
-\citep{zhang2026navigating}.
+alexander2024models} and agent recognition of
+misleadingness \citep{panda2026making,
+blasilli2026true, seto2026llms}, manipulations are
+quantified with mitigations \citep{mahbub2025perils,
+mahbub2026chart}, and method-side responses include
+tool-augmented reasoning \citep{kaur2025chartagent},
+structured extraction \citep{das2025chartsofthought},
+detection \citep{tonglet2025this}, and dual-path
+frameworks \citep{zhang2026navigating}.
 The closest model-level defense, tabular answering and
 re-plotting \citep{tonglet2025protecting}, repairs a
 single question--answer round, while \ours{} targets
@@ -44,20 +43,19 @@ observation and task judgment, where a misleading chart
 exerts its effect without any injected instruction.
 
 The third line concerns persistent state and
-correction: verbal reinforcement carries textual
-feedback across attempts \citep{shinn2023reflexion},
+correction: verbal reinforcement carries feedback
+across attempts \citep{shinn2023reflexion},
 self-consistency aggregates reasoning paths
 \citep{wang2022selfconsistency}, intrinsic
 self-correction without external feedback degrades
 reasoning \citep{huang2023large, li2025decomposing},
-agent surveys organize the state and memory design
-space \citep{wang2024survey, hu2025agents}, and
-realistic visual web tasks remain hard enough that
+surveys organize the state and memory design space
+\citep{wang2024survey, hu2025agents}, and realistic
+visual web tasks remain hard enough that
 single-decision correctness cannot be taken for granted
 \citep{koh2024visualwebarena}.
 \ours{} borrows the state-carrying idea but changes the
 carried content: the state records interpretation rules
-with evidential support, applicability scope, and
-revision history, so later steps inherit what was
-verified about the chart rather than a verdict about
-the answer.
+with evidential support, scope, and revision history,
+so later steps inherit what was verified about the
+chart rather than a verdict about the answer.

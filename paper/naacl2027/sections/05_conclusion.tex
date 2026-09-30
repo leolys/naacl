@@ -1,24 +1,19 @@
 We treated misleading charts as a runtime evidence
-problem for executing web agents rather than a
-benchmark artifact: the agent's own reading becomes
-part of its state, so a defense must both compete
-explanations at the moment of reading and keep revised
-rules in force afterwards.
-\ours{} implements this pair with a
-competing-explanation chain over visible chart
-evidence, in-chart applicability verification, and a
-persistent rule state revised only through
-KEEP/REVISE/UNRESOLVED decisions with recorded
-evidence and scope.
+problem for executing web agents: the agent's own
+reading becomes part of its state, so a defense must
+both compete explanations at the moment of reading and
+keep revised rules in force afterwards.
+\ours{} implements this pair through
+competing-explanation chains, in-chart applicability
+verification, and a persistent rule state revised only
+through recorded KEEP/REVISE/UNRESOLVED decisions.
 The static panel shows a robust-accuracy gain that
-replicates within-run, across seeds, and (through the
-decision-oriented variant) on an 8B agent, while the
-failure analysis shows that interface contracts
-co-determine outcomes as strongly as prompt content.
-The stateful deployment shows the complement: under a
-fail-closed protocol the defense arm never submits a
-wrong answer and its residual errors become legible
-abstentions with recorded reasons.
+replicates within-run, across seeds, and on an 8B
+agent; interface contracts co-determine outcomes as
+strongly as prompt content; and under a fail-closed
+online protocol the defense arm never submits a wrong
+answer, its residual errors becoming legible
+abstentions.
 We release decision logs, rule states, and
 re-derivation traces so future work can measure which
 explanation an agent acted on and whether it survived

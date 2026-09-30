@@ -180,14 +180,14 @@ and the evidence record contains the observation
 identifier, the content read, and which rule the content
 supports or refutes.
 The deployed checklist operationalizes the three
-statuses: for $O$, located support or a genuine
+statuses: for $O$, located support or genuine
 contradiction, with no inserted quantifiers or causal
-claims; for $B$, explicit necessary-condition tests
-against public facts, including whether the known
-labeled references would have the relations a proposed
-decoding predicts, and an explicit order comparison
-before any common scale is endorsed; for the derivation,
-coverage, range, and task-scope conditions as confirmed
+claims; for $B$, necessary-condition tests against
+public facts, including whether known labeled
+references would have the relations a proposed decoding
+predicts, and an explicit order comparison before any
+common scale is endorsed; for the derivation, coverage,
+range, and task-scope conditions as confirmed
 premises.
 Verification takes the normalized dispute propositions
 as input; the source role or repetition count of a
@@ -230,14 +230,14 @@ with $\mathrm{id}_i$ for later reference, $B_i$ the
 interpretation rule, $\sigma_i$ its applicability
 scope over chart objects, encoding components, and
 semantic conditions, $s_i \in \{$pending, active,
-disputed, revoked$\}$, $E_i$ the evidence supporting or
-refuting it, $\Delta_i$ linking original rule, revised
-rule, and the reason for the change, and $v_i$ the
-revision version.
+disputed, revoked$\}$, $E_i$ the supporting or refuting
+evidence, $\Delta_i$ linking original rule, revised
+rule, and change reason, and $v_i$ the revision
+version.
 The state stores how the current chart is to be read
 and on what evidence; object choices, answers, and
-click actions are produced by the task reasoning itself
-and recorded in the execution history.
+click actions are produced by task reasoning and
+recorded in the execution history.
 A rule's scope binds by the conditions under which it
 holds---a position--value mapping to the numeric axis
 and series concerned, a color reading to the current
@@ -308,15 +308,13 @@ $\operatorname{Match}(\sigma_i, c_t)$ evaluates the
 rule's object, encoding component, metric, and time
 window against $c_t$ and returns applicable,
 non-applicable, or undetermined; an undetermined match
-triggers verification of the corresponding condition
-rather than assuming a stored rule covers the new
-chart.
+triggers verification rather than assuming a stored
+rule covers the new chart.
 Disputed rules never enter
 $\mathcal{R}^{\mathrm{active}}_t$; they surface only
-as re-verification evidence in the read result, which
-also carries disputes and revocation records, so the
-agent separates interpretations still in force from
-ones that lost support, and revoked content never
+as re-verification evidence in the read result, so
+interpretations still in force are separated from
+those that lost support, and revoked content never
 derives facts.
 When a chart has left the viewport, the reader keeps
 supplying applicable rules through the chart references
@@ -341,23 +339,19 @@ the public task.
 A proposal depending on a revoked rule is returned the
 revision evidence and required to re-derive; a proposal
 bringing evidence sufficient to challenge an active
-rule re-enters competing verification---restraining old
+rule re-enters competing verification, restraining old
 conventions from regaining force without grounds while
-preserving a channel for correcting earlier
-verification mistakes.
+preserving a channel for correcting earlier mistakes.
 Ordinary actions follow the original interface; the
 persistent state acts through later contextual reads,
 with complete competing verification only when a
 trigger holds.
 
 Three observable entry points start verification: the
-first chart-dependent judgment of a task (which
-establishes the rule state), an interpretation conflict
-(a later proposal uses a rule inconsistent with the
-effective state, or an existing rule is challenged with
-in-chart evidence), and an applicability change (the
-chart, its encoding, the series binding, or the task
-scope changes in ways that can affect interpretation).
+first chart-dependent judgment of a task, an
+interpretation conflict against the effective state or
+against in-chart evidence, and an applicability change
+of chart, encoding, series binding, or task scope.
 Entry points depend on actual observations, task
 context, and action proposals; task correctness and
 hidden scoring never participate in triggering.
@@ -367,21 +361,20 @@ records \emph{Keep} (the choice remains supported by an
 effective interpretation and the task conditions),
 \emph{Revise} (relevant evidence negates the choice and
 an alternative gains the support the task requires), or
-\emph{Unresolved} (an interpretive dispute that could
-still change the judgment persists, or necessary
-evidence is missing).
+\emph{Unresolved} (a dispute that could still change
+the judgment persists, or necessary evidence is
+missing).
 Showing that a candidate exceeds the current choice
 refutes ``the current choice is highest'' while
-confirming the replacement still requires the
-comparison the public task demands; such checks belong
-to task-semantic verification, not one fixed formula.
+confirming the replacement still requires the public
+task's comparison; such checks belong to task-semantic
+verification, not one fixed formula.
 Unresolved status continues whole-chart verification
-within the remaining budget, and an exhausted budget
+within the remaining budget; an exhausted budget
 records the unfinished reason explicitly.
-Verification suggestions, actual choice revisions, and
-final submissions are recorded separately, and only
-operations carried out by the executor constitute action
-outcomes.
+Verification suggestions, actual revisions, and final
+submissions are recorded separately, and only executor
+operations constitute action outcomes.
 
 \subsection{Full Algorithm and Integration}
 \label{sec:method:algorithm}

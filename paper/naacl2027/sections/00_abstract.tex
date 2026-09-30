@@ -2,12 +2,10 @@ Vision--language agents that execute multi-step web
 tasks treat charts as evidence: the way a chart is read
 enters tool calls, submissions, and actions.
 Charts, however, admit readings both faithful to the
-rendered image and wrong about the underlying data,
-because correct visual observation and misleading
-encoding conventions coexist in the same figure.
-Existing defenses operate at the level of single
-question--answer rounds and do not address how a
-revised interpretation remains in force over a stateful
+rendered image and wrong about the underlying data, and
+existing defenses operate at the level of single
+question--answer rounds, not how a revised
+interpretation remains in force over stateful
 execution.
 We present \ours{} (Competing-Explanation Rule State), a
 harness-level defense that organizes
@@ -20,14 +18,12 @@ validated rule revision with its supporting evidence and
 scope, and re-uses it in later reasoning.
 On a paired static panel of 140 executable web tasks
 built on \bench, \ours{} improves the robust accuracy
-of a 27B open-weight VLM agent from 57.9\% to 68.6\%
-in the original round, replicates the gain in an
-independent round (52.1\% to 64.3\%; McNemar
-$p=0.0013$), and holds it across request seeds and
+of a 27B open-weight VLM agent from 57.9\% to 68.6\%,
+replicates the gain independently (52.1\% to 64.3\%;
+McNemar $p=0.0013$), holds it across request seeds and
 baselines ($65.7\%\pm0.7$ against $56.2\%\pm1.1$;
-pooled $p=1.9\times10^{-5}$), with a smaller gain on
-an 8B agent (46.4\% to 57.1\% for the most compatible
-variant).
+pooled $p=1.9\times10^{-5}$), and transfers with a
+smaller gain to an 8B agent (46.4\% to 57.1\%).
 In stateful online execution over a closed deployment
 of twelve live tasks spanning both chart variants, the
 ordinary agent submits six wrong actions across the 27B
