@@ -52,3 +52,17 @@
 - Should-fix 5 项 + Polish 4 项完成:Fig.1 重制(2 行短标题,无碰撞);Limitations 保存声明按轮次限定(三种子复现仅存汇总统计,诚实披露);3–5→0–5;luo2026agentic 移出记忆综述句(§4.3 中的弃权引用保留);摘要"in a frozen rerun"+正文"single-run rerun";摘要"against the baselines";intro 26 点锚改为"across runs on the paired faithful charts";Eq.2 第三槽位与散文一致化;删除死标签 sec:method:example。
 - 未做(有意):两条可选引文(rabanser2026towards, zhang2026prompt)——正文刀刃 8.0 页,无页数预算;已记录。
 - 修复后:正文仍恰 8.0 页(Limitations 标题 p9 顶部),15 页,0 undefined。
+
+## 2026-09-30 第三轮评审修复(评审→修复闭环)
+- 第三轮 PAPERGURU 评审(Overall 3.5 Borderline Conference;修复后可 4.0)逐条修复,全部先对本地原始数据取证:
+  B1 接口失败账目改为逐轮真值:Direct 1/0/1、V3 6/8/51、V4 0/2/2、V5 0/3/4、V6 2/2/8、V7 0/1/2(original/rerun/8B),none discarded;
+  B2 稳定性重跑三处改写:摘要/§4.3/附录统一为"37/48 保持提交边界同侧(四分类 31/48),其余在弃答、工程失败、调用上限终止间移动,两轮均零错误提交";边界声明 2 四分类格位移 ≤2→≤3(Defense×misleading Fail 2→5);
+  B3 §4.1 复算声明限定"outside the three-seed replication"(与保存声明一致);
+  新发现:静态面板空选择(completed 无标签)全配置存在(plain 0、v3 13/21/4、v4 9/11/6、v5 6/5/8、v6 13/12/5、v7 5/5/3),据此修正 §4.2 两处弃答表述:"no increase in abstention"→"0 interface failures against Direct's 1 + 空选择留在分母";"abstention-free outside V3"→"interface failures concentrate in V3, no configuration abstains explicitly";
+  S1 池来源披露:O/B 记录"pre-generated from the chart and public task"(§3.3+§4.1)+附录成本段新增 136 任务早期前沿模型批次/4 任务 Qwen、一次性生成成本不计入 per-task 请求账目;
+  S2 术语统一:Table 1 列头+附录 B4+成本段 "27B replication"→"27B rerun"(保留 matched-configuration replication 仅指 Table 2);
+  S3 Fig.1 caption 补 "$B_0$";S4 pilot 句移至配对效应句后;S5 Limitations 新增 Baseline coverage 段(指令硬化基线未跑);S6 Table 2 列头 "Req. (runs summed)";S7 Table 1 caption 补 "stratification";
+  Polish:Fig.1 y 轴 "Printed value";贡献拆两句;§4.2 "one-directional: 57 keep, 33 e→t, 14 t→e, 2 t→empty"。
+- 页限:全部编辑(净 +0)后正文仍恰 8.0 页(Conclusion 标题 p8 y502,Limitations 标题 p9 y72),15 页,0 undefined。
+- PDF 验证:14 处编辑全部在成品 PDF 中 grep 落位(含 1/0/1、31/48、at most three units、136 tasks by an earlier frontier、Printed value 等)。
+- 有意跳过:3 条可选引文(HarnessRisk 2608.17597、From Prompts to Contracts 2607.08028、rabanser2026towards)——8.0 页刀刃无预算;轮 3 评审的"机械数字审计脚本"建议已采纳(本轮全部数字逐格复算即为落实)。

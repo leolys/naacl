@@ -17,7 +17,7 @@ axes[0].set_yticks([10, 15, 20])
 axes[0].set_title('(a) Faithful axis order:\n'
                   '$B_0$ holds; the curve grows.',
                   fontsize=9, loc='left')
-axes[0].set_ylabel('Printed ticks: 10, 15, 20')
+axes[0].set_ylabel('Printed value')
 
 axes[1].plot(x, y, marker='o', linewidth=1.2)
 axes[1].set_ylim(20, 10)

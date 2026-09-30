@@ -155,14 +155,14 @@ environment domain is the only negative one in both
 rounds ($-5$, $-9$).
 The development subset contributes at most two
 decision points to each headline gain, and costs
-remain bounded: 8.84M
-and 8.14M tokens across the replication rounds
-(2{,}230 and 2{,}184 requests) against 8.86M in the
-original round; the requests serve 840 decisions each
-(six configurations $\times$ 140 tasks), a
-$2.6\times$ average request overhead over one-request
-direct selection, with frozen prompts and no parameter
-updates.
+remain bounded: 8.84M and 8.14M tokens across the rerun and 8B rounds (2{,}230 and 2{,}184 requests) against 8.86M in the original round; the requests serve 840 decisions each
+(six configurations $\times$ 140 tasks), a $2.6\times$ average request overhead over one-request direct selection, with frozen prompts and no parameter updates.
+The pool records were pre-generated before evaluation
+from each chart and its public task---136 tasks by an
+earlier frontier-model batch and 4 by Qwen---state
+observations and interpretation rules rather than
+conclusions, and their one-off generation cost is
+excluded from the per-task request counts.
 
 \subsection{Interface Decomposition Detail}\label{app:interface}
 The three actor systems separate structural from
@@ -193,12 +193,7 @@ scope within the re-verification budget.
 
 \subsection{Stability Rerun}\label{app:stability}
 
-Re-running Batch C under the identical configuration
-changes 11 of 48 unit outcomes, every one of them a
-flip between a correct submission and an abstention
-(agreement 37/48); no wrong submission appears in
-either run, so the ``never submit a wrong answer''
-property is stable while completion throughput is not.
+Re-running Batch C under the identical configuration leaves every submission correct: 37 of 48 units stay on the same side of the submission boundary (31/48 under the four-way classification), and the differences move units among abstentions, engineering failures, call-limit terminations, and submissions---never into a wrong submission, so the ``never submit a wrong answer'' property is stable while completion throughput is not.
 Token budgets are comparable across the two runs
 (1.80M input and 129K output tokens, 322 attempts and
 242 browser operations, versus 1.81M and 115K, 331 and
@@ -300,8 +295,7 @@ companion benchmark's online evaluation.
 \subsection{Development Subset and Stratified Results}
 The 24-task development subset is scored separately in
 every round.
-In the 27B replication the full configuration V5
-gains $+17$ paired decisions, $+16$ on the remaining
+In the 27B rerun the full configuration V5 gains $+17$ paired decisions, $+16$ on the remaining
 116 tasks and $+1$ on the development subset; the
 original round splits as $+13$ and $+2$, and the 8B
 round as $+9$ and $+1$.
@@ -318,10 +312,7 @@ mildly negative for V5 in the second model round
 \subsection{Interface-Failure Accounting}
 Interface failures are runs in which the agent never
 produces a schema-valid selection.
-They are zero for Direct, V4, V5, V6, and V7 on the
-27B model (all three rounds), and 6, 8, and 51 for V3
-in the original, replication, and 8B rounds
-respectively.
+Their counts by round (original / rerun / 8B) are Direct 1/0/1, V3 6/8/51, V4 0/2/2, V5 0/3/4, V6 2/2/8, and V7 0/1/2, none discarded from the denominator.
 V3's interface failures are not discarded: they remain
 in the denominator, which is why its large
 error-to-target correction counts on the 27B model
@@ -369,8 +360,7 @@ single-unit causal attribution of outcome change to
 persistence is not identified by this design.
 Second, the stability rerun's unit-level agreement
 (37/48) bounds the reliability of any single-batch
-online estimate; disaggregated four-way cells shift by
-at most two units, and no flip ever crosses into a
+online estimate; disaggregated four-way cells shift by at most three units, and no flip ever crosses into a
 wrong submission.
 Third, the online deployment's paired effect is
 one-directional: the defense arm converts ordinary
