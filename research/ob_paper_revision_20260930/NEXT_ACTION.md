@@ -73,3 +73,13 @@
 - Polish:11a 摘要句拆分;11b 方法 L130 句拆;11c 园径句改写;11d "no configuration can abstain: every unit must select";11e 成本段句拆;p=0.044→p=.044 统一;item 12(p_i 取值范围)有意跳过——正文刀刃 8.0 页,L101-103 已隐含该信息,记录在案。
 - 页限:全部新增(多重性句、净图成本句、caption 扩句)由 §4 内 27 处等量压缩吸收,正文仍恰 8.0 页(Conclusion p8 y505、Limitations p9 y72),15 页,0 undefined;42 条 bib,bibtex 重跑通过。
 - ref_verify(42 条):10 corrected/32 UNVERIFIED;UNVERIFIED 均为 arXiv 前印本与经典条目(CrossRef/OpenAlex 无记录),全部源自本 session paper_search 逐字输出或此前已验证集合,按轮 2 既定惯例保留;corrected 负载未随报告返回,故 .bib 保持已定稿状态并在此记录。
+
+## 2026-09-30 第五轮评审修复(Phase 5 清单逐条执行)
+- 首要:纠正轮 4 的执行缺口——轮 4 报告称已修附录轮次归属,但编辑脚本从未包含该修改;本轮 B1 落实:附录 L304 "27B replication"→"original round"、"both model rounds"→"both rounds compared here"。
+- B2:§4.2 恢复 "of Table~\ref{tab:static-main}" 锚(轮 4 补偿造成的悬空指代),同句内压缩补偿("comparisons must stay within-run")。
+- B3:附录池来源句补充"are not a strictly blind construction (a minority of records carry task-directional hints that verification must re-justify against the chart)"——与 PROTOCOL.md "部分B含行动含义,不是严格C盲审" 对齐,消除报告-补充材料一致性隐患。
+- S1:§4.1 新增 V 阶梯动机句("The five variants trade verification content against interface strictness: what is checked versus how answers are forced."),补偿:policy-boundary→policy、schema-typed→typed、item by item→itemwise、must submit a selection→must select、recorded reason→reason、a real→a、direct selection and V5→Direct and V5。
+- S2:§4.2 配对说法统一为 "paired clean charts";S3:"a frontier model, gpt-5.6-terra,"(定冠词先行词已随 pilot 句移位而消失);S4:双冒号长句拆分;S5:"drawing on the frozen per-task pool";S6:"The panel's exact tests are unadjusted for multiplicity"。
+- 有意跳过:P1 ahn2026lies(2608.30428,为欺骗生成方向,切题度低,8.0 页刀刃无预算);P10 ARR 投稿表 Datasets/Software 字段——属提交时操作,已列投稿日 TODO。
+- 页限:正文仍恰 8.0 页(Conclusion p8 y505、Limitations p9 y72),15 页,0 undefined。
+- 验证纪律(本轮评审提出):每项修复以 PDF 文本逐项落位确认(L749/L759/L794/L1240/L1466),不再以计划为准。

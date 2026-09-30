@@ -21,23 +21,18 @@ labels, the other chart variant, or scoring feedback.
 \emph{Static panel.}
 For every task the agent sees the benchmark's
 misleading chart---scored against its frozen original
-label---plus the public goal and four options, and must submit a selection; no navigation occurs.
+label---plus the public goal and four options, and must select; no navigation occurs.
 Six configurations share identical inputs and decoding (temperature 0.7, top-$p$ 0.8, top-$k$ 20,
-fixed seed, thinking disabled): direct selection and
-five READ--VERIFY--DECIDE configurations with frozen prompts, one
-verification round ($L=1$), and three requests per task, whose chains are the frozen per-task pool of one to three $O/B$ records pre-generated from the chart and public task (275 across the panel).
-V3 verifies $O$ and $B$ in distinct schema-typed
-passes, V4 fixes explicit numeric references, V5 adds
-same-series query-point constraints with scale,
-time-window, and policy-boundary checks, V6 checks
-necessary conditions item by item, and V7 keeps V4's
+fixed seed, thinking disabled): Direct and five READ--VERIFY--DECIDE configurations with frozen prompts, one
+verification round ($L=1$), and three requests per task drawing on the frozen per-task pool of one to three $O/B$ records pre-generated from the chart and public task (275 across the panel).
+V3 verifies $O$ and $B$ in distinct typed passes, V4 fixes explicit numeric references, V5 adds
+same-series query-point constraints with scale, time-window, and policy checks, V6 checks necessary conditions itemwise, and V7 keeps V4's
 prompts with an abstention-aware decision repair
-phase; the six configurations and prompts were frozen before the rerun and seed rounds and not
-modified after seeing round results.
+phase. The five variants trade verification content against interface strictness: what is checked versus how answers are forced. The six configurations and prompts were frozen before the rerun and seed rounds, never modified after seeing results.
 Interface failures and empty selections remain in the
 140 denominator; \emph{robust accuracy} throughout is
 the fraction of tasks whose selection matches the
-frozen original label, one full-denominator quantity throughout.
+frozen original label, a single full-denominator quantity.
 Frozen prompts, typed schemas, decision logs, the
 interface contract, and scoring code are in the supplementary material, so every number outside the three-seed replication can be recomputed from released artifacts once its license permits release.
 
@@ -45,17 +40,15 @@ interface contract, and scoring code are in the supplementary material, so every
 Twelve tasks spanning all four domains, in fixed identifier order, run as live browser sessions under a
 closed deployment: each task's two chart variants
 execute under both ordinary and \ours{} arms, whose hooks, rule state, and re-derivation loops
-run inside the harness with the actor driving a real
-(Playwright-controlled) browser.
+run inside the harness with the actor driving a (Playwright-controlled) browser.
 The submission interface is a strict typed protocol
 (\texttt{typed\_scalars\_v2}; at most eight actor
 calls, one re-verification round, temperature 0): a
-unit ends as a scored submission, an abstention with a
-recorded reason, or a failure.
+unit ends as a scored submission, an abstention with a reason, or a failure.
 Three actor systems are used---Qwen3.8-27B under
 strict response formats (Batch A), the same model
 behind a schema-guided proxy mirroring the sealed
-structural rules (Batch B), and the frontier model \texttt{gpt-5.6-terra} through an
+structural rules (Batch B), and a frontier model, \texttt{gpt-5.6-terra}, through an
 OpenAI-compatible gateway (Batch C, plus one stability
 rerun).
 
@@ -102,13 +95,12 @@ already available.
 
 Table~\ref{tab:static-seed} reports a
 matched-configuration replication separating sampling
-variance from configuration effects: direct selection
-and V5 are re-executed under three request seeds
+variance from configuration effects: Direct and V5 are re-executed under three request seeds
 (12345, 22345, 32345) on a single-GPU deployment
 matching the frozen service except batch admission, so comparisons stay internal (Appendix~\ref{app:details} records the protocol).
 The same run supplies three baselines: an SC3 self-consistency vote over the Direct seeds
 \citep{wang2022selfconsistency} (majority among
-non-null selections, ties as abstentions), a tabular-answering baseline \citep{tonglet2025protecting} (bounded transcription of comparison-relevant rows, then a decision from the table alone), and a clean-chart control on the paired faithful charts.
+non-null selections, ties as abstentions), a tabular-answering baseline \citep{tonglet2025protecting} (bounded transcription of comparison-relevant rows, then a decision from the table alone), and a clean-chart control on the paired clean charts.
 
 \begin{table}[t]
 \centering
@@ -136,16 +128,14 @@ seeds.}
 \label{tab:static-seed}
 \end{table}
 
-The 27B columns report the single-run rerun that keeps model, seeds, and
-prompts frozen: direct selection drops from 81 to 73 of
-140 under an identical configuration, quantifying agentic decoding's sampling variance, so comparisons must stay within the same run.
+The 27B columns of Table~\ref{tab:static-main} report the single-run rerun that keeps model, seeds, and prompts frozen: direct selection drops from 81 to 73 of 140 under the identical configuration, quantifying agentic decoding's sampling variance; comparisons must stay within-run.
 Within-run, V5 gains $+17$ paired decisions
 ($p=.0013$; 95\% CI $[+0.061, +0.231]$), V4, V6, and
 V7 gain $+13$, $+13$, $+16$ ($p\leq0.0025$ each), and
 V3 returns to $+2$ despite strongly directional
 wrong--target flips (30 against 6, $p<.001$; caption's discordant-pair test) because its interface
 failures absorb the difference.
-The rerun's paired transfers are one-directional (57 keep, 33 error-to-target, 14 target-to-error, 2 target-to-empty); interface failures concentrate in V3, no configuration can abstain: every unit must select, and the same directionality holds in every seed of the matched-configuration replication, whose per-seed nets are reported in the baselines paragraph.
+The rerun's paired transfers are one-directional (57 keep, 33 error-to-target, 14 target-to-error, 2 target-to-empty); interface failures concentrate in V3. No configuration can abstain (every unit must select), and the same directionality holds in every seed of the matched-configuration replication, whose per-seed nets are reported in the baselines paragraph.
 
 \paragraph{Baselines and controls.}
 The clean-chart control quantifies misleading presentations' execution-level damage: direct selection
@@ -171,7 +161,7 @@ On Qwen3-VL-8B-Instruct, direct selection drops to
 (Table~\ref{tab:static-main}, 8B columns): V7 gains
 $+15$ ($p=.021$; CI $[+.017,+.210]$), V5 gains $+10$ ($p=.044$), V4 and V6 remain within noise, and
 V3 collapses through 51 interface failures despite
-directional wrong--target flips (Appendix~\ref{app:transfer}). These exact tests are unadjusted for multiplicity; on the 8B columns we read V4--V7's consistent directionality, not single-test significance. The separated verification prompts that produce
+directional wrong--target flips (Appendix~\ref{app:transfer}). The panel's exact tests are unadjusted for multiplicity; on the 8B columns we read V4--V7's consistent directionality, not single-test significance. The separated verification prompts that produce
 directional flips on the 27B model overwhelm the 8B
 actor, so interface robustness is a first-class
 variable, and prompt content and interface contract

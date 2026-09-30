@@ -159,10 +159,7 @@ remain bounded: 8.84M and 8.14M tokens across the rerun and 8B rounds (2{,}230 a
 (six configurations $\times$ 140 tasks), a $2.6\times$ average request overhead over one-request direct selection, with frozen prompts and no parameter updates.
 The pool records were pre-generated before evaluation
 from each chart and its public task---136 tasks by an
-earlier frontier-model batch and 4 by Qwen---state
-observations and interpretation rules rather than
-conclusions, and their one-off generation cost is
-excluded from the per-task request counts.
+earlier frontier-model batch and 4 by Qwen---state observations and interpretation rules rather than conclusions, are not a strictly blind construction (a minority of records carry task-directional hints that verification must re-justify against the chart), and their one-off generation cost is excluded from the per-task request counts.
 
 \subsection{Interface Decomposition Detail}\label{app:interface}
 The three actor systems separate structural from
@@ -299,9 +296,7 @@ In the 27B rerun the full configuration V5 gains $+17$ paired decisions, $+16$ o
 116 tasks and $+1$ on the development subset; the
 original round splits as $+13$ and $+2$, and the 8B
 round as $+9$ and $+1$.
-The environment domain is the only one in which V5
-loses against direct selection in both model rounds
-($-5$ in the 27B replication, $-9$ in the 8B round).
+The environment domain is the only one in which V5 loses against direct selection in both rounds compared here ($-5$ in the original round, $-9$ in the 8B round).
 At the family level, subset-extrapolation tasks
 contribute $+18$ (original round) and $+11$ (8B round)
 for V5; dual-axis and non-linear-axis families are
