@@ -148,10 +148,10 @@ runs direct selection on the paired clean charts.
 \toprule
 Arm & Requests & Selection acc. & $\Delta$ & $p$ \\
 \midrule
-Direct (3 seeds) & 3/task & 56.4\% & --- & --- \\
+Direct (3 seeds) & 3/task & 56.2$\,\pm\,$1.1 & --- & --- \\
 SC3 (majority) & 0 extra & 53.6\% & $-3$ & .375 \\
 Tabular (bounded) & 2/task & 28.6\% & $-3$ & .51 \\
-\ours{} V5 (3 seeds) & 12/task & 64.3\% & $+17$ & .0013 \\
+\ours{} V5 (3 seeds) & 12/task & 65.7$\,\pm\,$0.7 & $+15.0$ & $2\times10^{-5}$ \\
 Clean-chart control & 1/task & 82.1\% & $+33$ & $<$.001 \\
 \bottomrule
 \end{tabular}
@@ -161,15 +161,17 @@ Direct and \ours{}, SC3 majority over the Direct seeds
 at no extra requests, the bounded tabular-answering
 baseline (two requests per task; 55 abstentions and 18
 transcription failures in the denominator), and the
-clean-chart control. $\Delta$ and $p$ are paired
-against the Direct seed-12345 run; accuracy is the
-full-denominator fraction matching the frozen original
-label.}
+clean-chart control. $\Delta$ and $p$ are paired against the Direct
+seed-12345 run (for the seeded arms, mean net over
+seeds and the pooled exact McNemar over all 420 paired
+units); accuracy is the full-denominator fraction
+matching the frozen original label, mean $\pm$ sd over
+seeds where three seeds are run.}
 \label{tab:static-seed}
 \end{table}
 
-The 27B columns of Table~\ref{tab:static-main} report the
-single-run replication that keeps model, seeds, and
+The 27B columns of Table~\ref{tab:static-main} report
+the single-run replication that keeps model, seeds, and
 prompts frozen: direct selection drops from 81 to 73 of
 140 under an identical configuration, quantifying the
 sampling variance of agentic decoding itself, so every
@@ -179,15 +181,16 @@ Within-run, V5 gains $+17$ paired decisions
 V7 gain $+13$, $+13$, $+16$ ($p\leq0.0025$ each), and
 V3 returns to $+2$ despite strongly directional
 wrong--target flips (30 against 6, $p<0.001$) because
-its interface failures absorb the difference---the
-separation between decision quality and interface
-robustness that Section~\ref{sec:exp:online} examines
-in deployment.
-Paired transfer counts are one-directional in aggregate
-(57 keep, 33 error-to-target, 11 target-to-error, 5
-target-to-empty, 0 empty-to-target), and the panel
+its interface failures absorb the difference.
+The replication's paired transfers are one-directional
+in aggregate (57 keep, 33 error-to-target, 11
+target-to-error, 5 target-to-empty), and the panel
 remains abstention-free outside V3's interface
-failures.
+failures; the same directionality holds in every
+seed of the matched-configuration replication above,
+where the frozen-round headline itself is bounded by
+sampling variance (per-seed nets $+12$ to $+18$ around
+a mean of $+15$).
 
 \paragraph{Baselines and controls.}
 Three observations bound what the verification gain can
@@ -217,11 +220,15 @@ net against direct selection is $-3$ ($p=0.51$).
 Generic mitigation therefore neither transfers the
 tabular-answering gains reported for chart QA to
 execution tasks nor exploits the within-chart evidence
-that \ours{} uses; the seed-level variance of the two
-arms is reported with Table~\ref{tab:static-seed} once
-the three-seed replication completes (mean $\pm$ sd
-over seeds for both arms, pooled McNemar across
-seeds).
+that \ours{} uses.
+Across the three seeds, direct selection lands at
+$56.2\,\pm\,1.1$ and \ours{} at $65.7\,\pm\,0.7$
+accuracy points; the per-seed paired nets are $+12$,
+$+18$, and $+15$ (all one-directional in wrong-to-target
+dominant transitions), pooling to $+45$ decisions over
+420 paired units with exact McNemar $p=1.9\times10^{-5}$
+and a 95\% CI of $[+0.058, +0.150]$ on the accuracy
+difference.
 
 \paragraph{Cross-model transfer.}
 On the 8B open-weight VLM, direct selection drops to
@@ -337,14 +344,13 @@ by any response format---components added for
 self-correction become the exposed surface, as
 \citet{wu2024dissecting} analyze for compound systems.
 Running the frontier model directly (Batch C) removes
-the structural interface almost entirely (defense-arm
-engineering failures 4 of 24), and the remaining mass
-is honest abstention---12
+the structural interface almost entirely (engineering
+failures 4 of 24), and the remaining mass is honest
+abstention---12
 \texttt{unresolved\_public\_evidence} verdicts, mostly
 on misleading charts, where verification cannot close
-the gap between the printed chart and the question's
-required scope within the re-verification
-budget.
+the gap between the printed chart and the required
+scope within the re-verification budget.
 
 \paragraph{Stability.}
 Re-running Batch C under the identical configuration
