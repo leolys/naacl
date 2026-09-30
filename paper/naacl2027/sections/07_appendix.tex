@@ -101,12 +101,14 @@ The walkthrough below demonstrates the method and does
 not add experimental results.
 Suppose the current proposal selects Kansas under
 \begin{equation}\label{eq:pub013}
-\pi_0:
-\underbrace{\text{Kansas is darker}}_{O_0}
-\land
-\underbrace{\text{darker means higher risk}}_{B_0}
-\Rightarrow
+\begin{aligned}
+\pi_0:\;
+& \underbrace{\text{Kansas is darker}}_{O_0}
+\;\land\;
+\underbrace{\text{darker means higher risk}}_{B_0} \\
+& \Rightarrow\;
 C_q(\mathrm{KS}).
+\end{aligned}
 \end{equation}
 The competing module asks why a darker color should mean
 a higher risk; the model generates legend-dependent
@@ -142,26 +144,134 @@ used.
 \section{Additional Results and Boundary Statements}\label{app:details}
 
 \subsection{Where the Gains Concentrate}
-Stratified by mechanism family, V5's net gains
+Stratified by mechanism family
+(Table~\ref{tab:family-strat}), V5's net gains
 concentrate where misleading power comes from scope and
 reference manipulation: the subset-extrapolation family
-(22 tasks) yields $+18$ and $+11$ across the two
-rounds, while non-linear-axis and dual-axis families
-are neutral to $-6$.
-By domain, business carries the largest share ($+16$
-and $+4$), public statistics is neutral then positive
-($0$ and $+9$), health is $+6$ in both, and the
-environment domain is the only negative one in both
-rounds ($-5$, $-9$).
+(22 tasks) yields $+18$ and $+11$ in the 27B rerun and
+8B rounds, while non-linear-axis and dual-axis families
+remain neutral to $-6$.
+By domain (Table~\ref{tab:domain-strat}), business
+carries the largest share ($+16$ in the 27B rerun, $+4$
+in the 8B round), public statistics is neutral then
+positive ($0$, then $+9$), health is $+6$ in both, and
+the environment domain is the only negative one in
+every round ($-3$, $-5$, $-9$).
 The development subset contributes at most two
 decision points to each headline gain, and costs
 remain bounded: 8.84M and 8.14M tokens across the rerun and 8B rounds (2{,}230 and 2{,}184 requests, against a nominal full-run 2{,}240; shortfalls reflect early-terminating failures) against 8.86M in the original round; token totals are
-known-usage sums from each round's request ledger. The
+known-usage sums from each round's request ledger
+(Table~\ref{tab:cost-ledger}). The
 requests serve 840 decisions each
 (six configurations $\times$ 140 tasks), a $2.6\times$ average request overhead over one-request direct selection, with frozen prompts and no parameter updates.
 The pool records were pre-generated before evaluation
 from each chart and its public task---136 tasks by an
 earlier frontier-model batch and 4 by Qwen---state observations and interpretation rules rather than conclusions, are not a strictly blind construction (a minority of records carry task-directional hints that verification must re-justify against the chart), and their one-off generation cost is excluded from the per-task request counts.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Mechanism family & $n$ & Orig. & Rerun & 8B \\
+\midrule
+Selected-subset scatter & 22 & $+11$ & $+18$ & $+11$ \\
+Title--line mismatch & 20 & $-3$ & $+3$ & $-2$ \\
+Dual $y$-axes & 14 & $0$ & $-5$ & $0$ \\
+Wrong average line & 13 & $-1$ & $-1$ & $-2$ \\
+Choropleth legend & 13 & $+3$ & $+2$ & $+6$ \\
+Truncated bar & 10 & $+5$ & $-1$ & $+1$ \\
+Non-linear axis & 10 & $-2$ & $0$ & $-6$ \\
+Bar vs.\ value & 9 & $-2$ & $-3$ & $-2$ \\
+Pie (share vs.\ sector) & 7 & $0$ & $0$ & $0$ \\
+Category dot (largest) & 4 & $0$ & $0$ & $0$ \\
+Time-window truncation & 4 & $+4$ & $+3$ & $+3$ \\
+Reversed axis (direction) & 3 & $0$ & $+1$ & $+2$ \\
+Category dot (smallest) & 2 & $0$ & $0$ & $0$ \\
+Reversed axis (year pick) & 2 & $0$ & $+1$ & $+1$ \\
+Stacked bar (threshold) & 1 & $0$ & $0$ & $0$ \\
+Reversed axis and time & 1 & $+1$ & $0$ & $-1$ \\
+Classed color map & 1 & $-1$ & $-1$ & $0$ \\
+Map-area salience & 1 & $0$ & $0$ & $-1$ \\
+Minority sector & 1 & $0$ & $0$ & $0$ \\
+Heterogeneous stacking & 1 & $0$ & $0$ & $0$ \\
+Stacked bar (multi-select) & 1 & $0$ & $0$ & $0$ \\
+\midrule
+All 140 tasks & 140 & $+15$ & $+17$ & $+10$ \\
+\bottomrule
+\end{tabular}
+\caption{V5's paired net gain over direct selection by
+mechanism family, in correct-submission counts, per
+round (the original 27B round, the 27B rerun, and the
+8B round). Family names abbreviate the manifest's
+mechanism descriptions; the families are the manifest's
+fixed research groupings, variants included, and are
+not 21 independent misleading mechanisms. The bottom
+row reproduces the paired effect of
+Table~\ref{tab:static-main}.}
+\label{tab:family-strat}
+\end{table}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Domain & $n$ & Orig. & Rerun & 8B \\
+\midrule
+Business & 47 & $+11$ & $+16$ & $+4$ \\
+Environment & 35 & $-3$ & $-5$ & $-9$ \\
+Health & 19 & $+5$ & $+6$ & $+6$ \\
+Public statistics & 39 & $+2$ & $0$ & $+9$ \\
+\midrule
+All 140 tasks & 140 & $+15$ & $+17$ & $+10$ \\
+\bottomrule
+\end{tabular}
+\caption{V5's paired net gain over direct selection by
+task domain, in correct-submission counts, per round;
+denominators are the full domain sizes in every round.}
+\label{tab:domain-strat}
+\end{table}
+
+\subsection{Cost and Request Ledger}\label{app:cost}
+
+Table~\ref{tab:cost-ledger} records the static panel's
+per-configuration request ledger: attempts and
+known-usage token sums per round. The original round
+has zero unknown-usage attempts; the two model rounds
+carry nine and six ledger events without a usage
+record, which count toward attempts only. Column sums
+reproduce the round totals quoted in the text
+(8{,}856{,}548, 8{,}840{,}896, and 8{,}136{,}969
+tokens).
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+ & Original & Original & 27B rerun & 8B \\
+Configuration & Att. & Tokens & Tokens & Tokens \\
+\midrule
+Direct & 140 & 327{,}135 & 328{,}298 & 312{,}697 \\
+V3 & 414 & 1{,}652{,}721 & 1{,}619{,}789 & 1{,}476{,}449 \\
+V4 & 420 & 1{,}726{,}616 & 1{,}726{,}722 & 1{,}566{,}664 \\
+V5 & 420 & 1{,}698{,}858 & 1{,}709{,}910 & 1{,}587{,}032 \\
+V6 & 418 & 1{,}709{,}687 & 1{,}698{,}808 & 1{,}620{,}079 \\
+V7 & 420 & 1{,}741{,}039 & 1{,}757{,}320 & 1{,}574{,}005 \\
+Controls & 4 & 492 & 49 & 43 \\
+\midrule
+Total & 2{,}236 & 8{,}856{,}548 & 8{,}840{,}896 & 8{,}136{,}969 \\
+\bottomrule
+\end{tabular}
+\caption{Per-configuration request ledger: attempts and
+known-usage token sums in the original round;
+known-usage token sums in the two model rounds, whose
+attempt totals (2{,}230 and 2{,}184, one service probe
+each) are quoted in the text.}
+\label{tab:cost-ledger}
+\end{table}
 
 \subsection{Interface Decomposition Detail}\label{app:interface}
 The three actor systems separate structural from
@@ -183,11 +293,12 @@ self-correction become the exposed surface, as
 \citet{wu2024dissecting} analyze for compound systems.
 Running the frontier model directly (Batch C) removes
 the structural interface almost entirely (engineering
-failures 4 of 24), leaving honest abstention---12
-\texttt{unresolved\_public\_evidence} verdicts, mostly
-on misleading charts, where verification cannot close
-the gap between the printed chart and the required
-scope within the re-verification budget.
+failures 4 of 24), leaving honest abstention---11
+\texttt{unresolved\_public\_evidence} verdicts (7 on
+misleading charts) and one re-verification-budget
+exhaustion, cases where verification cannot close the
+gap between the printed chart and the required scope
+within the re-verification budget.
 
 
 \subsection{Stability Rerun}\label{app:stability}
@@ -207,8 +318,9 @@ On the 8B open-weight VLM, direct selection drops to
 $+15$ ($p=.021$; CI $[+0.017, +0.210]$), V5 gains
 $+10$ ($p=.044$), V4 and V6 remain within noise, and
 V3 collapses---51 of 140 runs end in interface failures
-of the schema-typed protocol, against 8 and 6 in the
-other rounds, for a net of $-15$ despite directional
+of the schema-typed protocol, against 8 in the 27B
+rerun and 6 in the original round, for a net of $-15$
+despite directional
 wrong--target flips.
 The interaction is instructive: the separated
 verification prompts that produce directional flips on
@@ -267,6 +379,31 @@ Batch C and its rerun are correct (26/26 and 27/27).}
 \label{tab:online-four}
 \end{table}
 
+\subsection{Converted-Decision Outcomes}\label{app:conversions}
+
+Figure~\ref{fig:conversions} decomposes the 23 converted
+decisions of the two frontier-model batches at the level
+of the raw per-unit records. Every conversion terminates
+in a recorded abstention (12: 8 on misleading charts, 4
+on their clean pairs), an engineering or response-format
+failure (10: 6 misleading, 4 clean), or a single
+actor-call-limit termination (on a clean-chart unit);
+none becomes a correction, and every defense-arm
+submission in both batches is correct (26/26 and 27/27).
+The 12 resolved conversions are the input to the pooled
+exact sign test of Section~\ref{sec:exp:online} (12
+abstentions against 0 corrections, $p<.001$).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\columnwidth]{fig_conversions.pdf}
+\caption{The 23 decisions the defense arm converted in
+the two frontier-model batches, by terminal status from
+the per-unit records. No conversion becomes a correction
+or a wrong submission.}
+\label{fig:conversions}
+\end{figure}
+
 \subsection{Matched-Configuration Seed Replication}
 The revision experiments rerun direct selection and the
 full configuration under three request seeds
@@ -298,18 +435,21 @@ In the 27B rerun the full configuration V5 gains $+17$ paired decisions, $+16$ o
 116 tasks and $+1$ on the development subset; the
 original round splits as $+13$ and $+2$, and the 8B
 round as $+9$ and $+1$.
-The environment domain is the only one in which V5 loses against direct selection in both rounds compared here ($-5$ in the original round, $-9$ in the 8B round).
-At the family level, subset-extrapolation tasks
-contribute $+18$ (original round) and $+11$ (8B round)
-for V5; dual-axis and non-linear-axis families are
-mildly negative for V5 in the second model round
-($-5$ and $-6$), and bar-height tasks are near-neutral
-($-3$ and $-2$).
+The environment domain remains the only negative one
+for V5 in every round ($-3$ original, $-5$ rerun, $-9$
+8B; Table~\ref{tab:domain-strat}).
+At the family level (Table~\ref{tab:family-strat}),
+subset-extrapolation tasks contribute $+18$ (27B rerun)
+and $+11$ (8B round) for V5; the dual-axis ($-5$ in the
+27B rerun) and non-linear-axis ($-6$ in the 8B round)
+families are mildly negative for V5, and bar-height
+tasks are near-neutral ($-3$ rerun, $-2$ 8B).
 
 \subsection{Non-Scoring Outcomes}
 Interface failures are runs in which the agent never
 produces a schema-valid selection.
-Their counts by round (original / rerun / 8B) are Direct 1/0/1, V3 6/8/51, V4 0/2/2, V5 0/3/4, V6 2/2/8, and V7 0/1/2, none discarded from the denominator. Empty selections (completed runs with no recorded option) by round (original / rerun / 8B) are Direct 0/0/3, V3 13/21/4, V4 9/11/6, V5 6/5/8, V6 13/12/5, and V7 5/5/3, likewise retained in the denominator.
+Their counts by round (original / rerun / 8B;
+Table~\ref{tab:nonscoring}) are Direct 1/0/1, V3 6/8/51, V4 0/2/2, V5 0/3/4, V6 2/2/8, and V7 0/1/2, none discarded from the denominator. Empty selections (completed runs with no recorded option) by round (original / rerun / 8B) are Direct 0/0/3, V3 13/21/4, V4 9/11/6, V5 6/5/8, V6 13/12/5, and V7 5/5/3, likewise retained in the denominator.
 V3's interface failures are not discarded: they remain
 in the denominator, which is why its large
 error-to-target correction counts on the 27B model
@@ -319,6 +459,29 @@ The 8B actor's failure mode is dominated by responses
 that violate the typed-record contract of the
 verification pass rather than by timeouts or
 truncations.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{Interface failures} & \multicolumn{3}{c}{Empty selections} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Configuration & Orig. & Rerun & 8B & Orig. & Rerun & 8B \\
+\midrule
+Direct & 1 & 0 & 1 & 0 & 0 & 3 \\
+V3 & 6 & 8 & 51 & 13 & 21 & 4 \\
+V4 & 0 & 2 & 2 & 9 & 11 & 6 \\
+V5 & 0 & 3 & 4 & 6 & 5 & 8 \\
+V6 & 2 & 2 & 8 & 13 & 12 & 5 \\
+V7 & 0 & 1 & 2 & 5 & 5 & 3 \\
+\bottomrule
+\end{tabular}
+\caption{Non-scoring outcomes by configuration and
+round; every affected run remains in its denominator.}
+\label{tab:nonscoring}
+\end{table}
 
 \subsection{Online Deployment Details}
 Each online unit executes one task on one chart variant

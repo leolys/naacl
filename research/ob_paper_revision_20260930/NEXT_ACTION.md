@@ -105,3 +105,19 @@
 - 页限教训:§4 内删减被 [t] 浮动体钉住的版面吸收,不传导到结论段;结论段 17 字符净增把孤词"chart."挤出第 8 页→Limitations 标题 p9 y72→y97。补偿必须在结论段内部做:删"afterwards"(含义由 keep revised rules in force 承担)后孤词回位,边界恢复 p9 y72。另做 §4.1 池描述去重(§3/§4.1 逐字重复,"frozen per-task pool of one to three O/B records"现全文仅 1 处于 §3,§4.1 改为交叉引用)与"fixed identifier order"入补充材料两项页限补偿。
 - 页限:Conclusion p8 y511、Limitations p9 y72(轮 6 状态),15 页,0 undefined。
 - 验证:pdftotext+归一化 8 项新文本 OK、4 项旧措辞 GONE、池描述计数=1。
+
+## 2026-09-30 第八轮评审修复 + 图表扩充(附录不计页)
+- B1(阻塞,唯一数字错误):app:interface"12 unresolved_public_evidence verdicts"与自身 Table 3 及轮 6 普查矛盾(应为 11+1 预算耗尽;疑为与摘要"12/23 转换"串号)。改为"11 … verdicts (7 on misleading charts) and one re-verification-budget exhaustion"。预算耗尽单元在 \ours{}×misleading 行(Table 3 Bug.=1)。
+- 重大归属审计(轮 8 评审 S1 猜测被原始数据复算纠正):app:details 分层增益散文对 (16,4)(0,9)(6,6)(5,9) 与 (18,11)(3,2) 全部与 (27B rerun, 8B) 对精确吻合(rerun 域和=+17、8B=+10,复算 scorer 与表 1 全格一致),并非 (original, 8B)。据此:L301"−5 in the original round"→"−5 in the 27B rerun"(original 实为 −3);L303"+18 (original round)"→"+18 (27B rerun)";"dual-axis and non-linear-axis … second model round (−5 and −6)"实为混轮(双轴 −5 属 rerun、非线性 −6 属 8B),改写为各自归属;"in both rounds(−5,−9)"→"in every round(−3,−5,−9)"(original 环境域 −3 也是唯一负域,原句漏掉)。app:transfer"against 8 and 6 in the other rounds"→"against 8 in the 27B rerun and 6 in the original round"。
+- 附录新增(数据全部由原始记录复算,scorer 以 gold labels 对 840+840 单元重打分,orig 全格 81/74/87/96/84/91、rerun 73/90、8B 65/75 精确复现):
+  - 表 3 机制族分层(21 族×n×三轮 V5−Direct 净增益,行和=+15/+17/+10 与头条闭合;族名英文缩写,caption 声明 manifest 固定分组、含变式、非 21 独立机制);
+  - 表 4 域分层(business+11/16/4、env−3/−5/−9、health+5/6/6、public+2/0/9);
+  - B.2 成本台账小节+表 5(原轮 per-config attempts/tokens 全格+两模型轮 tokens;总行 2,236/8,856,548、2,230/8,840,896、2,184/8,136,969;正文披露 xmodel 轮各 9/6 条无 usage 事件;两模型轮 per-config 尝试数因列宽改为只在正文引用——8B v3 375 次(51 接口失败所致)等已在账本);
+  - B.7 转换结果小节+图 2(fig_conversions.pdf,make_fig_conversions.py,堆叠条形:Batch C 10=弃答7+工程3、重跑 13=弃答5+工程7+调用上限1;标注"23 conversions: 0 corrections, 0 wrong submissions";弃答拆分 8 误导/4 净图、工程 6/4、调用上限在净图,均由 002/003 summary.json scores[] 逐单元复算);
+  - 表 7 非记分台账(IF/ES×6配置×3轮 36 格与散文及 SUMMARY/账本全一致)。
+- 版面危机与修复:三张新表初版超宽(family 155pt、cost 150pt、nonscoring 67pt Overfull)互相压印(p13 目检确认)。修复:family \small+tabcolsep 4pt+族名缩写;cost 改 5 列(\small+tabcolsep 3pt,去掉两模型轮 attempts 列);nonscoring \small+tabcolsep 3pt。全部清零。既有缺陷顺手修:eq:pub013(式 8)原文超宽 39.7pt 横向压印右栏正文,用 aligned 拆两行(编号不变,无 \ref 依赖)。
+- Overfull 教训:table 环境的"Overfull in paragraph"警告对既有 Table 1(225pt)/Table 2(143pt)是伪影(八轮评审像素级正常),不能只看警告数字——本轮真缺陷靠渲染页 PNG 目检判定;警告归因用日志文件栈(regexp 最近一次 (./sections/)。
+- Algorithm 1 浮动到末页(p16)为既有行为(旧版 p15 同样),非回归,未动。
+- 页限:Conclusion p8 y512(±1pt 舍入,正文未动)、Limitations p9 y72 精确,16 页(附录+1),0 undefined,overfull 6→4(余 4 条均为未触区域既有项,像素无碍)。
+- 验证:pdftotext+归一化全项 OK(B1 新句在、旧句 GONE、七表/图 caption 落位、表号链 T3–T7 与正文 \ref 自动一致、正文"Table 6 gives the full decomposition"自动更新);p12/13/14/15/16 渲染目检通过;Figure 2 嵌入页 15(log 确认 <./fig_conversions.pdf>)。
+- 有意跳过:机制族表不加正文引用(§4.1"21 mechanism families"在刀刃上,附录表由小节自引);zhang2026images 仍记 camera-ready 待办;ARR 表单字段仍记投稿日 TODO。
