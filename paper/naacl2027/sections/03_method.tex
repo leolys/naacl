@@ -53,17 +53,18 @@ restart competing verification only when a relevant
 judgment is first formed, when new evidence conflicts
 with an existing rule, or when a rule's applicability
 conditions are in question.
-Local verification decides whether a rule deserves
-acceptance or revision; within-task maintenance decides
-in which later steps it remains effective.
-The underlying model's parameters stay frozen, and the
-rule state evolves only with observations and
-verification results actually obtained.
+Local verification decides acceptance or revision;
+within-task maintenance decides where a rule remains
+effective.
+The model's parameters stay frozen; the rule state
+evolves only with observations and verification results
+actually obtained.
 
 \subsection{Competing Explanation Chains}
 \label{sec:method:chains}
 
-\subsubsection{Making the Current Explanation Explicit}
+\subsubsection{Making the Current Explanation
+Explicit}
 When the agent proposes a chart-dependent choice
 $\widetilde{a}_t$, the interpretation module forms, from
 the complete chart, the public task, the admissible
@@ -73,27 +74,24 @@ history, and the current rule state,
 \qquad
 p_0 = C_q(\widetilde{a}_t),
 \end{equation}
-stating separately which phenomena the chart is claimed
-to contain, which rules carry the observation to the
-conclusion, and which evidence those rules hold or
-lack; where the current choice lacks support, the
-module records an interpretation gap directly.
+stating which phenomena the chart is claimed to
+contain, which rules carry the observation to the
+conclusion, and which evidence those rules lack;
+unsupported choices record an interpretation gap
+directly.
 ``The color is darker'' stands as an observation, while
 ``the risk is higher'' stands only under a color-to-risk
-mapping: making the chain explicit turns such omitted
-conditions into objects for verification and directs
-the counter-questions that follow.
+mapping: explicit chains turn such omitted conditions
+into objects for verification.
 
 \subsubsection{Counter-Questions and Competing
 Explanations}
-The competing module poses three connected questions
-around the current chain: whether the current
-observation suffices for the conclusion, which
-interpretation rules the inference depends on, and
-whether the same chart admits another evidence-based
-explanation under which the current conclusion fails,
-or under which the current action continues to hold on
-different grounds.
+The competing module poses three connected questions:
+whether the current observation suffices for the
+conclusion, which interpretation rules the inference
+depends on, and whether the same chart admits another
+evidence-based explanation under which the conclusion
+fails or the action holds on different grounds.
 From these questions the module generates a bounded
 candidate set
 \begin{equation}\label{eq:pis}
@@ -114,27 +112,22 @@ mappings disagree precisely on the applicability of
 $B$.
 A reversed interpretation enters as a conditional
 hypothesis, unverified until the chart's scales support
-its condition; the module may return insufficient
-support and need not produce an opposing conclusion for
-every task.
+it; the module may return insufficient support and need
+not produce an opposing conclusion for every task.
 
 \subsubsection{Normalization and Shared Rules}
 Generated chains are normalized over observation, rule,
 applicability scope, conclusion, and evidence
-dependence.
-Explanations that differ only in wording are merged, and
-a rule used in several chains shares one verification
-state; different entities or comparison relations keep
-their separate evidence.
-Whereas self-consistency aggregates a distribution of
-answers over repeated reasoning paths
-\citep{wang2022selfconsistency}, the object of
-verification here is the rule each path depends on and
-the evidence for it: repeated generations of the same
-rule add no evidential weight, and a new explanation
-changes later verification only by contributing
-different evidence or exposing a new applicability
-problem.
+dependence; paraphrases are merged, a rule used in
+several chains shares one verification state, and
+different entities or comparison relations keep
+separate evidence.
+Unlike self-consistency, which aggregates answers over
+reasoning paths \citep{wang2022selfconsistency}, the
+object here is the rule each path depends on: repeated
+generations of the same rule add no evidential weight,
+and a new explanation matters only through different
+evidence or a new applicability problem.
 In the deployed pipeline the candidate set of a
 verification node is the frozen per-task pool of one to
 three pre-generated $O/B$ records (275 records across
@@ -192,7 +185,7 @@ contradiction, with no inserted quantifiers or causal
 claims; for $B$, explicit necessary-condition tests
 against public facts, including whether the known
 labeled references would have the relations a proposed
-decoding predicts and an explicit order comparison
+decoding predicts, and an explicit order comparison
 before any common scale is endorsed; for the derivation,
 coverage, range, and task-scope conditions as confirmed
 premises.
@@ -207,15 +200,14 @@ justify a rule retroactively.
 For rules incompatible over the same objects and scope,
 the method checks which in-chart information
 discriminates them: disputes with unresolved evidence
-stay open, and rules applying to different axes, series,
-or ranges have their applicability conditions split
-rather than forced to one choice.
+stay open, and rules applying to different axes,
+series, or ranges have their applicability conditions
+split rather than forced to one choice.
 Verification may support a replacement rule or only
-negate the original: that bar height and visible value
+negate the original---that bar height and visible value
 ordering disagree does not entail ``shorter means
-larger''---the sound revision may be that bar height in
-the current figure does not directly support quantity
-ordering.
+larger,'' and the sound revision may be that bar height
+does not directly support quantity ordering.
 Rule revision therefore includes replacing a mapping
 and disqualifying an inference route.
 
@@ -265,40 +257,31 @@ disputed status while verification continues within
 budget; and rules applying to different objects or
 scopes are stored separately rather than overwritten
 globally.
-The ``currently active'' status expresses the method's
-judgment under the evidence at hand; new effective
-evidence can change it, and can also show that an
-earlier verification was itself mistaken.
+The ``active'' status expresses the judgment under the
+evidence at hand; new effective evidence can change it,
+or show that an earlier verification was itself
+mistaken.
 After revocation, content, scope, and reason remain in
-the revision history; if the same rule reappears, it
-must answer the recorded refutation or supply evidence
-that changes the applicability judgment---repetition,
-later position, or a more confident phrasing forms no
-new revision ground by itself.
-
-A revision record answers why the original rule had to
-change, what interpretation is adopted now, and under
-which conditions the change applies: for a reversed
-linear axis, the record replaces ``higher position,
-larger value'' because the visible scale increases
-downward, states that an upward move of the bound
-series now reads as a decrease, and scopes this to the
-current chart, axis, and series---supporting trend
-judgments over further intervals without storing a
-fixed answer of growth or decline.
+the revision history; a reappearing rule must answer
+the recorded refutation or supply evidence that changes
+the applicability judgment---repetition, later position,
+or a more confident phrasing forms no new ground by
+itself.
+A revision record answers why the rule had to change,
+what interpretation is adopted now, and under which
+conditions it applies (Appendix~\ref{app:example}
+illustrates).
 
 An invalidated rule does not by itself condemn the
 current action, since
-$\lnot B_0 \not\Rightarrow \lnot C_q(a_0)$.
-After updating $B$, the method re-examines the current
-judgments that depended on it: a judgment that lost its
-basis enters re-review and may be retained if other
-effective interpretations still support it, so the two
-admissible outcomes are a rule change with the action
-retained (a wrong reason for a right choice) or rule
-and action changing together.
-Judgments already recorded in the history are marked as
-basis-changed for later re-confirmation; the original
+$\lnot B_0 \not\Rightarrow \lnot C_q(a_0)$: after
+updating $B$, the method re-examines judgments that
+depended on it, retaining those other effective
+interpretations still support, so the admissible
+outcomes are a rule change with the action retained (a
+wrong reason for a right choice) or rule and action
+changing together; judgments already recorded are
+marked basis-changed for later re-confirmation, the
 interaction history stays intact, and the currently
 effective rules are organized by a separate read
 interface.
@@ -307,12 +290,11 @@ interface.
 Execution}
 \label{sec:method:read}
 
-Let the current interpretation context $c_t$ collect the
+Let the interpretation context $c_t$ collect the
 relevant chart objects, encoding components, metrics,
-and task scope.
-The state reader returns
-$\mathcal{R}_t = \operatorname{Read}(M_t^B, c_t)$, of
-which the directly usable part is
+and task scope; the state reader returns
+$\mathcal{R}_t = \operatorname{Read}(M_t^B, c_t)$,
+whose directly usable part is
 \begin{equation}\label{eq:read}
 \mathcal{R}_t^{\mathrm{active}}
 =
@@ -352,36 +334,33 @@ current observation, history, and rule view,
 where $\widetilde{\pi}_t$ is a short interpretation
 record of the present judgment.
 Rules about the same chart can remain valid while the
-correct action changes with task conditions, so the
-method reuses interpretation evidence across steps while
-re-deriving actions from the current observation and the
-public task.
-A proposal that depends on a rule revoked within its
-scope is returned the revision evidence and required to
-re-derive; a proposal bringing evidence sufficient to
-challenge an active rule re-enters competing
-verification.
-This restrains old conventions from regaining force
-without grounds while preserving a channel for
-correcting earlier verification mistakes.
-Ordinary actions that involve no change of chart
-interpretation follow the original interface; the
+correct action changes with task conditions, so
+interpretation evidence is reused across steps while
+actions are re-derived from the current observation and
+the public task.
+A proposal depending on a revoked rule is returned the
+revision evidence and required to re-derive; a proposal
+bringing evidence sufficient to challenge an active
+rule re-enters competing verification---restraining old
+conventions from regaining force without grounds while
+preserving a channel for correcting earlier
+verification mistakes.
+Ordinary actions follow the original interface; the
 persistent state acts through later contextual reads,
 with complete competing verification only when a
 trigger holds.
 
 Three observable entry points start verification: the
-first chart-dependent judgment of a task (which expands
-the current interpretation and establishes the task's
-rule state), an interpretation conflict (a later
-proposal uses a rule inconsistent with the effective
-state, or an existing rule is challenged with in-chart
-evidence), and an applicability change (the chart, its
-encoding, the series binding, or the task scope changes
-in ways that can affect interpretation).
-Entry points are determined by actual observations,
-task context, and action proposals; task correctness
-and hidden scoring never participate in triggering.
+first chart-dependent judgment of a task (which
+establishes the rule state), an interpretation conflict
+(a later proposal uses a rule inconsistent with the
+effective state, or an existing rule is challenged with
+in-chart evidence), and an applicability change (the
+chart, its encoding, the series binding, or the task
+scope changes in ways that can affect interpretation).
+Entry points depend on actual observations, task
+context, and action proposals; task correctness and
+hidden scoring never participate in triggering.
 
 After a rule update, the agent re-judges the action and
 records \emph{Keep} (the choice remains supported by an
@@ -392,14 +371,13 @@ an alternative gains the support the task requires), or
 still change the judgment persists, or necessary
 evidence is missing).
 Showing that a candidate exceeds the current choice
-refutes ``the current choice is highest,'' for example,
-while confirming the replacement still requires the
+refutes ``the current choice is highest'' while
+confirming the replacement still requires the
 comparison the public task demands; such checks belong
-to task-semantic verification, not to one fixed
-comparison formula.
-The unresolved status continues whole-chart verification
-within the remaining budget, and when the budget is
-exhausted the unfinished reason is recorded explicitly.
+to task-semantic verification, not one fixed formula.
+Unresolved status continues whole-chart verification
+within the remaining budget, and an exhausted budget
+records the unfinished reason explicitly.
 Verification suggestions, actual choice revisions, and
 final submissions are recorded separately, and only
 operations carried out by the executor constitute action
@@ -410,8 +388,8 @@ outcomes.
 
 Algorithm~\ref{alg:cers}
 (Appendix~\ref{app:algorithm}) summarizes one execution
-of \ours{} under the candidate budget $K$ and the
-review budget $L$ for a single verification node.
+of \ours{} under budgets $K$ and $L$ for one
+verification node.
 The framework enters an existing agent at three
 points---the observation entrance establishes chart
 references, the pre-execution point performs
@@ -419,21 +397,18 @@ verification and rule revision, and the later-reasoning
 entrance reads the currently applicable rules; planning,
 execution, and review modules share the rule state
 within one task, while action capabilities and the
-environment interface
-follow the original system.
-Explanation generation and visual verification can be
-carried out by different calls of the same frozen model,
-while deterministic code handles record keeping,
-normalized merges, version updates, scope retrieval, and
-explicitly computable checks; budgets and triggers are
-fixed before a run and their call overhead is charged
-to the method's cost.
+environment interface follow the original system.
+Explanation generation and verification can use
+different calls of the same frozen model, with
+deterministic code for record keeping, merges, version
+updates, scope retrieval, and explicitly computable
+checks; budgets and triggers are fixed before a run and
+charged to the method's cost.
 The rule state is isolated per task: the runtime sees
 only the chart and interaction information the task
 permits, the paired chart, hidden answers, and scoring
-feedback stay on the evaluation side, and charts,
-rules, and action records are stored separately so
-later analysis can trace how evidence changed and
-whether operations followed.
+feedback stay on the evaluation side, and records are
+stored separately so later analysis can trace how
+evidence changed and whether operations followed.
 
 

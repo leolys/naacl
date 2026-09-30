@@ -7,34 +7,26 @@ information it reads enters tool calls and operations
 directly, making the reliable interpretation of
 external content a precondition for execution
 safety.
-Prior work has shown that indirect prompt injections
-buried in web pages and tool returns can steer an agent
-away from the user's intent \citep{zhan2024injecagent,
-evtimov2025wasp, johnson2025manipulating}, that
-perturbations of visual input can hijack multi-step
-web agents \citep{wu2024dissecting}, and that deceptive
-interface design can be reproduced and probed
-systematically \citep{wang2025agentvigil}.
-These findings indicate that an environment does not only
-intervene on an agent through explicit instructions; it
-can also act on the way the agent understands and uses
-information, and thereby shape the decisions the agent
-makes autonomously.
+Prior work shows that indirect prompt injections in web
+pages and tool returns steer agents away from the
+user's intent \citep{zhan2024injecagent,
+evtimov2025wasp, johnson2025manipulating}, that visual
+perturbations hijack multi-step web agents
+\citep{wu2024dissecting}, and that deceptive interface
+design can be probed systematically
+\citep{wang2025agentvigil}: an environment intervenes
+not only through explicit instructions but through the
+way the agent understands information, shaping the
+decisions it makes autonomously.
 
-Charts are a prominent part of such external
-information: they organize data into visual forms that
-support comparison and inference, and lend an
-appearance of evidential support to whatever judgment
-is attached to them.
-Yet correct and misleading readings can coexist in the
-same figure: charts support misleading inferences even
-when drawn faithfully \citep{lisnic2023misleading,
-nadib2026guardrail}.
+Charts are prominent among such inputs, and correct and
+misleading readings can coexist in the same figure:
+charts support misleading inferences even when drawn
+faithfully
+\citep{lisnic2023misleading, nadib2026guardrail}.
 A curve moving upward is observed accurately, but
 whether it represents growth depends on the axis
-mapping currently in force; color intensity and bar
-height are likewise read through the present figure's
-encoding relations, and a misleading presentation can
+mapping in force; a misleading presentation can thus
 induce an agent to apply its customary reading rules
 unchanged, converting visible evidence into a wrong
 conclusion (Figure~\ref{fig:misleading-pair}).
@@ -42,11 +34,10 @@ conclusion (Figure~\ref{fig:misleading-pair}).
 \centering
 \includegraphics[width=0.92\columnwidth]{fig_misleading_pair.pdf}
 \caption{The same drawn series under two printed axis
-orders: the customary reading rule holds in (a) and is
-refuted by the scale order in (b), where the same
-upward curve supports the opposite trend judgment. The
-benchmark pairs each task with such variants; model
-inputs never reveal which panel is which.}
+orders: the customary rule holds in (a) and is refuted
+by the scale order in (b). The benchmark pairs each
+task with such variants; model inputs never reveal
+which panel is which.}
 \label{fig:misleading-pair}
 \end{figure}
 
@@ -64,33 +55,28 @@ described where first used in this paper.}
 
 Against misleading charts, model-level defenses have
 improved chart question answering through tabular
-answering and re-plotting procedures
-\citep{tonglet2025protecting}, but the reliability of
-the verification itself remains open: intrinsic
-self-correction can damage initially correct answers
-\citep{huang2023large, li2025decomposing}, and when the
-evaluating component is itself exposed to the
-environment, reflection and search can open new attack
-surfaces \citep{wu2024dissecting}.
-Chart-domain studies observe a further gap: a model may
-correctly identify chart properties during extraction
-and still fail to let them govern downstream inference
-\citep{mahbub2026chart}.
-These observations point to two connected requirements:
-correction must rest on evidence that can be checked,
-and a corrected interpretation must actually change
-subsequent judgments---repeated observation or an
-additional review round can as easily re-adopt an
-inapplicable reading as discover an error.
+answering and re-plotting \citep{tonglet2025protecting},
+but the reliability of verification itself remains
+open: intrinsic self-correction can damage initially
+correct answers \citep{huang2023large,
+li2025decomposing}, reflection and search open new
+attack surfaces when the evaluator is exposed to the
+environment \citep{wu2024dissecting}, and a model may
+identify chart properties correctly yet fail to let
+them govern downstream inference \citep{mahbub2026chart}.
+Two connected requirements follow: correction must rest
+on checkable evidence, and a corrected interpretation
+must actually change subsequent judgments---repeated
+observation or an added review round can re-adopt an
+inapplicable reading as easily as discover an error.
 
-Stateful execution raises the stakes beyond chart
-question answering: an understanding formed from one
-chart feeds later planning even after the chart has
-left the viewport, so a verified mapping should keep
-governing later judgments yet stay revisable on
-sufficient new evidence.
+Stateful execution raises the stakes: an understanding
+formed from one chart feeds later planning even after
+the chart has left the viewport, so a verified mapping
+should keep governing later judgments yet stay
+revisable on sufficient new evidence.
 Reflexion-style memory carries verbalized feedback into
-later attempts \citep{shinn2023reflexion}, and recent
+later attempts \citep{shinn2023reflexion}, and
 agent-memory systems organize experience into
 retrievable state \citep{wang2024survey, hu2025agents};
 an inductive chart requires something more specific,
@@ -126,14 +112,14 @@ needs to change; the persistent state carries that
 evidenced change into later actions.
 
 Contributions: (1) a correction framework based on
-competing explanation chains, in which the relation
+competing explanation chains, where
 $O\land B\Rightarrow C_q(a)$ unifies visual observation,
 interpretation rules, and action judgments, and
 customary readings are tested against in-chart evidence
-so the rules responsible for wrong inferences are
-identified and revised; (2) a stateful defense for
-continuing execution, in which validated rules,
-revision evidence, and scope conditions are maintained
-as task-scoped harness state, so later decisions reuse
-confirmed chart readings and revise them only on new
-effective evidence.
+so the rules behind wrong inferences are identified and
+revised; (2) a stateful defense for continuing
+execution, where validated rules, revision evidence,
+and scope conditions are maintained as task-scoped
+harness state, so later decisions reuse confirmed
+readings and revise them only on new effective
+evidence.

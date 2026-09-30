@@ -7,23 +7,22 @@ faithful drawings with selective context and framing
 The second measures the phenomenon in models:
 benchmarks evaluate multimodal LLMs on misleading chart
 QA \citep{chen2025unmasking, bharti2024chartom,
-alexander2024models}, truncation, aspect-ratio, and
-encoding manipulations are quantified with mitigations
-\citep{mahbub2025perils, mahbub2026chart}, and recent
-work asks whether agents recognize misleadingness
-unprompted \citep{panda2026making, blasilli2026true,
-seto2026llms}.
-Method-side responses include tool-augmented chart
-reasoning \citep{kaur2025chartagent}, structured
-extraction \citep{das2025chartsofthought},
-misleading-chart detection \citep{tonglet2025this}, and
-agentic dual-path frameworks \citep{zhang2026navigating}.
-\citet{tonglet2025protecting} provide the closest
-model-level defense through tabular answering and
-re-plotting; these repair a single question--answer
-round, while \ours{} targets the interpretation rules
-that recur across an executing agent's rounds and
-maintains their validated revisions in runtime state.
+alexander2024models}, manipulations are quantified with
+mitigations \citep{mahbub2025perils, mahbub2026chart},
+and recent work asks whether agents recognize
+misleadingness unprompted \citep{panda2026making,
+blasilli2026true, seto2026llms}.
+Method-side responses include tool-augmented reasoning
+\citep{kaur2025chartagent}, structured extraction
+\citep{das2025chartsofthought}, detection
+\citep{tonglet2025this}, and dual-path frameworks
+\citep{zhang2026navigating}.
+The closest model-level defense, tabular answering and
+re-plotting \citep{tonglet2025protecting}, repairs a
+single question--answer round, while \ours{} targets
+the interpretation rules that recur across an executing
+agent's rounds and maintains their validated revisions
+in runtime state.
 
 A second line concerns agent-environment integrity:
 injection benchmarks show that tool and web content can
@@ -32,34 +31,30 @@ benchmarks measure targeted hijacking
 \citep{evtimov2025wasp}, injection reaches perceived
 representations such as HTML accessibility trees
 \citep{johnson2025manipulating}, and red-teaming and
-runtime frameworks generate and intercept such attacks
-at scale \citep{wang2025agentvigil, zhao2026clawguard}.
-Interface-level defenses separate instructions from data
-\citep{chen2024struq} or train against injected content
-\citep{chen2024secalign}.
-\citet{wu2024dissecting} dissect the robustness of
-multimodal agents as compound systems and show that
-reflection and tree search, the components commonly
-added for self-correction, open new vulnerabilities when
-the evaluator itself is exposed to attacked content.
-Our defense differs in what it protects: not the agent's
-instruction hierarchy but the interpretation layer
-between visual observation and task judgment, where a
-misleading chart exerts its effect without any injected
-instruction.
+runtime frameworks generate and intercept attacks at
+scale \citep{wang2025agentvigil, zhao2026clawguard};
+interface-level defenses separate instructions from
+data \citep{chen2024struq} or train against injected
+content \citep{chen2024secalign}, and reflection and
+tree search open new vulnerabilities when the evaluator
+is exposed to attacked content \citep{wu2024dissecting}.
+\ours{} protects a different layer: not the instruction
+hierarchy but the interpretation layer between visual
+observation and task judgment, where a misleading chart
+exerts its effect without any injected instruction.
 
 The third line concerns persistent state and
 correction: verbal reinforcement carries textual
 feedback across attempts \citep{shinn2023reflexion},
 self-consistency aggregates reasoning paths
-\citep{wang2022selfconsistency}, and intrinsic
+\citep{wang2022selfconsistency}, intrinsic
 self-correction without external feedback degrades
-reasoning \citep{huang2023large, li2025decomposing};
+reasoning \citep{huang2023large, li2025decomposing},
 agent surveys organize the state and memory design
 space \citep{wang2024survey, hu2025agents}, and
 realistic visual web tasks remain hard enough that
-single-decision correctness cannot be taken for
-granted \citep{koh2024visualwebarena}.
+single-decision correctness cannot be taken for granted
+\citep{koh2024visualwebarena}.
 \ours{} borrows the state-carrying idea but changes the
 carried content: the state records interpretation rules
 with evidential support, applicability scope, and

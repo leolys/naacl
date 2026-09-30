@@ -84,6 +84,14 @@ A chain is excluded only when chart-supported evidence
 negates its observation, its rule applicability, or its
 derivation conditions.
 
+\subsection{Revision Record Example}
+For a reversed linear axis, the revision record
+replaces ``higher position, larger value'' because the
+visible scale increases downward, states that an upward
+move of the bound series now reads as a decrease, and
+scopes this to the current chart, axis, and
+series.
+
 \subsection{A Worked Example of Revision and Cross-Step Reuse}\label{app:example}
 \label{sec:method:example}
 
@@ -136,6 +144,120 @@ in the interpretation rules, whether the current action
 must change, and which rule version later steps actually
 used.
 \section{Additional Results and Boundary Statements}\label{app:details}
+
+\subsection{Where the Gains Concentrate}
+Stratified by mechanism family, V5's net gains
+concentrate where misleading power comes from scope and
+reference manipulation: the subset-extrapolation family
+(22 tasks) yields $+18$ and $+11$ across the two
+rounds, while non-linear-axis and dual-axis families
+are neutral to $-6$.
+By domain, business carries the largest share ($+16$
+and $+4$), public statistics is neutral then positive
+($0$ and $+9$), health is $+6$ in both, and the
+environment domain is the only negative one in both
+rounds ($-5$, $-9$).
+The development subset contributes one decision point
+to each headline gain, and costs remain bounded: 8.84M
+and 8.14M tokens across the replication rounds
+(2{,}230 and 2{,}184 requests) against 8.86M in the
+original round, a $2.6\times$ request overhead over
+direct selection with frozen prompts and no parameter
+updates.
+
+\subsection{Interface Decomposition Detail}\label{app:interface}
+The three actor systems separate structural from
+semantic failure modes.
+Under the strict interface without guidance (Batch A),
+22 of 24 defense-arm units die in engineering failures,
+and the ordinary arm ends in two call-limit exhaustions
+on misleading charts.
+A schema-guided proxy mirroring the sealed structural
+rules (Batch B) drives the ordinary actor's structural
+failures to zero (12/12 on clean charts) but cuts
+defense-arm engineering failures only modestly (21 of
+24): the binding constraint is semantic, since exact
+public-leaf values, bounded summaries, and the
+question--response count coupling cannot be expressed
+by any response format---components added for
+self-correction become the exposed surface, as
+\citet{wu2024dissecting} analyze for compound systems.
+Running the frontier model directly (Batch C) removes
+the structural interface almost entirely (engineering
+failures 4 of 24), leaving honest abstention---12
+\texttt{unresolved\_public\_evidence} verdicts, mostly
+on misleading charts, where verification cannot close
+the gap between the printed chart and the required
+scope within the re-verification budget.
+
+
+\subsection{Stability Rerun}\label{app:stability}
+
+Re-running Batch C under the identical configuration
+changes 11 of 48 unit outcomes, every one of them a
+flip between a correct submission and an abstention
+(agreement 37/48); no wrong submission appears in
+either run, so the ``never submit a wrong answer''
+property is stable while completion throughput is not.
+Token budgets are comparable across the two runs
+(1.80M input and 129K output tokens, 322 attempts and
+242 browser operations, versus 1.81M and 115K, 331 and
+254), confirming that the stateful machinery operates
+within a fixed per-unit allowance comparable to the
+static panel's per-task cost.
+
+\subsection{Cross-Model Transfer Analysis}\label{app:transfer}
+On the 8B open-weight VLM, direct selection drops to
+46.4\% and the picture splits
+(Table~\ref{tab:static-main}, 8B columns): V7 gains
+$+15$ ($p=0.021$; CI $[+0.017, +0.210]$), V5 gains
+$+10$ ($p=0.044$), V4 and V6 remain within noise, and
+V3 collapses---51 of 140 runs end in interface failures
+of the schema-typed protocol, against 8 and 6 in the
+other rounds, for a net of $-15$ despite directional
+wrong--target flips.
+The interaction is instructive: the separated
+verification prompts that produce directional flips on
+the 27B model overwhelm the 8B actor, so interface
+robustness is a first-class variable and prompt content
+and interface contract must be evaluated jointly rather
+than as one ``method'' factor.
+
+
+
+\subsection{Online Batch Decomposition}\label{app:online-table}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Unit class & Cor. & Abst. & Bug. & Fail. \\
+\midrule
+\multicolumn{5}{l}{Batch C (formal run)}\\
+Ordinary $\times$ misleading  & 8  & 3  & -- & 1  \\
+Ordinary $\times$ clean       & 10 & 2  & -- & -- \\
+\ours{} $\times$ misleading   & 2  & 7  & 1  & 2  \\
+\ours{} $\times$ clean        & 6  & 4  & -- & 2  \\
+\midrule
+\multicolumn{5}{l}{Batch C rerun (stability)}\\
+Ordinary $\times$ misleading  & 10 & 1  & -- & 1  \\
+Ordinary $\times$ clean       & 10 & 2  & -- & -- \\
+\ours{} $\times$ misleading   & 2  & 5  & -- & 5  \\
+\ours{} $\times$ clean        & 5  & 4  & -- & 3  \\
+\bottomrule
+\end{tabular}
+\caption{Online stateful deployment: 12 tasks spanning
+four domains, each run on the misleading chart and its
+clean pair under ordinary execution and the \ours{}
+arm (48 units per batch). ``Cor.'' counts submitted
+actions matching the original label; ``Abst.''
+recorded abstentions; ``Bug.'' re-verification budget
+exhaustion; ``Fail.'' engineering and response-format
+failures (including actor-call-limit terminations).
+All submissions across both batches are correct
+(26/26 and 27/27).}
+\label{tab:online-four}
+\end{table}
 
 \subsection{Matched-Configuration Seed Replication}
 The revision experiments rerun direct selection and the

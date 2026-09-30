@@ -1,6 +1,6 @@
 This work studies defensive scaffolding around
-vision--language agents, and its limitations follow
-from the same design choices that produce the results.
+vision--language agents; its limitations follow from
+the same design choices that produce the results.
 
 \paragraph{Scale and models.}
 The static panel uses one 27B and one 8B open-weight
@@ -12,31 +12,24 @@ the four covered domains; the 8B transfer already shows
 that variant choice interacts with actor capability in
 ways we do not fully predict.
 
-\paragraph{What the labels measure.}
-Robust accuracy is computed against the original
-option labels, and agreement checks verify that
-submitted options and rule states match the recorded
-logs; label agreement is not semantic verification.
-A run whose recorded reasoning matches its outcome may
-still rest on a misreading the frozen labels do not
-separate, and the rule states we analyze are the
-agent's own declared rules, not independently validated
-facts.
-
-\paragraph{Selection effects and variance.}
+\paragraph{Measurement and variance.}
+Robust accuracy is computed against the original option
+labels, and agreement checks verify that submitted
+options and rule states match the recorded logs; label
+agreement is not semantic verification, a run may rest
+on a misreading the frozen labels do not separate, and
+the rule states we analyze are the agent's own declared
+rules.
 The paired gains are within-run comparisons on a fixed
-task set.
-Sampling variance is quantified three ways: the drop of
-direct selection from 81 to 73 of 140 between the two
-frozen rounds, the three-seed spread of $\pm1.1$
-accuracy points around 56.4\% for direct selection,
-and McNemar tests with exact confidence intervals on
-paired decisions rather than cross-run rate
-differences.
-Engine-level changes such as batch admission also
-shift individual-seed outcomes slightly, so
-cross-engine comparisons are avoided in favor of
-within-deployment ones.
+task set, with sampling variance quantified three ways:
+the drop of direct selection from 81 to 73 of 140
+between the two frozen rounds, the three-seed spread of
+$\pm1.1$ accuracy points around 56.2\%, and McNemar
+tests with exact confidence intervals on paired
+decisions rather than cross-run rate differences;
+engine-level changes such as batch admission also shift
+individual-seed outcomes slightly, so cross-engine
+comparisons are avoided.
 The 24-task development subset was used to calibrate
 configuration emphasis and is scored separately
 throughout; still, all configurations were designed by
@@ -44,40 +37,35 @@ the authors after inspecting aggregate failure
 patterns, so the panel should be read as a controlled
 comparison rather than a held-out evaluation.
 
-\paragraph{Interface dependence.}
+\paragraph{Interface dependence and runtime.}
 The online results are conditional on the strict
-submission protocol.
-Its semantic contract---exact public-leaf values,
-bounded summaries, count-coupled responses---cannot be
-expressed in a response format, and under earlier
-actor systems the same machinery died in engineering
-failures rather than abstentions.
-The deployment therefore demonstrates the behavior of
-\ours{} under one operating point (frontier actor,
-direct gateway, strict typed interface), not a
-interface-robust defense; the negative environment-domain
-results of the static panel and the one-directional
+submission protocol, whose semantic contract---exact
+public-leaf values, bounded summaries, count-coupled
+responses---cannot be expressed in a response format;
+under earlier actor systems the same machinery died in
+engineering failures rather than abstentions, so the
+deployment demonstrates \ours{} under one operating
+point, not an interface-robust defense, and the
+negative environment-domain results and one-directional
 online paired effect are reported as found.
-
-\paragraph{Runtime footprint.}
 Verification multiplies requests by roughly
-$2.6\times$ over direct selection and the online
-arm operates within a fixed per-unit budget
-(1 re-verification round, 8 actor calls); agents
-deployed under tighter latency or cost envelopes may
-not accommodate this overhead.
+$2.6\times$ over direct selection, and the online arm
+operates within a fixed per-unit budget (one
+re-verification round, eight actor calls); agents under
+tighter latency or cost envelopes may not accommodate
+this overhead.
 
 \paragraph{Ethics and reproducibility boundary.}
 The defense direction of this work is protective, but
 the same observation---that faithful chart pixels admit
 misleading encodings that change executed
-actions---can inform adversarial chart design, so we
-release instances only through the benchmark's own
-access process and avoid publishing new manipulation
-techniques.
-The companion benchmark is under review and its
-instances are not yet public; until release, the
-results here cannot be independently recomputed from
-the logs alone, although all decision logs, prompts,
-and rule states referenced in this paper are preserved
-verbatim in the submission's supplementary material.
+actions---can inform adversarial chart design, so
+instances are released only through the benchmark's own
+access process and no new manipulation techniques are
+published.
+The companion benchmark is under review and not yet
+public; until release the results cannot be
+independently recomputed from the logs alone, although
+all decision logs, prompts, and rule states referenced
+here are preserved verbatim in the supplementary
+material.
