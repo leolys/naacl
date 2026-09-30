@@ -149,6 +149,17 @@ The three plain runs also provide the three samples for
 the self-consistency baseline at no additional requests,
 with majority vote among non-null selections and ties
 recorded as abstentions.
+The tabular-answering baseline re-requests each task in
+two stages under the same engine: a transcription
+request that renders, from the image, a compact
+markdown table limited to the series and x positions
+the public task's comparison involves (at most 24
+rows), and a decision request answered from the table
+alone, so the decision stage never sees the image.
+The clean-chart control runs plain direct selection on
+the paired clean charts and is scored against the
+original labels, the protocol established by the
+companion benchmark's online evaluation.
 
 \subsection{Development Subset and Stratified Results}
 The 24-task development subset is scored separately in

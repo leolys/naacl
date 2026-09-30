@@ -19,45 +19,38 @@ Model inputs never contain gold labels, mechanism
 labels, the other chart variant, or scoring feedback.
 
 \emph{Static panel.}
-For every task the agent sees the original chart of the
-benchmark---the misleading instance of the pair, scored
-against its frozen original label---plus the public goal
-and four options, and must submit a selection; no
-browser navigation occurs.
+For every task the agent sees the benchmark's
+misleading chart---scored against its frozen original
+label---plus the public goal and four options, and must
+submit a selection; no browser navigation occurs.
 Six configurations are compared on identical inputs and
 decoding (temperature 0.7, top-$p$ 0.8, top-$k$ 20,
 fixed seed, thinking disabled): direct selection and
-five verification configurations implementing the
-READ--VERIFY--DECIDE pipeline of Section~\ref{sec:method}
-with frozen prompts and three requests per task; the
-candidate chains of each verification node are the
+five READ--VERIFY--DECIDE configurations
+(Section~\ref{sec:method}) with frozen prompts and
+three requests per task, whose candidate chains are the
 frozen per-task pool of one to three pre-generated
-$O/B$ records, 275 across the panel.
-They differ in verification emphasis: V3 verifies $O$
-and $B$ in distinct schema-typed passes; V4 fixes
-explicit numeric references, dates, ranges, and
-baselines; V5 (full) constrains query points with
-same-series references, checks scales, time windows,
-and policy boundaries, and prioritizes the
-discriminating scope; V6 checks each necessary condition
-of $B$ item by item, requiring positive evidence for
-routine defaults; V7 keeps V4's prompts and reorients
-the decision phase toward same-series position and
-numeric ranges to avoid abstention on missing exact
-printed values.
+$O/B$ records (275 across the panel).
+V3 verifies $O$ and $B$ in distinct schema-typed
+passes, V4 fixes explicit numeric references, V5
+(full) adds same-series query-point constraints with
+scale, time-window, and policy-boundary checks, V6
+checks each necessary condition of $B$ item by item,
+and V7 keeps V4's prompts with an abstention-aware
+decision repair phase; full prompts are in the
+supplementary material.
 Interface failures and empty selections remain in the
-140 denominator.
-\emph{Robust accuracy} throughout is the fraction of
-tasks whose selection matches the frozen original
-label, the same full-denominator quantity for every
-configuration.
-The supplementary material of this submission contains
-the frozen prompts, the typed output schemas, the
-per-request decision logs with seeds and usage, the
-interface contract, and the scoring code, so that every
-number in this section can be recomputed from the
-released artifacts once the companion benchmark's data
-license permits public release.
+140 denominator; \emph{robust accuracy} throughout is
+the fraction of tasks whose selection matches the
+frozen original label, the same full-denominator
+quantity for every configuration.
+The supplementary material contains the frozen prompts,
+typed output schemas, per-request decision logs with
+seeds and usage, the interface contract, and the
+scoring code, so every number in this section can be
+recomputed from the released artifacts once the
+companion benchmark's data license permits public
+release.
 
 \emph{Online stateful deployment.}
 Twelve tasks spanning all four domains
@@ -88,23 +81,24 @@ rerun).
 
 \begin{table}[t]
 \centering
-\begin{tabular}{lccccc}
+\begin{tabular}{lcccccc}
 \toprule
-Config & Target & Rate & Other & Empty & IF \\
+Config & Target & Rate & $\Delta$ & Other & Empty & IF \\
 \midrule
-Direct    & 81  & 57.9\% & 59 & 0 & 0 \\
-V3        & 74  & 52.9\% & 60 & 0 & 6 \\
-V4        & 87  & 62.1\% & 53 & 0 & 0 \\
-V5 (full) & 96  & 68.6\% & 44 & 0 & 0 \\
-V6        & 84  & 60.0\% & 56 & 0 & 0 \\
-V7        & 91  & 65.0\% & 49 & 0 & 0 \\
+Direct    & 81  & 57.9\% & --- & 59 & 0 & 0 \\
+V3        & 74  & 52.9\% & $-7$ & 60 & 0 & 6 \\
+V4        & 87  & 62.1\% & $+6$ & 53 & 0 & 0 \\
+V5 (full) & 96  & 68.6\% & $+15$ & 44 & 0 & 0 \\
+V6        & 84  & 60.0\% & $+3$ & 56 & 0 & 0 \\
+V7        & 91  & 65.0\% & $+10$ & 49 & 0 & 0 \\
 \bottomrule
 \end{tabular}
 \caption{Original round on the 27B open-weight VLM
 (140 tasks; temperature 0.7, top-$p$ 0.8, top-$k$ 20,
 fixed seed). ``Target'' counts selections matching the
-original label; ``Other'' counts wrong selections;
-``IF'' counts interface failures, which remain in the
+original label; $\Delta$ is the net change against
+Direct; ``Other'' counts wrong selections; ``IF''
+counts interface failures, which remain in the
 denominator. The 24-task development subset is scored
 separately and reported in
 Appendix~\ref{app:details}.}
@@ -113,28 +107,31 @@ Appendix~\ref{app:details}.}
 
 \begin{table}[t]
 \centering
-\begin{tabular}{lccc@{\hskip 1.5em}ccc}
+\begin{tabular}{lcccc@{\hskip 1.5em}cccc}
 \toprule
-& \multicolumn{3}{c}{27B replication} &
-\multicolumn{3}{c}{8B cross-model} \\
-\cmidrule(lr){2-4}\cmidrule(lr){5-7}
-Config & Tar. & $\Delta$ & $p$ & Tar. & $\Delta$ & $p$ \\
+& \multicolumn{4}{c}{27B replication} &
+\multicolumn{4}{c}{8B cross-model} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Config & Tar. & $\Delta$ & $p$ & 95\% CI & Tar. & $\Delta$ & $p$ & 95\% CI \\
 \midrule
-Direct & 73 & --- & --- & 65 & --- & --- \\
-V3 & 75 & $+2$ & .436 & 50 & $-15$ & .999 \\
-V4 & 86 & $+13$ & .0049 & 77 & $+12$ & .158 \\
-V5 & 90 & $+17$ & .0025 & 75 & $+10$ & .089 \\
-V6 & 86 & $+13$ & .0014 & 71 & $+6$ & .465 \\
-V7 & 89 & $+16$ & .0049 & 80 & $+15$ & .043 \\
+Direct & 73 & --- & --- & --- & 65 & --- & --- & --- \\
+V3 & 75 & $+2$ & $<$.001 & $[+.09,+.22]$ & 50 & $-15$ & .185 & $[-.02,+.13]$ \\
+V4 & 86 & $+13$ & .0025 & $[+.05,+.23]$ & 77 & $+12$ & .079 & $[-.01,+.18]$ \\
+V5 & 90 & $+17$ & .0013 & $[+.06,+.23]$ & 75 & $+10$ & .044 & $[+.00,+.20]$ \\
+V6 & 86 & $+13$ & $<$.001 & $[+.07,+.22]$ & 71 & $+6$ & .233 & $[-.04,+.16]$ \\
+V7 & 89 & $+16$ & .0025 & $[+.05,+.23]$ & 80 & $+15$ & .021 & $[+.02,+.21]$ \\
 \bottomrule
 \end{tabular}
 \caption{Replication on the same 27B model (left; 8.84M
 tokens, 2{,}230 requests) and transfer to an 8B
 open-weight VLM (right; 8.14M tokens, 2{,}184
 requests). $\Delta$ is the paired net change against
-the Direct configuration of the same run; $p$ values
-are two-sided exact McNemar tests on discordant
-decisions.}
+the Direct configuration of the same run; $p$ and the
+exact 95\% CI come from two-sided exact McNemar tests
+on the wrong--target discordant pairs
+\citep{mcnemar1947note}, which exclude abstentions and
+interface failures; $\Delta$ retains them in the
+denominator.}
 \label{tab:static-repl}
 \end{table}
 
@@ -150,7 +147,52 @@ after selection: verification changes the decision that
 was already available, which is the quantity the
 formulation of Section~\ref{sec:method:setting} isolates.
 
-%%SEEDSETUP%%
+Table~\ref{tab:static-seed} reports a matched-configuration
+replication designed to separate sampling variance from
+configuration effects: direct selection and the full
+configuration V5 are each re-executed under three request
+seeds (12345, 22345, 32345) on a single-GPU deployment
+whose engine configuration matches the frozen service
+except for batch admission, so all comparisons are
+internal to that deployment (Appendix~\ref{app:details}
+records the protocol).
+The same run supplies three baselines at no additional
+engine cost: a self-consistency vote SC3 over the three
+direct-selection seeds \citep{wang2022selfconsistency}
+(majority among non-null selections, ties recorded as
+abstentions), a tabular-answering baseline in the style
+of Tonglet et al. \citep{tonglet2025protecting}
+(bounded transcription of the comparison-relevant chart
+rows, then a decision taken from the table alone with
+the image withheld), and a clean-chart control that
+runs direct selection on the paired clean charts.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Arm & Requests & Selection acc. & $\Delta$ & $p$ \\
+\midrule
+Direct (3 seeds) & 3/task & 56.4\% & --- & --- \\
+SC3 (majority) & 0 extra & 53.6\% & $-3$ & .375 \\
+Tabular (bounded) & 2/task & 28.6\% & $-3$ & .51 \\
+\ours{} V5 (3 seeds) & 12/task & 64.3\% & $+17$ & .0013 \\
+Clean-chart control & 1/task & 82.1\% & $+33$ & $<$.001 \\
+\bottomrule
+\end{tabular}
+\caption{Matched-configuration replication
+(Appendix~\ref{app:details}): three request seeds for
+Direct and \ours{}, SC3 majority over the Direct seeds
+at no extra requests, the bounded tabular-answering
+baseline (two requests per task; 55 abstentions and 18
+transcription interface failures included in the
+denominator), and the clean-chart control.
+$\Delta$ and $p$ are paired against the Direct
+seed-12345 run; accuracy is the full-denominator
+fraction of tasks whose selection matches the frozen
+original label.}
+\label{tab:static-seed}
+\end{table}
 
 Table~\ref{tab:static-repl} (left) reports the
 single-run replication that keeps model, seeds, and
@@ -159,32 +201,68 @@ prompts frozen: direct selection drops from 81 to 73 of
 sampling variance of agentic decoding itself, so every
 comparison must be made within the same run.
 Within-run, V5 gains $+17$ paired decisions
-(McNemar \citep{mcnemar1947note} $p=0.0025$; exact
-95\% CI on the difference in accuracy
-$[+0.029, +0.214]$), V4, V6, and V7 gain $+13$, $+13$,
-$+16$ ($p<0.005$ each), and V3 returns to $+2$.
+($p=0.0013$; 95\% CI $[+0.061, +0.231]$), V4, V6, and
+V7 gain $+13$, $+13$, $+16$ ($p\leq0.0025$ each), and
+V3 returns to $+2$ despite strongly directional
+wrong--target flips (30 against 6, $p<0.001$) because
+its interface failures absorb the difference---the
+separation between decision quality and interface
+robustness that Section~\ref{sec:exp:online} examines
+in deployment.
 Paired transfer counts are one-directional in aggregate
 (57 keep, 33 error-to-target, 11 target-to-error, 5
 target-to-empty, 0 empty-to-target), and the panel
 remains abstention-free outside V3's interface
 failures.
 
+\paragraph{Baselines and controls.}
+Three observations bound what the verification gain can
+be attributed to.
+First, the clean-chart control: direct selection rises
+from 56.4\% on misleading charts to 82.1\% on the paired
+clean charts (115/140; paired net $+33$ against its own
+misleading-chart run, $p<0.001$, exact CI
+$[+0.16, +0.27]$), which quantifies the execution-level
+damage the misleading presentations cause and the room
+any defense has to recover.
+Second, the majority-vote baseline: SC3 reaches 53.6\%
+(75/140), statistically indistinguishable from direct
+selection (paired net $-3$, $p=0.375$); aggregating
+diverse decoding paths neither recovers the
+misleading-chart losses nor approaches the verification
+gain, consistent with the argument of
+Section~\ref{sec:method:setting} that the object of
+correction is the interpretation rule, not the answer
+distribution.
+Third, the tabular-answering baseline abstains on 55 of
+140 units (its bounded table does not carry the
+task-relevant evidence) and records 18 transcription
+interface failures; on the 67 units where it selects,
+submission precision is 59.7\% (40/67), and its paired
+net against direct selection is $-3$ ($p=0.51$).
+Generic mitigation therefore neither transfers the
+tabular-answering gains reported for chart QA to
+execution tasks nor exploits the within-chart evidence
+that \ours{} uses; the seed-level variance of the two
+arms is reported with Table~\ref{tab:static-seed} once
+the three-seed replication completes (mean $\pm$ sd
+over seeds for both arms, pooled McNemar across
+seeds).
+
 \paragraph{Cross-model transfer.}
 On the 8B open-weight VLM, direct selection drops to
 46.4\% and the picture splits
 (Table~\ref{tab:static-repl}, right): V7 gains $+15$
-($p=0.043$; CI $[+0.007, +0.207]$), V4 and V5 gain
-$+12$ and $+10$ without reaching significance, and V6
-$+6$ is within noise.
-V3 collapses---51 of 140 runs end in interface failures
-of the schema-typed protocol, against 8 and 6 in the
-other rounds, for a net of $-15$.
-The interaction is instructive: on the 27B model V3's
-separated $O$/$B$ verification produced the largest
-error-to-target correction count of any configuration
-(30 against 6 reverse, $p=0.0001$) for a net of $+2$
-after interface failures, while the same prompts
-overwhelm the 8B actor.
+($p=0.021$; CI $[+0.017, +0.210]$), V5 gains $+10$
+($p=0.044$), V4 $+12$ and V6 $+6$ remain within noise,
+and V3 collapses---51 of 140 runs end in interface
+failures of the schema-typed protocol, against 8 and 6
+in the other rounds, for a net of $-15$ despite
+directional wrong--target flips (18 against 10).
+The interaction is instructive: the same separated
+verification prompts that produce directional
+wrong--target flips on the 27B model overwhelm the 8B
+actor.
 Interface robustness is thus a first-class variable,
 and prompt content and interface contract must be
 evaluated jointly rather than as one ``method''

@@ -1,31 +1,25 @@
 We treated misleading charts as a runtime evidence
 problem for executing web agents rather than a
-benchmark artifact: the agent's own reading of a chart
-becomes part of its state, so a defense must both
-compete explanations at the moment of reading and keep
-revised rules in force afterwards.
-\ours{} implements this pair of requirements with a
+benchmark artifact: the agent's own reading becomes
+part of its state, so a defense must both compete
+explanations at the moment of reading and keep revised
+rules in force afterwards.
+\ours{} implements this pair with a
 competing-explanation chain over visible chart
-evidence, an in-chart verification pass that constrains
-query points with same-series references, and a
-persistent rule state that is revised only through a
-KEEP/REVISE/UNRESOLVED decision with recorded evidence
-and scope.
+evidence, in-chart applicability verification, and a
+persistent rule state revised only through
+KEEP/REVISE/UNRESOLVED decisions with recorded
+evidence and scope.
 The static panel shows a within-run robust-accuracy
-gain on a 27B open-weight agent that replicates across
-seeds and transfers to an 8B agent through the
-decision-oriented variant, while the failure analysis
-shows that interface contracts co-determine outcomes as
-strongly as prompt content.
-The stateful online deployment shows the complement:
-under a fail-closed submission protocol the defense arm
-never submits a wrong answer and its residual errors
-become legible abstentions with recorded reasons, at a
-throughput cost our interface decomposition attributes
-to the protocol's semantic contract rather than to the
-reasoning itself.
+gain that replicates across seeds and transfers to an
+8B agent through the decision-oriented variant, while
+the failure analysis shows that interface contracts
+co-determine outcomes as strongly as prompt content.
+The stateful deployment shows the complement: under a
+fail-closed protocol the defense arm never submits a
+wrong answer and its residual errors become legible
+abstentions with recorded reasons.
 We release decision logs, rule states, and
-re-derivation traces so future work can measure not
-only whether agents answer correctly but which
-explanation they acted on and whether it survived
+re-derivation traces so future work can measure which
+explanation an agent acted on and whether it survived
 contact with the chart.

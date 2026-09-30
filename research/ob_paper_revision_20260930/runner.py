@@ -39,7 +39,7 @@ def load_manifest():
         units[key] = {
             'input': json.loads((OB / 'data' / key / 'input.json').read_text()),
             'image': OB / 'data' / key / unit['image'],
-            'clean_image': CLEAN_ASSETS / key / 'clean.png',
+            'clean_image': CLEAN_ASSETS / key.split('_', 1)[1] / 'clean.png',
         }
     return units
 
@@ -72,7 +72,7 @@ class Endpoint:
         for attempt in range(2):
             start = time.monotonic()
             try:
-                response = self.http.post(self.url, json=payload, timeout=300, allow_redirects=False)
+                response = self.http.post(self.url, json=payload, timeout=600, allow_redirects=False)
             except requests.RequestException as exc:
                 last = {'type': type(exc).__name__, 'message': str(exc)}
                 time.sleep(2)
@@ -128,18 +128,23 @@ def run_v5(api, unit, seed, image, prompts):
 
 def run_tab(api, unit, seed, image, prompts):
     table_schema = {'type': 'object',
-                    'properties': {'table': {'type': 'string', 'minLength': 1}},
-                    'required': ['table'], 'additionalProperties': False}
+                    'properties': {'rows': {'type': 'array',
+                                            'items': {'type': 'array',
+                                                      'items': {'type': 'string', 'maxLength': 20},
+                                                      'maxItems': 3, 'minItems': 3},
+                                            'maxItems': 24},
+                                   'note': {'type': 'string', 'maxLength': 220}},
+                    'required': ['rows', 'note'], 'additionalProperties': False}
     transcription = api.call(prompts.TRANSCRIBE, contexts(unit), image, table_schema,
                              api.sampling['max_output_tokens']['transcribe'], seed)
     if transcription['status'] != 'ok':
         return {'stage': 'transcribe', 'out': transcription}
     context = contexts(unit)
-    context['chart_table'] = transcription['value']['table']
+    context['chart_table'] = json.dumps(transcription['value'], ensure_ascii=False)
     schema = schema_new.output_schema('decide', contexts(unit))
     decision = api.call(prompts.DECIDE_TABLE, context, image, schema,
                         api.sampling['max_output_tokens']['decide'], seed, with_image=False)
-    return {'stage': 'decide', 'out': decision, 'table': transcription['value']['table']}
+    return {'stage': 'decide', 'out': decision, 'table': json.dumps(transcription['value'], ensure_ascii=False)}
 
 
 ARMS = {

@@ -25,12 +25,14 @@ original round and replicates the gain in an independent
 round (52.1\% to 64.3\%; McNemar $p=0.0025$), with a
 smaller gain on an 8B model (46.4\% to 57.1\% for the
 most compatible variant).
-In stateful online execution over a closed deployment of
-twelve live tasks spanning both chart variants, both
-systems submit only correct actions when they submit at
-all (26/26 and 27/27 in two frontier-model batches);
-the defense arm converts ordinary agents'
-misleading-chart decisions into recorded abstentions
-rather than wrong submissions, and a stability rerun
-agrees with the formal run on 37 of 48 unit outcomes,
-with every disagreement an abstention--correct flip.
+In stateful online execution over a closed deployment
+of twelve live tasks spanning both chart variants, the
+ordinary agent submits six wrong actions across the 27B
+batches while the \ours{} arm submits none in any
+batch or chart variant; in the frontier-model batches
+the defense arm converts correct misleading-chart
+decisions into recorded abstentions (exact sign test
+$p=0.002$) rather than wrong submissions, and a
+stability rerun agrees with the formal run on 37 of 48
+unit outcomes, with every disagreement an
+abstention--correct flip.
