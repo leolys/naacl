@@ -72,19 +72,17 @@ systems---ordinary execution without defense, and the
 loops run inside the harness with the actor driving a
 real browser.
 The submission interface is a strict typed protocol
-(interface \texttt{typed\_scalars\_v2}, at most eight
-actor calls, one re-verification round, temperature~0),
-in which a unit ends as a submitted action scored by the
-original evaluation, an abstention with a recorded
-reason, or a failure.
-Three actor systems are used: a local 27B open-weight
-VLM served with strict response-format constraints
-(Batch A), the same model behind a schema-guided proxy
-that mirrors the sealed structural rules of the protocol
-(Batch B), and the frontier model of the pilot accessed
-directly through the same gateway (Batch C, the formal
-result, plus one stability rerun under identical
-configuration).
+(\texttt{typed\_scalars\_v2}; at most eight actor
+calls, one re-verification round, temperature 0), in
+which a unit ends as a scored submission, an abstention
+with a recorded reason, or a failure.
+Three actor systems are used: the 27B model under
+strict response formats (Batch A), the same model
+behind a schema-guided proxy mirroring the sealed
+structural rules (Batch B), and the frontier model of
+the pilot reached directly through the gateway
+(Batch C, the formal result, plus one stability
+rerun).
 
 \subsection{Static Panel Results}\label{sec:exp:static}
 
@@ -152,20 +150,19 @@ after selection: verification changes the decision that
 was already available, which is the quantity the
 formulation of Section~\ref{sec:method:setting} isolates.
 
-The replication run keeps the model, seeds, and prompts
-frozen and re-executes the whole pipeline
-(Table~\ref{tab:static-repl}, left).
-Direct selection drops from 81 to 73 of 140
-(57.9\% to 52.1\%) under an identical configuration,
-which quantifies the sampling variance of agentic
-decoding itself; every comparison must therefore be
-made within the same run.
+%%SEEDSETUP%%
+
+Table~\ref{tab:static-repl} (left) reports the
+single-run replication that keeps model, seeds, and
+prompts frozen: direct selection drops from 81 to 73 of
+140 under an identical configuration, quantifying the
+sampling variance of agentic decoding itself, so every
+comparison must be made within the same run.
 Within-run, V5 gains $+17$ paired decisions
 (McNemar \citep{mcnemar1947note} $p=0.0025$; exact
 95\% CI on the difference in accuracy
-$[+0.029, +0.214]$), and V4, V6, and V7 gain $+13$,
-$+13$, and $+16$ with $p<0.005$ each, while V3 returns
-to $+2$.
+$[+0.029, +0.214]$), V4, V6, and V7 gain $+13$, $+13$,
+$+16$ ($p<0.005$ each), and V3 returns to $+2$.
 Paired transfer counts are one-directional in aggregate
 (57 keep, 33 error-to-target, 11 target-to-error, 5
 target-to-empty, 0 empty-to-target), and the panel
@@ -175,53 +172,43 @@ failures.
 \paragraph{Cross-model transfer.}
 On the 8B open-weight VLM, direct selection drops to
 46.4\% and the picture splits
-(Table~\ref{tab:static-repl}, right).
-V7 gains $+15$ ($p=0.043$; CI $[+0.007, +0.207]$),
-V4 and V5 gain $+12$ and $+10$ without reaching
-significance, and V6 $+6$ is within noise.
-V3 collapses: 51 of 140 runs end in interface failures
-of the schema-typed protocol, against 8 in the 27B
-replication and 6 in the original round, and its net
-effect is $-15$.
+(Table~\ref{tab:static-repl}, right): V7 gains $+15$
+($p=0.043$; CI $[+0.007, +0.207]$), V4 and V5 gain
+$+12$ and $+10$ without reaching significance, and V6
+$+6$ is within noise.
+V3 collapses---51 of 140 runs end in interface failures
+of the schema-typed protocol, against 8 and 6 in the
+other rounds, for a net of $-15$.
 The interaction is instructive: on the 27B model V3's
 separated $O$/$B$ verification produced the largest
 error-to-target correction count of any configuration
-(30 against 6 reverse, $p=0.0001$), for a net of $+2$
-after interface failures; the same prompts overwhelm
-the 8B actor.
-Interface robustness is thus a first-class experimental
-variable, and prompt content and interface contract
-must be evaluated jointly rather than as a single
-``method'' factor.
+(30 against 6 reverse, $p=0.0001$) for a net of $+2$
+after interface failures, while the same prompts
+overwhelm the 8B actor.
+Interface robustness is thus a first-class variable,
+and prompt content and interface contract must be
+evaluated jointly rather than as one ``method''
+factor.
 
 \paragraph{Where the gains concentrate.}
 Stratified by mechanism family, V5's net gains
-concentrate in families whose misleading power comes
-from scope and reference manipulation: the
-subset-extrapolation family (22 tasks) yields $+18$ in
-the 27B replication and $+11$ in the 8B transfer,
-while the non-linear-axis family is neutral in the
-replication and $-6$ in the 8B round, and the
-dual-axis family $-5$ and $0$.
-By domain, business carries the largest share in both
-rounds ($+16$ and $+4$), public statistics is neutral
-in the replication and positive in the 8B round
+concentrate where misleading power comes from scope and
+reference manipulation: the subset-extrapolation family
+(22 tasks) yields $+18$ and $+11$ across the two
+rounds, while non-linear-axis and dual-axis families
+are neutral to $-6$.
+By domain, business carries the largest share ($+16$
+and $+4$), public statistics is neutral then positive
 ($0$ and $+9$), health is $+6$ in both, and the
 environment domain is the only negative one in both
-rounds ($-5$ and $-9$); the original round shows the
-same qualitative pattern.
-The development subset contributes only one decision
-point to each headline gain ($+17$ comprises 1
-development and 16 remaining tasks; $+10$ comprises 1
-and 9), and all 24 development tasks score above the
-run's direct-selection mean in every verification
-configuration.
-Costs remain bounded: the replication rounds spend
-8.84M total tokens for the 27B round (2{,}230
-requests) and 8.14M for the 8B round (2{,}184
-requests), against 8.86M for the original round, a
-roughly $2.6\times$ request overhead over direct
-selection with frozen prompts and no parameter updates.
+rounds ($-5$, $-9$).
+The development subset contributes one decision point
+to each headline gain, and costs remain bounded: 8.84M
+and 8.14M tokens across the replication rounds
+(2{,}230 and 2{,}184 requests) against 8.86M in the
+original round, a $2.6\times$ request overhead over
+direct selection with frozen prompts and no parameter
+updates.
 
 \subsection{Online Stateful Results}\label{sec:exp:online}
 
@@ -258,19 +245,15 @@ All submissions across both batches are correct
 \end{table}
 
 A pilot (6 tasks, frontier model, 12 units) already
-showed the qualitative pattern: the ordinary arm
-submitted 5 correct selections against 1 for the
-\ours{} arm.
+showed the qualitative pattern (5 correct selections
+for the ordinary arm against 1 for \ours{}).
 Because the deployment's submission protocol is
 fail-closed, the primary online metric is the
-\emph{wrong-submission rate} rather than aggregate
-accuracy.
-Across the four batches, ordinary execution produced
-six wrong submissions---all under the 27B actor on
-misleading charts (3 of 24 official-chart units in each
-27B batch, none under the frontier actor)---while the
-\ours{} arm produced none in any batch or chart variant
-(0 of 96 defense-arm units).
+\emph{wrong-submission rate}: across the four batches,
+ordinary execution produced six wrong submissions, all
+under the 27B actor on misleading charts, while the
+\ours{} arm produced none in any batch or chart
+variant (0 of 96 defense-arm units).
 Aggregate accuracy moves in the opposite direction:
 ordinary execution loses 3--5 decision points on
 misleading charts relative to its own clean-chart
@@ -290,29 +273,27 @@ for both systems in those batches (26/26 and 27/27).
 The three actor systems separate structural from
 semantic failure modes.
 Under the strict interface without guidance (Batch A),
-22 of 24 defense-arm units die in engineering
-failures, and the ordinary arm terminates in two
-call-limit exhaustions on misleading charts and two
-engineering failures on clean charts.
-Introducing a schema-guided proxy that mirrors the
-sealed structural rules (Batch B) drives the ordinary
-actor's structural failures to zero (12/12 on clean
-charts) and cuts defense-arm engineering failures only
-modestly (21 of 24), revealing that the binding
-constraint is semantic: exact public-leaf values,
-bounded summaries, and the question--response count
-coupling cannot be expressed by any response format.
-This mirrors the compound-system analysis of
-\citet{wu2024dissecting}: components added for
-self-correction become the exposed surface.
-Running the frontier model directly through the gateway
-(Batch C) removes the structural interface almost
-entirely---defense-arm engineering failures fall to 4
-of 24---and the remaining mass is honest abstention:
-12 \texttt{unresolved\_public\_evidence} verdicts, most
-of them on misleading charts, where verification cannot
-close the gap between the printed chart and the
-question's required scope within the re-verification
+22 of 24 defense-arm units die in engineering failures,
+and the ordinary arm ends in two call-limit exhaustions
+on misleading charts.
+A schema-guided proxy mirroring the sealed structural
+rules (Batch B) drives the ordinary actor's structural
+failures to zero (12/12 on clean charts) but cuts
+defense-arm engineering failures only modestly (21 of
+24): the binding constraint is semantic, since exact
+public-leaf values, bounded summaries, and the
+question--response count coupling cannot be expressed
+by any response format---components added for
+self-correction become the exposed surface, as
+\citet{wu2024dissecting} analyze for compound systems.
+Running the frontier model directly (Batch C) removes
+the structural interface almost entirely (defense-arm
+engineering failures 4 of 24), and the remaining mass
+is honest abstention---12
+\texttt{unresolved\_public\_evidence} verdicts, mostly
+on misleading charts, where verification cannot close
+the gap between the printed chart and the question's
+required scope within the re-verification
 budget.
 
 \paragraph{Stability.}

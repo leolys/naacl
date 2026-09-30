@@ -1,12 +1,12 @@
 \section{Introduction}\label{sec:intro}
 
-Large language model agents act for their users by
-looping through observation, reasoning, and action in an
-external environment.
-What such an agent believes about the information it
-reads enters tool calls and operations directly, which
-makes the reliable interpretation of external content a
-precondition for execution safety.
+Large language model agents act by looping through
+observation, reasoning, and action in an external
+environment; what the agent believes about the
+information it reads enters tool calls and operations
+directly, making the reliable interpretation of
+external content a precondition for execution
+safety.
 Prior work has shown that indirect prompt injections
 buried in web pages and tool returns can steer an agent
 away from the user's intent \citep{zhan2024injecagent,
@@ -22,26 +22,22 @@ information, and thereby shape the decisions the agent
 makes autonomously.
 
 Charts are a prominent part of such external
-information.
-They organize data into visual forms that support
-comparison and inference, and they lend an appearance of
-evidential support to whatever judgment is attached to
-them.
-Yet the basis for a correct reading and a misleading
-presentation can coexist in the same figure: research in
-visualization shows that charts are used to support
-misleading inferences even when the data are drawn
-faithfully \citep{lisnic2023misleading, nadib2026guardrail}.
-A curve that moves upward across the rendered image is
-observed accurately, for instance, but whether it
-represents growth depends on the axis mapping currently
-in force; the meaning of color intensity and bar height
-is likewise read through the encoding relations of the
-present figure.
-A misleading presentation can induce an agent to apply
-its customary reading rules unchanged, converting
-genuinely visible evidence into a wrong conclusion
-(Figure~\ref{fig:misleading-pair}).
+information: they organize data into visual forms that
+support comparison and inference, and lend an
+appearance of evidential support to whatever judgment
+is attached to them.
+Yet correct and misleading readings can coexist in the
+same figure: charts support misleading inferences even
+when drawn faithfully \citep{lisnic2023misleading,
+nadib2026guardrail}.
+A curve moving upward is observed accurately, but
+whether it represents growth depends on the axis
+mapping currently in force; color intensity and bar
+height are likewise read through the present figure's
+encoding relations, and a misleading presentation can
+induce an agent to apply its customary reading rules
+unchanged, converting visible evidence into a wrong
+conclusion (Figure~\ref{fig:misleading-pair}).
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.92\columnwidth]{fig_misleading_pair.pdf}
@@ -90,14 +86,13 @@ subsequent judgments---repeated observation or an
 additional review round can as easily re-adopt an
 inapplicable reading as discover an error.
 
-Stateful execution raises requirements beyond
-chart question answering: an understanding formed from
-one chart feeds later planning and operations even
-after the chart has left the viewport.
-Once an axis mapping has been verified, later judgments
-should keep using that verification; when sufficient
-new evidence appears, the same interpretation should
-become revisable.
+Stateful execution raises requirements beyond chart
+question answering: an understanding formed from one
+chart feeds later planning and operations even after
+the chart has left the viewport, so a verified axis
+mapping should keep governing later judgments, yet
+become revisable when sufficient new evidence
+appears.
 Reflexion-style memory carries verbalized feedback into
 later attempts \citep{shinn2023reflexion}, and recent
 agent-memory systems organize experience into
@@ -134,18 +129,15 @@ Competing explanations determine why an interpretation
 needs to change; the persistent state carries that
 evidenced change into later actions.
 
-The contributions of this paper are two-fold.
-First, a correction paradigm based on competing
-explanation chains: the relation
+Contributions: (1) a correction framework based on
+competing explanation chains, in which the relation
 $O\land B\Rightarrow C_q(a)$ unifies visual observation,
-interpretation rules, and action judgments; competing
-chains are constructed on one chart, and the
-applicability of customary readings is tested against
-in-chart evidence, so that the rules responsible for
-wrong inferences are identified and revised.
-Second, a stateful defense for continuing execution:
-validated rules, their revision evidence, and their
-scope conditions are maintained as task-scoped state
-inside the harness, so that later decisions reuse
+interpretation rules, and action judgments, and
+customary readings are tested against in-chart evidence
+so the rules responsible for wrong inferences are
+identified and revised; (2) a stateful defense for
+continuing execution, in which validated rules,
+revision evidence, and scope conditions are maintained
+as task-scoped harness state, so later decisions reuse
 confirmed chart readings and revise them only on new
 effective evidence.

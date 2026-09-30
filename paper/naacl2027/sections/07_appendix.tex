@@ -52,6 +52,38 @@ trajectory; close the task's rule scope.
 \end{algorithmic}
 \end{algorithm}
 
+\subsection{Rule Merging by Object and Scope}\label{app:rule-merging}
+
+``Darker means higher risk'' and ``a deeper color stands
+for a more severe risk'' map to one rule when object and
+scope coincide, whereas comparing Illinois with Kansas
+and Illinois with Delaware under the same legend are two
+comparisons that shared rules do not merge.
+
+
+\subsection{Update Objects and Chain Exclusion}\label{app:update-objects}
+
+When a chain is challenged, the method distinguishes
+three objects of update: an \emph{observation error} (a
+misread number, wrong entity binding, or wrong range)
+revises the affected $O$ and re-verifies dependent
+interpretations, never charging unreliable observations
+to $B$; an \emph{inapplicable rule}---whose observation
+stands while its observation-to-semantics mapping
+disagrees with the current chart---is revoked or
+scope-narrowed; and \emph{insufficient derivation}
+leaves both supported while the task conclusion remains
+unproven, so the module adds the missing comparison or
+keeps an undetermined status, as when a higher candidate
+refutes ``the current candidate is highest'' without
+confirming the alternative is globally highest.
+
+Conflicting conclusions between candidate chains
+establish only that a conflict exists.
+A chain is excluded only when chart-supported evidence
+negates its observation, its rule applicability, or its
+derivation conditions.
+
 \subsection{A Worked Example of Revision and Cross-Step Reuse}\label{app:example}
 \label{sec:method:example}
 
@@ -104,6 +136,19 @@ in the interpretation rules, whether the current action
 must change, and which rule version later steps actually
 used.
 \section{Additional Results and Boundary Statements}\label{app:details}
+
+\subsection{Matched-Configuration Seed Replication}
+The revision experiments rerun direct selection and the
+full configuration under three request seeds
+(12345, 22345, 32345) on a single-GPU deployment whose
+engine configuration matches the frozen service except
+for batch admission (\texttt{max\_num\_seqs}=8 instead
+of 1), so all comparisons reported for these runs are
+internal to that configuration.
+The three plain runs also provide the three samples for
+the self-consistency baseline at no additional requests,
+with majority vote among non-null selections and ties
+recorded as abstentions.
 
 \subsection{Development Subset and Stratified Results}
 The 24-task development subset is scored separately in
