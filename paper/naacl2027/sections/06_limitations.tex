@@ -21,10 +21,7 @@ test a complementary, model-side mitigation.
 Robust accuracy is computed against the original option
 labels, and agreement checks verify that submitted
 options and rule states match the recorded logs; label
-agreement is not semantic verification, a run may rest
-on a misreading the frozen labels do not separate, and
-the rule states we analyze are the agent's own declared
-rules.
+agreement is not semantic verification, a run may rest on a misreading the frozen labels do not separate, recent benchmark-validity critiques \citep{lan2026seeing} caution against reading any such score as grounded visual understanding, and the rule states we analyze are the agent's own declared rules.
 The paired gains are within-run comparisons on a fixed
 task set, with sampling variance quantified three ways:
 the drop of direct selection from 81 to 73 of 140
@@ -50,9 +47,7 @@ responses---cannot be expressed in a response format;
 under earlier actor systems the same machinery died in
 engineering failures rather than abstentions, so the
 deployment demonstrates \ours{} under one operating
-point, not an interface-robust defense, and the
-negative environment-domain results and one-directional
-online paired effect are reported as found.
+point, not an interface-robust defense, and the negative environment-domain results and one-directional online paired effect are reported as found. The V3--V7 ladder varies verification content and interface prompts jointly, so the 8B attribution to interface robustness is argued from the failure-mode decomposition, not isolated by a prompt--interface cross ablation.
 Serving the six static configurations takes roughly
 $2.6\times$ as many requests as there are decisions
 (2,230 requests for 840 decisions), and the online arm
@@ -64,10 +59,7 @@ this overhead.
 \paragraph{State integrity.}
 The rule state is trusted harness memory: the isolation
 that keeps environment content from writing rules
-directly is assumed, and persistent-state poisoning
-attacks on agent memory \citep{louck2026securing} fall
-outside the present threat model and remain a target
-for future work.
+directly is assumed, and persistent-state poisoning attacks on agent memory \citep{louck2026securing}---and, more broadly, injection--execution dissociation \citep{leong2026injectionexecution}---fall outside the present threat model and remain targets for future work.
 
 \paragraph{Ethics and reproducibility boundary.}
 The defense direction of this work is protective, but

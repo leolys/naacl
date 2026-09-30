@@ -66,3 +66,10 @@
 - 页限:全部编辑(净 +0)后正文仍恰 8.0 页(Conclusion 标题 p8 y502,Limitations 标题 p9 y72),15 页,0 undefined。
 - PDF 验证:14 处编辑全部在成品 PDF 中 grep 落位(含 1/0/1、31/48、at most three units、136 tasks by an earlier frontier、Printed value 等)。
 - 有意跳过:3 条可选引文(HarnessRisk 2608.17597、From Prompts to Contracts 2607.08028、rabanser2026towards)——8.0 页刀刃无预算;轮 3 评审的"机械数字审计脚本"建议已采纳(本轮全部数字逐格复算即为落实)。
+
+## 2026-09-30 第四轮评审修复(Phase 5 清单逐条执行)
+- Blocker 3 项:1) Table 2 caption 插入"the tabular arm on its 67 selected units"(表列法配对限制说明,配对句压缩补偿);2) 附录分层句"27B replication"→"original round"(轮次归属纠错,本地数据核实 -5 属原始轮)并消除"both model rounds"歧义;3) §4.3 新增净图成本句(Batch C/rerun:6 和 5 对 10)+附录 Online Deployment Details 全四批量化(3/2/6/5 对 10/12/10/10)。
+- Should-fix 7 项:4) §4.2 迁移段后新增多重性句("These exact tests are unadjusted for multiplicity; on the 8B columns we read V4--V7's consistent directionality, not single-test significance.");5) "Interface-Failure Accounting"→"Non-Scoring Outcomes",新增空选择逐轮账目(Direct 0/0/3、V3 13/21/4、V4 9/11/6、V5 6/5/8、V6 13/12/5、V7 5/5/3;原始轮经 analysis/final_001/*.json counts.no_option 独立再取证,rerun/8B 轮经 runs_xmodel 逐任务复算);6) 新增两条 session 内 paper_search 逐字引文:leong2026injectionexecution(2605.08442,Limitions state-integrity 段)、lan2026seeing(2605.22903,measurement 段基准效度警告);7) intro 26 点锚改为"(rate gap on seed means; paired net +33)"区分两种量;8) Limitations 新增 interface-content×prompt-content 混杂声明(8B 归因为失效模式分解论证,未做交叉消融);9) Table 1 caption "abstentions"→"empty selections";10) 附录请求账目补名义全跑 2,240 与早终止差额说明。
+- Polish:11a 摘要句拆分;11b 方法 L130 句拆;11c 园径句改写;11d "no configuration can abstain: every unit must select";11e 成本段句拆;p=0.044→p=.044 统一;item 12(p_i 取值范围)有意跳过——正文刀刃 8.0 页,L101-103 已隐含该信息,记录在案。
+- 页限:全部新增(多重性句、净图成本句、caption 扩句)由 §4 内 27 处等量压缩吸收,正文仍恰 8.0 页(Conclusion p8 y505、Limitations p9 y72),15 页,0 undefined;42 条 bib,bibtex 重跑通过。
+- ref_verify(42 条):10 corrected/32 UNVERIFIED;UNVERIFIED 均为 arXiv 前印本与经典条目(CrossRef/OpenAlex 无记录),全部源自本 session paper_search 逐字输出或此前已验证集合,按轮 2 既定惯例保留;corrected 负载未随报告返回,故 .bib 保持已定稿状态并在此记录。
