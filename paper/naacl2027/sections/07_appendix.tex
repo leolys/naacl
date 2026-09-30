@@ -155,7 +155,9 @@ environment domain is the only negative one in both
 rounds ($-5$, $-9$).
 The development subset contributes at most two
 decision points to each headline gain, and costs
-remain bounded: 8.84M and 8.14M tokens across the rerun and 8B rounds (2{,}230 and 2{,}184 requests, against a nominal full-run 2{,}240; shortfalls reflect early-terminating failures) against 8.86M in the original round. The requests serve 840 decisions each
+remain bounded: 8.84M and 8.14M tokens across the rerun and 8B rounds (2{,}230 and 2{,}184 requests, against a nominal full-run 2{,}240; shortfalls reflect early-terminating failures) against 8.86M in the original round; token totals are
+known-usage sums from each round's request ledger. The
+requests serve 840 decisions each
 (six configurations $\times$ 140 tasks), a $2.6\times$ average request overhead over one-request direct selection, with frozen prompts and no parameter updates.
 The pool records were pre-generated before evaluation
 from each chart and its public task---136 tasks by an

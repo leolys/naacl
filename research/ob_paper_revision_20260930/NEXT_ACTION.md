@@ -94,3 +94,14 @@
 - 补偿(§4 内等量吸收):V 阶梯阐述半句、stability 句枚举(分类学已在 B1 句中)、per-seed 指向、tabular 基线短语、(Playwright-controlled)、or variant、four-batch、Structural and semantic、executing agent's、cannot be taken for granted→is not guaranteed。摘要内:open-weight、holds 去重、12/23、or chart variant。
 - 页限:Conclusion p8 y511、Limitations p9 y72(与轮 5 完全一致),15 页,0 undefined。
 - 验证:pdftotext+归一化逐项落位(17 项 OK + 7 项旧文本 GONE);pdfplumber 抽取有空格合并怪癖,本轮起以 pdftotext 为成品验证基准。
+
+## 2026-09-30 第七轮评审修复(Phase 5 清单逐条执行)
+- B1(阻塞):结论收束句"residual errors becoming legible abstentions"是轮 6 分类学纠正未传导到的第三处(结论段),与 §4.3 新拆分自相矛盾。改为"residual mass becomes recorded abstentions or unrecovered terminations",同段删"recorded"(Keep/Revise/Unresolved 本身即记录)补偿。
+- S1:Limitations 请求计数补账本归属"(2,230 requests for 840 decisions in the 27B rerun ledger)"——原轮账本记 2,240 次"尝试"(含重试),重跑账本 REPORT_XMODEL_20260928.md L139 记 2,230,两数并存须指明口径;附录 app:details 本就披露 2,230/2,184 对名义 2,240。
+- S2(就地解决,无编辑):PREPARATION.json 明确登记 n_records=275(哈希锚定封存准备账本,源清单 ob_refinement_20260927/manifest.json)——"275 across the panel"(§3 与 §4.1)有据。原轮 8.86M 亦为账本 known_usage 合计 8,856,548 ✓;重跑 8.84M/8B 8.14M 与 REPORT_XMODEL M1/M2 行吻合 ✓。
+- S3:app:details 补"token totals are known-usage sums from each round's request ledger"(原轮账本按 known_usage 记账,无用量请求不计,8.86M 为下界)。
+- P5 有意跳过:zhang2026images(EACL 2026,10.18653/v1/2026.eacl-long.323)入 §2 需约 +70 字符且无干净补偿(刀刃页限),与轮 5 跳过 ahn2026lies 同理由;已记录待 camera-ready 或页限放宽时补。
+- P6:"So K"→"Thus K";P7 记投稿日 TODO:ARR 表 Datasets/Software 字段 + "NAACL-2027-XXXX" 占位符替换为 ARR 分配号。
+- 页限教训:§4 内删减被 [t] 浮动体钉住的版面吸收,不传导到结论段;结论段 17 字符净增把孤词"chart."挤出第 8 页→Limitations 标题 p9 y72→y97。补偿必须在结论段内部做:删"afterwards"(含义由 keep revised rules in force 承担)后孤词回位,边界恢复 p9 y72。另做 §4.1 池描述去重(§3/§4.1 逐字重复,"frozen per-task pool of one to three O/B records"现全文仅 1 处于 §3,§4.1 改为交叉引用)与"fixed identifier order"入补充材料两项页限补偿。
+- 页限:Conclusion p8 y511、Limitations p9 y72(轮 6 状态),15 页,0 undefined。
+- 验证:pdftotext+归一化 8 项新文本 OK、4 项旧措辞 GONE、池描述计数=1。

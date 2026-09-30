@@ -24,7 +24,7 @@ misleading chart---scored against its frozen original
 label---plus the public goal and four options, and must select; no navigation occurs.
 Six configurations share identical inputs and decoding (temperature 0.7, top-$p$ 0.8, top-$k$ 20,
 fixed seed, thinking disabled): Direct and five READ--VERIFY--DECIDE configurations with frozen prompts, one
-verification round ($L=1$), and three requests per task drawing on the frozen per-task pool of one to three $O/B$ records pre-generated from the chart and public task (275 across the panel).
+verification round ($L=1$), and three requests per task drawing on the frozen per-task pool (275 records across the panel; Section~\ref{sec:method:chains}).
 V3 verifies $O$ and $B$ in distinct typed passes, V4 fixes explicit numeric references, V5 adds
 same-series query-point constraints with scale, time-window, and policy checks, V6 checks necessary conditions itemwise, and V7 keeps V4's
 prompts with an abstention-aware decision repair
@@ -37,7 +37,7 @@ Frozen prompts, typed schemas, decision logs, the
 interface contract, and scoring code are in the supplementary material, so every number outside the three-seed replication can be recomputed from released artifacts once its license permits release.
 
 \emph{Online stateful deployment.}
-Twelve tasks spanning all four domains, in fixed identifier order, run as live browser sessions under a
+Twelve tasks spanning all four domains run as live browser sessions under a
 closed deployment: each task's two chart variants
 execute under both ordinary and \ours{} arms, whose hooks, rule state, and re-derivation loops
 run inside the harness with the actor driving the browser.

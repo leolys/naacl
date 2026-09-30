@@ -1,18 +1,18 @@
 Misleading charts are a runtime evidence problem: the
 agent's own reading becomes part of its state, so a
 defense must compete explanations at the moment of
-reading and keep revised rules in force afterwards.
+reading and keep revised rules in force.
 \ours{} implements this pair through
 competing-explanation chains, in-chart verification,
 and a persistent rule state revised only through
-recorded Keep/Revise/Unresolved decisions.
+Keep/Revise/Unresolved decisions.
 The static panel shows a robust-accuracy gain that
 replicates within-run, across seeds, and on an 8B
 agent; interface contracts co-determine outcomes as
 strongly as prompt content; and online, under a
 fail-closed protocol, the defense arm never submits a
-wrong answer, residual errors becoming legible
-abstentions.
+wrong answer; residual mass becomes recorded
+abstentions or unrecovered terminations.
 We release decision logs, rule states, and
 re-derivation traces so future work can measure which
 explanation an agent acted on and whether it survived
