@@ -53,17 +53,13 @@ companion benchmark's data license permits public
 release.
 
 \emph{Online stateful deployment.}
-Twelve tasks spanning all four domains
-(six business, three environment, two health, one
-public-statistics, taken in fixed identifier order from
-the benchmark's task lists before execution) run as
-live browser sessions under a closed deployment: for
-each task, both chart variants (official misleading
-chart, clean chart) execute under both
-systems---ordinary execution without defense, and the
-\ours{} arm whose hooks, rule state, and re-derivation
-loops run inside the harness with the actor driving a
-real browser.
+Twelve tasks spanning all four domains, taken in fixed
+identifier order before execution, run as live browser
+sessions under a closed deployment: each task's two
+chart variants execute under both ordinary execution
+and the \ours{} arm, whose hooks, rule state, and
+re-derivation loops run inside the harness with the
+actor driving a real browser.
 The submission interface is a strict typed protocol
 (\texttt{typed\_scalars\_v2}; at most eight actor
 calls, one re-verification round, temperature 0), in
@@ -81,58 +77,37 @@ rerun).
 
 \begin{table}[t]
 \centering
-\begin{tabular}{lcccccc}
+\begin{tabular}{lcc@{\hskip 1.5em}cccc@{\hskip 1.5em}cccc}
 \toprule
-Config & Target & Rate & $\Delta$ & Other & Empty & IF \\
+& \multicolumn{2}{c}{Original} &
+\multicolumn{4}{c}{27B replication} &
+\multicolumn{4}{c}{8B transfer} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-7}\cmidrule(lr){8-11}
+Config & Tar. & $\Delta$ & Tar. & $\Delta$ & $p$ & 95\% CI & Tar. & $\Delta$ & $p$ & 95\% CI \\
 \midrule
-Direct    & 81  & 57.9\% & --- & 59 & 0 & 0 \\
-V3        & 74  & 52.9\% & $-7$ & 60 & 0 & 6 \\
-V4        & 87  & 62.1\% & $+6$ & 53 & 0 & 0 \\
-V5 (full) & 96  & 68.6\% & $+15$ & 44 & 0 & 0 \\
-V6        & 84  & 60.0\% & $+3$ & 56 & 0 & 0 \\
-V7        & 91  & 65.0\% & $+10$ & 49 & 0 & 0 \\
+Direct & 81 & --- & 73 & --- & --- & --- & 65 & --- & --- & --- \\
+V3 & 74 & $-7$ & 75 & $+2$ & $<$.001 & $[+.09,+.22]$ & 50 & $-15$ & .185 & $[-.02,+.13]$ \\
+V4 & 87 & $+6$ & 86 & $+13$ & .0025 & $[+.05,+.23]$ & 77 & $+12$ & .079 & $[-.01,+.18]$ \\
+V5 (full) & 96 & $+15$ & 90 & $+17$ & .0013 & $[+.06,+.23]$ & 75 & $+10$ & .044 & $[+.00,+.20]$ \\
+V6 & 84 & $+3$ & 86 & $+13$ & $<$.001 & $[+.07,+.22]$ & 71 & $+6$ & .233 & $[-.04,+.16]$ \\
+V7 & 91 & $+10$ & 89 & $+16$ & .0025 & $[+.05,+.23]$ & 80 & $+15$ & .021 & $[+.02,+.21]$ \\
 \bottomrule
 \end{tabular}
-\caption{Original round on the 27B open-weight VLM
-(140 tasks; temperature 0.7, top-$p$ 0.8, top-$k$ 20,
-fixed seed). ``Target'' counts selections matching the
-original label; $\Delta$ is the net change against
-Direct; ``Other'' counts wrong selections; ``IF''
-counts interface failures, which remain in the
-denominator. The 24-task development subset is scored
-separately and reported in
+\caption{Static panel across three rounds (140 tasks;
+temperature 0.7, top-$p$ 0.8, top-$k$ 20, fixed seed).
+``Target'' counts selections matching the frozen
+original label; $\Delta$ is the paired net change
+against Direct within the same run; $p$ and the exact
+95\% CI come from two-sided exact McNemar tests on
+wrong--target discordant pairs \citep{mcnemar1947note},
+which exclude abstentions and interface failures,
+retained in $\Delta$'s denominator.
+Original and replication rounds ran on the 27B model
+(8.86M and 8.84M tokens, 2{,}230 replication requests),
+transfer on an 8B model (8.14M).
+Error composition and the development subset are in
 Appendix~\ref{app:details}.}
 \label{tab:static-main}
-\end{table}
-
-\begin{table}[t]
-\centering
-\begin{tabular}{lcccc@{\hskip 1.5em}cccc}
-\toprule
-& \multicolumn{4}{c}{27B replication} &
-\multicolumn{4}{c}{8B cross-model} \\
-\cmidrule(lr){2-5}\cmidrule(lr){6-9}
-Config & Tar. & $\Delta$ & $p$ & 95\% CI & Tar. & $\Delta$ & $p$ & 95\% CI \\
-\midrule
-Direct & 73 & --- & --- & --- & 65 & --- & --- & --- \\
-V3 & 75 & $+2$ & $<$.001 & $[+.09,+.22]$ & 50 & $-15$ & .185 & $[-.02,+.13]$ \\
-V4 & 86 & $+13$ & .0025 & $[+.05,+.23]$ & 77 & $+12$ & .079 & $[-.01,+.18]$ \\
-V5 & 90 & $+17$ & .0013 & $[+.06,+.23]$ & 75 & $+10$ & .044 & $[+.00,+.20]$ \\
-V6 & 86 & $+13$ & $<$.001 & $[+.07,+.22]$ & 71 & $+6$ & .233 & $[-.04,+.16]$ \\
-V7 & 89 & $+16$ & .0025 & $[+.05,+.23]$ & 80 & $+15$ & .021 & $[+.02,+.21]$ \\
-\bottomrule
-\end{tabular}
-\caption{Replication on the same 27B model (left; 8.84M
-tokens, 2{,}230 requests) and transfer to an 8B
-open-weight VLM (right; 8.14M tokens, 2{,}184
-requests). $\Delta$ is the paired net change against
-the Direct configuration of the same run; $p$ and the
-exact 95\% CI come from two-sided exact McNemar tests
-on the wrong--target discordant pairs
-\citep{mcnemar1947note}, which exclude abstentions and
-interface failures; $\Delta$ retains them in the
-denominator.}
-\label{tab:static-repl}
 \end{table}
 
 Table~\ref{tab:static-main} reports the original round
@@ -185,16 +160,15 @@ Clean-chart control & 1/task & 82.1\% & $+33$ & $<$.001 \\
 Direct and \ours{}, SC3 majority over the Direct seeds
 at no extra requests, the bounded tabular-answering
 baseline (two requests per task; 55 abstentions and 18
-transcription interface failures included in the
-denominator), and the clean-chart control.
-$\Delta$ and $p$ are paired against the Direct
-seed-12345 run; accuracy is the full-denominator
-fraction of tasks whose selection matches the frozen
-original label.}
+transcription failures in the denominator), and the
+clean-chart control. $\Delta$ and $p$ are paired
+against the Direct seed-12345 run; accuracy is the
+full-denominator fraction matching the frozen original
+label.}
 \label{tab:static-seed}
 \end{table}
 
-Table~\ref{tab:static-repl} (left) reports the
+The 27B columns of Table~\ref{tab:static-main} report the
 single-run replication that keeps model, seeds, and
 prompts frozen: direct selection drops from 81 to 73 of
 140 under an identical configuration, quantifying the
@@ -252,7 +226,7 @@ seeds).
 \paragraph{Cross-model transfer.}
 On the 8B open-weight VLM, direct selection drops to
 46.4\% and the picture splits
-(Table~\ref{tab:static-repl}, right): V7 gains $+15$
+(Table~\ref{tab:static-main}, 8B columns): V7 gains $+15$
 ($p=0.021$; CI $[+0.017, +0.210]$), V5 gains $+10$
 ($p=0.044$), V4 $+12$ and V6 $+6$ remain within noise,
 and V3 collapses---51 of 140 runs end in interface
@@ -322,30 +296,28 @@ All submissions across both batches are correct
 \label{tab:online-four}
 \end{table}
 
-A pilot (6 tasks, frontier model, 12 units) already
-showed the qualitative pattern (5 correct selections
-for the ordinary arm against 1 for \ours{}).
+A pilot (6 tasks, frontier model) already showed the
+qualitative pattern (5 correct ordinary selections
+against 1 for \ours{}).
 Because the deployment's submission protocol is
 fail-closed, the primary online metric is the
 \emph{wrong-submission rate}: across the four batches,
 ordinary execution produced six wrong submissions, all
 under the 27B actor on misleading charts, while the
-\ours{} arm produced none in any batch or chart
-variant (0 of 96 defense-arm units).
-Aggregate accuracy moves in the opposite direction:
-ordinary execution loses 3--5 decision points on
-misleading charts relative to its own clean-chart
-performance (8 vs.\ 10 in the formal batch; 7 vs.\ 10
-and 7 vs.\ 12 in the 27B batches), and the defense arm
-converts correct ordinary decisions into recorded
-abstentions rather than corrections.
+\ours{} arm produced none in any batch or chart variant
+(0 of 96 defense-arm units).
+Aggregate accuracy moves oppositely: ordinary execution
+loses 3--5 decision points on misleading charts
+relative to its own clean-chart performance, and the
+defense arm converts correct ordinary decisions into
+recorded abstentions rather than corrections.
 The paired task-level effect is strictly
-one-directional in both frontier-model batches
-(ordinary preserves 10 and 13 decisions that the
-defense arm turns into abstentions; the reverse never
-occurs; exact sign tests $p=0.002$ and $p<0.001$ on
-discordant pairs), and submission precision is 100\%
-for both systems in those batches (26/26 and 27/27).
+one-directional in both frontier-model batches (10 and
+13 decisions preserved by the ordinary arm are turned
+into abstentions; the reverse never occurs; exact sign
+tests $p=0.002$ and $p<0.001$), and submission
+precision is 100\% for both systems there (26/26 and
+27/27).
 
 \paragraph{Interface decomposition.}
 The three actor systems separate structural from
@@ -376,14 +348,14 @@ budget.
 
 \paragraph{Stability.}
 Re-running Batch C under the identical configuration
-changes 11 of 48 unit outcomes, every one of them a
-flip between a correct submission and an abstention
+changes 11 of 48 unit outcomes, every one a flip
+between a correct submission and an abstention
 (agreement 37/48); no wrong submission appears in
 either run, so the ``never submit a wrong answer''
 property is stable while completion throughput is not.
 Token budgets are comparable across the two runs
-(1.80M input and 129K output tokens, 322 attempts and
-242 browser operations, versus 1.81M and 115K, 331 and
-254), confirming that the stateful machinery operates
-within a fixed per-unit allowance comparable to the
-static panel's per-task cost.
+(1.80M/129K versus 1.81M/115K input/output tokens,
+322/242 versus 331/254 attempts/browser operations),
+confirming that the stateful machinery operates within
+a fixed per-unit allowance comparable to the static
+panel's per-task cost.

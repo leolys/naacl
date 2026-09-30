@@ -27,23 +27,20 @@ into task semantics, and $C_q(a)$ is the proposition
 that the action, or high-level choice, $a$ meets the
 requirements of task $q$.
 The representation separates a visible phenomenon from
-the condition under which it is interpretable: the
-observation that a curve moves upward, jointly with the
-rule that in the current axis a higher position means a
-larger value, supports the conclusion that the interval
-grows and the action is admissible; a distorted bar
-chart challenges the rule that bar-height ordering
-preserves value ordering, and a mismatch against
-verified numeric relations refutes precisely that rule's
+the condition under which it is interpretable: a curve
+moving upward, jointly with the rule that higher
+position means larger value in the current axis,
+supports the conclusion that the interval grows and the
+action is admissible, while a mismatch against verified
+numeric relations refutes precisely that rule's
 applicability.
-Both $O$ and $B$ may carry multiple items, expressed in
-structured natural language covering entity binding,
-numeric relations, encoding direction, time range, and
-comparison conditions.
-Relations that can be computed explicitly, such as
-numeric comparisons and orderings, are checked with
-program assistance; the remaining semantic judgments are
-verified jointly with the public task requirements.
+$O$ and $B$ may carry multiple items in structured
+natural language covering entity binding, numeric
+relations, encoding direction, time range, and
+comparison conditions; explicitly computable relations
+are checked with program assistance, and remaining
+semantic judgments are verified jointly with the public
+task requirements.
 
 The method maintains a within-task rule state $M_t^B$
 and, for chart-dependent judgments, runs the process
@@ -100,26 +97,26 @@ different grounds.
 From these questions the module generates a bounded
 candidate set
 \begin{equation}\label{eq:pis}
-\Pi_t = \{\pi_0, \pi_1, \ldots, \pi_K\},
+\Pi_t = \{\pi_0, \ldots, \pi_K\},
 \qquad
 \pi_i = \langle O_i, B_i, p_i\rangle,
 \end{equation}
-where each conclusion $p_i$ may support the current
-action, refute it, or support a different task judgment.
-All candidates refer to the same complete chart, and the
-counter-questions act on the interpretive conditions
-between observation and conclusion.
+whose conclusions may support the
+current action, refute it, or support a different
+judgment; all candidates refer to the same complete
+chart.
 A competing chain is meaningful only if it differs
 substantially in observation correspondence,
-interpretation rule, applicability condition, or scope
-of derivation: two chains that both accept ``the curve
-rises'' but adopt forward and reversed value mappings
-disagree precisely on the applicability of $B$.
+interpretation rule, applicability condition, or
+derivation scope: two chains that both accept ``the
+curve rises'' but adopt forward and reversed value
+mappings disagree precisely on the applicability of
+$B$.
 A reversed interpretation enters as a conditional
-hypothesis and stays unverified until the chart's
-scales support its condition; the module may also
-return insufficient support and is not required to
-produce an opposing conclusion for every task.
+hypothesis, unverified until the chart's scales support
+its condition; the module may return insufficient
+support and need not produce an opposing conclusion for
+every task.
 
 \subsubsection{Normalization and Shared Rules}
 Generated chains are normalized over observation, rule,
@@ -179,27 +176,26 @@ where each verification status takes the values
 support, refute, or undetermined, and $E_i$ records the
 in-chart evidence.
 Observation $O_i$ is checked for presence in the chart
-and for the correctness of entity, value, time, and unit
-binding; rule $B_i$ is checked for support by the
-current chart and satisfaction of its applicability
-conditions; the derivation
-$O_i\land B_i\Rightarrow p_i$ is checked for
-sufficiency of the confirmed premises, including
-candidate coverage, range, and task conditions.
+and for entity, value, time, and unit binding; rule
+$B_i$ for support by the current chart and satisfaction
+of its applicability conditions; the derivation
+$O_i\land B_i\Rightarrow p_i$ for sufficiency of the
+confirmed premises, including candidate coverage, range,
+and task conditions.
 Verification always proceeds against the complete chart,
-and the evidence record contains the actual observation
+and the evidence record contains the observation
 identifier, the content read, and which rule the content
 supports or refutes.
 The deployed checklist operationalizes the three
 statuses: for $O$, located support or a genuine
-contradiction in the figure, with no inserted
-quantifiers or causal claims; for $B$, explicit tests of
-the rule's necessary conditions against public facts,
-including whether the known labeled references would
-have the relations a proposed decoding predicts and an
-explicit order comparison before any common scale is
-endorsed; for the derivation, candidate coverage, range,
-and task-scope conditions must be confirmed premises.
+contradiction, with no inserted quantifiers or causal
+claims; for $B$, explicit necessary-condition tests
+against public facts, including whether the known
+labeled references would have the relations a proposed
+decoding predicts and an explicit order comparison
+before any common scale is endorsed; for the derivation,
+coverage, range, and task-scope conditions as confirmed
+premises.
 Verification takes the normalized dispute propositions
 as input; the source role or repetition count of a
 candidate is never a credibility signal, and
@@ -208,23 +204,20 @@ before conclusions, so a preferred answer cannot
 justify a rule retroactively.
 
 
-For rules that are mutually incompatible over the same
-objects and scope, the method checks which in-chart
-information can discriminate them: if two explanations
-each retain unresolved evidence, the dispute is kept
-open; if they apply to different axes, series, or
-ranges, the applicability conditions are split rather
-than forced to a single choice.
-Verification may support a replacement rule, or only
-negate the original one: discovering that bar height and
-visible value ordering disagree does not entail that
-``shorter means larger,'' and the sound revision may
-instead be that bar height in the current figure does
-not directly support quantity ordering, which must rely
-on verified entity--value relations.
-Rule revision therefore includes both replacing a
-mapping and disqualifying an inference route within the
-current chart.
+For rules incompatible over the same objects and scope,
+the method checks which in-chart information
+discriminates them: disputes with unresolved evidence
+stay open, and rules applying to different axes, series,
+or ranges have their applicability conditions split
+rather than forced to one choice.
+Verification may support a replacement rule or only
+negate the original: that bar height and visible value
+ordering disagree does not entail ``shorter means
+larger''---the sound revision may be that bar height in
+the current figure does not directly support quantity
+ordering.
+Rule revision therefore includes replacing a mapping
+and disqualifying an inference route.
 
 \subsection{Rule Revision and Persistent State Update}
 \label{sec:method:state}
@@ -241,15 +234,14 @@ E_i,\,
 v_i
 \rangle,
 \end{equation}
-where $\mathrm{id}_i$ identifies the rule for later
-reference, $B_i$ is the current interpretation rule,
-$\sigma_i$ is its applicability scope over chart
-objects, encoding components, and semantic conditions,
-$s_i$ is its status among pending, currently active,
-disputed, and revoked, $E_i$ is the observed evidence
-supporting or refuting the rule, $\Delta_i$ links the
-original rule, the revised rule, and the reason for the
-change, and $v_i$ is the revision version.
+with $\mathrm{id}_i$ for later reference, $B_i$ the
+interpretation rule, $\sigma_i$ its applicability
+scope over chart objects, encoding components, and
+semantic conditions, $s_i \in \{$pending, active,
+disputed, revoked$\}$, $E_i$ the evidence supporting or
+refuting it, $\Delta_i$ linking original rule, revised
+rule, and the reason for the change, and $v_i$ the
+revision version.
 The state stores how the current chart is to be read
 and on what evidence; object choices, answers, and
 click actions are produced by the task reasoning itself
@@ -263,17 +255,14 @@ the task goal do not invalidate a rule by themselves.
 
 Verification produces rule-revision proposals
 $\Delta_t^B$, applied as $M_{t+1}^B = U(M_t^B,
-\Delta_t^B)$.
-If the original rule is supported and the proposal lacks
-effective evidence, the rule is kept and the proposal is
-retained as pending; if the original is refuted with a
-supported replacement, the replacement activates in the
-affected scope; if the original is refuted without a
-settled replacement, the rule is revoked and the
-interpretation gap recorded; if a competing rule remains
-in effective conflict, the affected rules enter a
+\Delta_t^B)$: a supported rule with an unevidenced
+proposal is kept and the proposal retained as pending; a
+refuted rule with a supported replacement activates the
+replacement in the affected scope; a refuted rule
+without a settled replacement is revoked and the
+interpretation gap recorded; effective conflicts enter
 disputed status while verification continues within
-budget; and rules that apply to different objects or
+budget; and rules applying to different objects or
 scopes are stored separately rather than overwritten
 globally.
 The ``currently active'' status expresses the method's
@@ -333,29 +322,24 @@ s_i = \mathrm{active}
 \operatorname{Match}(\sigma_i, c_t) = \mathrm{true}
 \,\}.
 \end{equation}
-Formally, $\operatorname{Match}(\sigma_i, c_t)$
-evaluates the rule's object, encoding component, metric,
-and time window against the current interpretation
-context and returns applicability, non-applicability, or
-undetermined; an undetermined match triggers
-verification of the corresponding condition rather than
-a default assumption that a stored rule covers the new
+$\operatorname{Match}(\sigma_i, c_t)$ evaluates the
+rule's object, encoding component, metric, and time
+window against $c_t$ and returns applicable,
+non-applicable, or undetermined; an undetermined match
+triggers verification of the corresponding condition
+rather than assuming a stored rule covers the new
 chart.
 Disputed rules never enter
-$\mathcal{R}^{\mathrm{active}}_t$: they surface only
-as re-verification evidence in the read result, so a
-dispute can compel a new verification round but cannot
-be used as a current fact.
-The read result also carries the disputes and revocation
-records relevant to the current judgment, so the agent
-can separate interpretations still in force from ones
-that appeared before and lost support; revoked content
-never participates in derivation as a current fact.
-When a chart has temporarily left the viewport, the
-reader keeps supplying applicable rules through the
-chart references established within the task, and new
-chart objects or encoding changes are bound and verified
-afresh.
+$\mathcal{R}^{\mathrm{active}}_t$; they surface only
+as re-verification evidence in the read result, which
+also carries disputes and revocation records, so the
+agent separates interpretations still in force from
+ones that lost support, and revoked content never
+derives facts.
+When a chart has left the viewport, the reader keeps
+supplying applicable rules through the chart references
+established within the task, and new chart objects or
+encoding changes are bound and verified afresh.
 
 The base agent produces its next proposal from the
 current observation, history, and rule view,
@@ -438,20 +422,18 @@ within one task, while action capabilities and the
 environment interface
 follow the original system.
 Explanation generation and visual verification can be
-carried out by different calls of the same frozen model.
-Deterministic code handles structured record keeping,
-management of normalized merges, version updates, scope
-retrieval, and checks of relations that can be computed
-explicitly.
-The competing-chain count, review rounds, and trigger
-settings are fixed before a run, and the extra calls and
-context overhead are charged to the method's cost.
-The rule state is isolated per task: the runtime uses
+carried out by different calls of the same frozen model,
+while deterministic code handles record keeping,
+normalized merges, version updates, scope retrieval, and
+explicitly computable checks; budgets and triggers are
+fixed before a run and their call overhead is charged
+to the method's cost.
+The rule state is isolated per task: the runtime sees
 only the chart and interaction information the task
-permits, while the paired chart, hidden answers, and
-scoring feedback stay on the evaluation side.
-Charts, rules, and action records are stored separately
-so that later analysis can trace how evidence changed
-and whether operations followed.
+permits, the paired chart, hidden answers, and scoring
+feedback stay on the evaluation side, and charts,
+rules, and action records are stored separately so
+later analysis can trace how evidence changed and
+whether operations followed.
 
 

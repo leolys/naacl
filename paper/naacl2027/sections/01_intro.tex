@@ -41,26 +41,23 @@ conclusion (Figure~\ref{fig:misleading-pair}).
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.92\columnwidth]{fig_misleading_pair.pdf}
-\caption{A schematic instance of the phenomenon. The
-two panels show the same drawn series under two printed
-axis orders; the customary reading rule holds in (a) and
-is refuted by the scale order in (b), where the same
+\caption{The same drawn series under two printed axis
+orders: the customary reading rule holds in (a) and is
+refuted by the scale order in (b), where the same
 upward curve supports the opposite trend judgment. The
 benchmark pairs each task with such variants; model
 inputs never reveal which panel is which.}
 \label{fig:misleading-pair}
 \end{figure}
 
-\citet{chen2025unmasking} document that multimodal
-models are systematically vulnerable to such
-manipulations in chart question answering,
-\citep{mahbub2025perils, mahbub2026chart} trace the
-vulnerability and its partial mitigation across
-model families, and our companion work under review
-formalizes the execution-level consequence: on a paired
-benchmark of executable web tasks, biases induced by
-misleading charts propagate into subsequent actions and
-change task outcomes.\footnote{Companion submission
+Multimodal models are systematically vulnerable to such
+manipulations in chart question answering
+\citep{chen2025unmasking, mahbub2025perils,
+mahbub2026chart}, and our companion work under review
+formalizes the execution-level consequence: biases
+induced by misleading charts propagate into subsequent
+actions and change task outcomes on executable web
+tasks.\footnote{Companion submission
 under review; the paired benchmark \bench{} and the
 execution-level evaluation protocol it introduces are
 described where first used in this paper.}
@@ -86,13 +83,12 @@ subsequent judgments---repeated observation or an
 additional review round can as easily re-adopt an
 inapplicable reading as discover an error.
 
-Stateful execution raises requirements beyond chart
+Stateful execution raises the stakes beyond chart
 question answering: an understanding formed from one
-chart feeds later planning and operations even after
-the chart has left the viewport, so a verified axis
-mapping should keep governing later judgments, yet
-become revisable when sufficient new evidence
-appears.
+chart feeds later planning even after the chart has
+left the viewport, so a verified mapping should keep
+governing later judgments yet stay revisable on
+sufficient new evidence.
 Reflexion-style memory carries verbalized feedback into
 later attempts \citep{shinn2023reflexion}, and recent
 agent-memory systems organize experience into
