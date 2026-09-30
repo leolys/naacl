@@ -2,7 +2,7 @@ This work studies defensive scaffolding around
 vision--language agents, and its limitations follow
 from the same design choices that produce the results.
 
-\emph{Scale and models.}
+\paragraph{Scale and models.}
 The static panel uses one 27B open-weight VLM and one
 8B open-weight VLM under fixed decoding; the online
 deployment uses the same 27B model under two interface
@@ -15,7 +15,7 @@ domains; the 8B transfer already shows that variant
 choice interacts with actor capability in ways we do
 not fully predict.
 
-\emph{What the labels measure.}
+\paragraph{What the labels measure.}
 Robust accuracy is computed against the original
 option labels of the benchmark, and our agreement
 checks verify that submitted options and rule states
@@ -28,7 +28,7 @@ produced for partially wrong reasons.
 The rule states we analyze are the agent's own
 declared rules, not independently validated facts.
 
-\emph{Selection effects and variance.}
+\paragraph{Selection effects and variance.}
 The paired gains are within-run comparisons on a fixed
 task set; the drop of direct selection from 81 to 73
 of 140 under an identical configuration quantifies
@@ -42,7 +42,7 @@ the authors after inspecting aggregate failure
 patterns, so the panel should be read as a controlled
 comparison rather than a held-out evaluation.
 
-\emph{Interface dependence.}
+\paragraph{Interface dependence.}
 The online results are conditional on the strict
 submission protocol.
 Its semantic contract---exact public-leaf values,
@@ -57,7 +57,7 @@ interface-robust defense; the negative environment-domain
 results of the static panel and the one-directional
 online paired effect are reported as found.
 
-\emph{Runtime footprint.}
+\paragraph{Runtime footprint.}
 Verification multiplies requests by roughly
 $2.6\times$ over direct selection and the online
 arm operates within a fixed per-unit budget
@@ -65,7 +65,16 @@ arm operates within a fixed per-unit budget
 deployed under tighter latency or cost envelopes may
 not accommodate this overhead.
 
-\emph{Reproducibility boundary.}
+\paragraph{Ethics and dual use.}
+The defense direction of this work is protective, but
+the same observation---that faithful chart pixels admit
+misleading encodings that change executed
+actions---can inform adversarial chart design; we
+therefore release instances only through the
+benchmark's own access process and avoid publishing
+new manipulation techniques.
+
+\paragraph{Reproducibility boundary.}
 The companion benchmark is under review and its
 instances are not yet public; until release, the
 results here cannot be independently recomputed from

@@ -1,32 +1,26 @@
 Research on misleading visualizations has developed
 along two lines that our defense connects.
 The first line studies how charts mislead human readers:
-\citet{lisnic2023misleading} show that deception in
-charts relies less on outright visual distortion than on
-the combination of faithful drawings with selective
-context, framing, and commentary, and current
-visualization research extends this analysis to
-persuasive chart design \citep{nadib2026guardrail}.
-The second line measures the same phenomenon in models:
+\citet{lisnic2023misleading} show that deception relies
+less on outright visual distortion than on faithful
+drawings combined with selective context and framing
+\citep{nadib2026guardrail}.
+The second measures the same phenomenon in models:
 benchmarks evaluate multimodal LLMs on misleading chart
-question answering \citep{chen2025unmasking,
-bharti2024chartom, alexander2024models},
-\citet{mahbub2025perils} and
+QA \citep{chen2025unmasking, bharti2024chartom,
+alexander2024models}; \citet{mahbub2025perils} and
 \citet{mahbub2026chart} quantify how truncated axes,
 distorted aspect ratios, and manipulated encodings
-degrade chart reasoning across model families and probe
-mitigations, and recent studies examine whether agents
-and LLMs recognize misleadingness without being nudged
-\citep{panda2026making, blasilli2026true, seto2026llms}.
+degrade chart reasoning and probe mitigations; and
+recent studies ask whether agents recognize
+misleadingness unprompted \citep{panda2026making,
+blasilli2026true, seto2026llms}.
 Method-side responses include tool-augmented chart
-reasoning that grounds answers in extracted chart
-elements \citep{kaur2025chartagent}, structured
-extraction pipelines that repair extraction--inference
-gaps \citep{das2025chartsofthought}, detection of
-misleading charts as a classification task
-\citep{tonglet2025this}, and agentic dual-path
-frameworks that separate data fidelity checking from
-conclusion checking \citep{zhang2026navigating}.
+reasoning \citep{kaur2025chartagent}, structured
+extraction pipelines \citep{das2025chartsofthought},
+misleading-chart detection \citep{tonglet2025this}, and
+agentic dual-path frameworks that separate data-fidelity
+from conclusion checking \citep{zhang2026navigating}.
 \citet{tonglet2025protecting} provide the closest
 model-level defense, protecting multimodal LLMs through
 tabular answering and chart re-plotting; these
@@ -35,23 +29,19 @@ procedures repair a single question--answer round, while
 across the rounds of an executing agent and maintains
 their validated revisions in runtime state.
 
-A second related line concerns the integrity of agent
-environments.
-Indirect prompt injection benchmarks show that content
-returned from tools and web pages can steer tool-augmented
-agents \citep{zhan2024injecagent}, web-agent security
-benchmarks measure targeted hijacking under realistic
-threat models \citep{evtimov2025wasp}, and demonstrations
-show injection through the very representations agents
-perceive, such as HTML accessibility trees
-\citep{johnson2025manipulating}; automated red-teaming
-generates such attacks at scale \citep{wang2025agentvigil}
-and runtime frameworks intercept them
-\citep{zhao2026clawguard}.
-Defenses at the interface level separate instructions
-from data through structured queries \citep{chen2024struq}
-or preference-optimized training against injected
-content \citep{chen2024secalign}.
+A second line concerns agent-environment integrity.
+Indirect prompt injection benchmarks show that tool and
+web content can steer agents \citep{zhan2024injecagent};
+web-agent security benchmarks measure targeted hijacking
+\citep{evtimov2025wasp}; injection reaches the very
+representations agents perceive, such as HTML
+accessibility trees \citep{johnson2025manipulating};
+automated red-teaming generates such attacks at scale
+\citep{wang2025agentvigil} and runtime frameworks
+intercept them \citep{zhao2026clawguard}.
+Interface-level defenses separate instructions from data
+\citep{chen2024struq} or train against injected content
+\citep{chen2024secalign}.
 \citet{wu2024dissecting} dissect the robustness of
 multimodal agents as compound systems and show that
 reflection and tree search, the components commonly
@@ -63,25 +53,23 @@ between visual observation and task judgment, where a
 misleading chart exerts its effect without any injected
 instruction.
 
-The third line concerns persistent state and correction
-in agents.
-Verbal reinforcement learning carries textual feedback
-across attempts \citep{shinn2023reflexion},
-self-consistency aggregates multiple reasoning paths
-into one answer \citep{wang2022selfconsistency}, and
-intrinsic self-correction without external feedback
-degrades reasoning performance
-\citep{huang2023large}.
-Agent surveys organize the growing design space of
-state and memory components
-\citep{wang2024survey, hu2025agents}, and
-\citet{koh2024visualwebarena} establish that realistic
-visual web tasks remain hard enough that correctness of
-single decisions cannot be taken for granted.
-\ours{} borrows the state-carrying idea from memory
-research but changes the carried content: instead of
-outcome feedback or free-form reflections, the state
-records interpretation rules with their evidential
-support, applicability scope, and revision history, so
-that later steps inherit what was verified about the
-chart rather than a verdict about the answer.
+The third line concerns persistent state and correction.
+Verbal reinforcement carries textual feedback across
+attempts \citep{shinn2023reflexion}, self-consistency
+aggregates reasoning paths \citep{wang2022selfconsistency},
+and intrinsic self-correction without external feedback
+degrades reasoning \citep{huang2023large,
+li2025decomposing}.
+Agent surveys organize the design space of state and
+memory components \citep{wang2024survey, hu2025agents},
+and \citet{koh2024visualwebarena} establish that
+realistic visual web tasks remain hard enough that
+single-decision correctness cannot be taken for
+granted.
+\ours{} borrows the state-carrying idea but changes the
+carried content: instead of outcome feedback or
+free-form reflections, the state records interpretation
+rules with their evidential support, applicability
+scope, and revision history, so later steps inherit
+what was verified about the chart rather than a verdict
+about the answer.

@@ -29,9 +29,10 @@ decoding (temperature 0.7, top-$p$ 0.8, top-$k$ 20,
 fixed seed, thinking disabled): direct selection and
 five verification configurations implementing the
 READ--VERIFY--DECIDE pipeline of Section~\ref{sec:method}
-with frozen prompts, three requests per task, and a
-fixed pool of 275 pre-generated observation/rule
-candidates.
+with frozen prompts and three requests per task; the
+candidate chains of each verification node are the
+frozen per-task pool of one to three pre-generated
+$O/B$ records, 275 across the panel.
 They differ in verification emphasis: V3 verifies $O$
 and $B$ in distinct schema-typed passes; V4 fixes
 explicit numeric references, dates, ranges, and
@@ -46,17 +47,30 @@ numeric ranges to avoid abstention on missing exact
 printed values.
 Interface failures and empty selections remain in the
 140 denominator.
+\emph{Robust accuracy} throughout is the fraction of
+tasks whose selection matches the frozen original
+label, the same full-denominator quantity for every
+configuration.
+The supplementary material of this submission contains
+the frozen prompts, the typed output schemas, the
+per-request decision logs with seeds and usage, the
+interface contract, and the scoring code, so that every
+number in this section can be recomputed from the
+released artifacts once the companion benchmark's data
+license permits public release.
 
 \emph{Online stateful deployment.}
 Twelve tasks spanning all four domains
 (six business, three environment, two health, one
-public-statistics) run as live browser sessions under a
-closed deployment: for each task, both chart variants
-(official misleading chart, clean chart) execute under
-both systems---ordinary execution without defense, and
-the \ours{} arm whose hooks, rule state, and
-re-derivation loops run inside the harness with the
-actor driving a real browser.
+public-statistics, taken in fixed identifier order from
+the benchmark's task lists before execution) run as
+live browser sessions under a closed deployment: for
+each task, both chart variants (official misleading
+chart, clean chart) execute under both
+systems---ordinary execution without defense, and the
+\ours{} arm whose hooks, rule state, and re-derivation
+loops run inside the harness with the actor driving a
+real browser.
 The submission interface is a strict typed protocol
 (interface \texttt{typed\_scalars\_v2}, at most eight
 actor calls, one re-verification round, temperature~0),
@@ -147,10 +161,11 @@ which quantifies the sampling variance of agentic
 decoding itself; every comparison must therefore be
 made within the same run.
 Within-run, V5 gains $+17$ paired decisions
-(McNemar $p=0.0025$; exact 95\% CI on the difference in
-accuracy $[+0.029, +0.214]$), and V4, V6, and V7 gain
-$+13$, $+13$, and $+16$ with $p<0.005$ each, while V3
-returns to $+2$.
+(McNemar \citep{mcnemar1947note} $p=0.0025$; exact
+95\% CI on the difference in accuracy
+$[+0.029, +0.214]$), and V4, V6, and V7 gain $+13$,
+$+13$, and $+16$ with $p<0.005$ each, while V3 returns
+to $+2$.
 Paired transfer counts are one-directional in aggregate
 (57 keep, 33 error-to-target, 11 target-to-error, 5
 target-to-empty, 0 empty-to-target), and the panel
@@ -246,24 +261,30 @@ A pilot (6 tasks, frontier model, 12 units) already
 showed the qualitative pattern: the ordinary arm
 submitted 5 correct selections against 1 for the
 \ours{} arm.
-The formal batch (Table~\ref{tab:online-four}, top)
-confirms it at larger scale and adds the important
-control: the ordinary arm loses 3--5 decision points on
+Because the deployment's submission protocol is
+fail-closed, the primary online metric is the
+\emph{wrong-submission rate} rather than aggregate
+accuracy.
+Across the four batches, ordinary execution produced
+six wrong submissions---all under the 27B actor on
+misleading charts (3 of 24 official-chart units in each
+27B batch, none under the frontier actor)---while the
+\ours{} arm produced none in any batch or chart variant
+(0 of 96 defense-arm units).
+Aggregate accuracy moves in the opposite direction:
+ordinary execution loses 3--5 decision points on
 misleading charts relative to its own clean-chart
-performance (8 vs.\ 10 here; 7 vs.\ 10 and 7 vs.\ 12 in
-the two earlier 27B batches, which additionally contain
-3 wrong submissions caused by the misleading chart per
-batch), whereas the \ours{} arm submits only correct
-actions and converts the rest into recorded
-abstentions---7 misleading-chart abstentions, one
-re-verification budget exhaustion, and two engineering
-failures.
-The paired task-level effect is therefore strictly
-one-directional in both C batches (ordinary
-preserves 10 and 13 decisions that the defense arm
-turns into abstentions; the reverse never occurs), and
-the aggregate submission precision is 100\% for both
-systems when they do submit.
+performance (8 vs.\ 10 in the formal batch; 7 vs.\ 10
+and 7 vs.\ 12 in the 27B batches), and the defense arm
+converts correct ordinary decisions into recorded
+abstentions rather than corrections.
+The paired task-level effect is strictly
+one-directional in both frontier-model batches
+(ordinary preserves 10 and 13 decisions that the
+defense arm turns into abstentions; the reverse never
+occurs; exact sign tests $p=0.002$ and $p<0.001$ on
+discordant pairs), and submission precision is 100\%
+for both systems in those batches (26/26 and 27/27).
 
 \paragraph{Interface decomposition.}
 The three actor systems separate structural from
@@ -281,6 +302,9 @@ modestly (21 of 24), revealing that the binding
 constraint is semantic: exact public-leaf values,
 bounded summaries, and the question--response count
 coupling cannot be expressed by any response format.
+This mirrors the compound-system analysis of
+\citet{wu2024dissecting}: components added for
+self-correction become the exposed surface.
 Running the frontier model directly through the gateway
 (Batch C) removes the structural interface almost
 entirely---defense-arm engineering failures fall to 4

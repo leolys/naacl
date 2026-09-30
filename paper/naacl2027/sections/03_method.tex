@@ -30,22 +30,18 @@ that the action, or high-level choice, $a$ meets the
 requirements of task $q$.
 The representation separates a visible phenomenon from
 the condition under which it is interpretable: the
-observation that a curve moves upward within an interval,
-jointly with the rule that in the current axis a higher
-position means a larger value, supports the conclusion
-that the interval grows and that the corresponding action
-is admissible.
-For a geometric distortion, the observation may be that
-object A's bar stands higher than object B's, while the
-interpretation rule is that the current bar-height
-ordering preserves the value ordering; if the verified
-numeric relations in the figure disagree with the
-geometric ordering, it is precisely the applicability of
-this rule that is challenged first.
-Both $O$ and $B$ may carry multiple items; they are
-expressed in structured natural language covering entity
-binding, numeric relations, encoding direction, time
-range, and comparison conditions.
+observation that a curve moves upward, jointly with the
+rule that in the current axis a higher position means a
+larger value, supports the conclusion that the interval
+grows and the action is admissible; a distorted bar
+chart challenges the rule that bar-height ordering
+preserves value ordering, and a mismatch against
+verified numeric relations refutes precisely that rule's
+applicability.
+Both $O$ and $B$ may carry multiple items, expressed in
+structured natural language covering entity binding,
+numeric relations, encoding direction, time range, and
+comparison conditions.
 Relations that can be computed explicitly, such as
 numeric comparisons and orderings, are checked with
 program assistance; the remaining semantic judgments are
@@ -70,14 +66,12 @@ context and restart competing verification only when a
 relevant judgment is first formed, when new evidence
 conflicts with an existing rule, or when the
 applicability conditions of a rule are in question.
-The process involves two intertwined time scales.
-Local verification decides whether a particular
-interpretation rule deserves acceptance or revision;
-within-task maintenance decides in which later steps
-that rule remains effective.
-The parameters of the underlying model stay frozen
-throughout, and the rule state evolves with the
-observations and verification results actually obtained.
+Local verification decides whether a rule deserves
+acceptance or revision; within-task maintenance decides
+in which later steps it remains effective.
+The underlying model's parameters stay frozen, and the
+rule state evolves only with observations and
+verification results actually obtained.
 
 \subsection{Competing Explanation Chains}
 \label{sec:method:chains}
@@ -167,6 +161,23 @@ rule add no evidential weight, and a new explanation
 changes later verification only by contributing
 different evidence or exposing a new applicability
 problem.
+In the deployed pipeline the candidate set of a
+verification node is the frozen per-task pool of one to
+three pre-generated $O/B$ records (275 records across
+the panel), so the chain budget of
+Eq.~(\ref{eq:pis}) is instantiated as $K$ equal to the
+pool size and diversity is a property of pool
+construction---candidate rules differ in object,
+condition, or scope by design; the online arm
+re-derives chains at runtime under the same budget.
+This multi-candidate structure relates to multiagent
+debate \citep{du2023improving,
+liang2024encouraging} and to single-path self-refinement
+\citep{madaan2023selfrefine}, but the competitors
+disagree only over the interpretive bases of one
+rendered chart, and the adjudicator is an applicability
+test against that chart rather than a vote or an
+LLM-judged winner.
 
 \subsection{In-Chart Applicability Verification}
 \label{sec:method:verify}
@@ -203,6 +214,16 @@ Verification always proceeds against the complete chart,
 and the evidence record contains the actual observation
 identifier, the content read, and which rule the content
 supports or refutes.
+The deployed checklist operationalizes the three
+statuses: for $O$, located support or a genuine
+contradiction in the figure, with no inserted
+quantifiers or causal claims; for $B$, explicit tests of
+the rule's necessary conditions against public facts,
+including whether the known labeled references would
+have the relations a proposed decoding predicts and an
+explicit order comparison before any common scale is
+endorsed; for the derivation, candidate coverage, range,
+and task-scope conditions must be confirmed premises.
 To keep the judgment focused on evidence, verification
 takes the normalized dispute propositions as input, and
 the source role or repetition count of a candidate is
@@ -212,27 +233,19 @@ evaluating conclusions, so that a preferred answer is
 not used to justify a rule retroactively.
 
 When a chain is challenged, the method distinguishes
-three objects of update.
-An \emph{observation error}---a misread number, a wrong
-entity binding, a wrong range---revises the affected $O$
-and re-verifies the interpretations that depend on it;
-unreliable observations cannot be charged to $B$
-directly.
-An \emph{inapplicable rule} is one whose observation
-stands while the mapping from observation to semantics
-disagrees with the current chart; such a rule is
-revoked, or its applicability narrowed, within the
-current scope.
-\emph{Insufficient derivation} leaves both observation
-and rule supported while the full task conclusion
-remains unproven; the module then adds the missing
-comparison or keeps an undetermined status, as when one
-higher candidate refutes the claim that the current
-candidate is highest without yet confirming that the
-alternative is globally highest.
-This separation keeps the defense centered on
-interpretation rules while preserving correct handling
-of perception, scope, and task-derivation problems.
+three objects of update: an \emph{observation error} (a
+misread number, wrong entity binding, or wrong range)
+revises the affected $O$ and re-verifies dependent
+interpretations, never charging unreliable observations
+to $B$; an \emph{inapplicable rule}---whose observation
+stands while its observation-to-semantics mapping
+disagrees with the current chart---is revoked or
+scope-narrowed; and \emph{insufficient derivation}
+leaves both supported while the task conclusion remains
+unproven, so the module adds the missing comparison or
+keeps an undetermined status, as when a higher candidate
+refutes ``the current candidate is highest'' without
+confirming the alternative is globally highest.
 
 Conflicting conclusions between candidate chains
 establish only that a conflict exists.
@@ -296,33 +309,30 @@ Page changes unrelated to the task goal do not
 invalidate a rule by themselves.
 
 Verification produces rule-revision proposals
-$\Delta_t^B$, which the state manager applies as
-$M_{t+1}^B = U(M_t^B, \Delta_t^B)$.
-When the original rule is supported and the new proposal
-lacks effective evidence, the original rule is kept and
-the proposal is retained as a pending record.
-When the original rule is refuted and a replacement is
-supported, the original loses applicability in the
-affected scope and the replacement version is activated.
-When the original is refuted without a settled
-replacement, the rule is revoked and the current
-interpretation gap is recorded.
-When the original and a competing rule remain in
-effective conflict, the affected rules enter a disputed
-status and verification continues within budget, and
-when two rules apply to different objects or scopes they
-are stored separately rather than overwritten globally.
+$\Delta_t^B$, applied as $M_{t+1}^B = U(M_t^B,
+\Delta_t^B)$.
+If the original rule is supported and the proposal lacks
+effective evidence, the rule is kept and the proposal is
+retained as pending; if the original is refuted with a
+supported replacement, the replacement activates in the
+affected scope; if the original is refuted without a
+settled replacement, the rule is revoked and the
+interpretation gap recorded; if a competing rule remains
+in effective conflict, the affected rules enter a
+disputed status while verification continues within
+budget; and rules that apply to different objects or
+scopes are stored separately rather than overwritten
+globally.
 The ``currently active'' status expresses the method's
 judgment under the evidence at hand; new effective
 evidence can change it, and can also show that an
 earlier verification was itself mistaken.
-After revocation, a rule's content, scope, and reason
-remain in the revision history; if the same rule
-reappears later, it must answer the recorded refutation
-or supply evidence that changes the applicability
-judgment, since repetition, later position, or a more
-confident phrasing forms no new revision ground by
-itself.
+After revocation, content, scope, and reason remain in
+the revision history; if the same rule reappears, it
+must answer the recorded refutation or supply evidence
+that changes the applicability judgment---repetition,
+later position, or a more confident phrasing forms no
+new revision ground by itself.
 
 A revision record answers why the original rule had to
 change, what interpretation is adopted now, and under
@@ -370,11 +380,19 @@ s_i = \mathrm{active}
 \operatorname{Match}(\sigma_i, c_t) = \mathrm{true}
 \,\}.
 \end{equation}
-Scope matching yields applicability, non-applicability,
-or undetermined; an undetermined match triggers
+Formally, $\operatorname{Match}(\sigma_i, c_t)$
+evaluates the rule's object, encoding component, metric,
+and time window against the current interpretation
+context and returns applicability, non-applicability, or
+undetermined; an undetermined match triggers
 verification of the corresponding condition rather than
 a default assumption that a stored rule covers the new
 chart.
+Disputed rules never enter
+$\mathcal{R}^{\mathrm{active}}_t$: they surface only
+as re-verification evidence in the read result, so a
+dispute can compel a new verification round but cannot
+be used as a current fact.
 The read result also carries the disputes and revocation
 records relevant to the current judgment, so the agent
 can separate interpretations still in force from ones

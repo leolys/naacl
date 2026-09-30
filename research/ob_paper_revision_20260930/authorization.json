@@ -1,0 +1,11 @@
+{
+  "experiment": "ob_paper_revision_20260930",
+  "purpose": "Reviewer-requested revision experiments: 3-seed replication of plain and v5, self-consistency majority over the three plain seeds, two-phase tabular-answering baseline, and clean-chart static control. Read-only reuse of the frozen ob_full_comparison_20260927 protocol, prompts, schemas, inputs and labels.",
+  "model": "Qwen3.8-27B (Qwen/Qwen3.8-27B, BF16, local vLLM, single GPU)",
+  "endpoints": ["http://127.0.0.1:8058/v1/chat/completions"],
+  "paid_api_allowed": false,
+  "data_reused": "research/ob_full_comparison_20260927/{data, offline/labels.json, prompts_*.py, schema_*.py, config.json, manifest.json}; web_agent_benchmark/clean_benchmark_v1/assets/<task_id>/clean.png",
+  "provenance_note": "Engine configuration matches the frozen service except max_num_seqs=4 (single-GPU lab); all within-run comparisons are made among runs produced under this configuration.",
+  "created_utc": "2026-09-30T07:20:00Z",
+  "operator": "agent, on behalf of the owner, per owner request to apply reviewer action plan"
+}

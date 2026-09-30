@@ -40,7 +40,21 @@ is likewise read through the encoding relations of the
 present figure.
 A misleading presentation can induce an agent to apply
 its customary reading rules unchanged, converting
-genuinely visible evidence into a wrong conclusion.
+genuinely visible evidence into a wrong conclusion
+(Figure~\ref{fig:misleading-pair}).
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\columnwidth]{fig_misleading_pair.pdf}
+\caption{A schematic instance of the phenomenon. The
+two panels show the same drawn series under two printed
+axis orders; the customary reading rule holds in (a) and
+is refuted by the scale order in (b), where the same
+upward curve supports the opposite trend judgment. The
+benchmark pairs each task with such variants; model
+inputs never reveal which panel is which.}
+\label{fig:misleading-pair}
+\end{figure}
+
 \citet{chen2025unmasking} document that multimodal
 models are systematically vulnerable to such
 manipulations in chart question answering,
@@ -57,30 +71,24 @@ described where first used in this paper.}
 
 Against misleading charts, model-level defenses have
 improved chart question answering through tabular
-answering and re-plotting procedures that force a
-structured restatement of the evidence
-\citep{tonglet2025protecting}.
-These procedures provide an effective basis for
-model-level repair, but the reliability of the
-verification and correction itself remains open.
-In the inference-only setting, intrinsic
-self-correction can damage answers that were initially
-correct \citep{huang2023large}, and when the evaluation
-component is itself exposed to the environment,
-reflection and search can introduce new attack surfaces
-rather than remove existing ones \citep{wu2024dissecting}.
+answering and re-plotting procedures
+\citep{tonglet2025protecting}, but the reliability of
+the verification itself remains open: intrinsic
+self-correction can damage initially correct answers
+\citep{huang2023large, li2025decomposing}, and when the
+evaluating component is itself exposed to the
+environment, reflection and search can open new attack
+surfaces \citep{wu2024dissecting}.
 Chart-domain studies observe a further gap: a model may
 correctly identify chart properties during extraction
-and still fail to let those properties govern the
-downstream inference \citep{mahbub2026chart}.
-These observations point to two connected requirements
-for a defense: correction must rest on evidence that can
-be checked, and a corrected interpretation must
-actually change subsequent judgments.
-Repeated observation or an additional review round can
-discover an error, but it can equally re-adopt an
-inapplicable reading, or overwrite a judgment that was
-already correct.
+and still fail to let them govern downstream inference
+\citep{mahbub2026chart}.
+These observations point to two connected requirements:
+correction must rest on evidence that can be checked,
+and a corrected interpretation must actually change
+subsequent judgments---repeated observation or an
+additional review round can as easily re-adopt an
+inapplicable reading as discover an error.
 
 Stateful execution raises requirements beyond
 chart question answering: an understanding formed from
