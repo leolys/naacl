@@ -143,6 +143,17 @@ must change, and which rule version later steps actually
 used.
 \section{Additional Results and Boundary Statements}\label{app:details}
 
+\subsection{Configuration Ladder}\label{app:ladder}
+The five READ--VERIFY--DECIDE variants vary the
+verification content: V3 verifies $O$ and $B$ in distinct
+typed passes, V4 fixes explicit numeric references, V5
+adds same-series query-point constraints with scale,
+time-window, and policy checks, V6 checks necessary
+conditions itemwise, and V7 keeps V4's prompts with an
+abstention-aware decision repair phase. All five share
+the frozen prompts, one verification round, and the
+frozen per-task pool of the original round.
+
 \subsection{Where the Gains Concentrate}
 Stratified by mechanism family
 (Table~\ref{tab:family-strat}), V5's net gains
@@ -312,6 +323,12 @@ within a fixed per-unit allowance comparable to the
 static panel's per-task cost.
 
 \subsection{Cross-Model Transfer Analysis}\label{app:transfer}
+The exact 95\% CIs behind Table~\ref{tab:static-main}'s
+$\Delta$ columns: 27B rerun---V3 $[+.09,+.22]$, V4
+$[+.05,+.23]$, V5 $[+.06,+.23]$, V6 $[+.07,+.22]$, V7
+$[+.05,+.23]$; 8B transfer---V3 $[-.02,+.13]$, V4
+$[-.01,+.18]$, V5 $[+.00,+.20]$, V6 $[-.04,+.16]$, V7
+$[+.02,+.21]$.
 On the 8B open-weight VLM, direct selection drops to
 46.4\% and the picture splits
 (Table~\ref{tab:static-main}, 8B columns): V7 gains
@@ -335,6 +352,8 @@ than as one ``method'' factor.
 
 \begin{table}[t]
 \centering
+\setlength{\tabcolsep}{3pt}
+\footnotesize
 \begin{tabular}{lccccc}
 \toprule
 Unit class & Cor. & Wrong & Abst. & Bug. & Fail. \\
@@ -393,14 +412,20 @@ submission in both batches is correct (26/26 and 27/27).
 The 12 resolved conversions are the input to the pooled
 exact sign test of Section~\ref{sec:exp:online} (12
 abstentions against 0 corrections, $p<.001$).
+A six-task pilot with actor \texttt{gpt-5.6-terra}
+showed the same qualitative pattern: 5 correct ordinary
+selections against 1 for \ours{}.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.92\columnwidth]{fig_conversions.pdf}
-\caption{The 23 decisions the defense arm converted in
-the two frontier-model batches, by terminal status from
-the per-unit records. No conversion becomes a correction
-or a wrong submission.}
+\caption{The 38 ordinary-correct units of Batch~C and its
+rerun traced to terminal status from the per-unit
+records: 15 stay with correct defense submissions, and
+the 23 conversions split into 12 recorded abstentions,
+10 engineering or response-format failures, and 1
+call-limit termination. No conversion becomes a
+correction or a wrong submission.}
 \label{fig:conversions}
 \end{figure}
 

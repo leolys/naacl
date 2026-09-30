@@ -24,17 +24,14 @@ misleading chart---scored against its frozen original
 label---plus the public goal and four options, and must select; no navigation occurs.
 Six configurations share identical inputs and decoding (temperature 0.7, top-$p$ 0.8, top-$k$ 20,
 fixed seed, thinking disabled): Direct and five READ--VERIFY--DECIDE configurations with frozen prompts, one
-verification round ($L=1$), and three requests per task drawing on the frozen per-task pool (275 records across the panel; Section~\ref{sec:method:chains}).
-V3 verifies $O$ and $B$ in distinct typed passes, V4 fixes explicit numeric references, V5 adds
-same-series query-point constraints with scale, time-window, and policy checks, V6 checks necessary conditions itemwise, and V7 keeps V4's
-prompts with an abstention-aware decision repair
-phase. The five variants trade verification content against interface strictness. The six configurations and prompts were frozen before the rerun and seed rounds, never modified after seeing results.
+verification round ($L=1$), and three requests per task drawing on the frozen per-task pool (275 records; Section~\ref{sec:method:chains}); Appendix~\ref{app:ladder} details the V3--V7 ladder.
+The five variants trade verification content against interface strictness. The six configurations and prompts were frozen before the rerun and seed rounds, never modified after seeing results.
 Interface failures and empty selections remain in the
-140 denominator; \emph{robust accuracy} throughout is
-the fraction of tasks whose selection matches the
-frozen original label, a single full-denominator quantity.
+140 denominator; \emph{robust accuracy} is
+the full-denominator fraction of tasks whose selection matches the
+frozen original label.
 Frozen prompts, typed schemas, decision logs, the
-interface contract, and scoring code are in the supplementary material, so every number outside the three-seed replication can be recomputed from released artifacts once its license permits release.
+interface contract, and scoring code are in the supplementary material, so every number outside the three-seed replication is recomputable from the released artifacts.
 
 \emph{Online stateful deployment.}
 Twelve tasks spanning all four domains run as live browser sessions under a
@@ -56,62 +53,72 @@ rerun).
 
 \begin{table}[t]
 \centering
-\begin{tabular}{lcc@{\hskip 1.5em}cccc@{\hskip 1.5em}cccc}
+\setlength{\tabcolsep}{3pt}
+\small
+\begin{tabular}{lcc@{\hskip 4pt}ccc@{\hskip 4pt}ccc}
 \toprule
-& \multicolumn{2}{c}{Original} & \multicolumn{4}{c}{27B rerun} &
-\multicolumn{4}{c}{8B transfer} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-7}\cmidrule(lr){8-11}
-Config & Tar. & $\Delta$ & Tar. & $\Delta$ & $p$ & 95\% CI & Tar. & $\Delta$ & $p$ & 95\% CI \\
+& \multicolumn{2}{c}{Original} & \multicolumn{3}{c}{27B rerun} &
+\multicolumn{3}{c}{8B transfer} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-6}\cmidrule(lr){7-9}
+Config & Tar. & $\Delta$ & Tar. & $\Delta$ & $p$ & Tar. & $\Delta$ & $p$ \\
 \midrule
-Direct & 81 & --- & 73 & --- & --- & --- & 65 & --- & --- & --- \\
-V3 & 74 & $-7$ & 75 & $+2$ & $<$.001 & $[+.09,+.22]$ & 50 & $-15$ & .185 & $[-.02,+.13]$ \\
-V4 & 87 & $+6$ & 86 & $+13$ & .0025 & $[+.05,+.23]$ & 77 & $+12$ & .079 & $[-.01,+.18]$ \\
-V5 (full) & 96 & $+15$ & 90 & $+17$ & .0013 & $[+.06,+.23]$ & 75 & $+10$ & .044 & $[+.00,+.20]$ \\
-V6 & 84 & $+3$ & 86 & $+13$ & $<$.001 & $[+.07,+.22]$ & 71 & $+6$ & .233 & $[-.04,+.16]$ \\
-V7 & 91 & $+10$ & 89 & $+16$ & .0025 & $[+.05,+.23]$ & 80 & $+15$ & .021 & $[+.02,+.21]$ \\
+Direct & 81 & --- & 73 & --- & --- & 65 & --- & --- \\
+V3 & 74 & $-7$ & 75 & $+2$ & $<$.001 & 50 & $-15$ & .185 \\
+V4 & 87 & $+6$ & 86 & $+13$ & .0025 & 77 & $+12$ & .079 \\
+V5 (full) & 96 & $+15$ & 90 & $+17$ & .0013 & 75 & $+10$ & .044 \\
+V6 & 84 & $+3$ & 86 & $+13$ & $<$.001 & 71 & $+6$ & .233 \\
+V7 & 91 & $+10$ & 89 & $+16$ & .0025 & 80 & $+15$ & .021 \\
 \bottomrule
 \end{tabular}
 \caption{Static panel across three rounds (140 tasks;
 Qwen3.8-27B for the first two column groups,
 Qwen3-VL-8B-Instruct for the transfer group;
 temperature 0.7, top-$p$ 0.8, top-$k$ 20, fixed seed).
-``Target'' counts selections matching the frozen
-original label; $\Delta$ is the paired net change
-against Direct within the same run; $p$ and the exact
-95\% CI come from two-sided exact McNemar tests on
-wrong--target discordant pairs \citep{mcnemar1947note},
-(empty selections and interface failures excluded from the test, retained in $\Delta$).
-Rounds cost 8.86M/8.84M/8.14M tokens; error composition, stratification, and the development subset are in Appendix~\ref{app:details}.}
+Column groups in order: Original, 27B rerun, 8B
+transfer. ``Target'' counts selections matching the
+frozen original label; $\Delta$ is the paired net change
+against Direct within the same run; $p$ comes from
+two-sided exact McNemar tests on wrong--target
+discordant pairs \citep{mcnemar1947note} (empty
+selections and interface failures excluded from the
+test, retained in $\Delta$); exact 95\% CIs for every
+$\Delta$ appear in Appendix~\ref{app:transfer}. Rounds
+cost 8.86M/8.84M/8.14M tokens; error composition,
+stratification, and the development subset are in
+Appendix~\ref{app:details}.}
 \label{tab:static-main}
 \end{table}
 
 Table~\ref{tab:static-main} reports the original round
-under Qwen3.8-27B: direct selection sits at
-57.9\% (81/140) and the full configuration V5 at
-68.6\% (96/140), a net gain of 15 decision points with 0 interface failures against Direct's 1; its empty selections stay in the denominator, so the gain is not bought by abstaining.
+under Qwen3.8-27B: a net gain of 15 decision points for
+V5, with 0 interface failures against Direct's 1, and
+empty selections kept in the denominator, so the gain is
+not bought by abstaining.
 Because the panel is entirely single-decision-point,
-the gain cannot reflect information gained after selection: verification changes the decision
+the gain cannot reflect post-selection information: verification changes the decision
 already available.
 
 Table~\ref{tab:static-seed} reports a
 matched-configuration replication separating sampling
 variance from configuration effects: Direct and V5 are re-executed under three request seeds
 (12345, 22345, 32345) on a single-GPU deployment
-matching the frozen service except batch admission, so comparisons stay internal (Appendix~\ref{app:details} records the protocol).
+matching the frozen service except batch admission
+(protocol in Appendix~\ref{app:details}); comparisons stay internal.
 The same run supplies three baselines: an SC3 self-consistency vote over the Direct seeds
-\citep{wang2022selfconsistency} (majority among
-non-null selections, ties as abstentions), a tabular-answering baseline \citep{tonglet2025protecting} (bounded transcription of comparison-relevant rows, then a table-only decision), and a clean-chart control on the paired clean charts.
+\citep{wang2022selfconsistency}, a tabular-answering baseline \citep{tonglet2025protecting}, and a clean-chart control on the paired clean charts.
 
 \begin{table}[t]
 \centering
+\setlength{\tabcolsep}{2pt}
+\footnotesize
 \begin{tabular}{lcccc}
 \toprule
-Arm & Req. (runs summed) & Selection acc. & $\Delta$ & $p$ \\
+Arm & Req. (sum) & Acc. & $\Delta$ & $p$ \\
 \midrule
-Direct (3 seeds) & 3/task & 56.2$\,\pm\,$1.1 & --- & --- \\
-SC3 (majority) & 0 extra & 53.6\% & $-3$ & .375 \\
+Direct (3 seeds) & 3/task & 56.2$\pm$1.1 & --- & --- \\
+SC3 (majority) & 0 & 53.6\% & $-3$ & .375 \\
 Tabular (bounded) & 2/task & 28.6\% & $-3$ & .51 \\
-\ours{} V5 (3 seeds) & 9/task & 65.7$\,\pm\,$0.7 & $+15.0$ & $2\times10^{-5}$ \\
+\ours{} V5 (3 seeds) & 9/task & 65.7$\pm$0.7 & $+15.0$ & $2\times10^{-5}$ \\
 Clean-chart control & 1/task & 82.1\% & $+33$ & $<$.001 \\
 \bottomrule
 \end{tabular}
@@ -128,29 +135,29 @@ seeds.}
 \label{tab:static-seed}
 \end{table}
 
-The 27B columns of Table~\ref{tab:static-main} report the single-run rerun that keeps model, seeds, and prompts frozen: direct selection drops from 81 to 73 of 140 in a fresh serving process of the identical configuration (serving-side batch admission is a nondeterminism source at a fixed seed); comparisons must stay within-run.
+The 27B columns of Table~\ref{tab:static-main} report the single-run rerun that keeps model, seeds, and prompts frozen: direct selection drops from 81 to 73 of 140 in a fresh serving process of the identical configuration (batch admission is a nondeterminism source at a fixed seed); comparisons stay within-run.
 Within-run, V5 gains $+17$ paired decisions
 ($p=.0013$; 95\% CI $[+0.061, +0.231]$), V4, V6, and
 V7 gain $+13$, $+13$, $+16$ ($p\leq0.0025$ each), and
 V3 returns to $+2$ despite strongly directional
 wrong--target flips (30 against 6, $p<.001$; caption's discordant-pair test) because its interface
 failures absorb the difference.
-The rerun's paired transfers are one-directional (57 keep, 33 error-to-target, 14 target-to-error, 2 target-to-empty); interface failures concentrate in V3. No configuration can abstain (every unit must select), and the same directionality holds in every seed of the matched-configuration replication, whose per-seed nets are reported below.
+The rerun's paired transfers are one-directional (57 keep, 33 error-to-target, 14 target-to-error, 2 target-to-empty); interface failures concentrate in V3. No configuration can abstain (every unit must select), and the same directionality holds in every seed of the matched-configuration replication.
 
 \paragraph{Baselines and controls.}
 The clean-chart control quantifies misleading presentations' execution-level damage: direct selection
 rises from 56.2\% on misleading charts to 82.1\% on the
 paired clean charts (paired net $+33$, $p<.001$, CI $[+0.16, +0.27]$).
 The two generic baselines do not close that gap: SC3
-reaches 53.6\%, indistinguishable from direct selection
+matches direct selection
 (paired net $-3$, $p=.375$)---consistent with
 Section~\ref{sec:method:setting}, the object of
 correction is the interpretation rule, not the answer
-distribution; and the tabular-answering baseline abstains on 55 units with 18 transcription
-failures, selecting with 59.7\% precision (40/67), a
-paired net of $-3$ ($p=.51$).
+distribution---and the tabular-answering baseline abstains on 55 units with 18 transcription
+failures, selecting at 59.7\% precision (40/67; paired
+net of $-3$, $p=.51$).
 Across the three seeds, direct selection lands at
-$56.2\,\pm\,1.1$ and \ours{} at $65.7\,\pm\,0.7$ points; the per-seed paired nets $+12$, $+18$,
+$56.2\,\pm\,1.1$ and \ours{} at $65.7\,\pm\,0.7$; the per-seed paired nets $+12$, $+18$,
 $+15$ pool to $+45$ decisions over 420 paired units
 (exact McNemar $p=1.9\times10^{-5}$, 95\% CI
 $[+0.058, +0.150]$).
@@ -178,31 +185,29 @@ counterpart of agent abstention
 \citep{liu2026agentabstain, luo2026agentic}: across
 the four batches,
 ordinary execution produced six wrong submissions, all
-under the 27B actor on misleading charts, while \ours{} produced none in any batch (0 of 96
+under the 27B actor on misleading charts, \ours{}
+none in any batch (0 of 96
 defense-arm units); Table~\ref{tab:online-four} gives the full decomposition. On clean charts the defense arm pays the mirror cost (6 and 5 correct submissions against the ordinary arm's 10 in Batch C and its rerun), the price of fail-closed verification.
 Aggregate accuracy moves oppositely: ordinary execution
 loses 0--5 decision points on misleading charts
 against its own clean-chart performance.
 In the frontier-model runs, the defense arm converts 10
 and 13 of 18 and 20 preserved decisions per run to
-non-submissions: 7 and 5 into recorded abstentions, 3
-and 8 into engineering failures or call-limit
-terminations, none into a correction; pooling the 12
+non-submissions (7 and 5 recorded abstentions, 3
+and 8 engineering failures or call-limit
+terminations), none into a correction; pooling the 12
 resolved conversions, the exact sign test of
 abstention versus correction gives $p<.001$.
 Submission precision stays 100\% batch-wide (26/26 and
 27/27; defense arm 8/8 and 7/7).
-A pilot (6 tasks, \texttt{gpt-5.6-terra}) showed the same
-qualitative pattern (5 correct ordinary selections
-against 1 for \ours{}).
 
 
 \paragraph{Interface decomposition.}
-Failure modes separate by actor system: under the strict interface
-without guidance (Batch A) 20 of 24 defense-arm units
-die in engineering failures, while the schema-guided proxy (Batch B) zeroes the ordinary actor's structural failures but cuts defense-arm engineering
-failures only modestly, and the direct gateway (Batch
-C) leaves abstention as the dominant non-submission
-outcome (11 of 16; Appendix~\ref{app:interface}).
+Failure modes separate by actor system: the strict interface
+(Batch A) kills 20 of 24 defense-arm units in
+engineering failures, the schema-guided proxy (Batch B) zeroes the ordinary actor's structural failures while cutting defense-arm failures
+only modestly, and the direct gateway (Batch
+C) leaves abstention dominant among non-submissions
+(11 of 16; Appendix~\ref{app:interface}).
 
 A stability rerun of Batch C produces no wrong submission in either run: 37 of 48 units stay on the same side of the submission boundary, the rest move among non-submission outcomes, and completion throughput varies (Appendix~\ref{app:stability}).

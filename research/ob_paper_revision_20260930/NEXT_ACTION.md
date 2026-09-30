@@ -121,3 +121,18 @@
 - 页限:Conclusion p8 y512(±1pt 舍入,正文未动)、Limitations p9 y72 精确,16 页(附录+1),0 undefined,overfull 6→4(余 4 条均为未触区域既有项,像素无碍)。
 - 验证:pdftotext+归一化全项 OK(B1 新句在、旧句 GONE、七表/图 caption 落位、表号链 T3–T7 与正文 \ref 自动一致、正文"Table 6 gives the full decomposition"自动更新);p12/13/14/15/16 渲染目检通过;Figure 2 嵌入页 15(log 确认 <./fig_conversions.pdf>)。
 - 有意跳过:机制族表不加正文引用(§4.1"21 mechanism families"在刀刃上,附录表由小节自引);zhang2026images 仍记 camera-ready 待办;ARR 表单字段仍记投稿日 TODO。
+
+## 2026-09-30 第九轮:轮 9 终审评审(交付,修复未执行)+ 用户图表指令执行
+- 轮 9 评审已交付:零阻塞(首次),Overall 4/Conference、Soundness 5、Confidence 5;should-fix ①itkin2026delayed(arXiv 2606.27409,≤6mo,插 §2 L3 后 ~45 字符,补偿候选=§2"what was verified, not a verdict about the answer"半句,该补偿句本轮确认仍未动);②B.1/B.9 域句去重(附录不计页);③投稿日任务:所有作者 ARR reviewer 注册硬截止 10-12、NAACL/COLING 共享 ARR 周期 commitment(12-23)定 primary、ARR 表单字段、Paper ID 替换。修复等用户指示。
+- 用户指令:①图丰富自然 ②缺主图,如何画 ③附录表移正文。执行①②,③给账本结论(见下)。
+- 图 1 丰富(make_fig.py 重写):6 点→12 点带真实感波动序列(同数据双面板不变,"same drawn series"消息不变),轴题 Week/Units sold (k),刻度标签每 2 周,y 网格线,marker/线宽调细;figsize 不变,边界 p9 y72 复核后确认无漂移。
+- 图 2 重设计为流图(make_fig_conversions.py 重写,Sankey-lite:左源节点 Batch C 18/重跑 20 ordinary-correct,右结果节点 Correct submission 15/Abstention 12/Engineering 10/Call limit 1,缎带宽度∝计数+每条流量数 8/7/3/7/5/7/1;底注"Defense-arm wrong submissions: 0 of 96 units")。38=15+23 分解由原始记录复算验证(C: 18=8+7+3,重跑: 20=7+5+7+1;defense 正确提交总数 26/26 与 27/27 不变,15 只是 ordinary-correct 子集)。caption 更新为 38 单元口径。
+- 主图(用户问"如何画",已实现):fig_overview.pdf + make_fig_overview.py,方法总览 5 框闭环(Agent judgment O∧B⇒C_q(a) → Competing chains K(frozen pool, same chart) → Applicability verifier L(observation/rule/derivation vs in-chart evidence) → Terminal status(Keep/Revise/Unresolved) → Persistent rule state M(revision+evidence+scope, written only by verification),回环"later steps read scope-matched rules→re-derive";对角标注 validated revisions)。全部措辞取自 §3 原概念,无新主张。置于 §3 开头 [t],指针句加在 §3 进程句"(Figure 2)";自动编号:误导对=图 1、总览=图 2、转换=图 3(全 \ref 自动)。
+- **重大发现(轮 8"伪影"结论是误诊)**:正文 Table 1/2 自创建起真实超宽(自然宽 ~437/354pt vs 栏宽 ~220pt),八轮"像素验证"漏检因 pdftoppm 在页缘裁剪+浮动位置变化使出血时而是离页裁剪(不可见)时而压邻栏。旧版 b41e1ff9 p7 上 T1/T2 互相压印、T1 的 p/95%CI 两列被页缘物理裁掉。修复:T1→\small+tabcolsep 3pt+去两处 1.5em 额外间距+9 列(去两个 CI 列),10 个 CI 全文迁入 app:transfer 首句(附录不计页,逐字来自原表),caption 补"Column groups in order"+CI 指针;T2→\footnotesize+tabcolsep 2pt+表头 Req.(sum)/Acc.("0 extra"→"0",caption 已有 runs summed 语义)。修复后 T1 x71-291、T2 x306-526 全部落栏。
+- 连带发现与修复:Table 6(online-four)真实超宽 67.5pt(p14 右缘出血至 x586,轮 8 的 67pt 修复记在 T7 头上而 T6 漏修)→\footnotesize+tabcolsep 3pt,x306-524 落栏。全文出血扫描(x1>560 与左栏 298<x1<314)清零;eq:read 23.1pt 警告经 p5 目检为内部 hbox 警告、渲染 contained,保留不动(真伪影);T2 余 0.59pt 不可见。
+- 主图进正文的腾挪(内容保全):§4.1 V3-V7 变体梯句→新附录小节 app:ladder(Configuration Ladder,B.1);§4.3 六任务试点句→B.8 转换小节;§4.2/4.1 去重与压缩六处(57.9/68.6 率删[摘要已有]、SC3/tabular 机制括号[附录 B.9 已有]、serving-side、per-seed 指向、post-selection 短语、接口分解压缩、baselines 句压缩、275 records 缩短);净腾挪≈新增图块代价,正文回到 8.0 页整。
+- 表 2 caption 未动(Req./Acc. 由 caption 措辞覆盖);表号链 T1-T7、图 1-3、算法 1 全部 \ref 自动一致。
+- 页限:16 页,Limitations p9 L y72 精确(正文 8.0 页整),0 undefined,overfull 2(均无视觉缺陷)。
+- ③附录表移正文的结论(已告知用户):正文 8.0 页零富余,晋升任何附录表需删 ~0.5 栏真实散文;推荐 camera-ready(+1 页)时晋升表 4(域分层)与表 7(非记分),或用户明示 trade 再动。
+- 验证:pdftotext 直查三片段(CI 指针/Req.(sum)/CI 句)全 OK;图编号 Figure 1/2/3 全渲染;p7/p8/p13/p14/p16 目检通过;x1>560 与左栏出血双扫描清零;正文文本 battery 全 OK(pilot 恰 1 次、ladder 指针/附录小节、post-selection、SC3 compressed、records trim)。
+- 有意跳过:itkin2026delayed 引文与 B.1/B.9 去重(轮 9 should-fix,等用户指示);zhang2026images/ARR 表单仍记待办。
