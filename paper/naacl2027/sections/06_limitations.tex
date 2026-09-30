@@ -48,12 +48,21 @@ deployment demonstrates \ours{} under one operating
 point, not an interface-robust defense, and the
 negative environment-domain results and one-directional
 online paired effect are reported as found.
-Verification multiplies requests by roughly
-$2.6\times$ over direct selection, and the online arm
+Serving the six static configurations takes roughly
+$2.6\times$ as many requests as there are decisions
+(2,230 requests for 840 decisions), and the online arm
 operates within a fixed per-unit budget (one
 re-verification round, eight actor calls); agents under
 tighter latency or cost envelopes may not accommodate
 this overhead.
+
+\paragraph{State integrity.}
+The rule state is trusted harness memory: the isolation
+that keeps environment content from writing rules
+directly is assumed, and persistent-state poisoning
+attacks on agent memory \citep{louck2026securing} fall
+outside the present threat model and remain a target
+for future work.
 
 \paragraph{Ethics and reproducibility boundary.}
 The defense direction of this work is protective, but

@@ -12,7 +12,7 @@ tasks---47 business, 35 environment, 19 health, 39
 public-statistics, in 21 mechanism families---with a
 faithful chart and a misleading chart whose
 presentation violates an encoding convention while the
-underlying data remain drawable.\footnote{Companion
+data remain drawable.\footnote{Companion
 submission under review; instance construction,
 taxonomy, and scoring are defined there.}
 Model inputs never contain gold labels, mechanism
@@ -27,48 +27,51 @@ Six configurations are compared on identical inputs and
 decoding (temperature 0.7, top-$p$ 0.8, top-$k$ 20,
 fixed seed, thinking disabled): direct selection and
 five READ--VERIFY--DECIDE configurations
-(Section~\ref{sec:method}) with frozen prompts and
-three requests per task, whose candidate chains are the
-frozen per-task pool of one to three pre-generated
-$O/B$ records (275 across the panel).
+(Section~\ref{sec:method}) with frozen prompts, one
+verification round ($L=1$), and three requests per
+task, whose candidate chains are the frozen per-task
+pool of one to three pre-generated $O/B$ records (275
+across the panel).
 V3 verifies $O$ and $B$ in distinct schema-typed
 passes, V4 fixes explicit numeric references, V5 adds
 same-series query-point constraints with scale,
 time-window, and policy-boundary checks, V6 checks
 necessary conditions item by item, and V7 keeps V4's
 prompts with an abstention-aware decision repair
-phase.
+phase; the six configurations and prompts were frozen
+before the replication and seed rounds and not
+modified after seeing round results.
 Interface failures and empty selections remain in the
 140 denominator; \emph{robust accuracy} throughout is
 the fraction of tasks whose selection matches the
 frozen original label, the same full-denominator
 quantity for every configuration.
-Frozen prompts, typed schemas, decision logs with
-seeds and usage, the interface contract, and the
-scoring code are in the supplementary material, so
-every number here can be recomputed from released
-artifacts once the companion benchmark's license
-permits release.
+Frozen prompts, typed schemas, decision logs, the
+interface contract, and the scoring code are in the
+supplementary material, so every number here can be
+recomputed from released artifacts once the companion
+benchmark's license permits release.
 
 \emph{Online stateful deployment.}
 Twelve tasks spanning all four domains, taken in fixed
-identifier order before execution, run as live browser
-sessions under a closed deployment: each task's two
-chart variants execute under both ordinary execution
-and the \ours{} arm, whose hooks, rule state, and
-re-derivation loops run inside the harness with the
-actor driving a real browser.
+identifier order, run as live browser sessions under a
+closed deployment: each task's two chart variants
+execute under both ordinary execution and the \ours{}
+arm, whose hooks, rule state, and re-derivation loops
+run inside the harness with the actor driving a real
+(Playwright-controlled) browser.
 The submission interface is a strict typed protocol
 (\texttt{typed\_scalars\_v2}; at most eight actor
 calls, one re-verification round, temperature 0): a
 unit ends as a scored submission, an abstention with a
 recorded reason, or a failure.
-Three actor systems are used---the 27B model under
+Three actor systems are used---Qwen3.8-27B under
 strict response formats (Batch A), the same model
 behind a schema-guided proxy mirroring the sealed
 structural rules (Batch B), and the pilot's frontier
-model reached directly through the gateway (Batch C,
-plus one stability rerun).
+model \texttt{gpt-5.6-terra} through an
+OpenAI-compatible gateway (Batch C, plus one stability
+rerun).
 
 \subsection{Static Panel Results}\label{sec:exp:static}
 
@@ -91,6 +94,8 @@ V7 & 91 & $+10$ & 89 & $+16$ & .0025 & $[+.05,+.23]$ & 80 & $+15$ & .021 & $[+.0
 \bottomrule
 \end{tabular}
 \caption{Static panel across three rounds (140 tasks;
+Qwen3.8-27B for the first two column groups,
+Qwen3-VL-8B-Instruct for the transfer group;
 temperature 0.7, top-$p$ 0.8, top-$k$ 20, fixed seed).
 ``Target'' counts selections matching the frozen
 original label; $\Delta$ is the paired net change
@@ -106,25 +111,23 @@ Appendix~\ref{app:details}.}
 \end{table}
 
 Table~\ref{tab:static-main} reports the original round
-under the 27B open-weight VLM: direct selection sits at
+under Qwen3.8-27B: direct selection sits at
 57.9\% (81/140) and the full configuration V5 at
 68.6\% (96/140), a net gain of 15 decision points with
 no increase in abstention or interface failure.
 Because the panel is entirely single-decision-point,
 the gain cannot be attributed to information gained
-after selection: verification changes the decision that
-was already available, the quantity
-Section~\ref{sec:method:setting} isolates.
+after selection: verification changes the decision
+already available.
 
 Table~\ref{tab:static-seed} reports a
 matched-configuration replication separating sampling
 variance from configuration effects: direct selection
-and V5 are each re-executed under three request seeds
-(12345, 22345, 32345) on a single-GPU deployment whose
-engine configuration matches the frozen service except
-for batch admission, so all comparisons are internal to
-that deployment (Appendix~\ref{app:details} records the
-protocol).
+and V5 are re-executed under three request seeds
+(12345, 22345, 32345) on a single-GPU deployment
+matching the frozen service except batch admission, so
+comparisons stay internal to it
+(Appendix~\ref{app:details} records the protocol).
 The same run supplies three baselines: an SC3
 self-consistency vote over the direct-selection seeds
 \citep{wang2022selfconsistency} (majority among
@@ -145,7 +148,7 @@ Arm & Requests & Selection acc. & $\Delta$ & $p$ \\
 Direct (3 seeds) & 3/task & 56.2$\,\pm\,$1.1 & --- & --- \\
 SC3 (majority) & 0 extra & 53.6\% & $-3$ & .375 \\
 Tabular (bounded) & 2/task & 28.6\% & $-3$ & .51 \\
-\ours{} V5 (3 seeds) & 12/task & 65.7$\,\pm\,$0.7 & $+15.0$ & $2\times10^{-5}$ \\
+\ours{} V5 (3 seeds) & 9/task & 65.7$\,\pm\,$0.7 & $+15.0$ & $2\times10^{-5}$ \\
 Clean-chart control & 1/task & 82.1\% & $+33$ & $<$.001 \\
 \bottomrule
 \end{tabular}
@@ -157,9 +160,11 @@ baseline (two requests per task; 55 abstentions and 18
 transcription failures in the denominator), and the
 clean-chart control. $\Delta$ and $p$ are paired against the Direct
 seed-12345 run (seeded arms: mean net over seeds,
-pooled exact McNemar over 420 paired units); accuracy
-is the full-denominator fraction matching the frozen
-original label, mean $\pm$ sd over seeds.}
+pooled exact McNemar over 420 paired units; the
+clean-chart control pairs task-level across chart
+variants); accuracy is the full-denominator fraction
+matching the frozen original label, mean $\pm$ sd over
+seeds.}
 \label{tab:static-seed}
 \end{table}
 
@@ -167,51 +172,50 @@ The 27B columns of Table~\ref{tab:static-main} report
 the single-run replication that keeps model, seeds, and
 prompts frozen: direct selection drops from 81 to 73 of
 140 under an identical configuration, quantifying the
-sampling variance of agentic decoding itself, so every
-comparison must be made within the same run.
+sampling variance of agentic decoding itself, so
+comparisons must be made within the same run.
 Within-run, V5 gains $+17$ paired decisions
-($p=0.0013$; 95\% CI $[+0.061, +0.231]$), V4, V6, and
+($p=.0013$; 95\% CI $[+0.061, +0.231]$), V4, V6, and
 V7 gain $+13$, $+13$, $+16$ ($p\leq0.0025$ each), and
 V3 returns to $+2$ despite strongly directional
-wrong--target flips (30 against 6, $p<0.001$) because
-its interface failures absorb the difference.
+wrong--target flips (30 against 6, $p<.001$ on the
+caption's discordant-pair test) because its interface
+failures absorb the difference.
 The replication's paired transfers are one-directional
 in aggregate (57 keep, 33 error-to-target, 11
 target-to-error, 5 target-to-empty), and the panel
 remains abstention-free outside V3's interface
 failures; the same directionality holds in every
 seed of the matched-configuration replication above,
-where the frozen-round headline itself is bounded by
-sampling variance (per-seed nets $+12$ to $+18$ around
-a mean of $+15$).
+whose per-seed nets the baselines paragraph reports.
 
 \paragraph{Baselines and controls.}
 The clean-chart control quantifies the execution-level
 damage of misleading presentations: direct selection
 rises from 56.2\% on misleading charts to 82.1\% on the
-paired clean charts (paired net $+33$, $p<0.001$, exact
+paired clean charts (paired net $+33$, $p<.001$, exact
 CI $[+0.16, +0.27]$).
 The two generic baselines do not close that gap: SC3
 reaches 53.6\%, indistinguishable from direct selection
-(paired net $-3$, $p=0.375$), consistent with
-Section~\ref{sec:method:setting}: the object of
+(paired net $-3$, $p=.375$)---consistent with
+Section~\ref{sec:method:setting}, the object of
 correction is the interpretation rule, not the answer
 distribution; and the tabular-answering baseline
 abstains on 55 of 140 units with 18 transcription
-failures, selecting with 59.7\% precision (40/67) and a
-paired net of $-3$ ($p=0.51$).
+failures, selecting with 59.7\% precision (40/67), a
+paired net of $-3$ ($p=.51$).
 Across the three seeds, direct selection lands at
 $56.2\,\pm\,1.1$ and \ours{} at $65.7\,\pm\,0.7$
-accuracy points; per-seed paired nets are $+12$, $+18$,
-and $+15$, pooling to $+45$ decisions over 420 paired
-units (exact McNemar $p=1.9\times10^{-5}$, 95\% CI
+accuracy points; the per-seed paired nets $+12$, $+18$,
+$+15$ pool to $+45$ decisions over 420 paired units
+(exact McNemar $p=1.9\times10^{-5}$, 95\% CI
 $[+0.058, +0.150]$).
 
 \paragraph{Cross-model transfer.}
-On the 8B open-weight VLM, direct selection drops to
+On Qwen3-VL-8B-Instruct, direct selection drops to
 46.4\% and the picture splits
 (Table~\ref{tab:static-main}, 8B columns): V7 gains
-$+15$ ($p=0.021$; CI $[+0.017, +0.210]$), V5 gains
+$+15$ ($p=.021$; CI $[+.017,+.210]$), V5 gains
 $+10$ ($p=0.044$), V4 and V6 remain within noise, and
 V3 collapses through 51 interface failures despite
 directional wrong--target flips
@@ -227,16 +231,20 @@ must be evaluated jointly rather than as one
 
 
 
-A pilot (6 tasks, frontier model) already showed the
-qualitative pattern (5 correct ordinary selections
+A pilot (6 tasks, \texttt{gpt-5.6-terra}) already
+showed this pattern (5 correct ordinary selections
 against 1 for \ours{}).
 Because the deployment's submission protocol is
 fail-closed, the primary online metric is the
-\emph{wrong-submission rate}: across the four batches,
+\emph{wrong-submission rate}---the defense-side
+counterpart of agent abstention
+\citep{liu2026agentabstain, luo2026agentic}: across
+the four batches,
 ordinary execution produced six wrong submissions, all
 under the 27B actor on misleading charts, while \ours{}
 produced none in any batch or chart variant (0 of 96
-defense-arm units).
+defense-arm units); Table~\ref{tab:online-four} gives
+the full four-batch decomposition.
 Aggregate accuracy moves oppositely: ordinary execution
 loses 3--5 decision points on misleading charts
 relative to its own clean-chart performance, and the
@@ -245,14 +253,14 @@ recorded abstentions rather than corrections.
 The paired effect is strictly one-directional in both
 frontier-model batches (10 and 13 preserved decisions
 become abstentions; the reverse never occurs; exact
-sign tests $p=0.002$ and $p<0.001$), and submission
-precision is 100\% there (26/26 and 27/27).
+sign tests $p=.002$ and $p<.001$), with submission
+precision 100\% (26/26 and 27/27).
 
 
 \paragraph{Interface decomposition.}
 The three actor systems separate structural from
 semantic failure modes: under the strict interface
-without guidance (Batch A) 22 of 24 defense-arm units
+without guidance (Batch A) 20 of 24 defense-arm units
 die in engineering failures, while the schema-guided
 proxy (Batch B) drives the ordinary actor's structural
 failures to zero but cuts defense-arm engineering

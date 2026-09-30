@@ -52,17 +52,16 @@ trajectory; close the task's rule scope.
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Rule Merging by Object and Scope}\label{app:rule-merging}
+\subsection{Mechanistic Details}\label{app:mechanics}
 
+\paragraph{Rule merging by object and scope.}
 ``Darker means higher risk'' and ``a deeper color stands
 for a more severe risk'' map to one rule when object and
 scope coincide, whereas comparing Illinois with Kansas
 and Illinois with Delaware under the same legend are two
 comparisons that shared rules do not merge.
 
-
-\subsection{Update Objects and Chain Exclusion}\label{app:update-objects}
-
+\paragraph{Update objects and chain exclusion.}
 When a chain is challenged, the method distinguishes
 three objects of update: an \emph{observation error} (a
 misread number, wrong entity binding, or wrong range)
@@ -77,20 +76,18 @@ unproven, so the module adds the missing comparison or
 keeps an undetermined status, as when a higher candidate
 refutes ``the current candidate is highest'' without
 confirming the alternative is globally highest.
-
 Conflicting conclusions between candidate chains
-establish only that a conflict exists.
-A chain is excluded only when chart-supported evidence
-negates its observation, its rule applicability, or its
-derivation conditions.
+establish only that a conflict exists; a chain is
+excluded only when chart-supported evidence negates its
+observation, its rule applicability, or its derivation
+conditions.
 
-\subsection{Revision Record Example}
+\paragraph{Revision record example.}
 For a reversed linear axis, the revision record
 replaces ``higher position, larger value'' because the
 visible scale increases downward, states that an upward
 move of the bound series now reads as a decrease, and
-scopes this to the current chart, axis, and
-series.
+scopes this to the current chart, axis, and series.
 
 \subsection{A Worked Example of Revision and Cross-Step Reuse}\label{app:example}
 \label{sec:method:example}
@@ -161,17 +158,20 @@ The development subset contributes one decision point
 to each headline gain, and costs remain bounded: 8.84M
 and 8.14M tokens across the replication rounds
 (2{,}230 and 2{,}184 requests) against 8.86M in the
-original round, a $2.6\times$ request overhead over
-direct selection with frozen prompts and no parameter
+original round; the requests serve 840 decisions each
+(six configurations $\times$ 140 tasks), a
+$2.6\times$ average request overhead over one-request
+direct selection, with frozen prompts and no parameter
 updates.
 
 \subsection{Interface Decomposition Detail}\label{app:interface}
 The three actor systems separate structural from
 semantic failure modes.
 Under the strict interface without guidance (Batch A),
-22 of 24 defense-arm units die in engineering failures,
+20 of 24 defense-arm units die in engineering failures
+(17 of them schema rejections at the defense stage),
 and the ordinary arm ends in two call-limit exhaustions
-on misleading charts.
+and three wrong submissions on misleading charts.
 A schema-guided proxy mirroring the sealed structural
 rules (Batch B) drives the ordinary actor's structural
 failures to zero (12/12 on clean charts) but cuts
@@ -210,8 +210,8 @@ static panel's per-task cost.
 On the 8B open-weight VLM, direct selection drops to
 46.4\% and the picture splits
 (Table~\ref{tab:static-main}, 8B columns): V7 gains
-$+15$ ($p=0.021$; CI $[+0.017, +0.210]$), V5 gains
-$+10$ ($p=0.044$), V4 and V6 remain within noise, and
+$+15$ ($p=.021$; CI $[+0.017, +0.210]$), V5 gains
+$+10$ ($p=.044$), V4 and V6 remain within noise, and
 V3 collapses---51 of 140 runs end in interface failures
 of the schema-typed protocol, against 8 and 6 in the
 other rounds, for a net of $-15$ despite directional
@@ -229,33 +229,47 @@ than as one ``method'' factor.
 
 \begin{table}[t]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccc}
 \toprule
-Unit class & Cor. & Abst. & Bug. & Fail. \\
+Unit class & Cor. & Wrong & Abst. & Bug. & Fail. \\
 \midrule
-\multicolumn{5}{l}{Batch C (formal run)}\\
-Ordinary $\times$ misleading  & 8  & 3  & -- & 1  \\
-Ordinary $\times$ clean       & 10 & 2  & -- & -- \\
-\ours{} $\times$ misleading   & 2  & 7  & 1  & 2  \\
-\ours{} $\times$ clean        & 6  & 4  & -- & 2  \\
+\multicolumn{6}{l}{Batch A (Qwen3.8-27B, strict)}\\
+Ordinary $\times$ misleading  & 7  & 3  & -- & -- & 5  \\
+Ordinary $\times$ clean       & 10 & -- & -- & -- & 2  \\
+\ours{} $\times$ misleading   & 0  & -- & 1  & -- & 11 \\
+\ours{} $\times$ clean        & 3  & -- & -- & -- & 9  \\
 \midrule
-\multicolumn{5}{l}{Batch C rerun (stability)}\\
-Ordinary $\times$ misleading  & 10 & 1  & -- & 1  \\
-Ordinary $\times$ clean       & 10 & 2  & -- & -- \\
-\ours{} $\times$ misleading   & 2  & 5  & -- & 5  \\
-\ours{} $\times$ clean        & 5  & 4  & -- & 3  \\
+\multicolumn{6}{l}{Batch B (Qwen3.8-27B, schema-guided proxy)}\\
+Ordinary $\times$ misleading  & 7  & 3  & -- & -- & 2  \\
+Ordinary $\times$ clean       & 12 & -- & -- & -- & -- \\
+\ours{} $\times$ misleading   & 1  & -- & -- & -- & 11 \\
+\ours{} $\times$ clean        & 2  & -- & -- & -- & 10 \\
+\midrule
+\multicolumn{6}{l}{Batch C (\texttt{gpt-5.6-terra}, formal run)}\\
+Ordinary $\times$ misleading  & 8  & -- & 3  & -- & 1  \\
+Ordinary $\times$ clean       & 10 & -- & 2  & -- & -- \\
+\ours{} $\times$ misleading   & 2  & -- & 7  & 1  & 2  \\
+\ours{} $\times$ clean        & 6  & -- & 4  & -- & 2  \\
+\midrule
+\multicolumn{6}{l}{Batch C rerun (stability)}\\
+Ordinary $\times$ misleading  & 10 & -- & 1  & -- & 1  \\
+Ordinary $\times$ clean       & 10 & -- & 2  & -- & -- \\
+\ours{} $\times$ misleading   & 2  & -- & 5  & -- & 5  \\
+\ours{} $\times$ clean        & 5  & -- & 4  & -- & 3  \\
 \bottomrule
 \end{tabular}
 \caption{Online stateful deployment: 12 tasks spanning
 four domains, each run on the misleading chart and its
 clean pair under ordinary execution and the \ours{}
 arm (48 units per batch). ``Cor.'' counts submitted
-actions matching the original label; ``Abst.''
-recorded abstentions; ``Bug.'' re-verification budget
-exhaustion; ``Fail.'' engineering and response-format
-failures (including actor-call-limit terminations).
-All submissions across both batches are correct
-(26/26 and 27/27).}
+actions matching the original label; ``Wrong'' counts
+submitted actions that do not (all six occur in the
+ordinary arm on misleading charts in Batches A and B);
+``Abst.'' recorded abstentions; ``Bug.''
+re-verification budget exhaustion; ``Fail.''
+engineering and response-format failures (including
+actor-call-limit terminations). All submissions in
+Batch C and its rerun are correct (26/26 and 27/27).}
 \label{tab:online-four}
 \end{table}
 
@@ -312,7 +326,7 @@ V3's interface failures are not discarded: they remain
 in the denominator, which is why its large
 error-to-target correction counts on the 27B model
 (30 forward against 6 reverse, exact McNemar
-$p=0.0001$) reduce to a net $+2$.
+$p=.0001$) reduce to a net $+2$.
 The 8B actor's failure mode is dominated by responses
 that violate the typed-record contract of the
 verification pass rather than by timeouts or

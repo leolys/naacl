@@ -14,10 +14,10 @@ Consider an agent executing a task $q$: at step $t$ it
 receives an observation $o_t$ and, given history $H_t$,
 proposes $\widetilde{a}_t$. When the proposal depends
 on chart understanding, let $I_t$ denote the complete
-chart observation relevant to the current judgment---or
-the chart observation actually obtained earlier in the
-task when the chart has left the current page. We
-express a chart-driven interpretation as
+chart observation relevant to the judgment---or the
+chart observation obtained earlier in the task when
+the chart has left the current page. We express a
+chart-driven interpretation as
 \begin{equation}\label{eq:o-b-c}
 O \land B \Rightarrow C_q(a),
 \end{equation}
@@ -34,13 +34,12 @@ supports the conclusion that the interval grows and the
 action is admissible, while a mismatch against verified
 numeric relations refutes precisely that rule's
 applicability.
-$O$ and $B$ may carry multiple items in structured
-natural language covering entity binding, numeric
-relations, encoding direction, time range, and
-comparison conditions; explicitly computable relations
-are checked with program assistance, and remaining
-semantic judgments are verified jointly with the public
-task requirements.
+$O$ and $B$ may carry multiple items covering entity
+binding, numeric relations, encoding direction, time
+range, and comparison conditions; explicitly computable
+relations are checked with program assistance, and
+remaining semantic judgments are verified jointly with
+the public task.
 
 The method maintains a within-task rule state $M_t^B$
 and, for chart-dependent judgments, runs the process
@@ -91,7 +90,7 @@ whether the current observation suffices for the
 conclusion, which interpretation rules the inference
 depends on, and whether the same chart admits another
 evidence-based explanation under which the conclusion
-fails or the action holds on different grounds.
+fails.
 From these questions the module generates a bounded
 candidate set
 \begin{equation}\label{eq:pis}
@@ -128,23 +127,20 @@ object here is the rule each path depends on: repeated
 generations of the same rule add no evidential weight,
 and a new explanation matters only through different
 evidence or a new applicability problem.
-In the deployed pipeline the candidate set of a
-verification node is the frozen per-task pool of one to
-three pre-generated $O/B$ records (275 records across
-the panel), so the chain budget of
-Eq.~(\ref{eq:pis}) is instantiated as $K$ equal to the
-pool size and diversity is a property of pool
-construction---candidate rules differ in object,
-condition, or scope by design; the online arm
-re-derives chains at runtime under the same budget.
+In deployment the candidate set is the frozen per-task
+pool of one to three pre-generated $O/B$ records (275
+across the panel), instantiating $K$ as the pool size,
+with diversity a property of pool construction; the
+online arm re-derives chains at runtime under the same
+budget.
 This multi-candidate structure relates to multiagent
-debate \citep{du2023improving,
-liang2024encouraging} and to single-path self-refinement
+debate \citep{du2023improving, liang2024encouraging}
+and to single-path self-refinement
 \citep{madaan2023selfrefine}, but the competitors
 disagree only over the interpretive bases of one
 rendered chart, and the adjudicator is an applicability
-test against that chart rather than a vote or an
-LLM-judged winner.
+test against that chart, not a vote or an LLM-judged
+winner.
 
 \subsection{In-Chart Applicability Verification}
 \label{sec:method:verify}
@@ -175,13 +171,13 @@ of its applicability conditions; the derivation
 $O_i\land B_i\Rightarrow p_i$ for sufficiency of the
 confirmed premises, including candidate coverage, range,
 and task conditions.
-Verification always proceeds against the complete chart,
-and the evidence record contains the observation
-identifier, the content read, and which rule the content
-supports or refutes.
+Verification always proceeds against the complete
+chart, and the evidence record contains the observation
+identifier, the content read, and the rule it supports
+or refutes.
 The deployed checklist operationalizes the three
 statuses: for $O$, located support or genuine
-contradiction, with no inserted quantifiers or causal
+contradiction, no inserted quantifiers or causal
 claims; for $B$, necessary-condition tests against
 public facts, including whether known labeled
 references would have the relations a proposed decoding
@@ -243,24 +239,26 @@ holds---a position--value mapping to the numeric axis
 and series concerned, a color reading to the current
 legend and metric, an overall-trend rule to temporal
 order and comparison range; page changes unrelated to
-the task goal do not invalidate a rule by themselves.
+the task goal do not invalidate a rule.
 
 Verification produces rule-revision proposals
 $\Delta_t^B$, applied as $M_{t+1}^B = U(M_t^B,
 \Delta_t^B)$: a supported rule with an unevidenced
-proposal is kept and the proposal retained as pending; a
-refuted rule with a supported replacement activates the
-replacement in the affected scope; a refuted rule
-without a settled replacement is revoked and the
-interpretation gap recorded; effective conflicts enter
-disputed status while verification continues within
-budget; and rules applying to different objects or
-scopes are stored separately rather than overwritten
-globally.
+proposal keeps the proposal pending; a refuted rule
+with a supported replacement activates the replacement
+in the affected scope; a refuted rule without a settled
+replacement is revoked and the interpretation gap
+recorded; effective conflicts enter disputed status
+while verification continues within budget; and rules
+applying to different objects or scopes are stored
+separately, not overwritten globally.
 The ``active'' status expresses the judgment under the
 evidence at hand; new effective evidence can change it,
 or show that an earlier verification was itself
 mistaken.
+State writes are issued only by the verification
+module; raw environment content never writes the state
+directly.
 After revocation, content, scope, and reason remain in
 the revision history; a reappearing rule must answer
 the recorded refutation or supply evidence that changes
@@ -352,9 +350,9 @@ first chart-dependent judgment of a task, an
 interpretation conflict against the effective state or
 against in-chart evidence, and an applicability change
 of chart, encoding, series binding, or task scope.
-Entry points depend on actual observations, task
-context, and action proposals; task correctness and
-hidden scoring never participate in triggering.
+They depend on observations, task context, and action
+proposals; task correctness and hidden scoring never
+participate in triggering.
 
 After a rule update, the agent re-judges the action and
 records \emph{Keep} (the choice remains supported by an
@@ -365,10 +363,10 @@ an alternative gains the support the task requires), or
 the judgment persists, or necessary evidence is
 missing).
 Showing that a candidate exceeds the current choice
-refutes ``the current choice is highest'' while
-confirming the replacement still requires the public
-task's comparison; such checks belong to task-semantic
-verification, not one fixed formula.
+refutes ``the current choice is highest''; confirming
+the replacement still requires the public task's
+comparison, a task-semantic check rather than one fixed
+formula.
 Unresolved status continues whole-chart verification
 within the remaining budget; an exhausted budget
 records the unfinished reason explicitly.
@@ -380,14 +378,14 @@ operations constitute action outcomes.
 \label{sec:method:algorithm}
 
 Algorithm~\ref{alg:cers}
-(Appendix~\ref{app:algorithm}) summarizes one execution
-of \ours{} under budgets $K$ and $L$ for one
+(Appendix~\ref{app:algorithm}) summarizes one \ours{}
+execution under budgets $K$ and $L$ for one
 verification node.
 The framework enters an existing agent at three
 points---the observation entrance establishes chart
 references, the pre-execution point performs
 verification and rule revision, and the later-reasoning
-entrance reads the currently applicable rules; planning,
+entrance reads the applicable rules; planning,
 execution, and review modules share the rule state
 within one task, while action capabilities and the
 environment interface follow the original system.
@@ -399,9 +397,7 @@ checks; budgets and triggers are fixed before a run and
 charged to the method's cost.
 The rule state is isolated per task: the runtime sees
 only the chart and interaction information the task
-permits, the paired chart, hidden answers, and scoring
-feedback stay on the evaluation side, and records are
-stored separately so later analysis can trace how
-evidence changed and whether operations followed.
+permits; the paired chart, hidden answers, and scoring
+feedback stay on the evaluation side.
 
 

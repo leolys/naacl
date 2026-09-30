@@ -8,30 +8,31 @@ question--answer rounds, not how a revised
 interpretation remains in force over stateful
 execution.
 We present \ours{} (Competing-Explanation Rule State), a
-harness-level defense that organizes
-chart interpretation around two coupled mechanisms: a
+harness-level defense that organizes chart
+interpretation around two coupled mechanisms: a
 competing-explanation chain that expresses the current
 judgment as $O\land B\Rightarrow C_q(a)$---an observation,
 an interpretation rule, and the conclusion an action
-requires---and a persistent rule state that records every
-validated rule revision with its supporting evidence and
-scope, and re-uses it in later reasoning.
+requires---and a persistent rule state that records
+every validated rule revision with its evidence and
+scope, re-using it in later reasoning.
 On a paired static panel of 140 executable web tasks
-built on \bench, \ours{} improves the robust accuracy
-of a 27B open-weight VLM agent from 57.9\% to 68.6\%,
+built on \bench, \ours{} raises the robust accuracy of
+the Qwen3.8-27B open-weight VLM agent from 57.9\% to
+68.6\%,
 replicates the gain independently (52.1\% to 64.3\%;
-McNemar $p=0.0013$), holds it across request seeds and
+McNemar $p=.0013$), holds it across request seeds and
 baselines ($65.7\%\pm0.7$ against $56.2\%\pm1.1$;
 pooled $p=1.9\times10^{-5}$), and transfers with a
 smaller gain to an 8B agent (46.4\% to 57.1\%).
-In stateful online execution over a closed deployment
-of twelve live tasks spanning both chart variants, the
-ordinary agent submits six wrong actions across the 27B
-batches while the \ours{} arm submits none in any
-batch or chart variant; in the frontier-model batches
-the defense arm converts correct misleading-chart
-decisions into recorded abstentions (exact sign test
-$p=0.002$) rather than wrong submissions, and a
-stability rerun agrees with the formal run on 37 of 48
-unit outcomes, with every disagreement an
-abstention--correct flip.
+In stateful online execution over twelve live tasks
+spanning both chart variants, the
+ordinary agent submits six wrong actions, all on
+misleading charts under the 27B actor, while the
+\ours{} arm submits none in any batch or chart
+variant; in the frontier-model batches the defense arm
+converts correct misleading-chart decisions into
+recorded abstentions (exact sign test $p=.002$)
+rather than wrong submissions, and a stability rerun
+agrees with the formal run on 37 of 48 unit outcomes,
+every disagreement an abstention--correct flip.

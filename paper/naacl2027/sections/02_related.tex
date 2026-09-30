@@ -2,14 +2,16 @@ Research on misleading visualizations connects two
 lines.
 The first studies how charts mislead human readers:
 deception relies less on outright distortion than on
-faithful drawings with selective context and framing
+faithful drawings with selective context
 \citep{lisnic2023misleading, nadib2026guardrail}.
 The second measures the phenomenon in models:
 benchmarks evaluate multimodal LLMs on misleading chart
 QA \citep{chen2025unmasking, bharti2024chartom,
-alexander2024models} and agent recognition of
-misleadingness \citep{panda2026making,
-blasilli2026true, seto2026llms}, manipulations are
+alexander2024models}, bias across interpretations is
+documented \citep{rahman2026same}, and agent
+recognition of misleadingness is probed
+\citep{panda2026making, blasilli2026true,
+seto2026llms}; manipulations are
 quantified with mitigations \citep{mahbub2025perils,
 mahbub2026chart}, and method-side responses include
 tool-augmented reasoning \citep{kaur2025chartagent},
@@ -29,14 +31,14 @@ steer agents \citep{zhan2024injecagent}, security
 benchmarks measure targeted hijacking
 \citep{evtimov2025wasp}, injection reaches perceived
 representations such as HTML accessibility trees
-\citep{johnson2025manipulating}, and red-teaming and
+\citep{johnson2025manipulating}, red-teaming and
 runtime frameworks generate and intercept attacks at
-scale \citep{wang2025agentvigil, zhao2026clawguard};
-interface-level defenses separate instructions from
+scale \citep{wang2025agentvigil, zhao2026clawguard},
+and interface-level defenses separate instructions from
 data \citep{chen2024struq} or train against injected
-content \citep{chen2024secalign}, and reflection and
-tree search open new vulnerabilities when the evaluator
-is exposed to attacked content \citep{wu2024dissecting}.
+content \citep{chen2024secalign}; reflection and tree
+search open new vulnerabilities when the evaluator is
+exposed to attacked content \citep{wu2024dissecting}.
 \ours{} protects a different layer: not the instruction
 hierarchy but the interpretation layer between visual
 observation and task judgment, where a misleading chart
@@ -50,12 +52,13 @@ self-consistency aggregates reasoning paths
 self-correction without external feedback degrades
 reasoning \citep{huang2023large, li2025decomposing},
 surveys organize the state and memory design space
-\citep{wang2024survey, hu2025agents}, and realistic
+\citep{wang2024survey, hu2025agents, zhou2026ready,
+luo2026agentic},
+and realistic
 visual web tasks remain hard enough that
 single-decision correctness cannot be taken for granted
 \citep{koh2024visualwebarena}.
 \ours{} borrows the state-carrying idea but changes the
 carried content: the state records interpretation rules
-with evidential support, scope, and revision history,
-so later steps inherit what was verified about the
-chart rather than a verdict about the answer.
+with support, scope, and revision history, so later steps inherit what was verified about the
+chart, not a verdict about the answer.
