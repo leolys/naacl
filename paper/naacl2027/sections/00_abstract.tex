@@ -3,7 +3,7 @@ tasks treat charts as evidence: the way a chart is read
 enters tool calls, submissions, and actions.
 Charts, however, admit readings both faithful to the
 rendered image and wrong about the underlying data, and
-existing defenses operate at the level of single
+existing defenses operate on single
 question--answer rounds, not how a revised
 interpretation remains in force over stateful
 execution.
@@ -20,11 +20,12 @@ On a paired static panel of 140 executable web tasks
 built on \bench, \ours{} raises the robust accuracy of
 the Qwen3.8-27B open-weight VLM agent from 57.9\% to
 68.6\%,
-replicates the gain independently (52.1\% to 64.3\%;
-McNemar $p=.0013$), holds it across request seeds and
-baselines ($65.7\%\pm0.7$ against $56.2\%\pm1.1$;
+replicates the gain in a frozen rerun (52.1\% to
+64.3\%; McNemar $p=.0013$), holds it across request
+seeds, and against the baselines ($65.7\%\pm0.7$
+against $56.2\%\pm1.1$;
 pooled $p=1.9\times10^{-5}$), and transfers with a
-smaller gain to an 8B agent (46.4\% to 57.1\%).
+smaller gain to an 8B agent (46.4\% to 53.6\%).
 In stateful online execution over twelve live tasks
 spanning both chart variants, the
 ordinary agent submits six wrong actions, all on

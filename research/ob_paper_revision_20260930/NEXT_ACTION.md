@@ -41,3 +41,14 @@
   每条均可溯源:或来自此前已验证集合,或来自本 session paper_search 逐字输出。保留并在本文件记录理由。
 - 遗留(需 artifact 重跑才能补):SC3 配对平票数(p=.375)未报告;SC3 tie 数据随 lab 重置丢失,不臆造。
 - P16 已完成:sections 全文无 XXX/TODO,仅 main.tex 保留 ARR 模板必需的 Paper ID 占位。
+
+## 2026-09-30 第二轮评审修复(评审→修复→复审闭环)
+- 第二轮评审复核中本地取证的意外收获:xmodel/runs_xmodel 含 27B 复刻轮与 8B 轮逐任务结果,Table 1 全部 12 个 Δ/p 格逐格复核完全吻合;原始轮 token 总额 8,856,548 ≈ 8.86M 吻合。
+- 4 个新阻塞项全部修复(均为本轮编辑引入/暴露的笔误):
+  1. tab:online-four Batch A Ordinary×mis Fail 5→2(行合计恢复 12);
+  2. 摘要 8B 迁移 46.4%→57.1% 为 V7 之数,改回 V5 的 53.6%;
+  3. §4.2 迁移拆分 11/5 → 14/2(本地逐任务真值);
+  4. 附录开发集句改为:复刻轮 +17=+16(116)+1(dev),原始轮 +13/+2,8B 轮 +9/+1;"headline gain"句改为"at most two decision points"。
+- Should-fix 5 项 + Polish 4 项完成:Fig.1 重制(2 行短标题,无碰撞);Limitations 保存声明按轮次限定(三种子复现仅存汇总统计,诚实披露);3–5→0–5;luo2026agentic 移出记忆综述句(§4.3 中的弃权引用保留);摘要"in a frozen rerun"+正文"single-run rerun";摘要"against the baselines";intro 26 点锚改为"across runs on the paired faithful charts";Eq.2 第三槽位与散文一致化;删除死标签 sec:method:example。
+- 未做(有意):两条可选引文(rabanser2026towards, zhang2026prompt)——正文刀刃 8.0 页,无页数预算;已记录。
+- 修复后:正文仍恰 8.0 页(Limitations 标题 p9 顶部),15 页,0 undefined。

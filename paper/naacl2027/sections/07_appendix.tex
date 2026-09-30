@@ -90,7 +90,6 @@ move of the bound series now reads as a decrease, and
 scopes this to the current chart, axis, and series.
 
 \subsection{A Worked Example of Revision and Cross-Step Reuse}\label{app:example}
-\label{sec:method:example}
 
 We illustrate the mechanism on the chart semantics of
 task pub013 from our execution data, which asks the
@@ -154,8 +153,9 @@ and $+4$), public statistics is neutral then positive
 ($0$ and $+9$), health is $+6$ in both, and the
 environment domain is the only negative one in both
 rounds ($-5$, $-9$).
-The development subset contributes one decision point
-to each headline gain, and costs remain bounded: 8.84M
+The development subset contributes at most two
+decision points to each headline gain, and costs
+remain bounded: 8.84M
 and 8.14M tokens across the replication rounds
 (2{,}230 and 2{,}184 requests) against 8.86M in the
 original round; the requests serve 840 decisions each
@@ -234,7 +234,7 @@ than as one ``method'' factor.
 Unit class & Cor. & Wrong & Abst. & Bug. & Fail. \\
 \midrule
 \multicolumn{6}{l}{Batch A (Qwen3.8-27B, strict)}\\
-Ordinary $\times$ misleading  & 7  & 3  & -- & -- & 5  \\
+Ordinary $\times$ misleading  & 7  & 3  & -- & -- & 2  \\
 Ordinary $\times$ clean       & 10 & -- & -- & -- & 2  \\
 \ours{} $\times$ misleading   & 0  & -- & 1  & -- & 11 \\
 \ours{} $\times$ clean        & 3  & -- & -- & -- & 9  \\
@@ -300,11 +300,11 @@ companion benchmark's online evaluation.
 \subsection{Development Subset and Stratified Results}
 The 24-task development subset is scored separately in
 every round.
-In the original round the full configuration V5 gains
-$+17$ paired decisions on the remaining 116 tasks and
-$+1$ on the development subset; the same decomposition
-holds for the 8B round ($+10$ splits as $+9$ and
-$+1$).
+In the 27B replication the full configuration V5
+gains $+17$ paired decisions, $+16$ on the remaining
+116 tasks and $+1$ on the development subset; the
+original round splits as $+13$ and $+2$, and the 8B
+round as $+9$ and $+1$.
 The environment domain is the only one in which V5
 loses against direct selection in both model rounds
 ($-5$ in the 27B replication, $-9$ in the 8B round).
